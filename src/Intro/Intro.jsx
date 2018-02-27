@@ -3,6 +3,8 @@ import logo from '../img/logo.svg';
 import Reboot from 'material-ui/Reboot';
 import Button from 'material-ui/Button';
 
+import Features from '../Features/Features';
+
 const Intro = () => (
 	<section
 		id="intro"
@@ -32,12 +34,12 @@ const Intro = () => (
 					</p>
 
 					<h3>Difference</h3>
-					<h3>Features</h3>
 					<Button variant="raised" color="primary">
 						Contact
 					</Button>
 				</div>
 			</div>
+			<Features />
 		</div>
 	</section>
 );
