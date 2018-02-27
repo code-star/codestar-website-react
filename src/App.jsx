@@ -1,56 +1,44 @@
 import React, { Component } from 'react';
 import './App.css';
 import logo from './img/logo.svg';
-
 import Reboot from 'material-ui/Reboot';
 import Button from 'material-ui/Button';
-import Grid from 'material-ui/Grid';
-
-const styles = {
-  backgroundColor: '#1158a0',
-};
-
-const containerStyles = {
-  minHeight: '100vh',
-  margin: 0, // Grid container adds -8px margin
-};
 
 class App extends Component {
   render() {
     return (
-      <div style={styles}>
-        <Reboot />
-        <Grid
-          container
-          justify="center"
-          alignItems="center"
-          style={containerStyles}
+      <section
+        style={{
+          backgroundColor: '#1158a0',
+        }}
+      >
+        <div
+          className="container d-flex justify-content-center flex-column"
+          style={{
+            minHeight: '100vh',
+          }}
         >
-          <Grid item xs={12} md={6} className="text-center">
-            <img
-              src={logo}
-              alt="Logo"
-              style={{
-                width: '256px',
-              }}
-            />
-            <p>
-              The digital world offers endless possibilities. The challenges are
-              often complex. We develop state-of-the-art software that’s simple
-              to use. Agile and productive, using the latest techniques. We
-              program with our hearts and with our minds, for organisations
-              looking to take the next step.
-            </p>
-            <p>
-              We are the #1 partner for Full Stack Scala and Big Data solutions
-              in the Netherlands. We are Codestar.
-            </p>
-            <Button variant="raised" color="primary">
-              Contact
-            </Button>
-          </Grid>
-        </Grid>
-      </div>
+          <Reboot />
+          <div className="row">
+            <div className="col col-md-6 offset-md-3 text-center">
+              <div className="row">
+                <div className="col col-md-6 offset-md-3">
+                  <img src={logo} alt="Logo" />
+                </div>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Laboriosam provident assumenda, fugiat, tempora dicta velit quo
+                unde odio distinctio facere eos corrupti necessitatibus ducimus
+                ab reprehenderit adipisci eveniet eius cupiditate!
+              </p>
+              <Button variant="raised" color="primary">
+                Contact
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
     );
   }
 }
