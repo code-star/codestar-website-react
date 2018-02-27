@@ -1,7 +1,11 @@
 .text-center {
-  text-align: center;
+	text-align: center;
 }
 
 p {
-  color: white;
+	color: white;
+}
+
+.mh-full {
+	min-height: 100vh;
 }
