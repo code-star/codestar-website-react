@@ -1,5 +1,5 @@
 import React from 'react';
-import './FeatureCard.css';
+import styles from './FeatureCard.module.css';
 import Card, { /* CardActions, */ CardContent } from 'material-ui/Card';
 
 const FeatureCard = props => (
@@ -7,10 +7,13 @@ const FeatureCard = props => (
 		<CardContent>
 			<h4 className="text-center">{props.title}</h4>
 			<div className="text-center">
-				<svg viewBox="0 0 100 100">
+				<svg viewBox="0 0 100 100" className={styles.svg}>
 					<use
 						xlinkHref={`${props.logo}#icon`}
-						className={`svg-logo-features svg-logo-${props.id}`}
+						className={`
+							${styles.svgLogoFeatures}
+							${props.id && styles[props.id]}
+						`}
 					/>
 				</svg>
 			</div>
@@ -23,3 +26,4 @@ const FeatureCard = props => (
 );
 
 export default FeatureCard;
+// ${styles.svg-logo-${props.id}}
