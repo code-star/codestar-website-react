@@ -5,11 +5,3 @@
 .section {
 	background-color: #1158a0;
 }
-
-.container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	min-height: 100vh;
-	padding: 1rem 0;
-}

@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from 'material-ui/Grid';
-
+import Section from '../Section/Section';
 import FeatureCard from '../FeatureCard/FeatureCard';
 
 import LogoTheRightPeople from '../img/Features/Features_TheRightPeople.svg';
@@ -50,50 +50,48 @@ const features = [
 ];
 
 const Features = () => (
-	<section className={styles.section}>
-		<div className={`container ${styles.container}`}>
-			<Grid container justify="center">
-				<Grid item xs={12} md={8}>
-					<h2 className={styles.h2}>TIME TO TAKE THE NEXT STEP</h2>
-				</Grid>
+	<Section className={styles.section} id="features">
+		<Grid container justify="center">
+			<Grid item xs={12} md={8}>
+				<h2 className={styles.h2}>TIME TO TAKE THE NEXT STEP</h2>
+			</Grid>
 
-				<Grid item xs={12} md={6}>
-					<p className={styles.p}>
-						Now more than ever, IT is the carrier, deliverer and enricher of
-						your business. You will quickly fall behind without an outstanding
-						digital i nfrastructure. With data in abundance, where do you start?
-						In the past, if someone asked you for water, you grabbed a bucket
-						and went to the well. Today, we’re dealing with a waterfall of data.
-						Good luck with your bucket.
-					</p>
-				</Grid>
+			<Grid item xs={12} md={6}>
+				<p className={styles.p}>
+					Now more than ever, IT is the carrier, deliverer and enricher of your
+					business. You will quickly fall behind without an outstanding digital
+					i nfrastructure. With data in abundance, where do you start? In the
+					past, if someone asked you for water, you grabbed a bucket and went to
+					the well. Today, we’re dealing with a waterfall of data. Good luck
+					with your bucket.
+				</p>
+			</Grid>
 
-				<Grid item xs={12} md={6}>
-					<p className={styles.p}>
-						Fortunately, the growth in the amount of data has coincided with the
-						development of technologies to work with that data. The modern
-						internet, mobile phone use and the ‘Internet of Things’ demands
-						more. At, we use Scala, Front-end and BigData technologies to create
-						state-of-the-art software which enables you to confront challenges
-						head on. Whether you need a bigger bucket, more buckets or just a
-						decent pipeline, we can create it for you..
-					</p>
-				</Grid>
+			<Grid item xs={12} md={6}>
+				<p className={styles.p}>
+					Fortunately, the growth in the amount of data has coincided with the
+					development of technologies to work with that data. The modern
+					internet, mobile phone use and the ‘Internet of Things’ demands more.
+					At, we use Scala, Front-end and BigData technologies to create
+					state-of-the-art software which enables you to confront challenges
+					head on. Whether you need a bigger bucket, more buckets or just a
+					decent pipeline, we can create it for you..
+				</p>
+			</Grid>
 
-				<Grid item xs={12}>
-					<h2 className={styles.h2}>WHY WHAT WE DO DOES WORK</h2>
+			<Grid item xs={12}>
+				<h2 className={styles.h2}>WHY WHAT WE DO DOES WORK</h2>
 
-					<Grid container justify="center">
-						{features.map(feature => (
-							<Grid key={feature.title} item xs={12} md={4}>
-								<FeatureCard {...feature} />
-							</Grid>
-						))}
-					</Grid>
+				<Grid container justify="center">
+					{features.map(feature => (
+						<Grid key={feature.title} item xs={12} md={4}>
+							<FeatureCard {...feature} />
+						</Grid>
+					))}
 				</Grid>
 			</Grid>
-		</div>
-	</section>
+		</Grid>
+	</Section>
 );
 
 export default Features;

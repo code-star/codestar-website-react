@@ -1,3 +1,7 @@
+.section {
+	background-color: #f08300;
+}
+
 .h2 {
 	text-align: center;
 	color: white;
@@ -5,9 +9,4 @@
 
 .p {
 	color: white;
-	text-align: justify;
-}
-
-.section {
-	background-color: #4b4b4b;
 }
