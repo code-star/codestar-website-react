@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     x="0px" y="0px" height="1000" width="500"
+     viewBox="1370 0 1000 3087" xml:space="preserve">
+<style type="text/css">
+    .st0{fill:none;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;stroke-dasharray:6,8;}
+    .st1{fill:none;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}
+    .st2{opacity:0.5;}
+</style>
+<defs>
+    <clipPath id="clip-sides">
+        <rect x="33%" y="0%" width="33%" height="100%" />
+    </clipPath>
+</defs>
+<g>
+    <path class="st0" d="M140.6,73.3c812.2,0,1470.7,658.4,1470.7,1470.7S952.8,3014.6,140.6,3014.6"/>
+    <path class="st0" d="M3594.3,3014.6c-812.2,0-1470.7-658.4-1470.7-1470.7S2782.1,73.3,3594.3,73.3"/>
+    <path class="st1" d="M3608.3,2621.9c-812.2,0-1470.7-482.6-1470.7-1078s658.4-1078,1470.7-1078"/>
+    <path class="st1" d="M121.5,2621.9c812.2,0,1470.7-482.6,1470.7-1078s-658.4-1078-1470.7-1078"/>
+    <g class="st2">
+        <path class="st1" d="M2856.8,2966.6c-458.5,0-830.2-637-830.2-1422.7s371.7-1422.7,830.2-1422.7"/>
+        <path class="st1" d="M888.5,2966.6c458.5,0,830.2-637,830.2-1422.7S1346.9,121.2,888.5,121.2"/>
+    </g>
+</g>
+</svg>
