@@ -1,5 +1,5 @@
 import React from 'react';
-import Card, { /* CardActions, */ CardContent } from 'material-ui/Card';
+import Card, { CardContent } from 'material-ui/Card';
 
 import styles from './FeatureCard.module.css';
 
@@ -20,11 +20,7 @@ const FeatureCard = props => (
 			</div>
 			<p>{props.text}</p>
 		</CardContent>
-		{/* <CardActions>
-								<Button size="small">Learn More</Button>
-							</CardActions> */}
 	</Card>
 );
 
 export default FeatureCard;
-// ${styles.svg-logo-${props.id}}

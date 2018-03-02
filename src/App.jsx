@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Intro from './Intro/Intro';
 import Cases from './Cases/Cases';
 import Contact from './Contact/Contact';
-import Features from './Features/Features';
+// import Features from './Features/Features';
 import Reboot from 'material-ui/Reboot';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
