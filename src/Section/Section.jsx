@@ -12,13 +12,10 @@ const Section = props => (
 			minHeight: props.full && !props.container ? '100vh' : 'auto',
 		}}
 	>
-		<div
-			className={`
-					${props.container ? `container ${styles.container}` : null}
-				`}
-		>
-			{props.children}
-		</div>
+		{props.container && (
+			<div className={`container ${styles.container}`}>{props.children}</div>
+		)}
+		{!props.container && props.children}
 	</section>
 );
 
