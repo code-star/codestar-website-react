@@ -4,6 +4,7 @@ import Reboot from 'material-ui/Reboot';
 import Grid from 'material-ui/Grid';
 import Section from '../Section/Section';
 import styles from './Intro.module.css';
+import { Link } from 'react-router-dom';
 
 const Intro = () => (
 	<Section container id="intro" className={styles.section}>
@@ -25,6 +26,10 @@ const Intro = () => (
 				<p className={styles.p}>
 					We are the #1 partner for Full Stack Scala and Big Data solutions in
 					the Netherlands. We are Codestar.
+				</p>
+
+				<p>
+					<Link to="/cases">Go to cases</Link>
 				</p>
 			</Grid>
 		</Grid>
