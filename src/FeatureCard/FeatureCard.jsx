@@ -4,7 +4,7 @@ import Card, { /* CardActions, */ CardContent } from 'material-ui/Card';
 import styles from './FeatureCard.module.css';
 
 const FeatureCard = props => (
-	<Card className={props.className}>
+	<Card className={`${props.className}`}>
 		<CardContent>
 			<h4 className={styles.title}>{props.title}</h4>
 			<div className={styles.logoWrapper}>

@@ -50,7 +50,7 @@ const features = [
 ];
 
 const Features = () => (
-	<Section className={styles.section} id="features">
+	<Section container className={styles.section} id="features">
 		<Grid container justify="center">
 			<Grid item xs={12} md={8}>
 				<h2 className={styles.h2}>TIME TO TAKE THE NEXT STEP</h2>
@@ -84,7 +84,14 @@ const Features = () => (
 
 				<Grid container justify="center">
 					{features.map(feature => (
-						<Grid key={feature.title} item xs={12} md={4}>
+						<Grid
+							key={feature.title}
+							item
+							xs={12}
+							sm={6}
+							md={4}
+							className="d-flex"
+						>
 							<FeatureCard {...feature} />
 						</Grid>
 					))}

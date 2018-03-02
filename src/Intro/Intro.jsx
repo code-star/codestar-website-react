@@ -6,7 +6,7 @@ import Section from '../Section/Section';
 import styles from './Intro.module.css';
 
 const Intro = () => (
-	<Section id="intro" className={styles.section}>
+	<Section container id="intro" className={styles.section}>
 		<Reboot />
 		<Grid container justify="center">
 			<Grid item xs={12} md={3}>
