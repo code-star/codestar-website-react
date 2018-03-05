@@ -23,7 +23,7 @@ class ClientCase extends React.Component {
 
 	render() {
 		return (
-			<Section className="d-flex " full image={this.props.backgroundImage}>
+			<Section className="d-flex" image={this.props.backgroundImage}>
 				<Grid
 					container
 					spacing={0}
@@ -33,13 +33,13 @@ class ClientCase extends React.Component {
 					<Grid
 						item
 						xs={12}
-						sm={6}
+						lg={6}
 						style={{
 							padding: '8px',
 						}}
 					>
-						<Grid container justify="center">
-							<Grid item xs={12} md={8}>
+						<Grid container spacing={0} justify="center">
+							<Grid item xs={12} sm={12} md={8} lg={8} xl={6}>
 								<Card>
 									<CardContent>
 										<h2>{this.props.client}</h2>
@@ -64,19 +64,19 @@ class ClientCase extends React.Component {
 							<Grid
 								item
 								xs={12}
-								sm={6}
+								lg={6}
 								style={{
-									backgroundColor: 'rgba(255,255,255, 0)',
-									minHeight: '100vh',
+									padding: '8px',
 								}}
 							>
-								<Grid container spacing={0} justify="center">
-									<Grid item xs={12}>
-										<Card
-											style={{
-												minHeight: '100vh',
-											}}
-										>
+								<Grid
+									container
+									spacing={0}
+									justify="center"
+									alignItems="center"
+								>
+									<Grid item xs={12} sm={10} md={8} lg={12} xl={10}>
+										<Card>
 											<CardContent>{this.props.details}</CardContent>
 											<CardActions>
 												<Button onClick={this.hideDetails}>Close</Button>
