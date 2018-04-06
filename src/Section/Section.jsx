@@ -21,12 +21,22 @@ const styles = theme => ({
 
 const Section = props => (
 	<section
-		className={`${props.className} ${props.classes.section}`}
+		className={`
+			${props.className} 
+			${props.classes.section} 
+			${props.backgroundVideoSrc ? css.sectionBackgroundVideo : ''}
+		`}
 		id={props.id}
 		style={{
-			backgroundImage: `url('${props.image}')`,
+			backgroundImage: props.image ? `url(${props.image})` : 'none',
 		}}
 	>
+		{props.backgroundVideoSrc && (
+			<video autoPlay muted loop className={css.fullVideo}>
+				<source src={props.backgroundVideoSrc} type="video/mp4" />
+			</video>
+		)}
+
 		{props.container && (
 			<div className={`container ${css.container}`}>{props.children}</div>
 		)}
