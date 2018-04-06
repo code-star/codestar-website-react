@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../img/logo.svg';
-import Reboot from 'material-ui/Reboot';
+import CssBaseline from 'material-ui/CssBaseline';
 import Grid from 'material-ui/Grid';
 import Section from '../Section/Section';
 import styles from './Intro.module.css';
@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Intro = () => (
 	<Section container id="intro" className={styles.section}>
-		<Reboot />
+		<CssBaseline />
 		<Grid container justify="center">
 			<Grid item xs={12} md={3}>
 				<img src={logo} alt="Logo" />
