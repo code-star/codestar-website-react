@@ -2,25 +2,27 @@ import React from 'react';
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import Drawer from 'material-ui/Drawer';
 
-import InboxIcon from 'material-ui-icons/Inbox';
-import DraftsIcon from 'material-ui-icons/Drafts';
+import DashboardIcon from 'material-ui-icons/Dashboard';
+import PeopleIcon from 'material-ui-icons/People';
+import CodeIcon from 'material-ui-icons/Code';
+import EmailIcon from 'material-ui-icons/Email';
 
 const list = [
 	{
 		text: 'Cases',
-		icon: <InboxIcon />,
+		icon: <DashboardIcon />,
 	},
 	{
 		text: 'About',
-		icon: <InboxIcon />,
+		icon: <PeopleIcon />,
 	},
 	{
 		text: 'Jobs',
-		icon: <InboxIcon />,
+		icon: <CodeIcon />,
 	},
 	{
 		text: 'Contact',
-		icon: <DraftsIcon />,
+		icon: <EmailIcon />,
 	},
 ];
 
