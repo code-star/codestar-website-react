@@ -10,6 +10,8 @@ import Footer from './Footer/Footer';
 import CssBaseline from 'material-ui/CssBaseline';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import About from './About/About';
+import Jobs from './Jobs/Jobs';
 
 const Index = () => (
 	<div>
@@ -39,17 +41,19 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<NavBar toggle={this.toggleDrawer} />
-				<SideMenu open={this.state.drawerMenu} toggle={this.toggleDrawer} />
 				<Router>
 					<div>
 						<CssBaseline />
+						<NavBar toggle={this.toggleDrawer} />
+						<SideMenu open={this.state.drawerMenu} toggle={this.toggleDrawer} />
 
 						<Route exact path="/" component={Index} />
 						<Route path="/cases" component={Cases} />
+						<Route path="/about" component={About} />
+						<Route path="/jobs" component={Jobs} />
+						<Footer />
 					</div>
 				</Router>
-				<Footer />
 			</div>
 		);
 	}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import Drawer from 'material-ui/Drawer';
 
@@ -9,20 +10,29 @@ import EmailIcon from 'material-ui-icons/Email';
 
 const list = [
 	{
+		text: 'Home',
+		icon: <DashboardIcon />,
+		link: '/',
+	},
+	{
 		text: 'Cases',
 		icon: <DashboardIcon />,
+		link: '/cases',
 	},
 	{
 		text: 'About',
 		icon: <PeopleIcon />,
+		link: '/about',
 	},
 	{
 		text: 'Jobs',
 		icon: <CodeIcon />,
+		link: '/jobs',
 	},
 	{
 		text: 'Contact',
 		icon: <EmailIcon />,
+		link: '/contact',
 	},
 ];
 
@@ -38,7 +48,9 @@ const SideMenu = props => (
 				{list.map(item => (
 					<ListItem button key={item.text}>
 						<ListItemIcon>{item.icon}</ListItemIcon>
-						<ListItemText primary={item.text} />
+						<Link to={item.link}>
+							<ListItemText primary={item.text} />
+						</Link>
 					</ListItem>
 				))}
 			</List>
