@@ -52,19 +52,21 @@ const Contact = () => (
 								</FormControl>
 							</Grid>
 
-							<Grid item xs={12} md={6}>
+							<Grid item xs={12}>
 								<FormControl fullWidth>
 									<InputLabel htmlFor="email">Email</InputLabel>
 									<Input id="email" type="email" />
 								</FormControl>
 							</Grid>
 
-							<Grid item xs={12} md={6}>
+							<Grid item xs={12}>
 								<FormControl fullWidth>
 									<TextField
+										label="Message"
 										id="message"
 										multiline
 										placeholder="Your message"
+										rows={2}
 									/>
 								</FormControl>
 							</Grid>
