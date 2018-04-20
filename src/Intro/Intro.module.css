@@ -3,10 +3,11 @@
 	padding: 1rem;
 }
 
-.section {
+.bgVideoWrapper {
 	background-size: cover;
 	background-position: center center;
 	position: relative;
+	overflow: hidden;
 }
 
 .logo {
@@ -31,7 +32,6 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	min-height: 100vh;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 }
