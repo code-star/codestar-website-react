@@ -2,10 +2,10 @@
 	text-align: center;
 }
 
-section:nth-child(even) {
+/* section:nth-child(even) {
 	background-color: #f08300;
 }
 
 section:nth-child(odd) {
 	background-color: #1158a0;
-}
+} */
