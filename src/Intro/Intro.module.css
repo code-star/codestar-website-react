@@ -3,19 +3,19 @@
 	padding: 1rem;
 }
 
-.bgVideoWrapper {
-	background-size: cover;
-	background-position: center center;
-	position: relative;
-	overflow: hidden;
-}
-
 .logo {
 	margin-bottom: 1rem;
 }
 
-.grid {
+.bgWhite90 {
 	background-color: rgba(255, 255, 255, 0.9);
+}
+
+.backgroundVideoWrapper {
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+	overflow: hidden;
 }
 
 .fullVideo {
@@ -26,12 +26,4 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	z-index: -1;
-}
-
-.containerCenter {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
 }

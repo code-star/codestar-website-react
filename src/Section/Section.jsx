@@ -7,14 +7,19 @@ import withWidth from 'material-ui/utils/withWidth';
 
 const styles = theme => ({
 	section: {
-		backgroundSize: 'cover',
-		backgroundPosition: 'center center',
-
-		[theme.breakpoints.up('md')]: {
-			minHeight: '100vh',
-		},
-		[theme.breakpoints.down('sm')]: {
-			backgroundImage: 'none !important',
+		// backgroundSize: 'cover',
+		// backgroundPosition: 'center center',
+		// [theme.breakpoints.up('md')]: {
+		// 	minHeight: '100vh',
+		// },
+		// [theme.breakpoints.down('sm')]: {
+		// 	backgroundImage: 'none !important',
+		// },
+	},
+	fullHeightMinusNavBar: {
+		minHeight: 'calc(100vh - 56px)',
+		[theme.breakpoints.up('sm')]: {
+			minHeight: 'calc(100vh - 64px)',
 		},
 	},
 });
@@ -38,7 +43,7 @@ const Section = props => (
 		)}
 
 		{props.container && (
-			<div className={`container ${css.container}`}>{props.children}</div>
+			<div className={`container ${css.containerCenter}`}>{props.children}</div>
 		)}
 		{!props.container && props.children}
 	</section>
