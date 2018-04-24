@@ -16,7 +16,7 @@ import Jobs from './Jobs/Jobs';
 const Index = () => (
 	<div>
 		<Intro />
-		<Contact />
+		{/* <Contact /> */}
 	</div>
 );
 

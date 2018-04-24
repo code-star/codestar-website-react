@@ -24,9 +24,9 @@ const Container = props => {
 		<div
 			className={`
 			${props.fluid ? 'container-fluid' : 'container'}
-			${props.className && props.className}
-			${props.fullHeightMinusNavBar && props.classes.fullHeightMinusNavBar}
-			${props.center && props.classes.containerCenter}
+			${props.className ? props.className : ''}
+			${props.fullHeightMinusNavBar ? props.classes.fullHeightMinusNavBar : ''}
+			${props.center ? props.classes.containerCenter : ''}
 		`}
 		>
 			{props.children}
