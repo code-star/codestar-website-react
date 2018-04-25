@@ -8,7 +8,7 @@ import Footer from './Footer/Footer';
 
 import Cases from './Cases/Cases';
 import casesList from './Cases/CasesList';
-import ClientCase from './ClientCase/ClientCase';
+import CaseDetails from './CaseDetails/CaseDetails';
 
 import CssBaseline from 'material-ui/CssBaseline';
 
@@ -53,12 +53,16 @@ class App extends Component {
 						<Route exact path="/" component={Index} />
 						<Route exact path="/cases" component={Cases} />
 
-						{casesList.map(projectCase => (
+						{casesList.map(clientCase => (
 							<Route
 								exact
-								path={`/cases/${projectCase.client}`}
-								key={projectCase.client}
-								render={() => <ClientCase {...projectCase} />}
+								path={`/cases/${clientCase.path}`}
+								key={clientCase.client}
+								render={() => (
+									<CaseDetails {...clientCase}>
+										{clientCase.details}
+									</CaseDetails>
+								)}
 							/>
 						))}
 

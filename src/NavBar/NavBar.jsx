@@ -43,17 +43,17 @@ const NavBar = props => (
 				<Link to="/">Codestar</Link>
 			</Typography>
 			<Hidden only="xs">
-				<Button color="inherit">
-					<Link to="/cases">Cases</Link>
+				<Button component={Link} to="/cases" color="inherit">
+					Cases
 				</Button>
-				<Button color="inherit">
-					<Link to="/about">About</Link>
+				<Button component={Link} to="/about" color="inherit">
+					About
 				</Button>
-				<Button color="inherit">
-					<Link to="/jobs">Jobs</Link>
+				<Button component={Link} to="/jobs" color="inherit">
+					Jobs
 				</Button>
-				<Button color="inherit">
-					<Link to="/contact">Contact</Link>
+				<Button component={Link} to="/contact" color="inherit">
+					Contact
 				</Button>
 			</Hidden>
 		</Toolbar>

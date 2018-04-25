@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CaseDetailsPortRotterdam = () => (
-	<div>
+	<article>
 		<h1>About the Port of Rotterdam</h1>
 		<p>
 			The Port of Rotterdam is the largest port in Europe. To maintain this
@@ -34,7 +34,7 @@ const CaseDetailsPortRotterdam = () => (
 				Elastic Beanstalk and AWS Dynamodb
 			</li>
 		</ul>
-	</div>
+	</article>
 );
 
 export default CaseDetailsPortRotterdam;

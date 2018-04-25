@@ -1,0 +1,12 @@
+.projectCaseClient {
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+	font-weight: 900;
+}
+
+.projectCaseTitle {
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+	line-height: 2.5;
+	background-color: rgba(52, 58, 64, 1);
+}

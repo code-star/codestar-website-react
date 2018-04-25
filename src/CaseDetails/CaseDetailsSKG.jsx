@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CaseDetailsSKG = () => (
-	<div>
+	<article>
 		<h3>About SKG</h3>
 		<p>
 			SKG, Stichting Kerkelijk Geldbeheer, offers financial services
@@ -61,7 +61,7 @@ const CaseDetailsSKG = () => (
 			<li>DCOS</li>
 			<li>Circle CI</li>
 		</ul>
-	</div>
+	</article>
 );
 
 export default CaseDetailsSKG;

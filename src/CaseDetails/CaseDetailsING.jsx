@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CaseDetailsING = () => (
-	<div>
+	<article>
 		<h1>About ING</h1>
 		<p>
 			ING: the bank as an IT company with a banking license. ING wants to be the
@@ -55,7 +55,7 @@ const CaseDetailsING = () => (
 			<li>AngularJS</li>
 			<li>Polymer</li>
 		</ul>
-	</div>
+	</article>
 );
 
 export default CaseDetailsING;
