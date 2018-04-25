@@ -14,8 +14,9 @@ const AsyncCases = AsyncComponent(() => import('./Cases/Cases'));
 const AsyncCaseDetails = AsyncComponent(() =>
 	import('./CaseDetails/CaseDetails')
 );
-const AsyncJobs = AsyncComponent(() => import('./Jobs/Jobs'));
 const AsyncAbout = AsyncComponent(() => import('./About/About'));
+const AsyncJobs = AsyncComponent(() => import('./Jobs/Jobs'));
+const AsyncContact = AsyncComponent(() => import('./Contact/Contact'));
 
 class App extends Component {
 	state = {
@@ -57,6 +58,7 @@ class App extends Component {
 
 					<Route path="/about" component={AsyncAbout} />
 					<Route path="/jobs" component={AsyncJobs} />
+					<Route path="/contact" component={AsyncContact} />
 
 					<Footer />
 				</div>
