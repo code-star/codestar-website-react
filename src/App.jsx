@@ -1,27 +1,21 @@
 import React, { Component } from 'react';
-
-import Intro from './Intro/Intro';
-import Contact from './Contact/Contact';
-import SideMenu from './SideMenu/SideMenu';
-import NavBar from './NavBar/NavBar';
-import Footer from './Footer/Footer';
-
-import Cases from './Cases/Cases';
-import casesList from './Cases/CasesList';
-import CaseDetails from './CaseDetails/CaseDetails';
-
+import AsyncComponent from './AsyncComponent/AsyncComponent';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import CssBaseline from 'material-ui/CssBaseline';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import About from './About/About';
-import Jobs from './Jobs/Jobs';
+import NavBar from './NavBar/NavBar';
+import SideMenu from './SideMenu/SideMenu';
+import Footer from './Footer/Footer';
 
-const Index = () => (
-	<div>
-		<Intro />
-		{/* <Contact /> */}
-	</div>
+import casesList from './Cases/CasesList';
+
+const AsyncIntro = AsyncComponent(() => import('./Intro/Intro'));
+const AsyncCases = AsyncComponent(() => import('./Cases/Cases'));
+const AsyncCaseDetails = AsyncComponent(() =>
+	import('./CaseDetails/CaseDetails')
 );
+const AsyncJobs = AsyncComponent(() => import('./Jobs/Jobs'));
+const AsyncAbout = AsyncComponent(() => import('./About/About'));
 
 class App extends Component {
 	state = {
@@ -43,32 +37,30 @@ class App extends Component {
 
 	render() {
 		return (
-			<div>
-				<Router>
-					<div>
-						<CssBaseline />
-						<NavBar toggle={this.toggleDrawer} />
-						<SideMenu open={this.state.drawerMenu} toggle={this.toggleDrawer} />
+			<Router>
+				<div>
+					<CssBaseline />
+					<NavBar toggle={this.toggleDrawer} />
+					<SideMenu open={this.state.drawerMenu} toggle={this.toggleDrawer} />
 
-						<Route exact path="/" component={Index} />
-						<Route exact path="/cases" component={Cases} />
+					<Route exact path="/" component={AsyncIntro} />
+					<Route exact path="/cases" component={AsyncCases} />
 
-						{casesList.map(clientCase => (
-							<Route
-								exact
-								path={`/cases/${clientCase.path}`}
-								key={clientCase.client}
-								render={() => <CaseDetails {...clientCase} />}
-							/>
-						))}
+					{casesList.map(clientCase => (
+						<Route
+							exact
+							path={`/cases/${clientCase.path}`}
+							key={clientCase.client}
+							render={() => <AsyncCaseDetails {...clientCase} />}
+						/>
+					))}
 
-						<Route path="/about" component={About} />
-						<Route path="/jobs" component={Jobs} />
+					<Route path="/about" component={AsyncAbout} />
+					<Route path="/jobs" component={AsyncJobs} />
 
-						<Footer />
-					</div>
-				</Router>
-			</div>
+					<Footer />
+				</div>
+			</Router>
 		);
 	}
 }

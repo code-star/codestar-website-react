@@ -1,5 +1,4 @@
 import React from 'react';
-import Section from '../Section/Section';
 import Container from '../Container/Container';
 
 import css from './CaseHeader.module.css';

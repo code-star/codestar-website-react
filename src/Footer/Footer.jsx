@@ -39,6 +39,7 @@ const Footer = props => (
 						<a
 							href="https://maps.google.com/maps?ll=52.057652,5.111462&z=16&t=m&hl=en-GB&gl=NL&mapclient=embed&cid=15918536717636328792"
 							target="_blank"
+							rel="noopener noreferrer"
 							className="text-white"
 						>
 							Ringwade 1, 3439 LM Nieuwegein

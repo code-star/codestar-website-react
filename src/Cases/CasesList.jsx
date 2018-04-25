@@ -1,13 +1,12 @@
-import React from 'react';
-import asyncComponent from '../AsyncComponent/AsyncComponent';
+import AsyncComponent from '../AsyncComponent/AsyncComponent';
 
-const AsyncCaseDetailsING = asyncComponent(() =>
+const AsyncCaseDetailsING = AsyncComponent(() =>
 	import('../CaseDetails/CaseDetailsING')
 );
-const AsyncCaseDetailsSKG = asyncComponent(() =>
+const AsyncCaseDetailsSKG = AsyncComponent(() =>
 	import('../CaseDetails/CaseDetailsSKG')
 );
-const CaseDetailsPortRotterdam = asyncComponent(() =>
+const CaseDetailsPortRotterdam = AsyncComponent(() =>
 	import('../CaseDetails/CaseDetailsPortRotterdam')
 );
 

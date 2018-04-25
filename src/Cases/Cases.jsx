@@ -4,7 +4,7 @@ import CaseHeader from '../CaseHeader/CaseHeader';
 
 import casesList from './CasesList';
 
-const Cases = props => (
+const Cases = () => (
 	<div>
 		<section>
 			<Container fullHeightMinusNavBar center>
