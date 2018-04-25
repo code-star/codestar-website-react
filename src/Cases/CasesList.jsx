@@ -1,8 +1,15 @@
 import React from 'react';
+import asyncComponent from '../AsyncComponent/AsyncComponent';
 
-import CaseDetailsING from '../CaseDetails/CaseDetailsING';
-import CaseDetailsSKG from '../CaseDetails/CaseDetailsSKG';
-import CaseDetailsPortRotterdam from '../CaseDetails/CaseDetailsPortRotterdam';
+const AsyncCaseDetailsING = asyncComponent(() =>
+	import('../CaseDetails/CaseDetailsING')
+);
+const AsyncCaseDetailsSKG = asyncComponent(() =>
+	import('../CaseDetails/CaseDetailsSKG')
+);
+const CaseDetailsPortRotterdam = asyncComponent(() =>
+	import('../CaseDetails/CaseDetailsPortRotterdam')
+);
 
 const casesList = [
 	{
@@ -19,7 +26,7 @@ const casesList = [
 		text: [
 			'A demanding client where Codestar contributes to innovation on the project for straight-through appointment scheduling.',
 		],
-		details: <CaseDetailsING />,
+		details: AsyncCaseDetailsING,
 		image:
 			'/images/cases/stock-photo-london-uk-january-th-the-homepage-of-the-official-website-for-the-ing-group-the-dutch-1013358685.jpg',
 	},
@@ -30,7 +37,7 @@ const casesList = [
 		text: [
 			'A classic example of a client with an application that fails to meet modern demands. The client needs a new payment platform that supports apps and modern devices, enables them to go live quickly with new features and is easier to manage. The current outdated platform was completely custom developed in-house for SKG, including hosting and physical servers. We are building a new reactive platform that scales, is easy to maintain, uses the latest technologies and methodologies, such as Microservices, Platform as a Service and Continuous Delivery.',
 		],
-		details: <CaseDetailsSKG />,
+		details: AsyncCaseDetailsSKG,
 		image:
 			'/images/cases/banners-cropped-images-SKG%20sfeerbeelden-adviesopmaat-0-326-1500-562-1485443956-df9f1ec873b883e8004d80f6aced3963.jpg',
 	},
@@ -42,7 +49,7 @@ const casesList = [
 			'An innovative project that aims to realise a pilot application for the verification of an extremely promising new business concept for the entire port. And the entire port really does mean the entire port. So involving a lot of stakeholders, which in turn involves a lot of discussion.',
 			'Short feedback loops were essential for deciding the direction of the pilot. Using a fully cloud-based development route made it possible to demonstrate functionality in the product environment from week one, and give shape to the short feedback loops. So no meetings about abstract software diagrams, but about working software. Agile, as agile is meant to be.',
 		],
-		details: <CaseDetailsPortRotterdam />,
+		details: CaseDetailsPortRotterdam,
 		image:
 			'/images/cases/stock-photo-large-container-vessel-unloaded-in-port-of-rotterdam-283990010.jpg',
 	},

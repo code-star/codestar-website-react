@@ -58,11 +58,7 @@ class App extends Component {
 								exact
 								path={`/cases/${clientCase.path}`}
 								key={clientCase.client}
-								render={() => (
-									<CaseDetails {...clientCase}>
-										{clientCase.details}
-									</CaseDetails>
-								)}
+								render={() => <CaseDetails {...clientCase} />}
 							/>
 						))}
 

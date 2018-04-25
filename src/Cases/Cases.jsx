@@ -28,7 +28,7 @@ const Cases = props => (
 		</section>
 
 		{casesList.map(clientCase => (
-			<CaseHeader {...clientCase} readMore={true} key={clientCase.c} />
+			<CaseHeader {...clientCase} readMore={true} key={clientCase.client} />
 		))}
 	</div>
 );
