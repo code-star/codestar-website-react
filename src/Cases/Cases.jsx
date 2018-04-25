@@ -1,80 +1,94 @@
 import React from 'react';
-import ClientCase from '../ClientCase/ClientCase';
+import Container from '../Container/Container';
 
-import CaseDetailsING from '../CaseDetails/CaseDetailsING';
-import CaseDetailsSKG from '../CaseDetails/CaseDetailsSKG';
-import CaseDetailsPortRotterdam from '../CaseDetails/CaseDetailsPortRotterdam';
+import css from './Cases.module.css';
 
-import RabobankBg from '../img/Cases/rabobank.jpg';
-import INGBg from '../img/Cases/ing.jpg';
-import PortBg from '../img/Cases/port.jpg';
-import SKGBg from '../img/Cases/skg.jpg';
-import Education42Bg from '../img/Cases/42education.jpg';
+import { compose } from 'recompose';
+import { withStyles } from 'material-ui/styles';
+import withWidth from 'material-ui/utils/withWidth';
+import { Button } from 'material-ui';
+import purple from 'material-ui/colors/purple';
 
-// import styles from './Cases.module.css';
+import { Link } from 'react-router-dom';
 
-class Cases extends React.Component {
-	state = {
-		casesList: [
-			{
-				client: 'Rabobank',
-				title:
-					'Helping developers and bankers to speak the same language again',
-				text: [
-					'We tackled the method for calculating mortgages for Rabobank’s Dutch mortgage business (Rabobank Hyptheekdossier). The existing Java code had, over time, become so complex that it was difficult to understand and test. Developers and bankers were no longer speaking the same language.',
-					'We made the code simple, readable and testable by developing a DSL in Scala. Not just for programmers, but for the business too. And we did all that with a fraction of the amount of code needed for the old implementation in Java. Eventually, not only was the business able to read the code, they were also able to implement calculations themselves. The business that speaks the language of the programmer. Goal achieved.',
-				],
-				backgroundImage: RabobankBg,
-			},
-			{
-				client: 'ING',
-				title: 'Innovate in fintech',
-				text: [
-					'A demanding client where Codestar contributes to innovation on the project for straight-through appointment scheduling.',
-				],
-				details: <CaseDetailsING />,
-				backgroundImage: INGBg,
-			},
-			{
-				client: 'SKG',
-				title: 'Not an optimisation, but a complete renewal',
-				text: [
-					'A classic example of a client with an application that fails to meet modern demands. The client needs a new payment platform that supports apps and modern devices, enables them to go live quickly with new features and is easier to manage. The current outdated platform was completely custom developed in-house for SKG, including hosting and physical servers. We are building a new reactive platform that scales, is easy to maintain, uses the latest technologies and methodologies, such as Microservices, Platform as a Service and Continuous Delivery.',
-				],
-				details: <CaseDetailsSKG />,
-				backgroundImage: SKGBg,
-			},
-			{
-				client: 'Port of Roterdam',
-				title: 'Rediscovering the port together',
-				text: [
-					'An innovative project that aims to realise a pilot application for the verification of an extremely promising new business concept for the entire port. And the entire port really does mean the entire port. So involving a lot of stakeholders, which in turn involves a lot of discussion.',
-					'Short feedback loops were essential for deciding the direction of the pilot. Using a fully cloud-based development route made it possible to demonstrate functionality in the product environment from week one, and give shape to the short feedback loops. So no meetings about abstract software diagrams, but about working software. Agile, as agile is meant to be.',
-				],
-				details: <CaseDetailsPortRotterdam />,
-				backgroundImage: PortBg,
-			},
-			{
-				client: '42 Education',
-				title: 'Using code to kick-start a lean start-up',
-				text: [
-					'Having a start-up as a client means major time constraints, requires enormous flexibility and the ability to switch at lightning speed in an informal environment. We were productive from day one thanks to our choice of the latest Continuous Delivery and Cloud technologies.',
-					'The goal was to let children learn by playing games with friends, real-time with an enormous number of events. With this in mind, we made the software architecture completely reactive. We used real-time event notification based on reactive streams and horizontally scaling event persistence based on event sourcing with Cassandra.',
-				],
-				backgroundImage: Education42Bg,
-			},
-		],
-	};
+import casesList from './CasesList';
 
-	render() {
-		return (
-			<div>
-				{this.state.casesList.map((client, index) => (
-					<ClientCase {...client} key={client.client} even={index % 2 === 0} />
-				))}
-			</div>
-		);
-	}
-}
+const styles = theme => ({
+	section: {
+		backgroundSize: 'cover',
+		backgroundPosition: 'center center',
+	},
+	button: {
+		color: theme.palette.getContrastText(purple[500]),
+		backgroundColor: purple[500],
+		'&:hover': {
+			backgroundColor: purple[700],
+		},
+	},
+});
 
-export default Cases;
+const Cases = props => (
+	<div>
+		<section>
+			<Container fullHeightMinusNavBar center>
+				<div className="row">
+					<div className="col">
+						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat
+						expedita error dolor omnis saepe repellat officiis deleniti,
+						reprehenderit fugiat laboriosam explicabo provident assumenda magnam
+						vitae aliquid dolorem harum, doloremque maiores.
+					</div>
+				</div>
+				<div className="row mt-5">
+					<div className="col">
+						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste
+						itaque eos aspernatur tenetur velit aperiam minima asperiores
+						consequatur deleniti totam soluta numquam voluptatem accusamus
+						eligendi, aut beatae cum, odit excepturi.
+					</div>
+				</div>
+			</Container>
+		</section>
+
+		{casesList.map(projectCase => (
+			<section
+				key={projectCase.client}
+				className={props.classes.section}
+				style={{
+					backgroundImage: projectCase.backgroundImage
+						? `url(${projectCase.backgroundImage})`
+						: 'none',
+				}}
+			>
+				<Container fullHeightMinusNavBar center>
+					<div className="row">
+						<div className="col-12 col-lg-6">
+							<div className="mt-4">
+								<h1
+									className={`display-4 d-inline text-white p-2 bg-dark ${
+										css.projectCaseClient
+									}`}
+								>
+									{projectCase.client}
+								</h1>
+							</div>
+							<div className="mt-3">
+								<span className={`text-white p-2 ${css.projectCaseBrief}`}>
+									{projectCase.title}
+								</span>
+							</div>
+
+							<div className="mt-2">
+								<Button variant="raised" className={props.classes.button}>
+									<Link to={`/cases/${projectCase.client}`}>Read more</Link>
+								</Button>
+							</div>
+						</div>
+					</div>
+				</Container>
+			</section>
+		))}
+	</div>
+);
+
+export default compose(withStyles(styles), withWidth())(Cases);

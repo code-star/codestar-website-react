@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 
 import Intro from './Intro/Intro';
-import Cases from './Cases/Cases';
 import Contact from './Contact/Contact';
 import SideMenu from './SideMenu/SideMenu';
 import NavBar from './NavBar/NavBar';
 import Footer from './Footer/Footer';
+
+import Cases from './Cases/Cases';
+import casesList from './Cases/CasesList';
+import ClientCase from './ClientCase/ClientCase';
 
 import CssBaseline from 'material-ui/CssBaseline';
 
@@ -48,9 +51,20 @@ class App extends Component {
 						<SideMenu open={this.state.drawerMenu} toggle={this.toggleDrawer} />
 
 						<Route exact path="/" component={Index} />
-						<Route path="/cases" component={Cases} />
+						<Route exact path="/cases" component={Cases} />
+
+						{casesList.map(projectCase => (
+							<Route
+								exact
+								path={`/cases/${projectCase.client}`}
+								key={projectCase.client}
+								render={() => <ClientCase {...projectCase} />}
+							/>
+						))}
+
 						<Route path="/about" component={About} />
 						<Route path="/jobs" component={Jobs} />
+
 						<Footer />
 					</div>
 				</Router>
