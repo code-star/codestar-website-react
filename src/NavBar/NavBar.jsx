@@ -43,6 +43,9 @@ const NavBar = props => (
 				<Link to="/">Codestar</Link>
 			</Typography>
 			<Hidden only="xs">
+				<Button component={Link} to="/" color="inherit">
+					Home
+				</Button>
 				<Button component={Link} to="/cases" color="inherit">
 					Cases
 				</Button>

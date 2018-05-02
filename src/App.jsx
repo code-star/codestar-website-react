@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AsyncComponent from './AsyncComponent/AsyncComponent';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import ScrollToTop from './ScrollToTop';
 import CssBaseline from 'material-ui/CssBaseline';
 
 import NavBar from './NavBar/NavBar';
@@ -44,21 +45,23 @@ class App extends Component {
 					<NavBar toggle={this.toggleDrawer} />
 					<SideMenu open={this.state.drawerMenu} toggle={this.toggleDrawer} />
 
-					<Route exact path="/" component={AsyncIntro} />
-					<Route exact path="/cases" component={AsyncCases} />
+					<ScrollToTop>
+						<Route exact path="/" component={AsyncIntro} />
+						<Route exact path="/cases" component={AsyncCases} />
 
-					{casesList.map(clientCase => (
-						<Route
-							exact
-							path={`/cases/${clientCase.path}`}
-							key={clientCase.client}
-							render={() => <AsyncCaseDetails {...clientCase} />}
-						/>
-					))}
+						{casesList.map(clientCase => (
+							<Route
+								exact
+								path={`/cases/${clientCase.path}`}
+								key={clientCase.client}
+								render={() => <AsyncCaseDetails {...clientCase} />}
+							/>
+						))}
 
-					<Route path="/about" component={AsyncAbout} />
-					<Route path="/jobs" component={AsyncJobs} />
-					<Route path="/contact" component={AsyncContact} />
+						<Route path="/about" component={AsyncAbout} />
+						<Route path="/jobs" component={AsyncJobs} />
+						<Route path="/contact" component={AsyncContact} />
+					</ScrollToTop>
 
 					<Footer />
 				</div>

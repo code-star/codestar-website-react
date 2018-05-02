@@ -1,5 +1,6 @@
 import React from 'react';
 import Container from '../Container/Container';
+import Map from '../Map/Map';
 
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter';
@@ -12,6 +13,7 @@ import faMeetup from '@fortawesome/fontawesome-free-brands/faMeetup';
 import compose from 'recompose/compose';
 import { withStyles } from 'material-ui/styles';
 import withWidth from 'material-ui/utils/withWidth';
+import { withRouter } from 'react-router-dom';
 
 const styles = theme => ({
 	halfHeightMinusHalfNavBar: {
@@ -52,13 +54,19 @@ const Footer = props => (
 						<a href="https://github.com/code-star" className="text-white">
 							<FontAwesomeIcon icon={faGithub} size="3x" className="px-2" />
 						</a>
-						<a href="" className="text-white">
+						<a href="http://medium.com/" className="text-white">
 							<FontAwesomeIcon icon={faMediumM} size="3x" className="px-2" />
 						</a>
-						<a href="" className="text-white">
+						<a
+							href="https://www.linkedin.com/company/ordina/careers"
+							className="text-white"
+						>
 							<FontAwesomeIcon icon={faLinkedin} size="3x" className="px-2" />
 						</a>
-						<a href="" className="text-white">
+						<a
+							href="https://www.youtube.com/channel/UC7y8PvjA77LadVzWrBYflOA"
+							className="text-white"
+						>
 							<FontAwesomeIcon icon={faYoutube} size="3x" className="px-2" />
 						</a>
 						<a
@@ -69,23 +77,13 @@ const Footer = props => (
 						</a>
 					</p>
 				</div>
+
 				<div className="col-12 col-sm-6 p-0">
-					<iframe
-						className={props.classes.halfHeightMinusHalfNavBar}
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2453.212619226339!2d5.109273615790301!3d52.057652079729266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c665c3d22bd00b%3A0xdcea00cdfeb9dd58!2sCodestar!5e0!3m2!1sen!2snl!4v1519930704938"
-						width="100%"
-						frameBorder="0"
-						style={{
-							border: 0,
-							display: 'block',
-						}}
-						allowFullScreen
-						title="Map"
-					/>
+					{props.location.pathname !== '/contact' && <Map halfHeight />}
 				</div>
 			</div>
 		</Container>
 	</footer>
 );
 
-export default compose(withStyles(styles), withWidth())(Footer);
+export default withRouter(compose(withStyles(styles), withWidth())(Footer));

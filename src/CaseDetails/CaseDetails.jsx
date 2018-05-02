@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from '../Container/Container';
-import CaseHeader from '../CaseHeader/CaseHeader';
+// import CaseHeader from '../CaseHeader/CaseHeader';
 
 const CaseDetails = props => (
 	<div>
