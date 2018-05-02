@@ -13,7 +13,11 @@ const Intro = () => (
 			<Container fullHeightMinusNavBar center>
 				<div className="row justify-content-center">
 					<div className="col-8 col-md-6 col-lg-4">
-						<img src="/images/logo.svg" alt="Logo" className={styles.logo} />
+						<img
+							src="/images/logo-codestar-by-ordina.svg"
+							alt="Codestar powered by Ordina Logo"
+							className="mb-3"
+						/>
 					</div>
 				</div>
 				<div className="row justify-content-center">

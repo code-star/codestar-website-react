@@ -9,7 +9,14 @@ const Cases = () => (
 		<section>
 			<Container fullHeightMinusNavBar center>
 				<div className="row">
-					<div className="col">
+					<div className="col-8 col-md-6 col-lg-4 mx-auto">
+						<img
+							src="/images/logo-codestar-by-ordina.svg"
+							alt="Codestar powered by Ordina Logo"
+							className="mb-3"
+						/>
+					</div>
+					<div className="col-12">
 						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat
 						expedita error dolor omnis saepe repellat officiis deleniti,
 						reprehenderit fugiat laboriosam explicabo provident assumenda magnam

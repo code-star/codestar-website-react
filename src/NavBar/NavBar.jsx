@@ -12,9 +12,11 @@ import Hidden from 'material-ui/Hidden';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 
+import compose from 'recompose/compose';
 import { withStyles } from 'material-ui/styles';
+import withWidth from 'material-ui/utils/withWidth';
 
-const styles = {
+const styles = theme => ({
 	flex: {
 		flex: 1,
 	},
@@ -22,7 +24,13 @@ const styles = {
 		marginLeft: -12,
 		marginRight: 20,
 	},
-};
+	logo: {
+		width: '100px',
+		[theme.breakpoints.up('md')]: {
+			width: '200px',
+		},
+	},
+});
 
 const NavBar = props => (
 	<AppBar position="sticky">
@@ -40,7 +48,13 @@ const NavBar = props => (
 				variant="title"
 				color="inherit"
 			>
-				<Link to="/">Codestar</Link>
+				<Link to="/">
+					<img
+						src="/images/logo-codestar-simple.svg"
+						alt="Codestar Logo"
+						className={props.classes.logo}
+					/>
+				</Link>
 			</Typography>
 			<Hidden only="xs">
 				<Button component={Link} to="/" color="inherit">
@@ -62,4 +76,5 @@ const NavBar = props => (
 		</Toolbar>
 	</AppBar>
 );
-export default withStyles(styles)(NavBar);
+
+export default compose(withStyles(styles), withWidth())(NavBar);
