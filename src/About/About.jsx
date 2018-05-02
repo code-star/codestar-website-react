@@ -1,6 +1,8 @@
 import React from 'react';
 import Container from '../Container/Container';
 import Team from './Team';
+import OurStack from '../OurStack/OurStack';
+import Avatar from 'material-ui/Avatar';
 
 import { Button } from 'material-ui';
 import { Link } from 'react-router-dom';
@@ -21,31 +23,29 @@ const About = () => {
 								languages.
 							</p>
 
-							<h3>OUR CHOICE</h3>
-							<ul>
-								<li>Scala</li>
-								<li>Akka</li>
-								<li>Spray</li>
-								<li>Spark</li>
-								<li>Typescript</li>
-								<li>Docker</li>
-								<li>Mesos</li>
-								<li>AWS</li>
-								<li>Cassandra</li>
-								<li>Kafka</li>
-							</ul>
+							<OurStack />
 
 							<h3>The team</h3>
-							<ul>
+							<div className="d-flex justify-content-center flex-wrap">
 								{Team.map(person => (
-									<li>
-										{person.name} - {person.job}
-									</li>
+									<Avatar
+										key={person.image}
+										alt={person.name}
+										title={person.name}
+										src={`/images/team/${person.image}`}
+										style={{
+											width: 120,
+											height: 120,
+											margin: 10,
+										}}
+									/>
 								))}
-							</ul>
+							</div>
+
+							<h1>Gallery</h1>
 
 							<h1>Events</h1>
-
+							<h1>Jobs</h1>
 							<p>
 								Already in love? Check out{' '}
 								<Button component={Link} to="/jobs" color="inherit">
