@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../img/logo.svg';
 
 import styles from './Intro.module.css';
 import { Link } from 'react-router-dom';
@@ -14,7 +13,7 @@ const Intro = () => (
 			<Container fullHeightMinusNavBar center>
 				<div className="row justify-content-center">
 					<div className="col-8 col-md-6 col-lg-4">
-						<img src={logo} alt="Logo" className={styles.logo} />
+						<img src="/images/logo.svg" alt="Logo" className={styles.logo} />
 					</div>
 				</div>
 				<div className="row justify-content-center">
