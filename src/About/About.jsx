@@ -27,18 +27,29 @@ const About = () => {
 
 							<h3>The team</h3>
 							<div className="d-flex justify-content-center flex-wrap">
-								{Team.map(person => (
-									<Avatar
+								{Team.filter(
+									person =>
+										person && !person.gone && person.name && person.image
+								).map(person => (
+									<div
 										key={person.image}
-										alt={person.name}
-										title={person.name}
-										src={`/images/team/${person.image}`}
 										style={{
-											width: 120,
-											height: 120,
+											width: 200,
 											margin: 10,
 										}}
-									/>
+									>
+										<Avatar
+											alt={person.name}
+											title={person.name}
+											src={`/images/team/${person.image}`}
+											className="m-auto"
+											style={{
+												width: 120,
+												height: 120,
+											}}
+										/>
+										<p className="text-center mt-2 mb-0">{person.tagline}</p>
+									</div>
 								))}
 							</div>
 

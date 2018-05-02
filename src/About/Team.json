@@ -44,7 +44,8 @@
 		"tagline": "“The serious guy”",
 		"bio":
 			"I get a kick out of making beautiful things that also work under pressure. When you’re doing that with a team of programmers with the same passion, it doesn’t really feel like work.",
-		"image": "martijn.jpg"
+		"image": "martijn.jpg",
+		"gone": true
 	},
 	{
 		"name": "Casper",
@@ -52,7 +53,8 @@
 		"tagline": "“That’s Numberwang!”",
 		"bio":
 			"Numbers are nothing more than a concept in the human mind. They still form the basis for the endless stream of data that influences our daily lives. It’s fascinating what you can achieve by analysing this stream of human thoughts.",
-		"image": "casper.jpg"
+		"image": "casper.jpg",
+		"gone": true
 	},
 	{
 		"name": "David",
@@ -128,7 +130,8 @@
 		"job": "Scala Enthusiast",
 		"tagline": "Scala is the way to go",
 		"bio": "",
-		"image": "asif.jpg"
+		"image": "asif.jpg",
+		"gone": true
 	},
 	{
 		"name": "Nathan",
