@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './Intro.module.css';
 import { Link } from 'react-router-dom';
 import Container from '../Container/Container';
+import Clients from '../Clients/Clients';
 
 const Intro = () => (
 	<div>
@@ -63,14 +64,6 @@ const Intro = () => (
 							head on. Whether you need a bigger bucket, more buckets or just a
 							decent pipeline, we can create it for you.
 						</p>
-						<h3>Clients</h3>
-						<ul>
-							<li>ING</li>
-							<li>Rabobank</li>
-							<li>Port Rotterdam</li>
-							<li>42 Education</li>
-							<li>SKG</li>
-						</ul>
 					</div>
 					<div className="col-12 col-md-6">
 						<p>
@@ -81,6 +74,7 @@ const Intro = () => (
 						</p>
 					</div>
 				</div>
+				<Clients />
 			</Container>
 		</section>
 	</div>

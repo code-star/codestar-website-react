@@ -3,6 +3,7 @@ import Container from '../Container/Container';
 import { Button } from 'material-ui';
 import { Link } from 'react-router-dom';
 import OurStack from '../OurStack/OurStack';
+import Clients from '../Clients/Clients';
 
 const Jobs = () => (
 	<div>
@@ -27,6 +28,8 @@ const Jobs = () => (
 								We share our passion at events and at international conferences
 							</li>
 						</ul>
+
+						<Clients title="Companies that trust on us" />
 
 						<OurStack />
 					</div>
