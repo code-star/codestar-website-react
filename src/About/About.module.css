@@ -1,0 +1,38 @@
+.avatarWrapper {
+	position: relative;
+	cursor: pointer;
+	height: auto;
+	margin: 0.333em;
+}
+
+.avatarWrapper,
+.avatar,
+.tagline {
+	width: 144px;
+}
+
+.avatar,
+.tagline {
+	height: 144px;
+}
+
+.tagline {
+	opacity: 0;
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(255, 255, 255, 0.75);
+	margin: 0;
+	padding: 1em;
+	z-index: 1;
+	text-align: center;
+	border-radius: 50%;
+	justify-content: center;
+	flex-direction: column;
+	transition: all 0.25s ease-in;
+}
+
+.avatarWrapper:hover .tagline {
+	opacity: 1;
+}
