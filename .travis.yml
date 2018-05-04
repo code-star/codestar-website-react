@@ -6,7 +6,7 @@ cache:
   directories:
     - node_modules
 # https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#github-pages
-script: npm run build
+script: npm run deploy
 deploy:
   # TEST
   - provider: pages
