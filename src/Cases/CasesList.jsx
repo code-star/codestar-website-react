@@ -15,8 +15,9 @@ const casesList = [
 		client: 'Rabobank',
 		path: 'rabobank',
 		title: 'Helping developers and bankers to speak the same language again',
-		image:
-			'/images/cases/stock-photo-utrecht-netherlands-april-rabobank-headquarters-building-rabobank-is-a-dutch-211390258.jpg',
+		image: `${
+			process.env.PUBLIC_URL
+		}/images/cases/stock-photo-utrecht-netherlands-april-rabobank-headquarters-building-rabobank-is-a-dutch-211390258.jpg`,
 	},
 	{
 		client: 'ING',
@@ -26,8 +27,9 @@ const casesList = [
 			'A demanding client where Codestar contributes to innovation on the project for straight-through appointment scheduling.',
 		],
 		details: AsyncCaseDetailsING,
-		image:
-			'/images/cases/stock-photo-london-uk-january-th-the-homepage-of-the-official-website-for-the-ing-group-the-dutch-1013358685.jpg',
+		image: `${
+			process.env.PUBLIC_URL
+		}/images/cases/stock-photo-london-uk-january-th-the-homepage-of-the-official-website-for-the-ing-group-the-dutch-1013358685.jpg`,
 	},
 	{
 		client: 'SKG',
@@ -37,8 +39,9 @@ const casesList = [
 			'A classic example of a client with an application that fails to meet modern demands. The client needs a new payment platform that supports apps and modern devices, enables them to go live quickly with new features and is easier to manage. The current outdated platform was completely custom developed in-house for SKG, including hosting and physical servers. We are building a new reactive platform that scales, is easy to maintain, uses the latest technologies and methodologies, such as Microservices, Platform as a Service and Continuous Delivery.',
 		],
 		details: AsyncCaseDetailsSKG,
-		image:
-			'/images/cases/banners-cropped-images-SKG%20sfeerbeelden-adviesopmaat-0-326-1500-562-1485443956-df9f1ec873b883e8004d80f6aced3963.jpg',
+		image: `${
+			process.env.PUBLIC_URL
+		}/images/cases/banners-cropped-images-SKG%20sfeerbeelden-adviesopmaat-0-326-1500-562-1485443956-df9f1ec873b883e8004d80f6aced3963.jpg`,
 	},
 	{
 		client: 'Port of Roterdam',
@@ -49,8 +52,9 @@ const casesList = [
 			'Short feedback loops were essential for deciding the direction of the pilot. Using a fully cloud-based development route made it possible to demonstrate functionality in the product environment from week one, and give shape to the short feedback loops. So no meetings about abstract software diagrams, but about working software. Agile, as agile is meant to be.',
 		],
 		details: CaseDetailsPortRotterdam,
-		image:
-			'/images/cases/stock-photo-large-container-vessel-unloaded-in-port-of-rotterdam-283990010.jpg',
+		image: `${
+			process.env.PUBLIC_URL
+		}/images/cases/stock-photo-large-container-vessel-unloaded-in-port-of-rotterdam-283990010.jpg`,
 	},
 	{
 		client: '42 Education',
@@ -60,15 +64,16 @@ const casesList = [
 			'Having a start-up as a client means major time constraints, requires enormous flexibility and the ability to switch at lightning speed in an informal environment. We were productive from day one thanks to our choice of the latest Continuous Delivery and Cloud technologies.',
 			'The goal was to let children learn by playing games with friends, real-time with an enormous number of events. With this in mind, we made the software architecture completely reactive. We used real-time event notification based on reactive streams and horizontally scaling event persistence based on event sourcing with Cassandra.',
 		],
-		image: '/images/cases/42education.jpg',
+		image: `${process.env.PUBLIC_URL}/images/cases/42education.jpg`,
 	},
 	{
 		client: 'Gracenote Sports',
 		path: 'gracenote-sport',
 		title: 'Winter Olympics',
 		text: ['Lorem'],
-		image:
-			'/images/cases/stock-photo-pyeongchang-south-korea-february-olympic-champion-martin-fourcade-of-france-1029727372.jpg',
+		image: `${
+			process.env.PUBLIC_URL
+		}/images/cases/stock-photo-pyeongchang-south-korea-february-olympic-champion-martin-fourcade-of-france-1029727372.jpg`,
 	},
 ];
 

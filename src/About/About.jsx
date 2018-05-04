@@ -50,7 +50,9 @@ const About = () => (
 										<Avatar
 											alt={person.name}
 											title={person.name}
-											src={`/images/team/${person.image}`}
+											src={`${process.env.PUBLIC_URL}/images/team/${
+												person.image
+											}`}
 											className={`${css.avatar} m-auto`}
 										/>
 										<Typography variant="body1" className={`text-center mt-1`}>

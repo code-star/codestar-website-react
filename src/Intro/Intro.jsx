@@ -12,13 +12,18 @@ const Intro = () => (
 	<div>
 		<section id="intro" className={styles.backgroundVideoWrapper}>
 			<video autoPlay muted loop className={styles.fullVideo}>
-				<source src="/2719001.mp4" type="video/mp4" />
+				<source
+					src={`${process.env.PUBLIC_URL}/2719001.mp4`}
+					type="video/mp4"
+				/>
 			</video>
 			<Container fullHeightMinusNavBar center>
 				<div className="row justify-content-center">
 					<div className="col-8 col-md-6 col-lg-4">
 						<img
-							src="/images/logo-codestar-by-ordina.svg"
+							src={`${
+								process.env.PUBLIC_URL
+							}/images/logo-codestar-by-ordina.svg`}
 							alt="Codestar powered by Ordina Logo"
 							className="mb-3"
 						/>

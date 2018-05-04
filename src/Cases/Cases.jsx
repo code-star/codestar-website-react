@@ -11,7 +11,9 @@ const Cases = () => (
 				<div className="row">
 					<div className="col-8 col-md-6 col-lg-4 mx-auto">
 						<img
-							src="/images/logo-codestar-by-ordina.svg"
+							src={`${
+								process.env.PUBLIC_URL
+							}/images/logo-codestar-by-ordina.svg`}
 							alt="Codestar powered by Ordina Logo"
 							className="mb-3"
 						/>

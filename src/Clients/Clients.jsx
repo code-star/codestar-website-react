@@ -4,27 +4,27 @@ import Typography from 'material-ui/Typography';
 const ClientsList = [
 	{
 		name: 'ING',
-		logo: '/images/clients/ing.svg',
+		logo: `${process.env.PUBLIC_URL}/images/clients/ing.svg`,
 	},
 	{
 		name: 'Rabobank',
-		logo: '/images/clients/rabobank.svg',
+		logo: `${process.env.PUBLIC_URL}/images/clients/rabobank.svg`,
 	},
 	{
 		name: 'Port of Rotterdam',
-		logo: '/images/clients/port_of_rotterdam.png',
+		logo: `${process.env.PUBLIC_URL}/images/clients/port_of_rotterdam.png`,
 	},
 	{
 		name: 'SKG',
-		logo: '/images/clients/skg.png',
+		logo: `${process.env.PUBLIC_URL}/images/clients/skg.png`,
 	},
 	{
 		name: '42 Education',
-		logo: '/images/clients/42_education.png',
+		logo: `${process.env.PUBLIC_URL}/images/clients/42_education.png`,
 	},
 	{
 		name: 'Gracenote',
-		logo: '/images/clients/gracenote.svg',
+		logo: `${process.env.PUBLIC_URL}/images/clients/gracenote.svg`,
 	},
 ];
 

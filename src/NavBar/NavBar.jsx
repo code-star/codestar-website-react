@@ -30,10 +30,17 @@ const styles = theme => ({
 			width: '200px',
 		},
 	},
+	appBar: {
+		backgroundColor: 'rgba(0,0,0,0.8)',
+		marginTop: '-56px',
+		[theme.breakpoints.up('sm')]: {
+			marginTop: '-64px',
+		},
+	},
 });
 
 const NavBar = props => (
-	<AppBar position="sticky">
+	<AppBar position="sticky" color="default" className={props.classes.appBar}>
 		<Toolbar>
 			<IconButton
 				onClick={props.toggle}
@@ -50,7 +57,7 @@ const NavBar = props => (
 			>
 				<Link to="/">
 					<img
-						src="/images/logo-codestar-simple.svg"
+						src={`${process.env.PUBLIC_URL}/images/logo-codestar-simple.svg`}
 						alt="Codestar Logo"
 						className={props.classes.logo}
 					/>
