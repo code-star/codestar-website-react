@@ -1,7 +1,7 @@
 language: node_js
 node_js:
 - 9.11.1
-script: npm run build
+script: npm run deploy
 deploy:
   # TEST
   - provider: pages
