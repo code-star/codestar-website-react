@@ -30,17 +30,10 @@ const styles = theme => ({
 			width: '200px',
 		},
 	},
-	appBar: {
-		backgroundColor: 'rgba(0,0,0,0.8)',
-		marginTop: '-56px',
-		[theme.breakpoints.up('sm')]: {
-			marginTop: '-64px',
-		},
-	},
 });
 
 const NavBar = props => (
-	<AppBar position="sticky" color="default" className={props.classes.appBar}>
+	<AppBar position="sticky">
 		<Toolbar>
 			<IconButton
 				onClick={props.toggle}
