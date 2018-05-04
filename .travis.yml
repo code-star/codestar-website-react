@@ -1,7 +1,12 @@
 language: node_js
 node_js:
 - 9.11.1
-script: npm run build
+# https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#travis-ci
+cache:
+  directories:
+    - node_modules
+# https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#github-pages
+script: npm run deploy
 deploy:
   # TEST
   - provider: pages
