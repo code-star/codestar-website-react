@@ -5,9 +5,10 @@ import OurStack from '../OurStack/OurStack';
 import Avatar from 'material-ui/Avatar';
 
 import { Button } from 'material-ui';
+import Typography from 'material-ui/Typography';
 import { Link } from 'react-router-dom';
 
-import styles from './About.module.css';
+import css from './About.module.css';
 
 function shuffleArray(array) {
 	for (let i = array.length - 1; i > 0; i--) {
@@ -17,7 +18,7 @@ function shuffleArray(array) {
 	return array;
 }
 
-const About = () => (
+const About = props => (
 	<div>
 		<section>
 			<Container>
@@ -34,7 +35,7 @@ const About = () => (
 
 						<OurStack />
 
-						<h3>The team</h3>
+						<Typography variant="headline">The team</Typography>
 						<div className="d-flex justify-content-center flex-wrap">
 							{shuffleArray(Team)
 								.filter(
@@ -42,17 +43,19 @@ const About = () => (
 										person && !person.gone && person.name && person.image
 								)
 								.map(person => (
-									<div className={styles.avatarWrapper} key={person.image}>
-										<p className={styles.tagline}>{person.tagline}</p>
+									<div className={css.avatarWrapper} key={person.image}>
+										<Typography variant="caption" className={css.tagline}>
+											{person.tagline}
+										</Typography>
 										<Avatar
 											alt={person.name}
 											title={person.name}
 											src={`/images/team/${person.image}`}
-											className={`${styles.avatar} m-auto`}
+											className={`${css.avatar} m-auto`}
 										/>
-										<p className="text-center mt-1 mb-0">
+										<Typography variant="body1" className={`text-center mt-1`}>
 											{person.name} - {person.job}
-										</p>
+										</Typography>
 									</div>
 								))}
 						</div>

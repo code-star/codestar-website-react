@@ -1,5 +1,6 @@
 import React from 'react';
 import Container from '../Container/Container';
+import Typography from 'material-ui/Typography';
 // import CaseHeader from '../CaseHeader/CaseHeader';
 
 const CaseDetails = props => (
@@ -9,8 +10,12 @@ const CaseDetails = props => (
 			<Container>
 				<div className="row">
 					<div className="col">
-						<h1>{props.client}</h1>
-						<h3>{props.title}</h3>
+						<Typography variant="display3" gutterBottom>
+							{props.client}
+						</Typography>
+						<Typography variant="headline" gutterBottom>
+							{props.title}
+						</Typography>
 						<img src={props.image} className="img-fluid" alt="" />
 					</div>
 				</div>

@@ -7,6 +7,7 @@ import { compose } from 'recompose';
 import { withStyles } from 'material-ui/styles';
 import withWidth from 'material-ui/utils/withWidth';
 import { Button } from 'material-ui';
+import Typography from 'material-ui/Typography';
 import purple from 'material-ui/colors/purple';
 
 import { Link } from 'react-router-dom';
@@ -36,18 +37,22 @@ const CaseHeader = props => (
 			<div className="row">
 				<div className="col-12 col-lg-6">
 					<div className="mt-4">
-						<h1
-							className={`display-4 d-inline text-white p-2 bg-dark ${
+						<Typography
+							variant="display3"
+							className={`d-inline text-white p-2 bg-dark ${
 								css.projectCaseClient
 							}`}
 						>
 							{props.client}
-						</h1>
+						</Typography>
 					</div>
-					<div className="mt-3">
-						<span className={`text-white p-2 ${css.projectCaseTitle}`}>
+					<div className="my-3">
+						<Typography
+							variant="headline"
+							className={`d-inline text-white p-2 ${css.projectCaseTitle}`}
+						>
 							{props.title}
-						</span>
+						</Typography>
 					</div>
 
 					{props.readMore && (

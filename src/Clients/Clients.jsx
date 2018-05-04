@@ -1,4 +1,5 @@
 import React from 'react';
+import Typography from 'material-ui/Typography';
 
 const ClientsList = [
 	{
@@ -29,7 +30,9 @@ const ClientsList = [
 
 const Clients = props => (
 	<div>
-		<h3>{props.title || 'Clients'}</h3>
+		<Typography variant="headline" gutterBottom>
+			{props.title || 'Clients'}
+		</Typography>
 		<div className="row">
 			{ClientsList.map(client => (
 				<div className="col-6 col-md-4 col-lg" key={client.name}>
