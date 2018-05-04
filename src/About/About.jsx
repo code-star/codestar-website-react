@@ -18,7 +18,7 @@ function shuffleArray(array) {
 	return array;
 }
 
-const About = props => (
+const About = () => (
 	<div>
 		<section>
 			<Container>
