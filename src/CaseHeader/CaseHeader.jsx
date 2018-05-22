@@ -11,11 +11,12 @@ import Typography from 'material-ui/Typography';
 import purple from 'material-ui/colors/purple';
 
 import { Link } from 'react-router-dom';
+import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 
 const styles = theme => ({
 	section: {
-		backgroundSize: 'cover',
-		backgroundPosition: 'center center',
+		position: 'relative',
+		overflow: 'hidden',
 	},
 	button: {
 		color: theme.palette.getContrastText(purple[500]),
@@ -27,13 +28,10 @@ const styles = theme => ({
 });
 
 const CaseHeader = props => (
-	<section
-		className={props.classes.section}
-		style={{
-			backgroundImage: props.image ? `url(${props.image})` : 'none',
-		}}
-	>
+	<section className={props.classes.section}>
 		<Container fullHeightMinusNavBar center>
+			<ResponsiveImage path={props.image} />
+
 			<div className="row">
 				<div className="col-12 col-lg-6">
 					<div className="mt-4">
