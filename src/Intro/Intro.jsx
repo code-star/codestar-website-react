@@ -1,6 +1,5 @@
 import React from 'react';
 
-import styles from './Intro.module.css';
 import { Link } from 'react-router-dom';
 import Container from '../Container/Container';
 import Clients from '../Clients/Clients';
@@ -8,10 +7,40 @@ import Card, { CardActions, CardContent } from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 
-const Intro = () => (
+import compose from 'recompose/compose';
+import { withStyles } from 'material-ui/styles';
+import withWidth from 'material-ui/utils/withWidth';
+
+const styles = theme => ({
+	backgroundWrapper: {
+		backgroundSize: 'cover',
+		backgroundPosition: 'center center',
+		position: 'relative',
+		overflow: 'hidden',
+
+		[theme.breakpoints.only('xs')]: {
+			backgroundImage: `url(${process.env.PUBLIC_URL}/images/skystars.jpg)`,
+		},
+	},
+	fullVideo: {
+		display: 'none',
+		[theme.breakpoints.up('sm')]: {
+			display: 'block',
+			position: 'absolute',
+			minWidth: '100vw',
+			minHeight: '100vh',
+			top: '50%',
+			left: '50%',
+			transform: 'translate(-50%, -50%)',
+			zIndex: -1,
+		},
+	},
+});
+
+const Intro = props => (
 	<div>
-		<section id="intro" className={styles.backgroundVideoWrapper}>
-			<video autoPlay muted loop className={styles.fullVideo}>
+		<section id="intro" className={props.classes.backgroundWrapper}>
+			<video autoPlay muted loop className={props.classes.fullVideo}>
 				<source
 					src={`${process.env.PUBLIC_URL}/2719001.mp4`}
 					type="video/mp4"
@@ -96,4 +125,4 @@ const Intro = () => (
 		</section>
 	</div>
 );
-export default Intro;
+export default compose(withStyles(styles), withWidth())(Intro);
