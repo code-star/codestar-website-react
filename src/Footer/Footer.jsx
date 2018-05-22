@@ -11,18 +11,7 @@ import faYoutube from '@fortawesome/fontawesome-free-brands/faYoutube';
 import faMeetup from '@fortawesome/fontawesome-free-brands/faMeetup';
 
 import compose from 'recompose/compose';
-import { withStyles } from 'material-ui/styles';
-import withWidth from 'material-ui/utils/withWidth';
 import { withRouter } from 'react-router-dom';
-
-const styles = theme => ({
-	halfHeightMinusHalfNavBar: {
-		minHeight: 'calc(50vh - 28px)',
-		[theme.breakpoints.up('sm')]: {
-			minHeight: 'calc(50vh - 32px)',
-		},
-	},
-});
 
 const Footer = props => (
 	<footer>
@@ -79,11 +68,13 @@ const Footer = props => (
 				</div>
 
 				<div className="col-12 col-sm-6 p-0">
-					{props.location.pathname !== '/contact' && <Map halfHeight />}
+					{props.location.pathname !== '/contact' && (
+						<Map halfHeightMinusHalfNavBar />
+					)}
 				</div>
 			</div>
 		</Container>
 	</footer>
 );
 
-export default withRouter(compose(withStyles(styles), withWidth())(Footer));
+export default withRouter(Footer);
