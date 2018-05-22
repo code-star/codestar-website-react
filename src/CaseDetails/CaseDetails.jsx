@@ -6,8 +6,8 @@ import Typography from 'material-ui/Typography';
 const CaseDetails = props => (
 	<div>
 		{/* <CaseHeader {...props} /> */}
-		<section className="mt-5">
-			<Container>
+		<section>
+			<Container marginTopNavBar>
 				<div className="row">
 					<div className="col">
 						<Typography variant="display3" gutterBottom>

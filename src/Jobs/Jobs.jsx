@@ -8,7 +8,7 @@ import Clients from '../Clients/Clients';
 const Jobs = () => (
 	<div>
 		<section>
-			<Container>
+			<Container marginTopNavBar>
 				<div className="row">
 					<div className="col">
 						<h3>THIS IS WHY YOU WANT TO WORK FOR US</h3>

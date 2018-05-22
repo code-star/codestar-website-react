@@ -7,7 +7,7 @@ import casesList from './CasesList';
 const Cases = () => (
 	<div>
 		<section>
-			<Container fullHeightMinusNavBar center>
+			<Container fullHeight center>
 				<div className="row">
 					<div className="col-8 col-md-6 col-lg-4 mx-auto">
 						<img

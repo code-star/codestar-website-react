@@ -18,7 +18,11 @@ const MapUrl =
 
 const Map = props => (
 	<iframe
-		className={props.halfHeight ? props.classes.halfHeightMinusHalfNavBar : ''}
+		className={
+			props.halfHeightMinusHalfNavBar
+				? props.classes.halfHeightMinusHalfNavBar
+				: ''
+		}
 		src={MapUrl}
 		width="100%"
 		frameBorder="0"

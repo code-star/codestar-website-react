@@ -23,7 +23,9 @@ const styles = theme => ({
 const Contact = () => {
 	return (
 		<section>
-			<Map halfHeight />
+			<Container fluid noPadding marginTopNavBar>
+				<Map halfHeightMinusHalfNavBar />
+			</Container>
 			<Container className="mt-3">
 				<div className="row">
 					<div className="col">

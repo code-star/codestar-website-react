@@ -21,7 +21,7 @@ function shuffleArray(array) {
 const About = () => (
 	<div>
 		<section>
-			<Container>
+			<Container marginTopNavBar>
 				<div className="row">
 					<div className="col">
 						<h3>WE PROGRAM</h3>

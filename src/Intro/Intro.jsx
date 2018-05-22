@@ -17,7 +17,7 @@ const Intro = () => (
 					type="video/mp4"
 				/>
 			</video>
-			<Container fullHeightMinusNavBar center>
+			<Container fullHeight center>
 				<div className="row justify-content-center">
 					<div className="col-8 col-md-6 col-lg-4">
 						<img

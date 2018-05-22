@@ -30,10 +30,13 @@ const styles = theme => ({
 			width: '200px',
 		},
 	},
+	appBar: {
+		backgroundColor: 'rgba(0,0,0,0.75)',
+	},
 });
 
 const NavBar = props => (
-	<AppBar position="sticky">
+	<AppBar position="fixed" className={props.classes.appBar}>
 		<Toolbar>
 			<IconButton
 				onClick={props.toggle}
