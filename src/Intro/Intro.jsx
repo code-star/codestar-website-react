@@ -3,49 +3,47 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Container from '../Container/Container';
 import Clients from '../Clients/Clients';
+import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
+
 import Card, { CardActions, CardContent } from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
+import Hidden from 'material-ui/Hidden';
 
 import compose from 'recompose/compose';
 import { withStyles } from 'material-ui/styles';
 import withWidth from 'material-ui/utils/withWidth';
 
 const styles = theme => ({
-	backgroundWrapper: {
-		backgroundSize: 'cover',
-		backgroundPosition: 'center center',
+	section: {
 		position: 'relative',
 		overflow: 'hidden',
-
-		[theme.breakpoints.only('xs')]: {
-			backgroundImage: `url(${process.env.PUBLIC_URL}/images/skystars.jpg)`,
-		},
 	},
 	fullVideo: {
-		display: 'none',
-		[theme.breakpoints.up('sm')]: {
-			display: 'block',
-			position: 'absolute',
-			minWidth: '100vw',
-			minHeight: '100vh',
-			top: '50%',
-			left: '50%',
-			transform: 'translate(-50%, -50%)',
-			zIndex: -1,
-		},
+		position: 'absolute',
+		minWidth: '100vw',
+		minHeight: '100vh',
+		top: '50%',
+		left: '50%',
+		transform: 'translate(-50%, -50%)',
+		zIndex: -1,
 	},
 });
 
 const Intro = props => (
 	<div>
-		<section id="intro" className={props.classes.backgroundWrapper}>
-			<video autoPlay muted loop className={props.classes.fullVideo}>
-				<source
-					src={`${process.env.PUBLIC_URL}/2719001.mp4`}
-					type="video/mp4"
-				/>
-			</video>
+		<section id="intro" className={props.classes.section}>
+			<Hidden smUp>
+				<ResponsiveImage path="/images/skystars.jpg" asBackgroundImage />
+			</Hidden>
+			<Hidden only="xs">
+				<video autoPlay muted loop className={props.classes.fullVideo}>
+					<source
+						src={`${process.env.PUBLIC_URL}/2719001.mp4`}
+						type="video/mp4"
+					/>
+				</video>
+			</Hidden>
 			<Container fullHeight center>
 				<div className="row justify-content-center">
 					<div className="col-8 col-md-6 col-lg-4">

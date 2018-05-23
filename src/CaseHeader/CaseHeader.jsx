@@ -29,9 +29,8 @@ const styles = theme => ({
 
 const CaseHeader = props => (
 	<section className={props.classes.section}>
+		<ResponsiveImage path={props.image} asBackgroundImage />
 		<Container fullHeightMinusNavBar center>
-			<ResponsiveImage path={props.image} />
-
 			<div className="row">
 				<div className="col-12 col-lg-6">
 					<div className="mt-4">
