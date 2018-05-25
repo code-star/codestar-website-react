@@ -19,6 +19,8 @@ const getResponsiveSrcSet = (imagePath, sizes) => {
 
 const ResponsiveImage = props => {
 	const {
+		title = '',
+		alt = '',
 		path,
 		sizes = '100vw',
 		versions = [375, 800, 1280, 1536, 1920], // Cloudinary imagen file size in px
@@ -30,8 +32,11 @@ const ResponsiveImage = props => {
 				src={`${process.env.PUBLIC_URL}${path}`}
 				srcSet={getResponsiveSrcSet(path, versions)}
 				sizes={sizes}
-				alt=""
-				className={props.asBackgroundImage ? css.asBackgroundImage : ''}
+				alt={alt}
+				title={title}
+				className={`${props.asBackgroundImage ? css.asBackgroundImage : ''} ${
+					props.className
+				}`}
 			/>
 		)
 	);

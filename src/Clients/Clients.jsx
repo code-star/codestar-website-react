@@ -1,30 +1,31 @@
 import React from 'react';
 import Typography from 'material-ui/Typography';
+import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 
 const ClientsList = [
 	{
 		name: 'ING',
-		logo: `${process.env.PUBLIC_URL}/images/clients/ing.svg`,
+		logo: `/images/clients/ing.svg`,
 	},
 	{
 		name: 'Rabobank',
-		logo: `${process.env.PUBLIC_URL}/images/clients/rabobank.svg`,
+		logo: `/images/clients/rabobank.svg`,
 	},
 	{
 		name: 'Port of Rotterdam',
-		logo: `${process.env.PUBLIC_URL}/images/clients/port_of_rotterdam.png`,
+		logo: `/images/clients/port_of_rotterdam.png`,
 	},
 	{
 		name: 'SKG',
-		logo: `${process.env.PUBLIC_URL}/images/clients/skg.png`,
+		logo: `/images/clients/skg.png`,
 	},
 	{
 		name: '42 Education',
-		logo: `${process.env.PUBLIC_URL}/images/clients/42_education.png`,
+		logo: `/images/clients/42_education.png`,
 	},
 	{
 		name: 'Gracenote',
-		logo: `${process.env.PUBLIC_URL}/images/clients/gracenote.svg`,
+		logo: `/images/clients/gracenote.svg`,
 	},
 ];
 
@@ -35,11 +36,12 @@ const Clients = props => (
 		</Typography>
 		<div className="row">
 			{ClientsList.map(client => (
-				<div className="col-6 col-md-4 col-lg" key={client.name}>
-					<img
-						src={client.logo}
+				<div className="col-6 col-md-2" key={client.name}>
+					<ResponsiveImage
+						path={client.logo}
 						alt={`${client.name} logo`}
 						title={`${client.name}`}
+						sizes="(min-width: 600) 16.6666vw, 100vw"
 						className="w-100 h-auto mt-3"
 					/>
 				</div>
