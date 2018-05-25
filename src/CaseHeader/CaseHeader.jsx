@@ -14,6 +14,12 @@ import { Link } from 'react-router-dom';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 
 const styles = theme => ({
+	link: {
+		color: 'white',
+		'&:hover': {
+			color: 'white',
+		},
+	},
 	section: {
 		position: 'relative',
 		overflow: 'hidden',
@@ -40,7 +46,16 @@ const CaseHeader = props => (
 								css.projectCaseClient
 							}`}
 						>
-							{props.client}
+							{props.readMore ? (
+								<Link
+									to={`/cases/${props.path}`}
+									className={props.classes.link}
+								>
+									{props.client}
+								</Link>
+							) : (
+								props.client
+							)}
 						</Typography>
 					</div>
 					<div className="my-3">
@@ -48,7 +63,16 @@ const CaseHeader = props => (
 							variant="headline"
 							className={`d-inline text-white p-2 ${css.projectCaseTitle}`}
 						>
-							{props.title}
+							{props.readMore ? (
+								<Link
+									to={`/cases/${props.path}`}
+									className={props.classes.link}
+								>
+									{props.title}
+								</Link>
+							) : (
+								props.title
+							)}
 						</Typography>
 					</div>
 
