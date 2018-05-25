@@ -10,7 +10,6 @@ import faLinkedin from '@fortawesome/fontawesome-free-brands/faLinkedin';
 import faYoutube from '@fortawesome/fontawesome-free-brands/faYoutube';
 import faMeetup from '@fortawesome/fontawesome-free-brands/faMeetup';
 
-import compose from 'recompose/compose';
 import { withRouter } from 'react-router-dom';
 
 const Footer = props => (

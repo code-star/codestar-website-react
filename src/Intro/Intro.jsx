@@ -14,7 +14,7 @@ import compose from 'recompose/compose';
 import { withStyles } from 'material-ui/styles';
 import withWidth from 'material-ui/utils/withWidth';
 
-const styles = theme => ({
+const styles = () => ({
 	section: {
 		position: 'relative',
 		overflow: 'hidden',
