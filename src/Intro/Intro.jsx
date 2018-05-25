@@ -28,6 +28,19 @@ const styles = theme => ({
 		transform: 'translate(-50%, -50%)',
 		zIndex: -1,
 	},
+	card: {
+		backgroundColor: 'black',
+	},
+	introText: {
+		color: 'white',
+	},
+	button: {
+		color: 'white',
+		'&:hover': {
+			backgroundColor: 'white',
+			color: 'black',
+		},
+	},
 });
 
 const Intro = props => (
@@ -46,35 +59,46 @@ const Intro = props => (
 			</Hidden>
 			<Container fullHeight center>
 				<div className="row justify-content-center">
-					<div className="col-8 col-md-6 col-lg-4">
-						<img
-							src={`${
-								process.env.PUBLIC_URL
-							}/images/logo-codestar-by-ordina.svg`}
-							alt="Codestar powered by Ordina Logo"
-							className="mb-3"
-						/>
-					</div>
-				</div>
-				<div className="row justify-content-center">
-					<div className="col-12 col-md-9">
-						<Card>
+					<div className="col-12 col-md-6">
+						<Card className={props.classes.card}>
 							<CardContent>
-								<Typography variant="subheading" gutterBottom>
+								<div className="row justify-content-center">
+									<div className="col-10 col-md-6 mb-3 mt-2">
+										<img
+											src={`${
+												process.env.PUBLIC_URL
+											}/images/logo-codestar-by-ordina.svg`}
+											alt="Codestar powered by Ordina Logo"
+										/>
+									</div>
+								</div>
+								<Typography
+									variant="subheading"
+									gutterBottom
+									className={props.classes.introText}
+								>
 									The digital world offers endless possibilities. The challenges
 									are often complex. We develop state-of-the-art software that’s
 									simple to use. Agile and productive, using the latest
 									techniques. We program with our hearts and with our minds, for
 									organisations looking to take the next step.
 								</Typography>
-								<Typography variant="subheading" gutterBottom>
+								<Typography
+									variant="subheading"
+									gutterBottom
+									className={props.classes.introText}
+								>
 									We are the #1 partner for Full Stack Scala and Big Data
 									solutions in the Netherlands. We are Codestar.
 								</Typography>
 							</CardContent>
 							<CardActions>
-								<Button>
-									<Link to="/cases">Go to cases</Link>
+								<Button
+									component={Link}
+									to="/cases"
+									className={props.classes.button}
+								>
+									Go to cases
 								</Button>
 							</CardActions>
 						</Card>
@@ -90,7 +114,7 @@ const Intro = props => (
 							Time to take the next step
 						</Typography>
 
-						<Typography gutterBottom>
+						<Typography variant="subheading" gutterBottom>
 							Now more than ever, IT is the carrier, deliverer and enricher of
 							your business. You will quickly fall behind without an outstanding
 							digital infrastructure. With data in abundance, where do you
@@ -99,7 +123,7 @@ const Intro = props => (
 							of data. Good luck with your bucket.
 						</Typography>
 
-						<Typography gutterBottom>
+						<Typography variant="subheading" gutterBottom>
 							Fortunately, the growth in the amount of data has coincided with
 							the development of technologies to work with that data. The modern
 							internet, mobile phone use and the ‘Internet of Things’ demands
@@ -110,7 +134,7 @@ const Intro = props => (
 						</Typography>
 					</div>
 					<div className="col-12 col-md-6">
-						<Typography gutterBottom>
+						<Typography variant="subheading" gutterBottom>
 							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint
 							neque, vel adipisci exercitationem numquam unde commodi esse ipsum
 							necessitatibus, consectetur fuga nihil ducimus dolor ipsa beatae
