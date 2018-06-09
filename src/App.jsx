@@ -11,8 +11,6 @@ import Footer from './Footer/Footer';
 
 import casesList from './Cases/CasesList';
 
-import i18n from './i18n';
-
 const AsyncIntro = AsyncComponent(() => import('./Intro/Intro'));
 const AsyncCases = AsyncComponent(() => import('./Cases/Cases'));
 const AsyncCaseDetails = AsyncComponent(() =>
@@ -42,8 +40,7 @@ class App extends Component {
 	};
 
 	render() {
-		const { t } = this.props;
-		const toggle = lng => i18n.changeLanguage(lng);
+		// const { t } = this.props;
 		return (
 			<Router basename={process.env.PUBLIC_URL}>
 				<div>
@@ -69,13 +66,9 @@ class App extends Component {
 						<Route path="/contact" component={AsyncContact} />
 					</ScrollToTop>
 
-					<div>
-						{t('APP_NAME')}
-						<button onClick={() => toggle('nl')}>
-							{t('nav:LINK_NL')}
-						</button> |{' '}
-						<button onClick={() => toggle('en')}>{t('nav:LINK_EN')}</button>
-					</div>
+					{/*<div>*/}
+					{/*{t('APP_NAME')} /!*TODO REMOVE*!/*/}
+					{/*</div>*/}
 
 					<Footer />
 				</div>
