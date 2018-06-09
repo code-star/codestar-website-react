@@ -11,6 +11,8 @@ import Footer from './Footer/Footer';
 
 import casesList from './Cases/CasesList';
 
+import i18n from './i18n';
+
 const AsyncIntro = AsyncComponent(() => import('./Intro/Intro'));
 const AsyncCases = AsyncComponent(() => import('./Cases/Cases'));
 const AsyncCaseDetails = AsyncComponent(() =>
@@ -20,7 +22,7 @@ const AsyncAbout = AsyncComponent(() => import('./About/About'));
 const AsyncJobs = AsyncComponent(() => import('./Jobs/Jobs'));
 const AsyncContact = AsyncComponent(() => import('./Contact/Contact'));
 
-@translate(['view', 'nav'], { wait: true })
+@translate(['translations', 'nav'], { wait: true })
 class App extends Component {
 	state = {
 		drawerMenu: false,
@@ -40,14 +42,14 @@ class App extends Component {
 	};
 
 	render() {
+		const { t } = this.props;
+		const toggle = lng => i18n.changeLanguage(lng);
 		return (
 			<Router basename={process.env.PUBLIC_URL}>
 				<div>
 					<CssBaseline />
 					<NavBar toggle={this.toggleDrawer} />
 					<SideMenu open={this.state.drawerMenu} toggle={this.toggleDrawer} />
-
-					<div>een div</div>
 
 					<ScrollToTop>
 						<Route exact path="/" component={AsyncIntro} />
@@ -66,6 +68,14 @@ class App extends Component {
 						<Route path="/jobs" component={AsyncJobs} />
 						<Route path="/contact" component={AsyncContact} />
 					</ScrollToTop>
+
+					<div>
+						{t('APP_NAME')}
+						<button onClick={() => toggle('nl')}>
+							{t('nav:LINK_NL')}
+						</button> |{' '}
+						<button onClick={() => toggle('en')}>{t('nav:LINK_EN')}</button>
+					</div>
 
 					<Footer />
 				</div>
