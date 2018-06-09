@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { translate } from 'react-i18next';
 import AsyncComponent from './AsyncComponent/AsyncComponent';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import ScrollToTop from './ScrollToTop';
@@ -19,6 +20,7 @@ const AsyncAbout = AsyncComponent(() => import('./About/About'));
 const AsyncJobs = AsyncComponent(() => import('./Jobs/Jobs'));
 const AsyncContact = AsyncComponent(() => import('./Contact/Contact'));
 
+@translate(['view', 'nav'], { wait: true })
 class App extends Component {
 	state = {
 		drawerMenu: false,
@@ -44,6 +46,8 @@ class App extends Component {
 					<CssBaseline />
 					<NavBar toggle={this.toggleDrawer} />
 					<SideMenu open={this.state.drawerMenu} toggle={this.toggleDrawer} />
+
+					<div>een div</div>
 
 					<ScrollToTop>
 						<Route exact path="/" component={AsyncIntro} />
