@@ -25,13 +25,13 @@ i18n
 		// 	}
 		// },
 
-		fallbackLng: 'nl', // TODO change to NL
+		fallbackLng: 'nl',
 
 		// have a common namespace used around the full app
 		ns: ['translations'],
 		defaultNS: 'translations',
 
-		debug: true, // TODO turn off
+		debug: false,
 
 		interpolation: {
 			escapeValue: false, // not needed for react!!

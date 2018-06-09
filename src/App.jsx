@@ -75,6 +75,7 @@ class App extends Component {
 							{t('nav:LINK_NL')}
 						</button> |{' '}
 						<button onClick={() => toggle('en')}>{t('nav:LINK_EN')}</button>
+						current: {i18n.language}
 					</div>
 
 					<Footer />
