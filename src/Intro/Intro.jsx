@@ -47,12 +47,15 @@ const Intro = props => (
 	<div>
 		<section id="intro" className={props.classes.section}>
 			<Hidden smUp>
-				<ResponsiveImage path="/images/skystars.jpg" asBackgroundImage />
+				<ResponsiveImage
+					path="/images/sky_2719001_frame.jpg"
+					asBackgroundImage
+				/>
 			</Hidden>
 			<Hidden only="xs">
 				<video autoPlay muted loop className={props.classes.fullVideo}>
 					<source
-						src={`${process.env.PUBLIC_URL}/2719001.mp4`}
+						src={`${process.env.PUBLIC_URL}/sky_2719001.mp4`}
 						type="video/mp4"
 					/>
 				</video>
@@ -147,4 +150,7 @@ const Intro = props => (
 		</section>
 	</div>
 );
-export default compose(withStyles(styles), withWidth())(Intro);
+export default compose(
+	withStyles(styles),
+	withWidth()
+)(Intro);

@@ -79,7 +79,7 @@ class NavBar extends Component {
 						</Link>
 						<Button
 							onClick={() => toggle('nl')}
-							variant={i18n.language === 'nl' ? 'raised' : 'default'}
+							variant={i18n.language === 'nl' ? 'raised' : 'flat'}
 							color="inherit"
 							className={props.classes.langButton}
 						>
@@ -87,7 +87,7 @@ class NavBar extends Component {
 						</Button>
 						<Button
 							onClick={() => toggle('en')}
-							variant={i18n.language === 'en' ? 'raised' : 'default'}
+							variant={i18n.language === 'en' ? 'raised' : 'flat'}
 							color="inherit"
 							className={props.classes.langButton}
 						>
