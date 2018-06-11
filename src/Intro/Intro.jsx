@@ -48,6 +48,7 @@ const Intro = props => (
 		<section id="intro" className={props.classes.section}>
 			<Hidden smUp>
 				<ResponsiveImage
+					className={props.classes.fullVideo}
 					path="/images/sky_2719001_frame.jpg"
 					asBackgroundImage
 				/>
