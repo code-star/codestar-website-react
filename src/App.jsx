@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { translate } from 'react-i18next';
 import AsyncComponent from './AsyncComponent/AsyncComponent';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import ScrollToTop from './ScrollToTop';
@@ -20,7 +19,6 @@ const AsyncAbout = AsyncComponent(() => import('./About/About'));
 const AsyncJobs = AsyncComponent(() => import('./Jobs/Jobs'));
 const AsyncContact = AsyncComponent(() => import('./Contact/Contact'));
 
-@translate(['translations', 'nav'], { wait: true })
 class App extends Component {
 	state = {
 		drawerMenu: false,
@@ -40,7 +38,6 @@ class App extends Component {
 	};
 
 	render() {
-		// const { t } = this.props;
 		return (
 			<Router basename={process.env.PUBLIC_URL}>
 				<div>
@@ -65,11 +62,6 @@ class App extends Component {
 						<Route path="/jobs" component={AsyncJobs} />
 						<Route path="/contact" component={AsyncContact} />
 					</ScrollToTop>
-
-					{/*<div>*/}
-					{/*{t('APP_NAME')} /!*TODO REMOVE*!/*/}
-					{/*</div>*/}
-
 					<Footer />
 				</div>
 			</Router>
