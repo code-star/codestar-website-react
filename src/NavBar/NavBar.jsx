@@ -70,9 +70,7 @@ class NavBar extends Component {
 					>
 						<Link to="/">
 							<img
-								src={`${
-									process.env.PUBLIC_URL
-								}/images/logo-codestar-simple.svg`}
+								src={`${process.env.PUBLIC_URL}/images/codestar_logo_dark.svg`}
 								alt="Codestar Logo"
 								className={props.classes.logo}
 							/>

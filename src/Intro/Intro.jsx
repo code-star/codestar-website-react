@@ -70,7 +70,7 @@ const Intro = props => (
 										<img
 											src={`${
 												process.env.PUBLIC_URL
-											}/images/logo-codestar-by-ordina.svg`}
+											}/images/codestar_logo_dark_(tagline).svg`}
 											alt="Codestar powered by Ordina Logo"
 										/>
 									</div>
