@@ -4,6 +4,7 @@ import { Button } from 'material-ui';
 import { Link } from 'react-router-dom';
 import OurStack from '../OurStack/OurStack';
 import Clients from '../Clients/Clients';
+import jobsList from './JobsList';
 
 const Jobs = () => (
 	<div>
@@ -42,10 +43,11 @@ const Jobs = () => (
 					<div className="col">
 						<h3>Vacancies</h3>
 						<ul>
-							<li>Senior Scala Developer</li>
-							<li>Junior Scala Developer</li>
-							<li>Front-End Developer</li>
-							<li>Big Data Engineer</li>
+							{jobsList.map(job => (
+								<li key={job.name}>
+									<Link to={`/jobs/${job.path}`}>{job.name}</Link>
+								</li>
+							))}
 						</ul>
 
 						<p>
