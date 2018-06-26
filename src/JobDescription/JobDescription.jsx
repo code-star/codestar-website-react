@@ -1,9 +1,20 @@
 import React from 'react';
 import Container from '../Container/Container';
-import { Button, Icon } from 'material-ui';
+import { Button } from 'material-ui';
+import { Email } from 'material-ui-icons';
 import Typography from 'material-ui/Typography';
 import { I18n } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { withStyles } from 'material-ui/styles';
+
+const styles = theme => ({
+	button: {
+		margin: theme.spacing.unit,
+	},
+	leftIcon: {
+		marginRight: theme.spacing.unit,
+	},
+});
 
 function hashTagify(string) {
 	let words = string.split(' ');
@@ -57,13 +68,14 @@ const JobDescription = props => (
 								</div>
 							))}
 						<Button
+							className={props.classes.button}
 							variant="raised"
 							color="primary"
 							component={Link}
 							to="mailto:codestar@ordina.nl"
 						>
+							<Email className={props.classes.leftIcon} />
 							{t('jobs:JOBS_CONTACT_BUTTON')}
-							<Icon>send</Icon>
 						</Button>
 						<div className="row">
 							<div className="col">
@@ -86,4 +98,4 @@ const JobDescription = props => (
 	</I18n>
 );
 
-export default JobDescription;
+export default withStyles(styles)(JobDescription);
