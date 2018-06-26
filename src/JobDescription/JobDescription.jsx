@@ -39,19 +39,23 @@ const JobDescription = props => (
 							</div>
 						</div>
 						{// Missing from react-i18next doc (https://www.i18next.com/translation-function/objects-and-arrays)
-						t('JOB_PARAGRAPHS', { returnObjects: true }).map((paragraph, i) => (
-							<div key={i} className="row">
-								<div className="col">
-									<h4>{hashTagify(paragraph.title)}</h4>
-									<p>{paragraph.content}</p>
-									{paragraph.list ? (
-										<ul>
-											{paragraph.list.map((elem, i) => <li key={i}>{elem}</li>)}
-										</ul>
-									) : null}
+						t('JOB_PARAGRAPHS', { returnObjects: true })
+							.concat(t('jobs:JOBS_COMMON_PARAGRAPHS', { returnObjects: true }))
+							.map((paragraph, i) => (
+								<div key={i} className="row">
+									<div className="col">
+										<h4>{hashTagify(paragraph.title)}</h4>
+										<p>{paragraph.content}</p>
+										{paragraph.list ? (
+											<ul>
+												{paragraph.list.map((elem, i) => (
+													<li key={i}>{elem}</li>
+												))}
+											</ul>
+										) : null}
+									</div>
 								</div>
-							</div>
-						))}
+							))}
 						<Button
 							variant="raised"
 							color="primary"
@@ -63,14 +67,16 @@ const JobDescription = props => (
 						</Button>
 						<div className="row">
 							<div className="col">
-								{t('JOB_NOTES', { returnObjects: true }).map((note, i) => (
-									<div key={i}>
-										<small>
-											{'*'.repeat(i + 1)}
-											{note}
-										</small>
-									</div>
-								))}
+								{t('jobs:JOBS_NOTES', { returnObjects: true }).map(
+									(note, i) => (
+										<div key={i}>
+											<small>
+												{'*'.repeat(i + 1)}
+												{note}
+											</small>
+										</div>
+									)
+								)}
 							</div>
 						</div>
 					</Container>
