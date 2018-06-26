@@ -1,0 +1,39 @@
+{
+    "JOB_TITLE": "Junior Scala Developer",
+    "JOB_TAGLINE": "Programmeer met hart en hoofd",
+    "JOB_CLIENT_CASE": "wij zoeken een Scala-talent voor ons greenfield project in de haven van Rotterdam. Iemand die met collega’s het verschil wil maken bij Rotterdam Logistics Lab - innovatie-incubator van de haven. Door real-time datastromen te realiseren. Met functional programming, reactive streams, cloud native en machine learning. Via Scala, Play, Akka, Kafka, Spark, RX, Angular2 en React. Word jij de nieuwe expert in het Scala-ecosysteem?",
+    "JOB_PARAGRAPHS": [
+        {
+            "title": "Daarom bij Codestar",
+            "content": "Je komt in aanraking met backend stream-processing, leert frontend reactive programmeren én maakt uitstapjes in de wereld van Big Data. Binnen een team dat zich richt op fast en streaming data. Door te programmeren. Met hart en hoofd. Voor klanten die de volgende stap willen zetten. Vanuit een bedrijfscultuur waarin continuous learning, samenwerken en programmeren centraal staan. Met R&amp;D-dagen, Campus fridays en teamweekenden met internationale topcoaches. Sluit je aan bij het #1-bedrijf voor Full Stack Scala en Fast Data-oplossingen in Nederland."
+        },
+        {
+            "title": "Wie ben jij?",
+            "content": "Wij zoeken teamspelers. Gepassioneerd en leergierig. Juniors die programmeren. Ook in hun vrije tijd. Omdat ze nieuwsgierig zijn. Die het verschil willen maken. Door baanbrekende ideeën leven in te blazen. Die gaan voor resultaat, maar nooit ten koste van kwaliteit. En ook fouten durven te maken. Omdat innoveren vallen en opstaan is. Functional. Reactive. Full Stack.",
+            "list": [
+                "Wo-denkniveau",
+                "Ervaring met functioneel programmeren, Scala of Haskell"
+            ]
+        },
+        {
+            "title": "Dit verdien je",
+            "content": "We doen er alles aan om jouw groei optimaal te ondersteunen. Zodat je master kunt worden in jouw vakgebied.",
+            "list": [
+                "Nieuwste Macbook of Microsoft Surface: bepaal zelf hoe je werkt",
+                "R&D dagen in Nieuwegein: focus op thema’s waarin jij expert wil worden",
+                "Campus fridays: werk op kantoor met collega’s die je helpen als je vastloopt én je inspireren met hun projecten en code",
+                "1 buitenlandse topconferentie: voor de inspiratie om voorop te lopen",
+                "2 Codecamps per jaar met toptrainers: in de woonkamer van een vakantiewoning, omdat we dan zelf bepalen wanneer de cursusdag is afgelopen en de strand-BBQ daarna meteen kan beginnen",
+                "Vast contract: ons commitment voor jouw groei naar master"
+            ]
+        },
+        {
+            "title": "Meer weten",
+            "content": "Meer weten over Codestar? Dat vertellen we graag persoonlijk. Dus als je er voor open staat om ons beter te leren kennen, neem dan deel aan een van onze trainingen of evenementen. Die organiseren we regelmatig en zijn voor iedereen kosteloos toegankelijk. Of maak gewoon een afspraak. Mail gerust onze business unit manager"
+
+        }
+    ],
+    "JOB_NOTES": [
+        "Acquisitie naar aanleiding van deze vacature wordt niet op prijs gesteld."
+    ]
+}
