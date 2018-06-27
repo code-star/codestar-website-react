@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Container from '../Container/Container';
 import Clients from '../Clients/Clients';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
+import AnimatedLogo from '../AnimatedLogo/AnimatedLogo';
 
 import Card, { CardActions, CardContent } from 'material-ui/Card';
 import Button from 'material-ui/Button';
@@ -34,6 +35,8 @@ const styles = () => ({
 	},
 	introText: {
 		color: 'white',
+		textAlign: 'justify',
+		textAlignLast: 'center',
 	},
 	button: {
 		color: 'white',
@@ -72,13 +75,14 @@ class Intro extends Component {
 								<Card className={props.classes.card}>
 									<CardContent>
 										<div className="row justify-content-center">
-											<div className="col-10 col-md-6 mb-3 mt-2">
-												<img
+											<div className="col-12 col-md-12 mb-3 mt-2">
+												<AnimatedLogo />
+												{/*<img
 													src={`${
 														process.env.PUBLIC_URL
 													}/images/codestar_logo_dark_(tagline).svg`}
 													alt="Codestar powered by Ordina Logo"
-												/>
+												/>*/}
 											</div>
 										</div>
 										<Typography
