@@ -2,3 +2,32 @@ body {
 	font-family: 'Roboto', sans-serif;
 	transition: background-color 1000ms ease-in;
 }
+
+@font-face {
+	font-family: Conduit;
+	src: url('/fonts/ConduitITCStd.otf') format('opentype'),
+		url('/fonts/ConduitITCStd.woff') format('woff');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Conduit;
+	src: url('/fonts/ConduitITCStd-Bold.otf') format('opentype'),
+		url('/fonts/ConduitITCStd-Bold.woff') format('woff');
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: Conduit;
+	src: url('/fonts/ConduitITCStd-Italic.otf') format('opentype'),
+		url('/fonts/ConduitITCStd-Italic.woff') format('woff');
+	font-style: italic;
+}
+
+@font-face {
+	font-family: Conduit;
+	src: url('/fonts/ConduitITCStd-BoldItalic.otf') format('opentype'),
+		url('/fonts/ConduitITCStd-BoldItalic.woff') format('woff');
+	font-weight: bold;
+	font-style: italic;
+}
