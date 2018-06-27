@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import AsyncComponent from './AsyncComponent/AsyncComponent';
 import { Router, Route } from 'react-router-dom';
-import ScrollToTop from './ScrollToTop';
 import CssBaseline from 'material-ui/CssBaseline';
 import createHistory from 'history/createBrowserHistory';
+import { MuiThemeProvider } from 'material-ui/styles';
 
+import theme from './codestarMuiTheme';
+
+import ScrollToTop from './ScrollToTop';
 import NavBar from './NavBar/NavBar';
 import SideMenu from './SideMenu/SideMenu';
 import Footer from './Footer/Footer';
-
 import casesList from './Cases/CasesList';
 import jobsList from './Jobs/JobsList';
+import AsyncComponent from './AsyncComponent/AsyncComponent';
 
 const AsyncIntro = AsyncComponent(() => import('./Intro/Intro'));
 const AsyncCases = AsyncComponent(() => import('./Cases/Cases'));
@@ -65,7 +67,7 @@ class App extends Component {
 	render() {
 		return (
 			<Router history={this.history}>
-				<div>
+				<MuiThemeProvider theme={theme}>
 					<CssBaseline />
 					<NavBar toggle={this.toggleDrawer} />
 					<SideMenu open={this.state.drawerMenu} toggle={this.toggleDrawer} />
@@ -97,7 +99,7 @@ class App extends Component {
 						<Route path="/contact" component={AsyncContact} />
 					</ScrollToTop>
 					<Footer />
-				</div>
+				</MuiThemeProvider>
 			</Router>
 		);
 	}
