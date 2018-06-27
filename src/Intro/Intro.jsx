@@ -58,14 +58,14 @@ class Intro extends Component {
 							asBackgroundImage
 						/>
 					</Hidden>
-					<Hidden only="xs">
+					{/*<Hidden only="xs">
 						<video autoPlay muted loop className={props.classes.fullVideo}>
 							<source
 								src={`${process.env.PUBLIC_URL}/sky_2719001.mp4`}
 								type="video/mp4"
 							/>
 						</video>
-					</Hidden>
+					</Hidden>*/}
 					<Container fullHeight center>
 						<div className="row justify-content-center">
 							<div className="col-12 col-md-6">
