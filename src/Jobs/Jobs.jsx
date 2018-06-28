@@ -1,10 +1,12 @@
 import React from 'react';
-import Container from '../Container/Container';
-import { Button } from 'material-ui';
 import { Link } from 'react-router-dom';
+import { Button } from 'material-ui';
+
+import Container from '../Container/Container';
 import OurStack from '../OurStack/OurStack';
 import Clients from '../Clients/Clients';
 import jobsList from './JobsList';
+import JobCard from './JobCard';
 
 const Jobs = () => (
 	<div>
@@ -42,13 +44,15 @@ const Jobs = () => (
 				<div className="row">
 					<div className="col">
 						<h3>Vacancies</h3>
-						<ul>
+						<div className="d-flex justify-content-center flex-wrap">
 							{jobsList.map(job => (
-								<li key={job.name}>
-									<Link to={`/jobs/${job.path}`}>{job.name}</Link>
-								</li>
+								<JobCard
+									translation={job.translation}
+									image={job.image}
+									path={job.path}
+								/>
 							))}
-						</ul>
+						</div>
 
 						<p>
 							Not sure yet? Know more{' '}

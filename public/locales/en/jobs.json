@@ -22,5 +22,7 @@
     "JOBS_NOTES": [
         "We are only interested in candidates that are currently living in the Netherlands.",
         "Acquisition on the basis of this vacancy is not appreciated."
-    ]
+    ],
+    "JOBS_SHARE_BUTTON": "Share",
+    "JOBS_LEARN_MORE_BUTTON": "Learn More"
 }
