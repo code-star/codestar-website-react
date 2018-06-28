@@ -1,3 +1,11 @@
+# React version of Codestar.nl
+
+Note: uses [custom-react-scripts](https://medium.com/@kitze/configure-create-react-app-without-ejecting-d8450e96196a) to 
+use HOC for [react-i18next](https://react.i18next.com/overview/getting-started) without ejecting. 
+
+# About Create React App
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

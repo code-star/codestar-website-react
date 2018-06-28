@@ -1,0 +1,42 @@
+[
+	{
+		"logo": "/images/technologies/scala.png",
+		"name": "Scala"
+	},
+	{
+		"logo": "/images/technologies/akka.png",
+		"name": "Akka"
+	},
+	{
+		"logo": "/images/technologies/spray.png",
+		"name": "Spray"
+	},
+	{
+		"logo": "/images/technologies/spark.png",
+		"name": "Spark"
+	},
+	{
+		"logo": "/images/technologies/typescript.png",
+		"name": "Typescript"
+	},
+	{
+		"logo": "/images/technologies/docker.png",
+		"name": "Docker"
+	},
+	{
+		"logo": "/images/technologies/mesos.png",
+		"name": "Mesos"
+	},
+	{
+		"logo": "/images/technologies/aws.png",
+		"name": "AWS"
+	},
+	{
+		"logo": "/images/technologies/cassandra.png",
+		"name": "Cassandra"
+	},
+	{
+		"logo": "/images/technologies/kafka.png",
+		"name": "Kafka"
+	}
+]

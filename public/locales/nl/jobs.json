@@ -1,0 +1,28 @@
+{
+    "JOBS_CLIENT_CASE_LABEL": "Klantcase",
+    "JOBS_CONTACT_BUTTON": "Mail Ons",
+    "JOBS_COMMON_PARAGRAPHS": [
+        {
+            "title": "Dit verdien je",
+            "content": "We doen er alles aan om jouw groei optimaal te ondersteunen. Zodat je master kunt worden in jouw vakgebied.",
+            "list": [
+                "Nieuwste Macbook of Microsoft Surface: bepaal zelf hoe je werkt",
+                "R&D dagen in Nieuwegein: focus op thema’s waarin jij expert wil worden",
+                "Campus fridays: werk op kantoor met collega’s die je helpen als je vastloopt én je inspireren met hun projecten en code",
+                "1 buitenlandse topconferentie: voor de inspiratie om voorop te lopen",
+                "2 Codecamps per jaar met toptrainers: in de woonkamer van een vakantiewoning, omdat we dan zelf bepalen wanneer de cursusdag is afgelopen en de strand-BBQ daarna meteen kan beginnen",
+                "Vast contract: ons commitment voor jouw groei naar master"
+            ]
+        },
+        {
+            "title": "Meer weten",
+            "content": "Meer weten over Codestar? Dat vertellen we graag persoonlijk. Dus als je er voor open staat om ons beter te leren kennen, neem dan deel aan een van onze trainingen of evenementen. Die organiseren we regelmatig en zijn voor iedereen kosteloos toegankelijk. Of maak gewoon een afspraak. Mail gerust onze business unit manager"
+
+        }
+    ],
+    "JOBS_NOTES": [
+        "Acquisitie naar aanleiding van deze vacature wordt niet op prijs gesteld."
+    ],
+    "JOBS_SHARE_BUTTON": "Deel",
+    "JOBS_LEARN_MORE_BUTTON": "Kijken"
+}

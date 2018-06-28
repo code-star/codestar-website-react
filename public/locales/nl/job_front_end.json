@@ -1,0 +1,21 @@
+{
+    "JOB_TITLE": "Front-End Developer",
+    "JOB_TAGLINE": "Programmeer met hart en hoofd",
+    "JOB_CLIENT_CASE": "de haven van Rotterdam als greenfield. Met een team van Codestar-collega’s maak jij het verschil voor het havenbedrijf op gebied van Front-end-techniek. Door from scratch een dashboard met reactive elementen te bouwen, waarbij jullie zelf de front-end architectuur bepalen en continuous deployment inrichten. Met Angular, TypeScript, React Native, RxJs en Redux. Naar de slimste haven ter wereld.",
+    "JOB_PARAGRAPHS": [
+        {
+            "title": "Daarom bij Codestar",
+            "content": "JavaScript: sleutel naar single page-applicaties die zich dynamisch aanpassen aan moderne gebruikers. Waarom wij hier succesvol in zijn? Vakinhoudelijke experts in functional reactive programming en slimme samenwerking tussen Front-end Developers, topspelers in Scala, klanten en de rest van het agile team. Zonder formele toestanden. Vanuit een continuous learning-cultuur waarin jouw ontwikkeling centraal staat. Met R&D-dagen, Campus fridays en weekenden met internationale topcoaches. Laten we samen een begrip worden."
+        },
+        {
+            "title": "Wie ben jij?",
+            "content": "Wij zoeken teamspelers die gepassioneerd en leergierig zijn. Proactieve specialisten die zich willen bewijzen in het ontwerpen en bouwen van JavaScript-apps. Die gaan voor resultaat, maar nooit ten koste van kwaliteit. En over goede people skills beschikken. Omdat een dag uit meer bestaat dan programmeren. Innovatie is team effort. Een kwestie van luisteren, doorvragen en samenwerken. Multidisciplinair.",
+            "list": [
+                "Hbo-/wo-denkniveau",
+                "Een trackrecord in JavaScript engineering",
+                "Kennis van functional reactive programming en/of MV* frameworks",
+                "Ervaring met TypeScript of andere typed JavaScript-variant (pré)"
+            ]
+        }
+    ]
+}

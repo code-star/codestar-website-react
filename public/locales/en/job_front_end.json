@@ -1,0 +1,21 @@
+{
+    "JOB_TITLE": "Front-End Developer",
+    "JOB_TAGLINE": "Programming with heart and mind",
+    "JOB_CLIENT_CASE": "The port of Rotterdam as a greenfield project. Together with a team of Codestar colleagues, you will make a difference for the port operator in the field of front-end technology. You will do this by creating a dashboard with reactive elements, from scratch. And you and your team decide on the front-end architecture and design continuous deployment, using Angular, TypeScript, React Native, RxJs and Redux. Making Rotterdam the smartest port in the world.",
+    "JOB_PARAGRAPHS": [
+        {
+            "title": "Why with Codestar",
+            "content": "JavaScript: the key to single-page applications that adapt dynamically to modern users. Why we are successful in this? Because we have professional experts in functional reactive programming and smart cooperation between Front-end Developers, top players in Scala, clients and the rest of the agile team. All in an informal setting, in a culture of continuous learning that prioritises your development. With R&D days, Campus Fridays and weekends with top international coaches. Let’s become the benchmark together."
+        },
+        {
+            "title": "Who are you?",
+            "content": "We’re looking for team players who are passionate and keen to learn. Proactive specialists who want to prove themselves by designing and building JavaScript apps. Specialists who for results, but never at the expense of quality. And who possess good people skills, because a day is consists of more than just programming. Innovation is a team effort. It’s a matter of listening, asking questions and working together, in a multidisciplinary environment.",
+            "list": [
+                "Academic mindset",
+                "A track record in JavaScript engineering",
+                "Knowledge of functional reactive programming and/or MV* frameworks",
+                "Experience with TypeScript or other typed JavaScript variants (a big plus)"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+.imgWrapper {
+	align-items: center;
+	display: flex;
+	height: 130px;
+}
+
+@media (max-width: 480px) {
+	.imgWrapper {
+		height: 220px;
+	}
+}

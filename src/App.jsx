@@ -9,6 +9,7 @@ import SideMenu from './SideMenu/SideMenu';
 import Footer from './Footer/Footer';
 
 import casesList from './Cases/CasesList';
+import jobsList from './Jobs/JobsList';
 
 const AsyncIntro = AsyncComponent(() => import('./Intro/Intro'));
 const AsyncCases = AsyncComponent(() => import('./Cases/Cases'));
@@ -17,6 +18,9 @@ const AsyncCaseDetails = AsyncComponent(() =>
 );
 const AsyncAbout = AsyncComponent(() => import('./About/About'));
 const AsyncJobs = AsyncComponent(() => import('./Jobs/Jobs'));
+const AsyncJobDescription = AsyncComponent(() =>
+	import('./JobDescription/JobDescription')
+);
 const AsyncContact = AsyncComponent(() => import('./Contact/Contact'));
 
 class App extends Component {
@@ -47,8 +51,8 @@ class App extends Component {
 
 					<ScrollToTop>
 						<Route exact path="/" component={AsyncIntro} />
-						<Route exact path="/cases" component={AsyncCases} />
 
+						<Route exact path="/cases" component={AsyncCases} />
 						{casesList.map(clientCase => (
 							<Route
 								exact
@@ -58,11 +62,19 @@ class App extends Component {
 							/>
 						))}
 
+						<Route exact path="/jobs" component={AsyncJobs} />
+						{jobsList.map(job => (
+							<Route
+								exact
+								path={`/jobs/${job.path}`}
+								key={job.path}
+								render={() => <AsyncJobDescription {...job} />}
+							/>
+						))}
+
 						<Route path="/about" component={AsyncAbout} />
-						<Route path="/jobs" component={AsyncJobs} />
 						<Route path="/contact" component={AsyncContact} />
 					</ScrollToTop>
-
 					<Footer />
 				</div>
 			</Router>

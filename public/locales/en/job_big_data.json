@@ -1,0 +1,21 @@
+{
+    "JOB_TITLE": "Big Data Engineer",
+    "JOB_TAGLINE": "Programming with heart and mind",
+    "JOB_CLIENT_CASE": "Pyeongchang, South Korea - 2018. The world is watching the Winter Olympics. Skiing, ice skating and bobsleighing: everything is being streamed online. It’s also being broadcast by a major American TV network. Gracenote and Codestar engineers are building a new platform to enrich these live streams with real-time information of interim times, provisional standings, video logs and athletes’ biographies. And we are doing using real-time stream processing technologies, such as Kafka en Akka. For a gold medal in viewing experience.",
+    "JOB_PARAGRAPHS": [
+        {
+            "title": "Why with Codestar",
+            "content": "Big, fast & smart data. We excel in real-time data platforms and reactive apps, by programming with heart and mind in multidisciplinary, agile teams in an informal setting. Simply getting the most out of big data, together. Why do we excel at that? Because of our culture of continuous learning, in which we prioritise your development. With R&D days, Campus Fridays and weekends with top international coaches. Welcome. We are the #1 company for Full Stack Scala and Fast Data solutions in the Netherlands."
+        },
+        {
+            "title": "Who are you?",
+            "content": "We’re looking for team players who are passionate and keen to learn. Professionals who can speak the different languages in a multidisciplinary team, who want to use their Scala skills or strong Java background to tame the ever larger data waves. Professionals who have the ambition to create a real-time data world with their colleagues. Something society can really benefit from. Fast. Reactive. Stream processing.",
+            "list": [
+                "Academic mindset",
+                "Polyglot programmer (Scala, Java, Python, ...)",
+                "Knowledge of Spark, Kafka, Hadoop, Cassandra, SQL, ElasticSearch, Airflow",
+                "Experience with distributed systems, microservices, databases and NoSQL technologies"
+            ]
+        }
+    ]
+}

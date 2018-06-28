@@ -1,6 +1,7 @@
 import React from 'react';
 import Typography from 'material-ui/Typography';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
+import css from './Clients.module.css';
 
 const ClientsList = [
 	{
@@ -36,13 +37,13 @@ const Clients = props => (
 		</Typography>
 		<div className="row">
 			{ClientsList.map(client => (
-				<div className="col-6 col-md-2" key={client.name}>
+				<div className={`col-6 col-md-2 ${css.imgWrapper}`} key={client.name}>
 					<ResponsiveImage
 						path={client.logo}
 						alt={`${client.name} logo`}
 						title={`${client.name}`}
 						sizes="(min-width: 600) 16.6666vw, 100vw"
-						className="w-100 h-auto mt-3"
+						className="w-100 h-auto"
 					/>
 				</div>
 			))}
