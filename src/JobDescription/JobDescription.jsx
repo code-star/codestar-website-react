@@ -27,7 +27,7 @@ function hashTagify(string) {
 
 const JobDescription = props => (
 	<I18n ns={[`${props.translation}`, 'jobs']}>
-		{(t, { i18n }) => (
+		{t => (
 			<div>
 				<section>
 					<Container marginTopNavBar>
