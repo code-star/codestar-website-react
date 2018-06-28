@@ -1,11 +1,11 @@
-.img-wrapper {
+.imgWrapper {
 	align-items: center;
 	display: flex;
 	height: 130px;
 }
 
 @media (max-width: 480px) {
-	.img-wrapper {
+	.imgWrapper {
 		height: 220px;
 	}
 }

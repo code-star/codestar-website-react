@@ -37,10 +37,7 @@ const Clients = props => (
 		</Typography>
 		<div className="row">
 			{ClientsList.map(client => (
-				<div
-					className={`col-6 col-md-2 ${css['img-wrapper']}`}
-					key={client.name}
-				>
+				<div className={`col-6 col-md-2 ${css.imgWrapper}`} key={client.name}>
 					<ResponsiveImage
 						path={client.logo}
 						alt={`${client.name} logo`}
