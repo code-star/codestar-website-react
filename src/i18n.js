@@ -8,23 +8,6 @@ i18n
 	.use(LanguageDetector)
 	.use(reactI18nextModule)
 	.init({
-		// resources: {
-		// 	en: {
-		// 		translations: {
-		// 			appName: 'hello from namespace 1',
-		// 		},
-		// 		nav: {
-		// 			"linkNL": "my_link_nl",
-		// 			"linkEN": "my_link_en",
-		// 		}
-		// 	},
-		// 	nl: {
-		// 		translations: {
-		// 			appName: 'hoi',
-		// 		},
-		// 	}
-		// },
-
 		fallbackLng: 'nl',
 
 		// have a common namespace used around the full app
@@ -39,6 +22,10 @@ i18n
 
 		react: {
 			wait: true,
+		},
+
+		backend: {
+			loadPath: `${process.env.PUBLIC_URL}/locales/{{lng}}/{{ns}}.json`,
 		},
 	});
 
