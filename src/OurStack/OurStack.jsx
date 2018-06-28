@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { translate } from 'react-i18next';
 
-// TODO: Extract stack into list of objects
+import techs from './techs';
+
 @translate(['stack'], { wait: true })
 class OurStack extends Component {
 	render() {
@@ -9,18 +10,7 @@ class OurStack extends Component {
 		return (
 			<div>
 				<h3>{t('STACK_TITLE')}</h3>
-				<ul>
-					<li>Scala</li>
-					<li>Akka</li>
-					<li>Spray</li>
-					<li>Spark</li>
-					<li>Typescript</li>
-					<li>Docker</li>
-					<li>Mesos</li>
-					<li>AWS</li>
-					<li>Cassandra</li>
-					<li>Kafka</li>
-				</ul>
+				<ul>{techs.map((tech, i) => <li key={i}>{tech.name}</li>)}</ul>
 			</div>
 		);
 	}
