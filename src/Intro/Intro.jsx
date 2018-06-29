@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Container from '../Container/Container';
 import Clients from '../Clients/Clients';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
-import AnimatedLogo from '../AnimatedLogo/AnimatedLogo';
+import AnimatedLogo from '../Animations/AnimatedLogo';
 
 import Card, { CardActions, CardContent } from 'material-ui/Card';
 import Button from 'material-ui/Button';
