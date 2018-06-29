@@ -18,10 +18,17 @@ const styles = {
 
 class AnimatedLogo extends Component {
 	componentDidMount() {
-		new Vivus('logo', { duration: 110, type: 'sync', file: '' }, () => {
-			var logo = Snap(document.getElementById('logo'));
-			logo.animate({ 'fill-opacity': 1, 'stroke-opacity': 0 }, 700);
-		});
+		new Vivus(
+			'logo',
+			{ duration: this.props.lineDuration, type: 'sync', file: '' },
+			() => {
+				var logo = Snap(document.getElementById('logo'));
+				logo.animate(
+					{ 'fill-opacity': 1, 'stroke-opacity': 0 },
+					this.props.fadeDuration || 700
+				);
+			}
+		);
 	}
 
 	render() {

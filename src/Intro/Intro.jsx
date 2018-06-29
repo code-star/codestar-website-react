@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 
-import { Link } from 'react-router-dom';
 import Container from '../Container/Container';
 import Clients from '../Clients/Clients';
-import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 import AnimatedLogo from '../Animations/AnimatedLogo';
+import LandscapeBackground from '../Animations/LandscapeBackground';
 
-import Card, { CardActions, CardContent } from 'material-ui/Card';
-import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
-import Hidden from 'material-ui/Hidden';
 
 import compose from 'recompose/compose';
 import { withStyles } from 'material-ui/styles';
@@ -23,11 +19,10 @@ const styles = () => ({
 	},
 	fullVideo: {
 		position: 'absolute',
-		minWidth: '100vw',
-		minHeight: '100vh',
-		top: '50%',
-		left: '50%',
-		transform: 'translate(-50%, -50%)',
+		width: '100vw',
+		height: '100vh',
+		top: '0',
+		left: '0',
 		zIndex: -1,
 	},
 	card: {
@@ -55,61 +50,15 @@ class Intro extends Component {
 		return (
 			<div>
 				<section id="intro" className={props.classes.section}>
-					<Hidden smUp>
-						<ResponsiveImage
-							path="/images/sky_2719001_frame.jpg"
-							asBackgroundImage
-						/>
-					</Hidden>
-					{/*<Hidden only="xs">
-						<video autoPlay muted loop className={props.classes.fullVideo}>
-							<source
-								src={`${process.env.PUBLIC_URL}/sky_2719001.mp4`}
-								type="video/mp4"
-							/>
-						</video>
-					</Hidden>*/}
+					<LandscapeBackground className={props.classes.fullVideo} />
 					<Container fullHeight center>
 						<div className="row justify-content-center">
 							<div className="col-12 col-md-6">
-								<Card className={props.classes.card}>
-									<CardContent>
-										<div className="row justify-content-center">
-											<div className="col-12 col-md-12 mb-3 mt-2">
-												<AnimatedLogo />
-												{/*<img
-													src={`${
-														process.env.PUBLIC_URL
-													}/images/codestar_logo_dark_(tagline).svg`}
-													alt="Codestar powered by Ordina Logo"
-												/>*/}
-											</div>
-										</div>
-										<Typography
-											variant="subheading"
-											gutterBottom
-											className={props.classes.introText}
-										>
-											{t('INTRO_TEXT')}
-										</Typography>
-										<Typography
-											variant="subheading"
-											gutterBottom
-											className={props.classes.introText}
-										>
-											{t('INTRO_TEXT_SUBLINE')}
-										</Typography>
-									</CardContent>
-									<CardActions>
-										<Button
-											component={Link}
-											to="/cases"
-											className={props.classes.button}
-										>
-											Go to cases
-										</Button>
-									</CardActions>
-								</Card>
+								<div className="row justify-content-center">
+									<div className="col-12 col-md-12 mb-3 mt-2">
+										<AnimatedLogo lineDuration={200} fadeDuration={3000} />
+									</div>
+								</div>
 							</div>
 						</div>
 					</Container>
