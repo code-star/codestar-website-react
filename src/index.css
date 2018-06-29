@@ -1,6 +1,16 @@
 body {
 	font-family: 'Roboto', sans-serif;
-	transition: background-color 1000ms ease-in;
+	background: linear-gradient(
+		to bottom,
+		#000e1f 0%,
+		#003264 20%,
+		#0057ae 40%,
+		#3988ce 60%,
+		#8fc3ea 80%,
+		#8fc3ea 100%
+	);
+	background-size: 1px 500vh;
+	transition: background-position 1s;
 }
 
 @font-face {

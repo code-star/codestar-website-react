@@ -34,6 +34,7 @@ const styles = () => ({
 	},
 });
 
+// TODO: Make this a component
 function separateLines(text, C, props) {
 	return text
 		.split('.')

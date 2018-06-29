@@ -26,13 +26,7 @@ const AsyncJobDescription = AsyncComponent(() =>
 );
 const AsyncContact = AsyncComponent(() => import('./Contact/Contact'));
 
-const bodyColors = {
-	'': '#002a53',
-	cases: '#004690',
-	about: '#0463b8',
-	jobs: '#2c81cb',
-	contact: '#7ab6e5',
-};
+const sections = ['', 'cases', 'about', 'jobs', 'contact'];
 
 class App extends Component {
 	state = {
@@ -52,8 +46,8 @@ class App extends Component {
 
 	updateBackgroundColor(pathname) {
 		let section = pathname.split('/')[1];
-		let color = bodyColors[section] || 'white';
-		document.body.style.backgroundColor = color;
+		let index = sections.indexOf(section);
+		document.body.style.backgroundPositionY = `${-index * 100}vh`;
 	}
 
 	toggleDrawer = () => {
