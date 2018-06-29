@@ -1,0 +1,113 @@
+/* Keyframes for the delayedFadeIn */
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@-moz-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.delayedFadeIn {
+	opacity: 0;
+	opacity: 1 \9; /* IE fallback */
+	-webkit-animation: fadeIn ease-in 1;
+	-moz-animation: fadeIn ease-in 1;
+	animation: fadeIn ease-in 1;
+
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+
+	-webkit-animation-duration: 2s;
+	-moz-animation-duration: 2s;
+	animation-duration: 2s;
+}
+
+.delayedFadeIn:nth-child(1) {
+	-webkit-animation-delay: 0.6s;
+	-moz-animation-delay: 0.6s;
+	animation-delay: 0.6s;
+}
+
+.delayedFadeIn:nth-child(2) {
+	-webkit-animation-delay: 1.2s;
+	-moz-animation-delay: 1.2s;
+	animation-delay: 1.2s;
+}
+
+.delayedFadeIn:nth-child(3) {
+	-webkit-animation-delay: 1.8s;
+	-moz-animation-delay: 1.8s;
+	animation-delay: 1.8s;
+}
+
+.delayedFadeIn:nth-child(4) {
+	-webkit-animation-delay: 2.4s;
+	-moz-animation-delay: 2.4s;
+	animation-delay: 2.4s;
+}
+
+.delayedFadeIn:nth-child(5) {
+	-webkit-animation-delay: 3s;
+	-moz-animation-delay: 3s;
+	animation-delay: 3s;
+}
+
+.delayedFadeIn:nth-child(6) {
+	-webkit-animation-delay: 3.6s;
+	-moz-animation-delay: 3.6s;
+	animation-delay: 3.6s;
+}
+
+.delayedFadeIn:nth-child(7) {
+	-webkit-animation-delay: 4.2s;
+	-moz-animation-delay: 4.2s;
+	animation-delay: 4.2s;
+}
+
+.delayedFadeIn:nth-child(8) {
+	-webkit-animation-delay: 4.8s;
+	-moz-animation-delay: 4.8s;
+	animation-delay: 4.8s;
+}
+
+.delayedFadeIn:nth-child(9) {
+	-webkit-animation-delay: 5.4s;
+	-moz-animation-delay: 5.4s;
+	animation-delay: 5.4s;
+}
+
+.delayedFadeIn:nth-child(10) {
+	-webkit-animation-delay: 6s;
+	-moz-animation-delay: 6s;
+	animation-delay: 6s;
+}
+
+.delayedFadeIn:nth-child(11) {
+	-webkit-animation-delay: 6.6s;
+	-moz-animation-delay: 6.6s;
+	animation-delay: 6.6s;
+}
+
+.delayedFadeIn:nth-child(12) {
+	-webkit-animation-delay: 7.2s;
+	-moz-animation-delay: 7.2s;
+	animation-delay: 7.2s;
+}

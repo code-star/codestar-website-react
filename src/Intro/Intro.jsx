@@ -4,6 +4,7 @@ import Container from '../Container/Container';
 import Clients from '../Clients/Clients';
 import AnimatedLogo from '../Animations/AnimatedLogo';
 import LandscapeBackground from '../Animations/LandscapeBackground';
+import '../Animations/delayedFade.css';
 
 import Typography from 'material-ui/Typography';
 
@@ -38,7 +39,11 @@ function separateLines(text, C, props) {
 		.split('.')
 		.map(line => line.trim())
 		.filter(n => n)
-		.map(line => <C {...props}>{line}</C>);
+		.map(line => (
+			<div className="delayedFadeIn">
+				<C {...props}>{line}</C>
+			</div>
+		));
 }
 
 @translate(['intro'], { wait: true })
@@ -54,10 +59,10 @@ class Intro extends Component {
 						<div className="row justify-content-center">
 							<div className="col-12 col-md-8">
 								<div className="row justify-content-center">
-									<div className="col-12 col-md-12 mb-5">
+									<div className="col-12 col-md-10 mb-5">
 										<AnimatedLogo lineDuration={200} fadeDuration={3000} />
 									</div>
-									<div className="col-12 col-md-12">
+									<div className="col-12 col-md-10">
 										{separateLines(
 											t('INTRO_TEXT') + t('INTRO_TEXT_SUBLINE'),
 											Typography,
