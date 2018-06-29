@@ -25,22 +25,21 @@ const styles = () => ({
 		left: '0',
 		zIndex: -1,
 	},
-	card: {
-		backgroundColor: 'black',
-	},
 	introText: {
 		color: 'white',
-		textAlign: 'justify',
-		textAlignLast: 'center',
-	},
-	button: {
-		color: 'white',
-		'&:hover': {
-			backgroundColor: 'white',
-			color: 'black',
-		},
+		textAlign: 'left',
+		fontFamily: 'Conduit',
+		fontSize: '120%',
 	},
 });
+
+function separateLines(text, C, props) {
+	return text
+		.split('.')
+		.map(line => line.trim())
+		.filter(n => n)
+		.map(line => <C {...props}>{line}</C>);
+}
 
 @translate(['intro'], { wait: true })
 class Intro extends Component {
@@ -53,10 +52,20 @@ class Intro extends Component {
 					<LandscapeBackground className={props.classes.fullVideo} />
 					<Container fullHeight center>
 						<div className="row justify-content-center">
-							<div className="col-12 col-md-6">
+							<div className="col-12 col-md-8">
 								<div className="row justify-content-center">
-									<div className="col-12 col-md-12 mb-3 mt-2">
+									<div className="col-12 col-md-12 mb-5">
 										<AnimatedLogo lineDuration={200} fadeDuration={3000} />
+									</div>
+									<div className="col-12 col-md-12">
+										{separateLines(
+											t('INTRO_TEXT') + t('INTRO_TEXT_SUBLINE'),
+											Typography,
+											{
+												variant: 'subheading',
+												className: props.classes.introText,
+											}
+										)}
 									</div>
 								</div>
 							</div>
@@ -64,7 +73,7 @@ class Intro extends Component {
 					</Container>
 				</section>
 				<section id="next-step" className="py-3 bg-white">
-					<Container>
+					<Container fullHeight center>
 						<div className="row">
 							<div className="col-12 col-md-6">
 								<Typography variant="headline" gutterBottom>
