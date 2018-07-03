@@ -81,7 +81,6 @@ class LandscapeBackground extends Component {
 
 		let simplexYOffset = 0;
 		this.interval = setInterval(() => {
-			console.log(this.seed);
 			this.emitPath(simplexYOffset);
 			simplexYOffset += 1;
 		}, options.interval);
