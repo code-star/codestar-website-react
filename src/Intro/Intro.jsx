@@ -13,7 +13,7 @@ import { withStyles } from 'material-ui/styles';
 import withWidth from 'material-ui/utils/withWidth';
 import { translate } from 'react-i18next';
 
-const styles = () => ({
+const styles = theme => ({
 	section: {
 		position: 'relative',
 		overflow: 'hidden',
@@ -31,6 +31,11 @@ const styles = () => ({
 		textAlign: 'left',
 		fontFamily: 'Conduit',
 		fontSize: '120%',
+	},
+	paper: {
+		...theme.mixins.gutters(),
+		paddingTop: theme.spacing.unit * 2,
+		paddingBottom: theme.spacing.unit * 2,
 	},
 });
 
@@ -82,7 +87,8 @@ class Intro extends Component {
 					<Container fullHeight center>
 						<div className="row">
 							<div className="col-12 col-md-6">
-								<Typography variant="headline" gutterBottom>
+								{/*<Paper className={props.classes.paper} elevation={1}>*/}
+								<Typography variant="headline" component="h1" gutterBottom>
 									{t('NEXT_STEP_TITLE')}
 								</Typography>
 
@@ -93,6 +99,14 @@ class Intro extends Component {
 								<Typography variant="subheading" gutterBottom>
 									{t('NEXT_STEP_CONTENT_2')}
 								</Typography>
+								{/*</Paper>*/}
+							</div>
+							<div className="col-12 col-md-6">
+								<img
+									width="100%"
+									src="/images/bucket_waterfall.png"
+									alt="What to do?"
+								/>
 							</div>
 							{/*<div className="col-12 col-md-6">
 								<Typography variant="subheading" gutterBottom>
@@ -103,6 +117,10 @@ class Intro extends Component {
 								</Typography>
 							</div>*/}
 						</div>
+					</Container>
+				</section>
+				<section id="clients" className="py-3 bg-white">
+					<Container center>
 						<Clients />
 					</Container>
 				</section>
