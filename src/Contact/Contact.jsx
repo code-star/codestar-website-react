@@ -24,6 +24,8 @@ const styles = theme => ({
 	},
 });
 
+// TODO unit test
+
 @translate(['contact'], { wait: true })
 class Contact extends Component {
 	constructor(props) {
@@ -52,38 +54,29 @@ class Contact extends Component {
 
 		if (!hasMessageError) {
 			ev.target.submit();
-			console.log(hasMessageError);
-		} else {
-			console.error(hasMessageError);
 		}
 
-		//console.log(this.state);
-
-		// TODO fetch polyfill
-
-		// fetch('/getMusic/music', {
-		// 	credentials: 'same-origin',
+		// TODO Implement serverless function (formspree AJAX is now a paid service)
+		// TODO add Fetch polyfill
+		// fetch(url, {
 		// 	method: 'POST',
-		// 	headers: {
-		// 		'Accept': 'application/json',
-		// 		'Content-Type': 'application/json'
-		// 	},
 		// 	body: JSON.stringify({
-		// 		url: this.state.url,
-		// 		title: this.state.title,
-		// 		artist: this.state.artist,
-		// 		album: this.state.album
+		// 		name: this.state.name,
+		// 		phone: this.state.phone,
+		// 		email: this.state.email,
+		// 		message: this.state.message
 		// 	})
 		// })
 		// 	.then(data => data.json())
 		// 	.then(data => {
-		// 		if(data.status === 'ok') {
-		// 			this.props.logInfo(`Get music completed to: ${data.fileName}`);
-		// 		} else {
-		// 			throw new Error('getMusic music failed');
-		// 		}
+		// 		// TODO handle success
+		// 		// if(data.status === 'ok') {
+		// 		// 	x
+		// 		// } else {
+		// 		// 	TODO handle error
+		// 		// }
 		// 	})
-		// 	.catch(error => this.props.logError('error on getMusic/music: ' + error));
+		// 	.catch(error => this.props.logError('HANDLE' + error)); // TODO handle error
 	}
 
 	render() {
@@ -119,16 +112,6 @@ class Contact extends Component {
 												onChange={this.handleChange}
 											/>
 										</FormControl>
-
-										{/*<FormControl fullWidth>
-										<InputLabel htmlFor="lastname">Last name</InputLabel>
-										<Input id="lastname" />
-									</FormControl>
-
-									<FormControl fullWidth>
-										<InputLabel htmlFor="company">Company</InputLabel>
-										<Input id="company" />
-									</FormControl>*/}
 
 										<FormControl fullWidth>
 											<InputLabel htmlFor="phone">{t('PHONE')}</InputLabel>
