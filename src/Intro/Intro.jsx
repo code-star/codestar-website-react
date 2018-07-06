@@ -55,8 +55,7 @@ function separateLines(text, C, props) {
 @translate(['intro'], { wait: true })
 class Intro extends Component {
 	render() {
-		const props = this.props;
-		const { t } = this.props;
+		const { t, ...props } = this.props;
 		return (
 			<div>
 				<section id="intro" className={props.classes.section}>
