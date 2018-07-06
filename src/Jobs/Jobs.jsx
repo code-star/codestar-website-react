@@ -9,7 +9,7 @@ import jobsList from './JobsList';
 import JobCard from './JobCard';
 
 const Jobs = () => (
-	<div>
+	<React.Fragment>
 		<section>
 			<Container marginTopNavBar>
 				<div className="row">
@@ -64,7 +64,7 @@ const Jobs = () => (
 				</div>
 			</Container>
 		</section>
-	</div>
+	</React.Fragment>
 );
 
 export default Jobs;
