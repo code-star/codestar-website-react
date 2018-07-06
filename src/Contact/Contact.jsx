@@ -24,8 +24,6 @@ const styles = theme => ({
 	},
 });
 
-// TODO unit test
-
 @translate(['contact'], { wait: true })
 class Contact extends Component {
 	constructor(props) {
@@ -92,8 +90,6 @@ class Contact extends Component {
 					<Map halfHeightMinusHalfNavBar />
 				</Container>
 				<Container className="mt-3">
-					{JSON.stringify(this.state)}
-
 					<form
 						action="https://formspree.io/codestar@ordina.nl"
 						method="POST"
