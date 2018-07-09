@@ -25,7 +25,7 @@ const styles = theme => ({
 });
 
 @translate(['contact'], { wait: true })
-class Contact extends Component {
+export class Contact extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
