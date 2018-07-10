@@ -24,7 +24,7 @@ const styles = theme => ({
 @translate(['stack'], { wait: true })
 class OurStack extends Component {
 	render() {
-		const { t, classes } = this.props;
+		const { classes } = this.props;
 
 		function techIcons(techs) {
 			return (

@@ -3,7 +3,7 @@ import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import Paper from 'material-ui/Paper';
 import { Link, Element } from 'react-scroll';
-import Grow from 'material-ui/transitions/Grow';
+import Fade from 'material-ui/transitions/Fade';
 
 import Container from '../Container/Container';
 import CaseHeader from '../CaseHeader/CaseHeader';
@@ -29,47 +29,40 @@ const Cases = props => (
 		<section>
 			<Container fullHeight center>
 				<div className="row justify-content-around">
-					<div className="col-10 col-lg-6 mx-auto">
-						<div className="col-12 col-md-8 p-0">
-							<img
-								src="/images/codestar_logo_dark.svg"
-								alt="Codestar powered by Ordina Logo"
-								className="mb-3"
-							/>
+					<Fade in timeout={2000}>
+						<div className="col-10 col-lg-6 mx-auto">
+							<div className="col-12 col-md-8 p-0">
+								<img
+									src="/images/codestar_logo_dark.svg"
+									alt="Codestar powered by Ordina Logo"
+									className="mb-3"
+								/>
+							</div>
+							<Typography
+								variant="subheading"
+								className={props.classes.whiteText}
+							>
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+								Placeat expedita error dolor omnis saepe repellat officiis
+								deleniti, reprehenderit fugiat laboriosam explicabo provident
+								assumenda magnam vitae aliquid dolorem harum, doloremque
+								maiores.
+							</Typography>
+							<Typography
+								variant="subheading"
+								className={props.classes.whiteText}
+							>
+								Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste
+								itaque eos aspernatur tenetur velit aperiam minima asperiores
+								consequatur deleniti totam soluta numquam voluptatem accusamus
+								eligendi, aut beatae cum, odit excepturi.
+							</Typography>
 						</div>
-						<Typography
-							variant="subheading"
-							className={props.classes.whiteText}
-						>
-							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat
-							expedita error dolor omnis saepe repellat officiis deleniti,
-							reprehenderit fugiat laboriosam explicabo provident assumenda
-							magnam vitae aliquid dolorem harum, doloremque maiores.
-						</Typography>
-						<Typography
-							variant="subheading"
-							className={props.classes.whiteText}
-						>
-							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste
-							itaque eos aspernatur tenetur velit aperiam minima asperiores
-							consequatur deleniti totam soluta numquam voluptatem accusamus
-							eligendi, aut beatae cum, odit excepturi.
-						</Typography>
-					</div>
+					</Fade>
 					<div className={`col-10 col-lg-6 mt-3 ${props.classes.noLineHeight}`}>
-						{/*<li
-									className={[
-										props.classes.whiteText,
-										props.classes.linkCursor,
-									].join(' ')}
-								>
-									<Link to={clientCase.client} smooth>
-										{clientCase.client}
-									</Link>
-								</li>*/}
-						{casesList.map(clientCase => (
+						{casesList.map((clientCase, i) => (
 							<Link to={clientCase.client} smooth>
-								<Grow in>
+								<Fade in timeout={1000}>
 									<Paper
 										className={props.classes.linkCursor}
 										style={{
@@ -94,7 +87,7 @@ const Cases = props => (
 											}}
 										/>
 									</Paper>
-								</Grow>
+								</Fade>
 							</Link>
 						))}
 					</div>
