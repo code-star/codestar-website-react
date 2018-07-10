@@ -16,7 +16,7 @@ const styles = theme => ({
 		paddingBottom: theme.spacing.unit * 1.5,
 	},
 	icon: {
-		marginRight: 10,
+		marginLeft: 10,
 	},
 });
 
@@ -30,6 +30,7 @@ class OurStack extends Component {
 				<div className="row">
 					{techs.map(item => (
 						<Tooltip
+							key={item.logo}
 							title={`${item.name} - A short description of the stack choice`}
 						>
 							<Avatar
@@ -46,34 +47,37 @@ class OurStack extends Component {
 		return (
 			<div>
 				{/* TODO: clean up */}
+				{/* TODO: better handling of small screen size */}
 				<Paper className={classes.root} elevation={1}>
 					<div className="row justify-content-between">
-						<div className="col-auto">
+						<div className="col-auto mb-1">
 							Front-end<Typography variant="caption">
 								Reactive and responsive
 							</Typography>
 						</div>
-						<div className="col-auto">{techIcons(techs.frontEnd)}</div>
+						<div className="col-auto mr-1">{techIcons(techs.frontEnd)}</div>
 					</div>
 				</Paper>
 				<Paper className={classes.root} elevation={1}>
 					<div className="row justify-content-between">
-						<div className="col-auto">
+						<div className="col-auto mb-1">
 							Back-end<Typography variant="caption">
 								Scalable and powerful
 							</Typography>
 						</div>
-						<div className="col-auto">{techIcons(techs.backEnd)}</div>
+						<div className="col-auto mr-1">{techIcons(techs.backEnd)}</div>
 					</div>
 				</Paper>
 				<Paper className={classes.root} elevation={1}>
 					<div className="row justify-content-between">
-						<div className="col-auto">
+						<div className="col-auto mb-1">
 							Infrastructure<Typography variant="caption">
 								In the cloud and modular
 							</Typography>
 						</div>
-						<div className="col-auto">{techIcons(techs.infrastructure)}</div>
+						<div className="col-auto mr-1">
+							{techIcons(techs.infrastructure)}
+						</div>
 					</div>
 				</Paper>
 			</div>
@@ -82,14 +86,3 @@ class OurStack extends Component {
 }
 
 export default withStyles(styles)(OurStack);
-
-/*
-
-For each layer, a paper
-heading on the left
-round icons with tech logo align on the right
-each has a tooltip
-
-				<h3>{t('STACK_TITLE')}</h3>
-				<ul>{techs.map((tech, i) => <li key={i}>{tech.name}</li>)}</ul>
- */
