@@ -36,3 +36,12 @@
 .avatarWrapper:hover .tagline {
 	opacity: 1;
 }
+
+.whiteText {
+	color: white;
+}
+
+.conduit {
+	font-family: 'Conduit';
+	font-size: 120%;
+}

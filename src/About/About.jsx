@@ -25,15 +25,25 @@ class About extends Component {
 		const { t } = this.props;
 		return (
 			<div>
-				<section>
+				<section className="py-3">
 					<Container marginTopNavBar>
+						<div className="row justify-content-center pt-5 pb-5">
+							<div className="col-12 col-md-8">
+								<h3 className={css.whiteText}>{t('ABOUT_ATTRACT_TITLE')}</h3>
+								<p className={[css.whiteText, css.conduit].join(' ')}>
+									{t('ABOUT_ATTRACT_TEXT')}
+								</p>
+							</div>
+							<div className="col-12 col-md-8 col-sd-6">
+								<OurStack />
+							</div>
+						</div>
+					</Container>
+				</section>
+				<section className="py-3 bg-white">
+					<Container fullHeight>
 						<div className="row">
 							<div className="col">
-								<h3>{t('ABOUT_ATTRACT_TITLE')}</h3>
-								<p>{t('ABOUT_ATTRACT_TEXT')}</p>
-
-								<OurStack />
-
 								<Typography variant="headline">
 									{t('ABOUT_TEAM_TITLE')}
 								</Typography>
@@ -80,7 +90,7 @@ class About extends Component {
 						</div>
 					</Container>
 				</section>
-				<section>
+				<section className="py-3 bg-white">
 					<Container fluid>
 						<div className="row">
 							<div className="col">
