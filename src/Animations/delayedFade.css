@@ -48,7 +48,7 @@
 	opacity: 1 \9; /* IE fallback */
 	animation: fadeIn ease-in;
 	animation-fill-mode: forwards;
-	animation-duration: 2s;
+	animation-duration: 1s;
 }
 
 .delayedFadeInPanLeft * {
@@ -56,7 +56,7 @@
 	opacity: 1 \9; /* IE fallback */
 	animation: fadeIn ease-in, panLeft ease-in;
 	animation-fill-mode: forwards;
-	animation-duration: 2s;
+	animation-duration: 1s;
 }
 
 .delayedFadeInPanRight * {
@@ -64,7 +64,7 @@
 	opacity: 1 \9; /* IE fallback */
 	animation: fadeIn ease-in, panRight ease-in;
 	animation-fill-mode: forwards;
-	animation-duration: 2s;
+	animation-duration: 1s;
 }
 
 .delayedFadeInPanUp * {
@@ -72,7 +72,7 @@
 	opacity: 1 \9; /* IE fallback */
 	animation: fadeIn ease-in, panUp ease-in;
 	animation-fill-mode: forwards;
-	animation-duration: 2s;
+	animation-duration: 1s;
 }
 
 .delayedFadeInPanDown * {
@@ -80,7 +80,7 @@
 	opacity: 1 \9; /* IE fallback */
 	animation: fadeIn ease-in, panDown ease-in;
 	animation-fill-mode: forwards;
-	animation-duration: 2s;
+	animation-duration: 1s;
 }
 
 .delayedFadeIn *:nth-child(1),

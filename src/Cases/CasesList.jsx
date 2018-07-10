@@ -16,6 +16,8 @@ const casesList = [
 		path: 'rabobank',
 		title: 'Helping developers and bankers to speak the same language again',
 		image: `/images/cases/stock-photo-utrecht-netherlands-april-rabobank-headquarters-building-rabobank-is-a-dutch-211390258.jpg`,
+		logo: `/images/clients/rabobank-2.svg`,
+		color: '#001090',
 	},
 	{
 		client: 'ING',
@@ -26,6 +28,8 @@ const casesList = [
 		],
 		details: AsyncCaseDetailsING,
 		image: `/images/cases/stock-photo-london-uk-january-th-the-homepage-of-the-official-website-for-the-ing-group-the-dutch-1013358685.jpg`,
+		logo: `/images/clients/ing.png`,
+		color: '#ee6f33',
 	},
 	{
 		client: 'SKG',
@@ -36,6 +40,8 @@ const casesList = [
 		],
 		details: AsyncCaseDetailsSKG,
 		image: `/images/cases/banners-cropped-images-SKG_sfeerbeelden-adviesopmaat-0-326-1500-562-1485443956-df9f1ec873b883e8004d80f6aced3963.jpg`,
+		logo: `/images/clients/skg.svg`,
+		color: '#9D1535',
 	},
 	{
 		client: 'Port of Roterdam',
@@ -47,6 +53,8 @@ const casesList = [
 		],
 		details: CaseDetailsPortRotterdam,
 		image: `/images/cases/stock-photo-large-container-vessel-unloaded-in-port-of-rotterdam-283990010.jpg`,
+		logo: `/images/clients/port_of_rotterdam_dark.svg`,
+		color: '#002d60',
 	},
 	{
 		client: '42 Education',
@@ -57,6 +65,8 @@ const casesList = [
 			'The goal was to let children learn by playing games with friends, real-time with an enormous number of events. With this in mind, we made the software architecture completely reactive. We used real-time event notification based on reactive streams and horizontally scaling event persistence based on event sourcing with Cassandra.',
 		],
 		image: `/images/cases/42education.jpg`,
+		logo: `/images/clients/42_education.png`,
+		color: '#222',
 	},
 	{
 		client: 'Gracenote Sports',
@@ -64,6 +74,8 @@ const casesList = [
 		title: 'Winter Olympics',
 		text: ['Lorem'],
 		image: `/images/cases/stock-photo-pyeongchang-south-korea-february-olympic-champion-martin-fourcade-of-france-1029727372.jpg`,
+		logo: `/images/clients/gracenote_dark.svg`,
+		color: '#e31b23',
 	},
 ];
 

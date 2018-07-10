@@ -5,6 +5,7 @@ import Tooltip from 'material-ui/Tooltip';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import { translate } from 'react-i18next';
+import Grow from 'material-ui/transitions/Grow';
 
 import techs from './techs';
 
@@ -33,11 +34,13 @@ class OurStack extends Component {
 							key={item.logo}
 							title={`${item.name} - A short description of the stack choice`}
 						>
-							<Avatar
-								className={classes.icon}
-								alt={item.name}
-								src={item.logo}
-							/>
+							<Grow in>
+								<Avatar
+									className={classes.icon}
+									alt={item.name}
+									src={item.logo}
+								/>
+							</Grow>
 						</Tooltip>
 					))}
 				</div>

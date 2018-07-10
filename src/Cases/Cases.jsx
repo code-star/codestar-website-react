@@ -1,12 +1,13 @@
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
+import Paper from 'material-ui/Paper';
 import { Link, Element } from 'react-scroll';
+import Grow from 'material-ui/transitions/Grow';
 
 import Container from '../Container/Container';
 import CaseHeader from '../CaseHeader/CaseHeader';
 import casesList from './CasesList';
-import DelayedFade from '../Animations/DelayedFade';
 
 const styles = {
 	whiteText: {
@@ -18,6 +19,9 @@ const styles = {
 	linkCursor: {
 		cursor: 'pointer',
 	},
+	noLineHeight: {
+		lineHeight: 0,
+	},
 };
 
 const Cases = props => (
@@ -25,7 +29,7 @@ const Cases = props => (
 		<section>
 			<Container fullHeight center>
 				<div className="row justify-content-around">
-					<div className="col-10 col-md-6 mx-auto">
+					<div className="col-10 col-lg-6 mx-auto">
 						<div className="col-12 col-md-8 p-0">
 							<img
 								src="/images/codestar_logo_dark.svg"
@@ -52,10 +56,8 @@ const Cases = props => (
 							eligendi, aut beatae cum, odit excepturi.
 						</Typography>
 					</div>
-					<div className="col-10 col-md-4 mt-3">
-						<DelayedFade panLeft>
-							{casesList.map(clientCase => (
-								<li
+					<div className={`col-10 col-lg-6 mt-3 ${props.classes.noLineHeight}`}>
+						{/*<li
 									className={[
 										props.classes.whiteText,
 										props.classes.linkCursor,
@@ -64,9 +66,37 @@ const Cases = props => (
 									<Link to={clientCase.client} smooth>
 										{clientCase.client}
 									</Link>
-								</li>
-							))}
-						</DelayedFade>
+								</li>*/}
+						{casesList.map(clientCase => (
+							<Link to={clientCase.client} smooth>
+								<Grow in>
+									<Paper
+										className={props.classes.linkCursor}
+										style={{
+											display: 'inline-block',
+											padding: '.5em',
+											margin: '5px',
+											backgroundColor: clientCase.color
+												? clientCase.color
+												: 'transparent',
+											width: '150px',
+											height: '150px',
+										}}
+									>
+										<div
+											style={{
+												backgroundImage: `url(${clientCase.logo})`,
+												backgroundSize: 'contain',
+												backgroundPosition: 'center',
+												backgroundRepeat: 'no-repeat',
+												width: '100%',
+												height: '100%',
+											}}
+										/>
+									</Paper>
+								</Grow>
+							</Link>
+						))}
 					</div>
 				</div>
 			</Container>

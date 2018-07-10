@@ -57,7 +57,7 @@ class About extends Component {
 						</div>
 					</Container>
 				</section>
-				<section className="py-5 bg-white">
+				<section className="py-5" style={{ background: '#eeeeee' }}>
 					<Container>
 						<div className="row">
 							<div className="col">
