@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'material-ui';
 
@@ -9,7 +9,7 @@ import jobsList from './JobsList';
 import JobCard from './JobCard';
 
 const Jobs = () => (
-	<div>
+	<Fragment>
 		<section className="py-3">
 			<Container marginTopNavBar>
 				<div className="row">
@@ -64,7 +64,7 @@ const Jobs = () => (
 				</div>
 			</Container>
 		</section>
-	</div>
+	</Fragment>
 );
 
 export default Jobs;

@@ -1,13 +1,16 @@
+import React from 'react';
 import AsyncComponent from '../AsyncComponent/AsyncComponent';
 
-const AsyncCaseDetailsING = AsyncComponent(() =>
-	import('../CaseDetails/CaseDetailsING')
+const AsyncCaseDetailsING = () => (
+	<AsyncComponent component={() => import('../CaseDetails/CaseDetailsING')} />
 );
-const AsyncCaseDetailsSKG = AsyncComponent(() =>
-	import('../CaseDetails/CaseDetailsSKG')
+const AsyncCaseDetailsSKG = () => (
+	<AsyncComponent component={() => import('../CaseDetails/CaseDetailsSKG')} />
 );
-const CaseDetailsPortRotterdam = AsyncComponent(() =>
-	import('../CaseDetails/CaseDetailsPortRotterdam')
+const CaseDetailsPortRotterdam = () => (
+	<AsyncComponent
+		component={() => import('../CaseDetails/CaseDetailsPortRotterdam')}
+	/>
 );
 
 // TODO: This list and the one in Clients.jsx have duplicate data
