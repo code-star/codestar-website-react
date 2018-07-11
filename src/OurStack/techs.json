@@ -33,6 +33,18 @@
 		{
 			"logo": "/images/technologies/react.png",
 			"name": "React"
+		},
+		{
+			"logo": "/images/technologies/redux.png",
+			"name": "Redux"
+		},
+		{
+			"logo": "/images/technologies/angular.png",
+			"name": "AngularJS"
+		},
+		{
+			"logo": "/images/technologies/rxjs.png",
+			"name": "RxJS"
 		}
 	],
 	"infrastructure": [
