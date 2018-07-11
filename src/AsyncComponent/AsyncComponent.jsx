@@ -26,11 +26,6 @@ export default class AsyncComponent extends Component {
 
 	render() {
 		const C = this.state.component;
-
-		// TODO
-		// Check if it is a JSX component
-		// Add spinner
-
 		return this.props.fullHeight ? (
 			<FullHeight>{C ? <C {...this.props} /> : null}</FullHeight>
 		) : null;
