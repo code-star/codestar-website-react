@@ -20,10 +20,11 @@ const AsyncIntro = () => (
 const AsyncCases = () => (
 	<AsyncComponent fullHeight component={() => import('./Cases/Cases')} />
 );
-const AsyncCaseDetails = () => (
+const AsyncCaseDetails = props => (
 	<AsyncComponent
 		fullHeight
 		component={() => import('./CaseDetails/CaseDetails')}
+		{...props}
 	/>
 );
 const AsyncAbout = () => (
@@ -32,8 +33,11 @@ const AsyncAbout = () => (
 const AsyncJobs = () => (
 	<AsyncComponent fullHeight component={() => import('./Jobs/Jobs')} />
 );
-const AsyncJobDescription = () => (
-	<AsyncComponent component={() => import('./JobDescription/JobDescription')} />
+const AsyncJobDescription = props => (
+	<AsyncComponent
+		component={() => import('./JobDescription/JobDescription')}
+		{...props}
+	/>
 );
 const AsyncContact = () => (
 	<AsyncComponent fullHeight component={() => import('./Contact/Contact')} />
