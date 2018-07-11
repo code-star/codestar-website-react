@@ -24,5 +24,17 @@
         "Acquisition on the basis of this vacancy is not appreciated."
     ],
     "JOBS_SHARE_BUTTON": "Share",
-    "JOBS_LEARN_MORE_BUTTON": "Learn More"
+    "JOBS_LEARN_MORE_BUTTON": "Learn More",
+    "JOBS_TITLE": "This is why you want to work for us",
+    "JOBS_ARGUMENTS": [
+        "We’re not afraid to say it out loud: We’re very, very good",
+        "We decide how we work",
+        "We’re never done learning",
+        "We know the underlying principles of functional programming",
+        "We know the underlying principles of object-oriented programming",
+        "We share our passion at events and at international conferences"
+    ],
+    "JOBS_VACANCIES": "Vacancies",
+    "JOBS_BEST_TECH": "We use the best technologies",
+    "JOBS_BEST_CLIENTS": "We work with innovative companies"
 }

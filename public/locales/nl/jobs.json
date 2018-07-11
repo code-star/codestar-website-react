@@ -24,5 +24,17 @@
         "Acquisitie naar aanleiding van deze vacature wordt niet op prijs gesteld."
     ],
     "JOBS_SHARE_BUTTON": "Deel",
-    "JOBS_LEARN_MORE_BUTTON": "Kijken"
+    "JOBS_LEARN_MORE_BUTTON": "Kijken",
+    "JOBS_TITLE": "Hierom wil jij voor ons programmeren",
+    "JOBS_ARGUMENTS": [
+        "Wij durven het hardop te zeggen: wij zijn heel, heel goed",
+        "Hoe we werken, bepalen we zelf",
+        "Wij zijn nooit uitgeleerd",
+        "Wij kennen de onderliggende principes van functioneel programmeren",
+        "Wij kennen de onderliggende principes van object geörienteerd programmeren",
+        "Wij delen onze passie op evenementen en internationale conferenties"
+    ],
+    "JOBS_VACANCIES": "Vacatures",
+    "JOBS_BEST_TECH": "We gebruiken de beste technologie",
+    "JOBS_BEST_CLIENTS": "We werken met innovatieve bedrijven"
 }
