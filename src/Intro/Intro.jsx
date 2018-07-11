@@ -4,7 +4,7 @@ import Container from '../Container/Container';
 import Clients from '../Clients/Clients';
 import AnimatedLogo from '../Animations/AnimatedLogo';
 import LandscapeBackground from '../Animations/LandscapeBackground';
-import '../Animations/delayedFade.css';
+import DelayedFade from '../Animations/DelayedFade';
 
 import Typography from 'material-ui/Typography';
 
@@ -26,7 +26,7 @@ const styles = theme => ({
 		left: '0',
 		zIndex: -1,
 	},
-	introText: {
+	whiteText: {
 		color: 'white',
 		textAlign: 'left',
 		fontFamily: 'Conduit',
@@ -39,24 +39,10 @@ const styles = theme => ({
 	},
 });
 
-// TODO: Make this a component
-function separateLines(text, C, props) {
-	return text
-		.split('.')
-		.map(line => line.trim())
-		.filter(n => n)
-		.map(line => (
-			<div className="delayedFadeIn">
-				<C {...props}>{line}</C>
-			</div>
-		));
-}
-
 @translate(['intro'], { wait: true })
 class Intro extends Component {
 	render() {
-		const props = this.props;
-		const { t } = this.props;
+		const { t, ...props } = this.props;
 		return (
 			<div>
 				<section id="intro" className={props.classes.section}>
@@ -69,14 +55,20 @@ class Intro extends Component {
 										<AnimatedLogo lineDuration={200} fadeDuration={3000} />
 									</div>
 									<div className="col-12 col-md-10">
-										{separateLines(
-											t('INTRO_TEXT') + t('INTRO_TEXT_SUBLINE'),
-											Typography,
-											{
-												variant: 'subheading',
-												className: props.classes.introText,
-											}
-										)}
+										<DelayedFade>
+											{(t('INTRO_TEXT') + t('INTRO_TEXT_SUBLINE'))
+												.split('.')
+												.map(line => line.trim())
+												.filter(n => n)
+												.map(line => (
+													<Typography
+														variant="subheading"
+														className={props.classes.whiteText}
+													>
+														{line}
+													</Typography>
+												))}
+										</DelayedFade>
 									</div>
 								</div>
 							</div>

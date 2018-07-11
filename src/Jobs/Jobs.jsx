@@ -10,7 +10,7 @@ import JobCard from './JobCard';
 
 const Jobs = () => (
 	<Fragment>
-		<section>
+		<section className="py-3">
 			<Container marginTopNavBar>
 				<div className="row">
 					<div className="col">
