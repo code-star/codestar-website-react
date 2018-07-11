@@ -14,34 +14,21 @@ import casesList from './Cases/CasesList';
 import jobsList from './Jobs/JobsList';
 import AsyncComponent from './AsyncComponent/AsyncComponent';
 
-const AsyncIntro = () => (
-	<AsyncComponent fullHeight component={() => import('./Intro/Intro')} />
+function fullHeightAsyncComponent(C) {
+	return props => <AsyncComponent fullHeight component={() => C} {...props} />;
+}
+
+const AsyncIntro = fullHeightAsyncComponent(import('./Intro/Intro'));
+const AsyncCases = fullHeightAsyncComponent(import('./Cases/Cases'));
+const AsyncCaseDetails = fullHeightAsyncComponent(
+	import('./CaseDetails/CaseDetails')
 );
-const AsyncCases = () => (
-	<AsyncComponent fullHeight component={() => import('./Cases/Cases')} />
+const AsyncAbout = fullHeightAsyncComponent(import('./About/About'));
+const AsyncJobs = fullHeightAsyncComponent(import('./Jobs/Jobs'));
+const AsyncJobDescription = fullHeightAsyncComponent(
+	import('./JobDescription/JobDescription')
 );
-const AsyncCaseDetails = props => (
-	<AsyncComponent
-		fullHeight
-		component={() => import('./CaseDetails/CaseDetails')}
-		{...props}
-	/>
-);
-const AsyncAbout = () => (
-	<AsyncComponent fullHeight component={() => import('./About/About')} />
-);
-const AsyncJobs = () => (
-	<AsyncComponent fullHeight component={() => import('./Jobs/Jobs')} />
-);
-const AsyncJobDescription = props => (
-	<AsyncComponent
-		component={() => import('./JobDescription/JobDescription')}
-		{...props}
-	/>
-);
-const AsyncContact = () => (
-	<AsyncComponent fullHeight component={() => import('./Contact/Contact')} />
-);
+const AsyncContact = fullHeightAsyncComponent(import('./Contact/Contact'));
 
 const sections = ['', 'cases', 'about', 'jobs', 'contact'];
 
