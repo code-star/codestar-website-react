@@ -52,7 +52,7 @@ class About extends Component {
 								to="/jobs"
 								color="inherit"
 							>
-								Vacancies
+								{t('ABOUT_VACANCIES')}
 							</Button>
 						</div>
 					</Container>

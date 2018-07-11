@@ -10,6 +10,7 @@ const CaseDetailsPortRotterdam = AsyncComponent(() =>
 	import('../CaseDetails/CaseDetailsPortRotterdam')
 );
 
+// TODO: This list and the one in Clients.jsx have duplicate data
 const casesList = [
 	{
 		client: 'Rabobank',

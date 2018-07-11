@@ -24,7 +24,7 @@ const styles = theme => ({
 @translate(['stack'], { wait: true })
 class OurStack extends Component {
 	render() {
-		const { classes } = this.props;
+		const { t, classes } = this.props;
 
 		function techIcons(techs) {
 			return (
@@ -32,7 +32,7 @@ class OurStack extends Component {
 					{techs.map(item => (
 						<Tooltip
 							key={item.logo}
-							title={`${item.name} - A short description of the stack choice`}
+							title={item.name} // TODO: Description why we chose a tech
 						>
 							<Grow in>
 								<Avatar
@@ -54,8 +54,9 @@ class OurStack extends Component {
 				<Paper className={classes.root} elevation={1}>
 					<div className="row justify-content-between">
 						<div className="col-auto mb-1">
-							Front-end<Typography variant="caption">
-								Reactive and responsive
+							{t('STACK_FRONT_END')}
+							<Typography variant="caption">
+								{t('STACK_FRONT_END_SUBTITLE')}
 							</Typography>
 						</div>
 						<div className="col-auto mr-1">{techIcons(techs.frontEnd)}</div>
@@ -64,8 +65,9 @@ class OurStack extends Component {
 				<Paper className={classes.root} elevation={1}>
 					<div className="row justify-content-between">
 						<div className="col-auto mb-1">
-							Back-end<Typography variant="caption">
-								Scalable and powerful
+							{t('STACK_BACK_END')}
+							<Typography variant="caption">
+								{t('STACK_BACK_END_SUBTITLE')}
 							</Typography>
 						</div>
 						<div className="col-auto mr-1">{techIcons(techs.backEnd)}</div>
@@ -74,8 +76,9 @@ class OurStack extends Component {
 				<Paper className={classes.root} elevation={1}>
 					<div className="row justify-content-between">
 						<div className="col-auto mb-1">
-							Infrastructure<Typography variant="caption">
-								In the cloud and modular
+							{t('STACK_INFRASTRUCTURE')}
+							<Typography variant="caption">
+								{t('STACK_INFRASTRUCTURE_SUBTITLE')}
 							</Typography>
 						</div>
 						<div className="col-auto mr-1">
