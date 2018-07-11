@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'material-ui';
 import { translate } from 'react-i18next';
@@ -25,7 +25,7 @@ class Jobs extends Component {
 	render() {
 		const { t, classes } = this.props;
 		return (
-			<div>
+			<Fragment>
 				<section className="py-3">
 					<Container marginTopNavBar>
 						<div className="row">
@@ -44,7 +44,6 @@ class Jobs extends Component {
 						</div>
 					</Container>
 				</section>
-
 				<section className="pb-3 pt-5" style={{ backgroundColor: '#eeeeee' }}>
 					<Container>
 						<div className="row mb-5">
@@ -80,7 +79,7 @@ class Jobs extends Component {
 						</div>
 					</Container>
 				</section>
-			</div>
+			</Fragment>
 		);
 	}
 }
