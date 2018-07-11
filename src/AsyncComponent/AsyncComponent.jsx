@@ -28,6 +28,8 @@ export default class AsyncComponent extends Component {
 		const C = this.state.component;
 		return this.props.fullHeight ? (
 			<FullHeight>{C ? <C {...this.props} /> : null}</FullHeight>
+		) : C ? (
+			<C {...this.props} />
 		) : null;
 	}
 }
