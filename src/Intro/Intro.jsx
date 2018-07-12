@@ -74,8 +74,8 @@ class Intro extends Component {
 						</div>
 					</Container>
 				</section>
-				<section id="next-step" className="py-3 bg-white">
-					<Container fullHeight center>
+				<section id="next-step" className="py-5 bg-white">
+					<Container center>
 						<div className="row">
 							<div className="col-12 col-md-6">
 								{/*<Paper className={props.classes.paper} elevation={1}>*/}
@@ -110,7 +110,11 @@ class Intro extends Component {
 						</div>
 					</Container>
 				</section>
-				<section id="clients" className="py-3 bg-white">
+				<section
+					id="clients"
+					className="py-5"
+					style={{ backgroundColor: '#eeeeee' }}
+				>
 					<Container center>
 						<Clients />
 					</Container>

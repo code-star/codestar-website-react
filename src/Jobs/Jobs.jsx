@@ -30,8 +30,11 @@ class Jobs extends Component {
 				<section className="py-3">
 					<Container marginTopNavBar>
 						<div className="row">
-							<div className="col-12 mt-2 mb-4">
+							<div className="col-12 mt-2 my-4">
 								<h3 className={classes.whiteText}>{t('JOBS_VACANCIES')}</h3>
+								<p className={`${classes.whiteText} ${classes.conduit}`}>
+									{t('JOBS_VACANCIES_TEXT')}
+								</p>
 								<div className="d-flex justify-content-center flex-wrap">
 									{jobsList.map(job => (
 										<JobCard
