@@ -55,14 +55,16 @@ class NavBar extends Component {
 		return (
 			<AppBar position="fixed" className={props.classes.appBar}>
 				<Toolbar>
-					<IconButton
-						onClick={props.toggle}
-						className={props.classes.menuButton}
-						color="inherit"
-						aria-label="Menu"
-					>
-						<MenuIcon />
-					</IconButton>
+					<Hidden smUp>
+						<IconButton
+							onClick={props.toggle}
+							className={props.classes.menuButton}
+							color="inherit"
+							aria-label="Menu"
+						>
+							<MenuIcon />
+						</IconButton>
+					</Hidden>
 					<Typography
 						className={props.classes.flex}
 						variant="title"
