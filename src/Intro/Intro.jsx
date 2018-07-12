@@ -60,8 +60,9 @@ class Intro extends Component {
 												.split('.')
 												.map(line => line.trim())
 												.filter(n => n)
-												.map(line => (
+												.map((line, index) => (
 													<Typography
+														key={`intro-${index}`}
 														variant="subheading"
 														className={props.classes.whiteText}
 													>
