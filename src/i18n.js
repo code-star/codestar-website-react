@@ -8,24 +8,8 @@ i18n
 	.use(LanguageDetector)
 	.use(reactI18nextModule)
 	.init({
-		// resources: {
-		// 	en: {
-		// 		translations: {
-		// 			appName: 'hello from namespace 1',
-		// 		},
-		// 		nav: {
-		// 			"linkNL": "my_link_nl",
-		// 			"linkEN": "my_link_en",
-		// 		}
-		// 	},
-		// 	nl: {
-		// 		translations: {
-		// 			appName: 'hoi',
-		// 		},
-		// 	}
-		// },
-
 		fallbackLng: 'nl',
+		whitelist: ['nl', 'en'], // To prevent other languages or even en-US
 
 		// have a common namespace used around the full app
 		ns: ['translations'],
