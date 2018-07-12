@@ -13,6 +13,8 @@ import {
 	CardActions,
 	CardContent,
 	withWidth,
+	Collapse,
+	Fade,
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -38,9 +40,16 @@ export class Contact extends Component {
 			email: '',
 			message: '',
 			messageRequiredError: false,
+			showMap: false,
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+	}
+
+	componentDidMount() {
+		setTimeout(() => {
+			this.setState({ showMap: true });
+		}, 300);
 	}
 
 	handleChange(event) {
@@ -91,70 +100,74 @@ export class Contact extends Component {
 		return (
 			<section>
 				<Container fluid noPadding marginTopNavBar>
-					<Map halfHeightMinusHalfNavBar />
+					<Collapse in={this.state.showMap}>
+						<Map halfHeightMinusHalfNavBar />
+					</Collapse>
 				</Container>
 				<Container className="mt-3">
-					<form
-						action="https://formspree.io/codestar@ordina.nl"
-						method="POST"
-						onSubmit={this.handleSubmit}
-					>
-						<Card className="mb-3">
-							<CardContent>
-								<p>{t('INTRO_TEXT')}</p>
-								<div className="row">
-									<div className="col-12 col-md-5">
-										<FormControl fullWidth>
-											<InputLabel htmlFor="name">{t('NAME')}</InputLabel>
-											<Input
-												id="name"
-												name="name"
-												onChange={this.handleChange}
-											/>
-										</FormControl>
+					<Fade in timeout={2000}>
+						<form
+							action="https://formspree.io/codestar@ordina.nl"
+							method="POST"
+							onSubmit={this.handleSubmit}
+						>
+							<Card className="mb-3">
+								<CardContent>
+									<p>{t('INTRO_TEXT')}</p>
+									<div className="row">
+										<div className="col-12 col-md-5">
+											<FormControl fullWidth>
+												<InputLabel htmlFor="name">{t('NAME')}</InputLabel>
+												<Input
+													id="name"
+													name="name"
+													onChange={this.handleChange}
+												/>
+											</FormControl>
 
-										<FormControl fullWidth>
-											<InputLabel htmlFor="phone">{t('PHONE')}</InputLabel>
-											<Input
-												id="phone"
-												name="phone"
-												onChange={this.handleChange}
-											/>
-										</FormControl>
+											<FormControl fullWidth>
+												<InputLabel htmlFor="phone">{t('PHONE')}</InputLabel>
+												<Input
+													id="phone"
+													name="phone"
+													onChange={this.handleChange}
+												/>
+											</FormControl>
 
-										<FormControl fullWidth required={true}>
-											<InputLabel htmlFor="email">{t('EMAIL')}</InputLabel>
-											<Input
-												id="email"
-												type="email"
-												name="email"
-												onChange={this.handleChange}
-											/>
-										</FormControl>
+											<FormControl fullWidth required={true}>
+												<InputLabel htmlFor="email">{t('EMAIL')}</InputLabel>
+												<Input
+													id="email"
+													type="email"
+													name="email"
+													onChange={this.handleChange}
+												/>
+											</FormControl>
+										</div>
+										<div className="col-12 col-md-7">
+											<FormControl fullWidth required={true}>
+												<TextField
+													error={this.state.messageRequiredError}
+													label={t('MESSAGE')}
+													id="message"
+													name="message"
+													onChange={this.handleChange}
+													multiline
+													rows={6}
+												/>
+												{err}
+											</FormControl>
+										</div>
 									</div>
-									<div className="col-12 col-md-7">
-										<FormControl fullWidth required={true}>
-											<TextField
-												error={this.state.messageRequiredError}
-												label={t('MESSAGE')}
-												id="message"
-												name="message"
-												onChange={this.handleChange}
-												multiline
-												rows={6}
-											/>
-											{err}
-										</FormControl>
-									</div>
-								</div>
-							</CardContent>
-							<CardActions>
-								<Button color="primary" type="submit">
-									{t('SEND')}
-								</Button>
-							</CardActions>
-						</Card>
-					</form>
+								</CardContent>
+								<CardActions>
+									<Button color="primary" type="submit">
+										{t('SEND')}
+									</Button>
+								</CardActions>
+							</Card>
+						</form>
+					</Fade>
 				</Container>
 			</section>
 		);
