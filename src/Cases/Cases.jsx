@@ -34,7 +34,9 @@ const styles = {
 
 @translate(['cases'], { wait: true })
 class Cases extends Component {
-	state = casesList.reduce((accu, clientCase) => {
+	orderedCases = [3, 1, 2, 5, 0, 4].map(i => casesList[i]);
+
+	state = this.orderedCases.reduce((accu, clientCase) => {
 		accu[clientCase.path] = false;
 		return accu;
 	}, {});
@@ -82,7 +84,7 @@ class Cases extends Component {
 		const { classes } = this.props;
 		return (
 			<div className={`col-10 col-lg-6 mt-3 ${classes.noLineHeight}`}>
-				{casesList.map((clientCase, i) => (
+				{this.orderedCases.map((clientCase, i) => (
 					<Link key={i} to={clientCase.client} smooth>
 						<Fade in timeout={1000}>
 							<Paper
@@ -120,7 +122,7 @@ class Cases extends Component {
 		const { t } = this.props;
 		return (
 			<section>
-				{casesList.map((clientCase, i) => {
+				{this.orderedCases.map((clientCase, i) => {
 					const caseText = t(`CASES.${clientCase.path}`, {
 						returnObjects: true,
 					});
