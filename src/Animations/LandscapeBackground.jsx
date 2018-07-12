@@ -30,7 +30,6 @@ class LandscapeBackground extends Component {
 			simplexXScale,
 			valleySteepness,
 			travelTime,
-			perspective,
 		} = options;
 
 		const simplexY = simplexYOffset * simplexYStep;
@@ -46,30 +45,10 @@ class LandscapeBackground extends Component {
 
 		const pathString = makeSVGPath(coordinates);
 		const path = this.s.path(pathString);
-
-		path.attr({
-			'vector-effect': 'non-scaling-stroke',
-			fill: 'none',
-			stroke: 'white',
-			'stroke-width': 1,
-			'transform-origin': 'center',
-			transform: `translate(0, 0) scale(${perspective}, ${perspective}) `,
-			'stroke-opacity': perspective, // Because paths are scaled by 'perspective' times,
-			// they are blown out of view. When it scales back down and becomes visible,
-			// they would be almost invisible if opacity started at 1
-		});
-
-		path.animate(
-			{
-				transform: `translate(0, -0.5) scale(1, 1)`,
-				'stroke-opacity': 0,
-			},
-			travelTime,
-			t => 1 + --t * t * t * t * t,
-			function() {
-				path.remove();
-			}
-		);
+		path.addClass('perspective');
+		setTimeout(() => {
+			path.remove();
+		}, travelTime);
 	}
 
 	componentDidMount() {
@@ -91,7 +70,38 @@ class LandscapeBackground extends Component {
 	}
 
 	render() {
-		return <svg id="landscape" className={this.props.className} />;
+		const { travelTime, perspective } = options;
+
+		// About setting stroke-opacity to a value higher than 1:
+		// Because paths are scaled by 'perspective' times,
+		// they are blown out of view. When it scales back down and becomes visible,
+		// they would be almost invisible if opacity started at 1
+
+		return (
+			<svg id="landscape" className={this.props.className}>
+				<style>{`
+				@keyframes perspectiveMove {
+					from {
+						transform: translateY(0) scale(${perspective}, ${perspective});
+						stroke-opacity: ${perspective};
+					}
+					to {
+						transform: translateY(-50%) scale(1, 1);
+						stroke-opacity: 0;
+					}
+				}
+				.perspective {
+					will-change: transform, opacity;
+					transform-origin: center;
+					vector-effect: non-scaling-stroke;
+					fill: none;
+					stroke: white;
+					stroke-width: 1;
+					animation: perspectiveMove ${travelTime}ms cubic-bezier(0.165, 0.84, 0.44, 1);
+				}
+				`}</style>
+			</svg>
+		);
 	}
 }
 
