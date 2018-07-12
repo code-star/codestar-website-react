@@ -10,7 +10,6 @@ import ScrollToTop from './ScrollToTop';
 import NavBar from './NavBar/NavBar';
 import SideMenu from './SideMenu/SideMenu';
 import Footer from './Footer/Footer';
-import casesList from './Cases/CasesList';
 import jobsList from './Jobs/JobsList';
 import AsyncComponent from './AsyncComponent/AsyncComponent';
 
@@ -20,9 +19,6 @@ function fullHeightAsyncComponent(C) {
 
 const AsyncIntro = fullHeightAsyncComponent(import('./Intro/Intro'));
 const AsyncCases = fullHeightAsyncComponent(import('./Cases/Cases'));
-const AsyncCaseDetails = fullHeightAsyncComponent(
-	import('./CaseDetails/CaseDetails')
-);
 const AsyncAbout = fullHeightAsyncComponent(import('./About/About'));
 const AsyncJobs = fullHeightAsyncComponent(import('./Jobs/Jobs'));
 const AsyncJobDescription = fullHeightAsyncComponent(
@@ -72,16 +68,7 @@ class App extends Component {
 
 					<ScrollToTop>
 						<Route exact path="/" component={AsyncIntro} />
-
 						<Route exact path="/cases" component={AsyncCases} />
-						{casesList.map(clientCase => (
-							<Route
-								exact
-								path={`/cases/${clientCase.path}`}
-								key={clientCase.client}
-								render={() => <AsyncCaseDetails {...clientCase} />}
-							/>
-						))}
 
 						<Route exact path="/jobs" component={AsyncJobs} />
 						{jobsList.map(job => (

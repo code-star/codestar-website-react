@@ -1,0 +1,80 @@
+{
+    "CASES_INTRO_1": "Dutch Intro 1 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat expedita error dolor omnis saepe repellat officiis deleniti, reprehenderit fugiat laboriosam explicabo provident assumenda magnam vitae aliquid dolorem harum, doloremque maiores.",
+    "CASES_INTRO_2": "Dutch Intro 2 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat expedita error dolor omnis saepe repellat officiis deleniti, reprehenderit fugiat laboriosam explicabo provident assumenda magnam vitae aliquid dolorem harum, doloremque maiores.",
+    "CASES_STACK_TITLE": "Technology stack",
+    "CASES_CLOSE_BUTTON": "Sluiten",
+    "CASES_READ_MORE_BUTTON": "Lees meer",
+    "CASES": {
+        "rabobank": {
+            "title": "Helping developers and bankers to speak the same language again",
+            "intro": "N/A",
+            "sections": []
+        },
+        "skg": {
+            "title": "Not an optimisation, but a complete renewal",
+            "intro": "A classic example of a client with an application that fails to meet modern demands. The client needs a new payment platform that supports apps and modern devices, enables them to go live quickly with new features and is easier to manage. The current outdated platform was completely custom developed in-house for SKG, including hosting and physical servers. We are building a new reactive platform that scales, is easy to maintain, uses the latest technologies and methodologies, such as Microservices, Platform as a Service and Continuous Delivery.",
+            "sections": [
+                {
+                    "title": "About SKG",
+                    "paragraphs": [
+                        "SKG, Stichting Kerkelijk Geldbeheer, offers financial services specifically tailored for churches and ecclesiastical organisations. Via SKG Online, the foundation offers a unique financial application for churches and ecclesiastical organisations, tailored to the division of tasks and working methods in such organisations. SKG Online offers the functionalities their clients expect, such as debit, payment and savings. In addition, organisations can indicate precisely which actions their employees are authorised to carry out within the system, right up to account level. For instance, an extra digital signature may be necessary for large amounts.",
+                        "The current outdated platform was completely custom developed in-house for SKG, including hosting and physical servers. SKG is looking for a new payment platform that supports apps and modern devices, enables them to go live quickly with new features and is easier to manage. Codestar is building SKG a new reactive platform that scales and is easy to maintain. The platform is future-proof thanks to the use of technologies such as Microservices, Platform as a Service and Continuous Delivery."
+                    ]
+                },
+                {
+                    "title": "About the system",
+                    "paragraphs": [
+                        "We are writing the back-end of the system in Scala. The Play! framework provides the basis for a scalable platform that can deal with heavy traffic loads. Scala is expressive and makes it possible to set up detailed data models quickly and simply. This enabled us to write up the unique workflows and business rules of SKG Online in an extremely compact, readable and low-maintenance manner. That means fewer errors in the software and shorter development times. And it was easy to integrate a number of recently developed pieces of Java software.",
+                        "On the front-end, thanks to TypeScript we were able to achieve the same benefits in terms of robustness and development speed. The latest version of Angular framework enabled us harness the full power of TypeScript. This widely supported framework is future proof. Using reactive programming, we can build advanced user interfaces without any compromises on the system management front.",
+                        "And thanks to continuous delivery and the latest container-technologies, we can deliver new functionalities in a streamlined, fast and consistent manner. Without any downtime. So SKG will be able to respond quickly to any changes in the future."
+                    ]
+                }
+            ]
+        },
+        "ing": {
+            "title": "Innovate in fintech",
+            "intro": "A demanding client where Codestar contributes to innovation on the project for straight-through appointment scheduling.",
+            "sections": [
+                {
+                    "title": "About ING",
+                    "paragraphs": [
+                        "ING: the bank as an IT company with a banking license. ING wants to be the world leading innovator on financial technology and offers an atmosphere that is attractive to developers. More than 300 developers work on varying aspects of ING's online presence. To support this ING has embraced the Spotify agile model and DevOps, making each team responsible for the business and IT side of one or more applications.",
+                        "Codestar is working on ING’s online appointment scheduling service: the first straight-through appointment service for a bank in The Netherlands. Customers, prospects and employees can schedule an appointment online with a financial advisor with the right skills to handle their specific need (mortgage, financial advice).",
+                        "The system substantially improves the conversion rate and thereby the sales funnel. This is a key IT project within assisted channels (financial advisory at ING offices) which will form the technical backbone in future contact between ING and its clients or prospects."
+                    ]
+                },
+                {
+                    "title": "About the system",
+                    "paragraphs": [
+                        "The system integrates with the Exchange calendars of 1300 advisors, meeting rooms in 250 branch offices, and other appointment scheduling systems in the bank to do near real-time checks for availability to optimize the customer experience. The backend uses Scala, Cassandra and asynchronous programming techniques to create a scalable platform so its use can be expanded to other countries.",
+                        "ING firmly believes in the promise of standardized component driven development and a universal design language for front-end development. ING has adopted web components (Polymer) and Material Design to make the ING front-end stack ready for years to come. The appointment scheduling service is part of the world-wide ING transition from AngularJS to Polymer.",
+                        "Codestar supplies the full-stack expertise and a broad knowledge of platforms to support the maintenance of the appointment scheduling system and the migration to the new platform."
+                    ]
+                }
+            ]
+        },
+        "port-of-rotterdam": {
+            "title": "Rediscovering the port together",
+            "intro": "An innovative project that aims to realise a pilot application for the verification of an extremely promising new business concept for the entire port. And the entire port really does mean the entire port. So involving a lot of stakeholders, which in turn involves a lot of discussion. Short feedback loops were essential for deciding the direction of the pilot. Using a fully cloud-based development route made it possible to demonstrate functionality in the product environment from week one, and give shape to the short feedback loops. So no meetings about abstract software diagrams, but about working software. Agile, as agile is meant to be.",
+            "sections": [
+                {
+                    "title": "About the Port of Rotterdam",
+                    "paragraphs": [
+                        "The Port of Rotterdam is the largest port in Europe. To maintain this position and to facilitate continued growth, the IT systems the port’s stakeholders use to exchange data need to be smarter. The Rotterdam Logistics Lab plays a major role in this effort, by devising and trying out smart solutions to accelerate this transformation. The projects on this front are aimed at improving efficiency and safety by combining and enriching the event-data of Port of Rotterdam stakeholders in a smart fashion. These enrichments are near real-time and predictive.",
+                        "The Rotterdam Logistics Lab is the Port of Rotterdam’s innovation lab. Via the lab, the Port quickly develops new potential products for its stakeholders using the latest technologies. Codestar helps the Port of Rotterdam by quickly developing these initiatives into real-life products. Our agile and effective working method is a perfect match for the MVP dynamics of the innovation lab. And our extensive knowledge of near real-time reactive technologies and this predictive stream-based processing are perfectly suited to meet the technical challenges of these projects."
+                    ]
+                }
+            ]
+        },
+        "42-education": {
+            "title": "Using code to kick-start a lean start-up",
+            "intro": "Having a start-up as a client means major time constraints, requires enormous flexibility and the ability to switch at lightning speed in an informal environment. We were productive from day one thanks to our choice of the latest Continuous Delivery and Cloud technologies. The goal was to let children learn by playing games with friends, real-time with an enormous number of events. With this in mind, we made the software architecture completely reactive. We used real-time event notification based on reactive streams and horizontally scaling event persistence based on event sourcing with Cassandra.",
+            "sections": []
+        },
+        "gracenote-sports": {
+            "title": "Winter Olympics",
+            "intro": "N/A",
+            "sections": []
+        }
+    }
+}
