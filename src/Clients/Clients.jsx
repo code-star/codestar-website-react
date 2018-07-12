@@ -1,6 +1,7 @@
 import React from 'react';
-import { withStyles } from 'material-ui/styles';
-import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList';
+
+import { GridList, GridListTile, GridListTileBar } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 
 const ClientsList = [
 	{

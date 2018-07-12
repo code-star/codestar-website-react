@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { translate } from 'react-i18next';
-import { Button } from 'material-ui';
-import Typography from 'material-ui/Typography';
+
+import {
+	Button,
+	Typography,
+	Card,
+	CardContent,
+	CardMedia,
+} from '@material-ui/core';
 import Carousel from 'nuka-carousel';
-import Card from 'material-ui/Card';
-import CardContent from 'material-ui/Card/CardContent';
-import CardMedia from 'material-ui/Card/CardMedia';
-import NavigateNextIcon from 'material-ui-icons/NavigateNext';
-import NavigateBeforeIcon from 'material-ui-icons/NavigateBefore';
+import {
+	NavigateNext as NavigateNextIcon,
+	NavigateBefore as NavigateBeforeIcon,
+} from '@material-ui/icons';
 
 import Container from '../Container/Container';
-import Team from './Team';
 import OurStack from '../OurStack/OurStack';
-
+import Team from './Team';
 import css from './About.module.css';
 
 function shuffleArray(array) {

@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import Paper from 'material-ui/Paper';
-import Avatar from 'material-ui/Avatar';
-import Tooltip from 'material-ui/Tooltip';
-import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui/styles';
 import { translate } from 'react-i18next';
-import Grow from 'material-ui/transitions/Grow';
+
+import { Paper, Avatar, Tooltip, Typography, Grow } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 
 import techs from './techs';
 

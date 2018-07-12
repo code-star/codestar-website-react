@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Router, Route } from 'react-router-dom';
-import CssBaseline from 'material-ui/CssBaseline';
 import createHistory from 'history/createBrowserHistory';
-import { MuiThemeProvider } from 'material-ui/styles';
+
+import { CssBaseline } from '@material-ui/core';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 
 import theme from './codestarMuiTheme';
-
 import ScrollToTop from './ScrollToTop';
 import NavBar from './NavBar/NavBar';
 import SideMenu from './SideMenu/SideMenu';

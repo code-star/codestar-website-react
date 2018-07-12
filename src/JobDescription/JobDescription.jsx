@@ -1,11 +1,12 @@
 import React from 'react';
-import Container from '../Container/Container';
-import { Button } from 'material-ui';
-import { Email } from 'material-ui-icons';
-import Typography from 'material-ui/Typography';
 import { I18n } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { withStyles } from 'material-ui/styles';
+
+import { Button, Typography } from '@material-ui/core';
+import { Email } from '@material-ui/icons';
+import { withStyles } from '@material-ui/core/styles';
+
+import Container from '../Container/Container';
 
 const styles = theme => ({
 	button: {
@@ -16,14 +17,14 @@ const styles = theme => ({
 	},
 });
 
-function hashTagify(string) {
+/*function hashTagify(string) {
 	let words = string.split(' ');
 	let capitalized = words.map(
 		word => word.charAt(0).toUpperCase() + word.substr(1)
 	);
 	let hashTag = `#${capitalized.join('')}`;
 	return hashTag;
-}
+}*/
 
 const JobDescription = props => (
 	<I18n ns={[`${props.translation}`, 'jobs']}>

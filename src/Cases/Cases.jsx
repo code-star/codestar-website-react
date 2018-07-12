@@ -1,9 +1,8 @@
 import React from 'react';
-import { withStyles } from 'material-ui/styles';
-import Typography from 'material-ui/Typography';
-import Paper from 'material-ui/Paper';
 import { Link, Element } from 'react-scroll';
-import Fade from 'material-ui/transitions/Fade';
+
+import { Typography, Paper, Fade } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 
 import Container from '../Container/Container';
 import CaseHeader from '../CaseHeader/CaseHeader';

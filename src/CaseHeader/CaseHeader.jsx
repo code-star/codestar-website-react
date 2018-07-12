@@ -1,17 +1,14 @@
 import React from 'react';
-import Container from '../Container/Container';
-
-import css from './CaseHeader.module.css';
-
-import { compose } from 'recompose';
-import { withStyles } from 'material-ui/styles';
-import withWidth from 'material-ui/utils/withWidth';
-import { Button } from 'material-ui';
-import Typography from 'material-ui/Typography';
-import purple from 'material-ui/colors/purple';
-
 import { Link } from 'react-router-dom';
+import { compose } from 'recompose';
+
+import { withStyles } from '@material-ui/core/styles';
+import { Button, Typography, withWidth } from '@material-ui/core';
+import { purple } from '@material-ui/core/colors';
+
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
+import Container from '../Container/Container';
+import css from './CaseHeader.module.css';
 
 const styles = theme => ({
 	link: {
@@ -94,4 +91,7 @@ const CaseHeader = props => (
 	</section>
 );
 
-export default compose(withStyles(styles), withWidth())(CaseHeader);
+export default compose(
+	withStyles(styles),
+	withWidth()
+)(CaseHeader);

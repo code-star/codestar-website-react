@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { withStyles } from 'material-ui/styles';
 import Vivus from 'vivus';
 import Snap from 'snapsvg-cjs';
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
 	logoOrange: {

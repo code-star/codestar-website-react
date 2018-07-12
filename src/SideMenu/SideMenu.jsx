@@ -1,12 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
-import Drawer from 'material-ui/Drawer';
 
-import DashboardIcon from 'material-ui-icons/Dashboard';
-import PeopleIcon from 'material-ui-icons/People';
-import CodeIcon from 'material-ui-icons/Code';
-import EmailIcon from 'material-ui-icons/Email';
+import {
+	List,
+	ListItem,
+	ListItemIcon,
+	ListItemText,
+	Drawer,
+} from '@material-ui/core';
+import {
+	Dashboard as DashboardIcon,
+	People as PeopleIcon,
+	Code as CodeIcon,
+	Email as EmailIcon,
+} from '@material-ui/icons';
 
 const list = [
 	{

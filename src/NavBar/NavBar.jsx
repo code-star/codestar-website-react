@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
-// Material UI
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
-import Button from 'material-ui/Button';
-import Hidden from 'material-ui/Hidden';
-
-// Material UI Icons
-import IconButton from 'material-ui/IconButton';
-import MenuIcon from 'material-ui-icons/Menu';
-
 import compose from 'recompose/compose';
-import { withStyles } from 'material-ui/styles';
-import withWidth from 'material-ui/utils/withWidth';
 import { translate } from 'react-i18next';
+
+import {
+	AppBar,
+	Toolbar,
+	Typography,
+	Button,
+	Hidden,
+	IconButton,
+	withWidth,
+} from '@material-ui/core';
+import { Menu as MenuIcon } from '@material-ui/icons';
+import { withStyles } from '@material-ui/core/styles';
+
 import i18n from '../i18n';
 
 const styles = theme => ({

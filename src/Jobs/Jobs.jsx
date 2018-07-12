@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from 'material-ui';
 import { translate } from 'react-i18next';
-import { withStyles } from 'material-ui/styles';
+import { Link } from 'react-router-dom';
+
+import { Button } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 
 import Container from '../Container/Container';
 import OurStack from '../OurStack/OurStack';

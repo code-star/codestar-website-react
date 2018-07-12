@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
+import compose from 'recompose/compose';
+import { translate } from 'react-i18next';
+
+import { Typography, withWidth } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 
 import Container from '../Container/Container';
 import Clients from '../Clients/Clients';
 import AnimatedLogo from '../Animations/AnimatedLogo';
 import LandscapeBackground from '../Animations/LandscapeBackground';
 import DelayedFade from '../Animations/DelayedFade';
-
-import Typography from 'material-ui/Typography';
-
-import compose from 'recompose/compose';
-import { withStyles } from 'material-ui/styles';
-import withWidth from 'material-ui/utils/withWidth';
-import { translate } from 'react-i18next';
 
 const styles = theme => ({
 	section: {

@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
+import compose from 'recompose/compose';
+import { translate } from 'react-i18next';
 
-import Input, { InputLabel } from 'material-ui/Input';
-import TextField from 'material-ui/TextField';
-import { FormControl, FormHelperText } from 'material-ui/Form';
-import Button from 'material-ui/Button';
-import Card from 'material-ui/Card/Card';
-import CardActions from 'material-ui/Card/CardActions';
-import CardContent from 'material-ui/Card/CardContent';
+import {
+	Input,
+	InputLabel,
+	TextField,
+	FormControl,
+	FormHelperText,
+	Button,
+	Card,
+	CardActions,
+	CardContent,
+	withWidth,
+} from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
+
 import Container from '../Container/Container';
 import Map from '../Map/Map';
-
-import compose from 'recompose/compose';
-import { withStyles } from 'material-ui/styles';
-import withWidth from 'material-ui/utils/withWidth';
-import { translate } from 'react-i18next';
 
 const styles = theme => ({
 	halfHeightMinusHalfNavBar: {

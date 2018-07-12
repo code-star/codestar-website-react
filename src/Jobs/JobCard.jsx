@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { withStyles } from 'material-ui/styles';
-import Card from 'material-ui/Card';
-import CardActions from 'material-ui/Card/CardActions';
-import CardContent from 'material-ui/Card/CardContent';
-import CardMedia from 'material-ui/Card/CardMedia';
-import Button from 'material-ui/Button';
-import Typography from 'material-ui/Typography';
 import { I18n } from 'react-i18next';
+
+import { withStyles } from '@material-ui/core/styles';
+import {
+	Card,
+	CardActions,
+	CardContent,
+	CardMedia,
+	Button,
+	Typography,
+} from '@material-ui/core';
 
 const styles = {
 	card: {
