@@ -60,8 +60,10 @@ class LandscapeBackground extends Component {
 
 		let simplexYOffset = 0;
 		this.interval = setInterval(() => {
-			this.emitPath(simplexYOffset);
-			simplexYOffset += 1;
+			if (!document.hidden) {
+				this.emitPath(simplexYOffset);
+				simplexYOffset += 1;
+			}
 		}, options.interval);
 	}
 
