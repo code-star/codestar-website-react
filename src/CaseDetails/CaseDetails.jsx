@@ -6,10 +6,10 @@ import Typography from 'material-ui/Typography';
 const CaseDetails = props => (
 	<div>
 		{/* <CaseHeader {...props} /> */}
-		<section>
+		<section className="py-3">
 			<Container marginTopNavBar>
-				<div className="row">
-					<div className="col">
+				<div className="row justify-content-center">
+					<div className="col-12 col-lg-8">
 						<Typography variant="display3" gutterBottom>
 							{props.client}
 						</Typography>
@@ -19,8 +19,12 @@ const CaseDetails = props => (
 						<img src={props.image} className="img-fluid" alt="" />
 					</div>
 				</div>
-				<div className="row">
-					<div className="col mt-3">
+			</Container>
+		</section>
+		<section className="py-3" style={{ backgroundColor: '#eeeeee' }}>
+			<Container>
+				<div className="row justify-content-center">
+					<div className="col-12 col-lg-8 mt-3">
 						{props.details && React.createElement(props.details, {})}
 					</div>
 				</div>
