@@ -34,6 +34,7 @@ class Jobs extends Component {
 								<div className="d-flex justify-content-center flex-wrap">
 									{jobsList.map(job => (
 										<JobCard
+											key={job.translation}
 											translation={job.translation}
 											image={job.image}
 											path={job.path}
