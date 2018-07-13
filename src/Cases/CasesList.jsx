@@ -41,7 +41,7 @@ const casesList = [
 		],
 	},
 	{
-		client: 'Port of Roterdam',
+		client: 'Port of Rotterdam',
 		path: 'port-of-rotterdam',
 		image: `/images/cases/stock-photo-large-container-vessel-unloaded-in-port-of-rotterdam-283990010.jpg`,
 		logo: `/images/clients/port_of_rotterdam_dark.svg`,
