@@ -1,6 +1,5 @@
 import React from 'react';
 import { I18n } from 'react-i18next';
-import { Link } from 'react-router-dom';
 
 import { Button, Typography } from '@material-ui/core';
 import { Email } from '@material-ui/icons';
@@ -70,8 +69,8 @@ const JobDescription = props => (
 									className={props.classes.button}
 									variant="raised"
 									color="primary"
-									component={Link}
-									to="mailto:codestar@ordina.nl"
+									component="a"
+									href="mailto:codestar@ordina.nl"
 								>
 									<Email className={props.classes.leftIcon} />
 									{t('jobs:JOBS_CONTACT_BUTTON')}
