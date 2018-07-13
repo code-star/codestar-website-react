@@ -47,7 +47,7 @@ class App extends Component {
 	updateBackgroundColor(pathname) {
 		let section = pathname.split('/')[1];
 		let index = sections.indexOf(section);
-		document.body.style.backgroundPositionY = `${-index * 100}vh`;
+		document.body.style.backgroundPositionY = `${-index * 100}vh, 0`;
 	}
 
 	toggleDrawer = () => {
