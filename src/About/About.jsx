@@ -37,13 +37,13 @@ class About extends Component {
 				<section className="py-5">
 					<Container marginTopNavBar>
 						<div className="row justify-content-center">
-							<div className="col-12 col-md-8">
+							<div className="col-12 col-lg-8">
 								<h3 className={css.whiteText}>{t('ABOUT_ATTRACT_TITLE')}</h3>
 								<p className={[css.whiteText, css.conduit].join(' ')}>
 									{t('ABOUT_ATTRACT_TEXT')}
 								</p>
 							</div>
-							<div className="col-12 col-md-8 col-sd-6">
+							<div className="col-12 col-lg-8">
 								<OurStack />
 							</div>
 						</div>
