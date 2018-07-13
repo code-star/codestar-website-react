@@ -71,14 +71,13 @@ class Jobs extends Component {
 						</div>
 						<div className="row justify-content-center my-3">
 							<p>
-								Not sure yet? Know more{' '}
 								<Button
 									variant="raised"
 									component={Link}
 									to="/about"
 									color="inherit"
 								>
-									About Us
+									{t('JOBS_ABOUT_US')}
 								</Button>
 							</p>
 						</div>
