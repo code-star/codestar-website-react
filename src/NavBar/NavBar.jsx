@@ -54,7 +54,7 @@ class NavBar extends Component {
 		return (
 			<AppBar position="fixed" className={props.classes.appBar}>
 				<Toolbar>
-					<Hidden smUp>
+					<Hidden mdUp>
 						<IconButton
 							onClick={props.toggle}
 							className={props.classes.menuButton}
@@ -93,7 +93,7 @@ class NavBar extends Component {
 							{t('nav:LINK_EN')}
 						</Button>
 					</Typography>
-					<Hidden only="xs">
+					<Hidden smDown>
 						<Button component={Link} to="/" color="inherit">
 							Home
 						</Button>
