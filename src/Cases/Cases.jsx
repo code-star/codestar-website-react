@@ -56,11 +56,11 @@ class Cases extends Component {
 		const { t, classes } = this.props;
 		return (
 			<section>
-				<Container fullHeight center>
-					<div className="row justify-content-around">
+				<Container marginTopNavBar fullHeight center>
+					<div className="row justify-content-around mt-3">
 						<Fade in timeout={2000}>
 							<div className="col-10 col-lg-6 mx-auto">
-								<div className="col-12 col-md-8 p-0">
+								<div className="col-8 p-0">
 									<img
 										src="/images/codestar_logo_dark.svg"
 										alt="Codestar powered by Ordina Logo"
@@ -85,7 +85,11 @@ class Cases extends Component {
 	renderBoxes() {
 		const { classes } = this.props;
 		return (
-			<div className={`col-10 col-lg-6 mt-3 ${classes.noLineHeight}`}>
+			<div
+				className={`col-12 col-md-10 col-lg-6 my-3 text-center ${
+					classes.noLineHeight
+				}`}
+			>
 				{this.orderedCases.map((clientCase, i) => (
 					<Link key={i} to={clientCase.client} smooth>
 						<Fade in timeout={1000}>
@@ -115,7 +119,7 @@ class Cases extends Component {
 							</Paper>
 						</Fade>
 					</Link>
-				))};
+				))}
 			</div>
 		);
 	}
