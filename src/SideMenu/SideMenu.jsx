@@ -53,12 +53,12 @@ const SideMenu = props => (
 		>
 			<List>
 				{list.map(item => (
-					<ListItem button key={item.text}>
-						<ListItemIcon>{item.icon}</ListItemIcon>
-						<Link to={item.link}>
+					<Link to={item.link}>
+						<ListItem button key={item.text}>
+							<ListItemIcon>{item.icon}</ListItemIcon>
 							<ListItemText primary={item.text} />
-						</Link>
-					</ListItem>
+						</ListItem>
+					</Link>
 				))}
 			</List>
 		</div>
