@@ -7,7 +7,7 @@
     "CASES": {
         "rabobank": {
             "title": "Helping developers and bankers to speak the same language again",
-            "intro": "N/A",
+            "intro": "We tackled the method for calculating mortgages for Rabobank’s Dutch mortgage business (Rabobank Hyptheekdossier). The existing Java code had, over time, become so complex that it was difficult to understand and test. Developers and bankers were no longer speaking the same language. We made the code simple, readable and testable by developing a DSL in Scala. Not just for programmers, but for the business too. And we did all that with a fraction of the amount of code needed for the old implementation in Java. Eventually, not only was the business able to read the code, they were also able to implement calculations themselves. The business that speaks the language of the programmer. Goal achieved.",
             "sections": []
         },
         "skg": {
