@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Element } from 'react-scroll';
+import compose from 'recompose/compose';
 import { translate } from 'react-i18next';
 
 import {
@@ -10,6 +11,7 @@ import {
 	DialogContent,
 	DialogActions,
 	Button,
+	withMobileDialog,
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -119,7 +121,7 @@ class Cases extends Component {
 	}
 
 	renderCases() {
-		const { t } = this.props;
+		const { t, fullScreen } = this.props;
 		return (
 			<section>
 				{this.orderedCases.map((clientCase, i) => {
@@ -129,6 +131,16 @@ class Cases extends Component {
 					const { title, intro, sections } = caseText;
 					const changeState = bool => () =>
 						this.setState({ [clientCase.path]: bool });
+
+					const img = (
+						<img
+							alt={clientCase.client}
+							src={clientCase.image}
+							width="100%"
+							className="mb-3"
+						/>
+					);
+
 					return (
 						<Element key={i} name={clientCase.client}>
 							<CaseHeader
@@ -140,20 +152,16 @@ class Cases extends Component {
 								callback={changeState(true)}
 							/>
 							<Dialog
+								fullScreen={fullScreen}
 								open={this.state[clientCase.path]}
 								onClose={changeState(false)}
-								scroll="body"
+								scroll={fullScreen ? 'paper' : 'body'}
 							>
-								<DialogContent>
+								<DialogContent style={{ overflow: 'visible' }}>
 									<h1>{clientCase.client}</h1>
 									{title}
 								</DialogContent>
-								<img
-									alt={clientCase.client}
-									src={clientCase.image}
-									width="100%"
-									className="mb-3"
-								/>
+								{fullScreen ? null : img}
 								<DialogContent>
 									{sections.map((section, i) => (
 										<div key={i}>
@@ -163,6 +171,7 @@ class Cases extends Component {
 											))}
 										</div>
 									))}
+									{fullScreen ? img : null}
 									{clientCase.stack ? (
 										<div>
 											<h4>{t('CASES_STACK_TITLE')}</h4>
@@ -188,4 +197,7 @@ class Cases extends Component {
 	}
 }
 
-export default withStyles(styles)(Cases);
+export default compose(
+	withStyles(styles),
+	withMobileDialog()
+)(Cases);
