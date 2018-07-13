@@ -67,10 +67,13 @@ const Clients = props => (
 								<div className="col-12 col-md-6">
 									<img src={client.logo} alt={client.name} />
 								</div>
+								{/*
+								// TODO: Do we want quotes from clients?
 								<GridListTileBar
 									title={'Insert very awesome quote frome client here.'}
 									subtitle={<span>John Smith</span>}
 								/>
+								*/}
 							</div>
 						) : (
 							<div
