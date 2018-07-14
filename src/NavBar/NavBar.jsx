@@ -12,12 +12,9 @@ import {
 	IconButton,
 	withWidth,
 } from '@material-ui/core';
-import {
-	Menu as MenuIcon,
-	Notifications as NotificationImportantIcon,
-} from '@material-ui/icons';
+import { Menu as MenuIcon } from '@material-ui/icons';
 import { withStyles } from '@material-ui/core/styles';
-import Tooltip from '@material-ui/core/Tooltip';
+import EventButton from './EventsButton';
 
 import i18n from '../i18n';
 
@@ -47,38 +44,13 @@ const styles = theme => ({
 		paddingRight: 0,
 		minWidth: '45px',
 	},
-	newEventIcon: {
-		color: 'red',
-		marginRight: theme.spacing.unit,
-	},
-	newEventIconHover: {
-		color: 'inherit',
-	},
 });
 
 @translate(['nav'], { wait: true })
 class NavBar extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			isHovering: false,
-		};
-	}
-
-	handleMouseOver() {
-		this.setState({ isHovering: true });
-	}
-
-	handleMouseOut() {
-		this.setState({ isHovering: false });
-	}
-
 	render() {
 		const { t, ...props } = this.props;
 		const toggle = lng => i18n.changeLanguage(lng);
-		const iconClasses = `${props.classes.newEventIcon} ${
-			this.state.isHovering ? props.classes.newEventIconHover : null
-		}`;
 		return (
 			<AppBar position="fixed" className={props.classes.appBar}>
 				<Toolbar>
@@ -126,22 +98,7 @@ class NavBar extends Component {
 							Home
 						</Button>
 						{/*TODO how to do this for mobile?*/}
-						{/*TODO move to own component*/}
-						<Tooltip
-							title="26 September: Meetup Data Oriented Design"
-							placement="bottom"
-						>
-							<Button
-								component={Link}
-								to="/events"
-								color="inherit"
-								onMouseOver={this.handleMouseOver.bind(this)}
-								onMouseOut={this.handleMouseOut.bind(this)}
-							>
-								<NotificationImportantIcon className={iconClasses} />
-								Events
-							</Button>
-						</Tooltip>
+						<EventButton label="Events" />
 						<Button component={Link} to="/cases" color="inherit">
 							Cases
 						</Button>
