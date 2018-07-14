@@ -73,7 +73,7 @@
         },
         "gracenote-sports": {
             "title": "Winter Olympics",
-            "intro": "N/A",
+            "intro": "Pyeongchang, Zuid-Korea - februari 2018. De wereld kijkt naar de Winterspelen. Hockey, Skiën, Curling, Schaatsen en Bobsleeën: alles wordt online gestreamed. Gracenote Sports heeft een Kafka Streams pipeline opgezet als een razendsnelle backend voor Olympische data widgets, de kracht achter de apps en website van een grote Olympische TV omroep. Dit door een combinatie te maken van real-time resultaten, tussenstanden, klassement informatie, video logs en de biografieën van atleten. Voor een gouden medaille voor kijkervaring.",
             "sections": []
         }
     }
