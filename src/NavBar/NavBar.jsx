@@ -14,7 +14,7 @@ import {
 } from '@material-ui/core';
 import { Menu as MenuIcon } from '@material-ui/icons';
 import { withStyles } from '@material-ui/core/styles';
-import EventButton from './EventsButton';
+import EventsButton from './EventsButton';
 
 import i18n from '../i18n';
 
@@ -97,8 +97,7 @@ class NavBar extends Component {
 						<Button component={Link} to="/" color="inherit">
 							Home
 						</Button>
-						{/*TODO how to do this for mobile?*/}
-						<EventButton label="Events" />
+						<EventsButton label="Events" />
 						<Button component={Link} to="/cases" color="inherit">
 							Cases
 						</Button>
