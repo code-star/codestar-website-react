@@ -1,12 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
-import Drawer from 'material-ui/Drawer';
 
-import DashboardIcon from 'material-ui-icons/Dashboard';
-import PeopleIcon from 'material-ui-icons/People';
-import CodeIcon from 'material-ui-icons/Code';
-import EmailIcon from 'material-ui-icons/Email';
+import {
+	List,
+	ListItem,
+	ListItemIcon,
+	ListItemText,
+	Drawer,
+} from '@material-ui/core';
+import {
+	Dashboard as DashboardIcon,
+	People as PeopleIcon,
+	Code as CodeIcon,
+	Email as EmailIcon,
+} from '@material-ui/icons';
 
 const list = [
 	{
@@ -46,12 +53,12 @@ const SideMenu = props => (
 		>
 			<List>
 				{list.map(item => (
-					<ListItem button key={item.text}>
-						<ListItemIcon>{item.icon}</ListItemIcon>
-						<Link to={item.link}>
+					<Link to={item.link} key={item.text}>
+						<ListItem button>
+							<ListItemIcon>{item.icon}</ListItemIcon>
 							<ListItemText primary={item.text} />
-						</Link>
-					</ListItem>
+						</ListItem>
+					</Link>
 				))}
 			</List>
 		</div>

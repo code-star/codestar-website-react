@@ -1,8 +1,8 @@
 import React from 'react';
-
 import compose from 'recompose/compose';
-import { withStyles } from 'material-ui/styles';
-import withWidth from 'material-ui/utils/withWidth';
+
+import { withWidth } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
 	halfHeightMinusHalfNavBar: {
@@ -35,4 +35,7 @@ const Map = props => (
 	/>
 );
 
-export default compose(withStyles(styles), withWidth())(Map);
+export default compose(
+	withStyles(styles),
+	withWidth()
+)(Map);

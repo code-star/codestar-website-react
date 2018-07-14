@@ -9,6 +9,7 @@ i18n
 	.use(reactI18nextModule)
 	.init({
 		fallbackLng: 'nl',
+		whitelist: ['nl', 'en'], // To prevent other languages or even en-US
 
 		// have a common namespace used around the full app
 		ns: ['translations'],

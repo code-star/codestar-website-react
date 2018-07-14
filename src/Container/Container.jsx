@@ -1,7 +1,8 @@
 import React from 'react';
 import compose from 'recompose/compose';
-import { withStyles } from 'material-ui/styles';
-import withWidth from 'material-ui/utils/withWidth';
+
+import { withWidth } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
 	fullHeightMinusNavBar: {
@@ -48,4 +49,7 @@ const Container = props => {
 		</div>
 	);
 };
-export default compose(withStyles(styles), withWidth())(Container);
+export default compose(
+	withStyles(styles),
+	withWidth()
+)(Container);

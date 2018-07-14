@@ -1,3 +1,9 @@
 {
-    "STACK_TITLE": "Our choice"
+    "STACK_TITLE": "Our choice",
+    "STACK_FRONT_END": "Front-end",
+    "STACK_FRONT_END_SUBTITLE": "Reactive and responsive",
+    "STACK_BACK_END": "Back-end",
+    "STACK_BACK_END_SUBTITLE": "Scalable and powerful",
+    "STACK_INFRASTRUCTURE": "Infrastructure",
+    "STACK_INFRASTRUCTURE_SUBTITLE": "In the cloud and modular"
 }

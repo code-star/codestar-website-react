@@ -1,27 +1,32 @@
 import React, { Component } from 'react';
-import AsyncComponent from './AsyncComponent/AsyncComponent';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import ScrollToTop from './ScrollToTop';
-import CssBaseline from 'material-ui/CssBaseline';
+import { Router, Route } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
 
+import { CssBaseline } from '@material-ui/core';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+
+import theme from './codestarMuiTheme';
+import ScrollToTop from './ScrollToTop';
 import NavBar from './NavBar/NavBar';
 import SideMenu from './SideMenu/SideMenu';
 import Footer from './Footer/Footer';
-
-import casesList from './Cases/CasesList';
 import jobsList from './Jobs/JobsList';
+import AsyncComponent from './AsyncComponent/AsyncComponent';
 
-const AsyncIntro = AsyncComponent(() => import('./Intro/Intro'));
-const AsyncCases = AsyncComponent(() => import('./Cases/Cases'));
-const AsyncCaseDetails = AsyncComponent(() =>
-	import('./CaseDetails/CaseDetails')
-);
-const AsyncAbout = AsyncComponent(() => import('./About/About'));
-const AsyncJobs = AsyncComponent(() => import('./Jobs/Jobs'));
-const AsyncJobDescription = AsyncComponent(() =>
+function fullHeightAsyncComponent(C) {
+	return props => <AsyncComponent fullHeight component={() => C} {...props} />;
+}
+
+const AsyncIntro = fullHeightAsyncComponent(import('./Intro/Intro'));
+const AsyncCases = fullHeightAsyncComponent(import('./Cases/Cases'));
+const AsyncAbout = fullHeightAsyncComponent(import('./About/About'));
+const AsyncJobs = fullHeightAsyncComponent(import('./Jobs/Jobs'));
+const AsyncJobDescription = fullHeightAsyncComponent(
 	import('./JobDescription/JobDescription')
 );
-const AsyncContact = AsyncComponent(() => import('./Contact/Contact'));
+const AsyncContact = fullHeightAsyncComponent(import('./Contact/Contact'));
+
+const sections = ['', 'cases', 'about', 'jobs', 'contact'];
 
 class App extends Component {
 	state = {
@@ -29,8 +34,20 @@ class App extends Component {
 	};
 
 	constructor(props) {
-		super();
+		super(props);
 		this.classes = props.classes;
+		this.history = createHistory({ basename: process.env.PUBLIC_URL });
+
+		this.history.listen(location =>
+			this.updateBackgroundColor(location.pathname)
+		);
+		this.updateBackgroundColor(this.history.location.pathname);
+	}
+
+	updateBackgroundColor(pathname) {
+		let section = pathname.split('/')[1];
+		let index = sections.indexOf(section);
+		document.body.style.backgroundPositionY = `${-index * 100}vh, 0`;
 	}
 
 	toggleDrawer = () => {
@@ -43,24 +60,15 @@ class App extends Component {
 
 	render() {
 		return (
-			<Router basename={process.env.PUBLIC_URL}>
-				<div>
+			<Router history={this.history}>
+				<MuiThemeProvider theme={theme}>
 					<CssBaseline />
 					<NavBar toggle={this.toggleDrawer} />
 					<SideMenu open={this.state.drawerMenu} toggle={this.toggleDrawer} />
 
 					<ScrollToTop>
 						<Route exact path="/" component={AsyncIntro} />
-
 						<Route exact path="/cases" component={AsyncCases} />
-						{casesList.map(clientCase => (
-							<Route
-								exact
-								path={`/cases/${clientCase.path}`}
-								key={clientCase.client}
-								render={() => <AsyncCaseDetails {...clientCase} />}
-							/>
-						))}
 
 						<Route exact path="/jobs" component={AsyncJobs} />
 						{jobsList.map(job => (
@@ -76,7 +84,7 @@ class App extends Component {
 						<Route path="/contact" component={AsyncContact} />
 					</ScrollToTop>
 					<Footer />
-				</div>
+				</MuiThemeProvider>
 			</Router>
 		);
 	}

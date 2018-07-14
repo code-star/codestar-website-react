@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
+import compose from 'recompose/compose';
+import { translate } from 'react-i18next';
 
-import Input, { InputLabel } from 'material-ui/Input';
-import TextField from 'material-ui/TextField';
-import { FormControl } from 'material-ui/Form';
-import Button from 'material-ui/Button';
+import {
+	Input,
+	InputLabel,
+	TextField,
+	FormControl,
+	FormHelperText,
+	Button,
+	Card,
+	CardActions,
+	CardContent,
+	withWidth,
+	Collapse,
+	Fade,
+} from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
+
 import Container from '../Container/Container';
 import Map from '../Map/Map';
-
-import compose from 'recompose/compose';
-import { withStyles } from 'material-ui/styles';
-import withWidth from 'material-ui/utils/withWidth';
 
 const styles = theme => ({
 	halfHeightMinusHalfNavBar: {
@@ -20,68 +30,151 @@ const styles = theme => ({
 	},
 });
 
-const Contact = () => {
-	return (
-		<section>
-			<Container fluid noPadding marginTopNavBar>
-				<Map halfHeightMinusHalfNavBar />
-			</Container>
-			<Container className="mt-3">
-				<div className="row">
-					<div className="col">
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci,
-							enim quod. Dolore illum totam nesciunt molestias iure, ipsum
-							cumque id, odit non sequi quo animi consectetur ipsa tenetur alias
-							natus!
-						</p>
-					</div>
-				</div>
-				<div className="row">
-					<div className="col-12 col-md-6">
-						<FormControl fullWidth>
-							<InputLabel htmlFor="name">Name</InputLabel>
-							<Input id="name" />
-						</FormControl>
+@translate(['contact'], { wait: true })
+export class Contact extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			name: '',
+			phone: '',
+			email: '',
+			message: '',
+			messageRequiredError: false,
+			showMap: false,
+		};
+		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+	}
 
-						<FormControl fullWidth>
-							<InputLabel htmlFor="lastname">Last name</InputLabel>
-							<Input id="lastname" />
-						</FormControl>
+	componentDidMount() {
+		setTimeout(() => {
+			this.setState({ showMap: true });
+		}, 300);
+	}
 
-						<FormControl fullWidth>
-							<InputLabel htmlFor="company">Company</InputLabel>
-							<Input id="company" />
-						</FormControl>
+	handleChange(event) {
+		this.setState({ [event.target.name]: event.target.value });
+	}
 
-						<FormControl fullWidth>
-							<InputLabel htmlFor="telephone">Telephone</InputLabel>
-							<Input id="telephone" />
-						</FormControl>
+	handleSubmit(ev) {
+		ev.preventDefault();
 
-						<FormControl fullWidth>
-							<InputLabel htmlFor="email">Email</InputLabel>
-							<Input id="email" type="email" />
-						</FormControl>
-					</div>
-					<div className="col-12 col-md-6">
-						<FormControl fullWidth>
-							<TextField
-								label="Message"
-								id="message"
-								multiline
-								placeholder="Your message"
-								rows={11}
-							/>
-						</FormControl>
-					</div>
-					<div className="col-12">
-						<Button>Send</Button>
-					</div>
-				</div>
-			</Container>
-		</section>
-	);
-};
+		// Validate the text area
+		const hasMessageError = this.state.message === '';
+		this.setState({ messageRequiredError: hasMessageError });
 
-export default compose(withStyles(styles), withWidth())(Contact);
+		if (!hasMessageError) {
+			ev.target.submit();
+		}
+
+		// TODO Implement serverless function (formspree AJAX is now a paid service)
+		// TODO add Fetch polyfill
+		// fetch(url, {
+		// 	method: 'POST',
+		// 	body: JSON.stringify({
+		// 		name: this.state.name,
+		// 		phone: this.state.phone,
+		// 		email: this.state.email,
+		// 		message: this.state.message
+		// 	})
+		// })
+		// 	.then(data => data.json())
+		// 	.then(data => {
+		// 		// TODO handle success
+		// 		// if(data.status === 'ok') {
+		// 		// 	x
+		// 		// } else {
+		// 		// 	TODO handle error
+		// 		// }
+		// 	})
+		// 	.catch(error => this.props.logError('HANDLE' + error)); // TODO handle error
+	}
+
+	render() {
+		const { t } = this.props;
+		const err = this.state.messageRequiredError ? (
+			<FormHelperText id="name-error-text">
+				{t('REQUIRED_ERROR')}
+			</FormHelperText>
+		) : null;
+		return (
+			<section>
+				<Container fluid noPadding marginTopNavBar>
+					<Collapse in={this.state.showMap}>
+						<Map halfHeightMinusHalfNavBar />
+					</Collapse>
+				</Container>
+				<Container className="mt-3">
+					<Fade in timeout={2000}>
+						<form
+							action="https://formspree.io/codestar@ordina.nl"
+							method="POST"
+							onSubmit={this.handleSubmit}
+						>
+							<Card className="mb-3">
+								<CardContent>
+									<p>{t('INTRO_TEXT')}</p>
+									<div className="row">
+										<div className="col-12 col-md-5">
+											<FormControl fullWidth>
+												<InputLabel htmlFor="name">{t('NAME')}</InputLabel>
+												<Input
+													id="name"
+													name="name"
+													onChange={this.handleChange}
+												/>
+											</FormControl>
+
+											<FormControl fullWidth>
+												<InputLabel htmlFor="phone">{t('PHONE')}</InputLabel>
+												<Input
+													id="phone"
+													name="phone"
+													onChange={this.handleChange}
+												/>
+											</FormControl>
+
+											<FormControl fullWidth required={true}>
+												<InputLabel htmlFor="email">{t('EMAIL')}</InputLabel>
+												<Input
+													id="email"
+													type="email"
+													name="email"
+													onChange={this.handleChange}
+												/>
+											</FormControl>
+										</div>
+										<div className="col-12 col-md-7">
+											<FormControl fullWidth required={true}>
+												<TextField
+													error={this.state.messageRequiredError}
+													label={t('MESSAGE')}
+													id="message"
+													name="message"
+													onChange={this.handleChange}
+													multiline
+													rows={6}
+												/>
+												{err}
+											</FormControl>
+										</div>
+									</div>
+								</CardContent>
+								<CardActions>
+									<Button color="primary" type="submit">
+										{t('SEND')}
+									</Button>
+								</CardActions>
+							</Card>
+						</form>
+					</Fade>
+				</Container>
+			</section>
+		);
+	}
+}
+
+export default compose(
+	withStyles(styles),
+	withWidth()
+)(Contact);

@@ -1,29 +1,35 @@
 import React, { Component } from 'react';
 
-export default function asyncComponent(importComponent) {
-	class AsyncComponent extends Component {
-		constructor(props) {
-			super(props);
+const FullHeight = props => {
+	const styles = {
+		minHeight: '100vh',
+	};
+	return <div style={styles}>{props.children}</div>;
+};
 
-			this.state = {
-				component: null,
-			};
-		}
+export default class AsyncComponent extends Component {
+	constructor(props) {
+		super(props);
 
-		async componentDidMount() {
-			const { default: component } = await importComponent();
-
-			this.setState({
-				component: component,
-			});
-		}
-
-		render() {
-			const C = this.state.component;
-
-			return C ? <C {...this.props} /> : null;
-		}
+		this.state = {
+			component: null,
+		};
 	}
 
-	return AsyncComponent;
+	async componentDidMount() {
+		const { default: component } = await this.props.component();
+
+		this.setState({
+			component: component,
+		});
+	}
+
+	render() {
+		const C = this.state.component;
+		return this.props.fullHeight ? (
+			<FullHeight>{C ? <C {...this.props} /> : null}</FullHeight>
+		) : C ? (
+			<C {...this.props} />
+		) : null;
+	}
 }
