@@ -78,16 +78,16 @@ class NavBar extends Component {
 						</Link>
 						<Button
 							onClick={() => toggle('nl')}
-							variant={i18n.language === 'nl' ? 'raised' : 'flat'}
-							color="inherit"
+							variant={i18n.language === 'nl' ? 'contained' : 'outlined'}
+							color={i18n.language === 'nl' ? null : 'inherit'}
 							className={props.classes.langButton}
 						>
 							{t('nav:LINK_NL')}
 						</Button>
 						<Button
 							onClick={() => toggle('en')}
-							variant={i18n.language === 'en' ? 'raised' : 'flat'}
-							color="inherit"
+							variant={i18n.language === 'en' ? 'contained' : 'outlined'}
+							color={i18n.language === 'en' ? null : 'inherit'}
 							className={props.classes.langButton}
 						>
 							{t('nav:LINK_EN')}
