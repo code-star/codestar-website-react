@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { jsonp } from '../util';
+import i18n from '../i18n';
 
 // Meetup API test console: https://secure.meetup.com/meetup_api/console/?path=/:urlname/events
 // page=3 = number of results to return in a page, only need the first 3 results
@@ -9,25 +10,30 @@ const GET_UPCOMING_EVENTS_URL =
 const GET_PAST_EVENTS_URL =
 	'https://api.meetup.com/Code-Star-Night/events?desc=true&photo-host=secure&sig_id=226887185&status=past&sig=c81e4cfc6e9ea5056ccf091b976297e0fbee7b1f';
 
+// TODO unit test
+
 function convertEventResponseToModel(mEvent) {
 	return {
 		name: mEvent.name,
 		time: mEvent.time,
-		formattedDate: new Date(mEvent.time).toLocaleDateString('en-US', {
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric',
-		}),
 		description: mEvent.description,
 		link: mEvent.link,
 	};
 }
 
+// TODO safely parse description HTML
 function renderEventModel(mEvent) {
+	// TODO observe changes to i18n.language
+	const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
+	const formattedDate = new Date(mEvent.time).toLocaleDateString(locale, {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+	});
 	return (
 		<div key={mEvent.time}>
 			<h3>
-				{mEvent.formattedDate} {mEvent.name}
+				{formattedDate} - {mEvent.name}
 			</h3>
 			{mEvent.description}
 			<br />

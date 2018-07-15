@@ -9,6 +9,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Tooltip from '@material-ui/core/Tooltip';
 import { jsonp } from '../util';
 
+// TODO unit test
+
 const styles = theme => ({
 	newEventIcon: {
 		color: 'red',

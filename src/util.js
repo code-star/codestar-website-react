@@ -5,11 +5,10 @@
  */
 export function jsonp(url) {
 	return new Promise(resolve => {
+		// Clean URL to be a valid JS function name. Whitelist is "word" chars, i.e. [A-Za-z0-9_]
+		const cleanUrl = url.replace(/[^\w]/gi, '');
 		// Prevent duplicate function names
-		// TODO to avoid naming collision, append hash of URL
-		//const callbackName = `jsonp_callback_${new Date().getTime()}_${encodeURI(url)}`;
-		const callbackName = `jsonp_callback_${new Date().getTime()}`;
-		console.log(callbackName);
+		const callbackName = `jsonp_callback_${new Date().getTime()}_${cleanUrl}`;
 
 		// Store the function to be called once the JSONP requests resolves on the global scope
 		window[callbackName] = function(data) {
