@@ -6,7 +6,10 @@
 export function jsonp(url) {
 	return new Promise(resolve => {
 		// Prevent duplicate function names
-		const callbackName = 'jsonp_callback_' + new Date().getTime();
+		// TODO to avoid naming collision, append hash of URL
+		//const callbackName = `jsonp_callback_${new Date().getTime()}_${encodeURI(url)}`;
+		const callbackName = `jsonp_callback_${new Date().getTime()}`;
+		console.log(callbackName);
 
 		// Store the function to be called once the JSONP requests resolves on the global scope
 		window[callbackName] = function(data) {

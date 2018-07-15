@@ -25,6 +25,7 @@ const AsyncJobDescription = fullHeightAsyncComponent(
 	import('./JobDescription/JobDescription')
 );
 const AsyncContact = fullHeightAsyncComponent(import('./Contact/Contact'));
+const AsyncEvents = fullHeightAsyncComponent(import('./Events/Events'));
 
 const sections = ['', 'cases', 'about', 'jobs', 'contact'];
 
@@ -82,6 +83,7 @@ class App extends Component {
 
 						<Route path="/about" component={AsyncAbout} />
 						<Route path="/contact" component={AsyncContact} />
+						<Route path="/events" component={AsyncEvents} />
 					</ScrollToTop>
 					<Footer />
 				</MuiThemeProvider>
