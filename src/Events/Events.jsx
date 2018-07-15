@@ -9,19 +9,38 @@ const GET_UPCOMING_EVENTS_URL =
 const GET_PAST_EVENTS_URL =
 	'https://api.meetup.com/Code-Star-Night/events?desc=true&photo-host=secure&sig_id=226887185&status=past&sig=c81e4cfc6e9ea5056ccf091b976297e0fbee7b1f';
 
-// function convertEventResponseToModel() {
-//
-// }
-//
-// function renderEventModel() {
-//
-// }
+function convertEventResponseToModel(mEvent) {
+	return {
+		name: mEvent.name,
+		time: mEvent.time,
+		formattedDate: new Date(mEvent.time).toLocaleDateString('en-US', {
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric',
+		}),
+		description: mEvent.description,
+		link: mEvent.link,
+	};
+}
+
+function renderEventModel(mEvent) {
+	return (
+		<div key={mEvent.time}>
+			<h3>
+				{mEvent.formattedDate} {mEvent.name}
+			</h3>
+			{mEvent.description}
+			<br />
+			<a href={mEvent.link}>read more</a>
+		</div>
+	);
+}
 
 export class Events extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			nextEvent: '',
+			nextEvents: [],
 			pastEvents: [],
 		};
 		// TODO is this called every time when navigating to this page or only once per session (should be the latter)?
@@ -35,31 +54,12 @@ export class Events extends Component {
 		   Fetch API does not support JSONP. no-cors mode creates an opaque response without data.
 		*/
 		jsonp(GET_UPCOMING_EVENTS_URL).then(response => {
-			const nextEvent = response.data[0];
-			if (nextEvent) {
-				const formattedDate = new Date(nextEvent.time).toLocaleDateString(
-					'en-US',
-					{ month: 'long', day: 'numeric' }
-				);
-				const text = `${formattedDate} *Meetup* ${nextEvent.name}`;
-				this.setState({ nextEvent: text });
-			}
+			const result = response.data.map(convertEventResponseToModel);
+			this.setState({ nextEvents: result });
 		});
 
 		jsonp(GET_PAST_EVENTS_URL).then(response => {
-			const result = response.data.map(mEvent => {
-				return {
-					name: mEvent.name,
-					time: mEvent.time,
-					formattedDate: new Date(mEvent.time).toLocaleDateString('en-US', {
-						year: 'numeric',
-						month: 'long',
-						day: 'numeric',
-					}),
-					description: mEvent.description,
-					link: mEvent.link,
-				};
-			});
+			const result = response.data.map(convertEventResponseToModel);
 			this.setState({ pastEvents: result });
 		});
 	}
@@ -69,22 +69,9 @@ export class Events extends Component {
 			<section>
 				<h1 style={{ marginTop: '100px' }}>EVENTS</h1>
 				<h2>Next Event</h2>
-				{this.state.nextEvent}
+				{this.state.nextEvents.map(renderEventModel)}
 				<h2>Past Events</h2>
-				<ul>
-					{this.state.pastEvents.map(mEvent => {
-						return (
-							<li key={mEvent.time}>
-								<h3>
-									{mEvent.formattedDate} {mEvent.name}
-								</h3>
-								{mEvent.description}
-								<br />
-								<a href={mEvent.link}>read more</a>
-							</li>
-						);
-					})}
-				</ul>
+				{this.state.pastEvents.map(renderEventModel)}
 			</section>
 		);
 	}
