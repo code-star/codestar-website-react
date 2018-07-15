@@ -9,8 +9,6 @@ import { withStyles } from '@material-ui/core/styles';
 import Tooltip from '@material-ui/core/Tooltip';
 import { jsonp } from '../util';
 
-// TODO unit test
-
 const styles = theme => ({
 	newEventIcon: {
 		color: 'red',
@@ -26,7 +24,7 @@ const styles = theme => ({
 const GET_UPCOMING_EVENTS_URL =
 	'https://api.meetup.com/Code-Star-Night/events?photo-host=secure&page=3&sig_id=226887185&status=upcoming&sig=e3efc6db037cf681181d84ae343459a36afbefd4';
 
-class EventsButton extends Component {
+export class EventsButton extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
