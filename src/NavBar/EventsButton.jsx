@@ -7,6 +7,7 @@ import { Button } from '@material-ui/core';
 import { Notifications as NotificationImportantIcon } from '@material-ui/icons';
 import { withStyles } from '@material-ui/core/styles';
 import Tooltip from '@material-ui/core/Tooltip';
+import { jsonp } from '../util';
 
 const styles = theme => ({
 	newEventIcon: {
@@ -37,44 +38,11 @@ class EventsButton extends Component {
 	}
 
 	fetchUpcomingEvent() {
-		// TODO must use JSONP conform https://github.com/meetup/api/issues/211 see also https://www.raymondcamden.com/2015/11/20/using-the-meetup-api-in-client-side-applications
-
-		// fetch(GET_UPCOMING_EVENTS_URL, {
-		// 	mode: 'cors'
-		// })
-		// 	//.then(data => data.json())
-		// 	.then(data => {
-		// 		console.log(data.text(), data);
-		// 		if(data.length > 0 && data[0].name) {
-		// 			this.setState({nextEvent: data[0].name});
-		// 		}
-		// 		// console.log('timeout of 5000ms - data', data);
-		// 		// setTimeout(() => {
-		// 		// 	this.setState({nextEvent: data.foo});
-		// 		// }, 5000);
-		// 	})
-		// 	.catch(error => {
-		// 		console.error(error);
-		// 	})
-
-		// TODO JSONP for React (e.g. fetch-jsonp but needs polyfills or https://www.npmjs.com/package/jsonp)
-		function jsonp(url, callback) {
-			const callbackName =
-				'jsonp_callback_' + Math.round(100000 * Math.random());
-			window[callbackName] = function(data) {
-				delete window[callbackName];
-				document.body.removeChild(script);
-				callback(data);
-			};
-
-			const script = document.createElement('script');
-			script.src =
-				url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
-			document.body.appendChild(script);
-		}
-
-		// Meetup API only allows JSONP for client-side, non authenticated, api key signed GET requests
-		jsonp(GET_UPCOMING_EVENTS_URL, data => {
+		/* Meetup API only allows JSONP for client-side, non authenticated, api key signed GET requests.
+		   must use JSONP conform https://github.com/meetup/api/issues/211
+		   Fetch API does not support JSONP. no-cors mode creates an opaque response without data.
+		*/
+		jsonp(GET_UPCOMING_EVENTS_URL).then(data => {
 			const nextEvent = data.data[0];
 			if (nextEvent) {
 				const formattedDate = new Date(nextEvent.time).toLocaleDateString(
@@ -105,7 +73,7 @@ class EventsButton extends Component {
 			) : null;
 		return (
 			<Tooltip title={this.state.nextEvent} placement="bottom">
-				{/*TODO how to do this for mobile?*/}
+				{/* TODO how to do this for mobile? */}
 				<Button
 					component={Link}
 					to="/events"
