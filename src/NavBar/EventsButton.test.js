@@ -10,8 +10,7 @@ jest.mock('react-i18next', () => ({
 	},
 }));
 
-// TODO export class EventsButton
-// TODO
+// TODO mock newEventIcon
 
 it('renders without crashing', () => {
 	const div = document.createElement('div');
