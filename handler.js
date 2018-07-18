@@ -6,7 +6,7 @@ function sendEmail(formData, destinationAddress) {
 	return new Promise((resolve, reject) => {
 		const emailParams = {
 			Source: destinationAddress, // SES SENDING EMAIL
-			ReplyToAddresses: [formData.reply_to],
+			ReplyToAddresses: [formData.email],
 			Destination: {
 				ToAddresses: [ destinationAddress ],
 			},
@@ -14,12 +14,12 @@ function sendEmail(formData, destinationAddress) {
 				Body: {
 					Text: {
 						Charset: 'UTF-8',
-						Data: `${formData.message}\n\nName: ${formData.name}\nEmail: ${formData.reply_to}`,
+						Data: `${formData.message}\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}`,
 					},
 				},
 				Subject: {
 					Charset: 'UTF-8',
-					Data: 'New message from codestar.nl',
+					Data: `Message from ${formData.name} through the codestar.nl contact form`,
 				},
 			},
 		};
