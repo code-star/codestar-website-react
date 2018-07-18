@@ -111,7 +111,7 @@ class Cases extends Component {
 										<ResponsiveImage
 											path={clientCase.logo}
 											alt={clientCase.client}
-											style={{ width: '100%' }}
+											width="100%"
 										/>
 									</div>
 								</div>
@@ -136,9 +136,9 @@ class Cases extends Component {
 						this.setState({ [clientCase.path]: bool });
 
 					const img = (
-						<img
+						<ResponsiveImage
 							alt={clientCase.client}
-							src={clientCase.image}
+							path={clientCase.image}
 							width="100%"
 							className="mb-3"
 						/>

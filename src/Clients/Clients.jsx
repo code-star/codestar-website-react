@@ -69,7 +69,7 @@ const Clients = props => (
 									<ResponsiveImage
 										path={client.logo}
 										alt={client.name}
-										style={{ width: '100%' }}
+										width="100%"
 									/>
 								</div>
 								{/*
@@ -93,7 +93,7 @@ const Clients = props => (
 								<ResponsiveImage
 									path={client.logo}
 									alt={client.name}
-									style={{ width: '100%' }}
+									width="100%"
 								/>
 							</div>
 						)}
