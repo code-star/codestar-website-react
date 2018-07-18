@@ -2,12 +2,12 @@
 const AWS = require('aws-sdk');
 const SES = new AWS.SES();
 
-function sendEmail(formData, callback) {
+function sendEmail(formData, destinationAddress, callback) {
 	const emailParams = {
-		Source: '', // SES SENDING EMAIL  // TODO DO NOT COMMIT THIS
+		Source: destinationAddress, // SES SENDING EMAIL
 		ReplyToAddresses: [formData.reply_to],
 		Destination: {
-			ToAddresses: [''], // TODO DO NOT COMMIT THIS
+			ToAddresses: [ destinationAddress ],
 		},
 		Message: {
 			Body: {
@@ -28,8 +28,9 @@ function sendEmail(formData, callback) {
 
 module.exports.staticSiteMailer = (event, context, callback) => {
 	const formData = JSON.parse(event.body);
+	const destinationAddress = process.env.STATIC_SITE_MAILER_DESTINATION;
 
-	sendEmail(formData, function(err, data) {
+	sendEmail(formData, destinationAddress, function(err, data) {
 		if (err) {
 			console.log(err, err.stack);
 		} else {

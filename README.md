@@ -29,3 +29,10 @@ And invoke with (--path is optional and points to a POST payload):
 * PROD: npx sls invoke --function staticSiteMailer --path data.json
 * DEV: npx sls invoke local --function staticSiteMailer --path data.json 
 
+The destination email address is set in the environment variable STATIC_SITE_MAILER_DESTINATION
+Docs: https://serverless.com/framework/docs/providers/spotinst/guide/variables/#environment-variables
+Locally this can be set in a test profile or just by setting the envar with `export STATIC_SITE_MAILER_DESTINATION=example@example.com` 
+In the code it is read with `process.env.STATIC_SITE_MAILER_DESTINATION`
+In AWS:
+* Go to https://eu-west-1.console.aws.amazon.com/lambda/ and find the function
+* Scroll to Environment variables and add the correct key/value
