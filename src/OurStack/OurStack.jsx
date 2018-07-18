@@ -4,6 +4,7 @@ import { translate } from 'react-i18next';
 import { Paper, Avatar, Tooltip, Typography, Grow } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
+import { responsiveImageProps } from '../ResponsiveImage/ResponsiveImage';
 import techs from './techs';
 
 const styles = theme => ({
@@ -34,8 +35,7 @@ class OurStack extends Component {
 							<Grow in>
 								<Avatar
 									className={classes.icon}
-									alt={item.name}
-									src={item.logo}
+									{...responsiveImageProps(item.logo, item.name)}
 								/>
 							</Grow>
 						</Tooltip>
@@ -44,45 +44,38 @@ class OurStack extends Component {
 			);
 		}
 
+		const parts = [
+			{
+				title: 'STACK_FRONT_END',
+				caption: 'STACK_FRONT_END_SUBTITLE',
+				icons: techs.frontEnd,
+			},
+			{
+				title: 'STACK_BACK_END',
+				caption: 'STACK_BACK_END_SUBTITLE',
+				icons: techs.backEnd,
+			},
+			{
+				title: 'STACK_INFRASTRUCTURE',
+				caption: 'STACK_INFRASTRUCTURE_SUBTITLE',
+				icons: techs.infrastructure,
+			},
+		];
+
 		return (
 			<div>
-				{/* TODO: clean up */}
 				{/* TODO: better handling of small screen size */}
-				<Paper className={classes.root} elevation={1}>
-					<div className="row justify-content-between">
-						<div className="col-auto mb-1">
-							{t('STACK_FRONT_END')}
-							<Typography variant="caption">
-								{t('STACK_FRONT_END_SUBTITLE')}
-							</Typography>
+				{parts.map(part => (
+					<Paper key={part.title} className={classes.root} elevation={1}>
+						<div className="row justify-content-between">
+							<div className="col-auto mb-1">
+								{t(part.title)}
+								<Typography variant="caption">{t(part.caption)}</Typography>
+							</div>
+							<div className="col-auto mr-1">{techIcons(part.icons)}</div>
 						</div>
-						<div className="col-auto mr-1">{techIcons(techs.frontEnd)}</div>
-					</div>
-				</Paper>
-				<Paper className={classes.root} elevation={1}>
-					<div className="row justify-content-between">
-						<div className="col-auto mb-1">
-							{t('STACK_BACK_END')}
-							<Typography variant="caption">
-								{t('STACK_BACK_END_SUBTITLE')}
-							</Typography>
-						</div>
-						<div className="col-auto mr-1">{techIcons(techs.backEnd)}</div>
-					</div>
-				</Paper>
-				<Paper className={classes.root} elevation={1}>
-					<div className="row justify-content-between">
-						<div className="col-auto mb-1">
-							{t('STACK_INFRASTRUCTURE')}
-							<Typography variant="caption">
-								{t('STACK_INFRASTRUCTURE_SUBTITLE')}
-							</Typography>
-						</div>
-						<div className="col-auto mr-1">
-							{techIcons(techs.infrastructure)}
-						</div>
-					</div>
-				</Paper>
+					</Paper>
+				))}
 			</div>
 		);
 	}
