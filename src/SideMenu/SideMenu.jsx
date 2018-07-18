@@ -47,6 +47,17 @@ const list = [
 
 @translate(['nav'], { wait: true })
 class SideMenu extends Component {
+	state = { location: null };
+
+	componentDidMount() {
+		this.props.history.listen(location => this.setLocation(location.pathname));
+		this.setLocation(this.props.history.location.pathname);
+	}
+
+	setLocation(location) {
+		this.setState({ location: `/${location.split('/')[1]}` });
+	}
+
 	render() {
 		const { t, ...props } = this.props;
 		return (
@@ -59,10 +70,21 @@ class SideMenu extends Component {
 				>
 					<List>
 						{list.map(item => (
-							<Link to={item.link} key={t(item.text)}>
+							<Link
+								to={item.link}
+								key={t(item.text)}
+								style={{ textDecoration: 'none' }}
+							>
 								<ListItem button>
 									<ListItemIcon>{item.icon}</ListItemIcon>
-									<ListItemText primary={t(item.text)} />
+									<ListItemText
+										primary={t(item.text)}
+										primaryTypographyProps={
+											this.state.location === item.link
+												? { color: 'primary', style: { fontWeight: 500 } }
+												: null
+										}
+									/>
 								</ListItem>
 							</Link>
 						))}
