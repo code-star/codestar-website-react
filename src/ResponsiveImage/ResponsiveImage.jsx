@@ -24,6 +24,7 @@ const ResponsiveImage = props => {
 		path,
 		sizes = '100vw',
 		versions = [375, 800, 1280, 1536, 1920], // Cloudinary imagen file size in px
+		...otherProps
 	} = props;
 
 	return (
@@ -37,6 +38,7 @@ const ResponsiveImage = props => {
 				className={`${props.asBackgroundImage ? css.asBackgroundImage : ''} ${
 					props.className
 				}`}
+				{...otherProps}
 			/>
 		)
 	);
