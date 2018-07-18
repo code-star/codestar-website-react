@@ -40,7 +40,7 @@ export class Contact extends Component {
 			email: '',
 			message: '',
 			messageRequiredError: false,
-			fetchResult: '',
+			showFetchSuccess: false,
 			showMap: false,
 		};
 		this.handleChange = this.handleChange.bind(this);
@@ -91,17 +91,17 @@ export class Contact extends Component {
 				.then(data => data.json())
 				.then(data => {
 					if (data.message) {
-						// TODO handle success
+						// TODO handle success - this.setState ... showFetchSuccess
 						console.log('success, show success message');
 						this.setState({
-							fetchResult:
-								'Your message has been received, we will get back to you shortly!',
+							showFetchSuccess: true,
+							//'Your message has been received, we will get back to you shortly!',
 						}); // TODO i18n
 					}
 					// if(data.status === 'ok') {
 					// 	x
 					// } else {
-					// 	TODO handle error
+					// 	TODO handle error - this.setState ... showFetchFailure
 					// console.log('Something went wrong, please try again later or send a mail directly to codestar@ordina.nl') // TODO i18n
 					// }
 				})
@@ -115,6 +115,17 @@ export class Contact extends Component {
 			<FormHelperText id="name-error-text">
 				{t('REQUIRED_ERROR')}
 			</FormHelperText>
+		) : null;
+		const showFetchSuccess = this.state.showFetchSuccess ? (
+			<div
+				style={{
+					backgroundColor: '#33eb91',
+					marginTop: '1em',
+					padding: '0.8em',
+				}}
+			>
+				{t('REQUIRED_ERROR')}
+			</div>
 		) : null;
 		return (
 			<section>
@@ -178,7 +189,17 @@ export class Contact extends Component {
 											</FormControl>
 										</div>
 									</div>
-									<div>{this.state.fetchResult}</div>
+									{showFetchSuccess}
+									<div
+										style={{
+											backgroundColor: '#f44336',
+											color: 'white',
+											marginTop: '1em',
+											padding: '0.8em',
+										}}
+									>
+										{this.state.fetchResult}
+									</div>
 								</CardContent>
 								<CardActions>
 									<Button color="primary" type="submit">
