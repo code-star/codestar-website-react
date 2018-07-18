@@ -52,17 +52,22 @@ provider:
 #    variable1: value1
 
 # you can add packaging information here
-#package:
-#  include:
-#    - include-me.js
+package:
+  include:
+    - handler.js
+    - serverless.yml
 #    - include-me-dir/**
-#  exclude:
-#    - exclude-me.js
+  exclude:
+    - .idea/**
+    - coverage/**
+    - node_modules/**
+    - public/**
+    - src/**
 #    - exclude-me-dir/**
 
 functions:
   staticSiteMailer:
-    handler: handler.staticSiteMailer
+    handler: serverless/handler.staticSiteMailer
     events:
       - http:
           method: post
