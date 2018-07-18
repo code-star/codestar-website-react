@@ -27,6 +27,7 @@ const ResponsiveImage = props => {
 		path,
 		sizes = defaultSizes,
 		versions = defaultVersions,
+		asBackgroundImage = false,
 		...otherProps
 	} = props;
 
@@ -36,7 +37,7 @@ const ResponsiveImage = props => {
 				{...responsiveImageProps(path, alt, versions, sizes)}
 				alt={alt}
 				title={title}
-				className={`${props.asBackgroundImage ? css.asBackgroundImage : ''} ${
+				className={`${asBackgroundImage ? css.asBackgroundImage : ''} ${
 					props.className
 				}`}
 				{...otherProps}
