@@ -40,29 +40,28 @@ const headers = {
 	'Access-Control-Allow-Origin': 'https://codestar.nl',
 };
 
-module.exports.staticSiteMailer = (event, context, callback) => {
+module.exports.staticSiteMailer = async (event, context, callback) => {
 	const formData = JSON.parse(event.body);
 	const destinationAddress = process.env.STATIC_SITE_MAILER_DESTINATION;
 
-	sendEmail(formData, destinationAddress)
-		.then(data => {
-			//console.log(data)
-			callback(null, {
-				statusCode: 200,
-				headers,
-				body: JSON.stringify({
-					message: data,
-				}),
-			});
-		})
-		.catch(err => {
-			console.log(err, err.stack);
-			callback(null, {
-				statusCode: 500,
-				headers,
-				body: JSON.stringify({
-					message: err.message,
-				}),
-			});
+	try {
+		const data = await sendEmail(formData, destinationAddress);
+		//console.log(data)
+		callback(null, {
+			statusCode: 200,
+			headers,
+			body: JSON.stringify({
+				message: data,
+			}),
 		});
+	} catch(err) {
+		console.log(err, err.stack);
+		callback(null, {
+			statusCode: 500,
+			headers,
+			body: JSON.stringify({
+				message: err.message,
+			}),
+		});
+	}
 };
