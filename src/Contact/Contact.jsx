@@ -40,6 +40,7 @@ export class Contact extends Component {
 			email: '',
 			message: '',
 			messageRequiredError: false,
+			fetchResult: '',
 			showMap: false,
 		};
 		this.handleChange = this.handleChange.bind(this);
@@ -64,30 +65,48 @@ export class Contact extends Component {
 		this.setState({ messageRequiredError: hasMessageError });
 
 		if (!hasMessageError) {
-			ev.target.submit();
-		}
+			//ev.target.submit();
 
-		// TODO Implement serverless function (formspree AJAX is now a paid service)
-		// TODO add Fetch polyfill
-		// fetch(url, {
-		// 	method: 'POST',
-		// 	body: JSON.stringify({
-		// 		name: this.state.name,
-		// 		phone: this.state.phone,
-		// 		email: this.state.email,
-		// 		message: this.state.message
-		// 	})
-		// })
-		// 	.then(data => data.json())
-		// 	.then(data => {
-		// 		// TODO handle success
-		// 		// if(data.status === 'ok') {
-		// 		// 	x
-		// 		// } else {
-		// 		// 	TODO handle error
-		// 		// }
-		// 	})
-		// 	.catch(error => this.props.logError('HANDLE' + error)); // TODO handle error
+			// Fetch is supported in all evergreen browsers, but not IE 11 or Opera Mini. Polyfill not added at this time.
+			let url =
+				'https://zfotafd6l0.execute-api.eu-west-1.amazonaws.com/dev/static-site-mailer';
+			let options = {
+				method: 'POST',
+				body: JSON.stringify({
+					name: this.state.name,
+					phone: this.state.phone,
+					email: this.state.email,
+					message: this.state.message,
+				}),
+			};
+			if (process.env.REACT_APP_STAGE === 'dev') {
+				url = '/mock/staticSiteMailer.json';
+				options = {
+					method: 'GET',
+				};
+			}
+			// console.log(process.env.REACT_APP_STAGE);
+			// console.log(url);
+			fetch(url, options)
+				.then(data => data.json())
+				.then(data => {
+					if (data.message) {
+						// TODO handle success
+						console.log('success, show success message');
+						this.setState({
+							fetchResult:
+								'Your message has been received, we will get back to you shortly!',
+						}); // TODO i18n
+					}
+					// if(data.status === 'ok') {
+					// 	x
+					// } else {
+					// 	TODO handle error
+					// console.log('Something went wrong, please try again later or send a mail directly to codestar@ordina.nl') // TODO i18n
+					// }
+				})
+				.catch(error => console.log('HANDLE' + error)); // TODO handle error
+		}
 	}
 
 	render() {
@@ -159,6 +178,7 @@ export class Contact extends Component {
 											</FormControl>
 										</div>
 									</div>
+									<div>{this.state.fetchResult}</div>
 								</CardContent>
 								<CardActions>
 									<Button color="primary" type="submit">

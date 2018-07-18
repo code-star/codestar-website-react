@@ -1,15 +1,8 @@
 {
-	"statusCode": 200,
-	"headers": {
-		"Content-Type": "application/json",
-		"Access-Control-Allow-Origin": "https://codestar.nl"
-	},
-	"body": {
-		"message": {
-			"ResponseMetadata": {
-				"RequestId": "f3e2f872-8ab2-11e8-9b2b-a12353cee574"
-			},
-			"MessageId": "01020164ae8314f7-9512aad1-36f4-42a1-905c-b935bf1b4e77-000000"
-		}
+	"message": {
+		"ResponseMetadata": {
+			"RequestId": "f3e2f872-8ab2-11e8-9b2b-a12353cee574"
+		},
+		"MessageId": "01020164ae8314f7-9512aad1-36f4-42a1-905c-b935bf1b4e77-000000"
 	}
 }
