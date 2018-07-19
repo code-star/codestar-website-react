@@ -33,8 +33,10 @@ This logs (among others) the POST endpoint, e.g. https://x.execute-api.us-east-1
 This can be tested with Postman, but to call it from a form, CORS must be configured.
 
 And invoke with (--path is optional and points to a POST payload):
-* PROD: npx sls invoke --function staticSiteMailer --path data.json
-* DEV: npx sls invoke local --function staticSiteMailer --path data.json 
+* PROD: `npx sls invoke --function staticSiteMailer --path data.json`
+* DEV: `STATIC_SITE_MAILER_DESTINATION=example@example.com npx sls invoke local --function staticSiteMailer --path data.json`
+
+**NOTE: Replace example@example.com by the email address validated in AWS SES** 
 
 The destination email address is set in the environment variable STATIC_SITE_MAILER_DESTINATION
 Docs: https://serverless.com/framework/docs/providers/spotinst/guide/variables/#environment-variables

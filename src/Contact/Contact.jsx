@@ -68,7 +68,7 @@ export class Contact extends Component {
 		if (!hasMessageError) {
 			// Fetch is supported in all evergreen browsers, but not IE 11 or Opera Mini. Polyfill not added at this time.
 			let url =
-				'https://zfotafd6l0.execute-api.eu-west-1.amazonaws.com/dev/static-site-mailer';
+				'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/dev/static-site-mailer';
 			let options = {
 				method: 'POST',
 				body: JSON.stringify({

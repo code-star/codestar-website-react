@@ -11,7 +11,7 @@
 #
 # Happy Coding!
 
-service: static-site-mailer
+service: codestar-nl-serverless
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
@@ -54,20 +54,17 @@ provider:
 # you can add packaging information here
 package:
   include:
-    - handler.js
+    - serverless/**
     - serverless.yml
 #    - include-me-dir/**
   exclude:
-    - .idea/**
-    - coverage/**
-    - node_modules/**
-    - public/**
-    - src/**
+  	# path that starts with * must be in "
+    - "**/*"
 #    - exclude-me-dir/**
 
 functions:
   staticSiteMailer:
-    handler: serverless/handler.staticSiteMailer
+    handler: serverless/mailer.staticSiteMailer
     events:
       - http:
           method: post
