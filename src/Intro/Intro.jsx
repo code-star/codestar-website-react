@@ -10,6 +10,7 @@ import Clients from '../Clients/Clients';
 import AnimatedLogo from '../Animations/AnimatedLogo';
 import LandscapeBackground from '../Animations/LandscapeBackground';
 import DelayedFade from '../Animations/DelayedFade';
+import { Link } from 'react-router-dom';
 
 const styles = theme => ({
 	section: {
@@ -99,14 +100,6 @@ class Intro extends Component {
 									alt="What to do?"
 								/>
 							</div>
-							{/*<div className="col-12 col-md-6">
-								<Typography variant="subheading" gutterBottom>
-									Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint
-									neque, vel adipisci exercitationem numquam unde commodi esse ipsum
-									necessitatibus, consectetur fuga nihil ducimus dolor ipsa beatae
-									veniam tempora sequi. Exercitationem!
-								</Typography>
-							</div>*/}
 						</div>
 					</Container>
 				</section>
@@ -116,7 +109,9 @@ class Intro extends Component {
 					style={{ backgroundColor: '#eeeeee' }}
 				>
 					<Container center>
-						<Clients />
+						<Link to="/cases">
+							<Clients />
+						</Link>
 					</Container>
 				</section>
 			</div>

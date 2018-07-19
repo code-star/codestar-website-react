@@ -45,11 +45,10 @@ const styles = theme => ({
 	},
 });
 
-@translate(['translations', 'nav'], { wait: true })
+@translate(['nav'], { wait: true })
 class NavBar extends Component {
 	render() {
-		const props = this.props;
-		const { t } = this.props;
+		const { t, ...props } = this.props;
 		const toggle = lng => i18n.changeLanguage(lng);
 		return (
 			<AppBar position="fixed" className={props.classes.appBar}>
@@ -78,19 +77,19 @@ class NavBar extends Component {
 						</Link>
 						<Button
 							onClick={() => toggle('nl')}
-							variant={i18n.language === 'nl' ? 'raised' : 'flat'}
-							color="inherit"
+							variant={i18n.language === 'nl' ? 'contained' : 'outlined'}
+							color={i18n.language === 'nl' ? null : 'inherit'}
 							className={props.classes.langButton}
 						>
-							{t('nav:LINK_NL')}
+							NL
 						</Button>
 						<Button
 							onClick={() => toggle('en')}
-							variant={i18n.language === 'en' ? 'raised' : 'flat'}
-							color="inherit"
+							variant={i18n.language === 'en' ? 'contained' : 'outlined'}
+							color={i18n.language === 'en' ? null : 'inherit'}
 							className={props.classes.langButton}
 						>
-							{t('nav:LINK_EN')}
+							EN
 						</Button>
 					</Typography>
 					<Hidden smDown>
@@ -101,7 +100,7 @@ class NavBar extends Component {
 							Cases
 						</Button>
 						<Button component={Link} to="/about" color="inherit">
-							About
+							{t('ABOUT')}
 						</Button>
 						<Button component={Link} to="/jobs" color="inherit">
 							Jobs

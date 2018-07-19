@@ -66,7 +66,9 @@ class Jobs extends Component {
 							</div>
 							<div className="col-12 mt-3">
 								<h3>{t('JOBS_BEST_CLIENTS')}</h3>
-								<Clients title="Companies that trust on us" />
+								<Link to="/cases">
+									<Clients title="Companies that trust on us" />
+								</Link>
 							</div>
 						</div>
 						<div className="row justify-content-center my-3">

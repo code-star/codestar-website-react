@@ -18,6 +18,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Container from '../Container/Container';
 import CaseHeader from '../CaseHeader/CaseHeader';
 import casesList from './CasesList';
+import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 
 const styles = {
 	whiteText: {
@@ -85,11 +86,7 @@ class Cases extends Component {
 	renderBoxes() {
 		const { classes } = this.props;
 		return (
-			<div
-				className={`col-12 col-md-10 col-lg-6 my-3 text-center ${
-					classes.noLineHeight
-				}`}
-			>
+			<div className={`col-12 col-md-10 col-lg-6 my-3 ${classes.noLineHeight}`}>
 				{this.orderedCases.map((clientCase, i) => (
 					<Link key={i} to={clientCase.client} smooth>
 						<Fade in timeout={1000}>
@@ -107,15 +104,17 @@ class Cases extends Component {
 								}}
 							>
 								<div
-									style={{
-										backgroundImage: `url(${clientCase.logo})`,
-										backgroundSize: 'contain',
-										backgroundPosition: 'center',
-										backgroundRepeat: 'no-repeat',
-										width: '100%',
-										height: '100%',
-									}}
-								/>
+									className="row align-items-center mx-0"
+									style={{ width: '100%', height: '100%' }}
+								>
+									<div className="col-12 p-0">
+										<ResponsiveImage
+											path={clientCase.logo}
+											alt={clientCase.client}
+											width="100%"
+										/>
+									</div>
+								</div>
 							</Paper>
 						</Fade>
 					</Link>
@@ -137,9 +136,9 @@ class Cases extends Component {
 						this.setState({ [clientCase.path]: bool });
 
 					const img = (
-						<img
+						<ResponsiveImage
 							alt={clientCase.client}
-							src={clientCase.image}
+							path={clientCase.image}
 							width="100%"
 							className="mb-3"
 						/>

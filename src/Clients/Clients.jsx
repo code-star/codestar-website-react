@@ -2,6 +2,7 @@ import React from 'react';
 
 import { GridList, GridListTile } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
+import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 
 const ClientsList = [
 	{
@@ -65,7 +66,11 @@ const Clients = props => (
 								}}
 							>
 								<div className="col-12 col-md-6">
-									<img src={client.logo} alt={client.name} />
+									<ResponsiveImage
+										path={client.logo}
+										alt={client.name}
+										width="100%"
+									/>
 								</div>
 								{/*
 								// TODO: Do we want quotes from clients?
@@ -77,6 +82,7 @@ const Clients = props => (
 							</div>
 						) : (
 							<div
+								className="row justify-content-center align-items-center ml-0 mr-0"
 								style={{
 									padding: '1.5em',
 									backgroundColor: client.color ? client.color : 'transparent',
@@ -84,15 +90,10 @@ const Clients = props => (
 									height: '100%',
 								}}
 							>
-								<div
-									style={{
-										backgroundImage: `url(${client.logo})`,
-										backgroundSize: 'contain',
-										backgroundPosition: 'center',
-										backgroundRepeat: 'no-repeat',
-										width: '100%',
-										height: '100%',
-									}}
+								<ResponsiveImage
+									path={client.logo}
+									alt={client.name}
+									width="100%"
 								/>
 							</div>
 						)}

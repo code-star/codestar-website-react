@@ -73,7 +73,7 @@
         },
         "gracenote-sports": {
             "title": "Winter Olympics",
-            "intro": "N/A",
+            "intro": "Pyeongchang, South Korea - February 2018. The world is watching the Winter Olympics. Hockey, Skiing, Curling, Figure Skating and Bobsleighing: everything is being streamed online. Gracenote Sports set out to create a Kafka Streams pipeline as a lightning fast backend for Olympic Data widgets, powering a major Olympic broadcaster’s apps and website. Combining streams of real-time results, intermediate times, provisional standings, video logs and athletes’ biographies. For a gold medal in viewing experience.",
             "sections": []
         }
     }

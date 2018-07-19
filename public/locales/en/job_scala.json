@@ -1,5 +1,6 @@
 {
     "JOB_TITLE": "Scala Developer",
+    "JOB_SHORT_DESC": "Build scalable and reactive apps with us.",
     "JOB_TAGLINE": "Programming with heart and mind",
     "JOB_CLIENT_CASE": "We’re looking for a Scala talent for our greenfield project in the port of Rotterdam. Someone who wants to join our team making a difference at Rotterdam Logistics Lab - the port’s innovation incubator. By realising real-time data streams with functional programming, reactive streams, cloud native and machine learning. Via Scala, Play, Akka, Kafka, Spark, RX, Angular2 and React. Will you be the new expert in the Scala ecosystem?",
     "JOB_PARAGRAPHS": [

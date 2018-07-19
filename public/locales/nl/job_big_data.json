@@ -1,5 +1,6 @@
 {
     "JOB_TITLE": "Big Data Engineer",
+    "JOB_SHORT_DESC": "Duik in de wereld van fast en streaming data.",
     "JOB_TAGLINE": "Programmeer met hart en hoofd",
     "JOB_CLIENT_CASE": "Pyeongchang, Zuid-Korea - 2018. De wereld volgt de Olympische Winterspelen. Skiën, schaatsen en bobsleeën; alles wordt online gestreamd. Ook door een groot Amerikaans tv-netwerk. Gracenote- en Codestar-engineers bouwen aan het nieuwe platform om deze livestreams te verrijken met real-time data van tussentijden, fictieve standen, video logs, en biografieën van sporters. Via real-time stream processing-technologieën als Kafka en Akka. Voor een gouden plak in kijkbeleving.",
     "JOB_PARAGRAPHS": [

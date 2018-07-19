@@ -64,7 +64,11 @@ class App extends Component {
 				<MuiThemeProvider theme={theme}>
 					<CssBaseline />
 					<NavBar toggle={this.toggleDrawer} />
-					<SideMenu open={this.state.drawerMenu} toggle={this.toggleDrawer} />
+					<SideMenu
+						open={this.state.drawerMenu}
+						toggle={this.toggleDrawer}
+						history={this.history}
+					/>
 
 					<ScrollToTop>
 						<Route exact path="/" component={AsyncIntro} />
