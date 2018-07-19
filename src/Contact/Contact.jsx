@@ -41,6 +41,7 @@ export class Contact extends Component {
 			message: '',
 			messageRequiredError: false,
 			showFetchSuccess: false,
+			showFetchFailure: false,
 			showMap: false,
 		};
 		this.handleChange = this.handleChange.bind(this);
@@ -65,8 +66,6 @@ export class Contact extends Component {
 		this.setState({ messageRequiredError: hasMessageError });
 
 		if (!hasMessageError) {
-			//ev.target.submit();
-
 			// Fetch is supported in all evergreen browsers, but not IE 11 or Opera Mini. Polyfill not added at this time.
 			let url =
 				'https://zfotafd6l0.execute-api.eu-west-1.amazonaws.com/dev/static-site-mailer';
@@ -85,27 +84,26 @@ export class Contact extends Component {
 					method: 'GET',
 				};
 			}
-			// console.log(process.env.REACT_APP_STAGE);
-			// console.log(url);
 			fetch(url, options)
 				.then(data => data.json())
 				.then(data => {
-					if (data.message) {
-						// TODO handle success - this.setState ... showFetchSuccess
-						console.log('success, show success message');
+					if (data.message && data.message.MessageId) {
 						this.setState({
 							showFetchSuccess: true,
-							//'Your message has been received, we will get back to you shortly!',
-						}); // TODO i18n
+						});
+					} else {
+						console.log('Fetch failure: no MessageId in response');
+						this.setState({
+							showFetchFailure: true,
+						});
 					}
-					// if(data.status === 'ok') {
-					// 	x
-					// } else {
-					// 	TODO handle error - this.setState ... showFetchFailure
-					// console.log('Something went wrong, please try again later or send a mail directly to codestar@ordina.nl') // TODO i18n
-					// }
 				})
-				.catch(error => console.log('HANDLE' + error)); // TODO handle error
+				.catch(error => {
+					console.log('Fetch failure:' + error);
+					this.setState({
+						showFetchFailure: true,
+					});
+				});
 		}
 	}
 
@@ -124,7 +122,19 @@ export class Contact extends Component {
 					padding: '0.8em',
 				}}
 			>
-				{t('REQUIRED_ERROR')}
+				{t('FETCH_SUCCESS')}
+			</div>
+		) : null;
+		const showFetchFailure = this.state.showFetchFailure ? (
+			<div
+				style={{
+					backgroundColor: '#f44336',
+					color: 'white',
+					marginTop: '1em',
+					padding: '0.8em',
+				}}
+			>
+				{t('FETCH_FAILURE')}
 			</div>
 		) : null;
 		return (
@@ -190,16 +200,7 @@ export class Contact extends Component {
 										</div>
 									</div>
 									{showFetchSuccess}
-									<div
-										style={{
-											backgroundColor: '#f44336',
-											color: 'white',
-											marginTop: '1em',
-											padding: '0.8em',
-										}}
-									>
-										{this.state.fetchResult}
-									</div>
+									{showFetchFailure}
 								</CardContent>
 								<CardActions>
 									<Button color="primary" type="submit">
