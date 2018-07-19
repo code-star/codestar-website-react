@@ -61,4 +61,4 @@ function responsiveImageProps(
 }
 
 export default ResponsiveImage;
-export { responsiveImageProps };
+export { responsiveImageProps, getResponsiveImageUrl };
