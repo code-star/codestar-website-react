@@ -73,9 +73,10 @@ class Jobs extends Component {
 								</Link>
 							</div>
 						</div>
-						<div className="row justify-content-center my-3">
+						<div className="row justify-content-center py-3">
 							<p>
 								<Button
+									className="mt-3"
 									variant="raised"
 									component={Link}
 									to="/about"
