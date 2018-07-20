@@ -38,7 +38,7 @@ class CaseHeader extends Component {
 		return (
 			<section className={classes.section}>
 				<ResponsiveImage path={props.image} asBackgroundImage />
-				<Container fullHeightMinusNavBar center>
+				<Container fullHeight center>
 					<div className="row">
 						<div className="col-12 col-lg-6">
 							<div className="mt-4">
