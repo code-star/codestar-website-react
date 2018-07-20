@@ -62,10 +62,11 @@ class Cases extends Component {
 						<Fade in timeout={2000}>
 							<div className="col-10 col-lg-6 mx-auto">
 								<div className="col-8 p-0">
-									<img
-										src="/images/codestar_logo_dark.svg"
+									<ResponsiveImage
+										path="/images/codestar_logo_dark.svg"
 										alt="Codestar powered by Ordina Logo"
 										className="mb-3"
+										width="100%"
 									/>
 								</div>
 								<Typography variant="subheading" className={classes.whiteText}>
