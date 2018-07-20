@@ -40,7 +40,11 @@ class Cases extends Component {
 	orderedCases = [3, 1, 2, 5, 0, 4].map(i => casesList[i]);
 
 	state = this.orderedCases.reduce((accu, clientCase) => {
-		accu[clientCase.path] = false;
+		accu[clientCase.path] =
+			this.props.location.hash.slice(1) === clientCase.path &&
+			clientCase.readMore
+				? true
+				: false;
 		return accu;
 	}, {});
 
@@ -89,7 +93,7 @@ class Cases extends Component {
 		return (
 			<div className={`col-12 col-md-10 col-lg-6 my-3 ${classes.noLineHeight}`}>
 				{this.orderedCases.map((clientCase, i) => (
-					<Link key={i} to={clientCase.client} smooth>
+					<Link key={i} to={clientCase.path} hashSpy smooth>
 						<Fade in timeout={1000}>
 							<Paper
 								className={classes.linkCursor}
@@ -138,15 +142,23 @@ class Cases extends Component {
 
 					const img = (
 						<ResponsiveImage
-							alt={clientCase.client}
-							path={clientCase.image}
+							alt={
+								clientCase.secondaryCredits
+									? clientCase.secondaryCredits
+									: clientCase.client
+							}
+							path={
+								clientCase.secondaryImage
+									? clientCase.secondaryImage
+									: clientCase.image
+							}
 							width="100%"
 							className="mb-3"
 						/>
 					);
 
 					return (
-						<Element key={i} name={clientCase.client}>
+						<Element key={i} name={clientCase.path}>
 							<CaseHeader
 								{...clientCase}
 								readMore={sections !== undefined && sections.length > 0}
