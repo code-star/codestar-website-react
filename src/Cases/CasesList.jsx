@@ -22,6 +22,7 @@ const casesList = [
 			'AngularJS',
 			'Polymer',
 		],
+		readMore: true,
 	},
 	{
 		client: 'SKG',
@@ -41,6 +42,7 @@ const casesList = [
 			'DCOS',
 			'Circle CI',
 		],
+		readMore: true,
 	},
 	{
 		client: 'Port of Rotterdam',
@@ -66,6 +68,7 @@ const casesList = [
 			'AWS Dynamodb',
 			'Elastic Beanstalk',
 		],
+		readMore: true,
 	},
 	{
 		client: '42 Education',

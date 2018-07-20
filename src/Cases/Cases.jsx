@@ -41,7 +41,10 @@ class Cases extends Component {
 
 	state = this.orderedCases.reduce((accu, clientCase) => {
 		accu[clientCase.path] =
-			this.props.location.hash.slice(1) === clientCase.path ? true : false;
+			this.props.location.hash.slice(1) === clientCase.path &&
+			clientCase.readMore
+				? true
+				: false;
 		return accu;
 	}, {});
 
