@@ -11,6 +11,7 @@ import AnimatedLogo from '../Animations/AnimatedLogo';
 import LandscapeBackground from '../Animations/LandscapeBackground';
 import DelayedFade from '../Animations/DelayedFade';
 import { Link } from 'react-router-dom';
+import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 
 const styles = theme => ({
 	section: {
@@ -94,9 +95,9 @@ class Intro extends Component {
 								{/*</Paper>*/}
 							</div>
 							<div className="col-12 col-md-6">
-								<img
+								<ResponsiveImage
 									width="100%"
-									src="/images/bucket_waterfall.png"
+									path="/images/bucket_waterfall.png"
 									alt="What to do?"
 								/>
 							</div>

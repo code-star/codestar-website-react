@@ -30,6 +30,9 @@ const styles = theme => ({
 			marginTop: '64px',
 		},
 	},
+	noMaxWidth: {
+		maxWidth: 'none',
+	},
 });
 
 const Container = props => {
@@ -43,6 +46,7 @@ const Container = props => {
 			${props.marginTopNavBar ? props.classes.marginTopNavBar : ''}
 			${props.noPadding ? props.classes.noPadding : ''}
 			${props.center ? props.classes.containerCenter : ''}
+			${props.noMaxWidth ? props.classes.noMaxWidth : ''}
 		`}
 		>
 			{props.children}
