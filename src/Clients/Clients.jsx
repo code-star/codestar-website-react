@@ -49,6 +49,17 @@ const styles = {
 		// Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
 		transform: 'translateZ(0)',
 	},
+	background: {
+		position: 'absolute',
+		width: '100%',
+		height: '100%',
+		top: 0,
+		left: 0,
+	},
+	faded: {
+		background:
+			'linear-gradient( rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6))',
+	},
 };
 
 const Clients = props => {
@@ -65,17 +76,23 @@ const Clients = props => {
 						<GridListTile key={client.name} cols={client.featured ? 2 : 1}>
 							{client.featured ? (
 								<div
-									className="row justify-content-center align-items-center ml-0 mr-0"
-									style={{
-										background: `linear-gradient( rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('${
-											client.background
-										}')`,
-										backgroundSize: 'cover, cover',
-										backgroundPosition: 'center',
-										width: '100%',
-										height: '100%',
-									}}
+									className="row justify-content-center align-items-center mx-0"
+									style={{ width: '100%', height: '100%' }}
 								>
+									<div className={props.classes.background}>
+										<ResponsiveImage
+											path={client.background}
+											alt={client.name}
+											width="100%"
+											height="100%"
+											style={{ objectFit: 'cover' }}
+										/>
+									</div>
+									<div
+										className={`${props.classes.faded} ${
+											props.classes.background
+										}`}
+									/>
 									<div className="col-8 col-md-6">
 										<ResponsiveImage
 											path={client.logo}
