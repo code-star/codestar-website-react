@@ -30,46 +30,35 @@ function toHex(n, padding) {
 	return '0'.repeat(padding - hex.length) + hex;
 }
 
-const styles = {
+const styles = theme => ({
 	mainLine: { color: 'white' },
 	otherLines: { color: '#818d9c' },
 	container: {
 		display: 'flex',
 		height: '100vh',
 		textAlign: 'center',
+		overflowY: 'hidden',
+		alignItems: 'center',
+		maskImage:
+			'linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0.2) 100%)',
+		paddingTop: '48px',
+		[theme.breakpoints.up('md')]: {
+			paddingTop: '64px',
+		},
 	},
 	hexViewer: {
 		flex: 1,
-		overflowY: 'hidden',
-		maskImage:
-			'linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0.2) 100%)',
 	},
 	hexLine: {
+		fontFamily:
+			'SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
+		fontSize: '14px',
+		lineHeight: '18px',
 		overflow: 'visible',
-		lineHeight: 'normal',
 	},
-};
+});
 
 class NotFound extends Component {
-	componentDidMount() {
-		window.addEventListener('resize', this.handleResize);
-		// FIXME: Why does calling normally fail?
-		// FIXME: Why does the font look different for a second?
-		setTimeout(() => {
-			this.handleResize();
-		}, 1000);
-	}
-
-	componentWillUnmount() {
-		window.removeEventListener('resize', this.handleResize);
-	}
-
-	handleResize() {
-		const centerLine = document.getElementById('centerLine');
-		const hexViewer = document.getElementById('hexViewer');
-		hexViewer.scrollTop = centerLine.offsetTop - hexViewer.offsetHeight / 2;
-	}
-
 	render() {
 		const { classes, width } = this.props;
 
@@ -101,6 +90,7 @@ class NotFound extends Component {
 
 				return (
 					<pre
+						style={{ margin: 0 }}
 						key={initialIndex + i}
 						className={`m-0 ${styleClass} ${classes.hexLine}`}
 					>
@@ -111,29 +101,27 @@ class NotFound extends Component {
 		}
 
 		return (
-			<Container fullHeight noMaxWidth noPadding>
-				<div className={classes.container}>
-					<div className={classes.hexViewer} id="hexViewer">
-						{hexEditorify(
-							textPart1,
-							offset - textPart1.length,
-							classes.otherLines
-						)}
-						<div id="centerLine" className="my-2">
-							{notFoundTexts.map((text, i) =>
-								hexEditorify(
-									text,
-									i > 0 ? offset + notFoundTextOffsets[i - 1] : offset,
-									classes.mainLine
-								)
-							)}
-						</div>
-						{hexEditorify(
-							textPart2,
-							offset + notFoundTextOffset,
-							classes.otherLines
+			<Container fullHeight fluid noPadding className={classes.container}>
+				<div className={classes.hexViewer}>
+					{hexEditorify(
+						textPart1,
+						offset - textPart1.length,
+						classes.otherLines
+					)}
+					<div style={{ margin: '.5rem 0' }}>
+						{notFoundTexts.map((text, i) =>
+							hexEditorify(
+								text,
+								i > 0 ? offset + notFoundTextOffsets[i - 1] : offset,
+								classes.mainLine
+							)
 						)}
 					</div>
+					{hexEditorify(
+						textPart2,
+						offset + notFoundTextOffset,
+						classes.otherLines
+					)}
 				</div>
 			</Container>
 		);
