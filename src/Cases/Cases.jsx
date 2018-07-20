@@ -142,7 +142,11 @@ class Cases extends Component {
 
 					const img = (
 						<ResponsiveImage
-							alt={clientCase.client}
+							alt={
+								clientCase.secondaryCredits
+									? clientCase.secondaryCredits
+									: clientCase.client
+							}
 							path={
 								clientCase.secondaryImage
 									? clientCase.secondaryImage

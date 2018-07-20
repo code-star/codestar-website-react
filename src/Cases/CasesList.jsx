@@ -12,6 +12,8 @@ const casesList = [
 		path: 'ing',
 		image: `/images/cases/ing_website.jpg`,
 		secondaryImage: `/images/cases/ing_hq.jpg`,
+		secondaryCredits:
+			'Photo: ING Group (https://creativecommons.org/licenses/by-sa/2.0/)',
 		logo: `/images/clients/ing.png`,
 		color: '#ee6f33',
 		stack: [
@@ -81,6 +83,8 @@ const casesList = [
 		client: 'Gracenote Sports',
 		path: 'gracenote-sports',
 		image: `/images/cases/gracenote_pyeongchang.jpg`,
+		credits:
+			'Photo: Andrew Schutzman (https://creativecommons.org/licenses/by-sa/2.0/)',
 		logo: `/images/clients/gracenote_dark.svg`,
 		color: '#e31b23',
 	},

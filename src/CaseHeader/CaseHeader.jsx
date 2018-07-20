@@ -37,7 +37,11 @@ class CaseHeader extends Component {
 		const { t, classes } = props;
 		return (
 			<section className={classes.section}>
-				<ResponsiveImage path={props.image} asBackgroundImage />
+				<ResponsiveImage
+					path={props.image}
+					asBackgroundImage
+					alt={props.credits ? props.credits : ''}
+				/>
 				<Container fullHeight center>
 					<div className="row">
 						<div className="col-12 col-lg-6">
