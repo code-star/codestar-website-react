@@ -64,11 +64,11 @@ class NotFound extends Component {
 
 		const length = lengths[width];
 
-		const textPart1 = data.substring(
+		const textTop = data.substring(
 			0,
 			data.length / 2 + length - ((data.length / 2) % length)
 		);
-		const textPart2 = data.substring(data.length / 2);
+		const textBottom = data.substring(data.length / 2);
 
 		const notFoundTextOffsets = notFoundTexts.map(
 			text => text.length + (length - (text.length % length))
@@ -100,28 +100,32 @@ class NotFound extends Component {
 			});
 		}
 
+		const hexEditorCodeTop = hexEditorify(
+			textTop,
+			offset - textTop.length,
+			classes.otherLines
+		);
+
+		const hexEditorCodeMiddle = notFoundTexts.map((text, i) =>
+			hexEditorify(
+				text,
+				i > 0 ? offset + notFoundTextOffsets[i - 1] : offset,
+				classes.mainLine
+			)
+		);
+
+		const hexEditorCodeBottom = hexEditorify(
+			textBottom,
+			offset + notFoundTextOffset,
+			classes.otherLines
+		);
+
 		return (
 			<Container fullHeight fluid noPadding className={classes.container}>
 				<div className={classes.hexViewer}>
-					{hexEditorify(
-						textPart1,
-						offset - textPart1.length,
-						classes.otherLines
-					)}
-					<div style={{ margin: '.5rem 0' }}>
-						{notFoundTexts.map((text, i) =>
-							hexEditorify(
-								text,
-								i > 0 ? offset + notFoundTextOffsets[i - 1] : offset,
-								classes.mainLine
-							)
-						)}
-					</div>
-					{hexEditorify(
-						textPart2,
-						offset + notFoundTextOffset,
-						classes.otherLines
-					)}
+					{hexEditorCodeTop}
+					<div style={{ margin: '.5rem 0' }}>{hexEditorCodeMiddle}</div>
+					{hexEditorCodeBottom}
 				</div>
 			</Container>
 		);
