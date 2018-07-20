@@ -32,7 +32,7 @@ function toHex(n, padding) {
 
 const styles = {
 	mainLine: { color: 'white' },
-	otherLines: { color: 'white', opacity: 0.5 },
+	otherLines: { color: '#818d9c' },
 	container: {
 		display: 'flex',
 		height: '100vh',
@@ -44,7 +44,10 @@ const styles = {
 		maskImage:
 			'linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0.2) 100%)',
 	},
-	visible: { overflow: 'visible' },
+	hexLine: {
+		overflow: 'visible',
+		lineHeight: 'normal',
+	},
 };
 
 class NotFound extends Component {
@@ -58,7 +61,7 @@ class NotFound extends Component {
 	}
 
 	componentWillUnmount() {
-		window.addEventListener('resize', null);
+		window.removeEventListener('resize', this.handleResize);
 	}
 
 	handleResize() {
@@ -99,9 +102,9 @@ class NotFound extends Component {
 				return (
 					<pre
 						key={initialIndex + i}
-						className={`m-0 ${styleClass} ${classes.visible}`}
+						className={`m-0 ${styleClass} ${classes.hexLine}`}
 					>
-						0x{hexAddress} | {hex} | {content}
+						0x{hexAddress} │ {content.replace(/\s/g, '·')} │ {hex}
 					</pre>
 				);
 			});
