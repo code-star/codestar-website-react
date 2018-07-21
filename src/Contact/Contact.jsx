@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import compose from 'recompose/compose';
 import { translate } from 'react-i18next';
+import _ from 'lodash';
 
 import {
 	Input,
@@ -84,10 +85,10 @@ export class Contact extends Component {
 				};
 			}
 			// Fetch is supported in all evergreen browsers, but not IE 11 or Opera Mini. Polyfill not added at this time.
-			fetch(url, options)
+			return fetch(url, options)
 				.then(data => data.json())
 				.then(data => {
-					if (data.message && data.message.MessageId) {
+					if (_.get(data, 'message.MessageId')) {
 						this.setState({
 							showFetchSuccess: true,
 						});
