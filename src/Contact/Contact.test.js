@@ -10,6 +10,8 @@ jest.mock('react-i18next', () => ({
 	},
 }));
 
+jest.mock('@material-ui/core/Fade', () => () => <div />);
+
 it('renders without crashing', () => {
 	const div = document.createElement('div');
 	ReactDOM.render(<Contact />, div);
@@ -20,8 +22,24 @@ describe('An instance of Contact', () => {
 	let compInstance;
 
 	beforeAll(() => {
+		global.fetch = require('jest-fetch-mock'); // This import should be done in setupJest, but it is not loading
 		const comp = renderer.create(<Contact />);
 		compInstance = comp.getInstance();
+	});
+
+	beforeEach(() => {
+		fetch.resetMocks();
+
+		compInstance.setState({
+			name: '',
+			phone: '',
+			email: '',
+			message: '',
+			messageRequiredError: false,
+			showFetchSuccess: false,
+			showFetchFailure: false,
+			showMap: false,
+		});
 	});
 
 	it('should have an initial state with all empty fields', () => {
@@ -32,6 +50,9 @@ describe('An instance of Contact', () => {
 			email: '',
 			message: '',
 			messageRequiredError: false,
+			showFetchFailure: false,
+			showFetchSuccess: false,
+			showMap: false,
 		});
 	});
 
@@ -45,6 +66,9 @@ describe('An instance of Contact', () => {
 			email: '',
 			message: '',
 			messageRequiredError: false,
+			showFetchFailure: false,
+			showFetchSuccess: false,
+			showMap: false,
 		});
 	});
 
@@ -58,18 +82,80 @@ describe('An instance of Contact', () => {
 	});
 
 	it('calls preventDefault on handleSubmit, error to be unset, submit to be called if message is filled in', () => {
+		fetch.mockResponseOnce(
+			JSON.stringify({
+				message: {
+					MessageId: '1',
+				},
+			})
+		);
 		const ev = {
 			preventDefault: jest.fn(),
-			target: {
-				submit: jest.fn(),
-			},
 		};
 		compInstance.handleChange({
 			target: { name: 'message', value: 'MY_TEST_MESSAGE' },
 		});
 		compInstance.handleSubmit(ev);
 		expect(ev.preventDefault).toHaveBeenCalled();
-		expect(ev.target.submit).toHaveBeenCalled();
 		expect(compInstance.state.messageRequiredError).toBeFalsy();
+	});
+
+	it('sets showFetchSuccess on success', () => {
+		fetch.mockResponseOnce(
+			JSON.stringify({
+				message: {
+					MessageId: '1',
+				},
+			})
+		);
+
+		const ev = {
+			preventDefault: jest.fn(),
+		};
+		compInstance.handleChange({
+			target: { name: 'message', value: 'MY_TEST_MESSAGE' },
+		});
+		compInstance.handleSubmit(ev).then(() => {
+			expect(compInstance.state.showFetchSuccess).toBeTruthy();
+			expect(compInstance.state.showFetchFailure).toBeFalsy();
+		});
+	});
+
+	it('sets showFetchFailure if no MessageId', async () => {
+		fetch.mockResponseOnce(
+			JSON.stringify({
+				message: {},
+			})
+		);
+
+		const ev = {
+			preventDefault: jest.fn(),
+		};
+		compInstance.handleChange({
+			target: { name: 'message', value: 'MY_TEST_MESSAGE' },
+		});
+
+		expect(compInstance.state.showFetchSuccess).toBeFalsy();
+		expect(compInstance.state.showFetchFailure).toBeFalsy();
+		await compInstance.handleSubmit(ev);
+		expect(compInstance.state.showFetchSuccess).toBeFalsy();
+		expect(compInstance.state.showFetchFailure).toBeTruthy();
+	});
+
+	it('sets showFetchFailure if no MessageId', async () => {
+		fetch.mockRejectOnce('error');
+
+		const ev = {
+			preventDefault: jest.fn(),
+		};
+		compInstance.handleChange({
+			target: { name: 'message', value: 'MY_TEST_MESSAGE' },
+		});
+
+		expect(compInstance.state.showFetchSuccess).toBeFalsy();
+		expect(compInstance.state.showFetchFailure).toBeFalsy();
+		await compInstance.handleSubmit(ev);
+		expect(compInstance.state.showFetchSuccess).toBeFalsy();
+		expect(compInstance.state.showFetchFailure).toBeTruthy();
 	});
 });
