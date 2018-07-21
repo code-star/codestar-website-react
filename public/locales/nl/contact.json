@@ -5,5 +5,7 @@
 	"EMAIL": "E-mail",
 	"MESSAGE": "Bericht",
 	"REQUIRED_ERROR": "Vul dit veld in",
-	"SEND": "Verstuur"
+	"SEND": "Verstuur",
+	"FETCH_SUCCESS": "Het bericht is ontvangen, wij zullen het zo snel mogelijk beantwoorden!",
+	"FETCH_FAILURE": "Er is iets fout gegaan. Probeer het later opnieuw of stuur een mail naar codestar@ordina.nl"
 }

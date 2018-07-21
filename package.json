@@ -18,7 +18,9 @@
     "i18next": "^11.3.2",
     "i18next-browser-languagedetector": "^2.2.0",
     "i18next-xhr-backend": "^1.5.1",
+    "jest-cli": "^23.4.1",
     "lint-staged": "^7.0.0",
+    "lodash": "^4.17.10",
     "nuka-carousel": "^4.2.5",
     "prettier": "^1.10.2",
     "react": "^16.4.0",
@@ -27,6 +29,7 @@
     "react-router-dom": "^4.2.2",
     "react-scroll": "^1.7.10",
     "react-test-renderer": "^16.4.1",
+    "serverless": "^1.28.0",
     "simplex-noise": "^2.4.0",
     "snapsvg-cjs": "0.0.6",
     "vivus": "^0.4.4"
@@ -38,8 +41,8 @@
     ]
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "REACT_APP_STAGE=dev react-scripts start",
+    "build": "react-scripts test --env=jsdom --coverage --bail --ci && react-scripts build",
     "test": "react-scripts test --env=jsdom --coverage",
     "test:watch": "react-scripts test --env=jsdom --watch",
     "eject": "react-scripts eject",
@@ -58,5 +61,8 @@
       "not ie < 11"
     ]
   },
-  "homepage": "http://www.codestar.nl/codestar-website-react"
+  "homepage": "http://www.codestar.nl/codestar-website-react",
+  "devDependencies": {
+    "jest-fetch-mock": "^1.6.5"
+  }
 }

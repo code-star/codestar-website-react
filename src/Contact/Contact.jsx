@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import compose from 'recompose/compose';
 import { translate } from 'react-i18next';
+import _ from 'lodash';
 
 import {
 	Input,
@@ -40,6 +41,8 @@ export class Contact extends Component {
 			email: '',
 			message: '',
 			messageRequiredError: false,
+			showFetchSuccess: false,
+			showFetchFailure: false,
 			showMap: false,
 		};
 		this.handleChange = this.handleChange.bind(this);
@@ -64,30 +67,45 @@ export class Contact extends Component {
 		this.setState({ messageRequiredError: hasMessageError });
 
 		if (!hasMessageError) {
-			ev.target.submit();
+			let url =
+				'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/dev/static-site-mailer';
+			let options = {
+				method: 'POST',
+				body: JSON.stringify({
+					name: this.state.name,
+					phone: this.state.phone,
+					email: this.state.email,
+					message: this.state.message,
+				}),
+			};
+			if (process.env.REACT_APP_STAGE === 'dev') {
+				url = '/mock/staticSiteMailer.json';
+				options = {
+					method: 'GET',
+				};
+			}
+			// Fetch is supported in all evergreen browsers, but not IE 11 or Opera Mini. Polyfill not added at this time.
+			return fetch(url, options)
+				.then(data => data.json())
+				.then(data => {
+					if (_.get(data, 'message.MessageId')) {
+						this.setState({
+							showFetchSuccess: true,
+						});
+					} else {
+						console.log('Fetch failure: no MessageId in response');
+						this.setState({
+							showFetchFailure: true,
+						});
+					}
+				})
+				.catch(error => {
+					console.log('Fetch failure:' + error);
+					this.setState({
+						showFetchFailure: true,
+					});
+				});
 		}
-
-		// TODO Implement serverless function (formspree AJAX is now a paid service)
-		// TODO add Fetch polyfill
-		// fetch(url, {
-		// 	method: 'POST',
-		// 	body: JSON.stringify({
-		// 		name: this.state.name,
-		// 		phone: this.state.phone,
-		// 		email: this.state.email,
-		// 		message: this.state.message
-		// 	})
-		// })
-		// 	.then(data => data.json())
-		// 	.then(data => {
-		// 		// TODO handle success
-		// 		// if(data.status === 'ok') {
-		// 		// 	x
-		// 		// } else {
-		// 		// 	TODO handle error
-		// 		// }
-		// 	})
-		// 	.catch(error => this.props.logError('HANDLE' + error)); // TODO handle error
 	}
 
 	render() {
@@ -96,6 +114,29 @@ export class Contact extends Component {
 			<FormHelperText id="name-error-text">
 				{t('REQUIRED_ERROR')}
 			</FormHelperText>
+		) : null;
+		const showFetchSuccess = this.state.showFetchSuccess ? (
+			<div
+				style={{
+					backgroundColor: '#33eb91',
+					marginTop: '1em',
+					padding: '0.8em',
+				}}
+			>
+				{t('FETCH_SUCCESS')}
+			</div>
+		) : null;
+		const showFetchFailure = this.state.showFetchFailure ? (
+			<div
+				style={{
+					backgroundColor: '#f44336',
+					color: 'white',
+					marginTop: '1em',
+					padding: '0.8em',
+				}}
+			>
+				{t('FETCH_FAILURE')}
+			</div>
 		) : null;
 		return (
 			<section>
@@ -159,6 +200,8 @@ export class Contact extends Component {
 											</FormControl>
 										</div>
 									</div>
+									{showFetchSuccess}
+									{showFetchFailure}
 								</CardContent>
 								<CardActions>
 									<Button color="primary" type="submit">
