@@ -58,3 +58,8 @@ In the code it is read with `process.env.STATIC_SITE_MAILER_DESTINATION`
 In AWS:
 * Go to https://eu-west-1.console.aws.amazon.com/lambda/ and find the function
 * Scroll to Environment variables and add the correct key/value
+
+## Local API
+
+* Static Site Mailer: see above
+* Get Upcoming Events from Meetup.com: `npx sls invoke local --function getUpcomingEvents`
