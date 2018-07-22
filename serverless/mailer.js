@@ -2,6 +2,15 @@
 const AWS = require('aws-sdk');
 const SES = new AWS.SES();
 
+// Form data only over HTTPS!
+const allowedOrigin = 'https://www.codestar.nl';
+
+// Response headers
+const headers = {
+	'Content-Type': 'application/json',
+	'Access-Control-Allow-Origin': allowedOrigin,
+};
+
 function sendEmail(formData, destinationAddress) {
 	return new Promise((resolve, reject) => {
 		const emailParams = {
@@ -34,19 +43,15 @@ function sendEmail(formData, destinationAddress) {
 	});
 }
 
-// Response headers
-const headers = {
-	'Content-Type': 'application/json',
-	'Access-Control-Allow-Origin': 'https://codestar.nl',
-};
-
 module.exports.staticSiteMailer = async (event, context, callback) => {
 	const formData = JSON.parse(event.body);
 	const destinationAddress = process.env.STATIC_SITE_MAILER_DESTINATION;
 
 	try {
+		if(event.headers.origin !== allowedOrigin) {
+			throw new Error(`Not white-listed origin: ${event.headers.origin}`);
+		}
 		const data = await sendEmail(formData, destinationAddress);
-		//console.log(data)
 		callback(null, {
 			statusCode: 200,
 			headers,
