@@ -17,29 +17,49 @@ const getResponsiveSrcSet = (imagePath, sizes) => {
 		.join(', ');
 };
 
+const defaultSizes = '100w';
+const defaultVersions = [375, 800, 1280, 1536, 1920]; // Cloudinary imagen file size in px
+
 const ResponsiveImage = props => {
 	const {
 		title = '',
 		alt = '',
 		path,
-		sizes = '100vw',
-		versions = [375, 800, 1280, 1536, 1920], // Cloudinary imagen file size in px
+		sizes = defaultSizes,
+		versions = defaultVersions,
+		asBackgroundImage = false,
+		...otherProps
 	} = props;
 
 	return (
 		path && (
 			<img
-				src={`${process.env.PUBLIC_URL}${path}`}
-				srcSet={getResponsiveSrcSet(path, versions)}
-				sizes={sizes}
+				{...responsiveImageProps(path, alt, versions, sizes)}
 				alt={alt}
 				title={title}
-				className={`${props.asBackgroundImage ? css.asBackgroundImage : ''} ${
-					props.className
-				}`}
+				className={`
+				  ${asBackgroundImage ? css.asBackgroundImage : ''}
+				  ${props.className ? props.className : ''}
+				`.trim()}
+				{...otherProps}
 			/>
 		)
 	);
 };
 
+function responsiveImageProps(
+	path,
+	alt,
+	versions = defaultVersions,
+	sizes = defaultSizes
+) {
+	return {
+		src: `${process.env.PUBLIC_URL}${path}`,
+		srcSet: getResponsiveSrcSet(path, versions),
+		sizes: sizes,
+		alt: alt,
+	};
+}
+
 export default ResponsiveImage;
+export { responsiveImageProps, getResponsiveImageUrl };

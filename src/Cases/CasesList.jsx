@@ -10,7 +10,10 @@ const casesList = [
 	{
 		client: 'ING',
 		path: 'ing',
-		image: `/images/cases/stock-photo-london-uk-january-th-the-homepage-of-the-official-website-for-the-ing-group-the-dutch-1013358685.jpg`,
+		image: `/images/cases/ing_website.jpg`,
+		secondaryImage: `/images/cases/ing_hq.jpg`,
+		secondaryCredits:
+			'Photo: ING Group (https://creativecommons.org/licenses/by-sa/2.0/)',
 		logo: `/images/clients/ing.png`,
 		color: '#ee6f33',
 		stack: [
@@ -21,11 +24,13 @@ const casesList = [
 			'AngularJS',
 			'Polymer',
 		],
+		readMore: true,
 	},
 	{
 		client: 'SKG',
 		path: 'skg',
 		image: `/images/cases/banners-cropped-images-SKG_sfeerbeelden-adviesopmaat-0-326-1500-562-1485443956-df9f1ec873b883e8004d80f6aced3963.jpg`,
+		secondaryImage: `/images/cases/banners-cropped-images-SKG sfeerbeelden-betalen-0-0-0-0-1485438282-a03121f2358288bc5cd50f523cd2bedc.jpg`,
 		logo: `/images/clients/skg.svg`,
 		color: '#9D1535',
 		stack: [
@@ -39,12 +44,14 @@ const casesList = [
 			'DCOS',
 			'Circle CI',
 		],
+		readMore: true,
 	},
 	{
 		client: 'Port of Rotterdam',
 		path: 'port-of-rotterdam',
-		image: `/images/cases/stock-photo-large-container-vessel-unloaded-in-port-of-rotterdam-283990010.jpg`,
-		logo: `/images/clients/port_of_rotterdam_dark.svg`,
+		image: '/images/cases/shutterstock_283990010.jpg',
+		secondaryImage: '/images/cases/pronto_keyvisual.jpg',
+		logo: '/images/clients/port_of_rotterdam_dark.svg',
 		color: '#002d60',
 		stack: [
 			'Scala',
@@ -63,6 +70,7 @@ const casesList = [
 			'AWS Dynamodb',
 			'Elastic Beanstalk',
 		],
+		readMore: true,
 	},
 	{
 		client: '42 Education',
@@ -74,7 +82,9 @@ const casesList = [
 	{
 		client: 'Gracenote Sports',
 		path: 'gracenote-sports',
-		image: `/images/cases/stock-photo-pyeongchang-south-korea-february-olympic-champion-martin-fourcade-of-france-1029727372.jpg`,
+		image: `/images/cases/gracenote_pyeongchang.jpg`,
+		credits:
+			'Photo: Andrew Schutzman (https://creativecommons.org/licenses/by-sa/2.0/)',
 		logo: `/images/clients/gracenote_dark.svg`,
 		color: '#e31b23',
 	},

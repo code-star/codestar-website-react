@@ -15,6 +15,7 @@ import {
 	NavigateBefore as NavigateBeforeIcon,
 } from '@material-ui/icons';
 
+import { getResponsiveImageUrl } from '../ResponsiveImage/ResponsiveImage';
 import Container from '../Container/Container';
 import OurStack from '../OurStack/OurStack';
 import Team from './Team';
@@ -27,6 +28,8 @@ function shuffleArray(array) {
 	}
 	return array;
 }
+
+const cardWidth = 300;
 
 @translate(['about'], { wait: true })
 class About extends Component {
@@ -71,56 +74,7 @@ class About extends Component {
 							</div>
 						</div>
 					</Container>
-					<div className="row m-0">
-						<Carousel
-							slideWidth="300px"
-							wrapAround
-							autoplay
-							autoplayInterval={7000}
-							cellAlign="center"
-							slidesToScroll="auto"
-							renderBottomCenterControls={null}
-							renderCenterLeftControls={({ previousSlide }) => (
-								<Button mini variant="fab" onClick={previousSlide}>
-									<NavigateBeforeIcon />
-								</Button>
-							)}
-							renderCenterRightControls={({ nextSlide }) => (
-								<Button mini variant="fab" onClick={nextSlide}>
-									<NavigateNextIcon />
-								</Button>
-							)}
-						>
-							{shuffleArray(Team)
-								.filter(
-									person =>
-										person && !person.gone && person.name && person.image
-								)
-								.map(person => (
-									<Card key={person.image} className={`${css.card} my-3`}>
-										<CardMedia
-											className={css.cardMedia}
-											image={`${process.env.PUBLIC_URL}/images/team/${
-												person.image
-											}`}
-											title={person.name}
-										/>
-										<CardContent>
-											<Typography variant="headline" component="h3">
-												{person.name}
-											</Typography>
-											<Typography
-												style={{ marginBottom: 16, fontSize: 14 }}
-												color="textSecondary"
-											>
-												{person.job}
-											</Typography>
-											<Typography component="i">{person.tagline}</Typography>
-										</CardContent>
-									</Card>
-								))}
-						</Carousel>
-					</div>
+					<div className="row m-0">{this.renderTeamCarousel()}</div>
 				</section>
 				{/*<section className="py-3 bg-white">
 					<Container fluid>
@@ -135,6 +89,59 @@ class About extends Component {
 					</Container>
 				</section>*/}
 			</div>
+		);
+	}
+
+	renderTeamCarousel() {
+		return (
+			<Carousel
+				slideWidth={`${cardWidth}px`}
+				wrapAround
+				autoplay
+				autoplayInterval={7000}
+				cellAlign="center"
+				slidesToScroll="auto"
+				renderBottomCenterControls={null}
+				renderCenterLeftControls={({ previousSlide }) => (
+					<Button mini variant="fab" onClick={previousSlide}>
+						<NavigateBeforeIcon />
+					</Button>
+				)}
+				renderCenterRightControls={({ nextSlide }) => (
+					<Button mini variant="fab" onClick={nextSlide}>
+						<NavigateNextIcon />
+					</Button>
+				)}
+			>
+				{shuffleArray(Team)
+					.filter(
+						person => person && !person.gone && person.name && person.image
+					)
+					.map(person => (
+						<Card key={person.image} className={`${css.card} my-3`}>
+							<CardMedia
+								className={css.cardMedia}
+								image={getResponsiveImageUrl(
+									`/images/team/${person.image}`,
+									cardWidth
+								)}
+								title={person.name}
+							/>
+							<CardContent>
+								<Typography variant="headline" component="h3">
+									{person.name}
+								</Typography>
+								<Typography
+									style={{ marginBottom: 16, fontSize: 14 }}
+									color="textSecondary"
+								>
+									{person.job}
+								</Typography>
+								<Typography component="i">{person.tagline}</Typography>
+							</CardContent>
+						</Card>
+					))}
+			</Carousel>
 		);
 	}
 }

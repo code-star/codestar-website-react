@@ -25,6 +25,7 @@ const AsyncJobDescription = fullHeightAsyncComponent(
 	import('./JobDescription/JobDescription')
 );
 const AsyncContact = fullHeightAsyncComponent(import('./Contact/Contact'));
+const AsyncNotFound = fullHeightAsyncComponent(import('./NotFound/NotFound'));
 const AsyncEvents = fullHeightAsyncComponent(import('./Events/Events'));
 
 const sections = ['', 'cases', 'about', 'jobs', 'contact'];
@@ -46,9 +47,10 @@ class App extends Component {
 	}
 
 	updateBackgroundColor(pathname) {
-		let section = pathname.split('/')[1];
-		let index = sections.indexOf(section);
-		document.body.style.backgroundPositionY = `${-index * 100}vh, 0`;
+		const section = pathname.split('/')[1];
+		const index = sections.indexOf(section);
+		const position = -(index >= 0 ? index : 0) * 100;
+		document.body.style.backgroundPositionY = `${position}vh, 0`;
 	}
 
 	toggleDrawer = () => {
@@ -65,26 +67,34 @@ class App extends Component {
 				<MuiThemeProvider theme={theme}>
 					<CssBaseline />
 					<NavBar toggle={this.toggleDrawer} />
-					<SideMenu open={this.state.drawerMenu} toggle={this.toggleDrawer} />
+					<SideMenu
+						open={this.state.drawerMenu}
+						toggle={this.toggleDrawer}
+						history={this.history}
+					/>
 
 					<ScrollToTop>
-						<Route exact path="/" component={AsyncIntro} />
-						<Route exact path="/cases" component={AsyncCases} />
+						<Switch>
+							<Route exact path="/" component={AsyncIntro} />
+							<Route exact path="/cases" component={AsyncCases} />
 
-						<Route exact path="/jobs" component={AsyncJobs} />
-						{jobsList.map(job => (
-							<Route
-								exact
-								path={`/jobs/${job.path}`}
-								key={job.path}
-								render={() => <AsyncJobDescription {...job} />}
-							/>
-						))}
+							<Route exact path="/jobs" component={AsyncJobs} />
+							{jobsList.map(job => (
+								<Route
+									exact
+									path={`/jobs/${job.path}`}
+									key={job.path}
+									render={() => <AsyncJobDescription {...job} />}
+								/>
+							))}
 
-						<Route path="/about" component={AsyncAbout} />
-						<Route path="/contact" component={AsyncContact} />
-						<Route path="/events" component={AsyncEvents} />
+							<Route path="/about" component={AsyncAbout} />
+							<Route path="/contact" component={AsyncContact} />
+							<Route path="/404" component={AsyncNotFound} />
+							<Redirect to="/404" />
+						</Switch>
 					</ScrollToTop>
+
 					<Footer />
 				</MuiThemeProvider>
 			</Router>

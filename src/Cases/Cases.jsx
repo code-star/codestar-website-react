@@ -18,6 +18,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Container from '../Container/Container';
 import CaseHeader from '../CaseHeader/CaseHeader';
 import casesList from './CasesList';
+import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 
 const styles = {
 	whiteText: {
@@ -39,7 +40,11 @@ class Cases extends Component {
 	orderedCases = [3, 1, 2, 5, 0, 4].map(i => casesList[i]);
 
 	state = this.orderedCases.reduce((accu, clientCase) => {
-		accu[clientCase.path] = false;
+		accu[clientCase.path] =
+			this.props.location.hash.slice(1) === clientCase.path &&
+			clientCase.readMore
+				? true
+				: false;
 		return accu;
 	}, {});
 
@@ -61,10 +66,11 @@ class Cases extends Component {
 						<Fade in timeout={2000}>
 							<div className="col-10 col-lg-6 mx-auto">
 								<div className="col-8 p-0">
-									<img
-										src="/images/codestar_logo_dark.svg"
+									<ResponsiveImage
+										path="/images/codestar_logo_dark.svg"
 										alt="Codestar powered by Ordina Logo"
 										className="mb-3"
+										width="100%"
 									/>
 								</div>
 								<Typography variant="subheading" className={classes.whiteText}>
@@ -85,13 +91,9 @@ class Cases extends Component {
 	renderBoxes() {
 		const { classes } = this.props;
 		return (
-			<div
-				className={`col-12 col-md-10 col-lg-6 my-3 text-center ${
-					classes.noLineHeight
-				}`}
-			>
+			<div className={`col-12 col-md-10 col-lg-6 my-3 ${classes.noLineHeight}`}>
 				{this.orderedCases.map((clientCase, i) => (
-					<Link key={i} to={clientCase.client} smooth>
+					<Link key={i} to={clientCase.path} hashSpy smooth>
 						<Fade in timeout={1000}>
 							<Paper
 								className={classes.linkCursor}
@@ -107,15 +109,17 @@ class Cases extends Component {
 								}}
 							>
 								<div
-									style={{
-										backgroundImage: `url(${clientCase.logo})`,
-										backgroundSize: 'contain',
-										backgroundPosition: 'center',
-										backgroundRepeat: 'no-repeat',
-										width: '100%',
-										height: '100%',
-									}}
-								/>
+									className="row align-items-center mx-0"
+									style={{ width: '100%', height: '100%' }}
+								>
+									<div className="col-12 p-0">
+										<ResponsiveImage
+											path={clientCase.logo}
+											alt={clientCase.client}
+											width="100%"
+										/>
+									</div>
+								</div>
 							</Paper>
 						</Fade>
 					</Link>
@@ -137,16 +141,24 @@ class Cases extends Component {
 						this.setState({ [clientCase.path]: bool });
 
 					const img = (
-						<img
-							alt={clientCase.client}
-							src={clientCase.image}
+						<ResponsiveImage
+							alt={
+								clientCase.secondaryCredits
+									? clientCase.secondaryCredits
+									: clientCase.client
+							}
+							path={
+								clientCase.secondaryImage
+									? clientCase.secondaryImage
+									: clientCase.image
+							}
 							width="100%"
 							className="mb-3"
 						/>
 					);
 
 					return (
-						<Element key={i} name={clientCase.client}>
+						<Element key={i} name={clientCase.path}>
 							<CaseHeader
 								{...clientCase}
 								readMore={sections !== undefined && sections.length > 0}

@@ -1,7 +1,11 @@
 import React from 'react';
+import compose from 'recompose/compose';
 
 import { GridList, GridListTile } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
+import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
+
+import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 
 const ClientsList = [
 	{
@@ -38,88 +42,101 @@ const ClientsList = [
 	},
 ];
 
+const clientsListSmallOrder = [0, 2, 1, 4, 3, 5].map(i => ClientsList[i]);
+
 const styles = {
 	gridList: {
 		// Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
 		transform: 'translateZ(0)',
 	},
+	background: {
+		position: 'absolute',
+		width: '100%',
+		height: '100%',
+		top: 0,
+		left: 0,
+	},
+	faded: {
+		background:
+			'linear-gradient( rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6))',
+	},
 };
 
-const Clients = props => (
-	<div className="mt-3">
-		<GridList cellHeight={200} cols={4} className={props.classes.gridList}>
-			{ClientsList.map(client => {
-				return (
-					<GridListTile key={client.name} cols={client.featured ? 2 : 1}>
-						{client.featured ? (
-							<div
-								className="row justify-content-center align-items-center ml-0 mr-0"
-								style={{
-									background: `linear-gradient( rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('${
-										client.background
-									}')`,
-									backgroundSize: 'cover, cover',
-									backgroundPosition: 'center',
-									width: '100%',
-									height: '100%',
-								}}
-							>
-								<div className="col-12 col-md-6">
-									<img src={client.logo} alt={client.name} />
-								</div>
-								{/*
-								// TODO: Do we want quotes from clients?
-								<GridListTileBar
-									title={'Insert very awesome quote frome client here.'}
-									subtitle={<span>John Smith</span>}
-								/>
-								*/}
-							</div>
-						) : (
-							<div
-								style={{
-									padding: '1.5em',
-									backgroundColor: client.color ? client.color : 'transparent',
-									width: '100%',
-									height: '100%',
-								}}
-							>
+const Clients = props => {
+	const isSmall = !isWidthUp('md', props.width);
+	return (
+		<div className="mt-3">
+			<GridList
+				cellHeight={200}
+				cols={isSmall ? 2 : 4}
+				className={props.classes.gridList}
+			>
+				{(isSmall ? clientsListSmallOrder : ClientsList).map(client => {
+					return (
+						<GridListTile key={client.name} cols={client.featured ? 2 : 1}>
+							{client.featured ? (
 								<div
+									className="row justify-content-center align-items-center mx-0"
+									style={{ width: '100%', height: '100%' }}
+								>
+									<div className={props.classes.background}>
+										<ResponsiveImage
+											path={client.background}
+											alt={client.name}
+											width="100%"
+											height="100%"
+											style={{ objectFit: 'cover' }}
+										/>
+									</div>
+									<div
+										className={`${props.classes.faded} ${
+											props.classes.background
+										}`}
+									/>
+									<div className="col-8 col-md-6">
+										<ResponsiveImage
+											path={client.logo}
+											alt={client.name}
+											width="100%"
+										/>
+									</div>
+									{/*
+									// TODO: Do we want quotes from clients?
+									<GridListTileBar
+										title={'Insert very awesome quote frome client here.'}
+										subtitle={<span>John Smith</span>}
+									/>
+									*/}
+								</div>
+							) : (
+								<div
+									className="row justify-content-center align-items-center ml-0 mr-0"
 									style={{
-										backgroundImage: `url(${client.logo})`,
-										backgroundSize: 'contain',
-										backgroundPosition: 'center',
-										backgroundRepeat: 'no-repeat',
+										backgroundColor: client.color
+											? client.color
+											: 'transparent',
 										width: '100%',
 										height: '100%',
 									}}
-								/>
-							</div>
-						)}
-					</GridListTile>
-				);
-			})}
-		</GridList>
-	</div>
-);
-
-export default withStyles(styles)(Clients);
-
-/*
-<Typography variant="headline" gutterBottom>
-			{props.title || 'Clients'}
-		</Typography>
-		<div className="row">
-			{ClientsList.map(client => (
-				<div className={`col-6 col-md-2 ${css.imgWrapper}`} key={client.name}>
-					<ResponsiveImage
-						path={client.logo}
-						alt={`${client.name} logo`}
-						title={`${client.name}`}
-						sizes="(min-width: 600) 16.6666vw, 100vw"
-						className="w-100 h-auto"
-					/>
-				</div>
-			))}
+								>
+									<div className="col-10">
+										<ResponsiveImage
+											path={client.logo}
+											alt={client.name}
+											width="100%"
+										/>
+									</div>
+								</div>
+							)}
+						</GridListTile>
+					);
+				})}
+			</GridList>
 		</div>
- */
+	);
+};
+
+export default compose(
+	withStyles(styles),
+	withWidth()
+)(Clients);

@@ -17,6 +17,7 @@ import { withStyles } from '@material-ui/core/styles';
 import EventsButton from './EventsButton';
 
 import i18n from '../i18n';
+import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 
 const styles = theme => ({
 	flex: {
@@ -70,8 +71,8 @@ class NavBar extends Component {
 						color="inherit"
 					>
 						<Link to="/">
-							<img
-								src={`${process.env.PUBLIC_URL}/images/codestar_logo_dark.svg`}
+							<ResponsiveImage
+								path="/images/codestar_logo_dark.svg"
 								alt="Codestar Logo"
 								className={props.classes.logo}
 							/>
