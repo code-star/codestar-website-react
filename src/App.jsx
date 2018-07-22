@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 
 import { CssBaseline } from '@material-ui/core';
@@ -90,6 +90,7 @@ class App extends Component {
 
 							<Route path="/about" component={AsyncAbout} />
 							<Route path="/contact" component={AsyncContact} />
+							<Route path="/events" component={AsyncEvents} />
 							<Route path="/404" component={AsyncNotFound} />
 							<Redirect to="/404" />
 						</Switch>
