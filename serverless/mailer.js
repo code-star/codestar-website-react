@@ -46,9 +46,14 @@ function sendEmail(formData, destinationAddress) {
 module.exports.staticSiteMailer = async (event, context, callback) => {
 	const formData = JSON.parse(event.body);
 	const destinationAddress = process.env.STATIC_SITE_MAILER_DESTINATION;
+	const allowedOrigins = [allowedOrigin];
+	const debug = process.env.DEBUG;
+	if(debug === 'true') {
+		allowedOrigins.push('http://localhost:3000');
+	}
 
 	try {
-		if(event.headers.origin !== allowedOrigin) {
+		if(!allowedOrigins.includes(event.headers.origin)) {
 			throw new Error(`Not white-listed origin: ${event.headers.origin}`);
 		}
 		const data = await sendEmail(formData, destinationAddress);
