@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import compose from 'recompose/compose';
 import { translate } from 'react-i18next';
 
-import { Typography, withWidth } from '@material-ui/core';
+import { Typography, withWidth, Fade } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
 import Container from '../Container/Container';
@@ -26,9 +26,14 @@ const styles = theme => ({
 		left: '0',
 		zIndex: -1,
 	},
+	tagLine: {
+		marginTop: 10,
+		color: 'white',
+		textAlign: 'center',
+		fontFamily: 'Conduit',
+	},
 	whiteText: {
 		color: 'white',
-		textAlign: 'left',
 		fontFamily: 'Conduit',
 		fontSize: '120%',
 	},
@@ -53,6 +58,14 @@ class Intro extends Component {
 								<div className="row justify-content-center">
 									<div className="col-12 col-md-10 mb-5">
 										<AnimatedLogo lineDuration={200} fadeDuration={3000} />
+										<Fade in timeout={3000}>
+											<Typography
+												variant="headline"
+												className={props.classes.tagLine}
+											>
+												PASSIONATE&nbsp;PROGRAMMERS. POWERED&nbsp;BY&nbsp;ORDINA
+											</Typography>
+										</Fade>
 									</div>
 									<div className="col-12 col-md-10">
 										<DelayedFade>
