@@ -12,9 +12,13 @@ import {
 	Typography,
 } from '@material-ui/core';
 
+import { getResponsiveImageUrl } from '../ResponsiveImage/ResponsiveImage';
+
+const cardWidth = 250;
+
 const styles = {
 	card: {
-		width: 250,
+		width: cardWidth,
 		margin: 10,
 		display: 'flex',
 		flexDirection: 'column',
@@ -34,7 +38,7 @@ const JobCard = props => (
 			<Card className={props.classes.card}>
 				<CardMedia
 					className={props.classes.media}
-					image={props.image}
+					image={getResponsiveImageUrl(props.image, cardWidth * 2)}
 					title={t('JOB_TITLE')}
 				/>
 				<CardContent className={props.classes.content}>

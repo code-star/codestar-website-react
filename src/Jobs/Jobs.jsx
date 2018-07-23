@@ -10,6 +10,7 @@ import OurStack from '../OurStack/OurStack';
 import Clients from '../Clients/Clients';
 import jobsList from './JobsList';
 import JobCard from './JobCard';
+import { shuffleArray } from '../About/About';
 
 const styles = {
 	whiteText: {
@@ -21,10 +22,16 @@ const styles = {
 	},
 };
 
+const codestarPhotos = [...Array(8).keys()].map(
+	i => `/images/jobs/codestar_${i + 1}.png`
+);
+
 @translate(['jobs'], { wait: true })
 class Jobs extends Component {
 	render() {
 		const { t, classes } = this.props;
+		const shuffledPhotos = shuffleArray(codestarPhotos);
+
 		return (
 			<Fragment>
 				<section className="py-3">
@@ -39,11 +46,11 @@ class Jobs extends Component {
 						</div>
 						<div className="row mb-5">
 							<div className="d-flex justify-content-center flex-wrap">
-								{jobsList.map(job => (
+								{jobsList.map((job, i) => (
 									<JobCard
 										key={job.translation}
 										translation={job.translation}
-										image={job.image}
+										image={shuffledPhotos[i]}
 										path={job.path}
 									/>
 								))}
