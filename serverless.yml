@@ -56,6 +56,7 @@ package:
   include:
     - serverless/**
     - serverless.yml
+    - node_modules/node-fetch/**
 #    - include-me-dir/**
   exclude:
   	# path that starts with * must be in "
@@ -65,6 +66,7 @@ package:
 functions:
   staticSiteMailer:
     handler: serverless/mailer.staticSiteMailer
+    description: Send mail from the contact form
     events:
       - http:
           method: post
