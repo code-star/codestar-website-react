@@ -12,7 +12,8 @@ import {
 	IconButton,
 	withWidth,
 } from '@material-ui/core';
-import { Menu as MenuIcon } from '@material-ui/icons';
+
+import { Menu as MenuIcon, Language as LanguageIcon } from '@material-ui/icons';
 import { withStyles } from '@material-ui/core/styles';
 
 import i18n from '../i18n';
@@ -37,12 +38,18 @@ const styles = theme => ({
 		backgroundColor: 'rgba(0,0,0,0.75)',
 	},
 	langButton: {
-		border: '1px solid white',
-		marginLeft: '1.2em',
-		marginRight: 0,
-		paddingLeft: 0,
-		paddingRight: 0,
-		minWidth: '45px',
+		margin: 0,
+		padding: 0,
+		minWidth: '70px',
+		'&:focus': {
+			outline: 0,
+		},
+	},
+	button: {
+		'&:hover': {
+			color: 'white',
+			background: 'rgba(200, 200, 255, 0.2)',
+		},
 	},
 });
 
@@ -57,7 +64,7 @@ class NavBar extends Component {
 					<Hidden mdUp>
 						<IconButton
 							onClick={props.toggle}
-							className={props.classes.menuButton}
+							className={`${props.classes.menuButton} ${props.classes.button}`}
 							color="inherit"
 							aria-label="Menu"
 						>
@@ -77,36 +84,53 @@ class NavBar extends Component {
 							/>
 						</Link>
 						<Button
-							onClick={() => toggle('nl')}
-							variant={i18n.language === 'nl' ? 'contained' : 'outlined'}
-							color={i18n.language === 'nl' ? null : 'inherit'}
-							className={props.classes.langButton}
+							onClick={() => toggle(i18n.language === 'nl' ? 'en' : 'nl')}
+							color="inherit"
+							className={`${props.classes.langButton} ${props.classes.button}`}
 						>
-							NL
-						</Button>
-						<Button
-							onClick={() => toggle('en')}
-							variant={i18n.language === 'en' ? 'contained' : 'outlined'}
-							color={i18n.language === 'en' ? null : 'inherit'}
-							className={props.classes.langButton}
-						>
-							EN
+							<LanguageIcon className="mr-2" />
+							{i18n.language}
 						</Button>
 					</Typography>
 					<Hidden smDown>
-						<Button component={Link} to="/" color="inherit">
+						<Button
+							component={Link}
+							to="/"
+							color="inherit"
+							className={props.classes.button}
+						>
 							Home
 						</Button>
-						<Button component={Link} to="/cases" color="inherit">
+						<Button
+							component={Link}
+							to="/cases"
+							color="inherit"
+							className={props.classes.button}
+						>
 							Cases
 						</Button>
-						<Button component={Link} to="/about" color="inherit">
+						<Button
+							component={Link}
+							to="/about"
+							color="inherit"
+							className={props.classes.button}
+						>
 							{t('ABOUT')}
 						</Button>
-						<Button component={Link} to="/jobs" color="inherit">
+						<Button
+							component={Link}
+							to="/jobs"
+							color="inherit"
+							className={props.classes.button}
+						>
 							Jobs
 						</Button>
-						<Button component={Link} to="/contact" color="inherit">
+						<Button
+							component={Link}
+							to="/contact"
+							color="inherit"
+							className={props.classes.button}
+						>
 							Contact
 						</Button>
 					</Hidden>
