@@ -10,7 +10,6 @@ import OurStack from '../OurStack/OurStack';
 import Clients from '../Clients/Clients';
 import jobsList from './JobsList';
 import JobCard from './JobCard';
-import { shuffleArray } from '../About/About';
 
 const styles = {
 	whiteText: {
@@ -22,15 +21,10 @@ const styles = {
 	},
 };
 
-const codestarPhotos = [...Array(8).keys()].map(
-	i => `/images/jobs/codestar_${i + 1}.png`
-);
-
 @translate(['jobs'], { wait: true })
 class Jobs extends Component {
 	render() {
 		const { t, classes } = this.props;
-		const shuffledPhotos = shuffleArray(codestarPhotos);
 
 		return (
 			<Fragment>
@@ -50,7 +44,7 @@ class Jobs extends Component {
 									<JobCard
 										key={job.translation}
 										translation={job.translation}
-										image={shuffledPhotos[i]}
+										image={job.image}
 										path={job.path}
 									/>
 								))}
