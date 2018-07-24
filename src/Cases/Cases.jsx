@@ -76,7 +76,10 @@ class Cases extends Component {
 								<Typography variant="subheading" className={classes.whiteText}>
 									{t('CASES_INTRO_1')}
 								</Typography>
-								<Typography variant="subheading" className={classes.whiteText}>
+								<Typography
+									variant="subheading"
+									className={`${classes.whiteText} mt-2`}
+								>
 									{t('CASES_INTRO_2')}
 								</Typography>
 							</div>
@@ -91,7 +94,11 @@ class Cases extends Component {
 	renderBoxes() {
 		const { classes } = this.props;
 		return (
-			<div className={`col-12 col-md-10 col-lg-6 my-3 ${classes.noLineHeight}`}>
+			<div
+				className={`col-12 col-md-10 col-lg-6 my-3 text-center text-sm-left ${
+					classes.noLineHeight
+				}`}
+			>
 				{this.orderedCases.map((clientCase, i) => (
 					<Link key={i} to={clientCase.path} hashSpy smooth>
 						<Fade in timeout={1000}>
