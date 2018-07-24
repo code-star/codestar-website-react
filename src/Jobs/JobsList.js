@@ -3,7 +3,7 @@ const jobsList = [
 		name: 'Senior Scala Developer',
 		translation: 'job_scala',
 		path: 'scala',
-		image: '/images/jobs/codestar_1.png',
+		image: '/images/jobs/codestar_2.png',
 	},
 	{
 		name: 'Junior Scala Developer',
