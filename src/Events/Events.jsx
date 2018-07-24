@@ -32,7 +32,9 @@ Can use RxJS with JSONP? To combine streams?
 const styles = {
 	card: {
 		maxWidth: 300, // 345,
-		marginBottom: '3em',
+		margin: '1em',
+		display: 'flex',
+		flexDirection: 'column',
 	},
 	cardBig: {
 		maxWidth: 600, // 345,
@@ -41,6 +43,9 @@ const styles = {
 	media: {
 		height: 0,
 		paddingTop: '56.25%', // 16:9
+	},
+	content: {
+		flex: '1 0 auto',
 	},
 };
 
@@ -129,7 +134,7 @@ export class Events extends Component {
 					image={mEvent.coverUrl}
 					title={`${formattedDate} - ${mEvent.name}`}
 				/>
-				<CardContent>
+				<CardContent className={classes.content}>
 					<Typography gutterBottom variant="headline" component="h2">
 						{formattedDate} - {mEvent.name}
 					</Typography>
@@ -139,6 +144,7 @@ export class Events extends Component {
 					<Button size="small" color="primary" href={mEvent.link}>
 						Read More
 					</Button>
+					{/*TODO show big/primary "Sign Up" button if event is in the future */}
 				</CardActions>
 			</Card>
 		);
@@ -148,13 +154,16 @@ export class Events extends Component {
 		return (
 			<section>
 				<Container marginTopNavBar>
-					<h1 style={{ marginTop: '100px' }}>EVENTS</h1>
-					<h2>Next Event</h2>
+					<h2 style={{ color: 'white' }}>Our Next Event</h2>
 					{this.state.nextEvents.map(this.renderEventModel)}
 				</Container>
 				<Container className="mt-3">
-					<h2>Past Events</h2>
-					{this.state.pastEvents.map(this.renderEventModel)}
+					<h2 style={{ color: 'white' }}>Our Previous Events</h2>
+					<div className="row">
+						<div className="d-flex justify-content-center flex-wrap">
+							{this.state.pastEvents.map(this.renderEventModel)}
+						</div>
+					</div>
 				</Container>
 			</section>
 		);
