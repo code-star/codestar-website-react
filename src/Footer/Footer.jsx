@@ -36,23 +36,23 @@ const Footer = props => (
 						</a>
 					</p>
 					<p>
-						<a href="https://twitter.com/code_star_nl" className="text-white">
+						<a href="https://twitter.com/codestar_nl" className="text-white">
 							<FontAwesomeIcon icon={faTwitter} size="3x" className="px-2" />
 						</a>
 						<a href="https://github.com/code-star" className="text-white">
 							<FontAwesomeIcon icon={faGithub} size="3x" className="px-2" />
 						</a>
-						<a href="http://medium.com/" className="text-white">
+						<a href="https://medium.com/codestar-blog" className="text-white">
 							<FontAwesomeIcon icon={faMediumM} size="3x" className="px-2" />
 						</a>
 						<a
-							href="https://www.linkedin.com/company/ordina/careers"
+							href="https://www.linkedin.com/company/codestar-powered-by-ordina/"
 							className="text-white"
 						>
 							<FontAwesomeIcon icon={faLinkedin} size="3x" className="px-2" />
 						</a>
 						<a
-							href="https://www.youtube.com/channel/UC7y8PvjA77LadVzWrBYflOA"
+							href="https://www.youtube.com/channel/UCqwHhJNEUe7D-HGsX4zvKzQ"
 							className="text-white"
 						>
 							<FontAwesomeIcon icon={faYoutube} size="3x" className="px-2" />
