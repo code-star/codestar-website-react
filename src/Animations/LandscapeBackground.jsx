@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import PageVisibility from 'react-page-visibility';
+
 import Snap from 'snapsvg-cjs';
 import SimplexNoise from 'simplex-noise';
+import { Fade } from '@material-ui/core';
 
 const options = {
 	segments: 50,
@@ -10,6 +13,7 @@ const options = {
 	simplexXScale: 6,
 	valleySteepness: 1,
 	perspective: 2,
+	prerender: 20,
 };
 
 function makeSVGPath(coordinates) {
@@ -17,20 +21,29 @@ function makeSVGPath(coordinates) {
 }
 
 class LandscapeBackground extends Component {
+	state = {
+		playing: true,
+	};
+
 	constructor(props) {
 		super(props);
 		this.seed = Math.floor(Math.random() * 1000);
 		this.noise = new SimplexNoise(this.seed);
 	}
 
-	emitPath(simplexYOffset) {
+	emitPath(simplexYOffset, prerenderOffset) {
 		const {
 			simplexYStep,
 			segments,
 			simplexXScale,
 			valleySteepness,
 			travelTime,
+			interval,
 		} = options;
+
+		if (this.group.children().length > travelTime / interval) {
+			this.group.children()[0].remove();
+		}
 
 		const simplexY = simplexYOffset * simplexYStep;
 		const coordinates = [];
@@ -45,22 +58,33 @@ class LandscapeBackground extends Component {
 
 		const pathString = makeSVGPath(coordinates);
 		const path = this.s.path(pathString);
+		this.group.add(path);
 		path.addClass('perspective');
-		setTimeout(() => {
-			path.remove();
-		}, travelTime);
+		if (prerenderOffset) {
+			path.addClass(`early${prerenderOffset}`);
+		}
 	}
 
 	componentDidMount() {
 		this.s = Snap('#landscape');
+		this.group = this.s.g();
+
 		this.s.attr({
 			viewBox: '0 0 1 1',
 			preserveAspectRatio: 'none',
 		});
 
 		let simplexYOffset = 0;
+
+		// Make it look like the animation was already going on for a while
+		// We put the "old" ones first so that they are deleted in the correct order
+		for (let i = options.prerender - 1; i >= 0; --i) {
+			this.emitPath(simplexYOffset, i + 1);
+			simplexYOffset += 1;
+		}
+
 		this.interval = setInterval(() => {
-			if (!document.hidden) {
+			if (this.state.playing) {
 				this.emitPath(simplexYOffset);
 				simplexYOffset += 1;
 			}
@@ -72,7 +96,7 @@ class LandscapeBackground extends Component {
 	}
 
 	render() {
-		const { travelTime, perspective } = options;
+		const { travelTime, perspective, prerender, interval } = options;
 
 		// About setting stroke-opacity to a value higher than 1:
 		// Because paths are scaled by 'perspective' times,
@@ -80,29 +104,50 @@ class LandscapeBackground extends Component {
 		// they would be almost invisible if opacity started at 1
 
 		return (
-			<svg id="landscape" className={this.props.className}>
-				<style>{`
-				@keyframes perspectiveMove {
-					from {
-						transform: translateY(0) scale(${perspective}, ${perspective});
-						stroke-opacity: ${perspective};
-					}
-					to {
-						transform: translateY(-50%) scale(1, 1);
-						stroke-opacity: 0;
-					}
-				}
-				.perspective {
-					will-change: transform, opacity;
-					transform-origin: center;
-					vector-effect: non-scaling-stroke;
-					fill: none;
-					stroke: white;
-					stroke-width: 1;
-					animation: perspectiveMove ${travelTime}ms cubic-bezier(0.165, 0.84, 0.44, 1);
-				}
-				`}</style>
-			</svg>
+			<PageVisibility
+				onChange={visible => {
+					this.setState({ playing: visible });
+					this.group.toggleClass('paused', !visible);
+				}}
+			>
+				<Fade in timeout={5000}>
+					<svg id="landscape" className={this.props.className}>
+						<style>{`
+						@keyframes perspectiveMove {
+							from {
+								transform: translateY(0px) scale(${perspective}, ${perspective});
+								stroke-opacity: ${perspective};
+							}
+							to {
+								transform: translateY(-0.5px) scale(1, 1);
+								stroke-opacity: 0;
+							}
+						}
+						.perspective {
+							will-change: transform, opacity;
+							transform-origin: center;
+							vector-effect: non-scaling-stroke;
+							fill: none;
+							stroke: white;
+							stroke-width: 1;
+							animation: perspectiveMove ${travelTime}ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+						}
+						.paused * {
+							animation-play-state: paused;
+						}
+						${[...Array(prerender).keys()]
+							.map(
+								i => `
+						.early${i + 1} {
+							animation-delay: -${i * interval}ms;
+						}
+						`
+							)
+							.join('\n')}
+						`}</style>
+					</svg>
+				</Fade>
+			</PageVisibility>
 		);
 	}
 }
