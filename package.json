@@ -24,7 +24,6 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-i18next": "^7.7.0",
-    "react-page-visibility": "^3.0.0",
     "react-router-dom": "^4.2.2",
     "react-scroll": "^1.7.10",
     "react-test-renderer": "^16.4.1",

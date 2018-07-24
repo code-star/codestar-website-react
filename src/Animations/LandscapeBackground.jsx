@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PageVisibility from 'react-page-visibility';
 
 import Snap from 'snapsvg-cjs';
 import SimplexNoise from 'simplex-noise';
@@ -13,7 +12,7 @@ const options = {
 	simplexXScale: 6,
 	valleySteepness: 1,
 	perspective: 2,
-	prerender: 20,
+	prerender: navigator.userAgent.toLowerCase().indexOf('firefox') > -1 ? 0 : 20,
 };
 
 function makeSVGPath(coordinates) {
@@ -21,10 +20,6 @@ function makeSVGPath(coordinates) {
 }
 
 class LandscapeBackground extends Component {
-	state = {
-		playing: true,
-	};
-
 	constructor(props) {
 		super(props);
 		this.seed = Math.floor(Math.random() * 1000);
@@ -84,15 +79,19 @@ class LandscapeBackground extends Component {
 		}
 
 		this.interval = setInterval(() => {
-			if (this.state.playing) {
+			if (!document.hidden) {
 				this.emitPath(simplexYOffset);
 				simplexYOffset += 1;
 			}
 		}, options.interval);
+
+		this.togglePause = () => this.group.toggleClass('paused', document.hidden);
+		document.addEventListener('visibilitychange', this.togglePause);
 	}
 
 	componentWillUnmount() {
 		clearInterval(this.interval);
+		document.removeEventListener('visibilitychange', this.togglePause);
 	}
 
 	render() {
@@ -104,50 +103,43 @@ class LandscapeBackground extends Component {
 		// they would be almost invisible if opacity started at 1
 
 		return (
-			<PageVisibility
-				onChange={visible => {
-					this.setState({ playing: visible });
-					this.group.toggleClass('paused', !visible);
-				}}
-			>
-				<Fade in timeout={5000}>
-					<svg id="landscape" className={this.props.className}>
-						<style>{`
-						@keyframes perspectiveMove {
-							from {
-								transform: translateY(0px) scale(${perspective}, ${perspective});
-								stroke-opacity: ${perspective};
-							}
-							to {
-								transform: translateY(-0.5px) scale(1, 1);
-								stroke-opacity: 0;
-							}
+			<Fade in timeout={5000}>
+				<svg id="landscape" className={this.props.className}>
+					<style>{`
+					@keyframes perspectiveMove {
+						from {
+							transform: translateY(0px) scale(${perspective}, ${perspective});
+							stroke-opacity: ${perspective};
 						}
-						.perspective {
-							will-change: transform, opacity;
-							transform-origin: center;
-							vector-effect: non-scaling-stroke;
-							fill: none;
-							stroke: white;
-							stroke-width: 1;
-							animation: perspectiveMove ${travelTime}ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+						to {
+							transform: translateY(-0.5px) scale(1, 1);
+							stroke-opacity: 0;
 						}
-						.paused * {
-							animation-play-state: paused;
-						}
-						${[...Array(prerender).keys()]
-							.map(
-								i => `
-						.early${i + 1} {
-							animation-delay: -${i * interval}ms;
-						}
-						`
-							)
-							.join('\n')}
-						`}</style>
-					</svg>
-				</Fade>
-			</PageVisibility>
+					}
+					.perspective {
+						will-change: transform, opacity;
+						transform-origin: center;
+						vector-effect: non-scaling-stroke;
+						fill: none;
+						stroke: white;
+						stroke-width: 1;
+						animation: perspectiveMove ${travelTime}ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+					}
+					.paused * {
+						animation-play-state: paused;
+					}
+					${[...Array(prerender).keys()]
+						.map(
+							i => `
+					.early${i + 1} {
+						animation-delay: -${i * interval}ms;
+					}
+					`
+						)
+						.join('\n')}
+					`}</style>
+				</svg>
+			</Fade>
 		);
 	}
 }
