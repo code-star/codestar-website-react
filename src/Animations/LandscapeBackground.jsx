@@ -41,7 +41,10 @@ class LandscapeBackground extends Component {
 		}
 
 		const simplexY = simplexYOffset * simplexYStep;
-		const coordinates = [];
+		// Wrap paths with coordinates far away
+		// This forces each path to have the same bounding rect
+		// Because Firefox and Chrome have different positioning systems
+		const coordinates = [[-2, -2]];
 		for (let i = 0; i <= segments; ++i) {
 			const simplexX = (simplexXScale * i) / segments;
 			const height = (this.noise.noise2D(simplexX, simplexY) + 1) / 2; // Simplex height is between -1 and 1, we normalize
@@ -50,6 +53,7 @@ class LandscapeBackground extends Component {
 			const y = 1 - valleyModifier * height;
 			coordinates.push([x, y]);
 		}
+		coordinates.push([2, 2]);
 
 		const pathString = makeSVGPath(coordinates);
 		const path = this.s.path(pathString);
