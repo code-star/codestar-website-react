@@ -12,25 +12,29 @@ import {
 	withStyles,
 } from '@material-ui/core';
 import Container from '../Container/Container';
+import _ from 'lodash';
 
 // Meetup API test console: https://secure.meetup.com/meetup_api/console/?path=/:urlname/events
 // page=3 = number of results to return in a page, only need the first 3 results
 const GET_UPCOMING_EVENTS_URL =
-	'https://api.meetup.com/Code-Star-Night/events?photo-host=secure&page=3&sig_id=226887185&status=upcoming&sig=e3efc6db037cf681181d84ae343459a36afbefd4';
+	'https://api.meetup.com/Code-Star-Night/events?photo-host=public&page=3&sig_id=226887185&status=upcoming&fields=featured_photo&sig=d035ab8a8f521cbb4ef14eaff79a55f23c3d25eb';
 
 const GET_PAST_EVENTS_URL =
-	'https://api.meetup.com/Code-Star-Night/events?desc=true&photo-host=secure&sig_id=226887185&status=past&sig=c81e4cfc6e9ea5056ccf091b976297e0fbee7b1f';
+	'https://api.meetup.com/Code-Star-Night/events?desc=true&photo-host=public&sig_id=226887185&status=past&fields=featured_photo&sig=a60e663f0904424f80fda3b00bf31f315889231c';
 
 // TODO unit test
 
-/* TODO get cover image for each event.
+/* TODO Convert JSONP to Fetch+Serverless
 This url gets the event details, but is signed for one specific instance: https://api.meetup.com/Code-Star-Night/events/248958146?photo-host=public&sig_id=226887185&fields=featured_photo&sig=c634269c86bda35c0762874a490d219faba6365e
 Can use RxJS with JSONP? To combine streams?
  */
-//const TEST_IMG_URL = "https://api.meetup.com/Code-Star-Night/events/248958146?photo-host=public&sig_id=226887185&fields=featured_photo&sig=c634269c86bda35c0762874a490d219faba6365e";
 
 const styles = {
 	card: {
+		maxWidth: 300, // 345,
+		marginBottom: '3em',
+	},
+	cardBig: {
 		maxWidth: 600, // 345,
 		marginBottom: '3em',
 	},
@@ -40,20 +44,23 @@ const styles = {
 	},
 };
 
-function convertEventResponseToModel(mEvent) {
-	// This works, but should be different for each mEvent
-	// jsonp(TEST_IMG_URL).then(response => {
-	// 	// TODO use _.get to guard against undefined?
-	// 	console.log(response.data.featured_photo.photo_link)
-	// });
-
-	return {
-		name: mEvent.name,
-		time: mEvent.time,
-		description: mEvent.description,
-		link: mEvent.link,
-		coverUrl:
-			'https://secure.meetupstatic.com/photos/event/c/1/4/3/600_469909475.jpeg',
+function convertEventResponseToModel(withDescription = false) {
+	return function(mEvent) {
+		const fallbackImage =
+			'https://res.cloudinary.com/codestar/image/upload/v1532409289/codestar.nl/meetup/codestar-night-logo.jpg';
+		const result = {
+			name: mEvent.name,
+			time: mEvent.time,
+			link: mEvent.link,
+			coverUrl: _.get(mEvent, 'featured_photo.photo_link', fallbackImage),
+			withDescription,
+		};
+		if (withDescription) {
+			Object.assign(result, {
+				description: mEvent.description,
+			});
+		}
+		return result;
 	};
 }
 
@@ -76,12 +83,12 @@ export class Events extends Component {
 		   Fetch API does not support JSONP. no-cors mode creates an opaque response without data.
 		*/
 		jsonp(GET_UPCOMING_EVENTS_URL).then(response => {
-			const result = response.data.map(convertEventResponseToModel);
+			const result = response.data.map(convertEventResponseToModel(true));
 			this.setState({ nextEvents: result });
 		});
 
 		jsonp(GET_PAST_EVENTS_URL).then(response => {
-			const result = response.data.map(convertEventResponseToModel);
+			const result = response.data.map(convertEventResponseToModel());
 			this.setState({ pastEvents: result });
 		});
 	}
@@ -102,9 +109,21 @@ export class Events extends Component {
 		// 		a: ['href', 'target']
 		// 	}
 		// });
-		const cleanDescription = sanitizeHtml(mEvent.description);
+		let descriptionElem = null;
+		if (mEvent.withDescription) {
+			const cleanDescription = sanitizeHtml(mEvent.description);
+			descriptionElem = (
+				<Typography
+					component="p"
+					dangerouslySetInnerHTML={{ __html: cleanDescription }}
+				/>
+			);
+		}
 		return (
-			<Card key={mEvent.time} className={classes.card}>
+			<Card
+				key={mEvent.time}
+				className={mEvent.withDescription ? classes.cardBig : classes.card}
+			>
 				<CardMedia
 					className={classes.media}
 					image={mEvent.coverUrl}
@@ -114,10 +133,7 @@ export class Events extends Component {
 					<Typography gutterBottom variant="headline" component="h2">
 						{formattedDate} - {mEvent.name}
 					</Typography>
-					<Typography
-						component="p"
-						dangerouslySetInnerHTML={{ __html: cleanDescription }}
-					/>
+					{descriptionElem}
 				</CardContent>
 				<CardActions>
 					<Button size="small" color="primary" href={mEvent.link}>
