@@ -57,7 +57,19 @@ const styles = theme => ({
 class NavBar extends Component {
 	render() {
 		const { t, ...props } = this.props;
+
 		const toggle = lng => i18n.changeLanguage(lng);
+		const languageButton = (
+			<Button
+				onClick={() => toggle(i18n.language === 'nl' ? 'en' : 'nl')}
+				color="inherit"
+				className={`${props.classes.langButton} ${props.classes.button}`}
+			>
+				<LanguageIcon className="mr-2" />
+				{i18n.language}
+			</Button>
+		);
+
 		return (
 			<AppBar position="fixed" className={props.classes.appBar}>
 				<Toolbar>
@@ -83,15 +95,9 @@ class NavBar extends Component {
 								className={props.classes.logo}
 							/>
 						</Link>
-						<Button
-							onClick={() => toggle(i18n.language === 'nl' ? 'en' : 'nl')}
-							color="inherit"
-							className={`${props.classes.langButton} ${props.classes.button}`}
-						>
-							<LanguageIcon className="mr-2" />
-							{i18n.language}
-						</Button>
+						<Hidden smDown>{languageButton}</Hidden>
 					</Typography>
+					<Hidden mdUp>{languageButton}</Hidden>
 					<Hidden smDown>
 						<Button
 							component={Link}
