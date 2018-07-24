@@ -72,14 +72,14 @@ functions:
           method: post
           path: static-site-mailer
           cors: true
-  getUpcomingEvents:
-    handler: serverless/meetup.getUpcomingEvents
-    description: Get upcoming events on Meetup.com
-    events:
-      - http:
-          method: get
-          path: get-upcoming-events
-          cors: true
+#  getUpcomingEvents:
+#    handler: serverless/meetup.getUpcomingEvents
+#    description: Get upcoming events on Meetup.com
+#    events:
+#      - http:
+#          method: get
+#          path: get-upcoming-events
+#          cors: true
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
