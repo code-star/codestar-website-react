@@ -123,7 +123,7 @@ class About extends Component {
 								className={css.cardMedia}
 								image={getResponsiveImageUrl(
 									`/images/team/${person.image}`,
-									cardWidth
+									cardWidth * 2
 								)}
 								title={person.name}
 							/>

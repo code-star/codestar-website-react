@@ -25,6 +25,7 @@ const styles = {
 class Jobs extends Component {
 	render() {
 		const { t, classes } = this.props;
+
 		return (
 			<Fragment>
 				<section className="py-3">
@@ -39,7 +40,7 @@ class Jobs extends Component {
 						</div>
 						<div className="row mb-5">
 							<div className="d-flex justify-content-center flex-wrap">
-								{jobsList.map(job => (
+								{jobsList.map((job, i) => (
 									<JobCard
 										key={job.translation}
 										translation={job.translation}
