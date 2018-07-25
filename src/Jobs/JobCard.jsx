@@ -13,6 +13,7 @@ import {
 } from '@material-ui/core';
 
 import { getResponsiveImageUrl } from '../ResponsiveImage/ResponsiveImage';
+import ShareButtons from '../ShareButtons/ShareButtons';
 
 const cardWidth = 250;
 
@@ -48,17 +49,28 @@ const JobCard = props => (
 					<Typography component="p">{t('JOB_SHORT_DESC')}</Typography>
 				</CardContent>
 				<CardActions>
-					<Button size="small" color="primary">
-						{t('jobs:JOBS_SHARE_BUTTON')}
-					</Button>
-					<Button
-						component={Link}
-						to={`/jobs/${props.path}`}
+					<div style={{ flex: 1 }}>
+						<Button
+							component={Link}
+							to={`/jobs/${props.path}`}
+							size="small"
+							color="primary"
+						>
+							{t('jobs:JOBS_LEARN_MORE_BUTTON')}
+						</Button>
+					</div>
+					<ShareButtons
+						twitter
+						linkedin
+						facebook
 						size="small"
 						color="primary"
-					>
-						{t('jobs:JOBS_LEARN_MORE_BUTTON')}
-					</Button>
+						title={t('JOB_TITLE')}
+						text={`Codestar is looking for a ${t('JOB_TITLE')} – ${t(
+							'JOB_SHORT_DESC'
+						)}`}
+						link={`${window.location.href}/jobs/${props.path}`}
+					/>
 				</CardActions>
 			</Card>
 		)}
