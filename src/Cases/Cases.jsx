@@ -19,6 +19,7 @@ import Container from '../Container/Container';
 import CaseHeader from '../CaseHeader/CaseHeader';
 import casesList from './CasesList';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
+import InlineLogo from '../InlineLogo/InlineLogo';
 
 const styles = {
 	whiteText: {
@@ -190,7 +191,9 @@ class Cases extends Component {
 										<div key={i}>
 											<h4>{section.title}</h4>
 											{section.paragraphs.map((text, j) => (
-												<p key={j}>{text}</p>
+												<p key={j}>
+													<InlineLogo>{text}</InlineLogo>
+												</p>
 											))}
 										</div>
 									))}

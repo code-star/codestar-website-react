@@ -9,6 +9,7 @@ import { purple } from '@material-ui/core/colors';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 import Container from '../Container/Container';
 import css from './CaseHeader.module.css';
+import InlineLogo from '../InlineLogo/InlineLogo';
 
 const styles = theme => ({
 	link: {
@@ -79,7 +80,7 @@ class CaseHeader extends Component {
 						<div className="col-12 col-md-6">
 							<div className="bg-dark p-3">
 								<Typography variant="body1" className="d-inline text-white">
-									{props.intro}
+									<InlineLogo dark>{props.intro}</InlineLogo>
 								</Typography>
 							</div>
 						</div>

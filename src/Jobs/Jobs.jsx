@@ -2,9 +2,10 @@ import React, { Component, Fragment } from 'react';
 import { translate } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-import { Button } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
+import InlineLogo from '../InlineLogo/InlineLogo';
 import Container from '../Container/Container';
 import OurStack from '../OurStack/OurStack';
 import Clients from '../Clients/Clients';
@@ -34,7 +35,9 @@ class Jobs extends Component {
 							<div className="col-12 col-lg-8 mt-2 mt-4">
 								<h3 className={classes.whiteText}>{t('JOBS_VACANCIES')}</h3>
 								<p className={`${classes.whiteText} ${classes.conduit}`}>
-									{t('JOBS_VACANCIES_TEXT')}
+									<InlineLogo dark small>
+										{t('JOBS_VACANCIES_TEXT')}
+									</InlineLogo>
 								</p>
 							</div>
 						</div>
@@ -47,6 +50,9 @@ class Jobs extends Component {
 				</section>
 				<section className="pb-3 pt-5" style={{ backgroundColor: '#eeeeee' }}>
 					<Container>
+						<Typography variant="display1" className="mt-3">
+							<InlineLogo>Working at Codestar</InlineLogo>
+						</Typography>
 						<div className="row">
 							<div className="col-12 col-md-6 mt-5">
 								<h3>{t('JOBS_TITLE')}</h3>
