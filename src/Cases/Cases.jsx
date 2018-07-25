@@ -18,7 +18,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Container from '../Container/Container';
 import CaseHeader from '../CaseHeader/CaseHeader';
 import casesList from './CasesList';
-import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
+import ResponsiveImage, {
+	getResponsiveImageUrl,
+} from '../ResponsiveImage/ResponsiveImage';
 import InlineLogo from '../InlineLogo/InlineLogo';
 
 const styles = {
@@ -107,7 +109,7 @@ class Cases extends Component {
 								className={classes.linkCursor}
 								style={{
 									display: 'inline-block',
-									padding: '.5em',
+									padding: '8px',
 									margin: '5px',
 									backgroundColor: clientCase.color
 										? clientCase.color
@@ -121,8 +123,8 @@ class Cases extends Component {
 									style={{ width: '100%', height: '100%' }}
 								>
 									<div className="col-12 p-0">
-										<ResponsiveImage
-											path={clientCase.logo}
+										<img
+											src={getResponsiveImageUrl(clientCase.logo, 134 * 2)}
 											alt={clientCase.client}
 											width="100%"
 										/>

@@ -86,7 +86,7 @@ const casesList = [
 		credits:
 			'Photo: Andrew Schutzman (https://creativecommons.org/licenses/by-sa/2.0/)',
 		logo: `/images/clients/gracenote_dark.svg`,
-		color: '#e31b23',
+		color: '#47ade9',
 	},
 ];
 
