@@ -30,6 +30,7 @@ const styles = {
 	},
 	content: {
 		flex: '1 0 auto',
+		textDecoration: 'none !important',
 	},
 };
 
@@ -44,17 +45,19 @@ class JobCard extends Component {
 
 		return (
 			<Card className={props.classes.card}>
-				<CardMedia
-					className={props.classes.media}
-					image={getResponsiveImageUrl(props.image, cardWidth * 2)}
-					title={title}
-				/>
-				<CardContent className={props.classes.content}>
-					<Typography gutterBottom variant="headline" component="h2">
-						{title}
-					</Typography>
-					<Typography component="p">{short_description}</Typography>
-				</CardContent>
+				<Link to={`/jobs/${props.path}`} className={props.classes.content}>
+					<CardMedia
+						className={props.classes.media}
+						image={getResponsiveImageUrl(props.image, cardWidth * 2)}
+						title={title}
+					/>
+					<CardContent>
+						<Typography gutterBottom variant="headline" component="h2">
+							{title}
+						</Typography>
+						<Typography component="p">{short_description}</Typography>
+					</CardContent>
+				</Link>
 				<CardActions>
 					<div style={{ flex: 1 }}>
 						<Button
