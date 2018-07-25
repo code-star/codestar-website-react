@@ -40,14 +40,7 @@ class Jobs extends Component {
 						</div>
 						<div className="row mb-5">
 							<div className="d-flex justify-content-center flex-wrap">
-								{jobsList.map(job => (
-									<JobCard
-										key={job.translation}
-										translation={job.translation}
-										image={job.image}
-										path={job.path}
-									/>
-								))}
+								{jobsList.map(job => <JobCard key={job.path} {...job} />)}
 							</div>
 						</div>
 					</Container>

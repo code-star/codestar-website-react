@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { I18n } from 'react-i18next';
+import { translate } from 'react-i18next';
 
 import { withStyles } from '@material-ui/core/styles';
 import {
@@ -33,20 +33,27 @@ const styles = {
 	},
 };
 
-const JobCard = props => (
-	<I18n ns={[`${props.translation}`, 'jobs']}>
-		{t => (
+@translate(['jobs'], { wait: true })
+class JobCard extends Component {
+	render() {
+		const props = this.props;
+		const { t, path } = props;
+		const { title, short_description } = t('JOBS', { returnObjects: true })[
+			path
+		];
+
+		return (
 			<Card className={props.classes.card}>
 				<CardMedia
 					className={props.classes.media}
 					image={getResponsiveImageUrl(props.image, cardWidth * 2)}
-					title={t('JOB_TITLE')}
+					title={title}
 				/>
 				<CardContent className={props.classes.content}>
 					<Typography gutterBottom variant="headline" component="h2">
-						{t('JOB_TITLE')}
+						{title}
 					</Typography>
-					<Typography component="p">{t('JOB_SHORT_DESC')}</Typography>
+					<Typography component="p">{short_description}</Typography>
 				</CardContent>
 				<CardActions>
 					<div style={{ flex: 1 }}>
@@ -56,7 +63,7 @@ const JobCard = props => (
 							size="small"
 							color="primary"
 						>
-							{t('jobs:JOBS_LEARN_MORE_BUTTON')}
+							{t('JOBS_LEARN_MORE_BUTTON')}
 						</Button>
 					</div>
 					<ShareButtons
@@ -65,16 +72,14 @@ const JobCard = props => (
 						facebook
 						size="small"
 						color="primary"
-						title={t('JOB_TITLE')}
-						text={`Codestar is looking for a ${t('JOB_TITLE')} – ${t(
-							'JOB_SHORT_DESC'
-						)}`}
+						title={title}
+						text={`Codestar is looking for a ${title} – ${short_description}`}
 						link={`${window.location.href}/jobs/${props.path}`}
 					/>
 				</CardActions>
 			</Card>
-		)}
-	</I18n>
-);
+		);
+	}
+}
 
 export default withStyles(styles)(JobCard);

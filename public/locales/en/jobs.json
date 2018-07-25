@@ -38,5 +38,91 @@
     "JOBS_VACANCIES_TEXT": "Want to know more about what it is like to work at Codestar? Read our vacancies or contact us to to visit one of our meetups or a Campus Friday, for instance.",
     "JOBS_BEST_TECH": "We use the best technologies",
     "JOBS_BEST_CLIENTS": "We work with innovative companies",
-    "JOBS_ABOUT_US": "Not sure yet? Know more about us"
+    "JOBS_ABOUT_US": "Not sure yet? Know more about us",
+    "JOBS": {
+        "big_data": {
+            "title": "Big Data Engineer",
+            "short_description": "Dive into the world of fast and streaming data.",
+            "tagline": "Programming with heart and mind",
+            "client_case": "Pyeongchang, South Korea - 2018. The world is watching the Winter Olympics. Skiing, ice skating and bobsleighing: everything is being streamed online. It’s also being broadcast by a major American TV network. Gracenote and Codestar engineers are building a new platform to enrich these live streams with real-time information of interim times, provisional standings, video logs and athletes’ biographies. And we are doing using real-time stream processing technologies, such as Kafka en Akka. For a gold medal in viewing experience.",
+            "paragraphs": [
+                {
+                    "title": "Why with Codestar",
+                    "content": "Big, fast & smart data. We excel in real-time data platforms and reactive apps, by programming with heart and mind in multidisciplinary, agile teams in an informal setting. Simply getting the most out of big data, together. Why do we excel at that? Because of our culture of continuous learning, in which we prioritise your development. With R&D days, Campus Fridays and weekends with top international coaches. Welcome. We are the #1 company for Full Stack Scala and Fast Data solutions in the Netherlands."
+                },
+                {
+                    "title": "Who are you?",
+                    "content": "We’re looking for team players who are passionate and keen to learn. Professionals who can speak the different languages in a multidisciplinary team, who want to use their Scala skills or strong Java background to tame the ever larger data waves. Professionals who have the ambition to create a real-time data world with their colleagues. Something society can really benefit from. Fast. Reactive. Stream processing.",
+                    "list": [
+                        "Academic mindset",
+                        "Polyglot programmer (Scala, Java, Python, ...)",
+                        "Knowledge of Spark, Kafka, Hadoop, Cassandra, SQL, ElasticSearch, Airflow",
+                        "Experience with distributed systems, microservices, databases and NoSQL technologies"
+                    ]
+                }
+            ]
+        },
+        "front_end": {
+            "title": "Front-End Developer",
+            "short_description": "Challenging projects for JS engineers.",
+            "tagline": "Programming with heart and mind",
+            "client_case": "The port of Rotterdam as a greenfield project. Together with a team of Codestar colleagues, you will make a difference for the port operator in the field of front-end technology. You will do this by creating a dashboard with reactive elements, from scratch. And you and your team decide on the front-end architecture and design continuous deployment, using Angular, TypeScript, React Native, RxJs and Redux. Making Rotterdam the smartest port in the world.",
+            "paragraphs": [
+                {
+                    "title": "Why with Codestar",
+                    "content": "JavaScript: the key to single-page applications that adapt dynamically to modern users. Why we are successful in this? Because we have professional experts in functional reactive programming and smart cooperation between Front-end Developers, top players in Scala, clients and the rest of the agile team. All in an informal setting, in a culture of continuous learning that prioritises your development. With R&D days, Campus Fridays and weekends with top international coaches. Let’s become the benchmark together."
+                },
+                {
+                    "title": "Who are you?",
+                    "content": "We’re looking for team players who are passionate and keen to learn. Proactive specialists who want to prove themselves by designing and building JavaScript apps. Specialists who for results, but never at the expense of quality. And who possess good people skills, because a day is consists of more than just programming. Innovation is a team effort. It’s a matter of listening, asking questions and working together, in a multidisciplinary environment.",
+                    "list": [
+                        "Academic mindset",
+                        "A track record in JavaScript engineering",
+                        "Knowledge of functional reactive programming and/or MV* frameworks",
+                        "Experience with TypeScript or other typed JavaScript variants (a big plus)"
+                    ]
+                }
+            ]
+        },
+        "scala": {
+            "title": "Scala Developer",
+            "short_description": "Build scalable and reactive apps with us.",
+            "tagline": "Programming with heart and mind",
+            "client_case": "We’re looking for a Scala talent for our greenfield project in the port of Rotterdam. Someone who wants to join our team making a difference at Rotterdam Logistics Lab - the port’s innovation incubator. By realising real-time data streams with functional programming, reactive streams, cloud native and machine learning. Via Scala, Play, Akka, Kafka, Spark, RX, Angular2 and React. Will you be the new expert in the Scala ecosystem?",
+            "paragraphs": [
+                {
+                    "title": "Why with Codestar",
+                    "content": "We are creating the new world of fast and streaming data, with scalable and reactive apps that respond to complex challenges. We do this by programming with our hearts and minds. That’s how we make the difference for clients looking to take the next step. In a corporate culture driven by continuous learning, teamwork and programming. With R&D days, Campus Fridays and team weekends with top international coaches. We are the #1 company for Full Stack Scala and Fast Data solutions in the Netherlands."
+                },
+                {
+                    "title": "Who are you?",
+                    "content": "We’re looking team players who are for passionate and keen to learn. Programmers, hackers, who program even in their free time. Simply because they’re curious. Professionals who can make the difference, by coming up with ground-breaking ideas. Professionals who go for results, but never at the expense of quality. And who can also convince clients that this is the right way to go. And who are not afraid to make mistakes. Because innovation is all about trial and error. Functional. Reactive. Full Stack.",
+                    "list": [
+                        "Academic mindset",
+                        "A track record in Scala Development"
+                    ]
+                }
+            ]
+        },
+        "scala_jr": {
+            "title": "Junior Scala Developer",
+            "short_description": "Start with stream processing and functional programming.",
+            "tagline": "Programming with heart and mind",
+            "client_case": "We’re looking for a Scala talent for our greenfield project in the port of Rotterdam. Someone who wants to join our team making a difference at Rotterdam Logistics Lab - the port’s innovation incubator. By realising real-time data streams with functional programming, reactive streams, cloud native and machine learning. Via Scala, Play, Akka, Kafka, Spark, RX, Angular2 and React. Will you be the new expert in the Scala ecosystem?",
+            "paragraphs": [
+                {
+                    "title": "Why with Codestar",
+                    "content": "You will work with back-end stream-processing, learn reactive front-end programming and go on trips into the world of Big Data. In a team focused on fast and streaming data. You’ll do this through programming with heart and mind for clients who want to take the next step. In a corporate culture driven by continuous learning, teamwork and programming. With R&D days, Campus Fridays and team weekends with top international coaches. Become a part of the #1 company for Full Stack Scala and Fast Data solutions in the Netherlands."
+                },
+                {
+                    "title": "Who are you?",
+                    "content": "We’re looking for team players who are passionate and keen to learn. Juniors who program even in their free time, because they’re curious. Juniors who want to make the difference by coming up with ground-breaking ideas. Who go for results, but never at the expense of quality. And who are not afraid to make mistakes. Because innovation is all about trial and error. Functional. Reactive. Full Stack.",
+                    "list": [
+                        "Academic mindset",
+                        "Experience in functional programming, Scala or Haskell"
+                    ]
+                }
+            ]
+        }
+    }
 }
