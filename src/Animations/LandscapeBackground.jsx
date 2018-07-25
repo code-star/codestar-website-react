@@ -5,8 +5,8 @@ import SimplexNoise from 'simplex-noise';
 import { Fade } from '@material-ui/core';
 
 const options = {
-	segments: 50,
-	interval: 1000,
+	segments: 40,
+	interval: 1500,
 	travelTime: 30000,
 	simplexYStep: 0.1,
 	simplexXScale: 6,
