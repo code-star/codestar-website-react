@@ -48,7 +48,7 @@ class Jobs extends Component {
 				<section className="pb-3 pt-5" style={{ backgroundColor: '#eeeeee' }}>
 					<Container>
 						<div className="row">
-							<div className="col-12 col-md-6 align-self-center">
+							<div className="col-12 col-md-6 mt-5">
 								<h3>{t('JOBS_TITLE')}</h3>
 								<ul>
 									{t('JOBS_ARGUMENTS', { returnObjects: true }).map(
