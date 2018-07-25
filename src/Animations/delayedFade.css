@@ -43,7 +43,7 @@
 	}
 }
 
-.delayedFadeIn * {
+.delayedFadeIn > * {
 	opacity: 0;
 	opacity: 1 \9; /* IE fallback */
 	animation: fadeIn ease-in;
@@ -51,7 +51,7 @@
 	animation-duration: 1s;
 }
 
-.delayedFadeInPanLeft * {
+.delayedFadeInPanLeft > * {
 	opacity: 0;
 	opacity: 1 \9; /* IE fallback */
 	animation: fadeIn ease-in, panLeft ease-in;
@@ -59,7 +59,7 @@
 	animation-duration: 1s;
 }
 
-.delayedFadeInPanRight * {
+.delayedFadeInPanRight > * {
 	opacity: 0;
 	opacity: 1 \9; /* IE fallback */
 	animation: fadeIn ease-in, panRight ease-in;
@@ -67,7 +67,7 @@
 	animation-duration: 1s;
 }
 
-.delayedFadeInPanUp * {
+.delayedFadeInPanUp > * {
 	opacity: 0;
 	opacity: 1 \9; /* IE fallback */
 	animation: fadeIn ease-in, panUp ease-in;
@@ -75,7 +75,7 @@
 	animation-duration: 1s;
 }
 
-.delayedFadeInPanDown * {
+.delayedFadeInPanDown > * {
 	opacity: 0;
 	opacity: 1 \9; /* IE fallback */
 	animation: fadeIn ease-in, panDown ease-in;

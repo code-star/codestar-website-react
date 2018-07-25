@@ -12,6 +12,7 @@ import LandscapeBackground from '../Animations/LandscapeBackground';
 import DelayedFade from '../Animations/DelayedFade';
 import { Link } from 'react-router-dom';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
+import InlineLogo from '../InlineLogo/InlineLogo';
 
 const styles = theme => ({
 	section: {
@@ -67,7 +68,9 @@ class Intro extends Component {
 						{intersperse(
 							line.split('~').map((subLine, i) => (
 								<span key={i} className={props.classes.line}>
-									{subLine}
+									<InlineLogo dark small>
+										{subLine}
+									</InlineLogo>
 								</span>
 							)),
 							' '
@@ -98,19 +101,19 @@ class Intro extends Component {
 					<Container center>
 						<div className="row">
 							<div className="col-12 col-md-6">
-								{/*<Paper className={props.classes.paper} elevation={1}>*/}
-								<Typography variant="headline" component="h1" gutterBottom>
-									{t('NEXT_STEP_TITLE')}
-								</Typography>
+								<InlineLogo>
+									<Typography variant="display1" gutterBottom>
+										{t('NEXT_STEP_TITLE')}
+									</Typography>
 
-								<Typography variant="subheading" gutterBottom>
-									{t('NEXT_STEP_CONTENT_1')}
-								</Typography>
+									<Typography variant="subheading" gutterBottom>
+										{t('NEXT_STEP_CONTENT_1')}
+									</Typography>
 
-								<Typography variant="subheading" gutterBottom>
-									{t('NEXT_STEP_CONTENT_2')}
-								</Typography>
-								{/*</Paper>*/}
+									<Typography variant="subheading" gutterBottom>
+										{t('NEXT_STEP_CONTENT_2')}
+									</Typography>
+								</InlineLogo>
 							</div>
 							<div className="col-12 col-md-6">
 								<ResponsiveImage

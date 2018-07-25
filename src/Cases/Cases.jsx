@@ -19,6 +19,7 @@ import Container from '../Container/Container';
 import CaseHeader from '../CaseHeader/CaseHeader';
 import casesList from './CasesList';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
+import InlineLogo from '../InlineLogo/InlineLogo';
 
 const styles = {
 	whiteText: {
@@ -76,7 +77,10 @@ class Cases extends Component {
 								<Typography variant="subheading" className={classes.whiteText}>
 									{t('CASES_INTRO_1')}
 								</Typography>
-								<Typography variant="subheading" className={classes.whiteText}>
+								<Typography
+									variant="subheading"
+									className={`${classes.whiteText} mt-2`}
+								>
 									{t('CASES_INTRO_2')}
 								</Typography>
 							</div>
@@ -91,7 +95,11 @@ class Cases extends Component {
 	renderBoxes() {
 		const { classes } = this.props;
 		return (
-			<div className={`col-12 col-md-10 col-lg-6 my-3 ${classes.noLineHeight}`}>
+			<div
+				className={`col-12 col-md-10 col-lg-6 my-3 text-center text-sm-left ${
+					classes.noLineHeight
+				}`}
+			>
 				{this.orderedCases.map((clientCase, i) => (
 					<Link key={i} to={clientCase.path} hashSpy smooth>
 						<Fade in timeout={1000}>
@@ -183,7 +191,9 @@ class Cases extends Component {
 										<div key={i}>
 											<h4>{section.title}</h4>
 											{section.paragraphs.map((text, j) => (
-												<p key={j}>{text}</p>
+												<p key={j}>
+													<InlineLogo>{text}</InlineLogo>
+												</p>
 											))}
 										</div>
 									))}

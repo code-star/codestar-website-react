@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { I18n } from 'react-i18next';
+import { translate } from 'react-i18next';
 
 import { withStyles } from '@material-ui/core/styles';
 import {
@@ -13,6 +13,7 @@ import {
 } from '@material-ui/core';
 
 import { getResponsiveImageUrl } from '../ResponsiveImage/ResponsiveImage';
+import ShareButtons from '../ShareButtons/ShareButtons';
 
 const cardWidth = 250;
 
@@ -29,40 +30,59 @@ const styles = {
 	},
 	content: {
 		flex: '1 0 auto',
+		textDecoration: 'none !important',
 	},
 };
 
-const JobCard = props => (
-	<I18n ns={[`${props.translation}`, 'jobs']}>
-		{t => (
+@translate(['jobs'], { wait: true })
+class JobCard extends Component {
+	render() {
+		const props = this.props;
+		const { t, path } = props;
+		const { title, short_description } = t('JOBS', { returnObjects: true })[
+			path
+		];
+
+		return (
 			<Card className={props.classes.card}>
-				<CardMedia
-					className={props.classes.media}
-					image={getResponsiveImageUrl(props.image, cardWidth * 2)}
-					title={t('JOB_TITLE')}
-				/>
-				<CardContent className={props.classes.content}>
-					<Typography gutterBottom variant="headline" component="h2">
-						{t('JOB_TITLE')}
-					</Typography>
-					<Typography component="p">{t('JOB_SHORT_DESC')}</Typography>
-				</CardContent>
+				<Link to={`/jobs/${props.path}`} className={props.classes.content}>
+					<CardMedia
+						className={props.classes.media}
+						image={getResponsiveImageUrl(props.image, cardWidth * 2)}
+						title={title}
+					/>
+					<CardContent>
+						<Typography gutterBottom variant="headline" component="h2">
+							{title}
+						</Typography>
+						<Typography component="p">{short_description}</Typography>
+					</CardContent>
+				</Link>
 				<CardActions>
-					<Button size="small" color="primary">
-						{t('jobs:JOBS_SHARE_BUTTON')}
-					</Button>
-					<Button
-						component={Link}
-						to={`/jobs/${props.path}`}
+					<div style={{ flex: 1 }}>
+						<Button
+							component={Link}
+							to={`/jobs/${props.path}`}
+							size="small"
+							color="primary"
+						>
+							{t('JOBS_LEARN_MORE_BUTTON')}
+						</Button>
+					</div>
+					<ShareButtons
+						twitter
+						linkedin
+						facebook
 						size="small"
 						color="primary"
-					>
-						{t('jobs:JOBS_LEARN_MORE_BUTTON')}
-					</Button>
+						title={title}
+						text={`${t('JOBS_LOOKING_FOR')} ${title} – ${short_description}`}
+						link={`${window.location.href}/jobs/${props.path}`}
+					/>
 				</CardActions>
 			</Card>
-		)}
-	</I18n>
-);
+		);
+	}
+}
 
 export default withStyles(styles)(JobCard);
