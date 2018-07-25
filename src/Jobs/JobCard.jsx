@@ -76,7 +76,7 @@ class JobCard extends Component {
 						size="small"
 						color="primary"
 						title={title}
-						text={`Codestar is looking for a ${title} – ${short_description}`}
+						text={`${t('JOBS_LOOKING_FOR')} ${title} – ${short_description}`}
 						link={`${window.location.href}/jobs/${props.path}`}
 					/>
 				</CardActions>

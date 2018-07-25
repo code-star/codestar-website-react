@@ -39,6 +39,7 @@
     "JOBS_BEST_TECH": "We use the best technologies",
     "JOBS_BEST_CLIENTS": "We work with innovative companies",
     "JOBS_ABOUT_US": "Not sure yet? Know more about us",
+    "JOBS_LOOKING_FOR": "Codestar is looking for a",
     "JOBS": {
         "big_data": {
             "title": "Big Data Engineer",
