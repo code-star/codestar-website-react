@@ -99,7 +99,7 @@ class Intro extends Component {
 						<div className="row">
 							<div className="col-12 col-md-6">
 								{/*<Paper className={props.classes.paper} elevation={1}>*/}
-								<Typography variant="headline" component="h1" gutterBottom>
+								<Typography variant="display1" gutterBottom>
 									{t('NEXT_STEP_TITLE')}
 								</Typography>
 
