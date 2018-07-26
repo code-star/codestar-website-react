@@ -62,7 +62,7 @@
       "not ie < 11"
     ]
   },
-  "homepage": "http://www.codestar.nl/codestar-website-react",
+  "homepage": ".",
   "devDependencies": {
     "jest-fetch-mock": "^1.6.5"
   }
