@@ -9,11 +9,13 @@ import { Button } from '@material-ui/core';
 
 const socialMedias = {
 	twitter: {
+		name: 'Twitter',
 		icon: faTwitter,
 		makeUrl: (link, title, text) =>
 			`https://twitter.com/home?status=${encodeURI(`${text}\n${link}`)}`,
 	},
 	linkedin: {
+		name: 'Linkedin',
 		icon: faLinkedin,
 		makeUrl: (link, title, text) =>
 			`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURI(
@@ -21,6 +23,7 @@ const socialMedias = {
 			)}&title=${encodeURI(title)}&summary=${encodeURI(text)}`,
 	},
 	facebook: {
+		name: 'Facebook',
 		icon: faFacebook,
 		makeUrl: (link, title, text) =>
 			`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(link)}`,
@@ -50,6 +53,8 @@ class ShareButtons extends Component {
 				size={size}
 				component="a"
 				target="_blank"
+				rel="noopener noreferrer"
+				aria-label={socialMedia.name}
 				href={socialMedia.makeUrl(link, title, text)}
 				style={{
 					minWidth: 32,
