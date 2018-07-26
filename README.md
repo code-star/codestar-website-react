@@ -6,9 +6,10 @@ use HOC for [react-i18next](https://react.i18next.com/overview/getting-started) 
 **Contents:**
 
 1. [Developing](#developing)
-2. [Hosting config](#hosting-config)
-3. [Serverless](#serverless)
-4. [Hosting pictures](#hosting-pictures)
+1. [Deploying](#deploying)
+1. [Hosting config](#hosting-config)
+1. [Serverless](#serverless)
+1. [Hosting pictures](#hosting-pictures)
 
 ## Developing
 
@@ -16,6 +17,14 @@ Run `npm start`, which will run `REACT_APP_STAGE=dev react-scripts start`. It is
 to `dev`, because that switches the API calls to the local mock URLs. Otherwise, it will run with the production
 URLs.
 
+## Deploying
+
+Deployments are handled by Travis CI.
+
+Triggering a deployment is done by committing/merging to the:
+
+- `develop` branch for the test site
+- `production` branch for the production site
 
 ## Hosting config
 
@@ -68,11 +77,10 @@ The var `DEBUG=true` will allow calls from `localhost:3000`. This can also be en
 The destination email address is set in the environment variable `STATIC_SITE_MAILER_DESTINATION`. You can check the [documentation](https://serverless.com/framework/docs/providers/spotinst/guide/variables/#environment-variables) for more information about environment variables.
 
 Locally this can be set in a test profile or just by setting the envar with `export STATIC_SITE_MAILER_DESTINATION=example@example.com` 
-In the code it is read with `process.env.STATIC_SITE_MAILER_DESTINATION`
+In the code it is read with `process.env.STATIC_SITE_MAILER_DESTINATION`. To change it in AWS:
 
-In AWS:
-* Go to https://eu-west-1.console.aws.amazon.com/lambda/ and find the function
-* Scroll to Environment variables and add the correct key/value
+- Go to https://eu-west-1.console.aws.amazon.com/lambda/ and find the function
+- Scroll to Environment variables and add the correct key/value
 
 ## Hosting pictures
 
