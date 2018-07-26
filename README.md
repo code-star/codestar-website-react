@@ -12,8 +12,8 @@ use HOC for [react-i18next](https://react.i18next.com/overview/getting-started) 
 
 ## Developing
 
-Run `npm start`, which will run `REACT_APP_STAGE=dev react-scripts start`. It is imported that REACT_APP_STAGE is set 
-to `dev`, because that switches the API calls to the local mock URLs. If REACT_APP_STAGE, it will run with the production
+Run `npm start`, which will run `REACT_APP_STAGE=dev react-scripts start`. It is important that `REACT_APP_STAGE` is set 
+to `dev`, because that switches the API calls to the local mock URLs. Otherwise, it will run with the production
 URLs.
 
 
