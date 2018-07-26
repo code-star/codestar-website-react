@@ -1,19 +1,20 @@
 import React from 'react';
 import css from './ResponsiveImage.module.css';
 
-const getResponsiveImageUrl = (imagePath, size = null) => {
+const getResponsiveImageUrl = (imagePath, size = null, effect) => {
+	const effectPath = effect ? `${effect}/` : '';
 	return (
 		`${process.env.REACT_APP_CLOUDINARY_URLBASE}/` +
-		`f_auto/w_${size}/` +
+		`f_auto/w_${size}/${effectPath}` +
 		`${process.env.REACT_APP_CLOUDINARY_ID}/` +
 		`${process.env.REACT_APP_CLOUDINARY_IMAGES_DIRECTORY}` +
 		`${imagePath}`
 	);
 };
 
-const getResponsiveSrcSet = (imagePath, sizes) => {
+const getResponsiveSrcSet = (imagePath, sizes, effect) => {
 	return sizes
-		.map(size => `${getResponsiveImageUrl(imagePath, size)} ${size}w`)
+		.map(size => `${getResponsiveImageUrl(imagePath, size, effect)} ${size}w`)
 		.join(', ');
 };
 
@@ -28,13 +29,14 @@ const ResponsiveImage = props => {
 		sizes = defaultSizes,
 		versions = defaultVersions,
 		asBackgroundImage = false,
+		effect,
 		...otherProps
 	} = props;
 
 	return (
 		path && (
 			<img
-				{...responsiveImageProps(path, alt, versions, sizes)}
+				{...responsiveImageProps(path, alt, versions, sizes, effect)}
 				alt={alt}
 				title={title}
 				className={`
@@ -51,11 +53,12 @@ function responsiveImageProps(
 	path,
 	alt,
 	versions = defaultVersions,
-	sizes = defaultSizes
+	sizes = defaultSizes,
+	effect
 ) {
 	return {
 		src: `${process.env.PUBLIC_URL}${path}`,
-		srcSet: getResponsiveSrcSet(path, versions),
+		srcSet: getResponsiveSrcSet(path, versions, effect),
 		sizes: sizes,
 		alt: alt,
 	};

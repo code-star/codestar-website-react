@@ -169,9 +169,11 @@ export class Events extends Component {
 		return (
 			<section key={mEvent.name}>
 				{/*path="https://res.cloudinary.com/codestar/image/upload/w_400,e_art:fes/v1532541215/codestar.nl/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg"*/}
+				{/*TODO alt attribute*/}
 				<ResponsiveImage
 					path="/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg"
 					asBackgroundImage
+					effect="e_art:fes"
 					alt="TODO"
 				/>
 				<Container fullHeight center>
