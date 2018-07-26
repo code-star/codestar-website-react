@@ -13,6 +13,14 @@ import {
 } from '@material-ui/core';
 import Container from '../Container/Container';
 import _ from 'lodash';
+import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
+import { Link, Element } from 'react-scroll';
+
+/*
+ TODO design ideas https://www.pixel-stitch.net/
+ https://hencework.com/theme/mateve/music_concert/#
+ https://colorlib.com/wp/free-event-website-templates/
+*/
 
 // Meetup API test console: https://secure.meetup.com/meetup_api/console/?path=/:urlname/events
 // page=3 = number of results to return in a page, only need the first 3 results
@@ -150,22 +158,167 @@ export class Events extends Component {
 		);
 	}
 
-	render() {
+	renderHeader(mEvent) {
+		// TODO observe changes to i18n.language
+		const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
+		const formattedDate = new Date(mEvent.time).toLocaleDateString(locale, {
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric',
+		});
 		return (
-			<section>
-				<Container marginTopNavBar>
-					<h2 style={{ color: 'white' }}>Our Next Event</h2>
-					{this.state.nextEvents.map(this.renderEventModel)}
-				</Container>
-				<Container className="mt-3">
-					<h2 style={{ color: 'white' }}>Our Previous Events</h2>
+			<section key={mEvent.name}>
+				{/*path="https://res.cloudinary.com/codestar/image/upload/w_400,e_art:fes/v1532541215/codestar.nl/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg"*/}
+				<ResponsiveImage
+					path="/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg"
+					asBackgroundImage
+					alt="TODO"
+				/>
+				<Container fullHeight center>
 					<div className="row">
-						<div className="d-flex justify-content-center flex-wrap">
-							{this.state.pastEvents.map(this.renderEventModel)}
+						<div className="col-12">
+							<div className="mt-4">
+								<Typography
+									align="center"
+									variant="display1"
+									style={{ color: 'white' }}
+								>
+									Our next event:
+								</Typography>
+								<Typography
+									align="center"
+									variant="display4"
+									style={{ color: 'white', fontWeight: 'bold' }}
+								>
+									{mEvent.name}
+									{/*TODO: image should use filter, title, sign up button, buttons for the rest of the page, re-use style-color-white */}
+									{/*TODO image not 100% height*/}
+									{/*TODO event notification size must be bigger*/}
+								</Typography>
+								<Typography
+									gutterBottom
+									align="center"
+									variant="display2"
+									style={{ color: 'white' }}
+								>
+									{formattedDate}
+								</Typography>
+								<div style={{ textAlign: 'center' }}>
+									{/*TODO conform button color to CaseHeader button color (purple)*/}
+									<Button
+										color="primary"
+										variant="raised"
+										href="#contained-buttons"
+									>
+										Sign Up!
+									</Button>
+									{/*TODO stick buttons to offset from bottom*/}
+									{/*TODO instead of buttons links, use blocks like the grid on Cases*/}
+									<div className="mt-5">
+										<Link to="event-details" hashSpy smooth>
+											<Button variant="contained" className="mr-1">
+												More about this event
+											</Button>
+										</Link>
+										<Button
+											variant="contained"
+											className="mr-1"
+											href="#contained-buttons"
+										>
+											Previous Events
+										</Button>
+										<Button
+											variant="contained"
+											className="mr-1"
+											href="#contained-buttons"
+										>
+											Blog
+										</Button>
+										<Button
+											variant="contained"
+											className="mr-1"
+											href="#contained-buttons"
+										>
+											Photos
+										</Button>
+										<Button
+											variant="contained"
+											className="mr-1"
+											href="#contained-buttons"
+										>
+											Videos
+										</Button>
+									</div>
+								</div>
+							</div>
+							{/*<div className="my-3">
+								<Typography
+									variant="headline"
+									className={`d-inline text-white p-2 ${css.projectCaseTitle}`}
+								>
+									{props.title}
+								</Typography>
+							</div>
+
+							{props.readMore && (
+								<div className="my-2">
+									<Button
+										variant="raised"
+										onClick={props.callback}
+										className={classes.button}
+									>
+										{t('CASES_READ_MORE_BUTTON')}
+									</Button>
+								</div>
+							)}
+						</div>
+						<div className="col-12 col-md-6">
+							<div className="bg-dark p-3">
+								<Typography variant="body1" className="d-inline text-white">
+									{props.intro}
+								</Typography>
+							</div>
+						</div>*/}
 						</div>
 					</div>
 				</Container>
 			</section>
+		);
+	}
+
+	render() {
+		return (
+			<div>
+				{/*TODO replace div by Fragment*/}
+				{this.state.nextEvents.map(this.renderHeader)}
+				<Element name="event-details" className="mt-5">
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					here are event details
+				</Element>
+				<section>
+					<Container marginTopNavBar>
+						{/*,h_53,c_scale*/}
+						{/*<img src="https://res.cloudinary.com/codestar/image/upload/w_400,e_art:fes/v1532541215/codestar.nl/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg" alt=""/>*/}
+						<h2 style={{ color: 'white' }}>Our Next Event</h2>
+						{this.state.nextEvents.map(this.renderEventModel)}
+					</Container>
+					<Container className="mt-3">
+						<h2 style={{ color: 'white' }}>Our Previous Events</h2>
+						<div className="row">
+							<div className="d-flex justify-content-center flex-wrap">
+								{this.state.pastEvents.map(this.renderEventModel)}
+							</div>
+						</div>
+					</Container>
+				</section>
+			</div>
 		);
 	}
 }
