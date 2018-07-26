@@ -166,94 +166,105 @@ export class Events extends Component {
 			month: 'long',
 			day: 'numeric',
 		});
-		return (
-			<section key={mEvent.name}>
-				{/*path="https://res.cloudinary.com/codestar/image/upload/w_400,e_art:fes/v1532541215/codestar.nl/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg"*/}
-				{/*TODO alt attribute*/}
-				<ResponsiveImage
-					path="/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg"
-					asBackgroundImage
-					effect="e_art:fes"
-					alt="TODO"
+		let descriptionElem = null;
+		if (mEvent.withDescription) {
+			const cleanDescription = sanitizeHtml(mEvent.description);
+			descriptionElem = (
+				<Typography
+					component="p"
+					dangerouslySetInnerHTML={{ __html: cleanDescription }}
 				/>
-				<Container fullHeight center>
-					<div className="row">
-						<div className="col-12">
-							<div className="mt-4">
-								<Typography
-									align="center"
-									variant="display1"
-									style={{ color: 'white' }}
-								>
-									Our next event:
-								</Typography>
-								<Typography
-									align="center"
-									variant="display4"
-									style={{ color: 'white', fontWeight: 'bold' }}
-								>
-									{mEvent.name}
-									{/*TODO: image should use filter, title, sign up button, buttons for the rest of the page, re-use style-color-white */}
-									{/*TODO image not 100% height*/}
-									{/*TODO event notification size must be bigger*/}
-								</Typography>
-								<Typography
-									gutterBottom
-									align="center"
-									variant="display2"
-									style={{ color: 'white' }}
-								>
-									{formattedDate}
-								</Typography>
-								<div style={{ textAlign: 'center' }}>
-									{/*TODO conform button color to CaseHeader button color (purple)*/}
-									<Button
-										color="primary"
-										variant="raised"
-										href="#contained-buttons"
+			);
+		}
+		return (
+			<div>
+				<section key={mEvent.name}>
+					{/*path="https://res.cloudinary.com/codestar/image/upload/w_400,e_art:fes/v1532541215/codestar.nl/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg"*/}
+					{/*TODO alt attribute*/}
+					<ResponsiveImage
+						path="/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg"
+						asBackgroundImage
+						effect="e_art:fes"
+						alt="TODO"
+					/>
+					<Container fullHeight center>
+						<div className="row">
+							<div className="col-12">
+								<div className="mt-4">
+									<Typography
+										align="center"
+										variant="display1"
+										style={{ color: 'white' }}
 									>
-										Sign Up!
-									</Button>
-									{/*TODO stick buttons to offset from bottom*/}
-									{/*TODO instead of buttons links, use blocks like the grid on Cases*/}
-									<div className="mt-5">
-										<Link to="event-details" hashSpy smooth>
-											<Button variant="contained" className="mr-1">
-												More about this event
+										Our next event:
+									</Typography>
+									<Typography
+										align="center"
+										variant="display4"
+										style={{ color: 'white', fontWeight: 'bold' }}
+									>
+										{mEvent.name}
+										{/*TODO: image should use filter, title, sign up button, buttons for the rest of the page, re-use style-color-white */}
+										{/*TODO image not 100% height*/}
+										{/*TODO event notification size must be bigger*/}
+									</Typography>
+									<Typography
+										gutterBottom
+										align="center"
+										variant="display2"
+										style={{ color: 'white' }}
+									>
+										{formattedDate}
+									</Typography>
+									<div style={{ textAlign: 'center' }}>
+										{/*TODO conform button color to CaseHeader button color (purple)*/}
+										<Button
+											color="primary"
+											variant="raised"
+											href="#contained-buttons"
+										>
+											Sign Up!
+										</Button>
+										{/*TODO stick buttons to offset from bottom*/}
+										{/*TODO instead of buttons links, use blocks like the grid on Cases*/}
+										<div className="mt-5">
+											<Link to="event-details" hashSpy smooth>
+												<Button variant="contained" className="mr-1">
+													More about this event
+												</Button>
+											</Link>
+											<Button
+												variant="contained"
+												className="mr-1"
+												href="#contained-buttons"
+											>
+												Previous Events
 											</Button>
-										</Link>
-										<Button
-											variant="contained"
-											className="mr-1"
-											href="#contained-buttons"
-										>
-											Previous Events
-										</Button>
-										<Button
-											variant="contained"
-											className="mr-1"
-											href="#contained-buttons"
-										>
-											Blog
-										</Button>
-										<Button
-											variant="contained"
-											className="mr-1"
-											href="#contained-buttons"
-										>
-											Photos
-										</Button>
-										<Button
-											variant="contained"
-											className="mr-1"
-											href="#contained-buttons"
-										>
-											Videos
-										</Button>
+											<Button
+												variant="contained"
+												className="mr-1"
+												href="#contained-buttons"
+											>
+												Blog
+											</Button>
+											<Button
+												variant="contained"
+												className="mr-1"
+												href="#contained-buttons"
+											>
+												Photos
+											</Button>
+											<Button
+												variant="contained"
+												className="mr-1"
+												href="#contained-buttons"
+											>
+												Videos
+											</Button>
+										</div>
 									</div>
 								</div>
-							</div>
-							{/*<div className="my-3">
+								{/*<div className="my-3">
 								<Typography
 									variant="headline"
 									className={`d-inline text-white p-2 ${css.projectCaseTitle}`}
@@ -281,10 +292,17 @@ export class Events extends Component {
 								</Typography>
 							</div>
 						</div>*/}
+							</div>
 						</div>
-					</div>
-				</Container>
-			</section>
+					</Container>
+				</section>
+				<Element name="event-details" className="mt-5" marginTopNavBar>
+					<Container>
+						{/* TODO fix top margin, show background, show image, show title, show sign up button */}
+						{descriptionElem}
+					</Container>
+				</Element>
+			</div>
 		);
 	}
 
@@ -293,24 +311,13 @@ export class Events extends Component {
 			<div>
 				{/*TODO replace div by Fragment*/}
 				{this.state.nextEvents.map(this.renderHeader)}
-				<Element name="event-details" className="mt-5">
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
-					here are event details
-				</Element>
 				<section>
-					<Container marginTopNavBar>
-						{/*,h_53,c_scale*/}
-						{/*<img src="https://res.cloudinary.com/codestar/image/upload/w_400,e_art:fes/v1532541215/codestar.nl/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg" alt=""/>*/}
+					{/*<Container marginTopNavBar>
+						,h_53,c_scale
+						<img src="https://res.cloudinary.com/codestar/image/upload/w_400,e_art:fes/v1532541215/codestar.nl/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg" alt=""/>
 						<h2 style={{ color: 'white' }}>Our Next Event</h2>
 						{this.state.nextEvents.map(this.renderEventModel)}
-					</Container>
+					</Container>*/}
 					<Container className="mt-3">
 						<h2 style={{ color: 'white' }}>Our Previous Events</h2>
 						<div className="row">
