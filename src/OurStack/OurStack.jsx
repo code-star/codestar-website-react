@@ -4,7 +4,7 @@ import { translate } from 'react-i18next';
 import { Paper, Avatar, Tooltip, Typography, Grow } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
-import { responsiveImageProps } from '../ResponsiveImage/ResponsiveImage';
+import { getResponsiveImageUrl } from '../ResponsiveImage/ResponsiveImage';
 import techs from './techs';
 
 const styles = theme => ({
@@ -16,6 +16,8 @@ const styles = theme => ({
 	},
 	icon: {
 		marginLeft: 10,
+		width: 40,
+		height: 40,
 	},
 });
 
@@ -35,7 +37,8 @@ class OurStack extends Component {
 							<Grow in>
 								<Avatar
 									className={classes.icon}
-									{...responsiveImageProps(item.logo, item.name)}
+									alt={item.name}
+									src={getResponsiveImageUrl(item.logo, 80)}
 								/>
 							</Grow>
 						</Tooltip>

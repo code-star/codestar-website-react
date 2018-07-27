@@ -12,13 +12,17 @@ import {
 	DialogActions,
 	Button,
 	withMobileDialog,
+	Slide,
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
 import Container from '../Container/Container';
 import CaseHeader from '../CaseHeader/CaseHeader';
 import casesList from './CasesList';
-import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
+import ResponsiveImage, {
+	getResponsiveImageUrl,
+} from '../ResponsiveImage/ResponsiveImage';
+import InlineLogo from '../InlineLogo/InlineLogo';
 
 const styles = {
 	whiteText: {
@@ -76,7 +80,10 @@ class Cases extends Component {
 								<Typography variant="subheading" className={classes.whiteText}>
 									{t('CASES_INTRO_1')}
 								</Typography>
-								<Typography variant="subheading" className={classes.whiteText}>
+								<Typography
+									variant="subheading"
+									className={`${classes.whiteText} mt-2`}
+								>
 									{t('CASES_INTRO_2')}
 								</Typography>
 							</div>
@@ -91,40 +98,46 @@ class Cases extends Component {
 	renderBoxes() {
 		const { classes } = this.props;
 		return (
-			<div className={`col-12 col-md-10 col-lg-6 my-3 ${classes.noLineHeight}`}>
-				{this.orderedCases.map((clientCase, i) => (
-					<Link key={i} to={clientCase.path} hashSpy smooth>
-						<Fade in timeout={1000}>
-							<Paper
-								className={classes.linkCursor}
-								style={{
-									display: 'inline-block',
-									padding: '.5em',
-									margin: '5px',
-									backgroundColor: clientCase.color
-										? clientCase.color
-										: 'transparent',
-									width: '150px',
-									height: '150px',
-								}}
-							>
-								<div
-									className="row align-items-center mx-0"
-									style={{ width: '100%', height: '100%' }}
+			<Slide in timeout={1000} direction="left">
+				<div
+					className={`col-12 col-md-10 col-lg-6 my-3 text-center text-sm-left ${
+						classes.noLineHeight
+					}`}
+				>
+					{this.orderedCases.map((clientCase, i) => (
+						<Link key={i} to={clientCase.path} hashSpy smooth>
+							<Fade in timeout={1000}>
+								<Paper
+									className={classes.linkCursor}
+									style={{
+										display: 'inline-block',
+										padding: '8px',
+										margin: '5px',
+										backgroundColor: clientCase.color
+											? clientCase.color
+											: 'transparent',
+										width: '150px',
+										height: '150px',
+									}}
 								>
-									<div className="col-12 p-0">
-										<ResponsiveImage
-											path={clientCase.logo}
-											alt={clientCase.client}
-											width="100%"
-										/>
+									<div
+										className="row align-items-center mx-0"
+										style={{ width: '100%', height: '100%' }}
+									>
+										<div className="col-12 p-0">
+											<img
+												src={getResponsiveImageUrl(clientCase.logo, 134 * 2)}
+												alt={clientCase.client}
+												width="100%"
+											/>
+										</div>
 									</div>
-								</div>
-							</Paper>
-						</Fade>
-					</Link>
-				))}
-			</div>
+								</Paper>
+							</Fade>
+						</Link>
+					))}
+				</div>
+			</Slide>
 		);
 	}
 
@@ -183,7 +196,9 @@ class Cases extends Component {
 										<div key={i}>
 											<h4>{section.title}</h4>
 											{section.paragraphs.map((text, j) => (
-												<p key={j}>{text}</p>
+												<p key={j}>
+													<InlineLogo>{text}</InlineLogo>
+												</p>
 											))}
 										</div>
 									))}

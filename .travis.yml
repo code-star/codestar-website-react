@@ -2,13 +2,26 @@ language: node_js
 node_js:
 - 9.11.1
 # https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#github-pages
-script: npm run build
+script:
+  - npm run build:dev && mv build/ build_dev/
+  - npm run build
 deploy:
   # TEST
   - provider: pages
     skip_cleanup: true
     github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
     target_branch: master
-    local_dir: build/
+    local_dir: build_dev/
+    fqdn: test.codestar.nl
     on:
       branch: develop
+  # PROD
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+    repo: code-star/code-star.github.io
+    target_branch: master
+    local_dir: build/
+    fqdn: www.codestar.nl
+    on:
+      branch: production

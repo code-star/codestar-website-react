@@ -26,6 +26,7 @@
     "prettier": "^1.10.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
+    "react-ga": "^2.5.3",
     "react-i18next": "^7.7.0",
     "react-router-dom": "^4.2.2",
     "react-scroll": "^1.7.10",
@@ -45,6 +46,7 @@
   "scripts": {
     "start": "REACT_APP_STAGE=dev react-scripts start",
     "build": "react-scripts test --env=jsdom --coverage --bail --ci && react-scripts build",
+		"build:dev": "REACT_APP_STAGE=dev npm run build",
     "test": "react-scripts test --env=jsdom --coverage",
     "test:watch": "react-scripts test --env=jsdom --watch",
     "eject": "react-scripts eject",
@@ -63,7 +65,7 @@
       "not ie < 11"
     ]
   },
-  "homepage": "http://www.codestar.nl/codestar-website-react",
+  "homepage": ".",
   "devDependencies": {
     "jest-fetch-mock": "^1.6.5"
   }

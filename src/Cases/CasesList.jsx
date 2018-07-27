@@ -3,7 +3,7 @@ const casesList = [
 	{
 		client: 'Rabobank',
 		path: 'rabobank',
-		image: `/images/cases/stock-photo-utrecht-netherlands-april-rabobank-headquarters-building-rabobank-is-a-dutch-211390258.jpg`,
+		image: `/images/cases/shutterstock_788066290_cropped.png`,
 		logo: `/images/clients/rabobank-2.svg`,
 		color: '#001090',
 	},
@@ -86,7 +86,7 @@ const casesList = [
 		credits:
 			'Photo: Andrew Schutzman (https://creativecommons.org/licenses/by-sa/2.0/)',
 		logo: `/images/clients/gracenote_dark.svg`,
-		color: '#e31b23',
+		color: '#47ade9',
 	},
 ];
 

@@ -12,6 +12,7 @@ import LandscapeBackground from '../Animations/LandscapeBackground';
 import DelayedFade from '../Animations/DelayedFade';
 import { Link } from 'react-router-dom';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
+import InlineLogo from '../InlineLogo/InlineLogo';
 
 const styles = theme => ({
 	section: {
@@ -21,14 +22,16 @@ const styles = theme => ({
 	fullVideo: {
 		position: 'absolute',
 		width: '100vw',
-		height: '100vh',
+		height: '100%',
+		minWidth: '650px',
 		top: '0',
-		left: '0',
+		left: '50%',
+		transform: 'translateX(-50%)',
 		zIndex: -1,
 	},
 	whiteText: {
 		color: 'white',
-		textAlign: 'left',
+		textAlign: 'center',
 		fontFamily: 'Conduit',
 		fontSize: '120%',
 	},
@@ -37,41 +40,59 @@ const styles = theme => ({
 		paddingTop: theme.spacing.unit * 2,
 		paddingBottom: theme.spacing.unit * 2,
 	},
+	line: {
+		display: 'inline-block',
+	},
 });
 
 @translate(['intro'], { wait: true })
 class Intro extends Component {
 	render() {
 		const { t, ...props } = this.props;
+		const intersperse = (arr, sep) =>
+			arr.reduce((a, v) => [...a, v, sep], []).slice(0, -1);
+
+		function makeLines(text, firstClass = '') {
+			return text
+				.split('.')
+				.map(line => line.trim())
+				.filter(n => n)
+				.map((line, i) => (
+					<Typography
+						key={`intro-${i}`}
+						variant="subheading"
+						className={`${props.classes.whiteText} ${
+							firstClass && i === 0 ? firstClass : ''
+						}`}
+					>
+						{intersperse(
+							line.split('~').map((subLine, i) => (
+								<span key={i} className={props.classes.line}>
+									<InlineLogo dark small>
+										{subLine}
+									</InlineLogo>
+								</span>
+							)),
+							' '
+						)}
+					</Typography>
+				));
+		}
+
 		return (
 			<div>
 				<section id="intro" className={props.classes.section}>
-					<LandscapeBackground className={props.classes.fullVideo} />
-					<Container fullHeight center>
+					<Container fullHeightMinusNavBar center marginTopNavBar>
+						<LandscapeBackground className={props.classes.fullVideo} />
 						<div className="row justify-content-center">
-							<div className="col-12 col-md-8">
-								<div className="row justify-content-center">
-									<div className="col-12 col-md-10 mb-5">
-										<AnimatedLogo lineDuration={200} fadeDuration={3000} />
-									</div>
-									<div className="col-12 col-md-10">
-										<DelayedFade>
-											{(t('INTRO_TEXT') + t('INTRO_TEXT_SUBLINE'))
-												.split('.')
-												.map(line => line.trim())
-												.filter(n => n)
-												.map((line, index) => (
-													<Typography
-														key={`intro-${index}`}
-														variant="subheading"
-														className={props.classes.whiteText}
-													>
-														{line}
-													</Typography>
-												))}
-										</DelayedFade>
-									</div>
-								</div>
+							<div className="col-12 col-md-8 col-lg-6 mb-3">
+								<AnimatedLogo lineDuration={200} fadeDuration={3000} />
+							</div>
+							<div className="col-12">
+								<DelayedFade>
+									{makeLines(t('INTRO_TEXT'))}
+									{makeLines(t('INTRO_TEXT_SUBLINE'), 'mt-3')}
+								</DelayedFade>
 							</div>
 						</div>
 					</Container>
@@ -80,19 +101,19 @@ class Intro extends Component {
 					<Container center>
 						<div className="row">
 							<div className="col-12 col-md-6">
-								{/*<Paper className={props.classes.paper} elevation={1}>*/}
-								<Typography variant="headline" component="h1" gutterBottom>
-									{t('NEXT_STEP_TITLE')}
-								</Typography>
+								<InlineLogo>
+									<Typography variant="display1" gutterBottom>
+										{t('NEXT_STEP_TITLE')}
+									</Typography>
 
-								<Typography variant="subheading" gutterBottom>
-									{t('NEXT_STEP_CONTENT_1')}
-								</Typography>
+									<Typography variant="subheading" gutterBottom>
+										{t('NEXT_STEP_CONTENT_1')}
+									</Typography>
 
-								<Typography variant="subheading" gutterBottom>
-									{t('NEXT_STEP_CONTENT_2')}
-								</Typography>
-								{/*</Paper>*/}
+									<Typography variant="subheading" gutterBottom>
+										{t('NEXT_STEP_CONTENT_2')}
+									</Typography>
+								</InlineLogo>
 							</div>
 							<div className="col-12 col-md-6">
 								<ResponsiveImage
