@@ -96,6 +96,7 @@ class NavBar extends Component {
 							/>
 						</Link>
 						<Hidden smDown>{languageButton}</Hidden>
+						<div style={{ display: 'inline-block' }}>Dev</div>
 					</Typography>
 					<Hidden mdUp>{languageButton}</Hidden>
 					<Hidden smDown>
