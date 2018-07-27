@@ -22,7 +22,7 @@ const styles = theme => ({
 	fullVideo: {
 		position: 'absolute',
 		width: '100vw',
-		height: '100vh',
+		height: '100%',
 		minWidth: '650px',
 		top: '0',
 		left: '50%',
@@ -82,8 +82,8 @@ class Intro extends Component {
 		return (
 			<div>
 				<section id="intro" className={props.classes.section}>
-					<LandscapeBackground className={props.classes.fullVideo} />
-					<Container fullHeight center>
+					<Container fullHeightMinusNavBar center marginTopNavBar>
+						<LandscapeBackground className={props.classes.fullVideo} />
 						<div className="row justify-content-center">
 							<div className="col-12 col-md-8 col-lg-6 mb-3">
 								<AnimatedLogo lineDuration={200} fadeDuration={3000} />

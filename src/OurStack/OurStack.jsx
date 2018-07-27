@@ -37,6 +37,7 @@ class OurStack extends Component {
 							<Grow in>
 								<Avatar
 									className={classes.icon}
+									alt={item.name}
 									src={getResponsiveImageUrl(item.logo, 80)}
 								/>
 							</Grow>
