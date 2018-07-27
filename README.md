@@ -9,7 +9,16 @@ use HOC for [react-i18next](https://react.i18next.com/overview/getting-started) 
 1. [Deploying](#deploying)
 1. [Hosting config](#hosting-config)
 1. [Serverless](#serverless)
+	- [Configuration](#configuration)
+	- [Calling the function](#calling-the-function)
 1. [Hosting pictures](#hosting-pictures)
+	- [Notes](#notes)
+
+Other docs:
+
+- [Implementation of the 	animations](docs/animations.md)
+- [Details on some components](docs/components.md)
+- [Easter eggs](docs/easter_eggs.md)
 
 ## Developing
 
