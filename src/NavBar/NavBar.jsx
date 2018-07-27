@@ -51,6 +51,11 @@ const styles = theme => ({
 			background: 'rgba(200, 200, 255, 0.2)',
 		},
 	},
+	developmentTag: {
+		display: 'inline-block',
+		fontFamily: 'monospace',
+		marginLeft: '1em',
+	},
 });
 
 @translate(['nav'], { wait: true })
@@ -96,7 +101,9 @@ class NavBar extends Component {
 							/>
 						</Link>
 						<Hidden smDown>{languageButton}</Hidden>
-						<div style={{ display: 'inline-block' }}>Dev</div>
+						{process.env.REACT_APP_STAGE === 'dev' ? (
+							<div className={props.classes.developmentTag}>Development</div>
+						) : null}
 					</Typography>
 					<Hidden mdUp>{languageButton}</Hidden>
 					<Hidden smDown>
