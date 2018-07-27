@@ -13,7 +13,8 @@
 		"tagline": "“I love to learn new stuff”",
 		"bio":
 			"I’ve loved puzzles my whole life, from crosswords to chess challenges. When I first encountered programming, it was love at first sight. I love working in a team where everyone can get the best out of themselves, and I’m always willing to help someone.",
-		"image": "pim.jpg"
+		"image": "pim.jpg",
+		"gone": true
 	},
 	{
 		"name": "Jan",
@@ -62,7 +63,8 @@
 		"tagline": "“We’ll get it done”",
 		"bio":
 			"To me, nothing is more wonderful than software that’s well put together and users are fully satisfied with. At Codestar, I can make sure every piece of software achieves this goal.",
-		"image": "david.jpg"
+		"image": "david.jpg",
+		"gone": true
 	},
 	{
 		"name": "Donovan",
@@ -146,7 +148,8 @@
 		"job": "Front-end Developer",
 		"tagline": "“If it doesn't challenge you it won't change you”",
 		"bio": "",
-		"image": "mozart.jpg"
+		"image": "mozart.jpg",
+		"gone": true
 	},
 	{
 		"name": "Nick",
