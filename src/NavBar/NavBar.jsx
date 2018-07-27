@@ -116,6 +116,7 @@ class NavBar extends Component {
 						>
 							Home
 						</Button>
+						<EventsButton label="Events" />
 						<Button
 							component={Link}
 							to="/cases"
