@@ -13,7 +13,8 @@
 		"tagline": "“I love to learn new stuff”",
 		"bio":
 			"I’ve loved puzzles my whole life, from crosswords to chess challenges. When I first encountered programming, it was love at first sight. I love working in a team where everyone can get the best out of themselves, and I’m always willing to help someone.",
-		"image": "pim.jpg"
+		"image": "pim.jpg",
+		"gone": true
 	},
 	{
 		"name": "Jan",
