@@ -73,7 +73,6 @@ export class EventsButton extends Component {
 			) : null;
 		return (
 			<Tooltip title={this.state.nextEvent} placement="bottom">
-				{/* TODO how to do this for mobile? */}
 				<Button
 					component={Link}
 					to="/events"
