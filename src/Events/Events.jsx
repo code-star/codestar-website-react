@@ -10,12 +10,12 @@ import {
 	CardActions,
 	Button,
 	withStyles,
+	Hidden,
 } from '@material-ui/core';
 import Container from '../Container/Container';
 import _ from 'lodash';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 import { translate } from 'react-i18next';
-import Hidden from '@material-ui/core/es/Hidden/Hidden';
 
 // Meetup API test console: https://secure.meetup.com/meetup_api/console/?path=/:urlname/events
 // page=3 = number of results to return in a page, only need the first 3 results
