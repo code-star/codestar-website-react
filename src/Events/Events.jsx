@@ -15,6 +15,8 @@ import Container from '../Container/Container';
 import _ from 'lodash';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 import { Link, Element } from 'react-scroll';
+import { translate } from 'react-i18next';
+import Hidden from '@material-ui/core/es/Hidden/Hidden';
 
 /*
  TODO design ideas https://www.pixel-stitch.net/
@@ -59,6 +61,10 @@ const styles = {
 		position: 'relative',
 		overflow: 'hidden',
 	},
+	nextEventTitle: {
+		color: 'white',
+		fontWeight: 'bold',
+	},
 };
 
 function convertEventResponseToModel(withDescription = false) {
@@ -81,6 +87,7 @@ function convertEventResponseToModel(withDescription = false) {
 	};
 }
 
+@translate(['events'], { wait: true })
 export class Events extends Component {
 	constructor(props) {
 		super(props);
@@ -165,7 +172,7 @@ export class Events extends Component {
 
 	renderHeader(mEvent) {
 		// TODO observe changes to i18n.language
-		const { classes } = this.props;
+		const { t, classes } = this.props;
 		const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
 		const formattedDate = new Date(mEvent.time).toLocaleDateString(locale, {
 			year: 'numeric',
@@ -185,13 +192,11 @@ export class Events extends Component {
 		return (
 			<div key={mEvent.name}>
 				<section className={classes.section}>
-					{/*path="https://res.cloudinary.com/codestar/image/upload/w_400,e_art:fes/v1532541215/codestar.nl/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg"*/}
-					{/*TODO alt attribute*/}
 					<ResponsiveImage
 						path="/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg"
 						asBackgroundImage
 						effect="e_art:fes"
-						alt="TODO"
+						alt="Andre Staltz presenting to a crowd at the Codestar Night meetup of September of 2018"
 					/>
 					<Container fullHeight center>
 						<div className="row">
@@ -202,18 +207,29 @@ export class Events extends Component {
 										variant="display1"
 										style={{ color: 'white' }}
 									>
-										Our next event:
+										{t('OUR_NEXT_EVENT')}
 									</Typography>
-									<Typography
-										align="center"
-										variant="display4"
-										style={{ color: 'white', fontWeight: 'bold' }}
-									>
-										{mEvent.name}
-										{/*TODO: image should use filter, title, sign up button, buttons for the rest of the page, re-use style-color-white */}
-										{/*TODO image not 100% height*/}
-										{/*TODO event notification size must be bigger*/}
-									</Typography>
+									<Hidden mdUp>
+										<Typography
+											align="center"
+											variant="display2"
+											className={classes.nextEventTitle}
+										>
+											{mEvent.name}
+										</Typography>
+									</Hidden>
+									<Hidden smDown>
+										<Typography
+											align="center"
+											variant="display4"
+											className={classes.nextEventTitle}
+										>
+											{mEvent.name}
+											{/*TODO: image should use filter, title, sign up button, buttons for the rest of the page, re-use style-color-white */}
+											{/*TODO image not 100% height*/}
+											{/*TODO event notification size must be bigger*/}
+										</Typography>
+									</Hidden>
 									<Typography
 										gutterBottom
 										align="center"
@@ -230,10 +246,10 @@ export class Events extends Component {
 											href={mEvent.link}
 											className="mr-1"
 										>
-											@@Sign_Up!
+											{t('SIGN_UP')}
 										</Button>
 										<Button variant="contained" href={mEvent.link}>
-											@@More_info
+											{t('MORE_INFO')}
 										</Button>
 										{/*TODO stick buttons to offset from bottom*/}
 										{/*TODO instead of buttons links, use blocks like the grid on Cases*/}
