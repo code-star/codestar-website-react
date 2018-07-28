@@ -55,6 +55,10 @@ const styles = {
 	content: {
 		flex: '1 0 auto',
 	},
+	section: {
+		position: 'relative',
+		overflow: 'hidden',
+	},
 };
 
 function convertEventResponseToModel(withDescription = false) {
@@ -85,6 +89,7 @@ export class Events extends Component {
 			pastEvents: [],
 		};
 		this.renderEventModel = this.renderEventModel.bind(this);
+		this.renderHeader = this.renderHeader.bind(this);
 		this.fetchEvents = this.fetchEvents.bind(this);
 		// TODO is this called every time when navigating to this page or only once per session (should be the latter)?
 		this.fetchEvents();
@@ -160,6 +165,7 @@ export class Events extends Component {
 
 	renderHeader(mEvent) {
 		// TODO observe changes to i18n.language
+		const { classes } = this.props;
 		const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
 		const formattedDate = new Date(mEvent.time).toLocaleDateString(locale, {
 			year: 'numeric',
@@ -177,8 +183,8 @@ export class Events extends Component {
 			);
 		}
 		return (
-			<div>
-				<section key={mEvent.name}>
+			<div key={mEvent.name}>
+				<section className={classes.section}>
 					{/*path="https://res.cloudinary.com/codestar/image/upload/w_400,e_art:fes/v1532541215/codestar.nl/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg"*/}
 					{/*TODO alt attribute*/}
 					<ResponsiveImage
@@ -221,13 +227,17 @@ export class Events extends Component {
 										<Button
 											color="primary"
 											variant="raised"
-											href="#contained-buttons"
+											href={mEvent.link}
+											className="mr-1"
 										>
-											Sign Up!
+											@@Sign_Up!
+										</Button>
+										<Button variant="contained" href={mEvent.link}>
+											@@More_info
 										</Button>
 										{/*TODO stick buttons to offset from bottom*/}
 										{/*TODO instead of buttons links, use blocks like the grid on Cases*/}
-										<div className="mt-5">
+										{/*<div className="mt-5">
 											<Link to="event-details" hashSpy smooth>
 												<Button variant="contained" className="mr-1">
 													More about this event
@@ -261,7 +271,7 @@ export class Events extends Component {
 											>
 												Videos
 											</Button>
-										</div>
+										</div>*/}
 									</div>
 								</div>
 								{/*<div className="my-3">
@@ -296,21 +306,39 @@ export class Events extends Component {
 						</div>
 					</Container>
 				</section>
-				<Element name="event-details" className="mt-5" marginTopNavBar>
+				{/*<Element name="event-details" className="mt-5" marginTopNavBar>
 					<Container>
-						{/* TODO fix top margin, show background, show image, show title, show sign up button */}
+						 TODO fix top margin, show background, show image, show title, show sign up button
 						{descriptionElem}
 					</Container>
-				</Element>
+				</Element>*/}
 			</div>
 		);
 	}
 
 	render() {
+		const noEvents =
+			this.state.nextEvents.length === 0 ? (
+				<section className="py-5 bg-white">
+					<Container center marginTopNavBar>
+						<div className="row">
+							<div className="col-12">
+								<p>
+									There are no upcoming events at this time. For more info, see{' '}
+									<a href="https://www.meetup.com/Code-Star-Night">
+										our Meetup.com page.
+									</a>
+								</p>
+							</div>
+						</div>
+					</Container>
+				</section>
+			) : null;
 		return (
 			<div>
 				{/*TODO replace div by Fragment*/}
 				{this.state.nextEvents.map(this.renderHeader)}
+				{noEvents}
 				<section>
 					{/*<Container marginTopNavBar>
 						,h_53,c_scale
@@ -318,14 +346,14 @@ export class Events extends Component {
 						<h2 style={{ color: 'white' }}>Our Next Event</h2>
 						{this.state.nextEvents.map(this.renderEventModel)}
 					</Container>*/}
-					<Container className="mt-3">
+					{/*<Container className="mt-3">
 						<h2 style={{ color: 'white' }}>Our Previous Events</h2>
 						<div className="row">
 							<div className="d-flex justify-content-center flex-wrap">
 								{this.state.pastEvents.map(this.renderEventModel)}
 							</div>
 						</div>
-					</Container>
+					</Container>*/}
 				</section>
 			</div>
 		);
