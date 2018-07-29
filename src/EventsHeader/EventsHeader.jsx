@@ -23,15 +23,7 @@ const styles = {
 export class EventsHeader extends Component {
 	constructor(props) {
 		super(props);
-		// this.state = {
-		// 	nextEvents: [],
-		// 	pastEvents: [],
-		// };
-		// this.renderEventModel = this.renderEventModel.bind(this);
 		this.renderDetailsSection = this.renderDetailsSection.bind(this);
-		// this.fetchEvents = this.fetchEvents.bind(this);
-		// // TODO is this called every time when navigating to this page or only once per session (should be the latter)?
-		// this.fetchEvents();
 	}
 
 	renderDetailsSection(mEvent, formattedDate, descriptionElem) {
@@ -126,7 +118,7 @@ export class EventsHeader extends Component {
 											className={classes.nextEventTitle}
 										>
 											{mEvent.name}
-											{/*TODO: image should use filter, title, sign up button, buttons for the rest of the page, re-use style-color-white */}
+											{/*TODO: buttons for the rest of the page, re-use style-color-white */}
 											{/*TODO image not 100% height*/}
 											{/*TODO event notification size must be bigger*/}
 										</Typography>
