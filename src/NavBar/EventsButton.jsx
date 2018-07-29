@@ -17,6 +17,9 @@ const styles = theme => ({
 	newEventIconHover: {
 		color: 'inherit',
 	},
+	bigTooltip: {
+		fontSize: 20,
+	},
 });
 
 // Meetup API test console: https://secure.meetup.com/meetup_api/console/?path=/:urlname/events
@@ -64,15 +67,22 @@ export class EventsButton extends Component {
 	}
 
 	render() {
-		const iconClasses = `${this.props.classes.newEventIcon} ${
-			this.state.isHovering ? this.props.classes.newEventIconHover : null
+		const { classes, label } = this.props;
+		const iconClasses = `${classes.newEventIcon} ${
+			this.state.isHovering ? classes.newEventIconHover : null
 		}`;
 		const icon =
 			this.state.nextEvent !== '' ? (
 				<NotificationImportantIcon className={iconClasses} />
 			) : null;
 		return (
-			<Tooltip title={this.state.nextEvent} placement="bottom">
+			<Tooltip
+				title={this.state.nextEvent}
+				placement="bottom"
+				classes={{
+					tooltip: classes.bigTooltip,
+				}}
+			>
 				{/* TODO how to do this for mobile? */}
 				<Button
 					component={Link}
@@ -82,7 +92,7 @@ export class EventsButton extends Component {
 					onMouseOut={this.handleMouseOut}
 				>
 					{icon}
-					{this.props.label}
+					{label}
 				</Button>
 			</Tooltip>
 		);

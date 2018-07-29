@@ -120,7 +120,6 @@ export class EventsHeader extends Component {
 											{mEvent.name}
 											{/*TODO: buttons for the rest of the page, re-use style-color-white */}
 											{/*TODO image not 100% height*/}
-											{/*TODO event notification size must be bigger*/}
 										</Typography>
 									</Hidden>
 									<Typography
