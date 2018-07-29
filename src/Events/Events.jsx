@@ -10,13 +10,13 @@ import {
 	CardActions,
 	Button,
 	withStyles,
+	Hidden,
 } from '@material-ui/core';
 import Container from '../Container/Container';
 import _ from 'lodash';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 import { Link, Element } from 'react-scroll';
 import { translate } from 'react-i18next';
-import Hidden from '@material-ui/core/es/Hidden/Hidden';
 
 /*
  TODO design ideas https://www.pixel-stitch.net/
@@ -248,17 +248,12 @@ export class Events extends Component {
 										>
 											{t('SIGN_UP')}
 										</Button>
-										<Button variant="contained" href={mEvent.link}>
-											{t('MORE_INFO')}
-										</Button>
+										<Link to="event-details" hashSpy smooth>
+											<Button variant="contained">{t('MORE_INFO')}</Button>
+										</Link>
 										{/*TODO stick buttons to offset from bottom*/}
 										{/*TODO instead of buttons links, use blocks like the grid on Cases*/}
 										{/*<div className="mt-5">
-											<Link to="event-details" hashSpy smooth>
-												<Button variant="contained" className="mr-1">
-													More about this event
-												</Button>
-											</Link>
 											<Button
 												variant="contained"
 												className="mr-1"
@@ -290,44 +285,44 @@ export class Events extends Component {
 										</div>*/}
 									</div>
 								</div>
-								{/*<div className="my-3">
-								<Typography
-									variant="headline"
-									className={`d-inline text-white p-2 ${css.projectCaseTitle}`}
-								>
-									{props.title}
-								</Typography>
-							</div>
-
-							{props.readMore && (
-								<div className="my-2">
-									<Button
-										variant="raised"
-										onClick={props.callback}
-										className={classes.button}
-									>
-										{t('CASES_READ_MORE_BUTTON')}
-									</Button>
-								</div>
-							)}
-						</div>
-						<div className="col-12 col-md-6">
-							<div className="bg-dark p-3">
-								<Typography variant="body1" className="d-inline text-white">
-									{props.intro}
-								</Typography>
-							</div>
-						</div>*/}
 							</div>
 						</div>
 					</Container>
 				</section>
-				{/*<Element name="event-details" className="mt-5" marginTopNavBar>
-					<Container>
-						 TODO fix top margin, show background, show image, show title, show sign up button
-						{descriptionElem}
-					</Container>
-				</Element>*/}
+				<Element name="event-details">
+					<section className="py-5 bg-white">
+						<Container center marginTopNavBar>
+							<div className="row">
+								<div className="col-12">
+									<Typography align="center" variant="title">
+										{mEvent.name}
+									</Typography>
+									<Typography gutterBottom align="center" variant="subheading">
+										{formattedDate}
+									</Typography>
+								</div>
+							</div>
+							<div className="row">
+								<div className="col-12 col-md-8">{descriptionElem}</div>
+								<div className="col-12 col-md-4">
+									<img
+										src={mEvent.coverUrl}
+										alt={`Artistic background with text "${mEvent.name}"`}
+										style={{ width: '100%' }}
+									/>
+									<Button
+										color="primary"
+										variant="raised"
+										href={mEvent.link}
+										className="mt-1"
+									>
+										{t('SIGN_UP')}
+									</Button>
+								</div>
+							</div>
+						</Container>
+					</section>
+				</Element>
 			</div>
 		);
 	}
