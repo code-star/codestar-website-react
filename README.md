@@ -127,3 +127,8 @@ We should use Cloudinary as much as possible for hosting images. The [`Responsiv
   ```
   REACT_APP_CLOUDINARY_ID=v1532588516
   ```
+
+## Local API
+
+* Static Site Mailer: see above
+* Get Upcoming Events from Meetup.com: `npx sls invoke local --function getUpcomingEvents`

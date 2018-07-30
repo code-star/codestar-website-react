@@ -15,6 +15,7 @@ import {
 	People as PeopleIcon,
 	Code as CodeIcon,
 	Email as EmailIcon,
+	Event as EventIcon,
 } from '@material-ui/icons';
 
 const list = [
@@ -22,6 +23,11 @@ const list = [
 		text: 'Home',
 		icon: <DashboardIcon />,
 		link: '/',
+	},
+	{
+		text: 'Events',
+		icon: <EventIcon />,
+		link: '/events',
 	},
 	{
 		text: 'Cases',
