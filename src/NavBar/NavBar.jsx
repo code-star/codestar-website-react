@@ -15,6 +15,7 @@ import {
 
 import { Menu as MenuIcon, Language as LanguageIcon } from '@material-ui/icons';
 import { withStyles } from '@material-ui/core/styles';
+import EventsButton from './EventsButton';
 
 import i18n from '../i18n';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
@@ -115,6 +116,7 @@ class NavBar extends Component {
 						>
 							Home
 						</Button>
+						<EventsButton label="Events" />
 						<Button
 							component={Link}
 							to="/cases"
