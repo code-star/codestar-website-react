@@ -37,6 +37,7 @@ This url gets the event details, but is signed for one specific instance: https:
 Can use RxJS with JSONP? To combine streams?
  */
 
+// TODO MvD: We can also put this in a .css file to keep the component tidy?
 const styles = {
 	card: {
 		maxWidth: 300, // 345,
@@ -91,6 +92,7 @@ export class Events extends Component {
 		this.fetchEvents();
 	}
 
+	// TODO MvD: Ideally we should fetch things in container components. What do you think?
 	fetchEvents() {
 		/* Meetup API only allows JSONP for client-side, non authenticated, api key signed GET requests.
 		   must use JSONP conform https://github.com/meetup/api/issues/211
