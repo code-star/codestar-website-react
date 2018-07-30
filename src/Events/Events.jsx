@@ -186,12 +186,7 @@ export class Events extends Component {
 				{nextEvent}
 				{noEvents}
 				<section>
-					{/*<Container marginTopNavBar>
-						,h_53,c_scale
-						<img src="https://res.cloudinary.com/codestar/image/upload/w_400,e_art:fes/v1532541215/codestar.nl/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg" alt=""/>
-						<h2 style={{ color: 'white' }}>Our Next Event</h2>
-						{this.state.nextEvents.map(this.renderEventModel)}
-					</Container>*/}
+					{/*TODO extract EventCard to component*/}
 					{/*<Container className="mt-3">
 						<h2 style={{ color: 'white' }}>Our Previous Events</h2>
 						<div className="row">
