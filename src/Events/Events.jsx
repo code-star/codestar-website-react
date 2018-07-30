@@ -55,7 +55,6 @@ export default class Events extends Component {
 			nextEvents: [],
 			pastEvents: [],
 		};
-		this.fetchEvents = this.fetchEvents.bind(this);
 		// TODO is this called every time when navigating to this page or only once per session (should be the latter)?
 		this.fetchEvents();
 	}
@@ -79,10 +78,9 @@ export default class Events extends Component {
 
 	render() {
 		const { t } = this.props;
-		const nextEvent =
-			this.state.nextEvents.length > 0 ? (
-				<EventsHeader MeetupEvent={this.state.nextEvents[0]} />
-			) : null;
+		const nextEvent = this.state.nextEvents
+			.slice(0, 1)
+			.map(mEvent => <EventsHeader key={mEvent.time} MeetupEvent={mEvent} />);
 		const pastEvents = this.state.pastEvents.map(mEvent => (
 			<EventCard key={mEvent.time} MeetupEvent={mEvent} />
 		));
