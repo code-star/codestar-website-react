@@ -52,7 +52,11 @@ export default class Events extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			nextEvents: [],
+			nextEvent: {
+				loading: true,
+				event: null,
+				noEvent: false,
+			},
 			pastEvents: [],
 		};
 		// TODO is this called every time when navigating to this page or only once per session (should be the latter)?
@@ -66,8 +70,15 @@ export default class Events extends Component {
 		   Fetch API does not support JSONP. no-cors mode creates an opaque response without data.
 		*/
 		jsonp(GET_UPCOMING_EVENTS_URL).then(response => {
-			const result = response.data.map(convertEventResponseToModel(true));
-			this.setState({ nextEvents: result });
+			const result = _.head(
+				response.data.map(convertEventResponseToModel(true))
+			);
+			const nextEvent = {
+				loading: false,
+				mEvent: result ? result : null,
+				noEvent: !result,
+			};
+			this.setState({ nextEvent });
 		});
 
 		jsonp(GET_PAST_EVENTS_URL).then(response => {
@@ -78,33 +89,12 @@ export default class Events extends Component {
 
 	render() {
 		const { t } = this.props;
-		const nextEvent = this.state.nextEvents
-			.slice(0, 1)
-			.map(mEvent => <EventsHeader key={mEvent.time} MeetupEvent={mEvent} />);
 		const pastEvents = this.state.pastEvents.map(mEvent => (
 			<EventCard key={mEvent.time} MeetupEvent={mEvent} />
 		));
-		const noEvents =
-			this.state.nextEvents.length === 0 ? (
-				<section className="py-5 bg-white">
-					<Container center marginTopNavBar>
-						<div className="row">
-							<div className="col-12">
-								<p>
-									There are no upcoming events at this time. For more info, see{' '}
-									<a href="https://www.meetup.com/Code-Star-Night">
-										our Meetup.com page.
-									</a>
-								</p>
-							</div>
-						</div>
-					</Container>
-				</section>
-			) : null;
 		return (
 			<Fragment>
-				{nextEvent}
-				{noEvents}
+				<EventsHeader data={this.state.nextEvent} />
 				<section>
 					<Container className="mt-3">
 						<h2 style={{ color: 'white' }}>{t('OUR_PREVIOUS_EVENTS')}</h2>

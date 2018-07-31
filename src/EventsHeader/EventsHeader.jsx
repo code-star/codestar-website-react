@@ -26,6 +26,133 @@ export class EventsHeader extends Component {
 		this.renderDetailsSection = this.renderDetailsSection.bind(this);
 	}
 
+	renderHeaderContent(mEvent, formattedDate) {
+		const { t, classes } = this.props;
+		return (
+			<Container fullHeight center>
+				<div className="row">
+					<div className="col-12">
+						<div className="mt-4">
+							<Typography
+								align="center"
+								variant="display1"
+								style={{ color: 'white' }}
+							>
+								{t('OUR_NEXT_EVENT')}
+							</Typography>
+							<Hidden mdUp>
+								<Typography
+									align="center"
+									variant="display2"
+									className={classes.nextEventTitle}
+								>
+									{mEvent.name}
+								</Typography>
+							</Hidden>
+							<Hidden smDown>
+								<Typography
+									align="center"
+									variant="display4"
+									className={classes.nextEventTitle}
+								>
+									{mEvent.name}
+									{/*TODO: buttons for the rest of the page, re-use style-color-white */}
+									{/*TODO image not 100% height*/}
+								</Typography>
+							</Hidden>
+							<Typography
+								gutterBottom
+								align="center"
+								variant="display2"
+								style={{ color: 'white' }}
+							>
+								{formattedDate}
+							</Typography>
+							<div style={{ textAlign: 'center' }}>
+								{/*TODO conform button color to CaseHeader button color (purple)*/}
+								<Button
+									color="primary"
+									variant="raised"
+									href={mEvent.link}
+									className="mr-1"
+								>
+									{t('SIGN_UP')}
+								</Button>
+								<Link to="event-details" hashSpy smooth>
+									<Button variant="contained">{t('MORE_INFO')}</Button>
+								</Link>
+								{/*TODO stick buttons to offset from bottom*/}
+								{/*TODO instead of buttons links, use blocks like the grid on Cases*/}
+								{/*<div className="mt-5">
+											<Button
+												variant="contained"
+												className="mr-1"
+												href="#contained-buttons"
+											>
+												Previous Events
+											</Button>
+											<Button
+												variant="contained"
+												className="mr-1"
+												href="#contained-buttons"
+											>
+												Blog
+											</Button>
+											<Button
+												variant="contained"
+												className="mr-1"
+												href="#contained-buttons"
+											>
+												Photos
+											</Button>
+											<Button
+												variant="contained"
+												className="mr-1"
+												href="#contained-buttons"
+											>
+												Videos
+											</Button>
+										</div>*/}
+							</div>
+						</div>
+					</div>
+				</div>
+			</Container>
+		);
+	}
+
+	renderNoEvents() {
+		const { t } = this.props;
+		return (
+			<Container center className="mt-5 mb-3">
+				<div className="row">
+					<div className="col-12">
+						<div className="mt-4">
+							<Typography
+								gutterBottom
+								align="center"
+								variant="display2"
+								style={{ color: 'white' }}
+							>
+								{t('INFO_NO_NEXT_EVENTS')}
+							</Typography>
+							<div style={{ textAlign: 'center' }}>
+								<Button
+									color="primary"
+									variant="raised"
+									href="https://www.meetup.com/Code-Star-Night"
+									className="mr-1"
+								>
+									{t('CODESTAR_ON_MEETUP_COM')}
+								</Button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</Container>
+		);
+	}
+
 	renderDetailsSection(mEvent, formattedDate, descriptionElem) {
 		const { t } = this.props;
 		return (
@@ -67,21 +194,36 @@ export class EventsHeader extends Component {
 	}
 
 	render() {
-		const { MeetupEvent: mEvent, t, classes } = this.props;
+		const {
+			data: { mEvent, noEvent },
+			classes,
+		} = this.props;
+		let headerContent = null;
+		let detailsSection = null;
 		// TODO observe changes to i18n.language
-		const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
-		const formattedDate = new Date(mEvent.time).toLocaleDateString(locale, {
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric',
-		});
-		const cleanDescription = sanitizeHtml(mEvent.description);
-		const descriptionElem = (
-			<Typography
-				component="p"
-				dangerouslySetInnerHTML={{ __html: cleanDescription }}
-			/>
-		);
+		if (mEvent) {
+			const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
+			const formattedDate = new Date(mEvent.time).toLocaleDateString(locale, {
+				year: 'numeric',
+				month: 'long',
+				day: 'numeric',
+			});
+			const cleanDescription = sanitizeHtml(mEvent.description);
+			const descriptionElem = (
+				<Typography
+					component="p"
+					dangerouslySetInnerHTML={{ __html: cleanDescription }}
+				/>
+			);
+			headerContent = this.renderHeaderContent(mEvent, formattedDate);
+			detailsSection = this.renderDetailsSection(
+				mEvent,
+				formattedDate,
+				descriptionElem
+			);
+		} else if (noEvent) {
+			headerContent = this.renderNoEvents();
+		}
 		return (
 			<Fragment>
 				<section className={classes.section}>
@@ -91,104 +233,16 @@ export class EventsHeader extends Component {
 						effect="e_art:fes"
 						alt="Andre Staltz presenting to a crowd at the Codestar Night meetup of September of 2018"
 					/>
-					<Container fullHeight center>
-						<div className="row">
-							<div className="col-12">
-								<div className="mt-4">
-									<Typography
-										align="center"
-										variant="display1"
-										style={{ color: 'white' }}
-									>
-										{t('OUR_NEXT_EVENT')}
-									</Typography>
-									<Hidden mdUp>
-										<Typography
-											align="center"
-											variant="display2"
-											className={classes.nextEventTitle}
-										>
-											{mEvent.name}
-										</Typography>
-									</Hidden>
-									<Hidden smDown>
-										<Typography
-											align="center"
-											variant="display4"
-											className={classes.nextEventTitle}
-										>
-											{mEvent.name}
-											{/*TODO: buttons for the rest of the page, re-use style-color-white */}
-											{/*TODO image not 100% height*/}
-										</Typography>
-									</Hidden>
-									<Typography
-										gutterBottom
-										align="center"
-										variant="display2"
-										style={{ color: 'white' }}
-									>
-										{formattedDate}
-									</Typography>
-									<div style={{ textAlign: 'center' }}>
-										{/*TODO conform button color to CaseHeader button color (purple)*/}
-										<Button
-											color="primary"
-											variant="raised"
-											href={mEvent.link}
-											className="mr-1"
-										>
-											{t('SIGN_UP')}
-										</Button>
-										<Link to="event-details" hashSpy smooth>
-											<Button variant="contained">{t('MORE_INFO')}</Button>
-										</Link>
-										{/*TODO stick buttons to offset from bottom*/}
-										{/*TODO instead of buttons links, use blocks like the grid on Cases*/}
-										{/*<div className="mt-5">
-											<Button
-												variant="contained"
-												className="mr-1"
-												href="#contained-buttons"
-											>
-												Previous Events
-											</Button>
-											<Button
-												variant="contained"
-												className="mr-1"
-												href="#contained-buttons"
-											>
-												Blog
-											</Button>
-											<Button
-												variant="contained"
-												className="mr-1"
-												href="#contained-buttons"
-											>
-												Photos
-											</Button>
-											<Button
-												variant="contained"
-												className="mr-1"
-												href="#contained-buttons"
-											>
-												Videos
-											</Button>
-										</div>*/}
-									</div>
-								</div>
-							</div>
-						</div>
-					</Container>
+					{headerContent}
 				</section>
-				{this.renderDetailsSection(mEvent, formattedDate, descriptionElem)}
+				{detailsSection}
 			</Fragment>
 		);
 	}
 }
 
 EventsHeader.propTypes = {
-	MeetupEvent: PropTypes.object.isRequired,
+	data: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(EventsHeader);
