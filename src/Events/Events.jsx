@@ -5,6 +5,7 @@ import _ from 'lodash';
 import { translate } from 'react-i18next';
 import EventsHeader from '../EventsHeader/EventsHeader';
 import EventCard from '../EventCard/EventCard';
+import { Element } from 'react-scroll';
 
 /*
  TODO design concepts https://www.pixel-stitch.net/
@@ -95,16 +96,18 @@ export default class Events extends Component {
 		return (
 			<Fragment>
 				<EventsHeader data={this.state.nextEvent} />
-				<section>
-					<Container className="mt-3">
-						<h2 style={{ color: 'white' }}>{t('OUR_PREVIOUS_EVENTS')}</h2>
-						<div className="row">
-							<div className="d-flex justify-content-center flex-wrap">
-								{pastEvents}
+				<Element name="previous-events">
+					<section>
+						<Container marginTopNavBar>
+							<h2 style={{ color: 'white' }}>{t('OUR_PREVIOUS_EVENTS')}</h2>
+							<div className="row">
+								<div className="d-flex justify-content-center flex-wrap">
+									{pastEvents}
+								</div>
 							</div>
-						</div>
-					</Container>
-				</section>
+						</Container>
+					</section>
+				</Element>
 			</Fragment>
 		);
 	}

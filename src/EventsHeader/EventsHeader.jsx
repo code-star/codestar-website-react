@@ -7,6 +7,10 @@ import Container from '../Container/Container';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 import { Link, Element } from 'react-scroll';
 import { translate } from 'react-i18next';
+import EventsHeaderButton from './EventsHeaderButton';
+
+// https://material.io/tools/icons/?style=baseline
+import { Edit as EditIcon, Event as EventIcon } from '@material-ui/icons';
 
 const styles = {
 	section: {
@@ -19,11 +23,34 @@ const styles = {
 	},
 };
 
+const navButtons = [
+	{
+		icon: <EventIcon />,
+		label: 'PREVIOUS_EVENTS',
+	},
+	{
+		icon: <EditIcon />,
+		label: 'BLOG',
+	},
+];
+
 @translate(['events'], { wait: true })
 export class EventsHeader extends Component {
 	constructor(props) {
 		super(props);
 		this.renderDetailsSection = this.renderDetailsSection.bind(this);
+	}
+
+	renderNavButtons() {
+		return navButtons.map(config => {
+			return (
+				<EventsHeaderButton
+					key={config.label}
+					label={config.label}
+					icon={config.icon}
+				/>
+			);
+		});
 	}
 
 	renderHeaderContent(mEvent, formattedDate) {
@@ -57,7 +84,6 @@ export class EventsHeader extends Component {
 								>
 									{mEvent.name}
 									{/*TODO: buttons for the rest of the page, re-use style-color-white */}
-									{/*TODO image not 100% height*/}
 								</Typography>
 							</Hidden>
 							<Typography
@@ -83,36 +109,39 @@ export class EventsHeader extends Component {
 								</Link>
 								{/*TODO stick buttons to offset from bottom*/}
 								{/*TODO instead of buttons links, use blocks like the grid on Cases*/}
-								{/*<div className="mt-5">
-											<Button
-												variant="contained"
-												className="mr-1"
-												href="#contained-buttons"
+								<div className="mt-5">
+									{this.renderNavButtons()}
+									{/*<Link to="previous-events" hashSpy smooth>
+										events button
+									</Link>
+									<a href="https://medium.com/codestar-blog">
+										<Button
+											className={classes.linkCursor}
+											style={{
+												display: 'inline-block',
+												padding: '8px',
+												margin: '5px',
+												backgroundColor: 'white',
+												width: '100px',
+												height: '100px',
+											}}
+										>
+											<div
+												className="row align-items-center mx-0"
+												style={{ width: '100%', height: '100%' }}
 											>
+												<div className="col-12 p-0">
+													Blog
+												</div>
+											</div>
+										</Button>
+									</a>*/}
+									{/*
 												Previous Events
-											</Button>
-											<Button
-												variant="contained"
-												className="mr-1"
-												href="#contained-buttons"
-											>
 												Blog
-											</Button>
-											<Button
-												variant="contained"
-												className="mr-1"
-												href="#contained-buttons"
-											>
 												Photos
-											</Button>
-											<Button
-												variant="contained"
-												className="mr-1"
-												href="#contained-buttons"
-											>
-												Videos
-											</Button>
-										</div>*/}
+												Videos*/}
+								</div>
 							</div>
 						</div>
 					</div>
