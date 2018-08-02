@@ -8,29 +8,48 @@ import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 import { Link, Element } from 'react-scroll';
 import { translate } from 'react-i18next';
 import EventsHeaderButton from './EventsHeaderButton';
+import css from './EventsHeader.module.css';
 
 // https://material.io/tools/icons/?style=baseline
-import { Edit as EditIcon, Event as EventIcon } from '@material-ui/icons';
+import {
+	Edit as EditIcon,
+	Event as EventIcon,
+	Movie as MovieIcon,
+	Portrait as PortraitIcon,
+} from '@material-ui/icons';
+import { purple } from '@material-ui/core/colors';
 
-const styles = {
-	section: {
-		position: 'relative',
-		overflow: 'hidden',
+const styles = theme => ({
+	button: {
+		color: theme.palette.getContrastText(purple[500]),
+		backgroundColor: purple[500],
+		'&:hover': {
+			color: 'white',
+			backgroundColor: purple[700],
+		},
 	},
-	nextEventTitle: {
-		color: 'white',
-		fontWeight: 'bold',
-	},
-};
+});
 
 const navButtons = [
 	{
 		icon: <EventIcon />,
-		label: 'PREVIOUS_EVENTS',
+		label: 'events',
+		to: 'previous-events',
 	},
 	{
 		icon: <EditIcon />,
-		label: 'BLOG',
+		label: 'blog',
+		href: 'https://medium.com/codestar-blog',
+	},
+	{
+		icon: <PortraitIcon />,
+		label: 'pics',
+		to: 'previous-events',
+	},
+	{
+		icon: <MovieIcon />,
+		label: 'video',
+		href: 'https://www.youtube.com/channel/UCqwHhJNEUe7D-HGsX4zvKzQ',
 	},
 ];
 
@@ -48,6 +67,8 @@ export class EventsHeader extends Component {
 					key={config.label}
 					label={config.label}
 					icon={config.icon}
+					to={config.to}
+					href={config.href}
 				/>
 			);
 		});
@@ -71,7 +92,7 @@ export class EventsHeader extends Component {
 								<Typography
 									align="center"
 									variant="display2"
-									className={classes.nextEventTitle}
+									className={css.nextEventTitle}
 								>
 									{mEvent.name}
 								</Typography>
@@ -80,7 +101,7 @@ export class EventsHeader extends Component {
 								<Typography
 									align="center"
 									variant="display4"
-									className={classes.nextEventTitle}
+									className={css.nextEventTitle}
 								>
 									{mEvent.name}
 									{/*TODO: buttons for the rest of the page, re-use style-color-white */}
@@ -95,53 +116,18 @@ export class EventsHeader extends Component {
 								{formattedDate}
 							</Typography>
 							<div style={{ textAlign: 'center' }}>
-								{/*TODO conform button color to CaseHeader button color (purple)*/}
 								<Button
 									color="primary"
 									variant="raised"
 									href={mEvent.link}
-									className="mr-1"
+									className={`mr-1 ${classes.button}`}
 								>
 									{t('SIGN_UP')}
 								</Button>
 								<Link to="event-details" hashSpy smooth>
 									<Button variant="contained">{t('MORE_INFO')}</Button>
 								</Link>
-								{/*TODO stick buttons to offset from bottom*/}
-								{/*TODO instead of buttons links, use blocks like the grid on Cases*/}
-								<div className="mt-5">
-									{this.renderNavButtons()}
-									{/*<Link to="previous-events" hashSpy smooth>
-										events button
-									</Link>
-									<a href="https://medium.com/codestar-blog">
-										<Button
-											className={classes.linkCursor}
-											style={{
-												display: 'inline-block',
-												padding: '8px',
-												margin: '5px',
-												backgroundColor: 'white',
-												width: '100px',
-												height: '100px',
-											}}
-										>
-											<div
-												className="row align-items-center mx-0"
-												style={{ width: '100%', height: '100%' }}
-											>
-												<div className="col-12 p-0">
-													Blog
-												</div>
-											</div>
-										</Button>
-									</a>*/}
-									{/*
-												Previous Events
-												Blog
-												Photos
-												Videos*/}
-								</div>
+								<div className="mt-5">{this.renderNavButtons()}</div>
 							</div>
 						</div>
 					</div>
@@ -225,7 +211,6 @@ export class EventsHeader extends Component {
 	render() {
 		const {
 			data: { mEvent, noEvent },
-			classes,
 		} = this.props;
 		let headerContent = null;
 		let detailsSection = null;
@@ -255,7 +240,7 @@ export class EventsHeader extends Component {
 		}
 		return (
 			<Fragment>
-				<section className={classes.section}>
+				<section className={css.section}>
 					<ResponsiveImage
 						path="/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg"
 						asBackgroundImage
