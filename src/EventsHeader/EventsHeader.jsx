@@ -77,58 +77,55 @@ export class EventsHeader extends Component {
 	renderHeaderContent(mEvent, formattedDate) {
 		const { t, classes } = this.props;
 		return (
-			<Container fullHeight center>
+			<Container fullHeight center className="mt-2 mt-md-0">
 				<div className="row">
 					<div className="col-12">
-						<div className="mt-4">
+						<Typography
+							align="center"
+							variant="display1"
+							className={css.nextEventText}
+						>
+							{t('OUR_NEXT_EVENT')}
+						</Typography>
+						<Hidden mdUp>
 							<Typography
-								align="center"
-								variant="display1"
-								style={{ color: 'white' }}
-							>
-								{t('OUR_NEXT_EVENT')}
-							</Typography>
-							<Hidden mdUp>
-								<Typography
-									align="center"
-									variant="display2"
-									className={css.nextEventTitle}
-								>
-									{mEvent.name}
-								</Typography>
-							</Hidden>
-							<Hidden smDown>
-								<Typography
-									align="center"
-									variant="display4"
-									className={css.nextEventTitle}
-								>
-									{mEvent.name}
-									{/*TODO: buttons for the rest of the page, re-use style-color-white */}
-								</Typography>
-							</Hidden>
-							<Typography
-								gutterBottom
 								align="center"
 								variant="display2"
-								style={{ color: 'white' }}
+								className={css.nextEventTitle}
 							>
-								{formattedDate}
+								{mEvent.name}
 							</Typography>
-							<div style={{ textAlign: 'center' }}>
-								<Button
-									color="primary"
-									variant="raised"
-									href={mEvent.link}
-									className={`mr-1 ${classes.button}`}
-								>
-									{t('SIGN_UP')}
-								</Button>
-								<Link to="event-details" hashSpy smooth>
-									<Button variant="contained">{t('MORE_INFO')}</Button>
-								</Link>
-								<div className="mt-5">{this.renderNavButtons()}</div>
-							</div>
+						</Hidden>
+						<Hidden smDown>
+							<Typography
+								align="center"
+								variant="display4"
+								className={css.nextEventTitle}
+							>
+								{mEvent.name}
+							</Typography>
+						</Hidden>
+						<Typography
+							gutterBottom
+							align="center"
+							variant="display2"
+							className={css.nextEventText}
+						>
+							{formattedDate}
+						</Typography>
+						<div style={{ textAlign: 'center' }}>
+							<Button
+								color="primary"
+								variant="raised"
+								href={mEvent.link}
+								className={`mr-1 ${classes.button}`}
+							>
+								{t('SIGN_UP')}
+							</Button>
+							<Link to="event-details" hashSpy smooth>
+								<Button variant="contained">{t('MORE_INFO')}</Button>
+							</Link>
+							<div className="mt-5">{this.renderNavButtons()}</div>
 						</div>
 					</div>
 				</div>
@@ -147,7 +144,7 @@ export class EventsHeader extends Component {
 								gutterBottom
 								align="center"
 								variant="display2"
-								style={{ color: 'white' }}
+								className={css.nextEventText}
 							>
 								{t('INFO_NO_NEXT_EVENTS')}
 							</Typography>
@@ -160,6 +157,7 @@ export class EventsHeader extends Component {
 								>
 									{t('CODESTAR_ON_MEETUP_COM')}
 								</Button>
+								<div className="mt-5">{this.renderNavButtons()}</div>
 							</div>
 						</div>
 					</div>
@@ -214,7 +212,6 @@ export class EventsHeader extends Component {
 		} = this.props;
 		let headerContent = null;
 		let detailsSection = null;
-		// TODO observe changes to i18n.language
 		if (mEvent) {
 			const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
 			const formattedDate = new Date(mEvent.time).toLocaleDateString(locale, {
