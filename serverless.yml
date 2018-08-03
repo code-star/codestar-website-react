@@ -78,6 +78,14 @@ functions:
           method: get
           path: get-upcoming-events
           cors: true
+  getPastEvents:
+    handler: serverless/meetup.getPastEvents
+    description: Get past events on Meetup.com
+    events:
+      - http:
+          method: get
+          path: get-past-events
+          cors: true
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
