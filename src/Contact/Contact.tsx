@@ -142,13 +142,13 @@ export class Contact extends React.Component<ContactProps, ContactState> {
 		) : null;
 		return (
 			<section>
-				<Container fluid={true} noPadding={true} marginTopNavBar={true}>
+				<Container fluid noPadding marginTopNavBar>
 					<Collapse in={this.state.showMap}>
-						<Map halfHeightMinusHalfNavBar={true} />
+						<Map halfHeightMinusHalfNavBar />
 					</Collapse>
 				</Container>
 				<Container className="mt-3">
-					<Fade in={true} timeout={2000}>
+					<Fade in timeout={2000}>
 						<form
 							action="https://formspree.io/codestar@ordina.nl"
 							method="POST"
@@ -159,7 +159,7 @@ export class Contact extends React.Component<ContactProps, ContactState> {
 									<p>{t("INTRO_TEXT")}</p>
 									<div className="row">
 										<div className="col-12 col-md-5">
-											<FormControl fullWidth={true}>
+											<FormControl fullWidth>
 												<InputLabel htmlFor="name">{t("NAME")}</InputLabel>
 												<Input
 													id="name"
@@ -168,7 +168,7 @@ export class Contact extends React.Component<ContactProps, ContactState> {
 												/>
 											</FormControl>
 
-											<FormControl fullWidth={true}>
+											<FormControl fullWidth>
 												<InputLabel htmlFor="phone">{t("PHONE")}</InputLabel>
 												<Input
 													id="phone"
@@ -177,7 +177,7 @@ export class Contact extends React.Component<ContactProps, ContactState> {
 												/>
 											</FormControl>
 
-											<FormControl fullWidth={true} required={true}>
+											<FormControl fullWidth required>
 												<InputLabel htmlFor="email">{t("EMAIL")}</InputLabel>
 												<Input
 													id="email"
@@ -188,14 +188,14 @@ export class Contact extends React.Component<ContactProps, ContactState> {
 											</FormControl>
 										</div>
 										<div className="col-12 col-md-7">
-											<FormControl fullWidth={true} required={true}>
+											<FormControl fullWidth required>
 												<TextField
 													error={this.state.messageRequiredError}
 													label={t("MESSAGE")}
 													id="message"
 													name="message"
 													onChange={this.handleChange}
-													multiline={true}
+													multiline
 													rows={6}
 												/>
 												{err}

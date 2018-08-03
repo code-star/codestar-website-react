@@ -57,7 +57,7 @@ class JobCard extends React.Component<JobCardProps> {
 						title={title}
 					/>
 					<CardContent>
-						<Typography gutterBottom={true} variant="headline" component="h2">
+						<Typography gutterBottom variant="headline" component="h2">
 							{title}
 						</Typography>
 						<Typography component="p">{short_description}</Typography>
@@ -75,9 +75,9 @@ class JobCard extends React.Component<JobCardProps> {
 						</CustomButton>
 					</div>
 					<ShareButtons
-						twitter={true}
-						linkedin={true}
-						facebook={true}
+						twitter
+						linkedin
+						facebook
 						size="small"
 						color="primary"
 						title={title}

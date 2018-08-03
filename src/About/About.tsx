@@ -43,7 +43,7 @@ class About extends React.Component<AboutProps> {
 		return (
 			<div>
 				<section className="py-5">
-					<Container marginTopNavBar={true}>
+					<Container marginTopNavBar>
 						<div className="row justify-content-center">
 							<div className="col-12 col-md-8">
 								<h3 className={css.whiteText}>{t("ABOUT_ATTRACT_TITLE")}</h3>
@@ -101,8 +101,8 @@ class About extends React.Component<AboutProps> {
 		return (
 			<Carousel
 				slideWidth={`${cardWidth}px`}
-				wrapAround={true}
-				autoplay={true}
+				wrapAround
+				autoplay
 				autoplayInterval={7000}
 				cellAlign="center"
 				slidesToScroll="auto"
@@ -145,7 +145,7 @@ class About extends React.Component<AboutProps> {
 
 	public renderCenterLeftControls = ({ previousSlide }: any) => {
 		return (
-			<Button mini={true} variant="fab" onClick={previousSlide}>
+			<Button mini variant="fab" onClick={previousSlide}>
 				<NavigateBeforeIcon />
 			</Button>
 		);
@@ -153,7 +153,7 @@ class About extends React.Component<AboutProps> {
 
 	public renderCenterRightControls = ({ nextSlide }: any) => {
 		return (
-			<Button mini={true} variant="fab" onClick={nextSlide}>
+			<Button mini variant="fab" onClick={nextSlide}>
 				<NavigateNextIcon />
 			</Button>
 		);

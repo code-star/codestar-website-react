@@ -69,7 +69,7 @@ class Intro extends React.Component<IntroProps> {
 						{intersperse(
 							line.split("~").map((subLine: string, si: number) => (
 								<span key={si} className={props.classes.line}>
-									<InlineLogo dark={true} small={true}>
+									<InlineLogo dark small>
 										{subLine}
 									</InlineLogo>
 								</span>
@@ -83,11 +83,7 @@ class Intro extends React.Component<IntroProps> {
 		return (
 			<div>
 				<section id="intro" className={props.classes.section}>
-					<Container
-						fullHeightMinusNavBar={true}
-						center={true}
-						marginTopNavBar={true}
-					>
+					<Container fullHeightMinusNavBar center marginTopNavBar>
 						<LandscapeBackground className={props.classes.fullVideo} />
 						<div className="row justify-content-center">
 							<div className="col-12 col-md-8 col-lg-6 mb-3">
@@ -103,19 +99,19 @@ class Intro extends React.Component<IntroProps> {
 					</Container>
 				</section>
 				<section id="next-step" className="py-5 bg-white">
-					<Container center={true}>
+					<Container center>
 						<div className="row">
 							<div className="col-12 col-md-6">
 								<InlineLogo>
-									<Typography variant="display1" gutterBottom={true}>
+									<Typography variant="display1" gutterBottom>
 										{t("NEXT_STEP_TITLE")}
 									</Typography>
 
-									<Typography variant="subheading" gutterBottom={true}>
+									<Typography variant="subheading" gutterBottom>
 										{t("NEXT_STEP_CONTENT_1")}
 									</Typography>
 
-									<Typography variant="subheading" gutterBottom={true}>
+									<Typography variant="subheading" gutterBottom>
 										{t("NEXT_STEP_CONTENT_2")}
 									</Typography>
 								</InlineLogo>
@@ -135,7 +131,7 @@ class Intro extends React.Component<IntroProps> {
 					className="py-5"
 					style={{ backgroundColor: "#eeeeee" }}
 				>
-					<Container center={true}>
+					<Container center>
 						<Link to="/cases">
 							<Clients />
 						</Link>

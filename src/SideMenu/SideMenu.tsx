@@ -85,7 +85,7 @@ class SideMenu extends React.Component<SideMenuProps, SideMenuState> {
 								key={t(item.text)}
 								style={{ textDecoration: "none" }}
 							>
-								<ListItem button={true}>
+								<ListItem button>
 									<ListItemIcon>{item.icon}</ListItemIcon>
 									<ListItemText
 										primary={t(item.text)}

@@ -41,10 +41,10 @@ class CaseHeader extends React.Component<CaseHeaderProps> {
 			<section className={classes.section}>
 				<ResponsiveImage
 					path={props.image}
-					asBackgroundImage={true}
+					asBackgroundImage
 					alt={props.credits ? props.credits : ""}
 				/>
-				<Container fullHeight={true} center={true}>
+				<Container fullHeight center>
 					<div className="row">
 						<div className="col-12 col-lg-6">
 							<div className="mt-4">
@@ -81,7 +81,7 @@ class CaseHeader extends React.Component<CaseHeaderProps> {
 						<div className="col-12 col-md-6">
 							<div className="bg-dark p-3">
 								<Typography variant="body1" className="d-inline text-white">
-									<InlineLogo dark={true}>{props.intro}</InlineLogo>
+									<InlineLogo dark>{props.intro}</InlineLogo>
 								</Typography>
 							</div>
 						</div>

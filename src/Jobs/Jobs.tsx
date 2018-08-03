@@ -35,12 +35,12 @@ class Jobs extends React.Component<JobsProps> {
 		return (
 			<>
 				<section className="py-3">
-					<Container marginTopNavBar={true}>
+					<Container marginTopNavBar>
 						<div className="row">
 							<div className="col-12 col-lg-8 mt-2 mt-4">
 								<h3 className={classes.whiteText}>{t("JOBS_VACANCIES")}</h3>
 								<p className={`${classes.whiteText} ${classes.conduit}`}>
-									<InlineLogo dark={true} small={true}>
+									<InlineLogo dark small>
 										{t("JOBS_VACANCIES_TEXT")}
 									</InlineLogo>
 								</p>

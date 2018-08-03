@@ -35,7 +35,7 @@ class OurStack extends React.Component<OurStackProps> {
 							key={item.logo}
 							title={item.name} // TODO: Description why we chose a tech
 						>
-							<Grow in={true}>
+							<Grow in>
 								<Avatar
 									className={classes.icon}
 									alt={item.name}

@@ -32,13 +32,13 @@ class JobDescription extends React.Component<JobDescriptionProps> {
 		return (
 			<div>
 				<section className="py-3" style={{ backgroundColor: "#eeeeee" }}>
-					<Container marginTopNavBar={true}>
+					<Container marginTopNavBar>
 						<div className="row justify-content-center">
 							<div className="col-12 col-lg-8">
-								<Typography variant="display3" gutterBottom={true}>
+								<Typography variant="display3" gutterBottom>
 									{title}
 								</Typography>
-								<Typography variant="headline" gutterBottom={true}>
+								<Typography variant="headline" gutterBottom>
 									{tagline}
 								</Typography>
 								<p>

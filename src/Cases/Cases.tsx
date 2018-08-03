@@ -67,9 +67,9 @@ class Cases extends React.Component<CasesProps, CasesState> {
 		const { t, classes } = this.props;
 		return (
 			<section>
-				<Container marginTopNavBar={true} fullHeight={true} center={true}>
+				<Container marginTopNavBar fullHeight center>
 					<div className="row justify-content-around mt-3">
-						<Fade in={true} timeout={2000}>
+						<Fade in timeout={2000}>
 							<div className="col-10 col-lg-6 mx-auto">
 								<div className="col-8 p-0">
 									<ResponsiveImage
@@ -100,15 +100,15 @@ class Cases extends React.Component<CasesProps, CasesState> {
 	public renderBoxes() {
 		const { classes } = this.props;
 		return (
-			<Slide in={true} timeout={1000} direction="left">
+			<Slide in timeout={1000} direction="left">
 				<div
 					className={`col-12 col-md-10 col-lg-6 my-3 text-center text-sm-left ${
 						classes.noLineHeight
 					}`}
 				>
 					{this.orderedCases.map((clientCase, i) => (
-						<Link key={i} to={clientCase.path} hashSpy={true} smooth={true}>
-							<Fade in={true} timeout={1000}>
+						<Link key={i} to={clientCase.path} hashSpy smooth>
+							<Fade in timeout={1000}>
 								<Paper
 									className={classes.linkCursor}
 									style={{

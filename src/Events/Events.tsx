@@ -134,7 +134,7 @@ export class Events extends React.Component<EventsProps, EventsState> {
 					title={`${formattedDate} - ${mEvent.name}`}
 				/>
 				<CardContent className={classes.content}>
-					<Typography gutterBottom={true} variant="headline" component="h2">
+					<Typography gutterBottom variant="headline" component="h2">
 						{formattedDate} - {mEvent.name}
 					</Typography>
 					{descriptionElem}
@@ -161,11 +161,11 @@ export class Events extends React.Component<EventsProps, EventsState> {
 				<section className={classes.section}>
 					<ResponsiveImage
 						path="/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg"
-						asBackgroundImage={true}
+						asBackgroundImage
 						effect="e_art:fes"
 						alt="Andre Staltz presenting to a crowd at the Codestar Night meetup of September of 2018"
 					/>
-					<Container fullHeight={true} center={true}>
+					<Container fullHeight center>
 						<div className="row">
 							<div className="col-12">
 								<div className="mt-4">
@@ -176,7 +176,7 @@ export class Events extends React.Component<EventsProps, EventsState> {
 									>
 										{t("OUR_NEXT_EVENT")}
 									</Typography>
-									<Hidden mdUp={true}>
+									<Hidden mdUp>
 										<Typography
 											align="center"
 											variant="display2"
@@ -185,7 +185,7 @@ export class Events extends React.Component<EventsProps, EventsState> {
 											{mEvent.name}
 										</Typography>
 									</Hidden>
-									<Hidden smDown={true}>
+									<Hidden smDown>
 										<Typography
 											align="center"
 											variant="display4"
@@ -195,7 +195,7 @@ export class Events extends React.Component<EventsProps, EventsState> {
 										</Typography>
 									</Hidden>
 									<Typography
-										gutterBottom={true}
+										gutterBottom
 										align="center"
 										variant="display2"
 										style={{ color: "white" }}
@@ -228,7 +228,7 @@ export class Events extends React.Component<EventsProps, EventsState> {
 		const noEvents =
 			this.state.nextEvents.length === 0 ? (
 				<section className="py-5 bg-white">
-					<Container center={true} marginTopNavBar={true}>
+					<Container center marginTopNavBar>
 						<div className="row">
 							<div className="col-12">
 								<p>

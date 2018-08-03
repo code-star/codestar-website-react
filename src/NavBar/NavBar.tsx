@@ -87,7 +87,7 @@ class NavBar extends React.Component<NavBarProps> {
 		return (
 			<AppBar position="fixed" className={props.classes.appBar}>
 				<Toolbar>
-					<Hidden mdUp={true}>
+					<Hidden mdUp>
 						<IconButton
 							onClick={props.toggle}
 							className={`${props.classes.menuButton} ${props.classes.button}`}
@@ -109,13 +109,13 @@ class NavBar extends React.Component<NavBarProps> {
 								className={props.classes.logo}
 							/>
 						</Link>
-						<Hidden smDown={true}>{languageButton}</Hidden>
+						<Hidden smDown>{languageButton}</Hidden>
 						{process.env.REACT_APP_STAGE === "dev" ? (
 							<div className={props.classes.developmentTag}>Development</div>
 						) : null}
 					</Typography>
-					<Hidden mdUp={true}>{languageButton}</Hidden>
-					<Hidden smDown={true}>
+					<Hidden mdUp>{languageButton}</Hidden>
+					<Hidden smDown>
 						<CustomButton
 							component={Link}
 							to="/"
