@@ -1,17 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
+import Events from '../components/Events';
 import { jsonp } from '../util';
-import Container from '../Container/Container';
 import _ from 'lodash';
-import { translate } from 'react-i18next';
-import EventsHeader from '../EventsHeader/EventsHeader';
-import EventCard from '../EventCard/EventCard';
-import { Element } from 'react-scroll';
-
-/*
- TODO design concepts https://www.pixel-stitch.net/
- https://hencework.com/theme/mateve/music_concert/#
- https://colorlib.com/wp/free-event-website-templates/
-*/
 
 // Meetup API test console: https://secure.meetup.com/meetup_api/console/?path=/:urlname/events
 // page=3 = number of results to return in a page, only need the first 3 results
@@ -20,8 +10,6 @@ const GET_UPCOMING_EVENTS_URL =
 
 const GET_PAST_EVENTS_URL =
 	'https://api.meetup.com/Code-Star-Night/events?desc=true&photo-host=public&sig_id=226887185&status=past&fields=featured_photo&sig=a60e663f0904424f80fda3b00bf31f315889231c';
-
-// TODO unit test
 
 /* TODO Convert JSONP to Fetch+Serverless
 This url gets the event details, but is signed for one specific instance: https://api.meetup.com/Code-Star-Night/events/248958146?photo-host=public&sig_id=226887185&fields=featured_photo&sig=c634269c86bda35c0762874a490d219faba6365e
@@ -48,8 +36,7 @@ function convertEventResponseToModel(withDescription = false) {
 	};
 }
 
-@translate(['events'], { wait: true })
-export default class Events extends Component {
+export default class EventsContainer extends Component {
 	state = {
 		nextEvent: {
 			loading: true,
@@ -63,13 +50,13 @@ export default class Events extends Component {
 		this.fetchEvents();
 	}
 
-	// TODO MvD: Ideally we should fetch things in container components. What do you think?
-	fetchEvents() {
+	async fetchEvents() {
 		/* Meetup API only allows JSONP for client-side, non authenticated, api key signed GET requests.
 		   must use JSONP conform https://github.com/meetup/api/issues/211
 		   Fetch API does not support JSONP. no-cors mode creates an opaque response without data.
 		*/
-		jsonp(GET_UPCOMING_EVENTS_URL).then(response => {
+		try {
+			const response = await jsonp(GET_UPCOMING_EVENTS_URL);
 			const result = _.head(
 				response.data.map(convertEventResponseToModel(true))
 			);
@@ -79,35 +66,29 @@ export default class Events extends Component {
 				noEvent: !result,
 			};
 			this.setState({ nextEvent });
-		});
+		} catch (err) {
+			this.setState({
+				loading: false,
+				event: null,
+				noEvent: true,
+			});
+		}
 
-		jsonp(GET_PAST_EVENTS_URL).then(response => {
+		try {
+			const response = await jsonp(GET_PAST_EVENTS_URL);
 			const result = response.data.map(convertEventResponseToModel());
 			this.setState({ pastEvents: result });
-		});
+		} catch (err) {
+			this.setState({ pastEvents: [] });
+		}
 	}
 
 	render() {
-		const { t } = this.props;
-		const pastEvents = this.state.pastEvents.map(mEvent => (
-			<EventCard key={mEvent.time} MeetupEvent={mEvent} />
-		));
 		return (
-			<Fragment>
-				<EventsHeader data={this.state.nextEvent} />
-				<Element name="previous-events">
-					<section>
-						<Container marginTopNavBar>
-							<h2 style={{ color: 'white' }}>{t('OUR_PREVIOUS_EVENTS')}</h2>
-							<div className="row">
-								<div className="d-flex justify-content-center flex-wrap">
-									{pastEvents}
-								</div>
-							</div>
-						</Container>
-					</section>
-				</Element>
-			</Fragment>
+			<Events
+				nextEvent={this.state.nextEvent}
+				pastEvents={this.state.pastEvents}
+			/>
 		);
 	}
 }

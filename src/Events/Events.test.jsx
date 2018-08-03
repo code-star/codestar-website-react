@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Events } from './Events';
+import { Events } from '../components/Events';
 
 jest.mock('react-i18next', () => ({
 	translate: () => Component => {
