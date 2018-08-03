@@ -68,9 +68,11 @@ export default class EventsContainer extends Component {
 			this.setState({ nextEvent });
 		} catch (err) {
 			this.setState({
-				loading: false,
-				event: null,
-				noEvent: true,
+				nextEvent: {
+					loading: false,
+					event: null,
+					noEvent: true,
+				},
 			});
 		}
 

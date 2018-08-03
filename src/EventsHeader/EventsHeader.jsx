@@ -8,16 +8,10 @@ import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 import { Link, Element } from 'react-scroll';
 import { translate } from 'react-i18next';
 import EventsHeaderButton from './EventsHeaderButton';
-import css from './EventsHeader.module.css';
-
-// https://material.io/tools/icons/?style=baseline
-import {
-	Edit as EditIcon,
-	Event as EventIcon,
-	Movie as MovieIcon,
-	Portrait as PortraitIcon,
-} from '@material-ui/icons';
+import { navButtons } from './constants.jsx';
 import { purple } from '@material-ui/core/colors';
+import css from './EventsHeader.module.css';
+import EventsHeaderMessage from './EventsHeaderMessage';
 
 const styles = theme => ({
 	button: {
@@ -29,29 +23,6 @@ const styles = theme => ({
 		},
 	},
 });
-
-const navButtons = [
-	{
-		icon: <EventIcon />,
-		label: 'events',
-		to: 'previous-events',
-	},
-	{
-		icon: <EditIcon />,
-		label: 'blog',
-		href: 'https://medium.com/codestar-blog',
-	},
-	{
-		icon: <PortraitIcon />,
-		label: 'pics',
-		to: 'previous-events',
-	},
-	{
-		icon: <MovieIcon />,
-		label: 'video',
-		href: 'https://www.youtube.com/channel/UCqwHhJNEUe7D-HGsX4zvKzQ',
-	},
-];
 
 @translate(['events'], { wait: true })
 export class EventsHeader extends Component {
@@ -133,39 +104,6 @@ export class EventsHeader extends Component {
 		);
 	}
 
-	renderNoEvents() {
-		const { t } = this.props;
-		return (
-			<Container center className="mt-5 mb-3">
-				<div className="row">
-					<div className="col-12">
-						<div className="mt-4">
-							<Typography
-								gutterBottom
-								align="center"
-								variant="display2"
-								className={css.nextEventText}
-							>
-								{t('INFO_NO_NEXT_EVENTS')}
-							</Typography>
-							<div style={{ textAlign: 'center' }}>
-								<Button
-									color="primary"
-									variant="raised"
-									href="https://www.meetup.com/Code-Star-Night"
-									className="mr-1"
-								>
-									{t('CODESTAR_ON_MEETUP_COM')}
-								</Button>
-								<div className="mt-5">{this.renderNavButtons()}</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</Container>
-		);
-	}
-
 	renderDetailsSection(mEvent, formattedDate, descriptionElem) {
 		const { t } = this.props;
 		return (
@@ -233,7 +171,9 @@ export class EventsHeader extends Component {
 				descriptionElem
 			);
 		} else if (noEvent) {
-			headerContent = this.renderNoEvents();
+			headerContent = (
+				<EventsHeaderMessage>{this.renderNavButtons()}</EventsHeaderMessage>
+			);
 		}
 		return (
 			<Fragment>
