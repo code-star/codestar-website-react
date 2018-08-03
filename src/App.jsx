@@ -12,6 +12,7 @@ import SideMenu from './SideMenu/SideMenu';
 import Footer from './Footer/Footer';
 import jobsList from './Jobs/JobsList';
 import AsyncComponent from './AsyncComponent/AsyncComponent';
+import { jsonp } from './util';
 
 function fullHeightAsyncComponent(C) {
 	return props => <AsyncComponent fullHeight component={() => C} {...props} />;
@@ -30,9 +31,15 @@ const AsyncEvents = fullHeightAsyncComponent(import('./Events/Events'));
 
 const sections = ['', 'cases', 'about', 'jobs', 'contact'];
 
+// Meetup API test console: https://secure.meetup.com/meetup_api/console/?path=/:urlname/events
+// page=3 = number of results to return in a page, only need the first 3 results
+const GET_UPCOMING_EVENTS_URL =
+	'https://api.meetup.com/Code-Star-Night/events?photo-host=secure&page=3&sig_id=226887185&status=upcoming&sig=e3efc6db037cf681181d84ae343459a36afbefd4';
+
 class App extends Component {
 	state = {
 		drawerMenu: false,
+		nextEvent: null,
 	};
 
 	constructor(props) {
@@ -44,6 +51,21 @@ class App extends Component {
 			this.updateBackgroundColor(location.pathname)
 		);
 		this.updateBackgroundColor(this.history.location.pathname);
+		this.fetchUpcomingEvent = this.fetchUpcomingEvent.bind(this);
+		this.fetchUpcomingEvent();
+	}
+
+	fetchUpcomingEvent() {
+		/* Meetup API only allows JSONP for client-side, non authenticated, api key signed GET requests.
+		   must use JSONP conform https://github.com/meetup/api/issues/211
+		   Fetch API does not support JSONP. no-cors mode creates an opaque response without data.
+		*/
+		jsonp(GET_UPCOMING_EVENTS_URL).then(data => {
+			const nextEvent = data.data[0];
+			if (nextEvent) {
+				this.setState({ nextEvent });
+			}
+		});
 	}
 
 	updateBackgroundColor(pathname) {
@@ -66,11 +88,12 @@ class App extends Component {
 			<Router history={this.history}>
 				<MuiThemeProvider theme={theme}>
 					<CssBaseline />
-					<NavBar toggle={this.toggleDrawer} />
+					<NavBar toggle={this.toggleDrawer} nextEvent={this.state.nextEvent} />
 					<SideMenu
 						open={this.state.drawerMenu}
 						toggle={this.toggleDrawer}
 						history={this.history}
+						nextEvent={this.state.nextEvent}
 					/>
 
 					<ScrollToTop>
