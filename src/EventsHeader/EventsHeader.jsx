@@ -77,7 +77,7 @@ export class EventsHeader extends Component {
 	renderHeaderContent(mEvent, formattedDate) {
 		const { t, classes } = this.props;
 		return (
-			<Container fullHeight center className="mt-2 mt-md-0">
+			<Container fullHeight center className="mt-5 mt-sm-2 mt-md-0">
 				<div className="row">
 					<div className="col-12">
 						<Typography
