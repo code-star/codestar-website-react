@@ -1,70 +1,74 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { translate } from 'react-i18next';
+import * as React from "react";
+import { Link } from "react-router-dom";
+import { translate } from "react-i18next";
 
 import {
 	List,
 	ListItem,
 	ListItemIcon,
 	ListItemText,
-	Drawer,
-} from '@material-ui/core';
+	Drawer
+} from "@material-ui/core";
 import {
 	Dashboard as DashboardIcon,
 	Business as BusinessIcon,
 	People as PeopleIcon,
 	Code as CodeIcon,
 	Email as EmailIcon,
-	Event as EventIcon,
-} from '@material-ui/icons';
+	Event as EventIcon
+} from "@material-ui/icons";
+
+type SideMenuProps = any;
+type SideMenuState = any;
 
 const list = [
 	{
-		text: 'Home',
+		text: "Home",
 		icon: <DashboardIcon />,
-		link: '/',
+		link: "/"
 	},
 	{
-		text: 'Events',
+		text: "Events",
 		icon: <EventIcon />,
-		link: '/events',
+		link: "/events"
 	},
 	{
-		text: 'Cases',
+		text: "Cases",
 		icon: <BusinessIcon />,
-		link: '/cases',
+		link: "/cases"
 	},
 	{
-		text: 'ABOUT',
+		text: "ABOUT",
 		icon: <PeopleIcon />,
-		link: '/about',
+		link: "/about"
 	},
 	{
-		text: 'Jobs',
+		text: "Jobs",
 		icon: <CodeIcon />,
-		link: '/jobs',
+		link: "/jobs"
 	},
 	{
-		text: 'Contact',
+		text: "Contact",
 		icon: <EmailIcon />,
-		link: '/contact',
-	},
+		link: "/contact"
+	}
 ];
 
-@translate(['nav'], { wait: true })
-class SideMenu extends Component {
-	state = { location: null };
+class SideMenu extends React.Component<SideMenuProps, SideMenuState> {
+	public state: SideMenuState = { location: null };
 
-	componentDidMount() {
-		this.props.history.listen(location => this.setLocation(location.pathname));
+	public componentDidMount() {
+		this.props.history.listen((location: Location) =>
+			this.setLocation(location.pathname)
+		);
 		this.setLocation(this.props.history.location.pathname);
 	}
 
-	setLocation(location) {
-		this.setState({ location: `/${location.split('/')[1]}` });
+	public setLocation(location: string) {
+		this.setState({ location: `/${location.split("/")[1]}` });
 	}
 
-	render() {
+	public render() {
 		const { t, ...props } = this.props;
 		return (
 			<Drawer open={props.open} onClose={props.toggle}>
@@ -79,16 +83,16 @@ class SideMenu extends Component {
 							<Link
 								to={item.link}
 								key={t(item.text)}
-								style={{ textDecoration: 'none' }}
+								style={{ textDecoration: "none" }}
 							>
-								<ListItem button>
+								<ListItem button={true}>
 									<ListItemIcon>{item.icon}</ListItemIcon>
 									<ListItemText
 										primary={t(item.text)}
 										primaryTypographyProps={
 											this.state.location === item.link
-												? { color: 'primary', style: { fontWeight: 500 } }
-												: null
+												? { color: "primary", style: { fontWeight: 500 } }
+												: undefined
 										}
 									/>
 								</ListItem>
@@ -101,4 +105,4 @@ class SideMenu extends Component {
 	}
 }
 
-export default SideMenu;
+export default translate(["nav"], { wait: true })(SideMenu);

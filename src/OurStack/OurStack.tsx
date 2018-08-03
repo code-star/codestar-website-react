@@ -1,40 +1,41 @@
-import React, { Component } from 'react';
-import { translate } from 'react-i18next';
+import * as React from "react";
+import { translate } from "react-i18next";
 
-import { Paper, Avatar, Tooltip, Typography, Grow } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
+import { Paper, Avatar, Tooltip, Typography, Grow } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
 
-import { getResponsiveImageUrl } from '../ResponsiveImage/ResponsiveImage';
-import techs from './techs';
+import { getResponsiveImageUrl } from "../ResponsiveImage/ResponsiveImage";
+import techs from "./techs.json";
 
-const styles = theme => ({
+type OurStackProps = any;
+
+const styles = (theme: any) => ({
 	root: {
 		...theme.mixins.gutters(),
 		marginBottom: theme.spacing.unit * 1,
 		paddingTop: theme.spacing.unit * 1.5,
-		paddingBottom: theme.spacing.unit * 1.5,
+		paddingBottom: theme.spacing.unit * 1.5
 	},
 	icon: {
 		marginLeft: 10,
 		width: 40,
-		height: 40,
-	},
+		height: 40
+	}
 });
 
-@translate(['stack'], { wait: true })
-class OurStack extends Component {
-	render() {
+class OurStack extends React.Component<OurStackProps> {
+	public render() {
 		const { t, classes } = this.props;
 
-		function techIcons(techs) {
+		function techIcons(techItems: any) {
 			return (
 				<div className="row">
-					{techs.map(item => (
+					{techItems.map((item: any) => (
 						<Tooltip
 							key={item.logo}
 							title={item.name} // TODO: Description why we chose a tech
 						>
-							<Grow in>
+							<Grow in={true}>
 								<Avatar
 									className={classes.icon}
 									alt={item.name}
@@ -49,20 +50,20 @@ class OurStack extends Component {
 
 		const parts = [
 			{
-				title: 'STACK_FRONT_END',
-				caption: 'STACK_FRONT_END_SUBTITLE',
-				icons: techs.frontEnd,
+				title: "STACK_FRONT_END",
+				caption: "STACK_FRONT_END_SUBTITLE",
+				icons: techs.frontEnd
 			},
 			{
-				title: 'STACK_BACK_END',
-				caption: 'STACK_BACK_END_SUBTITLE',
-				icons: techs.backEnd,
+				title: "STACK_BACK_END",
+				caption: "STACK_BACK_END_SUBTITLE",
+				icons: techs.backEnd
 			},
 			{
-				title: 'STACK_INFRASTRUCTURE',
-				caption: 'STACK_INFRASTRUCTURE_SUBTITLE',
-				icons: techs.infrastructure,
-			},
+				title: "STACK_INFRASTRUCTURE",
+				caption: "STACK_INFRASTRUCTURE_SUBTITLE",
+				icons: techs.infrastructure
+			}
 		];
 
 		return (
@@ -84,4 +85,6 @@ class OurStack extends Component {
 	}
 }
 
-export default withStyles(styles)(OurStack);
+export default translate(["stack"], { wait: true })(
+	withStyles(styles)(OurStack)
+);

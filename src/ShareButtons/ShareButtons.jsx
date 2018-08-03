@@ -43,9 +43,15 @@ class ShareButtons extends Component {
 			text,
 		} = this.props;
 		const toRender = [];
-		if (twitter) toRender.push(socialMedias.twitter);
-		if (linkedin) toRender.push(socialMedias.linkedin);
-		if (facebook) toRender.push(socialMedias.facebook);
+		if (twitter) {
+			toRender.push(socialMedias.twitter);
+		}
+		if (linkedin) {
+			toRender.push(socialMedias.linkedin);
+		}
+		if (facebook) {
+			toRender.push(socialMedias.facebook);
+		}
 		return toRender.map((socialMedia, i) => (
 			<Button
 				key={i}

@@ -1,49 +1,50 @@
-import React, { Component } from 'react';
-import { compose } from 'recompose';
-import { translate } from 'react-i18next';
+import * as React from "react";
+import { compose } from "recompose";
+import { translate } from "react-i18next";
 
-import { withStyles } from '@material-ui/core/styles';
-import { Button, Typography, withWidth } from '@material-ui/core';
-import { purple } from '@material-ui/core/colors';
+import { withStyles } from "@material-ui/core/styles";
+import { Button, Typography, withWidth } from "@material-ui/core";
+import { purple } from "@material-ui/core/colors";
 
-import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
-import Container from '../Container/Container';
-import css from './CaseHeader.module.css';
-import InlineLogo from '../InlineLogo/InlineLogo';
+import ResponsiveImage from "../ResponsiveImage/ResponsiveImage";
+import Container from "../Container/Container";
+import css from "./CaseHeader.module.css";
+import InlineLogo from "../InlineLogo/InlineLogo";
 
-const styles = theme => ({
+type CaseHeaderProps = any;
+
+const styles: any = (theme: any) => ({
 	link: {
-		color: 'white',
-		'&:hover': {
-			color: 'white',
-		},
+		color: "white",
+		"&:hover": {
+			color: "white"
+		}
 	},
 	section: {
-		position: 'relative',
-		overflow: 'hidden',
+		position: "relative",
+		overflow: "hidden"
 	},
 	button: {
 		color: theme.palette.getContrastText(purple[500]),
 		backgroundColor: purple[500],
-		'&:hover': {
-			backgroundColor: purple[700],
-		},
-	},
+		"&:hover": {
+			backgroundColor: purple[700]
+		}
+	}
 });
 
-@translate(['cases'], { wait: true })
-class CaseHeader extends Component {
-	render() {
+class CaseHeader extends React.Component<CaseHeaderProps> {
+	public render() {
 		const props = this.props;
 		const { t, classes } = props;
 		return (
 			<section className={classes.section}>
 				<ResponsiveImage
 					path={props.image}
-					asBackgroundImage
-					alt={props.credits ? props.credits : ''}
+					asBackgroundImage={true}
+					alt={props.credits ? props.credits : ""}
 				/>
-				<Container fullHeight center>
+				<Container fullHeight={true} center={true}>
 					<div className="row">
 						<div className="col-12 col-lg-6">
 							<div className="mt-4">
@@ -72,7 +73,7 @@ class CaseHeader extends Component {
 										onClick={props.callback}
 										className={classes.button}
 									>
-										{t('CASES_READ_MORE_BUTTON')}
+										{t("CASES_READ_MORE_BUTTON")}
 									</Button>
 								</div>
 							)}
@@ -80,7 +81,7 @@ class CaseHeader extends Component {
 						<div className="col-12 col-md-6">
 							<div className="bg-dark p-3">
 								<Typography variant="body1" className="d-inline text-white">
-									<InlineLogo dark>{props.intro}</InlineLogo>
+									<InlineLogo dark={true}>{props.intro}</InlineLogo>
 								</Typography>
 							</div>
 						</div>
@@ -94,4 +95,4 @@ class CaseHeader extends Component {
 export default compose(
 	withStyles(styles),
 	withWidth()
-)(CaseHeader);
+)(translate(["cases"], { wait: true })(CaseHeader));

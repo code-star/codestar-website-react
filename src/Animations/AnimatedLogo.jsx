@@ -18,11 +18,13 @@ const styles = {
 
 class AnimatedLogo extends Component {
 	componentDidMount() {
-		new Vivus(
+		const animation = new Vivus(
 			'logo',
 			{ duration: this.props.lineDuration, type: 'sync', file: '' },
 			() => {
-				if (!document.getElementById('logo')) return;
+				if (!document.getElementById('logo')) {
+					return;
+				}
 				var logo = Snap(document.getElementById('logo'));
 				logo.animate(
 					{ 'fill-opacity': 1, 'stroke-opacity': 0 },

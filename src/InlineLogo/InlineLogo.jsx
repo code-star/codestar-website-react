@@ -43,7 +43,9 @@ class InlineLogo extends Component {
 				return React.cloneElement(child, {
 					children: this.injectLogo(child.props.children),
 				});
-			} else return React.cloneElement(child);
+			} else {
+				return React.cloneElement(child);
+			}
 		});
 	}
 

@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Link, Element } from 'react-scroll';
-import compose from 'recompose/compose';
-import { translate } from 'react-i18next';
+import * as React from "react";
+import { Link, Element } from "react-scroll";
+import compose from "recompose/compose";
+import { translate } from "react-i18next";
 
 import {
 	Typography,
@@ -12,38 +12,40 @@ import {
 	DialogActions,
 	Button,
 	withMobileDialog,
-	Slide,
-} from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
+	Slide
+} from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
 
-import Container from '../Container/Container';
-import CaseHeader from '../CaseHeader/CaseHeader';
-import casesList from './CasesList';
+import Container from "../Container/Container";
+import CaseHeader from "../CaseHeader/CaseHeader";
+import casesList from "./CasesList";
 import ResponsiveImage, {
-	getResponsiveImageUrl,
-} from '../ResponsiveImage/ResponsiveImage';
-import InlineLogo from '../InlineLogo/InlineLogo';
+	getResponsiveImageUrl
+} from "../ResponsiveImage/ResponsiveImage";
+import InlineLogo from "../InlineLogo/InlineLogo";
 
-const styles = {
+type CasesProps = any;
+type CasesState = any;
+
+const styles: any = {
 	whiteText: {
-		color: 'white',
-		textAlign: 'left',
-		fontFamily: 'Conduit',
-		fontSize: '120%',
+		color: "white",
+		textAlign: "left",
+		fontFamily: "Conduit",
+		fontSize: "120%"
 	},
 	linkCursor: {
-		cursor: 'pointer',
+		cursor: "pointer"
 	},
 	noLineHeight: {
-		lineHeight: 0,
-	},
+		lineHeight: 0
+	}
 };
 
-@translate(['cases'], { wait: true })
-class Cases extends Component {
-	orderedCases = [3, 1, 2, 5, 0, 4].map(i => casesList[i]);
+class Cases extends React.Component<CasesProps, CasesState> {
+	public orderedCases = [3, 1, 2, 5, 0, 4].map(i => casesList[i]);
 
-	state = this.orderedCases.reduce((accu, clientCase) => {
+	public state: CasesState = this.orderedCases.reduce((accu, clientCase) => {
 		accu[clientCase.path] =
 			this.props.location.hash.slice(1) === clientCase.path &&
 			clientCase.readMore
@@ -52,7 +54,7 @@ class Cases extends Component {
 		return accu;
 	}, {});
 
-	render() {
+	public render() {
 		return (
 			<div>
 				{this.renderIntro()}
@@ -61,13 +63,13 @@ class Cases extends Component {
 		);
 	}
 
-	renderIntro() {
+	public renderIntro() {
 		const { t, classes } = this.props;
 		return (
 			<section>
-				<Container marginTopNavBar fullHeight center>
+				<Container marginTopNavBar={true} fullHeight={true} center={true}>
 					<div className="row justify-content-around mt-3">
-						<Fade in timeout={2000}>
+						<Fade in={true} timeout={2000}>
 							<div className="col-10 col-lg-6 mx-auto">
 								<div className="col-8 p-0">
 									<ResponsiveImage
@@ -78,13 +80,13 @@ class Cases extends Component {
 									/>
 								</div>
 								<Typography variant="subheading" className={classes.whiteText}>
-									{t('CASES_INTRO_1')}
+									{t("CASES_INTRO_1")}
 								</Typography>
 								<Typography
 									variant="subheading"
 									className={`${classes.whiteText} mt-2`}
 								>
-									{t('CASES_INTRO_2')}
+									{t("CASES_INTRO_2")}
 								</Typography>
 							</div>
 						</Fade>
@@ -95,34 +97,34 @@ class Cases extends Component {
 		);
 	}
 
-	renderBoxes() {
+	public renderBoxes() {
 		const { classes } = this.props;
 		return (
-			<Slide in timeout={1000} direction="left">
+			<Slide in={true} timeout={1000} direction="left">
 				<div
 					className={`col-12 col-md-10 col-lg-6 my-3 text-center text-sm-left ${
 						classes.noLineHeight
 					}`}
 				>
 					{this.orderedCases.map((clientCase, i) => (
-						<Link key={i} to={clientCase.path} hashSpy smooth>
-							<Fade in timeout={1000}>
+						<Link key={i} to={clientCase.path} hashSpy={true} smooth={true}>
+							<Fade in={true} timeout={1000}>
 								<Paper
 									className={classes.linkCursor}
 									style={{
-										display: 'inline-block',
-										padding: '8px',
-										margin: '5px',
+										display: "inline-block",
+										padding: "8px",
+										margin: "5px",
 										backgroundColor: clientCase.color
 											? clientCase.color
-											: 'transparent',
-										width: '150px',
-										height: '150px',
+											: "transparent",
+										width: "150px",
+										height: "150px"
 									}}
 								>
 									<div
 										className="row align-items-center mx-0"
-										style={{ width: '100%', height: '100%' }}
+										style={{ width: "100%", height: "100%" }}
 									>
 										<div className="col-12 p-0">
 											<img
@@ -141,16 +143,16 @@ class Cases extends Component {
 		);
 	}
 
-	renderCases() {
+	public renderCases() {
 		const { t, fullScreen } = this.props;
 		return (
 			<section>
-				{this.orderedCases.map((clientCase, i) => {
+				{this.orderedCases.map((clientCase: any, i: number) => {
 					const caseText = t(`CASES.${clientCase.path}`, {
-						returnObjects: true,
+						returnObjects: true
 					});
 					const { title, intro, sections } = caseText;
-					const changeState = bool => () =>
+					const changeState = (bool: any) => () =>
 						this.setState({ [clientCase.path]: bool });
 
 					const img = (
@@ -184,18 +186,18 @@ class Cases extends Component {
 								fullScreen={fullScreen}
 								open={this.state[clientCase.path]}
 								onClose={changeState(false)}
-								scroll={fullScreen ? 'paper' : 'body'}
+								scroll={fullScreen ? "paper" : "body"}
 							>
-								<DialogContent style={{ overflow: 'visible' }}>
+								<DialogContent style={{ overflow: "visible" }}>
 									<h1>{clientCase.client}</h1>
 									{title}
 								</DialogContent>
 								{fullScreen ? null : img}
 								<DialogContent>
-									{sections.map((section, i) => (
-										<div key={i}>
+									{sections.map((section: any, si: number) => (
+										<div key={si}>
 											<h4>{section.title}</h4>
-											{section.paragraphs.map((text, j) => (
+											{section.paragraphs.map((text: string, j: number) => (
 												<p key={j}>
 													<InlineLogo>{text}</InlineLogo>
 												</p>
@@ -205,18 +207,18 @@ class Cases extends Component {
 									{fullScreen ? img : null}
 									{clientCase.stack ? (
 										<div>
-											<h4>{t('CASES_STACK_TITLE')}</h4>
+											<h4>{t("CASES_STACK_TITLE")}</h4>
 											<ul>
-												{(clientCase.stack || []).map((tech, i) => (
-													<li key={i}>{tech}</li>
-												))}
+												{(clientCase.stack || []).map(
+													(tech: string, ti: number) => <li key={ti}>{tech}</li>
+												)}
 											</ul>
 										</div>
 									) : null}
 								</DialogContent>
 								<DialogActions>
 									<Button onClick={changeState(false)} color="primary">
-										{t('CASES_CLOSE_BUTTON')}
+										{t("CASES_CLOSE_BUTTON")}
 									</Button>
 								</DialogActions>
 							</Dialog>
@@ -231,4 +233,4 @@ class Cases extends Component {
 export default compose(
 	withStyles(styles),
 	withMobileDialog()
-)(Cases);
+)(translate(["cases"], { wait: true })(Cases));

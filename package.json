@@ -29,12 +29,14 @@
     "react-ga": "^2.5.3",
     "react-i18next": "^7.7.0",
     "react-router-dom": "^4.2.2",
+    "react-scripts-ts": "^2.16.0",
     "react-scroll": "^1.7.10",
     "react-test-renderer": "^16.4.1",
     "sanitize-html": "^1.18.2",
     "serverless": "^1.28.0",
     "simplex-noise": "^2.4.0",
     "snapsvg-cjs": "0.0.6",
+    "typescript": "^3.0.1",
     "vivus": "^0.4.4"
   },
   "lint-staged": {
@@ -44,12 +46,12 @@
     ]
   },
   "scripts": {
-    "start": "REACT_APP_STAGE=dev react-scripts start",
-    "build": "react-scripts test --env=jsdom --coverage --bail --ci && react-scripts build",
+    "start": "REACT_APP_STAGE=dev react-scripts-ts start",
+    "build": "react-scripts-ts test --env=jsdom --coverage --bail --ci && react-scripts-ts build",
     "build:dev": "REACT_APP_STAGE=dev npm run build",
-    "test": "react-scripts test --env=jsdom --coverage",
-    "test:watch": "react-scripts test --env=jsdom --watch",
-    "eject": "react-scripts eject",
+    "test": "react-scripts-ts test --env=jsdom --coverage",
+    "test:watch": "react-scripts-ts test --env=jsdom --watch",
+    "eject": "react-scripts-ts eject",
     "precommit": "lint-staged"
   },
   "browserslist": {
@@ -66,6 +68,15 @@
     ]
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.116",
+    "@types/nuka-carousel": "^4.2.2",
+    "@types/react": "^16.4.7",
+    "@types/react-dom": "^16.0.6",
+    "@types/react-i18next": "^7.8.0",
+    "@types/react-router-dom": "^4.3.0",
+    "@types/react-scroll": "^1.5.3",
+    "@types/recompose": "^0.26.3",
+    "@types/sanitize-html": "^1.18.0",
     "jest-fetch-mock": "^1.6.5"
   }
 }
