@@ -1,7 +1,9 @@
 'use strict';
 
-// TODO Is there an AWS native alternative to node-fetch?
-const fetch = require('node-fetch');
+// Use `got` instead of using `https` (intransparent syntax) or `request-promise` (bloated)
+const got = require('got');
+
+// API calls only over HTTPS!
 const allowedOrigin = 'https://www.codestar.nl';
 
 // Response headers
@@ -10,12 +12,38 @@ const headers = {
 	'Access-Control-Allow-Origin': allowedOrigin,
 };
 
-// const GET_UPCOMING_EVENTS_URL =
-// 	'https://api.meetup.com/Code-Star-Night/events?photo-host=secure&page=3&sig_id=226887185&status=upcoming&sig=e3efc6db037cf681181d84ae343459a36afbefd4';
-const GET_UPCOMING_EVENTS_URL = 'https://api.meetup.com/Code-Star-Night/events?&sign=true&photo-host=public&page=20&desc=true&status=past';
+const GET_UPCOMING_EVENTS_URL = 'https://api.meetup.com/Code-Star-Night/events?&sign=true&photo-host=public&page=3&fields=featured_photo&desc=true';
+const GET_PAST_EVENTS_URL = 'https://api.meetup.com/Code-Star-Night/events?&sign=true&photo-host=public&page=20&desc=true&status=past&fields=featured_photo';
 
 module.exports.getUpcomingEvents = async (event, context, callback) => {
-	// TODO origin check
+	const allowedOrigins = [allowedOrigin];
+	const debug = process.env.DEBUG;
+	if(debug === 'true') {
+		allowedOrigins.push('http://localhost:3000');
+	}
+
+	try {
+		if(!allowedOrigins.includes(event.headers.origin)) {
+			throw new Error(`Not white-listed origin: ${event.headers.origin}`);
+		}
+
+		const response = await got(GET_UPCOMING_EVENTS_URL, { json: true });
+		const mEvents = response.body.map(({ name, time, link, featured_photo}) => {
+			return {
+				name,
+				time,
+				link,
+				featured_photo
+			}
+		});
+		callback(null, {
+			statusCode: 200,
+			headers,
+			body: JSON.stringify(mEvents),
+		});
+	} catch(err) {
+		callback('Failed GET_UPCOMING_EVENTS_URL ' + err);
+	}
 
 	// const data = await fetch(GET_UPCOMING_EVENTS_URL, {
 	// 	method: 'GET'
