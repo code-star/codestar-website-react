@@ -8,6 +8,7 @@ import { Notifications as NotificationImportantIcon } from '@material-ui/icons';
 import { withStyles } from '@material-ui/core/styles';
 import Tooltip from '@material-ui/core/Tooltip';
 import { jsonp } from '../util';
+import i18n from '../i18n';
 
 const styles = theme => ({
 	newEventIcon: {
@@ -31,7 +32,7 @@ export class EventsButton extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			nextEvent: '',
+			nextEvent: null,
 			isHovering: false,
 		};
 		this.fetchUpcomingEvent = this.fetchUpcomingEvent.bind(this);
@@ -48,12 +49,7 @@ export class EventsButton extends Component {
 		jsonp(GET_UPCOMING_EVENTS_URL).then(data => {
 			const nextEvent = data.data[0];
 			if (nextEvent) {
-				const formattedDate = new Date(nextEvent.time).toLocaleDateString(
-					'en-US',
-					{ month: 'long', day: 'numeric' }
-				);
-				const text = `${formattedDate} *Meetup* ${nextEvent.name}`;
-				this.setState({ nextEvent: text });
+				this.setState({ nextEvent });
 			}
 		});
 	}
@@ -71,13 +67,19 @@ export class EventsButton extends Component {
 		const iconClasses = `${classes.newEventIcon} ${
 			this.state.isHovering ? classes.newEventIconHover : null
 		}`;
-		const icon =
-			this.state.nextEvent !== '' ? (
-				<NotificationImportantIcon className={iconClasses} />
-			) : null;
+		let icon = null;
+		let nextEventText = '';
+		if (this.state.nextEvent) {
+			icon = <NotificationImportantIcon className={iconClasses} />;
+			const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
+			const formattedDate = new Date(
+				this.state.nextEvent.time
+			).toLocaleDateString(locale, { month: 'long', day: 'numeric' });
+			nextEventText = `${formattedDate} *Meetup* ${this.state.nextEvent.name}`;
+		}
 		return (
 			<Tooltip
-				title={this.state.nextEvent}
+				title={nextEventText}
 				placement="bottom"
 				classes={{
 					tooltip: classes.bigTooltip,
