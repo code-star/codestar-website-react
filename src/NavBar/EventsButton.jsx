@@ -4,7 +4,6 @@ import compose from 'recompose/compose';
 import PropTypes from 'prop-types';
 
 import { Button } from '@material-ui/core';
-import { Notifications as NotificationImportantIcon } from '@material-ui/icons';
 import { withStyles } from '@material-ui/core/styles';
 import Tooltip from '@material-ui/core/Tooltip';
 import { jsonp } from '../util';
@@ -13,7 +12,9 @@ import i18n from '../i18n';
 const styles = theme => ({
 	newEventIcon: {
 		color: 'red',
-		marginRight: theme.spacing.unit,
+		display: 'inline-block',
+		fontSize: '1.3rem',
+		marginLeft: theme.spacing.unit * 0.5,
 	},
 	newEventIconHover: {
 		color: 'inherit',
@@ -70,7 +71,7 @@ export class EventsButton extends Component {
 		let icon = null;
 		let nextEventText = '';
 		if (this.state.nextEvent) {
-			icon = <NotificationImportantIcon className={iconClasses} />;
+			icon = <span className={iconClasses}> ●</span>;
 			const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
 			const formattedDate = new Date(
 				this.state.nextEvent.time
@@ -93,8 +94,8 @@ export class EventsButton extends Component {
 					onMouseOver={this.handleMouseOver}
 					onMouseOut={this.handleMouseOut}
 				>
-					{icon}
 					{label}
+					{icon}
 				</Button>
 			</Tooltip>
 		);
