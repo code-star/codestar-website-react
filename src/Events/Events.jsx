@@ -50,17 +50,16 @@ function convertEventResponseToModel(withDescription = false) {
 
 @translate(['events'], { wait: true })
 export default class Events extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			nextEvent: {
-				loading: true,
-				event: null,
-				noEvent: false,
-			},
-			pastEvents: [],
-		};
-		// TODO is this called every time when navigating to this page or only once per session (should be the latter)?
+	state = {
+		nextEvent: {
+			loading: true,
+			event: null,
+			noEvent: false,
+		},
+		pastEvents: [],
+	};
+
+	componentDidMount() {
 		this.fetchEvents();
 	}
 

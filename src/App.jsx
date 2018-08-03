@@ -51,8 +51,10 @@ class App extends Component {
 			this.updateBackgroundColor(location.pathname)
 		);
 		this.updateBackgroundColor(this.history.location.pathname);
-		this.fetchUpcomingEvent = this.fetchUpcomingEvent.bind(this);
-		this.fetchUpcomingEvent();
+	}
+
+	componentDidMount() {
+		this.fetchUpcomingEvent.call(this);
 	}
 
 	fetchUpcomingEvent() {
