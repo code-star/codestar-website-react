@@ -42,10 +42,6 @@ export default class EventsContainer extends Component {
 	}
 
 	async fetchEvents() {
-		/* Meetup API only allows JSONP for client-side, non authenticated, api key signed GET requests.
-		   must use JSONP conform https://github.com/meetup/api/issues/211
-		   Fetch API does not support JSONP. no-cors mode creates an opaque response without data.
-		*/
 		try {
 			let url = GET_UPCOMING_EVENTS_URL;
 			if (process.env.REACT_APP_STAGE === 'dev') {
