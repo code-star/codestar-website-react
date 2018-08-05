@@ -28,7 +28,7 @@ const AsyncJobDescription = fullHeightAsyncComponent(
 const AsyncContact = fullHeightAsyncComponent(import('./Contact/Contact'));
 const AsyncNotFound = fullHeightAsyncComponent(import('./NotFound/NotFound'));
 const AsyncEvents = fullHeightAsyncComponent(
-	import('./modules/EventsContainer')
+	import('./modules/EventsContainer/EventsContainer')
 );
 
 const sections = ['', 'cases', 'about', 'jobs', 'contact'];

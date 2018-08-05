@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Events from '../components/Events';
-import { jsonp } from '../util';
+import Events from '../../components/Events/Events';
+import { jsonp } from '../../util';
 import _ from 'lodash';
 
 const GET_UPCOMING_EVENTS_URL =

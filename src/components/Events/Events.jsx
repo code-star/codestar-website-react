@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import Container from '../Container/Container';
+import Container from '../../Container/Container';
 import { translate } from 'react-i18next';
-import EventsHeader from '../EventsHeader/EventsHeader';
-import EventCard from '../EventCard/EventCard';
+import EventsHeader from '../../EventsHeader/EventsHeader';
+import EventCard from '../../EventCard/EventCard';
 import { Element } from 'react-scroll';
 
 /*
