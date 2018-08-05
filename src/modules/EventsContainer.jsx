@@ -3,10 +3,8 @@ import Events from '../components/Events';
 import { jsonp } from '../util';
 import _ from 'lodash';
 
-// Meetup API test console: https://secure.meetup.com/meetup_api/console/?path=/:urlname/events
-// page=3 = number of results to return in a page, only need the first 3 results
 const GET_UPCOMING_EVENTS_URL =
-	'https://api.meetup.com/Code-Star-Night/events?photo-host=public&page=3&sig_id=226887185&status=upcoming&fields=featured_photo&sig=d035ab8a8f521cbb4ef14eaff79a55f23c3d25eb';
+	'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/dev/get-upcoming-events';
 
 const GET_PAST_EVENTS_URL =
 	'https://api.meetup.com/Code-Star-Night/events?desc=true&photo-host=public&sig_id=226887185&status=past&fields=featured_photo&sig=a60e663f0904424f80fda3b00bf31f315889231c';
@@ -56,7 +54,11 @@ export default class EventsContainer extends Component {
 		   Fetch API does not support JSONP. no-cors mode creates an opaque response without data.
 		*/
 		try {
-			const response = await jsonp(GET_UPCOMING_EVENTS_URL);
+			let url = GET_UPCOMING_EVENTS_URL;
+			if (process.env.REACT_APP_STAGE === 'dev') {
+				url = '/mock/x.json';
+			}
+			const response = await fetch(url);
 			const result = _.head(
 				response.data.map(convertEventResponseToModel(true))
 			);
