@@ -1,53 +1,68 @@
 [
-		{
-				"name": "Angular PWAs and PaaS with Simona Cotin",
-				"time": 1527694200000,
-				"link": "https://www.meetup.com/Code-Star-Night/events/248958146/",
-				"featured_photo": {
-						"id": 469909475,
-						"highres_link": "https://secure.meetupstatic.com/photos/event/c/1/4/3/highres_469909475.jpeg",
-						"photo_link": "https://secure.meetupstatic.com/photos/event/c/1/4/3/600_469909475.jpeg",
-						"thumb_link": "https://secure.meetupstatic.com/photos/event/c/1/4/3/thumb_469909475.jpeg",
-						"type": "event",
-						"base_url": "https://secure.meetupstatic.com"
-				}
-		},
-		{
-				"name": "Data Intensive processing in practice: Kafka Streams and Spark",
-				"time": 1520526600000,
-				"link": "https://www.meetup.com/Code-Star-Night/events/246608174/",
-				"featured_photo": {
-						"id": 467631976,
-						"highres_link": "https://secure.meetupstatic.com/photos/event/c/b/0/8/highres_467631976.jpeg",
-						"photo_link": "https://secure.meetupstatic.com/photos/event/c/b/0/8/600_467631976.jpeg",
-						"thumb_link": "https://secure.meetupstatic.com/photos/event/c/b/0/8/thumb_467631976.jpeg",
-						"type": "event",
-						"base_url": "https://secure.meetupstatic.com"
-				}
-		},
-		{
-				"name": "Advanced RxJS Training",
-				"time": 1506668400000,
-				"link": "https://www.meetup.com/Code-Star-Night/events/243011017/"
-		},
-		{
-				"name": "Functional and reactive programming with André Staltz",
-				"time": 1506614400000,
-				"link": "https://www.meetup.com/Code-Star-Night/events/242404035/"
-		},
-		{
-				"name": "Adventures in Elm with Jessica Kerr",
-				"time": 1498147200000,
-				"link": "https://www.meetup.com/Code-Star-Night/events/239505324/"
-		},
-		{
-				"name": "Lagom in Scala - Hands-on with Tom Peck from Lightbend",
-				"time": 1489681800000,
-				"link": "https://www.meetup.com/Code-Star-Night/events/237242304/"
-		},
-		{
-				"name": "Code.Star[T] Night-1: VAMP & ScalaDays Redelivery",
-				"time": 1467734400000,
-				"link": "https://www.meetup.com/Code-Star-Night/events/231933080/"
+	{
+		"name": "Angular PWAs and PaaS with Simona Cotin",
+		"time": 1527694200000,
+		"link": "https://www.meetup.com/Code-Star-Night/events/248958146/",
+		"featured_photo": {
+			"id": 469909475,
+			"highres_link": "https://secure.meetupstatic.com/photos/event/c/1/4/3/highres_469909475.jpeg",
+			"photo_link": "https://secure.meetupstatic.com/photos/event/c/1/4/3/600_469909475.jpeg",
+			"thumb_link": "https://secure.meetupstatic.com/photos/event/c/1/4/3/thumb_469909475.jpeg",
+			"type": "event",
+			"base_url": "https://secure.meetupstatic.com"
 		}
+	},
+	{
+		"name": "Data Intensive processing in practice: Kafka Streams and Spark",
+		"time": 1520526600000,
+		"link": "https://www.meetup.com/Code-Star-Night/events/246608174/",
+		"featured_photo": {
+			"id": 467631976,
+			"highres_link": "https://secure.meetupstatic.com/photos/event/c/b/0/8/highres_467631976.jpeg",
+			"photo_link": "https://secure.meetupstatic.com/photos/event/c/b/0/8/600_467631976.jpeg",
+			"thumb_link": "https://secure.meetupstatic.com/photos/event/c/b/0/8/thumb_467631976.jpeg",
+			"type": "event",
+			"base_url": "https://secure.meetupstatic.com"
+		}
+	},
+	{
+		"name": "Advanced RxJS Training",
+		"time": 1506668400000,
+		"link": "https://www.meetup.com/Code-Star-Night/events/243011017/",
+		"featured_photo": {
+			"photo_link": "https://res.cloudinary.com/codestar/image/upload/v1532409289/codestar.nl/meetup/codestar-night-logo.jpg"
+		}
+	},
+	{
+		"name": "Functional and reactive programming with André Staltz",
+		"time": 1506614400000,
+		"link": "https://www.meetup.com/Code-Star-Night/events/242404035/",
+		"featured_photo": {
+			"photo_link": "https://res.cloudinary.com/codestar/image/upload/v1532409289/codestar.nl/meetup/codestar-night-logo.jpg"
+		}
+	},
+	{
+		"name": "Adventures in Elm with Jessica Kerr",
+		"time": 1498147200000,
+		"link": "https://www.meetup.com/Code-Star-Night/events/239505324/",
+		"featured_photo": {
+			"photo_link": "https://res.cloudinary.com/codestar/image/upload/e_art:fes,c_fill,h_170,w_300/v1532409289/codestar.nl/meetup/AdventuresinElmwithJessicaKerr"
+		}
+	},
+	{
+		"name": "Lagom in Scala - Hands-on with Tom Peck from Lightbend",
+		"time": 1489681800000,
+		"link": "https://www.meetup.com/Code-Star-Night/events/237242304/",
+		"featured_photo": {
+			"photo_link": "https://res.cloudinary.com/codestar/image/upload/v1532409289/codestar.nl/meetup/codestar-night-logo.jpg"
+		}
+	},
+	{
+		"name": "Code.Star[T] Night-1: VAMP & ScalaDays Redelivery",
+		"time": 1467734400000,
+		"link": "https://www.meetup.com/Code-Star-Night/events/231933080/",
+		"featured_photo": {
+			"photo_link": "https://res.cloudinary.com/codestar/image/upload/v1532409289/codestar.nl/meetup/codestar-night-logo.jpg"
+		}
+	}
 ]

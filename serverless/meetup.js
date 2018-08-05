@@ -62,7 +62,7 @@ module.exports.getPastEvents = async (event, context, callback) => {
 		}
 
 		const response = await got(GET_PAST_EVENTS_URL, { json: true });
-		const mEvents = response.body
+		const mEventsPromises = await response.body
 			.map(({ name, time, link, featured_photo}) => {
 				return {
 					name,
@@ -71,72 +71,47 @@ module.exports.getPastEvents = async (event, context, callback) => {
 					featured_photo
 				}
 			})
-			.map(async (mEvent) => {
+			.map( (mEvent) => {
 				// If Meetup.com does not have a featured_photo, try to fallback to a Cloudinary image
 				if(!mEvent.featured_photo) {
-					// Check if Cloudinary image exists
+					// Generate a valid file name
 					const cleanName = mEvent.name.replace(/[^\w]/g, '');
 					const photoUrl = `https://res.cloudinary.com/codestar/image/upload/e_art:fes,c_fill,h_170,w_300/v1532409289/codestar.nl/meetup/${cleanName}`;
-					try {
-						// TODO this should be done with Promise.all, but only if got was really called and not if there already was a featured_photo
-						const result = (await got.head(photoUrl, {json: true})).headers;
-						const hasValidLength = parseInt(result['content-length'], 10) > 0;
-						console.log(photoUrl, 'exists?', hasValidLength)
-						if(hasValidLength) {
-							return Object.assign({}, mEvent, {
-								featured_photo: {
-									photo_link: photoUrl
-								}
-							})
-						} else {
-							throw new Error('No image found or parsing failed')
-						}
-					} catch(err) {
-						console.log(photoUrl, 'does not exist')
-						// Use the fallback image
-						return Object.assign({}, mEvent, {
-							featured_photo: {
-								photo_link: FALLBACK_IMAGE
+					// TODO Is it possible to merge this nested promises without new dependency (to e.g. RxJS)?
+					// Check if Cloudinary image exists
+					return got.head(photoUrl, {json: true})
+						.then(result => {
+							const hasValidLength = parseInt(result.headers['content-length'], 10) > 0;
+							if(hasValidLength) {
+								return Object.assign({}, mEvent, {
+									featured_photo: {
+										photo_link: photoUrl
+									}
+								})
+							} else {
+								throw new Error('No image found or parsing failed');
 							}
 						})
-					}
+						.catch(() => {
+							// E.g. 404 because not found
+							const mEvent1 = Object.assign({}, mEvent, {
+								featured_photo: {
+									photo_link: FALLBACK_IMAGE
+								}
+							});
+							return (new Promise(resolve => resolve(mEvent1)));
+						});
 				}
-				return mEvent;
+				return (new Promise(resolve => resolve(mEvent)));
 			});
 
-
-		// // TODO if featured_photo is missing, try to get an alternative from Cloudinary, else leave out the property
-		// const mEvWithoutPhoto = mEvents
-		// 	.filter(mEvent => !mEvent.featured_photo)
-		// 	.map(async (mEvent) => {
-		// 		// Check if Cloudinary image exists
-		// 		const cleanName = mEvent.name.replace(/[^\w]/g, '');
-		// 		const photoUrl = `https://res.cloudinary.com/codestar/image/upload/v1532409289/codestar.nl/meetup/${cleanName}`;
-		// 		try {
-		// 			const result = (await got.head(photoUrl, {json: true})).headers;
-		// 			const hasValidLength = parseInt(result['content-length'], 10) > 0;
-		// 			console.log(photoUrl, 'exists?', hasValidLength)
-		// 			if(hasValidLength) {
-		// 				return Object.assign({}, mEvent, {
-		// 					featured_photo: {
-		// 						photo_link: photoUrl
-		// 					}
-		// 				})
-		// 			}
-		// 		} catch(err) {
-		// 			console.log(photoUrl, 'does not exist')
-		// 		}
-		// 		return mEvent; //result.exists;
-		// 	});
-		//console.log(mEvWithoutPhoto)
-
+		const mEvents = await Promise.all(mEventsPromises);
 		callback(null, {
 			statusCode: 200,
 			headers,
 			body: JSON.stringify(mEvents),
 		});
 	} catch(err) {
-		console.log(err)
 		callback('Failed GET_UPCOMING_EVENTS_URL ' + err);
 	}
 };
