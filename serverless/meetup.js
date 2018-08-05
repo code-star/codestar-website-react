@@ -76,7 +76,7 @@ module.exports.getPastEvents = async (event, context, callback) => {
 				if(!mEvent.featured_photo) {
 					// Generate a valid file name
 					const cleanName = mEvent.name.replace(/[^\w]/g, '');
-					const photoUrl = `https://res.cloudinary.com/codestar/image/upload/e_art:fes,c_fill,h_170,w_300/v1532409289/codestar.nl/meetup/${cleanName}`;
+					const photoUrl = `https://res.cloudinary.com/codestar/image/upload/e_art:fes,c_fill,h_170,w_300/v1533472199/codestar.nl/meetup/${cleanName}`;
 					// TODO Is it possible to merge this nested promises without new dependency (to e.g. RxJS)?
 					// Check if Cloudinary image exists
 					return got.head(photoUrl, {json: true})
