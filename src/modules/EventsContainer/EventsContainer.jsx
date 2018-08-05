@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
 import Events from '../../components/Events/Events';
-import { jsonp } from '../../util';
 import _ from 'lodash';
 
 const GET_UPCOMING_EVENTS_URL =
 	'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/dev/get-upcoming-events';
-
 const GET_PAST_EVENTS_URL =
-	'https://api.meetup.com/Code-Star-Night/events?desc=true&photo-host=public&sig_id=226887185&status=past&fields=featured_photo&sig=a60e663f0904424f80fda3b00bf31f315889231c';
-
-/* TODO Convert JSONP to Fetch+Serverless
-This url gets the event details, but is signed for one specific instance: https://api.meetup.com/Code-Star-Night/events/248958146?photo-host=public&sig_id=226887185&fields=featured_photo&sig=c634269c86bda35c0762874a490d219faba6365e
-Can use RxJS with JSONP? To combine streams?
- */
+	'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/dev/get-past-events';
 
 function convertEventResponseToModel(withDescription = false) {
 	return function(mEvent) {
@@ -56,12 +49,10 @@ export default class EventsContainer extends Component {
 		try {
 			let url = GET_UPCOMING_EVENTS_URL;
 			if (process.env.REACT_APP_STAGE === 'dev') {
-				url = '/mock/x.json';
+				url = '/mock/getUpcomingEvents.json';
 			}
-			const response = await fetch(url);
-			const result = _.head(
-				response.data.map(convertEventResponseToModel(true))
-			);
+			const response = await fetch(url).then(data => data.json());
+			const result = _.head(response.map(convertEventResponseToModel(true)));
 			const nextEvent = {
 				loading: false,
 				mEvent: result ? result : null,
@@ -79,8 +70,12 @@ export default class EventsContainer extends Component {
 		}
 
 		try {
-			const response = await jsonp(GET_PAST_EVENTS_URL);
-			const result = response.data.map(convertEventResponseToModel());
+			let url = GET_PAST_EVENTS_URL;
+			if (process.env.REACT_APP_STAGE === 'dev') {
+				url = '/mock/getPastEvents.json';
+			}
+			const response = await fetch(url).then(data => data.json());
+			const result = response.map(convertEventResponseToModel());
 			this.setState({ pastEvents: result });
 		} catch (err) {
 			this.setState({ pastEvents: [] });

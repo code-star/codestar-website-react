@@ -16,6 +16,10 @@ const headers = {
 const GET_UPCOMING_EVENTS_URL = 'https://api.meetup.com/Code-Star-Night/events?&sign=true&photo-host=public&page=3&fields=featured_photo&desc=true';
 const GET_PAST_EVENTS_URL = 'https://api.meetup.com/Code-Star-Night/events?&sign=true&photo-host=public&page=20&desc=true&status=past&fields=featured_photo';
 
+// TODO apply for past events
+// TODO apply for next event notification
+
+
 module.exports.getUpcomingEvents = async (event, context, callback) => {
 	const allowedOrigins = [allowedOrigin];
 	const debug = process.env.DEBUG;
@@ -29,11 +33,12 @@ module.exports.getUpcomingEvents = async (event, context, callback) => {
 		}
 
 		const response = await got(GET_UPCOMING_EVENTS_URL, { json: true });
-		const mEvents = response.body.map(({ name, time, link, featured_photo}) => {
+		const mEvents = response.body.map(({ name, time, link, description, featured_photo}) => {
 			return {
 				name,
 				time,
 				link,
+				description,
 				featured_photo
 			}
 		});
