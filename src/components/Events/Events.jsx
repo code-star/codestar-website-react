@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import Container from '../../Container/Container';
 import { translate } from 'react-i18next';
 import EventsHeader from '../../EventsHeader/EventsHeader';
@@ -40,3 +41,8 @@ export default class Events extends Component {
 		);
 	}
 }
+
+Events.propTypes = {
+	nextEvent: PropTypes.object.isRequired,
+	pastEvents: PropTypes.array.isRequired,
+};
