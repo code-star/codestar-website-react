@@ -52,7 +52,8 @@
     "test": "react-scripts-ts test --env=jsdom --coverage",
     "test:watch": "react-scripts-ts test --env=jsdom --watch",
     "eject": "react-scripts-ts eject",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "prettier": "prettier --single-quote --write --trailing-comma es5 --write ./src/**/*.{js,jsx,ts,tsx}"
   },
   "browserslist": {
     "development": [

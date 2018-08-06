@@ -1,36 +1,36 @@
-import * as React from "react";
-import { compose } from "recompose";
-import { translate } from "react-i18next";
+import * as React from 'react';
+import { compose } from 'recompose';
+import { translate } from 'react-i18next';
 
-import { withStyles } from "@material-ui/core/styles";
-import { Button, Typography, withWidth } from "@material-ui/core";
-import { purple } from "@material-ui/core/colors";
+import { withStyles } from '@material-ui/core/styles';
+import { Button, Typography, withWidth } from '@material-ui/core';
+import { purple } from '@material-ui/core/colors';
 
-import ResponsiveImage from "../ResponsiveImage/ResponsiveImage";
-import Container from "../Container/Container";
-import css from "./CaseHeader.module.css";
-import InlineLogo from "../InlineLogo/InlineLogo";
+import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
+import Container from '../Container/Container';
+import css from './CaseHeader.module.css';
+import InlineLogo from '../InlineLogo/InlineLogo';
 
 type CaseHeaderProps = any;
 
 const styles: any = (theme: any) => ({
 	link: {
-		color: "white",
-		"&:hover": {
-			color: "white"
-		}
+		color: 'white',
+		'&:hover': {
+			color: 'white',
+		},
 	},
 	section: {
-		position: "relative",
-		overflow: "hidden"
+		position: 'relative',
+		overflow: 'hidden',
 	},
 	button: {
 		color: theme.palette.getContrastText(purple[500]),
 		backgroundColor: purple[500],
-		"&:hover": {
-			backgroundColor: purple[700]
-		}
-	}
+		'&:hover': {
+			backgroundColor: purple[700],
+		},
+	},
 });
 
 class CaseHeader extends React.Component<CaseHeaderProps> {
@@ -42,7 +42,7 @@ class CaseHeader extends React.Component<CaseHeaderProps> {
 				<ResponsiveImage
 					path={props.image}
 					asBackgroundImage
-					alt={props.credits ? props.credits : ""}
+					alt={props.credits ? props.credits : ''}
 				/>
 				<Container fullHeight center>
 					<div className="row">
@@ -73,7 +73,7 @@ class CaseHeader extends React.Component<CaseHeaderProps> {
 										onClick={props.callback}
 										className={classes.button}
 									>
-										{t("CASES_READ_MORE_BUTTON")}
+										{t('CASES_READ_MORE_BUTTON')}
 									</Button>
 								</div>
 							)}
@@ -95,4 +95,4 @@ class CaseHeader extends React.Component<CaseHeaderProps> {
 export default compose(
 	withStyles(styles),
 	withWidth()
-)(translate(["cases"], { wait: true })(CaseHeader));
+)(translate(['cases'], { wait: true })(CaseHeader));

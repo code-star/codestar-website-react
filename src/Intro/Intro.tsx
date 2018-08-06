@@ -1,50 +1,50 @@
-import * as React from "react";
-import compose from "recompose/compose";
-import { translate } from "react-i18next";
+import * as React from 'react';
+import compose from 'recompose/compose';
+import { translate } from 'react-i18next';
 
-import { Typography, withWidth } from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
+import { Typography, withWidth } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 
-import Container from "../Container/Container";
-import Clients from "../Clients/Clients";
-import AnimatedLogo from "../Animations/AnimatedLogo";
-import LandscapeBackground from "../Animations/LandscapeBackground";
-import DelayedFade from "../Animations/DelayedFade";
-import { Link } from "react-router-dom";
-import ResponsiveImage from "../ResponsiveImage/ResponsiveImage";
-import InlineLogo from "../InlineLogo/InlineLogo";
+import Container from '../Container/Container';
+import Clients from '../Clients/Clients';
+import AnimatedLogo from '../Animations/AnimatedLogo';
+import LandscapeBackground from '../Animations/LandscapeBackground';
+import DelayedFade from '../Animations/DelayedFade';
+import { Link } from 'react-router-dom';
+import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
+import InlineLogo from '../InlineLogo/InlineLogo';
 
 type IntroProps = any;
 
 const styles: any = (theme: any) => ({
 	section: {
-		position: "relative",
-		overflow: "hidden"
+		position: 'relative',
+		overflow: 'hidden',
 	},
 	fullVideo: {
-		position: "absolute",
-		width: "100vw",
-		height: "100%",
-		minWidth: "650px",
-		top: "0",
-		left: "50%",
-		transform: "translateX(-50%)",
-		zIndex: -1
+		position: 'absolute',
+		width: '100vw',
+		height: '100%',
+		minWidth: '650px',
+		top: '0',
+		left: '50%',
+		transform: 'translateX(-50%)',
+		zIndex: -1,
 	},
 	whiteText: {
-		color: "white",
-		textAlign: "center",
-		fontFamily: "Conduit",
-		fontSize: "120%"
+		color: 'white',
+		textAlign: 'center',
+		fontFamily: 'Conduit',
+		fontSize: '120%',
 	},
 	paper: {
 		...theme.mixins.gutters(),
 		paddingTop: theme.spacing.unit * 2,
-		paddingBottom: theme.spacing.unit * 2
+		paddingBottom: theme.spacing.unit * 2,
 	},
 	line: {
-		display: "inline-block"
-	}
+		display: 'inline-block',
+	},
 });
 
 class Intro extends React.Component<IntroProps> {
@@ -53,9 +53,9 @@ class Intro extends React.Component<IntroProps> {
 		const intersperse = (arr: any, sep: any) =>
 			arr.reduce((a: any, v: any) => [...a, v, sep], []).slice(0, -1);
 
-		function makeLines(text: any, firstClass: string = "") {
+		function makeLines(text: any, firstClass: string = '') {
 			return text
-				.split(".")
+				.split('.')
 				.map((line: string) => line.trim())
 				.filter((n: string) => n)
 				.map((line: string, i: number) => (
@@ -63,18 +63,18 @@ class Intro extends React.Component<IntroProps> {
 						key={`intro-${i}`}
 						variant="subheading"
 						className={`${props.classes.whiteText} ${
-							firstClass && i === 0 ? firstClass : ""
+							firstClass && i === 0 ? firstClass : ''
 						}`}
 					>
 						{intersperse(
-							line.split("~").map((subLine: string, si: number) => (
+							line.split('~').map((subLine: string, si: number) => (
 								<span key={si} className={props.classes.line}>
 									<InlineLogo dark small>
 										{subLine}
 									</InlineLogo>
 								</span>
 							)),
-							" "
+							' '
 						)}
 					</Typography>
 				));
@@ -91,8 +91,8 @@ class Intro extends React.Component<IntroProps> {
 							</div>
 							<div className="col-12">
 								<DelayedFade>
-									{makeLines(t("INTRO_TEXT"))}
-									{makeLines(t("INTRO_TEXT_SUBLINE"), "mt-3")}
+									{makeLines(t('INTRO_TEXT'))}
+									{makeLines(t('INTRO_TEXT_SUBLINE'), 'mt-3')}
 								</DelayedFade>
 							</div>
 						</div>
@@ -104,15 +104,15 @@ class Intro extends React.Component<IntroProps> {
 							<div className="col-12 col-md-6">
 								<InlineLogo>
 									<Typography variant="display1" gutterBottom>
-										{t("NEXT_STEP_TITLE")}
+										{t('NEXT_STEP_TITLE')}
 									</Typography>
 
 									<Typography variant="subheading" gutterBottom>
-										{t("NEXT_STEP_CONTENT_1")}
+										{t('NEXT_STEP_CONTENT_1')}
 									</Typography>
 
 									<Typography variant="subheading" gutterBottom>
-										{t("NEXT_STEP_CONTENT_2")}
+										{t('NEXT_STEP_CONTENT_2')}
 									</Typography>
 								</InlineLogo>
 							</div>
@@ -129,7 +129,7 @@ class Intro extends React.Component<IntroProps> {
 				<section
 					id="clients"
 					className="py-5"
-					style={{ backgroundColor: "#eeeeee" }}
+					style={{ backgroundColor: '#eeeeee' }}
 				>
 					<Container center>
 						<Link to="/cases">
@@ -145,4 +145,4 @@ class Intro extends React.Component<IntroProps> {
 export default compose(
 	withStyles(styles),
 	withWidth()
-)(translate(["intro"], { wait: true })(Intro));
+)(translate(['intro'], { wait: true })(Intro));

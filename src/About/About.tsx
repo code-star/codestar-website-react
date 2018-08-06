@@ -1,25 +1,25 @@
-import * as React from "react";
-import { Link } from "react-router-dom";
-import { translate } from "react-i18next";
+import * as React from 'react';
+import { Link } from 'react-router-dom';
+import { translate } from 'react-i18next';
 
 import {
 	Button,
 	Typography,
 	Card,
 	CardContent,
-	CardMedia
-} from "@material-ui/core";
-import Carousel from "nuka-carousel";
+	CardMedia,
+} from '@material-ui/core';
+import Carousel from 'nuka-carousel';
 import {
 	NavigateNext as NavigateNextIcon,
-	NavigateBefore as NavigateBeforeIcon
-} from "@material-ui/icons";
+	NavigateBefore as NavigateBeforeIcon,
+} from '@material-ui/icons';
 
-import { getResponsiveImageUrl } from "../ResponsiveImage/ResponsiveImage";
-import Container from "../Container/Container";
-import OurStack from "../OurStack/OurStack";
-import Team from "./Team.json";
-import css from "./About.module.css";
+import { getResponsiveImageUrl } from '../ResponsiveImage/ResponsiveImage';
+import Container from '../Container/Container';
+import OurStack from '../OurStack/OurStack';
+import Team from './Team.json';
+import css from './About.module.css';
 
 type AboutProps = any;
 
@@ -46,9 +46,9 @@ class About extends React.Component<AboutProps> {
 					<Container marginTopNavBar>
 						<div className="row justify-content-center">
 							<div className="col-12 col-md-8">
-								<h3 className={css.whiteText}>{t("ABOUT_ATTRACT_TITLE")}</h3>
-								<p className={[css.whiteText, css.conduit].join(" ")}>
-									{t("ABOUT_ATTRACT_TEXT")}
+								<h3 className={css.whiteText}>{t('ABOUT_ATTRACT_TITLE')}</h3>
+								<p className={[css.whiteText, css.conduit].join(' ')}>
+									{t('ABOUT_ATTRACT_TEXT')}
 								</p>
 							</div>
 							<div className="col-12 col-md-8 col-sd-6">
@@ -61,20 +61,20 @@ class About extends React.Component<AboutProps> {
 								className="mt-3"
 								variant="raised"
 								component={Link}
-								to={"/jobs"}
+								to={'/jobs'}
 								color="inherit"
 							>
-								{t("ABOUT_VACANCIES")}
+								{t('ABOUT_VACANCIES')}
 							</CustomButton>
 						</div>
 					</Container>
 				</section>
-				<section className="py-5" style={{ background: "#eeeeee" }}>
+				<section className="py-5" style={{ background: '#eeeeee' }}>
 					<Container>
 						<div className="row">
 							<div className="col">
 								<Typography variant="display1" align="center" className="mb-3">
-									{t("ABOUT_TEAM_TITLE")}
+									{t('ABOUT_TEAM_TITLE')}
 								</Typography>
 							</div>
 						</div>
@@ -160,4 +160,4 @@ class About extends React.Component<AboutProps> {
 	};
 }
 
-export default translate(["about"], { wait: true })(About);
+export default translate(['about'], { wait: true })(About);

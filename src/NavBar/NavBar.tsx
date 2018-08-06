@@ -1,7 +1,7 @@
-import * as React from "react";
-import { Link } from "react-router-dom";
-import compose from "recompose/compose";
-import { translate } from "react-i18next";
+import * as React from 'react';
+import { Link } from 'react-router-dom';
+import compose from 'recompose/compose';
+import { translate } from 'react-i18next';
 
 import {
 	AppBar,
@@ -10,55 +10,55 @@ import {
 	Button,
 	Hidden,
 	IconButton,
-	withWidth
-} from "@material-ui/core";
+	withWidth,
+} from '@material-ui/core';
 
-import { Menu as MenuIcon, Language as LanguageIcon } from "@material-ui/icons";
-import { withStyles } from "@material-ui/core/styles";
-import EventsButton from "./EventsButton";
+import { Menu as MenuIcon, Language as LanguageIcon } from '@material-ui/icons';
+import { withStyles } from '@material-ui/core/styles';
+import EventsButton from './EventsButton';
 
-import i18n from "../i18n";
-import ResponsiveImage from "../ResponsiveImage/ResponsiveImage";
+import i18n from '../i18n';
+import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 
 type NavBarProps = any;
 
 const styles: any = (theme: any) => ({
 	flex: {
-		flex: 1
+		flex: 1,
 	},
 	menuButton: {
 		marginLeft: -12,
-		marginRight: 20
+		marginRight: 20,
 	},
 	logo: {
-		marginRight: "1em",
-		width: "100px",
-		[theme.breakpoints.up("md")]: {
-			width: "140px"
-		}
+		marginRight: '1em',
+		width: '100px',
+		[theme.breakpoints.up('md')]: {
+			width: '140px',
+		},
 	},
 	appBar: {
-		backgroundColor: "rgba(0,0,0,0.75)"
+		backgroundColor: 'rgba(0,0,0,0.75)',
 	},
 	langButton: {
 		margin: 0,
 		padding: 0,
-		minWidth: "70px",
-		"&:focus": {
-			outline: 0
-		}
+		minWidth: '70px',
+		'&:focus': {
+			outline: 0,
+		},
 	},
 	button: {
-		"&:hover": {
-			color: "white",
-			background: "rgba(200, 200, 255, 0.2)"
-		}
+		'&:hover': {
+			color: 'white',
+			background: 'rgba(200, 200, 255, 0.2)',
+		},
 	},
 	developmentTag: {
-		display: "inline-block",
-		fontFamily: "monospace",
-		marginLeft: "1em"
-	}
+		display: 'inline-block',
+		fontFamily: 'monospace',
+		marginLeft: '1em',
+	},
 });
 
 // Fixme: this is a workaround for using the material ui button
@@ -70,9 +70,9 @@ class NavBar extends React.Component<NavBarProps> {
 		const { t, ...props } = this.props;
 
 		const toggleLanguage = () =>
-			i18n.language === "nl"
-				? i18n.changeLanguage("en")
-				: i18n.changeLanguage("nl");
+			i18n.language === 'nl'
+				? i18n.changeLanguage('en')
+				: i18n.changeLanguage('nl');
 		const languageButton = (
 			<Button
 				onClick={toggleLanguage}
@@ -110,7 +110,7 @@ class NavBar extends React.Component<NavBarProps> {
 							/>
 						</Link>
 						<Hidden smDown>{languageButton}</Hidden>
-						{process.env.REACT_APP_STAGE === "dev" ? (
+						{process.env.REACT_APP_STAGE === 'dev' ? (
 							<div className={props.classes.developmentTag}>Development</div>
 						) : null}
 					</Typography>
@@ -139,7 +139,7 @@ class NavBar extends React.Component<NavBarProps> {
 							color="inherit"
 							className={props.classes.button}
 						>
-							{t("ABOUT")}
+							{t('ABOUT')}
 						</CustomButton>
 						<CustomButton
 							component={Link}
@@ -167,4 +167,4 @@ class NavBar extends React.Component<NavBarProps> {
 export default compose(
 	withStyles(styles),
 	withWidth()
-)(translate(["nav"], { wait: true })(NavBar));
+)(translate(['nav'], { wait: true })(NavBar));

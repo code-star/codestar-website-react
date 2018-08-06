@@ -1,7 +1,7 @@
-import * as React from "react";
-import { Link, Element } from "react-scroll";
-import compose from "recompose/compose";
-import { translate } from "react-i18next";
+import * as React from 'react';
+import { Link, Element } from 'react-scroll';
+import compose from 'recompose/compose';
+import { translate } from 'react-i18next';
 
 import {
 	Typography,
@@ -12,34 +12,34 @@ import {
 	DialogActions,
 	Button,
 	withMobileDialog,
-	Slide
-} from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
+	Slide,
+} from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 
-import Container from "../Container/Container";
-import CaseHeader from "../CaseHeader/CaseHeader";
-import casesList from "./CasesList";
+import Container from '../Container/Container';
+import CaseHeader from '../CaseHeader/CaseHeader';
+import casesList from './CasesList';
 import ResponsiveImage, {
-	getResponsiveImageUrl
-} from "../ResponsiveImage/ResponsiveImage";
-import InlineLogo from "../InlineLogo/InlineLogo";
+	getResponsiveImageUrl,
+} from '../ResponsiveImage/ResponsiveImage';
+import InlineLogo from '../InlineLogo/InlineLogo';
 
 type CasesProps = any;
 type CasesState = any;
 
 const styles: any = {
 	whiteText: {
-		color: "white",
-		textAlign: "left",
-		fontFamily: "Conduit",
-		fontSize: "120%"
+		color: 'white',
+		textAlign: 'left',
+		fontFamily: 'Conduit',
+		fontSize: '120%',
 	},
 	linkCursor: {
-		cursor: "pointer"
+		cursor: 'pointer',
 	},
 	noLineHeight: {
-		lineHeight: 0
-	}
+		lineHeight: 0,
+	},
 };
 
 class Cases extends React.Component<CasesProps, CasesState> {
@@ -80,13 +80,13 @@ class Cases extends React.Component<CasesProps, CasesState> {
 									/>
 								</div>
 								<Typography variant="subheading" className={classes.whiteText}>
-									{t("CASES_INTRO_1")}
+									{t('CASES_INTRO_1')}
 								</Typography>
 								<Typography
 									variant="subheading"
 									className={`${classes.whiteText} mt-2`}
 								>
-									{t("CASES_INTRO_2")}
+									{t('CASES_INTRO_2')}
 								</Typography>
 							</div>
 						</Fade>
@@ -112,19 +112,19 @@ class Cases extends React.Component<CasesProps, CasesState> {
 								<Paper
 									className={classes.linkCursor}
 									style={{
-										display: "inline-block",
-										padding: "8px",
-										margin: "5px",
+										display: 'inline-block',
+										padding: '8px',
+										margin: '5px',
 										backgroundColor: clientCase.color
 											? clientCase.color
-											: "transparent",
-										width: "150px",
-										height: "150px"
+											: 'transparent',
+										width: '150px',
+										height: '150px',
 									}}
 								>
 									<div
 										className="row align-items-center mx-0"
-										style={{ width: "100%", height: "100%" }}
+										style={{ width: '100%', height: '100%' }}
 									>
 										<div className="col-12 p-0">
 											<img
@@ -149,7 +149,7 @@ class Cases extends React.Component<CasesProps, CasesState> {
 			<section>
 				{this.orderedCases.map((clientCase: any, i: number) => {
 					const caseText = t(`CASES.${clientCase.path}`, {
-						returnObjects: true
+						returnObjects: true,
 					});
 					const { title, intro, sections } = caseText;
 					const changeState = (bool: any) => () =>
@@ -186,9 +186,9 @@ class Cases extends React.Component<CasesProps, CasesState> {
 								fullScreen={fullScreen}
 								open={this.state[clientCase.path]}
 								onClose={changeState(false)}
-								scroll={fullScreen ? "paper" : "body"}
+								scroll={fullScreen ? 'paper' : 'body'}
 							>
-								<DialogContent style={{ overflow: "visible" }}>
+								<DialogContent style={{ overflow: 'visible' }}>
 									<h1>{clientCase.client}</h1>
 									{title}
 								</DialogContent>
@@ -207,7 +207,7 @@ class Cases extends React.Component<CasesProps, CasesState> {
 									{fullScreen ? img : null}
 									{clientCase.stack ? (
 										<div>
-											<h4>{t("CASES_STACK_TITLE")}</h4>
+											<h4>{t('CASES_STACK_TITLE')}</h4>
 											<ul>
 												{(clientCase.stack || []).map(
 													(tech: string, ti: number) => <li key={ti}>{tech}</li>
@@ -218,7 +218,7 @@ class Cases extends React.Component<CasesProps, CasesState> {
 								</DialogContent>
 								<DialogActions>
 									<Button onClick={changeState(false)} color="primary">
-										{t("CASES_CLOSE_BUTTON")}
+										{t('CASES_CLOSE_BUTTON')}
 									</Button>
 								</DialogActions>
 							</Dialog>
@@ -233,4 +233,4 @@ class Cases extends React.Component<CasesProps, CasesState> {
 export default compose(
 	withStyles(styles),
 	withMobileDialog()
-)(translate(["cases"], { wait: true })(Cases));
+)(translate(['cases'], { wait: true })(Cases));

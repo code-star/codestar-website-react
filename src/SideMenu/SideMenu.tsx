@@ -1,57 +1,57 @@
-import * as React from "react";
-import { Link } from "react-router-dom";
-import { translate } from "react-i18next";
+import * as React from 'react';
+import { Link } from 'react-router-dom';
+import { translate } from 'react-i18next';
 
 import {
 	List,
 	ListItem,
 	ListItemIcon,
 	ListItemText,
-	Drawer
-} from "@material-ui/core";
+	Drawer,
+} from '@material-ui/core';
 import {
 	Dashboard as DashboardIcon,
 	Business as BusinessIcon,
 	People as PeopleIcon,
 	Code as CodeIcon,
 	Email as EmailIcon,
-	Event as EventIcon
-} from "@material-ui/icons";
+	Event as EventIcon,
+} from '@material-ui/icons';
 
 type SideMenuProps = any;
 type SideMenuState = any;
 
 const list = [
 	{
-		text: "Home",
+		text: 'Home',
 		icon: <DashboardIcon />,
-		link: "/"
+		link: '/',
 	},
 	{
-		text: "Events",
+		text: 'Events',
 		icon: <EventIcon />,
-		link: "/events"
+		link: '/events',
 	},
 	{
-		text: "Cases",
+		text: 'Cases',
 		icon: <BusinessIcon />,
-		link: "/cases"
+		link: '/cases',
 	},
 	{
-		text: "ABOUT",
+		text: 'ABOUT',
 		icon: <PeopleIcon />,
-		link: "/about"
+		link: '/about',
 	},
 	{
-		text: "Jobs",
+		text: 'Jobs',
 		icon: <CodeIcon />,
-		link: "/jobs"
+		link: '/jobs',
 	},
 	{
-		text: "Contact",
+		text: 'Contact',
 		icon: <EmailIcon />,
-		link: "/contact"
-	}
+		link: '/contact',
+	},
 ];
 
 class SideMenu extends React.Component<SideMenuProps, SideMenuState> {
@@ -65,7 +65,7 @@ class SideMenu extends React.Component<SideMenuProps, SideMenuState> {
 	}
 
 	public setLocation(location: string) {
-		this.setState({ location: `/${location.split("/")[1]}` });
+		this.setState({ location: `/${location.split('/')[1]}` });
 	}
 
 	public render() {
@@ -83,7 +83,7 @@ class SideMenu extends React.Component<SideMenuProps, SideMenuState> {
 							<Link
 								to={item.link}
 								key={t(item.text)}
-								style={{ textDecoration: "none" }}
+								style={{ textDecoration: 'none' }}
 							>
 								<ListItem button>
 									<ListItemIcon>{item.icon}</ListItemIcon>
@@ -91,7 +91,7 @@ class SideMenu extends React.Component<SideMenuProps, SideMenuState> {
 										primary={t(item.text)}
 										primaryTypographyProps={
 											this.state.location === item.link
-												? { color: "primary", style: { fontWeight: 500 } }
+												? { color: 'primary', style: { fontWeight: 500 } }
 												: undefined
 										}
 									/>
@@ -105,4 +105,4 @@ class SideMenu extends React.Component<SideMenuProps, SideMenuState> {
 	}
 }
 
-export default translate(["nav"], { wait: true })(SideMenu);
+export default translate(['nav'], { wait: true })(SideMenu);

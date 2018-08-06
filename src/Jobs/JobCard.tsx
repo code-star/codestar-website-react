@@ -1,19 +1,19 @@
-import * as React from "react";
-import { Link } from "react-router-dom";
-import { translate } from "react-i18next";
+import * as React from 'react';
+import { Link } from 'react-router-dom';
+import { translate } from 'react-i18next';
 
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles } from '@material-ui/core/styles';
 import {
 	Card,
 	CardActions,
 	CardContent,
 	CardMedia,
 	Button,
-	Typography
-} from "@material-ui/core";
+	Typography,
+} from '@material-ui/core';
 
-import { getResponsiveImageUrl } from "../ResponsiveImage/ResponsiveImage";
-import ShareButtons from "../ShareButtons/ShareButtons";
+import { getResponsiveImageUrl } from '../ResponsiveImage/ResponsiveImage';
+import ShareButtons from '../ShareButtons/ShareButtons';
 
 type JobCardProps = any;
 
@@ -23,17 +23,17 @@ const styles: any = {
 	card: {
 		width: cardWidth,
 		margin: 10,
-		display: "flex",
-		flexDirection: "column"
+		display: 'flex',
+		flexDirection: 'column',
 	},
 	media: {
 		height: 0,
-		paddingTop: "56.25%" // 16:9
+		paddingTop: '56.25%', // 16:9
 	},
 	content: {
-		flex: "1 0 auto",
-		textDecoration: "none !important"
-	}
+		flex: '1 0 auto',
+		textDecoration: 'none !important',
+	},
 };
 
 // Fixme: this is a workaround for using the material ui button
@@ -44,7 +44,7 @@ class JobCard extends React.Component<JobCardProps> {
 	public render() {
 		const props = this.props;
 		const { t, path } = props;
-		const { title, short_description } = t("JOBS", { returnObjects: true })[
+		const { title, short_description } = t('JOBS', { returnObjects: true })[
 			path
 		];
 
@@ -71,7 +71,7 @@ class JobCard extends React.Component<JobCardProps> {
 							size="small"
 							color="primary"
 						>
-							{t("JOBS_LEARN_MORE_BUTTON")}
+							{t('JOBS_LEARN_MORE_BUTTON')}
 						</CustomButton>
 					</div>
 					<ShareButtons
@@ -81,7 +81,7 @@ class JobCard extends React.Component<JobCardProps> {
 						size="small"
 						color="primary"
 						title={title}
-						text={`${t("JOBS_LOOKING_FOR")} ${title} – ${short_description}`}
+						text={`${t('JOBS_LOOKING_FOR')} ${title} – ${short_description}`}
 						link={`${window.location.href}/jobs/${props.path}`}
 					/>
 				</CardActions>
@@ -90,4 +90,4 @@ class JobCard extends React.Component<JobCardProps> {
 	}
 }
 
-export default translate(["jobs"], { wait: true })(withStyles(styles)(JobCard));
+export default translate(['jobs'], { wait: true })(withStyles(styles)(JobCard));
