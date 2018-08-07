@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Container from '../../Container/Container';
+import Section from '../../Section/Section';
 import { translate } from 'react-i18next';
 import EventsHeader from '../../EventsHeader/EventsHeader';
 import EventCard from '../../EventCard/EventCard';
@@ -25,18 +26,16 @@ export default class Events extends Component {
 		return (
 			<Fragment>
 				<EventsHeader data={nextEvent} />
-				<Element name="previous-events">
-					<section>
-						<Container marginTopNavBar>
-							<h2 style={{ color: 'white' }}>{t('OUR_PREVIOUS_EVENTS')}</h2>
-							<div className="row">
-								<div className="d-flex justify-content-center flex-wrap">
-									{pastEventsList}
-								</div>
+				<Section scrollname="previous-events">
+					<Container>
+						<h2 style={{ color: 'white' }}>{t('OUR_PREVIOUS_EVENTS')}</h2>
+						<div className="row">
+							<div className="d-flex justify-content-center flex-wrap">
+								{pastEventsList}
 							</div>
-						</Container>
-					</section>
-				</Element>
+						</div>
+					</Container>
+				</Section>
 			</Fragment>
 		);
 	}
