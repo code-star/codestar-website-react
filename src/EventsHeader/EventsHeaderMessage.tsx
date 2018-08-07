@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import { translate } from 'react-i18next';
+import { translate } from '../typed-translate';
 import { Typography, Button } from '@material-ui/core';
 import Container from '../Container/Container';
 import css from './EventsHeader.module.css';
 
+type EventsHeaderMessageProps = any;
+
 @translate(['events'], { wait: true })
-export default class EventsHeaderMessage extends Component {
-	render() {
+export default class EventsHeaderMessage extends Component<
+	EventsHeaderMessageProps
+> {
+	public render() {
 		const { t } = this.props;
 		return (
 			<Container center className="mt-5 mb-3">

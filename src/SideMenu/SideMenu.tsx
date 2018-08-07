@@ -69,22 +69,6 @@ class SideMenu extends React.Component<SideMenuProps, SideMenuState> {
 		this.setState({ location: `/${location.split('/')[1]}` });
 	}
 
-	getPrimaryText(item: any) {
-		const { t } = this.props;
-		const notificationIcon = this.props.nextEvent ? (
-			<span style={{ color: 'red' }}> ●</span>
-		) : null;
-		if (item.canHaveNotification) {
-			return (
-				<React.Fragment>
-					{t(item.text)}
-					{notificationIcon}
-				</React.Fragment>
-			);
-		}
-		return t(item.text);
-	}
-
 	public render() {
 		const { t, ...props } = this.props;
 		return (
@@ -119,6 +103,22 @@ class SideMenu extends React.Component<SideMenuProps, SideMenuState> {
 				</div>
 			</Drawer>
 		);
+	}
+
+	private getPrimaryText(item: any) {
+		const { t } = this.props;
+		const notificationIcon = this.props.nextEvent ? (
+			<span style={{ color: 'red' }}> ●</span>
+		) : null;
+		if (item.canHaveNotification) {
+			return (
+				<React.Fragment>
+					{t(item.text)}
+					{notificationIcon}
+				</React.Fragment>
+			);
+		}
+		return t(item.text);
 	}
 }
 
