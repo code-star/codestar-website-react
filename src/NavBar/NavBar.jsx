@@ -76,6 +76,10 @@ class NavBar extends Component {
 			</Button>
 		);
 
+		const notificationIcon = this.props.nextEvent ? (
+			<span style={{ color: 'red' }}> ●</span>
+		) : null;
+
 		return (
 			<AppBar position="fixed" className={props.classes.appBar}>
 				<Toolbar>
@@ -87,6 +91,7 @@ class NavBar extends Component {
 							aria-label="Menu"
 						>
 							<MenuIcon />
+							{notificationIcon}
 						</IconButton>
 					</Hidden>
 					<Typography
@@ -116,7 +121,7 @@ class NavBar extends Component {
 						>
 							Home
 						</Button>
-						<EventsButton label="Events" />
+						<EventsButton label="Events" nextEvent={this.props.nextEvent} />
 						<Button
 							component={Link}
 							to="/cases"

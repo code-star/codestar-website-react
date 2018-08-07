@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { translate } from 'react-i18next';
 
@@ -28,6 +28,7 @@ const list = [
 		text: 'Events',
 		icon: <EventIcon />,
 		link: '/events',
+		canHaveNotification: true,
 	},
 	{
 		text: 'Cases',
@@ -64,6 +65,22 @@ class SideMenu extends Component {
 		this.setState({ location: `/${location.split('/')[1]}` });
 	}
 
+	getPrimaryText(item) {
+		const { t } = this.props;
+		const notificationIcon = this.props.nextEvent ? (
+			<span style={{ color: 'red' }}> ●</span>
+		) : null;
+		if (item.canHaveNotification) {
+			return (
+				<Fragment>
+					{t(item.text)}
+					{notificationIcon}
+				</Fragment>
+			);
+		}
+		return t(item.text);
+	}
+
 	render() {
 		const { t, ...props } = this.props;
 		return (
@@ -84,7 +101,7 @@ class SideMenu extends Component {
 								<ListItem button>
 									<ListItemIcon>{item.icon}</ListItemIcon>
 									<ListItemText
-										primary={t(item.text)}
+										primary={this.getPrimaryText(item)}
 										primaryTypographyProps={
 											this.state.location === item.link
 												? { color: 'primary', style: { fontWeight: 500 } }

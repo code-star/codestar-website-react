@@ -1,0 +1,13 @@
+.section {
+	position: relative;
+	overflow: hidden;
+}
+
+.nextEventTitle {
+	color: white;
+	font-weight: bold;
+}
+
+.nextEventText {
+	color: white;
+}

@@ -1,0 +1,16 @@
+[
+		{
+				"name": "Data Oriented Design with Maxim Zaks",
+				"time": 1537975800000,
+				"link": "https://www.meetup.com/Code-Star-Night/events/252677357/",
+				"description": "<p>After a 🔥 summer we are in for some great talks by Maxim Zaks, who questions why we serialize data the way we do and goes into details on how to improve it. With the paradigms OOP and (our favorite) FP in mind, he will tell us about how to approach development using ECS. Will this turn out to be our new favorite?</p> <p># The nitty gritty of data serialisation<br/>In this talk we will have a close look at data and how we can serialise data for communication and persistence. We will discuss different techniques data serialisation formats employ and how to chose the one which suits you best.</p> <p># Entity Component System - a different approach to game / application development<br/>Entity Component System (ECS) is a software development pattern born in game development. Even though the concept is about 20 years old it is only now, that it is on the brink to becoming mainstream, thanks to the the efforts behind Unity3D game engine. We will discuss how the mental model behind ECS is different, compared to typical OOP and FP approaches and how ECS can help deliver high performance, high throughput interactive applications.</p> <p># About Maxim<br/>Maxim Zaks tells computers how to waste electricity. Hopefully in efficient, or at least useful way.<br/>He worked as IDE developer, Java Consultant in financial sector and mobile games / app developer.<br/>His current obsession is with data serialisation formats and data oriented design.<br/>More about Maxim: <a href=\"https://twitter.com/icex33\" class=\"linkified\">https://twitter.com/icex33</a></p> <p># Program<br/>26 September 2018<br/>17:30 Doors open and registration<br/>18:00 Food<br/>18:30 Talk 1<br/>19:30 Break<br/>20:00 Talk 2<br/>21:00 Drinks</p> ",
+				"featured_photo": {
+						"id": 473173755,
+						"highres_link": "https://secure.meetupstatic.com/photos/event/3/5/b/b/highres_473173755.jpeg",
+						"photo_link": "https://secure.meetupstatic.com/photos/event/3/5/b/b/600_473173755.jpeg",
+						"thumb_link": "https://secure.meetupstatic.com/photos/event/3/5/b/b/thumb_473173755.jpeg",
+						"type": "event",
+						"base_url": "https://secure.meetupstatic.com"
+				}
+		}
+]
