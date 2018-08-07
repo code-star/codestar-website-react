@@ -5,7 +5,6 @@ import Section from '../../Section/Section';
 import { translate } from 'react-i18next';
 import EventsHeader from '../../EventsHeader/EventsHeader';
 import EventCard from '../../EventCard/EventCard';
-import { Element } from 'react-scroll';
 
 /*
  Suggestions for design concepts

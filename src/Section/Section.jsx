@@ -19,6 +19,10 @@ const styles = theme => {
 		element: {
 			position: 'absolute',
 			top: -1 * heightMobileNavbar,
+			width: '100%',
+			height: '100%',
+			visibility: 'hidden',
+			pointerEvents: 'none',
 			[theme.breakpoints.up('sm')]: {
 				top: -1 * heightNavbar,
 			},
@@ -29,7 +33,9 @@ const styles = theme => {
 const Section = props => (
 	<section
 		name={props.scrollname ? props.scrollname : null}
-		className={props.scrollname ? props.classes.section : null}
+		className={`
+			${props.className ? props.className : null}
+			${props.scrollname ? props.classes.section : null}`}
 	>
 		{props.scrollname && (
 			<Element name={props.scrollname} className={props.classes.element} />

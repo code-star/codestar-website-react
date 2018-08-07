@@ -4,8 +4,9 @@ import i18n from '../i18n';
 import sanitizeHtml from 'sanitize-html';
 import { Typography, Button, withStyles, Hidden } from '@material-ui/core';
 import Container from '../Container/Container';
+import Section from '../Section/Section';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
-import { Link, Element } from 'react-scroll';
+import { Link } from 'react-scroll';
 import { translate } from 'react-i18next';
 import EventsHeaderButton from './EventsHeaderButton';
 import { navButtons } from './constants.jsx';
@@ -107,40 +108,38 @@ export class EventsHeader extends Component {
 	renderDetailsSection(mEvent, formattedDate, descriptionElem) {
 		const { t } = this.props;
 		return (
-			<Element name="event-details">
-				<section className="py-5 bg-white">
-					<Container center marginTopNavBar>
-						<div className="row">
-							<div className="col-12">
-								<Typography align="center" variant="title">
-									{mEvent.name}
-								</Typography>
-								<Typography gutterBottom align="center" variant="subheading">
-									{formattedDate}
-								</Typography>
-							</div>
+			<Section scrollname="event-details" className="bg-white">
+				<Container center>
+					<div className="row">
+						<div className="col-12">
+							<Typography align="center" variant="title">
+								{mEvent.name}
+							</Typography>
+							<Typography gutterBottom align="center" variant="subheading">
+								{formattedDate}
+							</Typography>
 						</div>
-						<div className="row">
-							<div className="col-12 col-md-8">{descriptionElem}</div>
-							<div className="col-12 col-md-4">
-								<img
-									src={mEvent.coverUrl}
-									alt={`Artistic background with text "${mEvent.name}"`}
-									style={{ width: '100%' }}
-								/>
-								<Button
-									color="primary"
-									variant="raised"
-									href={mEvent.link}
-									className="mt-1"
-								>
-									{t('SIGN_UP')}
-								</Button>
-							</div>
+					</div>
+					<div className="row">
+						<div className="col-12 col-md-8">{descriptionElem}</div>
+						<div className="col-12 col-md-4">
+							<img
+								src={mEvent.coverUrl}
+								alt={`Artistic background with text "${mEvent.name}"`}
+								style={{ width: '100%' }}
+							/>
+							<Button
+								color="primary"
+								variant="raised"
+								href={mEvent.link}
+								className="mt-1"
+							>
+								{t('SIGN_UP')}
+							</Button>
 						</div>
-					</Container>
-				</section>
-			</Element>
+					</div>
+				</Container>
+			</Section>
 		);
 	}
 
