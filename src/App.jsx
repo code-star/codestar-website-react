@@ -7,11 +7,10 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 
 import theme from './codestarMuiTheme';
 import ScrollToTop from './ScrollToTop';
-import NavBar from './NavBar/NavBar';
-import SideMenu from './SideMenu/SideMenu';
 import Footer from './Footer/Footer';
 import jobsList from './Jobs/JobsList';
 import AsyncComponent from './AsyncComponent/AsyncComponent';
+import NavContainer from './modules/NavContainer/NavContainer';
 
 function fullHeightAsyncComponent(C) {
 	return props => <AsyncComponent fullHeight component={() => C} {...props} />;
@@ -26,15 +25,13 @@ const AsyncJobDescription = fullHeightAsyncComponent(
 );
 const AsyncContact = fullHeightAsyncComponent(import('./Contact/Contact'));
 const AsyncNotFound = fullHeightAsyncComponent(import('./NotFound/NotFound'));
-const AsyncEvents = fullHeightAsyncComponent(import('./Events/Events'));
+const AsyncEvents = fullHeightAsyncComponent(
+	import('./modules/EventsContainer/EventsContainer')
+);
 
 const sections = ['', 'cases', 'about', 'jobs', 'contact'];
 
 class App extends Component {
-	state = {
-		drawerMenu: false,
-	};
-
 	constructor(props) {
 		super(props);
 		this.classes = props.classes;
@@ -53,25 +50,12 @@ class App extends Component {
 		document.body.style.backgroundPositionY = `${position}vh, 0`;
 	}
 
-	toggleDrawer = () => {
-		this.setState(prevState => {
-			return {
-				drawerMenu: !prevState.drawerMenu,
-			};
-		});
-	};
-
 	render() {
 		return (
 			<Router history={this.history}>
 				<MuiThemeProvider theme={theme}>
 					<CssBaseline />
-					<NavBar toggle={this.toggleDrawer} />
-					<SideMenu
-						open={this.state.drawerMenu}
-						toggle={this.toggleDrawer}
-						history={this.history}
-					/>
+					<NavContainer history={this.history} />
 
 					<ScrollToTop>
 						<Switch>

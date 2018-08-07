@@ -131,4 +131,4 @@ We should use Cloudinary as much as possible for hosting images. The [`Responsiv
 ## Local API
 
 * Static Site Mailer: see above
-* Get Upcoming Events from Meetup.com: `npx sls invoke local --function getUpcomingEvents`
+* Get Upcoming Events from Meetup.com: `DEBUG=true npx sls invoke local --function getUpcomingEvents  --path serverless/staticSiteMailer-dummy-payload.json`

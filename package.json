@@ -10,9 +10,10 @@
     "@fortawesome/react-fontawesome": "^0.0.18",
     "@material-ui/core": "^1.3.1",
     "@material-ui/icons": "^1.1.0",
-    "bootstrap": "^4.1.1",
+    "bootstrap-css-only": "^4.1.1",
     "custom-react-scripts": "^0.2.2",
     "gh-pages": "^1.1.0",
+    "got": "^8.3.2",
     "history": "^4.7.2",
     "husky": "^0.14.3",
     "i18next": "^11.3.2",
@@ -46,14 +47,13 @@
     ]
   },
   "scripts": {
-    "start": "REACT_APP_STAGE=dev react-scripts-ts start",
-    "build": "react-scripts-ts test --env=jsdom --coverage --bail --ci && react-scripts-ts build",
-    "build:dev": "REACT_APP_STAGE=dev npm run build",
-    "test": "react-scripts-ts test --env=jsdom --coverage",
-    "test:watch": "react-scripts-ts test --env=jsdom --watch",
-    "eject": "react-scripts-ts eject",
-    "precommit": "lint-staged",
-    "prettier": "prettier --single-quote --write --trailing-comma es5 --write ./src/**/*.{js,jsx,ts,tsx}"
+    "start": "REACT_APP_STAGE=dev react-scripts start",
+    "build": "react-scripts test --env=jsdom --coverage --bail --ci && react-scripts build",
+    "build:test": "REACT_APP_STAGE=test npm run build",
+    "test": "react-scripts test --env=jsdom --coverage",
+    "test:watch": "react-scripts test --env=jsdom --watch",
+    "eject": "react-scripts eject",
+    "precommit": "lint-staged"
   },
   "browserslist": {
     "development": [

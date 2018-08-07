@@ -31,6 +31,7 @@ const list = [
 		text: 'Events',
 		icon: <EventIcon />,
 		link: '/events',
+		canHaveNotification: true,
 	},
 	{
 		text: 'Cases',
@@ -68,7 +69,23 @@ class SideMenu extends React.Component<SideMenuProps, SideMenuState> {
 		this.setState({ location: `/${location.split('/')[1]}` });
 	}
 
-	public render() {
+	getPrimaryText(item) {
+		const { t } = this.props;
+		const notificationIcon = this.props.nextEvent ? (
+			<span style={{ color: 'red' }}> ●</span>
+		) : null;
+		if (item.canHaveNotification) {
+			return (
+				<Fragment>
+					{t(item.text)}
+					{notificationIcon}
+				</Fragment>
+			);
+		}
+		return t(item.text);
+	}
+
+	render() {
 		const { t, ...props } = this.props;
 		return (
 			<Drawer open={props.open} onClose={props.toggle}>
@@ -88,11 +105,11 @@ class SideMenu extends React.Component<SideMenuProps, SideMenuState> {
 								<ListItem button>
 									<ListItemIcon>{item.icon}</ListItemIcon>
 									<ListItemText
-										primary={t(item.text)}
+										primary={this.getPrimaryText(item)}
 										primaryTypographyProps={
 											this.state.location === item.link
 												? { color: 'primary', style: { fontWeight: 500 } }
-												: undefined
+												: null
 										}
 									/>
 								</ListItem>
