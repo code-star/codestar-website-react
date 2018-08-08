@@ -1,52 +1,93 @@
 'use strict';
 
-// TODO Is there an AWS native alternative to node-fetch?
-const fetch = require('node-fetch');
-const allowedOrigin = 'https://www.codestar.nl';
+// Use `got` instead of using `https` (intransparent syntax) or `request-promise` (bloated)
+const got = require('got');
+const util = require('./util');
 
-// Response headers
-const headers = {
-	'Content-Type': 'application/json',
-	'Access-Control-Allow-Origin': allowedOrigin,
-};
-
-// const GET_UPCOMING_EVENTS_URL =
-// 	'https://api.meetup.com/Code-Star-Night/events?photo-host=secure&page=3&sig_id=226887185&status=upcoming&sig=e3efc6db037cf681181d84ae343459a36afbefd4';
-const GET_UPCOMING_EVENTS_URL = 'https://api.meetup.com/Code-Star-Night/events?&sign=true&photo-host=public&page=20&desc=true&status=past';
+// Meetup API test console: https://secure.meetup.com/meetup_api/console/?path=/:urlname/events
+const GET_UPCOMING_EVENTS_URL = 'https://api.meetup.com/Code-Star-Night/events?&sign=true&photo-host=public&page=3&fields=featured_photo&desc=true';
+const GET_PAST_EVENTS_URL = 'https://api.meetup.com/Code-Star-Night/events?&sign=true&photo-host=public&page=20&desc=true&status=past&fields=featured_photo';
+const FALLBACK_IMAGE = 'https://res.cloudinary.com/codestar/image/upload/v1532409289/codestar.nl/meetup/codestar-night-logo.jpg';
 
 module.exports.getUpcomingEvents = async (event, context, callback) => {
-	// TODO origin check
+	try {
+		const headers = util.safeGetHeaders(event.headers.origin);
+		const response = await got(GET_UPCOMING_EVENTS_URL, { json: true });
+		const mEvents = response.body.map(({ name, time, link, description, featured_photo}) => {
+			return {
+				name,
+				time,
+				link,
+				description,
+				featured_photo
+			}
+		});
+		callback(null, {
+			statusCode: 200,
+			headers,
+			body: JSON.stringify(mEvents),
+		});
+	} catch(err) {
+		console.log(err, err.stack);
+		callback('Failed GET_UPCOMING_EVENTS ' + err);
+	}
+};
 
-	// const data = await fetch(GET_UPCOMING_EVENTS_URL, {
-	// 	method: 'GET'
-	// });
-	// const resolvedData = await data.json();
-	// // const ids = resolvedData.map(meetupEvent => {
-	// // 	// TODO conditionally get event details, most importantly the image URL
-	// // 	console.log(meetupEvent.name);
-	// // 	return meetupEvent.id;
-	// // });
-	// const meetupEventPromises = resolvedData.map(meetupEvent => {
-	// 	// TODO conditionally get event details, most importantly the image URL
-	// 	console.log(meetupEvent.name);
-	// 	return fetch(`https://api.meetup.com/Code-Star-Night/events/${meetupEvent.id}?&sign=true&photo-host=public&fields=featured_photo`, {method: 'GET'});
-	// });
-	// // TODO limit to e.g. 20
-	// // TODO show placeholders
-	// const eventDetailsData = await meetupEventPromises[0]; // TODO convert to Promise.all
-	// const eventDetailsDataResolved = await eventDetailsData.json();
-	// console.log(eventDetailsDataResolved.featured_photo.photo_link);
-	// // TODO with zip?
-	// const newData = {
-	// 	id: resolvedData[0].id,
-	// 	name: resolvedData[0].name,
-	// 	photo: eventDetailsDataResolved.featured_photo.photo_link
-	// };
-	// callback(null, {
-	// 	statusCode: 200,
-	// 	headers,
-	// 	body: JSON.stringify({
-	// 		message: newData,
-	// 	}),
-	// });
+module.exports.getPastEvents = async (event, context, callback) => {
+	try {
+		const headers = util.safeGetHeaders(event.headers.origin);
+		const response = await got(GET_PAST_EVENTS_URL, { json: true });
+		const mEventsPromises = await response.body
+			.map(({ name, time, link, featured_photo}) => {
+				return {
+					name,
+					time,
+					link,
+					featured_photo
+				}
+			})
+			.map( (mEvent) => {
+				// If Meetup.com does not have a featured_photo, try to fallback to a Cloudinary image
+				if(!mEvent.featured_photo) {
+					// Generate a valid file name
+					const cleanName = mEvent.name.replace(/[^\w]/g, '');
+					const photoUrl = `https://res.cloudinary.com/codestar/image/upload/e_art:fes,c_fill,h_170,w_300/v1533472199/codestar.nl/meetup/${cleanName}`;
+					// TODO Is it possible to merge this nested promises without new dependency (to e.g. RxJS)?
+					// Check if Cloudinary image exists
+					return got.head(photoUrl, {json: true})
+						.then(result => {
+							const hasValidLength = parseInt(result.headers['content-length'], 10) > 0;
+							if(hasValidLength) {
+								return Object.assign({}, mEvent, {
+									featured_photo: {
+										photo_link: photoUrl
+									}
+								})
+							} else {
+								throw new Error('No image found or parsing failed');
+							}
+						})
+						.catch(() => {
+							// E.g. 404 because not found
+							const mEvent1 = Object.assign({}, mEvent, {
+								featured_photo: {
+									photo_link: FALLBACK_IMAGE
+								}
+							});
+							return (new Promise(resolve => resolve(mEvent1)));
+						});
+				}
+				return (new Promise(resolve => resolve(mEvent)));
+			});
+
+		const mEvents = await Promise.all(mEventsPromises);
+		callback(null, {
+			statusCode: 200,
+			headers,
+			body: JSON.stringify(mEvents),
+		});
+	} catch(err) {
+		console.log(err, err.stack);
+		callback('Failed GET_PAST_EVENTS ' + err);
+	}
 };

@@ -52,7 +52,7 @@ const styles = theme => ({
 			background: 'rgba(200, 200, 255, 0.2)',
 		},
 	},
-	developmentTag: {
+	envTag: {
 		display: 'inline-block',
 		fontFamily: 'monospace',
 		marginLeft: '1em',
@@ -76,6 +76,10 @@ class NavBar extends Component {
 			</Button>
 		);
 
+		const notificationIcon = this.props.nextEvent ? (
+			<span style={{ color: 'red' }}> ●</span>
+		) : null;
+
 		return (
 			<AppBar position="fixed" className={props.classes.appBar}>
 				<Toolbar>
@@ -87,6 +91,7 @@ class NavBar extends Component {
 							aria-label="Menu"
 						>
 							<MenuIcon />
+							{notificationIcon}
 						</IconButton>
 					</Hidden>
 					<Typography
@@ -102,8 +107,8 @@ class NavBar extends Component {
 							/>
 						</Link>
 						<Hidden smDown>{languageButton}</Hidden>
-						{process.env.REACT_APP_STAGE === 'dev' ? (
-							<div className={props.classes.developmentTag}>Development</div>
+						{process.env.REACT_APP_STAGE === 'test' ? (
+							<div className={props.classes.envTag}>[Test]</div>
 						) : null}
 					</Typography>
 					<Hidden mdUp>{languageButton}</Hidden>
@@ -116,7 +121,7 @@ class NavBar extends Component {
 						>
 							Home
 						</Button>
-						<EventsButton label="Events" />
+						<EventsButton label="Events" nextEvent={this.props.nextEvent} />
 						<Button
 							component={Link}
 							to="/cases"
