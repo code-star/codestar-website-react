@@ -2,15 +2,7 @@
 
 // Use `got` instead of using `https` (intransparent syntax) or `request-promise` (bloated)
 const got = require('got');
-
-// API calls only over HTTPS!
-const allowedOrigin = 'https://www.codestar.nl';
-
-// Response headers
-const headers = {
-	'Content-Type': 'application/json',
-	'Access-Control-Allow-Origin': allowedOrigin,
-};
+const util = require('./util');
 
 // Meetup API test console: https://secure.meetup.com/meetup_api/console/?path=/:urlname/events
 const GET_UPCOMING_EVENTS_URL = 'https://api.meetup.com/Code-Star-Night/events?&sign=true&photo-host=public&page=3&fields=featured_photo&desc=true';
@@ -18,17 +10,8 @@ const GET_PAST_EVENTS_URL = 'https://api.meetup.com/Code-Star-Night/events?&sign
 const FALLBACK_IMAGE = 'https://res.cloudinary.com/codestar/image/upload/v1532409289/codestar.nl/meetup/codestar-night-logo.jpg';
 
 module.exports.getUpcomingEvents = async (event, context, callback) => {
-	const allowedOrigins = [allowedOrigin];
-	const debug = process.env.DEBUG;
-	if(debug === 'true') {
-		allowedOrigins.push('http://localhost:3000');
-	}
-
 	try {
-		if(!allowedOrigins.includes(event.headers.origin)) {
-			throw new Error(`Not white-listed origin: ${event.headers.origin}`);
-		}
-
+		const headers = util.safeGetHeaders(event.headers.origin);
 		const response = await got(GET_UPCOMING_EVENTS_URL, { json: true });
 		const mEvents = response.body.map(({ name, time, link, description, featured_photo}) => {
 			return {
@@ -45,22 +28,14 @@ module.exports.getUpcomingEvents = async (event, context, callback) => {
 			body: JSON.stringify(mEvents),
 		});
 	} catch(err) {
-		callback('Failed GET_UPCOMING_EVENTS_URL ' + err);
+		console.log(err, err.stack);
+		callback('Failed GET_UPCOMING_EVENTS ' + err);
 	}
 };
 
 module.exports.getPastEvents = async (event, context, callback) => {
-	const allowedOrigins = [allowedOrigin];
-	const debug = process.env.DEBUG;
-	if(debug === 'true') {
-		allowedOrigins.push('http://localhost:3000');
-	}
-
 	try {
-		if(!allowedOrigins.includes(event.headers.origin)) {
-			throw new Error(`Not white-listed origin: ${event.headers.origin}`);
-		}
-
+		const headers = util.safeGetHeaders(event.headers.origin);
 		const response = await got(GET_PAST_EVENTS_URL, { json: true });
 		const mEventsPromises = await response.body
 			.map(({ name, time, link, featured_photo}) => {
@@ -112,6 +87,7 @@ module.exports.getPastEvents = async (event, context, callback) => {
 			body: JSON.stringify(mEvents),
 		});
 	} catch(err) {
-		callback('Failed GET_UPCOMING_EVENTS_URL ' + err);
+		console.log(err, err.stack);
+		callback('Failed GET_PAST_EVENTS ' + err);
 	}
 };

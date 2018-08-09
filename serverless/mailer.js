@@ -1,20 +1,12 @@
 'use strict';
 const AWS = require('aws-sdk');
 const SES = new AWS.SES();
+const util = require('./util');
 
-// Form data only over HTTPS!
-const allowedOrigin = 'https://www.codestar.nl';
-
-// Response headers
-const headers = {
-	'Content-Type': 'application/json',
-	'Access-Control-Allow-Origin': allowedOrigin,
-};
-
-function sendEmail(formData, destinationAddress) {
+function sendEmail(formData, sourceAddress, destinationAddress) {
 	return new Promise((resolve, reject) => {
 		const emailParams = {
-			Source: destinationAddress, // SES SENDING EMAIL
+			Source: sourceAddress, // SES SENDING EMAIL
 			ReplyToAddresses: [formData.email],
 			Destination: {
 				ToAddresses: [ destinationAddress ],
@@ -45,18 +37,12 @@ function sendEmail(formData, destinationAddress) {
 
 module.exports.staticSiteMailer = async (event, context, callback) => {
 	const formData = JSON.parse(event.body);
+	const sourceAddress = process.env.STATIC_SITE_MAILER_SOURCE;
 	const destinationAddress = process.env.STATIC_SITE_MAILER_DESTINATION;
-	const allowedOrigins = [allowedOrigin];
-	const debug = process.env.DEBUG;
-	if(debug === 'true') {
-		allowedOrigins.push('http://localhost:3000');
-	}
 
 	try {
-		if(!allowedOrigins.includes(event.headers.origin)) {
-			throw new Error(`Not white-listed origin: ${event.headers.origin}`);
-		}
-		const data = await sendEmail(formData, destinationAddress);
+		const headers = util.safeGetHeaders(event.headers.origin);
+		const data = await sendEmail(formData, sourceAddress, destinationAddress);
 		callback(null, {
 			statusCode: 200,
 			headers,
@@ -66,12 +52,6 @@ module.exports.staticSiteMailer = async (event, context, callback) => {
 		});
 	} catch(err) {
 		console.log(err, err.stack);
-		callback(null, {
-			statusCode: 500,
-			headers,
-			body: JSON.stringify({
-				message: err.message,
-			}),
-		});
+		callback('Failed STATIC_SITE_MAILER ' + err);
 	}
 };

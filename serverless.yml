@@ -56,7 +56,26 @@ package:
   include:
     - serverless/**
     - serverless.yml
+    # got@9.0.0 and all its dependencies
+    - node_modules/cacheable-request/**
+    - node_modules/clone-response/**
+    - node_modules/decompress-response/**
+    - node_modules/duplexer3/**
+    - node_modules/get-stream/**
     - node_modules/got/**
+    - node_modules/http-cache-semantics/**
+    - node_modules/json-buffer/**
+    - node_modules/keyv/**
+    - node_modules/lowercase-keys/**
+    - node_modules/mimic-response/**
+    - node_modules/normalize-url/**
+    - node_modules/p-cancelable/**
+    - node_modules/prepend-http/**
+    - node_modules/responselike/**
+    - node_modules/@sindresorhus/**
+    - node_modules/symbol-observable/**
+    - node_modules/to-readable-stream/**
+    - node_modules/url-parse-lax/**
   exclude:
   	# path that starts with * must be in "
     - "**/*"

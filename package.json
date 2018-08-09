@@ -13,7 +13,7 @@
     "bootstrap-css-only": "^4.1.1",
     "custom-react-scripts": "^0.2.2",
     "gh-pages": "^1.1.0",
-    "got": "^8.3.2",
+    "got": "^9.0.0",
     "history": "^4.7.2",
     "husky": "^0.14.3",
     "i18next": "^11.3.2",
