@@ -1,6 +1,5 @@
 import * as React from 'react';
-import compose from 'recompose/compose';
-import { translate } from 'react-i18next';
+import { translate } from '../typed-translate';
 
 import { Typography, withWidth } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
@@ -47,6 +46,24 @@ const styles: any = (theme: any) => ({
 	},
 });
 
+function withStylesTyped(myStyles: any) {
+	return (Component: any) => {
+		return withStyles(myStyles)(Component) as any;
+	};
+}
+
+function withWidthTyped() {
+	return (Component: any) => {
+		return withWidth()(Component) as any;
+	};
+}
+
+// Compose Pattern as decorators, recompose dependency not needed anymore
+// Based on second-to-last line in chapter https://reactjs.org/docs/higher-order-components.html
+// > (This same property also allows connect and other enhancer-style HOCs to be used as decorators, an experimental JavaScript proposal.)
+@withStylesTyped(styles)
+@withWidthTyped()
+@translate(['intro'], { wait: true })
 class Intro extends React.Component<IntroProps> {
 	public render() {
 		const { t, ...props } = this.props;
@@ -142,7 +159,9 @@ class Intro extends React.Component<IntroProps> {
 	}
 }
 
-export default compose(
-	withStyles(styles),
-	withWidth()
-)(translate(['intro'], { wait: true })(Intro));
+// This is replaced by the decorators above the class:
+// export default compose(
+// 	withStyles(styles),
+// 	withWidth()
+// )(translate(['intro'], { wait: true })(Intro));
+export default Intro;
