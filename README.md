@@ -86,7 +86,7 @@ To invoke the function, run:
 - Test:
 
 	```bash
-	STATIC_SITE_MAILER_DESTINATION=example@example.com DEBUG=true npx sls invoke local --function staticSiteMailer --path serverless/staticSiteMailer-dummy-payload.json
+	STATIC_SITE_MAILER_SOURCE=example@example.com STATIC_SITE_MAILER_DESTINATION=example@example.com DEBUG=true npx sls invoke local --function staticSiteMailer --path serverless/staticSiteMailer-dummy-payload.json
 	```
 
 (`--path` is optional and points to a `POST` payload)
@@ -95,9 +95,13 @@ To invoke the function, run:
 
 The environment variable `DEBUG=true` will allow calls from `localhost:3000`. This can also be enabled on AWS if needed. 
 
-The destination email address is set in the environment variable `STATIC_SITE_MAILER_DESTINATION`. You can check the [documentation](https://serverless.com/framework/docs/providers/spotinst/guide/variables/#environment-variables) for more information about environment variables.
+The destination email address is set in the environment variable `STATIC_SITE_MAILER_DESTINATION`.
+The source email address is set in the environment variable `STATIC_SITE_MAILER_SOURCE`.  
+You can check the [documentation](https://serverless.com/framework/docs/providers/spotinst/guide/variables/#environment-variables) for 
+more information about environment variables.
 
-Locally this can be set in a test profile or just by setting the environment variable with `export STATIC_SITE_MAILER_DESTINATION=example@example.com`. In the code it is accessed via `process.env.STATIC_SITE_MAILER_DESTINATION`.
+Locally this can be set in a test profile or just by setting the environment variable with 
+`export STATIC_SITE_MAILER_DESTINATION=example@example.com`. In the code it is accessed via `process.env.STATIC_SITE_MAILER_DESTINATION`.
 
 To change it in AWS:
 

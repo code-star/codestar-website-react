@@ -3,10 +3,10 @@ const AWS = require('aws-sdk');
 const SES = new AWS.SES();
 const util = require('./util');
 
-function sendEmail(formData, destinationAddress) {
+function sendEmail(formData, sourceAddress, destinationAddress) {
 	return new Promise((resolve, reject) => {
 		const emailParams = {
-			Source: destinationAddress, // SES SENDING EMAIL
+			Source: sourceAddress, // SES SENDING EMAIL
 			ReplyToAddresses: [formData.email],
 			Destination: {
 				ToAddresses: [ destinationAddress ],
@@ -37,11 +37,12 @@ function sendEmail(formData, destinationAddress) {
 
 module.exports.staticSiteMailer = async (event, context, callback) => {
 	const formData = JSON.parse(event.body);
+	const sourceAddress = process.env.STATIC_SITE_MAILER_SOURCE;
 	const destinationAddress = process.env.STATIC_SITE_MAILER_DESTINATION;
 
 	try {
 		const headers = util.safeGetHeaders(event.headers.origin);
-		const data = await sendEmail(formData, destinationAddress);
+		const data = await sendEmail(formData, sourceAddress, destinationAddress);
 		callback(null, {
 			statusCode: 200,
 			headers,
