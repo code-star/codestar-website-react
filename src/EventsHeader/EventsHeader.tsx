@@ -29,7 +29,7 @@ const styles = (theme: any) => ({
 
 @translate(['events'], { wait: true })
 export class EventsHeader extends Component<EventsHeaderProps> {
-	public static contextTypes = {
+	public static propTypes = {
 		data: PropTypes.object.isRequired,
 	};
 
