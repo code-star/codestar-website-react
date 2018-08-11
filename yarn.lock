@@ -7358,7 +7358,7 @@ react-router@^4.3.1:
 
 "react-scripts-ts@https://github.com/code-star/create-react-app-typescript.git#build":
   version "2.17.0"
-  resolved "https://github.com/code-star/create-react-app-typescript.git#d0dbcc24757344f1fe18992fb9c07f16ebf125ba"
+  resolved "https://github.com/code-star/create-react-app-typescript.git#b1f323a99d9f73f2fd548f866c1a97043c25ed21"
   dependencies:
     autoprefixer "7.1.6"
     babel-jest "^22.1.0"
