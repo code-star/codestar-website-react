@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import * as React from 'react';
 import { translate } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
@@ -12,6 +12,8 @@ import Clients from '../Clients/Clients';
 import jobsList from './JobsList';
 import JobCard from './JobCard';
 
+type JobsProps = any;
+
 const styles = {
 	whiteText: {
 		color: 'white',
@@ -22,13 +24,16 @@ const styles = {
 	},
 };
 
-@translate(['jobs'], { wait: true })
-class Jobs extends Component {
-	render() {
+// Fixme: this is a workaround for using the material ui button
+// with the `to` property. By default this is not supported.
+const CustomButton = (props: any) => <Button {...props} />;
+
+class Jobs extends React.Component<JobsProps> {
+	public render() {
 		const { t, classes } = this.props;
 
 		return (
-			<Fragment>
+			<>
 				<section className="py-3">
 					<Container marginTopNavBar>
 						<div className="row">
@@ -58,7 +63,7 @@ class Jobs extends Component {
 								<h3>{t('JOBS_TITLE')}</h3>
 								<ul>
 									{t('JOBS_ARGUMENTS', { returnObjects: true }).map(
-										(arg, i) => <li key={i}>{arg}</li>
+										(arg: any, i: number) => <li key={i}>{arg}</li>
 									)}
 								</ul>
 							</div>
@@ -75,7 +80,7 @@ class Jobs extends Component {
 						</div>
 						<div className="row justify-content-center py-3">
 							<p>
-								<Button
+								<CustomButton
 									className="mt-3"
 									variant="raised"
 									component={Link}
@@ -83,14 +88,14 @@ class Jobs extends Component {
 									color="inherit"
 								>
 									{t('JOBS_ABOUT_US')}
-								</Button>
+								</CustomButton>
 							</p>
 						</div>
 					</Container>
 				</section>
-			</Fragment>
+			</>
 		);
 	}
 }
 
-export default withStyles(styles)(Jobs);
+export default translate(['jobs'], { wait: true })(withStyles(styles)(Jobs));

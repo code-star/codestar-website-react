@@ -78,8 +78,9 @@ class NotFound extends Component {
 		function hexEditorify(text, initialIndex, styleClass) {
 			return [...Array(Math.ceil(text.length / length)).keys()].map(i => {
 				let content = text.slice(i * length, (i + 1) * length);
-				if (content.length < length)
+				if (content.length < length) {
 					content += ' '.repeat(length - content.length);
+				}
 				const hex = content
 					.split('')
 					.map(c => toHex(c.charCodeAt(0), 2))

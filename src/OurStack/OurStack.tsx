@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { translate } from 'react-i18next';
 
 import { Paper, Avatar, Tooltip, Typography, Grow } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
 import { getResponsiveImageUrl } from '../ResponsiveImage/ResponsiveImage';
-import techs from './techs';
+import techs from './techs.json';
 
-const styles = theme => ({
+type OurStackProps = any;
+
+const styles = (theme: any) => ({
 	root: {
 		...theme.mixins.gutters(),
 		marginBottom: theme.spacing.unit * 1,
@@ -21,15 +23,14 @@ const styles = theme => ({
 	},
 });
 
-@translate(['stack'], { wait: true })
-class OurStack extends Component {
-	render() {
+class OurStack extends React.Component<OurStackProps> {
+	public render() {
 		const { t, classes } = this.props;
 
-		function techIcons(techs) {
+		function techIcons(techItems: any) {
 			return (
 				<div className="row">
-					{techs.map(item => (
+					{techItems.map((item: any) => (
 						<Tooltip
 							key={item.logo}
 							title={item.name} // TODO: Description why we chose a tech
@@ -84,4 +85,6 @@ class OurStack extends Component {
 	}
 }
 
-export default withStyles(styles)(OurStack);
+export default translate(['stack'], { wait: true })(
+	withStyles(styles)(OurStack)
+);

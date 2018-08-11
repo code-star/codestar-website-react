@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { compose } from 'recompose';
 import { translate } from 'react-i18next';
 
@@ -11,7 +11,9 @@ import Container from '../Container/Container';
 import css from './CaseHeader.module.css';
 import InlineLogo from '../InlineLogo/InlineLogo';
 
-const styles = theme => ({
+type CaseHeaderProps = any;
+
+const styles: any = (theme: any) => ({
 	link: {
 		color: 'white',
 		'&:hover': {
@@ -31,9 +33,8 @@ const styles = theme => ({
 	},
 });
 
-@translate(['cases'], { wait: true })
-class CaseHeader extends Component {
-	render() {
+class CaseHeader extends React.Component<CaseHeaderProps> {
+	public render() {
 		const props = this.props;
 		const { t, classes } = props;
 		return (
@@ -94,4 +95,4 @@ class CaseHeader extends Component {
 export default compose(
 	withStyles(styles),
 	withWidth()
-)(CaseHeader);
+)(translate(['cases'], { wait: true })(CaseHeader));

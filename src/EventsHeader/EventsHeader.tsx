@@ -7,14 +7,16 @@ import Container from '../Container/Container';
 import Section from '../Section/Section';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 import { Link } from 'react-scroll';
-import { translate } from 'react-i18next';
+import { translate } from '../typed-translate';
 import EventsHeaderButton from './EventsHeaderButton';
 import { navButtons } from './constants.jsx';
 import { purple } from '@material-ui/core/colors';
 import css from './EventsHeader.module.css';
 import EventsHeaderMessage from './EventsHeaderMessage';
 
-const styles = theme => ({
+type EventsHeaderProps = any;
+
+const styles = (theme: any) => ({
 	button: {
 		color: theme.palette.getContrastText(purple[500]),
 		backgroundColor: purple[500],
@@ -26,13 +28,64 @@ const styles = theme => ({
 });
 
 @translate(['events'], { wait: true })
-export class EventsHeader extends Component {
-	constructor(props) {
+export class EventsHeader extends Component<EventsHeaderProps> {
+	public static propTypes = {
+		data: PropTypes.object.isRequired,
+	};
+
+	constructor(props: any) {
 		super(props);
 		this.renderDetailsSection = this.renderDetailsSection.bind(this);
 	}
 
-	renderNavButtons() {
+	public render() {
+		const {
+			data: { mEvent, noEvent },
+		} = this.props;
+		let headerContent = null;
+		let detailsSection = null;
+		if (mEvent) {
+			const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
+			const formattedDate = new Date(mEvent.time).toLocaleDateString(locale, {
+				year: 'numeric',
+				month: 'long',
+				day: 'numeric',
+			});
+			const cleanDescription = sanitizeHtml(mEvent.description);
+			const descriptionElem = (
+				<Typography
+					component="p"
+					dangerouslySetInnerHTML={{ __html: cleanDescription }}
+				/>
+			);
+			headerContent = this.renderHeaderContent(mEvent, formattedDate);
+			detailsSection = this.renderDetailsSection(
+				mEvent,
+				formattedDate,
+				descriptionElem
+			);
+		} else if (noEvent) {
+			headerContent = (
+				<EventsHeaderMessage>{this.renderNavButtons()}</EventsHeaderMessage>
+			);
+		}
+		return (
+			<Fragment>
+				<section className={css.section}>
+					<ResponsiveImage
+						path="/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg"
+						asBackgroundImage
+						effect="e_art:fes"
+						alt="Andre Staltz presenting to a crowd at the Codestar Night meetup of September of 2018"
+					/>
+					{headerContent}
+				</section>
+				{detailsSection}
+			</Fragment>
+		);
+	}
+
+	private renderNavButtons() {
 		return navButtons.map(config => {
 			return (
 				<EventsHeaderButton
@@ -46,7 +99,7 @@ export class EventsHeader extends Component {
 		});
 	}
 
-	renderHeaderContent(mEvent, formattedDate) {
+	private renderHeaderContent(mEvent: any, formattedDate: string) {
 		const { t, classes } = this.props;
 		return (
 			<Container fullHeight center className="mt-5 mt-sm-2 mt-md-0">
@@ -105,7 +158,11 @@ export class EventsHeader extends Component {
 		);
 	}
 
-	renderDetailsSection(mEvent, formattedDate, descriptionElem) {
+	private renderDetailsSection(
+		mEvent: any,
+		formattedDate: string,
+		descriptionElem: any
+	) {
 		const { t } = this.props;
 		return (
 			<Section scrollname="event-details" className="bg-white">
@@ -142,57 +199,6 @@ export class EventsHeader extends Component {
 			</Section>
 		);
 	}
-
-	render() {
-		const {
-			data: { mEvent, noEvent },
-		} = this.props;
-		let headerContent = null;
-		let detailsSection = null;
-		if (mEvent) {
-			const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
-			const formattedDate = new Date(mEvent.time).toLocaleDateString(locale, {
-				year: 'numeric',
-				month: 'long',
-				day: 'numeric',
-			});
-			const cleanDescription = sanitizeHtml(mEvent.description);
-			const descriptionElem = (
-				<Typography
-					component="p"
-					dangerouslySetInnerHTML={{ __html: cleanDescription }}
-				/>
-			);
-			headerContent = this.renderHeaderContent(mEvent, formattedDate);
-			detailsSection = this.renderDetailsSection(
-				mEvent,
-				formattedDate,
-				descriptionElem
-			);
-		} else if (noEvent) {
-			headerContent = (
-				<EventsHeaderMessage>{this.renderNavButtons()}</EventsHeaderMessage>
-			);
-		}
-		return (
-			<Fragment>
-				<section className={css.section}>
-					<ResponsiveImage
-						path="/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg"
-						asBackgroundImage
-						effect="e_art:fes"
-						alt="Andre Staltz presenting to a crowd at the Codestar Night meetup of September of 2018"
-					/>
-					{headerContent}
-				</section>
-				{detailsSection}
-			</Fragment>
-		);
-	}
 }
-
-EventsHeader.propTypes = {
-	data: PropTypes.object.isRequired,
-};
 
 export default withStyles(styles)(EventsHeader);
