@@ -48,7 +48,6 @@
   "scripts": {
     "start": "REACT_APP_STAGE=dev react-scripts-ts start",
     "build": "react-scripts-ts test --env=jsdom --coverage --bail --ci && react-scripts-ts build",
-    "build:test": "REACT_APP_STAGE=test npm run build",
     "test": "react-scripts-ts test --env=jsdom --coverage",
     "test:watch": "react-scripts-ts test --env=jsdom --watch",
     "eject": "react-scripts-ts eject",
