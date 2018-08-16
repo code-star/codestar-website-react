@@ -3,7 +3,7 @@ node_js:
 - 9.11.1
 # https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#github-pages
 script:
-	- ./ci-build.sh
+  - ./ci-build.sh
 deploy:
   # TEST
   - provider: pages
