@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { Link } from 'react-router-dom';
 import compose from 'recompose/compose';
 import { translate } from 'react-i18next';
@@ -20,7 +20,9 @@ import EventsButton from './EventsButton';
 import i18n from '../i18n';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 
-const styles = theme => ({
+type NavBarProps = any;
+
+const styles: any = (theme: any) => ({
 	flex: {
 		flex: 1,
 	},
@@ -59,15 +61,21 @@ const styles = theme => ({
 	},
 });
 
-@translate(['nav'], { wait: true })
-class NavBar extends Component {
-	render() {
+// Fixme: this is a workaround for using the material ui button
+// with the `to` property. By default this is not supported.
+const CustomButton = (props: any) => <Button {...props} />;
+
+class NavBar extends React.Component<NavBarProps> {
+	public render() {
 		const { t, ...props } = this.props;
 
-		const toggle = lng => i18n.changeLanguage(lng);
+		const toggleLanguage = () =>
+			i18n.language === 'nl'
+				? i18n.changeLanguage('en')
+				: i18n.changeLanguage('nl');
 		const languageButton = (
 			<Button
-				onClick={() => toggle(i18n.language === 'nl' ? 'en' : 'nl')}
+				onClick={toggleLanguage}
 				color="inherit"
 				className={`${props.classes.langButton} ${props.classes.button}`}
 			>
@@ -113,47 +121,47 @@ class NavBar extends Component {
 					</Typography>
 					<Hidden mdUp>{languageButton}</Hidden>
 					<Hidden smDown>
-						<Button
+						<CustomButton
 							component={Link}
 							to="/"
 							color="inherit"
 							className={props.classes.button}
 						>
 							Home
-						</Button>
+						</CustomButton>
 						<EventsButton label="Events" nextEvent={this.props.nextEvent} />
-						<Button
+						<CustomButton
 							component={Link}
 							to="/cases"
 							color="inherit"
 							className={props.classes.button}
 						>
 							Cases
-						</Button>
-						<Button
+						</CustomButton>
+						<CustomButton
 							component={Link}
 							to="/about"
 							color="inherit"
 							className={props.classes.button}
 						>
 							{t('ABOUT')}
-						</Button>
-						<Button
+						</CustomButton>
+						<CustomButton
 							component={Link}
 							to="/jobs"
 							color="inherit"
 							className={props.classes.button}
 						>
 							Jobs
-						</Button>
-						<Button
+						</CustomButton>
+						<CustomButton
 							component={Link}
 							to="/contact"
 							color="inherit"
 							className={props.classes.button}
 						>
 							Contact
-						</Button>
+						</CustomButton>
 					</Hidden>
 				</Toolbar>
 			</AppBar>
@@ -164,4 +172,4 @@ class NavBar extends Component {
 export default compose(
 	withStyles(styles),
 	withWidth()
-)(NavBar);
+)(translate(['nav'], { wait: true })(NavBar));

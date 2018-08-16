@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import compose from 'recompose/compose';
 import { translate } from 'react-i18next';
 import _ from 'lodash';
@@ -22,7 +22,10 @@ import { withStyles } from '@material-ui/core/styles';
 import Container from '../Container/Container';
 import Map from '../Map/Map';
 
-const styles = theme => ({
+type ContactProps = any;
+type ContactState = any;
+
+const styles = (theme: any) => ({
 	halfHeightMinusHalfNavBar: {
 		minHeight: 'calc(50vh - 28px)',
 		[theme.breakpoints.up('sm')]: {
@@ -31,9 +34,8 @@ const styles = theme => ({
 	},
 });
 
-@translate(['contact'], { wait: true })
-export class Contact extends Component {
-	constructor(props) {
+export class Contact extends React.Component<ContactProps, ContactState> {
+	constructor(props: ContactProps) {
 		super(props);
 		this.state = {
 			name: '',
@@ -49,66 +51,66 @@ export class Contact extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	componentDidMount() {
+	public componentDidMount() {
 		setTimeout(() => {
 			this.setState({ showMap: true });
 		}, 300);
 	}
 
-	handleChange(event) {
+	public handleChange(event: React.ChangeEvent<HTMLInputElement>) {
 		this.setState({ [event.target.name]: event.target.value });
 	}
 
-	handleSubmit(ev) {
+	public handleSubmit(ev: React.FormEvent<HTMLFormElement>) {
 		ev.preventDefault();
 
 		// Validate the text area
 		const hasMessageError = this.state.message === '';
 		this.setState({ messageRequiredError: hasMessageError });
 
-		if (!hasMessageError) {
-			let url =
-				'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/dev/static-site-mailer';
-			let options = {
-				method: 'POST',
-				body: JSON.stringify({
-					name: this.state.name,
-					phone: this.state.phone,
-					email: this.state.email,
-					message: this.state.message,
-				}),
-			};
-			if (process.env.REACT_APP_STAGE === 'dev') {
-				url = '/mock/staticSiteMailer.json';
-				options = {
-					method: 'GET',
-				};
-			}
-			// Fetch is supported in all evergreen browsers, but not IE 11 or Opera Mini. Polyfill not added at this time.
-			return fetch(url, options)
-				.then(data => data.json())
-				.then(data => {
-					if (_.get(data, 'message.MessageId')) {
-						this.setState({
-							showFetchSuccess: true,
-						});
-					} else {
-						console.log('Fetch failure: no MessageId in response');
-						this.setState({
-							showFetchFailure: true,
-						});
-					}
-				})
-				.catch(error => {
-					console.log('Fetch failure:' + error);
+		if (hasMessageError) {
+			return;
+		}
+		const url =
+			process.env.REACT_APP_STAGE === 'dev'
+				? '/mock/staticSiteMailer.json'
+				: 'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/dev/static-site-mailer';
+		const options =
+			process.env.REACT_APP_STAGE === 'dev'
+				? {
+						method: 'GET',
+				  }
+				: {
+						method: 'POST',
+						body: JSON.stringify({
+							name: this.state.name,
+							phone: this.state.phone,
+							email: this.state.email,
+							message: this.state.message,
+						}),
+				  };
+		// Fetch is supported in all evergreen browsers, but not IE 11 or Opera Mini. Polyfill not added at this time.
+		return fetch(url, options)
+			.then(data => data.json())
+			.then(data => {
+				if (_.get(data, 'message.MessageId')) {
+					this.setState({
+						showFetchSuccess: true,
+					});
+				} else {
 					this.setState({
 						showFetchFailure: true,
 					});
+				}
+			})
+			.catch(error => {
+				this.setState({
+					showFetchFailure: true,
 				});
-		}
+			});
 	}
 
-	render() {
+	public render() {
 		const { t } = this.props;
 		const err = this.state.messageRequiredError ? (
 			<FormHelperText id="name-error-text">
@@ -175,7 +177,7 @@ export class Contact extends Component {
 												/>
 											</FormControl>
 
-											<FormControl fullWidth required={true}>
+											<FormControl fullWidth required>
 												<InputLabel htmlFor="email">{t('EMAIL')}</InputLabel>
 												<Input
 													id="email"
@@ -186,7 +188,7 @@ export class Contact extends Component {
 											</FormControl>
 										</div>
 										<div className="col-12 col-md-7">
-											<FormControl fullWidth required={true}>
+											<FormControl fullWidth required>
 												<TextField
 													error={this.state.messageRequiredError}
 													label={t('MESSAGE')}
@@ -220,4 +222,4 @@ export class Contact extends Component {
 export default compose(
 	withStyles(styles),
 	withWidth()
-)(Contact);
+)(translate(['contact'], { wait: true })(Contact));

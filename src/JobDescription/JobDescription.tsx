@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { translate } from 'react-i18next';
 
 import { Button, Typography } from '@material-ui/core';
@@ -7,7 +7,9 @@ import { withStyles } from '@material-ui/core/styles';
 
 import Container from '../Container/Container';
 
-const styles = theme => ({
+type JobDescriptionProps = any;
+
+const styles = (theme: any) => ({
 	button: {
 		margin: theme.spacing.unit,
 	},
@@ -16,9 +18,8 @@ const styles = theme => ({
 	},
 });
 
-@translate(['jobs'], { wait: true })
-class JobDescription extends Component {
-	render() {
+class JobDescription extends React.Component<JobDescriptionProps> {
+	public render() {
 		const props = this.props;
 		const { path, t } = props;
 		const { title, tagline, client_case, paragraphs } = t('JOBS', {
@@ -44,21 +45,23 @@ class JobDescription extends Component {
 									<b>{t('JOBS_CLIENT_CASE_LABEL')}</b>: {client_case}
 								</p>
 
-								{paragraphs.concat(commonParagraphs).map((paragraph, i) => (
-									<div key={i} className="row">
-										<div className="col">
-											<h4>{paragraph.title}</h4>
-											<p>{paragraph.content}</p>
-											{paragraph.list ? (
-												<ul>
-													{paragraph.list.map((elem, i) => (
-														<li key={i}>{elem}</li>
-													))}
-												</ul>
-											) : null}
+								{paragraphs
+									.concat(commonParagraphs)
+									.map((paragraph: any, i: number) => (
+										<div key={i} className="row">
+											<div className="col">
+												<h4>{paragraph.title}</h4>
+												<p>{paragraph.content}</p>
+												{paragraph.list ? (
+													<ul>
+														{paragraph.list.map((elem: any, pi: number) => (
+															<li key={pi}>{elem}</li>
+														))}
+													</ul>
+												) : null}
+											</div>
 										</div>
-									</div>
-								))}
+									))}
 
 								<Button
 									className={props.classes.button}
@@ -72,14 +75,16 @@ class JobDescription extends Component {
 								</Button>
 
 								<div className="pt-5 pb-3">
-									{t('JOBS_NOTES', { returnObjects: true }).map((note, i) => (
-										<div key={i}>
-											<small>
-												{'*'.repeat(i + 1)}
-												{note}
-											</small>
-										</div>
-									))}
+									{t('JOBS_NOTES', { returnObjects: true }).map(
+										(note: any, i: number) => (
+											<div key={i}>
+												<small>
+													{'*'.repeat(i + 1)}
+													{note}
+												</small>
+											</div>
+										)
+									)}
 								</div>
 							</div>
 						</div>
@@ -90,4 +95,6 @@ class JobDescription extends Component {
 	}
 }
 
-export default withStyles(styles)(JobDescription);
+export default translate(['jobs'], { wait: true })(
+	withStyles(styles)(JobDescription)
+);

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { translate } from 'react-i18next';
 
@@ -15,9 +15,11 @@ import {
 import { getResponsiveImageUrl } from '../ResponsiveImage/ResponsiveImage';
 import ShareButtons from '../ShareButtons/ShareButtons';
 
+type JobCardProps = any;
+
 const cardWidth = 250;
 
-const styles = {
+const styles: any = {
 	card: {
 		width: cardWidth,
 		margin: 10,
@@ -34,9 +36,12 @@ const styles = {
 	},
 };
 
-@translate(['jobs'], { wait: true })
-class JobCard extends Component {
-	render() {
+// Fixme: this is a workaround for using the material ui button
+// with the `to` property. By default this is not supported.
+const CustomButton = (props: any) => <Button {...props} />;
+
+class JobCard extends React.Component<JobCardProps> {
+	public render() {
 		const props = this.props;
 		const { t, path } = props;
 		const { title, short_description } = t('JOBS', { returnObjects: true })[
@@ -60,14 +65,14 @@ class JobCard extends Component {
 				</Link>
 				<CardActions>
 					<div style={{ flex: 1 }}>
-						<Button
+						<CustomButton
 							component={Link}
 							to={`/jobs/${props.path}`}
 							size="small"
 							color="primary"
 						>
 							{t('JOBS_LEARN_MORE_BUTTON')}
-						</Button>
+						</CustomButton>
 					</div>
 					<ShareButtons
 						twitter
@@ -85,4 +90,4 @@ class JobCard extends Component {
 	}
 }
 
-export default withStyles(styles)(JobCard);
+export default translate(['jobs'], { wait: true })(withStyles(styles)(JobCard));

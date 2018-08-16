@@ -1,5 +1,5 @@
 // TODO: This list and the one in Clients.jsx have duplicate data
-const casesList = [
+export default [
 	{
 		client: 'Rabobank',
 		path: 'rabobank',
@@ -89,5 +89,3 @@ const casesList = [
 		color: '#47ade9',
 	},
 ];
-
-export default casesList;
