@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { translate } from 'react-i18next';
 
@@ -17,6 +17,9 @@ import {
 	Email as EmailIcon,
 	Event as EventIcon,
 } from '@material-ui/icons';
+
+type SideMenuProps = any;
+type SideMenuState = any;
 
 const list = [
 	{
@@ -52,36 +55,21 @@ const list = [
 	},
 ];
 
-@translate(['nav'], { wait: true })
-class SideMenu extends Component {
-	state = { location: null };
+class SideMenu extends React.Component<SideMenuProps, SideMenuState> {
+	public state: SideMenuState = { location: null };
 
-	componentDidMount() {
-		this.props.history.listen(location => this.setLocation(location.pathname));
+	public componentDidMount() {
+		this.props.history.listen((location: Location) =>
+			this.setLocation(location.pathname)
+		);
 		this.setLocation(this.props.history.location.pathname);
 	}
 
-	setLocation(location) {
+	public setLocation(location: string) {
 		this.setState({ location: `/${location.split('/')[1]}` });
 	}
 
-	getPrimaryText(item) {
-		const { t } = this.props;
-		const notificationIcon = this.props.nextEvent ? (
-			<span style={{ color: 'red' }}> ●</span>
-		) : null;
-		if (item.canHaveNotification) {
-			return (
-				<Fragment>
-					{t(item.text)}
-					{notificationIcon}
-				</Fragment>
-			);
-		}
-		return t(item.text);
-	}
-
-	render() {
+	public render() {
 		const { t, ...props } = this.props;
 		return (
 			<Drawer open={props.open} onClose={props.toggle}>
@@ -105,7 +93,7 @@ class SideMenu extends Component {
 										primaryTypographyProps={
 											this.state.location === item.link
 												? { color: 'primary', style: { fontWeight: 500 } }
-												: null
+												: undefined
 										}
 									/>
 								</ListItem>
@@ -116,6 +104,22 @@ class SideMenu extends Component {
 			</Drawer>
 		);
 	}
+
+	private getPrimaryText(item: any) {
+		const { t } = this.props;
+		const notificationIcon = this.props.nextEvent ? (
+			<span style={{ color: 'red' }}> ●</span>
+		) : null;
+		if (item.canHaveNotification) {
+			return (
+				<React.Fragment>
+					{t(item.text)}
+					{notificationIcon}
+				</React.Fragment>
+			);
+		}
+		return t(item.text);
+	}
 }
 
-export default SideMenu;
+export default translate(['nav'], { wait: true })(SideMenu);

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { translate } from 'react-i18next';
 
@@ -18,12 +18,14 @@ import {
 import { getResponsiveImageUrl } from '../ResponsiveImage/ResponsiveImage';
 import Container from '../Container/Container';
 import OurStack from '../OurStack/OurStack';
-import Team from './Team';
+import Team from './Team.json';
 import css from './About.module.css';
 
-function shuffleArray(array) {
+type AboutProps = any;
+
+function shuffleArray(array: number[]) {
 	for (let i = array.length - 1; i > 0; i--) {
-		let j = Math.floor(Math.random() * (i + 1));
+		const j = Math.floor(Math.random() * (i + 1));
 		[array[i], array[j]] = [array[j], array[i]];
 	}
 	return array;
@@ -31,9 +33,12 @@ function shuffleArray(array) {
 
 const cardWidth = 300;
 
-@translate(['about'], { wait: true })
-class About extends Component {
-	render() {
+// Fixme: this is a workaround for using the material ui button
+// with the `to` property. By default this is not supported.
+const CustomButton = (props: any) => <Button {...props} />;
+
+class About extends React.Component<AboutProps> {
+	public render() {
 		const { t } = this.props;
 		return (
 			<div>
@@ -52,15 +57,15 @@ class About extends Component {
 						</div>
 						<div className="row justify-content-center py-3">
 							{/*Already in love? Check out{' '}*/}
-							<Button
+							<CustomButton
 								className="mt-3"
 								variant="raised"
 								component={Link}
-								to="/jobs"
+								to={'/jobs'}
 								color="inherit"
 							>
 								{t('ABOUT_VACANCIES')}
-							</Button>
+							</CustomButton>
 						</div>
 					</Container>
 				</section>
@@ -92,7 +97,7 @@ class About extends Component {
 		);
 	}
 
-	renderTeamCarousel() {
+	public renderTeamCarousel() {
 		return (
 			<Carousel
 				slideWidth={`${cardWidth}px`}
@@ -101,23 +106,16 @@ class About extends Component {
 				autoplayInterval={7000}
 				cellAlign="center"
 				slidesToScroll="auto"
-				renderBottomCenterControls={null}
-				renderCenterLeftControls={({ previousSlide }) => (
-					<Button mini variant="fab" onClick={previousSlide}>
-						<NavigateBeforeIcon />
-					</Button>
-				)}
-				renderCenterRightControls={({ nextSlide }) => (
-					<Button mini variant="fab" onClick={nextSlide}>
-						<NavigateNextIcon />
-					</Button>
-				)}
+				renderBottomCenterControls={undefined}
+				renderCenterLeftControls={this.renderCenterLeftControls}
+				renderCenterRightControls={this.renderCenterRightControls}
 			>
 				{shuffleArray(Team)
 					.filter(
-						person => person && !person.gone && person.name && person.image
+						(person: any) =>
+							person && !person.gone && person.name && person.image
 					)
-					.map(person => (
+					.map((person: any) => (
 						<Card key={person.image} className={`${css.card} my-3`}>
 							<CardMedia
 								className={css.cardMedia}
@@ -144,6 +142,22 @@ class About extends Component {
 			</Carousel>
 		);
 	}
+
+	public renderCenterLeftControls = ({ previousSlide }: any) => {
+		return (
+			<Button mini variant="fab" onClick={previousSlide}>
+				<NavigateBeforeIcon />
+			</Button>
+		);
+	};
+
+	public renderCenterRightControls = ({ nextSlide }: any) => {
+		return (
+			<Button mini variant="fab" onClick={nextSlide}>
+				<NavigateNextIcon />
+			</Button>
+		);
+	};
 }
 
-export default About;
+export default translate(['about'], { wait: true })(About);

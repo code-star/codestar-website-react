@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { Link, Element } from 'react-scroll';
 import compose from 'recompose/compose';
 import { translate } from 'react-i18next';
@@ -24,7 +24,10 @@ import ResponsiveImage, {
 } from '../ResponsiveImage/ResponsiveImage';
 import InlineLogo from '../InlineLogo/InlineLogo';
 
-const styles = {
+type CasesProps = any;
+type CasesState = any;
+
+const styles: any = {
 	whiteText: {
 		color: 'white',
 		textAlign: 'left',
@@ -39,11 +42,10 @@ const styles = {
 	},
 };
 
-@translate(['cases'], { wait: true })
-class Cases extends Component {
-	orderedCases = [3, 1, 2, 5, 0, 4].map(i => casesList[i]);
+class Cases extends React.Component<CasesProps, CasesState> {
+	public orderedCases = [3, 1, 2, 5, 0, 4].map(i => casesList[i]);
 
-	state = this.orderedCases.reduce((accu, clientCase) => {
+	public state: CasesState = this.orderedCases.reduce((accu, clientCase) => {
 		accu[clientCase.path] =
 			this.props.location.hash.slice(1) === clientCase.path &&
 			clientCase.readMore
@@ -52,7 +54,7 @@ class Cases extends Component {
 		return accu;
 	}, {});
 
-	render() {
+	public render() {
 		return (
 			<div>
 				{this.renderIntro()}
@@ -61,7 +63,7 @@ class Cases extends Component {
 		);
 	}
 
-	renderIntro() {
+	public renderIntro() {
 		const { t, classes } = this.props;
 		return (
 			<section>
@@ -95,7 +97,7 @@ class Cases extends Component {
 		);
 	}
 
-	renderBoxes() {
+	public renderBoxes() {
 		const { classes } = this.props;
 		return (
 			<Slide in timeout={1000} direction="left">
@@ -141,16 +143,16 @@ class Cases extends Component {
 		);
 	}
 
-	renderCases() {
+	public renderCases() {
 		const { t, fullScreen } = this.props;
 		return (
 			<section>
-				{this.orderedCases.map((clientCase, i) => {
+				{this.orderedCases.map((clientCase: any, i: number) => {
 					const caseText = t(`CASES.${clientCase.path}`, {
 						returnObjects: true,
 					});
 					const { title, intro, sections } = caseText;
-					const changeState = bool => () =>
+					const changeState = (bool: any) => () =>
 						this.setState({ [clientCase.path]: bool });
 
 					const img = (
@@ -192,10 +194,10 @@ class Cases extends Component {
 								</DialogContent>
 								{fullScreen ? null : img}
 								<DialogContent>
-									{sections.map((section, i) => (
-										<div key={i}>
+									{sections.map((section: any, si: number) => (
+										<div key={si}>
 											<h4>{section.title}</h4>
-											{section.paragraphs.map((text, j) => (
+											{section.paragraphs.map((text: string, j: number) => (
 												<p key={j}>
 													<InlineLogo>{text}</InlineLogo>
 												</p>
@@ -207,9 +209,9 @@ class Cases extends Component {
 										<div>
 											<h4>{t('CASES_STACK_TITLE')}</h4>
 											<ul>
-												{(clientCase.stack || []).map((tech, i) => (
-													<li key={i}>{tech}</li>
-												))}
+												{(clientCase.stack || []).map(
+													(tech: string, ti: number) => <li key={ti}>{tech}</li>
+												)}
 											</ul>
 										</div>
 									) : null}
@@ -231,4 +233,4 @@ class Cases extends Component {
 export default compose(
 	withStyles(styles),
 	withMobileDialog()
-)(Cases);
+)(translate(['cases'], { wait: true })(Cases));
