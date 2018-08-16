@@ -8,4 +8,4 @@ fi
 
 export REACT_APP_STAGE
 echo REACT_APP_STAGE is $REACT_APP_STAGE
-# npm run build
+npm run build
