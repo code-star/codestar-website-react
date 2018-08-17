@@ -16,8 +16,6 @@ type EventsPropTypes = any;
  https://colorlib.com/wp/free-event-website-templates/
 */
 
-// TODO unit test
-
 // TODO replace propTypes by https://gist.github.com/wittydeveloper/5ffb5f7d5d0c744612404ffdc802cd0a
 @translate(['events'], { wait: true })
 export default class Events extends Component<EventsProps, EventsPropTypes> {
