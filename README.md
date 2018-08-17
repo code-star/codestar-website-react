@@ -137,3 +137,9 @@ We should use Cloudinary as much as possible for hosting images. The [`Responsiv
 * Static Site Mailer: see above
 * Get Upcoming Events from Meetup.com: `DEBUG=true npx sls invoke local --function getUpcomingEvents --path serverless/staticSiteMailer-dummy-payload.json`
 * Get Past Events from Meetup.com: `npx sls invoke local --function getPastEvents --path serverless/staticSiteMailer-dummy-payload.json`
+
+## Unit testing
+
+* Run `npm test`
+* Run one specific test: e.g. `npm test -- src/modules/EventsContainer/EventsContainer.test.jsx --coverage=false --watch`
+* To only run one test in a file use `fit()` instead of `it()`, to exclude use `xit()` instead of `it()`

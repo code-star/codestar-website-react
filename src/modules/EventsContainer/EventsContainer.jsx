@@ -31,7 +31,7 @@ export default class EventsContainer extends Component {
 	state = {
 		nextEvent: {
 			loading: true,
-			event: null,
+			mEvent: null,
 			noEvent: false,
 		},
 		pastEvents: [],
@@ -59,7 +59,7 @@ export default class EventsContainer extends Component {
 			this.setState({
 				nextEvent: {
 					loading: false,
-					event: null,
+					mEvent: null,
 					noEvent: true,
 				},
 			});
