@@ -34,6 +34,12 @@ export default class Events extends Component<EventsProps, EventsPropTypes> {
 				<EventsHeader data={nextEvent} />
 				<Section scrollname="previous-events">
 					<Container>
+						<h2 style={{ color: 'white' }}>{t('OUR_NEXT_EVENTS')}</h2>
+						<div className="row">
+							<div className="d-flex justify-content-center flex-wrap">
+								{pastEventsList}
+							</div>
+						</div>
 						<h2 style={{ color: 'white' }}>{t('OUR_PREVIOUS_EVENTS')}</h2>
 						<div className="row">
 							<div className="d-flex justify-content-center flex-wrap">

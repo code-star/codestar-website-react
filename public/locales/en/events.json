@@ -2,7 +2,8 @@
 	"INFO_NO_NEXT_EVENTS": "There are no upcoming events at this time.",
 	"CODESTAR_ON_MEETUP_COM": "Codestar on Meetup.com",
 	"OUR_NEXT_EVENT": "Our next event:",
+	"OUR_NEXT_EVENTS": "Our next events:",
+	"OUR_PREVIOUS_EVENTS": "Our previous events:",
 	"SIGN_UP": "Sign up!",
-	"MORE_INFO": "More info",
-	"OUR_PREVIOUS_EVENTS": "Our previous events:"
+	"MORE_INFO": "More info"
 }
