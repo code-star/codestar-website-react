@@ -23,6 +23,8 @@ it('replaces Codestar in a string with an image', () => {
 	const compInstance = comp.getInstance();
 	const domResult = compInstance.render()[0].props.children;
 	expect(domResult[0]).toBe('test ');
+	// This is probably the easiest way to do duck-typing of the image that is injected instead of the string Codestar.
+	// It checks if the object that is injected has a "type" property that is a function.
 	expect(typeof domResult[1].type).toBe('function');
 	expect(domResult[2]).toBe(' test');
 });

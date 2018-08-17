@@ -96,6 +96,7 @@ describe('An instance of EventsContainer', () => {
 		});
 	});
 
+	// For future reference, if we every want to test the process.env condition:
 	// This is a way to fix different values of process.env, but it does not work with `import`
 	// describe('fetchEvents in dev stage', () => {
 	// 	const OLD_ENV = process.env;
