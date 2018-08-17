@@ -50,4 +50,4 @@ const Events: any = ({
 // 		pastEvents: PropTypes.array.isRequired,
 // 	};
 
-export default compose(translate(['cases'], { wait: true }))(Events);
+export default compose(translate(['events'], { wait: true }))(Events);
