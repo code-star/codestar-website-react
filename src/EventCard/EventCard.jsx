@@ -16,7 +16,7 @@ import css from './EventCard.module.css';
 
 export class EventCard extends Component {
 	render() {
-		const { MeetupEvent: mEvent, classes } = this.props;
+		const { MeetupEvent: mEvent, t } = this.props;
 		const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
 		const formattedDate = new Date(mEvent.time).toLocaleDateString(locale, {
 			year: 'numeric',
@@ -40,7 +40,17 @@ export class EventCard extends Component {
 				/>
 			);
 		}
-		const signUpButton = null;
+		const signUpButton =
+			mEvent.time > Date.now() ? (
+				<Button
+					size="small"
+					color="primary"
+					variant="raised"
+					href={mEvent.link}
+				>
+					{t('SIGN_UP')}
+				</Button>
+			) : null;
 		return (
 			<Card className={mEvent.withDescription ? css.cardBig : css.card}>
 				<CardMedia
@@ -56,9 +66,8 @@ export class EventCard extends Component {
 				</CardContent>
 				<CardActions>
 					<Button size="small" color="primary" href={mEvent.link}>
-						Read More
+						{t('READ_MORE')}
 					</Button>
-					{/*TODO ! show big/primary "Sign Up" button if event is in the future */}
 					{signUpButton}
 				</CardActions>
 			</Card>
