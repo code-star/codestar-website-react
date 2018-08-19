@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import EventsContainer from './EventsContainer';
 import renderer from 'react-test-renderer';
-import { getCachedUpcomingEvents } from '../../eventsService.tsx';
+// import { getCachedUpcomingEvents } from '../../eventsService.tsx';
 
 // jest.mock('getCachedUpcomingEvents');
 
