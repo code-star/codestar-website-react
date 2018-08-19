@@ -2,14 +2,7 @@ import * as React from 'react';
 import compose from 'recompose/compose';
 import { translate } from 'react-i18next';
 
-import {
-	Paper,
-	Avatar,
-	Tooltip,
-	Typography,
-	Grow,
-	withWidth,
-} from '@material-ui/core';
+import { Paper, Avatar, Tooltip, Typography, Grow } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
 import { getResponsiveImageUrl } from '../ResponsiveImage/ResponsiveImage';

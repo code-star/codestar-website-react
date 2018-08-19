@@ -43,9 +43,7 @@ export default class Events extends Component<EventsProps, EventsPropTypes> {
 				<Fragment>
 					<h2 style={{ color: 'white' }}>{t('OUR_NEXT_EVENTS')}</h2>
 					<div className="row">
-						<div className="d-flex justify-content-center flex-wrap">
-							{nextEventsList}
-						</div>
+						<div className="d-flex flex-wrap">{nextEventsList}</div>
 					</div>
 				</Fragment>
 			) : null;
@@ -63,9 +61,7 @@ export default class Events extends Component<EventsProps, EventsPropTypes> {
 						{nextEventsBlock}
 						<h2 style={{ color: 'white' }}>{t('OUR_PREVIOUS_EVENTS')}</h2>
 						<div className="row">
-							<div className="d-flex justify-content-center flex-wrap">
-								{pastEventsList}
-							</div>
+							<div className="d-flex flex-wrap">{pastEventsList}</div>
 						</div>
 					</Container>
 				</Section>
