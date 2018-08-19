@@ -2,17 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import EventsContainer from './EventsContainer';
 import renderer from 'react-test-renderer';
-// import { getCachedUpcomingEvents } from '../../eventsService.tsx';
+import * as eventsService from '../../eventsService';
 
-// jest.mock('getCachedUpcomingEvents');
+jest.mock('../../eventsService');
 
 it('renders without crashing', () => {
 	const div = document.createElement('div');
 	ReactDOM.render(<EventsContainer />, div);
 	ReactDOM.unmountComponentAtNode(div);
 });
-
-// TODO test eventsService
 
 describe('An instance of EventsContainer', () => {
 	let compInstance;
@@ -36,28 +34,22 @@ describe('An instance of EventsContainer', () => {
 
 	describe('fetchEvents', () => {
 		it('sets nextEvents if call successful', async () => {
-			// console.log(getCachedUpcomingEvents)
-			// getCachedUpcomingEvents.mockResolvedValue([
-			// 	{
-			// 		name: 'UPCOMING_MOCK_NAME',
-			// 		time: 'UPCOMING_MOCK_TIME',
-			// 		link: 'UPCOMING_MOCK_LINK',
-			// 	},
-			// ]);
-
-			fetch.once(
-				JSON.stringify([
-					{
-						name: 'UPCOMING_MOCK_NAME',
-						time: 'UPCOMING_MOCK_TIME',
-						link: 'UPCOMING_MOCK_LINK',
-					},
-				])
-			);
+			// Mock response for getCachedUpcomingEvents
+			eventsService.getCachedUpcomingEvents.mockResolvedValue([
+				{
+					name: 'UPCOMING_MOCK_NAME',
+					time: 'UPCOMING_MOCK_TIME',
+					link: 'UPCOMING_MOCK_LINK',
+				},
+			]);
+			// Mock reponse for getPastMeetupEvents
+			fetch.once(JSON.stringify([]));
+			// Initial state
 			expect(compInstance.state.nextMeetupEvents).toEqual([]);
 			expect(compInstance.state.loadingNextMeetupEvent).toBeTruthy();
 			expect(compInstance.state.noNextMeetupEvent).toBeFalsy();
 			expect(compInstance.state.pastMeetupEvents).toEqual([]);
+			// Call and state after call
 			await compInstance.fetchEvents();
 			expect(compInstance.state.nextMeetupEvents).toEqual([
 				{
@@ -76,32 +68,33 @@ describe('An instance of EventsContainer', () => {
 		});
 
 		it('sets pastEvents if call successful', async () => {
-			fetch
-				// Response to getNextMeetupEvents
-				// .once(JSON.stringify([]))
-				// Response to getPastMeetupEvents
-				.once(
-					JSON.stringify([
-						{
-							name: 'PAST_MOCK_NAME_1',
-							time: 'PAST_MOCK_TIME_1',
-							link: 'PAST_MOCK_LINK_1',
-						},
-						{
-							name: 'PAST_MOCK_NAME_2',
-							time: 'PAST_MOCK_TIME_2',
-							link: 'PAST_MOCK_LINK_2',
-						},
-					])
-				);
+			// Mock response for getCachedUpcomingEvents
+			eventsService.getCachedUpcomingEvents.mockResolvedValue([]);
+			// Mock reponse for getPastMeetupEvents
+			fetch.once(
+				JSON.stringify([
+					{
+						name: 'PAST_MOCK_NAME_1',
+						time: 'PAST_MOCK_TIME_1',
+						link: 'PAST_MOCK_LINK_1',
+					},
+					{
+						name: 'PAST_MOCK_NAME_2',
+						time: 'PAST_MOCK_TIME_2',
+						link: 'PAST_MOCK_LINK_2',
+					},
+				])
+			);
+			// Initial state
 			expect(compInstance.state.nextMeetupEvents).toEqual([]);
 			expect(compInstance.state.loadingNextMeetupEvent).toBeTruthy();
 			expect(compInstance.state.noNextMeetupEvent).toBeFalsy();
 			expect(compInstance.state.pastMeetupEvents).toEqual([]);
+			// Call and state after call
 			await compInstance.fetchEvents();
-			// expect(compInstance.state.nextMeetupEvents).toEqual([]);
+			expect(compInstance.state.nextMeetupEvents).toEqual([]);
 			expect(compInstance.state.loadingNextMeetupEvent).toBeFalsy();
-			// expect(compInstance.state.noNextMeetupEvent).toBeTruthy();
+			expect(compInstance.state.noNextMeetupEvent).toBeTruthy();
 			expect(compInstance.state.pastMeetupEvents).toEqual([
 				{
 					coverUrl:
