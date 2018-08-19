@@ -2,9 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import NavBar from '../../NavBar/NavBar';
 import SideMenu from '../../SideMenu/SideMenu';
-
-const GET_UPCOMING_EVENTS_URL =
-	'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/dev/get-upcoming-events';
+import { getCachedUpcomingEvents } from '../../eventsService';
 
 export default class NavContainer extends Component {
 	state = {
@@ -18,12 +16,8 @@ export default class NavContainer extends Component {
 
 	async fetchUpcomingEvent() {
 		try {
-			let url = GET_UPCOMING_EVENTS_URL;
-			if (process.env.REACT_APP_STAGE === 'dev') {
-				url = '/mock/getUpcomingEvents.json';
-			}
-			const response = await fetch(url).then(data => data.json());
-			const nextEvent = response[0];
+			const response = await getCachedUpcomingEvents();
+			const nextEvent = response && response.length > 0 ? response[0] : null;
 			if (nextEvent) {
 				this.setState({ nextEvent });
 			}
@@ -40,7 +34,6 @@ export default class NavContainer extends Component {
 		});
 	};
 
-	// TODO can we somehow re-use EventsContainer instead of duplicating the service call here?
 	render() {
 		return (
 			<Fragment>
