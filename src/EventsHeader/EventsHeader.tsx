@@ -13,7 +13,6 @@ import { navButtons } from './constants.jsx';
 import { purple } from '@material-ui/core/colors';
 import css from './EventsHeader.module.css';
 import EventsHeaderMessage from './EventsHeaderMessage';
-// import compose from 'recompose/compose';
 
 type EventsHeaderProps = any;
 
@@ -28,7 +27,6 @@ const styles = (theme: any) => ({
 	},
 });
 
-@translate(['events'], { wait: true })
 export class EventsHeader extends Component<EventsHeaderProps> {
 	public static propTypes = {
 		nextMeetupEvents: PropTypes.array.isRequired,
@@ -208,4 +206,7 @@ export class EventsHeader extends Component<EventsHeaderProps> {
 	}
 }
 
-export default withStyles(styles)(EventsHeader);
+// TODO apply recompose (seems to give type error) and replace typed-translate by normal translate
+export default translate(['events'], { wait: true })(
+	withStyles(styles)(EventsHeader)
+);
