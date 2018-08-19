@@ -1,0 +1,279 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OurStack shows icons for each technology 1`] = `
+<div>
+  <div
+    className="MuiPaper-root-1 MuiPaper-elevation1-4 MuiPaper-rounded-2"
+  >
+    <div
+      className="row justify-content-between"
+    >
+      <div
+        className="col-auto mb-1"
+      >
+        
+        <span
+          className="MuiTypography-root-28 MuiTypography-caption-38"
+        >
+          
+        </span>
+      </div>
+      <div
+        className="col-auto mr-1"
+      >
+        <div
+          className="row"
+        >
+          <div>
+            <div
+              className="MuiAvatar-root-60"
+            >
+              <img
+                alt="Typescript"
+                className="MuiAvatar-img-62"
+                sizes={undefined}
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/typescript.png"
+                srcSet={undefined}
+              />
+            </div>
+          </div>
+          <div>
+            <div
+              className="MuiAvatar-root-60"
+            >
+              <img
+                alt="React"
+                className="MuiAvatar-img-62"
+                sizes={undefined}
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/react.png"
+                srcSet={undefined}
+              />
+            </div>
+          </div>
+          <div>
+            <div
+              className="MuiAvatar-root-60"
+            >
+              <img
+                alt="Redux"
+                className="MuiAvatar-img-62"
+                sizes={undefined}
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/redux.png"
+                srcSet={undefined}
+              />
+            </div>
+          </div>
+          <div>
+            <div
+              className="MuiAvatar-root-60"
+            >
+              <img
+                alt="Angular"
+                className="MuiAvatar-img-62"
+                sizes={undefined}
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/angular.png"
+                srcSet={undefined}
+              />
+            </div>
+          </div>
+          <div>
+            <div
+              className="MuiAvatar-root-60"
+            >
+              <img
+                alt="RxJS"
+                className="MuiAvatar-img-62"
+                sizes={undefined}
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/rxjs.png"
+                srcSet={undefined}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root-1 MuiPaper-elevation1-4 MuiPaper-rounded-2"
+  >
+    <div
+      className="row justify-content-between"
+    >
+      <div
+        className="col-auto mb-1"
+      >
+        
+        <span
+          className="MuiTypography-root-28 MuiTypography-caption-38"
+        >
+          
+        </span>
+      </div>
+      <div
+        className="col-auto mr-1"
+      >
+        <div
+          className="row"
+        >
+          <div>
+            <div
+              className="MuiAvatar-root-60"
+            >
+              <img
+                alt="Scala"
+                className="MuiAvatar-img-62"
+                sizes={undefined}
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/scala.svg"
+                srcSet={undefined}
+              />
+            </div>
+          </div>
+          <div>
+            <div
+              className="MuiAvatar-root-60"
+            >
+              <img
+                alt="Akka"
+                className="MuiAvatar-img-62"
+                sizes={undefined}
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/akka.svg"
+                srcSet={undefined}
+              />
+            </div>
+          </div>
+          <div>
+            <div
+              className="MuiAvatar-root-60"
+            >
+              <img
+                alt="Spray"
+                className="MuiAvatar-img-62"
+                sizes={undefined}
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/spray.png"
+                srcSet={undefined}
+              />
+            </div>
+          </div>
+          <div>
+            <div
+              className="MuiAvatar-root-60"
+            >
+              <img
+                alt="Spark"
+                className="MuiAvatar-img-62"
+                sizes={undefined}
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/spark.png"
+                srcSet={undefined}
+              />
+            </div>
+          </div>
+          <div>
+            <div
+              className="MuiAvatar-root-60"
+            >
+              <img
+                alt="Cassandra"
+                className="MuiAvatar-img-62"
+                sizes={undefined}
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/cassandra.png"
+                srcSet={undefined}
+              />
+            </div>
+          </div>
+          <div>
+            <div
+              className="MuiAvatar-root-60"
+            >
+              <img
+                alt="Kafka"
+                className="MuiAvatar-img-62"
+                sizes={undefined}
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/kafka.png"
+                srcSet={undefined}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root-1 MuiPaper-elevation1-4 MuiPaper-rounded-2"
+  >
+    <div
+      className="row justify-content-between"
+    >
+      <div
+        className="col-auto mb-1"
+      >
+        
+        <span
+          className="MuiTypography-root-28 MuiTypography-caption-38"
+        >
+          
+        </span>
+      </div>
+      <div
+        className="col-auto mr-1"
+      >
+        <div
+          className="row"
+        >
+          <div>
+            <div
+              className="MuiAvatar-root-60"
+            >
+              <img
+                alt="Docker"
+                className="MuiAvatar-img-62"
+                sizes={undefined}
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/docker.png"
+                srcSet={undefined}
+              />
+            </div>
+          </div>
+          <div>
+            <div
+              className="MuiAvatar-root-60"
+            >
+              <img
+                alt="Mesos"
+                className="MuiAvatar-img-62"
+                sizes={undefined}
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/mesos.jpg"
+                srcSet={undefined}
+              />
+            </div>
+          </div>
+          <div>
+            <div
+              className="MuiAvatar-root-60"
+            >
+              <img
+                alt="Kubernetes"
+                className="MuiAvatar-img-62"
+                sizes={undefined}
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/kubernetes.png"
+                srcSet={undefined}
+              />
+            </div>
+          </div>
+          <div>
+            <div
+              className="MuiAvatar-root-60"
+            >
+              <img
+                alt="AWS"
+                className="MuiAvatar-img-62"
+                sizes={undefined}
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/aws.png"
+                srcSet={undefined}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

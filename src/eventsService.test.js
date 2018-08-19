@@ -9,6 +9,12 @@ describe('An instance of EventsContainer', () => {
 		fetch.resetMocks();
 	});
 
+	it('returns null on failure', async () => {
+		fetch.mockRejectOnce('server down');
+		const result = await getCachedUpcomingEvents();
+		expect(result).toBeNull();
+	});
+
 	it('first call to getCachedUpcomingEvents returns the API result', async () => {
 		fetch.once(
 			JSON.stringify([
