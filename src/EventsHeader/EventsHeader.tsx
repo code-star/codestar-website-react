@@ -13,6 +13,7 @@ import { navButtons } from './constants.jsx';
 import { purple } from '@material-ui/core/colors';
 import css from './EventsHeader.module.css';
 import EventsHeaderMessage from './EventsHeaderMessage';
+// import compose from 'recompose/compose';
 
 type EventsHeaderProps = any;
 
@@ -30,7 +31,8 @@ const styles = (theme: any) => ({
 @translate(['events'], { wait: true })
 export class EventsHeader extends Component<EventsHeaderProps> {
 	public static propTypes = {
-		data: PropTypes.object.isRequired,
+		nextMeetupEvents: PropTypes.array.isRequired,
+		noNextMeetupEvent: PropTypes.bool.isRequired,
 	};
 
 	constructor(props: any) {
@@ -39,32 +41,37 @@ export class EventsHeader extends Component<EventsHeaderProps> {
 	}
 
 	public render() {
-		const {
-			data: { mEvent, noEvent },
-		} = this.props;
+		const { nextMeetupEvents, noNextMeetupEvent } = this.props;
 		let headerContent = null;
 		let detailsSection = null;
-		if (mEvent) {
+		const meetupEvent =
+			nextMeetupEvents && nextMeetupEvents.length > 0
+				? nextMeetupEvents[0]
+				: null;
+		if (meetupEvent) {
 			const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
-			const formattedDate = new Date(mEvent.time).toLocaleDateString(locale, {
-				year: 'numeric',
-				month: 'long',
-				day: 'numeric',
-			});
-			const cleanDescription = sanitizeHtml(mEvent.description);
+			const formattedDate = new Date(meetupEvent.time).toLocaleDateString(
+				locale,
+				{
+					year: 'numeric',
+					month: 'long',
+					day: 'numeric',
+				}
+			);
+			const cleanDescription = sanitizeHtml(meetupEvent.description);
 			const descriptionElem = (
 				<Typography
 					component="p"
 					dangerouslySetInnerHTML={{ __html: cleanDescription }}
 				/>
 			);
-			headerContent = this.renderHeaderContent(mEvent, formattedDate);
+			headerContent = this.renderHeaderContent(meetupEvent, formattedDate);
 			detailsSection = this.renderDetailsSection(
-				mEvent,
+				meetupEvent,
 				formattedDate,
 				descriptionElem
 			);
-		} else if (noEvent) {
+		} else if (noNextMeetupEvent) {
 			headerContent = (
 				<EventsHeaderMessage>{this.renderNavButtons()}</EventsHeaderMessage>
 			);

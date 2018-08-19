@@ -11,8 +11,10 @@ import {
 	Button,
 	withStyles,
 } from '@material-ui/core';
+import { translate } from 'react-i18next';
+import compose from 'recompose/compose';
 
-// TODO MvD: We can also put this in a .css file to keep the component tidy?
+// TODO ! MvD: We can also put this in a .css file to keep the component tidy? CSS modules
 const styles = {
 	card: {
 		maxWidth: 300, // 345,
@@ -36,7 +38,6 @@ const styles = {
 export class EventCard extends Component {
 	render() {
 		const { MeetupEvent: mEvent, classes } = this.props;
-		// TODO observe changes to i18n.language
 		const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
 		const formattedDate = new Date(mEvent.time).toLocaleDateString(locale, {
 			year: 'numeric',
@@ -77,7 +78,7 @@ export class EventCard extends Component {
 					<Button size="small" color="primary" href={mEvent.link}>
 						Read More
 					</Button>
-					{/*TODO show big/primary "Sign Up" button if event is in the future */}
+					{/*TODO ! show big/primary "Sign Up" button if event is in the future */}
 				</CardActions>
 			</Card>
 		);
@@ -88,4 +89,7 @@ EventCard.propTypes = {
 	MeetupEvent: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(EventCard);
+export default compose(
+	withStyles(styles),
+	translate(['events'], { wait: true })
+)(EventCard);

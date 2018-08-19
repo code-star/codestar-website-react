@@ -20,24 +20,39 @@ type EventsPropTypes = any;
 @translate(['events'], { wait: true })
 export default class Events extends Component<EventsProps, EventsPropTypes> {
 	public static propTypes = {
-		nextEvent: PropTypes.object.isRequired,
-		pastEvents: PropTypes.array.isRequired,
+		nextMeetupEvents: PropTypes.array.isRequired,
+		noNextMeetupEvent: PropTypes.bool.isRequired,
+		pastMeetupEvents: PropTypes.array.isRequired,
 	};
 
 	public render() {
-		const { t, nextEvent, pastEvents } = this.props;
-		const pastEventsList = pastEvents.map((mEvent: any) => (
+		const {
+			t,
+			nextMeetupEvents,
+			noNextMeetupEvent,
+			pastMeetupEvents,
+		} = this.props;
+		const nextEventsList = nextMeetupEvents.map(
+			({ description, withDescription, ...restOfEvent }: any) => (
+				// Strip the description and withDescription properties
+				<EventCard key={restOfEvent.time} MeetupEvent={...restOfEvent} />
+			)
+		);
+		const pastEventsList = pastMeetupEvents.map((mEvent: any) => (
 			<EventCard key={mEvent.time} MeetupEvent={mEvent} />
 		));
 		return (
 			<Fragment>
-				<EventsHeader data={nextEvent} />
+				<EventsHeader
+					nextMeetupEvents={nextMeetupEvents}
+					noNextMeetupEvent={noNextMeetupEvent}
+				/>
 				<Section scrollname="previous-events">
 					<Container>
 						<h2 style={{ color: 'white' }}>{t('OUR_NEXT_EVENTS')}</h2>
 						<div className="row">
 							<div className="d-flex justify-content-center flex-wrap">
-								{pastEventsList}
+								{nextEventsList}
 							</div>
 						</div>
 						<h2 style={{ color: 'white' }}>{t('OUR_PREVIOUS_EVENTS')}</h2>
