@@ -2,12 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import EventsContainer from './EventsContainer';
 import renderer from 'react-test-renderer';
+import { getCachedUpcomingEvents } from '../../eventsService.tsx';
+
+// jest.mock('getCachedUpcomingEvents');
 
 it('renders without crashing', () => {
 	const div = document.createElement('div');
 	ReactDOM.render(<EventsContainer />, div);
 	ReactDOM.unmountComponentAtNode(div);
 });
+
+// TODO test eventsService
 
 describe('An instance of EventsContainer', () => {
 	let compInstance;
@@ -22,17 +27,24 @@ describe('An instance of EventsContainer', () => {
 		fetch.resetMocks();
 
 		compInstance.setState({
-			nextEvent: {
-				loading: true,
-				mEvent: null,
-				noEvent: false,
-			},
-			pastEvents: [],
+			nextMeetupEvents: [],
+			loadingNextMeetupEvent: true,
+			noNextMeetupEvent: false,
+			pastMeetupEvents: [],
 		});
 	});
 
 	describe('fetchEvents', () => {
-		it('sets nextEvent if call successful', async () => {
+		it('sets nextEvents if call successful', async () => {
+			// console.log(getCachedUpcomingEvents)
+			// getCachedUpcomingEvents.mockResolvedValue([
+			// 	{
+			// 		name: 'UPCOMING_MOCK_NAME',
+			// 		time: 'UPCOMING_MOCK_TIME',
+			// 		link: 'UPCOMING_MOCK_LINK',
+			// 	},
+			// ]);
+
 			fetch.once(
 				JSON.stringify([
 					{
@@ -42,15 +54,13 @@ describe('An instance of EventsContainer', () => {
 					},
 				])
 			);
-			expect(compInstance.state.nextEvent).toEqual({
-				mEvent: null,
-				loading: true,
-				noEvent: false,
-			});
-			expect(compInstance.state.pastEvents).toEqual([]);
+			expect(compInstance.state.nextMeetupEvents).toEqual([]);
+			expect(compInstance.state.loadingNextMeetupEvent).toBeTruthy();
+			expect(compInstance.state.noNextMeetupEvent).toBeFalsy();
+			expect(compInstance.state.pastMeetupEvents).toEqual([]);
 			await compInstance.fetchEvents();
-			expect(compInstance.state.nextEvent).toEqual({
-				mEvent: {
+			expect(compInstance.state.nextMeetupEvents).toEqual([
+				{
 					coverUrl:
 						'https://res.cloudinary.com/codestar/image/upload/v1532409289/codestar.nl/meetup/codestar-night-logo.jpg',
 					description: undefined,
@@ -59,40 +69,57 @@ describe('An instance of EventsContainer', () => {
 					time: 'UPCOMING_MOCK_TIME',
 					withDescription: true,
 				},
-				loading: false,
-				noEvent: false,
-			});
-			expect(compInstance.state.pastEvents).toEqual([]);
+			]);
+			expect(compInstance.state.loadingNextMeetupEvent).toBeFalsy();
+			expect(compInstance.state.noNextMeetupEvent).toBeFalsy();
+			expect(compInstance.state.pastMeetupEvents).toEqual([]);
 		});
 
 		it('sets pastEvents if call successful', async () => {
-			fetch.once(JSON.stringify([])).once(
-				JSON.stringify([
-					{
-						name: 'PAST_MOCK_NAME_1',
-						time: 'PAST_MOCK_TIME_1',
-						link: 'PAST_MOCK_LINK_1',
-					},
-					{
-						name: 'PAST_MOCK_NAME_2',
-						time: 'PAST_MOCK_TIME_2',
-						link: 'PAST_MOCK_LINK_2',
-					},
-				])
-			);
-			expect(compInstance.state.nextEvent).toEqual({
-				mEvent: null,
-				loading: true,
-				noEvent: false,
-			});
-			expect(compInstance.state.pastEvents).toEqual([]);
+			fetch
+				// Response to getNextMeetupEvents
+				// .once(JSON.stringify([]))
+				// Response to getPastMeetupEvents
+				.once(
+					JSON.stringify([
+						{
+							name: 'PAST_MOCK_NAME_1',
+							time: 'PAST_MOCK_TIME_1',
+							link: 'PAST_MOCK_LINK_1',
+						},
+						{
+							name: 'PAST_MOCK_NAME_2',
+							time: 'PAST_MOCK_TIME_2',
+							link: 'PAST_MOCK_LINK_2',
+						},
+					])
+				);
+			expect(compInstance.state.nextMeetupEvents).toEqual([]);
+			expect(compInstance.state.loadingNextMeetupEvent).toBeTruthy();
+			expect(compInstance.state.noNextMeetupEvent).toBeFalsy();
+			expect(compInstance.state.pastMeetupEvents).toEqual([]);
 			await compInstance.fetchEvents();
-			expect(compInstance.state.nextEvent).toEqual({
-				mEvent: null,
-				loading: false,
-				noEvent: true,
-			});
-			expect(compInstance.state.pastEvents.length).toBe(2);
+			// expect(compInstance.state.nextMeetupEvents).toEqual([]);
+			expect(compInstance.state.loadingNextMeetupEvent).toBeFalsy();
+			// expect(compInstance.state.noNextMeetupEvent).toBeTruthy();
+			expect(compInstance.state.pastMeetupEvents).toEqual([
+				{
+					coverUrl:
+						'https://res.cloudinary.com/codestar/image/upload/v1532409289/codestar.nl/meetup/codestar-night-logo.jpg',
+					link: 'PAST_MOCK_LINK_1',
+					name: 'PAST_MOCK_NAME_1',
+					time: 'PAST_MOCK_TIME_1',
+					withDescription: false,
+				},
+				{
+					coverUrl:
+						'https://res.cloudinary.com/codestar/image/upload/v1532409289/codestar.nl/meetup/codestar-night-logo.jpg',
+					link: 'PAST_MOCK_LINK_2',
+					name: 'PAST_MOCK_NAME_2',
+					time: 'PAST_MOCK_TIME_2',
+					withDescription: false,
+				},
+			]);
 		});
 	});
 
