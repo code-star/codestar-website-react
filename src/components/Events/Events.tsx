@@ -38,6 +38,17 @@ export default class Events extends Component<EventsProps, EventsPropTypes> {
 				<EventCard key={restOfEvent.time} MeetupEvent={...restOfEvent} />
 			)
 		);
+		const nextEventsBlock =
+			nextMeetupEvents && nextMeetupEvents.length > 0 ? (
+				<Fragment>
+					<h2 style={{ color: 'white' }}>{t('OUR_NEXT_EVENTS')}</h2>
+					<div className="row">
+						<div className="d-flex justify-content-center flex-wrap">
+							{nextEventsList}
+						</div>
+					</div>
+				</Fragment>
+			) : null;
 		const pastEventsList = pastMeetupEvents.map((mEvent: any) => (
 			<EventCard key={mEvent.time} MeetupEvent={mEvent} />
 		));
@@ -49,12 +60,7 @@ export default class Events extends Component<EventsProps, EventsPropTypes> {
 				/>
 				<Section scrollname="previous-events">
 					<Container>
-						<h2 style={{ color: 'white' }}>{t('OUR_NEXT_EVENTS')}</h2>
-						<div className="row">
-							<div className="d-flex justify-content-center flex-wrap">
-								{nextEventsList}
-							</div>
-						</div>
+						{nextEventsBlock}
 						<h2 style={{ color: 'white' }}>{t('OUR_PREVIOUS_EVENTS')}</h2>
 						<div className="row">
 							<div className="d-flex justify-content-center flex-wrap">

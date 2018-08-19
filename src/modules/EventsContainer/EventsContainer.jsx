@@ -45,7 +45,7 @@ export default class EventsContainer extends Component {
 			this.setState({
 				nextMeetupEvents,
 				loadingNextMeetupEvent: false,
-				noNextMeetupEvent: false,
+				noNextMeetupEvent: !(nextMeetupEvents && nextMeetupEvents.length > 0),
 			});
 		} catch (err) {
 			this.setState({
