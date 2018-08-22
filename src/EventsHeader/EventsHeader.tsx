@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import i18n from '../i18n';
 import sanitizeHtml from 'sanitize-html';
@@ -75,7 +75,7 @@ export class EventsHeader extends Component<EventsHeaderProps> {
 			);
 		}
 		return (
-			<Fragment>
+			<>
 				<section className={css.section}>
 					<ResponsiveImage
 						path="/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg"
@@ -86,7 +86,7 @@ export class EventsHeader extends Component<EventsHeaderProps> {
 					{headerContent}
 				</section>
 				{detailsSection}
-			</Fragment>
+			</>
 		);
 	}
 

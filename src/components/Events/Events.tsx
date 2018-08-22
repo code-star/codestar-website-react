@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Container from '../../Container/Container';
 import Section from '../../Section/Section';
@@ -40,18 +40,18 @@ export default class Events extends Component<EventsProps, EventsPropTypes> {
 		);
 		const nextEventsBlock =
 			nextMeetupEvents && nextMeetupEvents.length > 0 ? (
-				<Fragment>
+				<>
 					<h2 style={{ color: 'white' }}>{t('OUR_NEXT_EVENTS')}</h2>
 					<div className="row">
 						<div className="d-flex flex-wrap">{nextEventsList}</div>
 					</div>
-				</Fragment>
+				</>
 			) : null;
 		const pastEventsList = pastMeetupEvents.map((mEvent: any) => (
 			<EventCard key={mEvent.time} MeetupEvent={mEvent} />
 		));
 		return (
-			<Fragment>
+			<>
 				<EventsHeader
 					nextMeetupEvents={nextMeetupEvents}
 					noNextMeetupEvent={noNextMeetupEvent}
@@ -65,7 +65,7 @@ export default class Events extends Component<EventsProps, EventsPropTypes> {
 						</div>
 					</Container>
 				</Section>
-			</Fragment>
+			</>
 		);
 	}
 }

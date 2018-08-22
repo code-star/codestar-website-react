@@ -11,11 +11,6 @@ async function fetchUpcomingEvents() {
 		}
 		cachedUpcomingEvents = await fetch(url).then(data => data.json());
 		return cachedUpcomingEvents;
-		// const response = await fetch(url).then(data => data.json());
-		// const nextEvent = response[0];
-		// if (nextEvent) {
-		// 	this.setState({ nextEvent });
-		// }
 	} catch (err) {
 		// fail silently
 		return null;
