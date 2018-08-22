@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Events from '../../components/Events/Events';
 import _ from 'lodash';
-import { getCachedUpcomingEvents } from '../../eventsService';
-
-const GET_PAST_EVENTS_URL =
-	'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/dev/get-past-events';
+import {
+	getCachedUpcomingEvents,
+	getCachedPastEvents,
+} from '../../eventsService';
 
 function convertEventResponseToModel(withDescription = false) {
 	return function(mEvent) {
@@ -56,13 +56,9 @@ export default class EventsContainer extends Component {
 		}
 
 		try {
-			let url = GET_PAST_EVENTS_URL;
-			if (process.env.REACT_APP_STAGE === 'dev') {
-				url = '/mock/getPastEvents.json';
-			}
-			const response = await fetch(url).then(data => data.json());
-			const result = response.map(convertEventResponseToModel());
-			this.setState({ pastMeetupEvents: result });
+			const response = await getCachedPastEvents();
+			const pastMeetupEvents = response.map(convertEventResponseToModel());
+			this.setState({ pastMeetupEvents });
 		} catch (err) {
 			this.setState({ pastMeetupEvents: [] });
 		}
