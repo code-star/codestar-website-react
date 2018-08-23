@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import i18n from '../i18n';
 import sanitizeHtml from 'sanitize-html';
@@ -27,10 +27,10 @@ const styles = (theme: any) => ({
 	},
 });
 
-@translate(['events'], { wait: true })
 export class EventsHeader extends Component<EventsHeaderProps> {
 	public static propTypes = {
-		data: PropTypes.object.isRequired,
+		nextMeetupEvents: PropTypes.array.isRequired,
+		noNextMeetupEvent: PropTypes.bool.isRequired,
 	};
 
 	constructor(props: any) {
@@ -39,38 +39,43 @@ export class EventsHeader extends Component<EventsHeaderProps> {
 	}
 
 	public render() {
-		const {
-			data: { mEvent, noEvent },
-		} = this.props;
+		const { nextMeetupEvents, noNextMeetupEvent } = this.props;
 		let headerContent = null;
 		let detailsSection = null;
-		if (mEvent) {
+		const meetupEvent =
+			nextMeetupEvents && nextMeetupEvents.length > 0
+				? nextMeetupEvents[0]
+				: null;
+		if (meetupEvent) {
 			const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
-			const formattedDate = new Date(mEvent.time).toLocaleDateString(locale, {
-				year: 'numeric',
-				month: 'long',
-				day: 'numeric',
-			});
-			const cleanDescription = sanitizeHtml(mEvent.description);
+			const formattedDate = new Date(meetupEvent.time).toLocaleDateString(
+				locale,
+				{
+					year: 'numeric',
+					month: 'long',
+					day: 'numeric',
+				}
+			);
+			const cleanDescription = sanitizeHtml(meetupEvent.description);
 			const descriptionElem = (
 				<Typography
 					component="p"
 					dangerouslySetInnerHTML={{ __html: cleanDescription }}
 				/>
 			);
-			headerContent = this.renderHeaderContent(mEvent, formattedDate);
+			headerContent = this.renderHeaderContent(meetupEvent, formattedDate);
 			detailsSection = this.renderDetailsSection(
-				mEvent,
+				meetupEvent,
 				formattedDate,
 				descriptionElem
 			);
-		} else if (noEvent) {
+		} else if (noNextMeetupEvent) {
 			headerContent = (
 				<EventsHeaderMessage>{this.renderNavButtons()}</EventsHeaderMessage>
 			);
 		}
 		return (
-			<Fragment>
+			<>
 				<section className={css.section}>
 					<ResponsiveImage
 						path="/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg"
@@ -81,7 +86,7 @@ export class EventsHeader extends Component<EventsHeaderProps> {
 					{headerContent}
 				</section>
 				{detailsSection}
-			</Fragment>
+			</>
 		);
 	}
 
@@ -201,4 +206,7 @@ export class EventsHeader extends Component<EventsHeaderProps> {
 	}
 }
 
-export default withStyles(styles)(EventsHeader);
+// TODO apply recompose (seems to give type error) and replace typed-translate by normal translate
+export default translate(['events'], { wait: true })(
+	withStyles(styles)(EventsHeader)
+);

@@ -112,10 +112,10 @@ class SideMenu extends React.Component<SideMenuProps, SideMenuState> {
 		) : null;
 		if (item.canHaveNotification) {
 			return (
-				<React.Fragment>
+				<>
 					{t(item.text)}
 					{notificationIcon}
-				</React.Fragment>
+				</>
 			);
 		}
 		return t(item.text);

@@ -9,34 +9,14 @@ import {
 	Typography,
 	CardActions,
 	Button,
-	withStyles,
 } from '@material-ui/core';
-
-// TODO MvD: We can also put this in a .css file to keep the component tidy?
-const styles = {
-	card: {
-		maxWidth: 300, // 345,
-		margin: '1em',
-		display: 'flex',
-		flexDirection: 'column',
-	},
-	cardBig: {
-		maxWidth: 600, // 345,
-		marginBottom: '3em',
-	},
-	media: {
-		height: 0,
-		paddingTop: '56.25%', // 16:9
-	},
-	content: {
-		flex: '1 0 auto',
-	},
-};
+import { translate } from 'react-i18next';
+import compose from 'recompose/compose';
+import css from './EventCard.module.css';
 
 export class EventCard extends Component {
 	render() {
-		const { MeetupEvent: mEvent, classes } = this.props;
-		// TODO observe changes to i18n.language
+		const { MeetupEvent: mEvent, t } = this.props;
 		const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
 		const formattedDate = new Date(mEvent.time).toLocaleDateString(locale, {
 			year: 'numeric',
@@ -60,14 +40,25 @@ export class EventCard extends Component {
 				/>
 			);
 		}
+		const signUpButton =
+			mEvent.time > Date.now() ? (
+				<Button
+					size="small"
+					color="primary"
+					variant="raised"
+					href={mEvent.link}
+				>
+					{t('SIGN_UP')}
+				</Button>
+			) : null;
 		return (
-			<Card className={mEvent.withDescription ? classes.cardBig : classes.card}>
+			<Card className={mEvent.withDescription ? css.cardBig : css.card}>
 				<CardMedia
-					className={classes.media}
+					className={css.media}
 					image={mEvent.coverUrl}
 					title={`${formattedDate} - ${mEvent.name}`}
 				/>
-				<CardContent className={classes.content}>
+				<CardContent className={css.content}>
 					<Typography gutterBottom variant="headline" component="h2">
 						{formattedDate} - {mEvent.name}
 					</Typography>
@@ -75,9 +66,9 @@ export class EventCard extends Component {
 				</CardContent>
 				<CardActions>
 					<Button size="small" color="primary" href={mEvent.link}>
-						Read More
+						{t('READ_MORE')}
 					</Button>
-					{/*TODO show big/primary "Sign Up" button if event is in the future */}
+					{signUpButton}
 				</CardActions>
 			</Card>
 		);
@@ -88,4 +79,4 @@ EventCard.propTypes = {
 	MeetupEvent: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(EventCard);
+export default compose(translate(['events'], { wait: true }))(EventCard);
