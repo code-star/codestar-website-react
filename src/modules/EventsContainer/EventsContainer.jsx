@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import Events from '../../components/Events/Events';
 import _ from 'lodash';
-
-const GET_UPCOMING_EVENTS_URL =
-	'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/dev/get-upcoming-events';
-const GET_PAST_EVENTS_URL =
-	'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/dev/get-past-events';
+import {
+	getCachedUpcomingEvents,
+	getCachedPastEvents,
+} from '../../eventsService';
 
 function convertEventResponseToModel(withDescription = false) {
 	return function(mEvent) {
@@ -29,12 +28,10 @@ function convertEventResponseToModel(withDescription = false) {
 
 export default class EventsContainer extends Component {
 	state = {
-		nextEvent: {
-			loading: true,
-			event: null,
-			noEvent: false,
-		},
-		pastEvents: [],
+		nextMeetupEvents: [],
+		loadingNextMeetupEvent: true,
+		noNextMeetupEvent: false,
+		pastMeetupEvents: [],
 	};
 
 	componentDidMount() {
@@ -43,46 +40,36 @@ export default class EventsContainer extends Component {
 
 	async fetchEvents() {
 		try {
-			let url = GET_UPCOMING_EVENTS_URL;
-			if (process.env.REACT_APP_STAGE === 'dev') {
-				url = '/mock/getUpcomingEvents.json';
-			}
-			const response = await fetch(url).then(data => data.json());
-			const result = _.head(response.map(convertEventResponseToModel(true)));
-			const nextEvent = {
-				loading: false,
-				mEvent: result ? result : null,
-				noEvent: !result,
-			};
-			this.setState({ nextEvent });
+			const response = await getCachedUpcomingEvents();
+			const nextMeetupEvents = response.map(convertEventResponseToModel(true));
+			this.setState({
+				nextMeetupEvents,
+				loadingNextMeetupEvent: false,
+				noNextMeetupEvent: !(nextMeetupEvents && nextMeetupEvents.length > 0),
+			});
 		} catch (err) {
 			this.setState({
-				nextEvent: {
-					loading: false,
-					event: null,
-					noEvent: true,
-				},
+				nextMeetupEvents: null,
+				loadingNextMeetupEvent: false,
+				noNextMeetupEvent: true,
 			});
 		}
 
 		try {
-			let url = GET_PAST_EVENTS_URL;
-			if (process.env.REACT_APP_STAGE === 'dev') {
-				url = '/mock/getPastEvents.json';
-			}
-			const response = await fetch(url).then(data => data.json());
-			const result = response.map(convertEventResponseToModel());
-			this.setState({ pastEvents: result });
+			const response = await getCachedPastEvents();
+			const pastMeetupEvents = response.map(convertEventResponseToModel());
+			this.setState({ pastMeetupEvents });
 		} catch (err) {
-			this.setState({ pastEvents: [] });
+			this.setState({ pastMeetupEvents: [] });
 		}
 	}
 
 	render() {
 		return (
 			<Events
-				nextEvent={this.state.nextEvent}
-				pastEvents={this.state.pastEvents}
+				nextMeetupEvents={this.state.nextMeetupEvents}
+				noNextMeetupEvent={this.state.noNextMeetupEvent}
+				pastMeetupEvents={this.state.pastMeetupEvents}
 			/>
 		);
 	}

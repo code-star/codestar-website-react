@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`leaves string without Codestar unchanged 1`] = `
+<div>
+  test test
+</div>
+`;
+
+exports[`replaces Codestar in a string with an image 1`] = `
+<div>
+  test 
+  <img
+    alt="Codestar"
+    src="/images/codestar_logo_light.svg"
+    style={
+      Object {
+        "height": "0.8em",
+        "marginBottom": "0.12em",
+      }
+    }
+  />
+   test
+</div>
+`;

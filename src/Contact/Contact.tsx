@@ -221,5 +221,6 @@ export class Contact extends React.Component<ContactProps, ContactState> {
 
 export default compose(
 	withStyles(styles),
-	withWidth()
-)(translate(['contact'], { wait: true })(Contact));
+	withWidth(),
+	translate(['contact'], { wait: true })
+)(Contact);

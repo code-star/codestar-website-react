@@ -1,4 +1,5 @@
 import * as React from 'react';
+import compose from 'recompose/compose';
 import { translate } from 'react-i18next';
 
 import { Paper, Avatar, Tooltip, Typography, Grow } from '@material-ui/core';
@@ -23,7 +24,7 @@ const styles = (theme: any) => ({
 	},
 });
 
-class OurStack extends React.Component<OurStackProps> {
+export class OurStack extends React.Component<OurStackProps> {
 	public render() {
 		const { t, classes } = this.props;
 
@@ -85,6 +86,7 @@ class OurStack extends React.Component<OurStackProps> {
 	}
 }
 
-export default translate(['stack'], { wait: true })(
-	withStyles(styles)(OurStack)
-);
+export default compose(
+	withStyles(styles),
+	translate(['stack'], { wait: true })
+)(OurStack);

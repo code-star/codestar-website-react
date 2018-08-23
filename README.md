@@ -1,7 +1,14 @@
+[![Build Status](https://travis-ci.org/code-star/codestar-website-react.svg?branch=develop)](https://travis-ci.org/code-star/codestar-website-react)
+
+<img align=center src=https://cloud.githubusercontent.com/assets/4116708/12473911/e67fdd44-c016-11e5-9c21-5714e07549fe.png width=450 />
+
+*Passionate programmers standing to make a change*
+
+---
 # Codestar website
 
-Note: uses [custom-react-scripts](https://medium.com/@kitze/configure-create-react-app-without-ejecting-d8450e96196a) to 
-use HOC for [react-i18next](https://react.i18next.com/overview/getting-started) without ejecting. 
+Note: uses custom fork of [react-scripts-ts](https://github.com/code-star/create-react-app-typescript) to 
+use CSS Modules without ejecting. 
 
 **Contents:**
 
@@ -137,3 +144,9 @@ We should use Cloudinary as much as possible for hosting images. The [`Responsiv
 * Static Site Mailer: see above
 * Get Upcoming Events from Meetup.com: `DEBUG=true npx sls invoke local --function getUpcomingEvents --path serverless/staticSiteMailer-dummy-payload.json`
 * Get Past Events from Meetup.com: `npx sls invoke local --function getPastEvents --path serverless/staticSiteMailer-dummy-payload.json`
+
+## Unit testing
+
+* Run `npm test`
+* Run one specific test: e.g. `npm test -- src/modules/EventsContainer/EventsContainer.test.jsx --coverage=false --watch`
+* To only run one test in a file use `fit()` instead of `it()`, to exclude use `xit()` instead of `it()`
