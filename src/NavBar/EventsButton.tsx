@@ -1,14 +1,33 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import compose from 'recompose/compose';
-import PropTypes from 'prop-types';
 
 import { Button } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import Tooltip from '@material-ui/core/Tooltip';
 import i18n from '../i18n';
 
-const styles = theme => ({
+// Fixme: this is a workaround for using the material ui button
+// with the `to` property. By default this is not supported.
+const CustomButton = (props: any) => <Button {...props} />;
+
+// TODO improve types by replacing "any"
+interface IEventsButtonPropsInner {
+	classes: Record<string, string>;
+	label: string;
+	nextEvent: any;
+}
+
+interface IEventsButtonPropsOuter {
+	label: string;
+	nextEvent: any;
+}
+
+interface IEventsButtonState {
+	isHovering: boolean;
+}
+
+const styles = (theme: any) => ({
 	newEventIcon: {
 		color: 'red',
 		display: 'inline-block',
@@ -23,8 +42,12 @@ const styles = theme => ({
 	},
 });
 
-export class EventsButton extends Component {
-	constructor(props) {
+// TODO to stateless with https://jsfiddle.net/evenchange4/p3vsmrvo/1599/
+export class EventsButton extends Component<
+	IEventsButtonPropsInner,
+	IEventsButtonState
+> {
+	constructor(props: IEventsButtonPropsInner) {
 		super(props);
 		this.state = {
 			isHovering: false,
@@ -33,15 +56,15 @@ export class EventsButton extends Component {
 		this.handleMouseOut = this.handleMouseOut.bind(this);
 	}
 
-	handleMouseOver() {
+	public handleMouseOver() {
 		this.setState({ isHovering: true });
 	}
 
-	handleMouseOut() {
+	public handleMouseOut() {
 		this.setState({ isHovering: false });
 	}
 
-	render() {
+	public render() {
 		const { classes, label } = this.props;
 		const iconClasses = `${classes.newEventIcon} ${
 			this.state.isHovering ? classes.newEventIconHover : null
@@ -64,7 +87,7 @@ export class EventsButton extends Component {
 					tooltip: classes.bigTooltip,
 				}}
 			>
-				<Button
+				<CustomButton
 					component={Link}
 					to="/events"
 					color="inherit"
@@ -73,14 +96,12 @@ export class EventsButton extends Component {
 				>
 					{label}
 					{icon}
-				</Button>
+				</CustomButton>
 			</Tooltip>
 		);
 	}
 }
 
-EventsButton.propTypes = {
-	label: PropTypes.string.isRequired,
-};
-
-export default compose(withStyles(styles))(EventsButton);
+export default compose<IEventsButtonPropsInner, IEventsButtonPropsOuter>(
+	withStyles(styles)
+)(EventsButton);
