@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import compose from 'recompose/compose';
+import { withStateHandlers } from 'recompose';
 
 import { Button } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
@@ -16,15 +17,14 @@ interface IEventsButtonPropsInner {
 	classes: Record<string, string>;
 	label: string;
 	nextEvent: any;
+	isHovering: boolean;
+	handleMouseOver: any;
+	handleMouseOut: any;
 }
 
 interface IEventsButtonPropsOuter {
 	label: string;
 	nextEvent: any;
-}
-
-interface IEventsButtonState {
-	isHovering: boolean;
 }
 
 const styles = (theme: any) => ({
@@ -42,66 +42,59 @@ const styles = (theme: any) => ({
 	},
 });
 
-// TODO to stateless with https://jsfiddle.net/evenchange4/p3vsmrvo/1599/
-export class EventsButton extends Component<
-	IEventsButtonPropsInner,
-	IEventsButtonState
-> {
-	constructor(props: IEventsButtonPropsInner) {
-		super(props);
-		this.state = {
-			isHovering: false,
-		};
-		this.handleMouseOver = this.handleMouseOver.bind(this);
-		this.handleMouseOut = this.handleMouseOut.bind(this);
+// TODO type export const EventsButton:SFC
+export const EventsButton = ({
+	classes,
+	label,
+	nextEvent,
+	isHovering,
+	handleMouseOver,
+	handleMouseOut,
+}: IEventsButtonPropsInner) => {
+	const iconClasses = `${classes.newEventIcon} ${
+		isHovering ? classes.newEventIconHover : null
+	}`;
+	let icon = null;
+	let nextEventText = '';
+	if (nextEvent) {
+		icon = <span className={iconClasses}> ●</span>;
+		const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
+		const formattedDate = new Date(nextEvent.time).toLocaleDateString(locale, {
+			month: 'long',
+			day: 'numeric',
+		});
+		nextEventText = `${formattedDate} *Meetup* ${nextEvent.name}`;
 	}
-
-	public handleMouseOver() {
-		this.setState({ isHovering: true });
-	}
-
-	public handleMouseOut() {
-		this.setState({ isHovering: false });
-	}
-
-	public render() {
-		const { classes, label } = this.props;
-		const iconClasses = `${classes.newEventIcon} ${
-			this.state.isHovering ? classes.newEventIconHover : null
-		}`;
-		let icon = null;
-		let nextEventText = '';
-		if (this.props.nextEvent) {
-			icon = <span className={iconClasses}> ●</span>;
-			const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
-			const formattedDate = new Date(
-				this.props.nextEvent.time
-			).toLocaleDateString(locale, { month: 'long', day: 'numeric' });
-			nextEventText = `${formattedDate} *Meetup* ${this.props.nextEvent.name}`;
-		}
-		return (
-			<Tooltip
-				title={nextEventText}
-				placement="bottom"
-				classes={{
-					tooltip: classes.bigTooltip,
-				}}
+	return (
+		<Tooltip
+			title={nextEventText}
+			placement="bottom"
+			classes={{
+				tooltip: classes.bigTooltip,
+			}}
+		>
+			<CustomButton
+				component={Link}
+				to="/events"
+				color="inherit"
+				onMouseOver={handleMouseOver}
+				onMouseOut={handleMouseOut}
 			>
-				<CustomButton
-					component={Link}
-					to="/events"
-					color="inherit"
-					onMouseOver={this.handleMouseOver}
-					onMouseOut={this.handleMouseOut}
-				>
-					{label}
-					{icon}
-				</CustomButton>
-			</Tooltip>
-		);
-	}
-}
+				{label}
+				{icon}
+			</CustomButton>
+		</Tooltip>
+	);
+};
+
+const initialState = { isHovering: false };
+const stateUpdaters = {
+	// Example of state argument with typing: handleMouseOver: ({ isHovering } : { isHovering: boolean}) => () => ({ isHovering: true }),
+	handleMouseOver: () => () => ({ isHovering: true }),
+	handleMouseOut: () => () => ({ isHovering: false }),
+};
 
 export default compose<IEventsButtonPropsInner, IEventsButtonPropsOuter>(
+	withStateHandlers(initialState, stateUpdaters),
 	withStyles(styles)
 )(EventsButton);
