@@ -2,6 +2,8 @@ import React from 'react';
 import { HeaderContent } from './HeaderContent';
 import renderer from 'react-test-renderer';
 
+const t = () => '';
+
 it('renders the content of the Events header', () => {
 	const meetupEvent = {
 		name: 'Data Oriented Design with Maxim Zaks',
@@ -11,7 +13,7 @@ it('renders the content of the Events header', () => {
 	const comp = renderer
 		.create(
 			<HeaderContent
-				t={() => ''}
+				t={t}
 				classes={{}}
 				mEvent={meetupEvent}
 				formattedDate={formattedDate}

@@ -2,6 +2,8 @@ import React from 'react';
 import { DetailsSection } from './DetailsSection';
 import renderer from 'react-test-renderer';
 
+const t = () => '';
+
 it('renders the details for the Events header', () => {
 	const meetupEvent = {
 		name: 'Data Oriented Design with Maxim Zaks',
@@ -11,7 +13,7 @@ it('renders the details for the Events header', () => {
 	const comp = renderer
 		.create(
 			<DetailsSection
-				t={() => ''}
+				t={t}
 				mEvent={meetupEvent}
 				formattedDate={formattedDate}
 				descriptionElem={'descriptionElem'}
