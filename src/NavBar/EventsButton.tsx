@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SFC } from 'react';
 import { Link } from 'react-router-dom';
 import compose from 'recompose/compose';
 import { withStateHandlers } from 'recompose';
@@ -42,15 +42,14 @@ const styles = (theme: any) => ({
 	},
 });
 
-// TODO type export const EventsButton:SFC
-export const EventsButton = ({
+export const EventsButton: SFC<IEventsButtonPropsInner> = ({
 	classes,
 	label,
 	nextEvent,
 	isHovering,
 	handleMouseOver,
 	handleMouseOut,
-}: IEventsButtonPropsInner) => {
+}) => {
 	const iconClasses = `${classes.newEventIcon} ${
 		isHovering ? classes.newEventIconHover : null
 	}`;

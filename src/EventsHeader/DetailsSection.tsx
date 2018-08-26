@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SFC } from 'react';
 import { Typography, Button } from '@material-ui/core';
 import { translate, TranslationFunction } from 'react-i18next';
 import Container from '../Container/Container';
@@ -19,12 +19,12 @@ interface IDetailsSectionPropsOuter {
 	descriptionElem: any;
 }
 
-export const DetailsSection = ({
+export const DetailsSection: SFC<IDetailsSectionPropsInner> = ({
 	t,
 	mEvent,
 	formattedDate,
 	descriptionElem,
-}: IDetailsSectionPropsInner) => {
+}) => {
 	return (
 		<Section scrollname="event-details" className="bg-white">
 			<Container center>

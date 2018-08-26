@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SFC } from 'react';
 import { Typography, Button, Hidden, withStyles } from '@material-ui/core';
 import Container from '../Container/Container';
 import { translate, TranslationFunction } from 'react-i18next';
@@ -32,13 +32,13 @@ const styles = (theme: any) => ({
 	},
 });
 
-export const HeaderContent = ({
+export const HeaderContent: SFC<IHeaderContentPropsInner> = ({
 	t,
 	classes,
 	mEvent,
 	formattedDate,
 	children,
-}: IHeaderContentPropsInner) => {
+}) => {
 	return (
 		<Container fullHeight center className="mt-5 mt-sm-2 mt-md-0">
 			<div className="row">

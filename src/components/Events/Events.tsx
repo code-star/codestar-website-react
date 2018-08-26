@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SFC } from 'react';
 import Container from '../../Container/Container';
 import Section from '../../Section/Section';
 import { translate, TranslationFunction } from 'react-i18next';
@@ -21,12 +21,12 @@ interface IEventProps {
 	pastMeetupEvents: any[];
 }
 
-const Events: any = ({
+const Events: SFC<IEventProps> = ({
 	t,
 	nextMeetupEvents,
 	noNextMeetupEvent,
 	pastMeetupEvents,
-}: IEventProps) => {
+}) => {
 	const nextEventsList = nextMeetupEvents.map(
 		({ description, withDescription, ...restOfEvent }: any) => (
 			// Strip the description and withDescription properties
