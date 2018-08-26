@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import i18n from '../i18n';
 import sanitizeHtml from 'sanitize-html';
 import { Typography, Button, withStyles, Hidden } from '@material-ui/core';
@@ -7,14 +6,25 @@ import Container from '../Container/Container';
 import Section from '../Section/Section';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 import { Link } from 'react-scroll';
-import { translate } from '../typed-translate';
+import { translate, TranslationFunction } from 'react-i18next';
 import EventsHeaderButton from './EventsHeaderButton';
-import { navButtons } from './constants.jsx';
+import { navButtons } from './constants';
 import { purple } from '@material-ui/core/colors';
 import css from './EventsHeader.module.css';
 import EventsHeaderMessage from './EventsHeaderMessage';
+import compose from 'recompose/compose';
 
-type EventsHeaderProps = any;
+interface IEventsHeaderPropsInner {
+	t: TranslationFunction;
+	classes: Record<string, string>;
+	nextMeetupEvents: any[];
+	noNextMeetupEvent: boolean;
+}
+
+interface IEventsHeaderPropsOuter {
+	nextMeetupEvents: any[];
+	noNextMeetupEvent: boolean;
+}
 
 const styles = (theme: any) => ({
 	button: {
@@ -27,12 +37,8 @@ const styles = (theme: any) => ({
 	},
 });
 
-export class EventsHeader extends Component<EventsHeaderProps> {
-	public static propTypes = {
-		nextMeetupEvents: PropTypes.array.isRequired,
-		noNextMeetupEvent: PropTypes.bool.isRequired,
-	};
-
+// TODO can also be stateless? https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc
+export class EventsHeader extends Component<IEventsHeaderPropsInner> {
 	constructor(props: any) {
 		super(props);
 		this.renderDetailsSection = this.renderDetailsSection.bind(this);
@@ -206,7 +212,7 @@ export class EventsHeader extends Component<EventsHeaderProps> {
 	}
 }
 
-// TODO apply recompose (seems to give type error) and replace typed-translate by normal translate
-export default translate(['events'], { wait: true })(
-	withStyles(styles)(EventsHeader)
-);
+export default compose<IEventsHeaderPropsInner, IEventsHeaderPropsOuter>(
+	translate(['events'], { wait: true }),
+	withStyles(styles)
+)(EventsHeader);
