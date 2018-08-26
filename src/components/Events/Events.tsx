@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from '../../Container/Container';
 import Section from '../../Section/Section';
-import { translate } from 'react-i18next';
+import { translate, TranslationFunction } from 'react-i18next';
 import EventsHeader from '../../EventsHeader/EventsHeader';
 import EventCard from '../../EventCard/EventCard';
 import compose from 'recompose/compose';
@@ -14,17 +14,19 @@ import compose from 'recompose/compose';
 */
 
 // TODO improve types by replacing "any"
+interface IEventProps {
+	t: TranslationFunction;
+	nextMeetupEvents: any[];
+	noNextMeetupEvent: boolean;
+	pastMeetupEvents: any[];
+}
+
 const Events: any = ({
 	t,
 	nextMeetupEvents,
 	noNextMeetupEvent,
 	pastMeetupEvents,
-}: {
-	t: any;
-	nextMeetupEvents: any[];
-	noNextMeetupEvent: boolean;
-	pastMeetupEvents: any[];
-}) => {
+}: IEventProps) => {
 	const nextEventsList = nextMeetupEvents.map(
 		({ description, withDescription, ...restOfEvent }: any) => (
 			// Strip the description and withDescription properties
