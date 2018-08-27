@@ -8,8 +8,8 @@ jest.mock('../i18n', () => ({
 	language: 'nl',
 }));
 
-const handleMouseOut = () => {};
-const handleMouseOver = () => {};
+const handleMouseOut = () => '';
+const handleMouseOver = () => '';
 
 it('renders without crashing', () => {
 	const div = document.createElement('div');
