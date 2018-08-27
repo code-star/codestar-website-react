@@ -86,8 +86,8 @@ export const EventsButton: SFC<IEventsButtonPropsInner> = ({
 	);
 };
 
-const initialState = { isHovering: false };
-const stateUpdaters = {
+export const initialState = { isHovering: false };
+export const stateUpdaters = {
 	// Example of state argument with typing: handleMouseOver: ({ isHovering } : { isHovering: boolean}) => () => ({ isHovering: true }),
 	handleMouseOver: () => () => ({ isHovering: true }),
 	handleMouseOut: () => () => ({ isHovering: false }),
