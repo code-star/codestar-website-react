@@ -2,6 +2,7 @@ import React from 'react';
 import { HeaderContent } from './HeaderContent';
 import renderer from 'react-test-renderer';
 
+// Mock for "t", the translate function from react-i18next
 const t = () => '';
 
 it('renders the content of the Events header', () => {
