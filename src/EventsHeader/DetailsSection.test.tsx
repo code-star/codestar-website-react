@@ -2,6 +2,7 @@ import React from 'react';
 import { DetailsSection } from './DetailsSection';
 import renderer from 'react-test-renderer';
 
+// Mock for "t", the translate function from react-i18next
 const t = () => '';
 
 it('renders the details for the Events header', () => {
