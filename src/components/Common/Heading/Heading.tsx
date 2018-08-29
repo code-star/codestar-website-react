@@ -1,26 +1,49 @@
 import React, { SFC } from 'react';
-import { translate, TranslationFunction } from 'react-i18next';
-import compose from 'recompose/compose';
+import cx from 'classnames';
 import './Heading.css';
 
 interface IHeadingProps {
 	type: string;
 	text: string;
-	t?: TranslationFunction;
 }
 
-const Heading: SFC<IHeadingProps> = ({ type, text, t }) => {
-	if (type === 'h1') {
-		return <h1 className="heading">{t(text)}</h1>;
-	} else if (type === 'h2') {
-		return <h2 className="heading">{t(text)}</h2>;
-	} else if (type === 'h3') {
-		return <h3 className="heading">{t(text)}</h3>;
-	} else if (type === 'h4') {
-		return <h4 className="heading">{t(text)}</h4>;
-	}
-
-	return null;
+const Heading: SFC<IHeadingProps> = ({ type, text }) => {
+	return (
+		<>
+			<h1
+				className={cx('heading', {
+					'heading--visible': type === 'h1',
+					'heading--hidden': type !== 'h1',
+				})}
+			>
+				{text}
+			</h1>
+			<h2
+				className={cx('heading', {
+					'heading--visible': type === 'h2',
+					'heading--hidden': type !== 'h2',
+				})}
+			>
+				{text}
+			</h2>
+			<h3
+				className={cx('heading', {
+					'heading--visible': type === 'h3',
+					'heading--hidden': type !== 'h3',
+				})}
+			>
+				{text}
+			</h3>
+			<h4
+				className={cx('heading', {
+					'heading--visible': type === 'h4',
+					'heading--hidden': type !== 'h4',
+				})}
+			>
+				{text}
+			</h4>
+		</>
+	);
 };
 
-export default compose(translate(['events'], { wait: true }))(Heading);
+export default Heading;
