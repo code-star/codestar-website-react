@@ -25,6 +25,3 @@ yarn-error.log*
 
 # Serverless directories
 .serverless
-
-# CSS
-src/**/*.css

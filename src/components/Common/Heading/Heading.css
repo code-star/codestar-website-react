@@ -1,0 +1,9 @@
+.heading {
+	color: #fff;
+}
+.heading--visible {
+	display: block;
+}
+.heading--hidden {
+	display: none;
+}
