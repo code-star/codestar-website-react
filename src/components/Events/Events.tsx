@@ -1,11 +1,11 @@
 import React, { SFC } from 'react';
 import Container from '../../Container/Container';
 import Section from '../../Section/Section';
+import { translate, TranslationFunction } from 'react-i18next';
 import EventsHeader from '../../EventsHeader/EventsHeader';
 import EventCard from '../../EventCard/EventCard';
-import { compose } from 'recompose';
+import compose from 'recompose/compose';
 import Heading from '../Common/Heading/Heading';
-import { translate, TranslationFunction } from 'react-i18next';
 
 /*
  Suggestions for design concepts
@@ -16,17 +16,17 @@ import { translate, TranslationFunction } from 'react-i18next';
 
 // TODO improve types by replacing "any"
 interface IEventProps {
+	t: TranslationFunction;
 	nextMeetupEvents: any[];
 	noNextMeetupEvent: boolean;
 	pastMeetupEvents: any[];
-	t: TranslationFunction;
 }
 
 const Events: SFC<IEventProps> = ({
+	t,
 	nextMeetupEvents,
 	noNextMeetupEvent,
 	pastMeetupEvents,
-	t,
 }) => {
 	return (
 		<>
