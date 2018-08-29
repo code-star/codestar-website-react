@@ -1,21 +1,29 @@
-import React from 'react';
+import React, { SFC } from 'react';
 import Container from '../../Container/Container';
 import Section from '../../Section/Section';
 import EventsHeader from '../../EventsHeader/EventsHeader';
 import EventCard from '../../EventCard/EventCard';
 import Heading from '../Common/Heading/Heading';
 
-interface IProps {
-	nextMeetupEvents: object[];
+/*
+ Suggestions for design concepts
+ https://www.pixel-stitch.net/
+ https://hencework.com/theme/mateve/music_concert/#
+ https://colorlib.com/wp/free-event-website-templates/
+*/
+
+// TODO improve types by replacing "any"
+interface IEventProps {
+	nextMeetupEvents: any[];
 	noNextMeetupEvent: boolean;
-	pastMeetupEvents: object[];
+	pastMeetupEvents: any[];
 }
 
-const Events = ({
+const Events: SFC<IEventProps> = ({
 	nextMeetupEvents,
 	noNextMeetupEvent,
 	pastMeetupEvents,
-}: IProps) => {
+}) => {
 	return (
 		<>
 			<EventsHeader

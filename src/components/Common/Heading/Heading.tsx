@@ -1,29 +1,26 @@
-import React from 'react';
-import { translate } from '../../../typed-translate';
+import React, { SFC } from 'react';
+import { translate, TranslationFunction } from 'react-i18next';
+import compose from 'recompose/compose';
 import './Heading.css';
 
-interface IProps {
+interface IHeadingProps {
 	type: string;
 	text: string;
-	t?: any;
+	t?: TranslationFunction;
 }
 
-@translate(['events'], { wait: true })
-class Heading extends React.Component<IProps> {
-	public render() {
-		const { type, text, t } = this.props;
-
-		if (type === 'h1') {
-			return <h1 className="heading">{t(text)}</h1>;
-		} else if (type === 'h2') {
-			return <h2 className="heading">{t(text)}</h2>;
-		} else if (type === 'h3') {
-			return <h3 className="heading">{t(text)}</h3>;
-		} else if (type === 'h4') {
-			return <h4 className="heading">{t(text)}</h4>;
-		}
-		return null;
+const Heading: SFC<IHeadingProps> = ({ type, text, t }) => {
+	if (type === 'h1') {
+		return <h1 className="heading">{t(text)}</h1>;
+	} else if (type === 'h2') {
+		return <h2 className="heading">{t(text)}</h2>;
+	} else if (type === 'h3') {
+		return <h3 className="heading">{t(text)}</h3>;
+	} else if (type === 'h4') {
+		return <h4 className="heading">{t(text)}</h4>;
 	}
-}
 
-export default Heading;
+	return null;
+};
+
+export default compose(translate(['events'], { wait: true }))(Heading);
