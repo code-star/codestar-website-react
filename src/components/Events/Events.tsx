@@ -6,6 +6,7 @@ import EventsHeader from '../../EventsHeader/EventsHeader';
 import EventCard from '../../EventCard/EventCard';
 import compose from 'recompose/compose';
 import Heading from '../Common/Heading/Heading';
+import './Events.css';
 
 /*
  Suggestions for design concepts
@@ -39,27 +40,23 @@ const Events: SFC<IEventProps> = ({
 					{nextMeetupEvents && nextMeetupEvents.length > 0 ? (
 						<>
 							<Heading type="h2" text={t('OUR_NEXT_EVENTS')} />
-							<div className="row">
-								<div className="d-flex flex-wrap">
-									{nextMeetupEvents.map(
-										({ description, withDescription, ...restOfEvent }: any) => (
-											<EventCard
-												key={restOfEvent.time}
-												MeetupEvent={...restOfEvent}
-											/>
-										)
-									)}
-								</div>
+							<div className="events__row">
+								{nextMeetupEvents.map(
+									({ description, withDescription, ...restOfEvent }: any) => (
+										<EventCard
+											key={restOfEvent.time}
+											MeetupEvent={...restOfEvent}
+										/>
+									)
+								)}
 							</div>
 						</>
 					) : null}
 					<Heading type="h2" text={t('OUR_PREVIOUS_EVENTS')} />
-					<div className="row">
-						<div className="d-flex flex-wrap">
-							{pastMeetupEvents.map((mEvent: any) => (
-								<EventCard key={mEvent.time} MeetupEvent={mEvent} />
-							))}
-						</div>
+					<div className="events__row">
+						{pastMeetupEvents.map((mEvent: any) => (
+							<EventCard key={mEvent.time} MeetupEvent={mEvent} />
+						))}
 					</div>
 				</Container>
 			</Section>
