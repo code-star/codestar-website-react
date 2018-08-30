@@ -1,13 +1,11 @@
 @import '../../../theming/config.scss';
 
 .heading {
-	color: $color-white;
-
-	&--visible {
-		display: block;
+	&--white {
+		color: $color-white;
 	}
 
-	&--hidden {
-		display: none;
+	&--black {
+		color: $color-black;
 	}
 }

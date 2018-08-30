@@ -65,11 +65,17 @@ export default class EventsContainer extends Component {
 	}
 
 	render() {
+		const {
+			nextMeetupEvents,
+			noNextMeetupEvent,
+			pastMeetupEvents,
+		} = this.state;
+
 		return (
 			<Events
-				nextMeetupEvents={this.state.nextMeetupEvents}
-				noNextMeetupEvent={this.state.noNextMeetupEvent}
-				pastMeetupEvents={this.state.pastMeetupEvents}
+				nextMeetupEvents={nextMeetupEvents}
+				noNextMeetupEvent={noNextMeetupEvent}
+				pastMeetupEvents={pastMeetupEvents}
 			/>
 		);
 	}

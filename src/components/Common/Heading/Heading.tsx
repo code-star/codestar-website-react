@@ -4,46 +4,57 @@ import './Heading.css';
 
 interface IHeadingProps {
 	type: string;
+	color: string;
 	text: string;
 }
 
-const Heading: SFC<IHeadingProps> = ({ type, text }) => {
-	return (
-		<>
+const Heading: SFC<IHeadingProps> = ({ type, color = 'black', text }) => {
+	if (type === 'h1') {
+		return (
 			<h1
 				className={cx('heading', {
-					'heading--visible': type === 'h1',
-					'heading--hidden': type !== 'h1',
+					'heading--white': color === 'white',
+					'heading--black': color === 'black',
 				})}
 			>
 				{text}
 			</h1>
+		);
+	} else if (type === 'h2') {
+		return (
 			<h2
 				className={cx('heading', {
-					'heading--visible': type === 'h2',
-					'heading--hidden': type !== 'h2',
+					'heading--white': color === 'white',
+					'heading--black': color === 'black',
 				})}
 			>
 				{text}
 			</h2>
+		);
+	} else if (type === 'h3') {
+		return (
 			<h3
 				className={cx('heading', {
-					'heading--visible': type === 'h3',
-					'heading--hidden': type !== 'h3',
+					'heading--white': color === 'white',
+					'heading--black': color === 'black',
 				})}
 			>
 				{text}
 			</h3>
+		);
+	} else if (type === 'h4') {
+		return (
 			<h4
 				className={cx('heading', {
-					'heading--visible': type === 'h4',
-					'heading--hidden': type !== 'h4',
+					'heading--white': color === 'white',
+					'heading--black': color === 'black',
 				})}
 			>
 				{text}
 			</h4>
-		</>
-	);
+		);
+	}
+	return null;
 };
 
 export default Heading;

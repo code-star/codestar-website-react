@@ -39,7 +39,7 @@ const Events: SFC<IEventProps> = ({
 				<Container>
 					{nextMeetupEvents && nextMeetupEvents.length > 0 ? (
 						<>
-							<Heading type="h2" text={t('OUR_NEXT_EVENTS')} />
+							<Heading type="h2" color="white" text={t('OUR_NEXT_EVENTS')} />
 							<div className="events__row">
 								{nextMeetupEvents.map(
 									({ description, withDescription, ...restOfEvent }: any) => (
@@ -52,7 +52,7 @@ const Events: SFC<IEventProps> = ({
 							</div>
 						</>
 					) : null}
-					<Heading type="h2" text={t('OUR_PREVIOUS_EVENTS')} />
+					<Heading type="h2" color="white" text={t('OUR_PREVIOUS_EVENTS')} />
 					<div className="events__row">
 						{pastMeetupEvents.map((mEvent: any) => (
 							<EventCard key={mEvent.time} MeetupEvent={mEvent} />
