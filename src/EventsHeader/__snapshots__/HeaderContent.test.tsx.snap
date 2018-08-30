@@ -41,7 +41,7 @@ exports[`renders the content of the Events header 1`] = `
         }
       >
         <a
-          className="MuiButtonBase-root-55 MuiButton-root-31 MuiButton-contained-40 MuiButton-containedPrimary-41 MuiButton-raised-43 MuiButton-raisedPrimary-44 mr-1 undefined"
+          className="MuiButtonBase-root-57 MuiButton-root-31 MuiButton-contained-42 MuiButton-containedPrimary-43 MuiButton-raised-45 MuiButton-raisedPrimary-46 mr-1 undefined"
           href="https://www.codestar.nl"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -62,7 +62,7 @@ exports[`renders the content of the Events header 1`] = `
             
           </span>
           <span
-            className="MuiTouchRipple-root-58"
+            className="MuiTouchRipple-root-60"
           />
         </a>
         <a
@@ -70,7 +70,7 @@ exports[`renders the content of the Events header 1`] = `
           onClick={[Function]}
         >
           <button
-            className="MuiButtonBase-root-55 MuiButton-root-31 MuiButton-contained-40 MuiButton-raised-43"
+            className="MuiButtonBase-root-57 MuiButton-root-31 MuiButton-contained-42 MuiButton-raised-45"
             disabled={false}
             onBlur={[Function]}
             onFocus={[Function]}
@@ -91,7 +91,7 @@ exports[`renders the content of the Events header 1`] = `
               
             </span>
             <span
-              className="MuiTouchRipple-root-58"
+              className="MuiTouchRipple-root-60"
             />
           </button>
         </a>
