@@ -39,7 +39,6 @@
     "serverless": "^1.30.3",
     "simplex-noise": "^2.4.0",
     "snapsvg-cjs": "0.0.6",
-    "typescript": "^3.0.1",
     "vivus": "^0.4.4"
   },
   "lint-staged": {
@@ -59,7 +58,9 @@
     "test:watch": "react-scripts-ts test --env=jsdom --watch",
     "eject": "react-scripts-ts eject",
     "precommit": "lint-staged",
-    "prettier": "prettier --single-quote --write --trailing-comma es5 --write ./src/**/*.{js,jsx,ts,tsx}"
+    "prettier": "prettier --single-quote --write --trailing-comma es5 --write ./src/**/*.{js,jsx,ts,tsx}",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "browserslist": {
     "development": [
@@ -75,6 +76,16 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@storybook/addon-actions": "^4.0.0-alpha.18",
+    "@storybook/addon-info": "^4.0.0-alpha.18",
+    "@storybook/addon-knobs": "^4.0.0-alpha.18",
+    "@storybook/addon-links": "^4.0.0-alpha.18",
+    "@storybook/addon-notes": "^4.0.0-alpha.18",
+    "@storybook/addons": "^4.0.0-alpha.18",
+    "@storybook/react": "^4.0.0-alpha.18",
+    "@types/classnames": "^2.2.6",
+    "@types/jest": "^23.3.1",
     "@types/lodash": "^4.14.116",
     "@types/nuka-carousel": "^4.2.2",
     "@types/prop-types": "^15.5.4",
@@ -86,7 +97,14 @@
     "@types/react-test-renderer": "^16.0.2",
     "@types/recompose": "^0.26.3",
     "@types/sanitize-html": "^1.18.0",
+    "awesome-typescript-loader": "^5.2.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-loader": "^8.0.0-beta.6",
+    "babel-runtime": "^6.26.0",
+    "jest": "^23.5.0",
     "jest-fetch-mock": "^1.6.5",
-    "@types/classnames": "^2.2.6"
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "ts-jest": "^23.1.4",
+    "typescript": "^3.0.1"
   }
 }
