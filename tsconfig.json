@@ -30,6 +30,7 @@
     "jest",
     "src/setupTests.ts",
     "coverage",
-    "serverless"
+    "serverless",
+    "storybook-static"
   ]
 }
