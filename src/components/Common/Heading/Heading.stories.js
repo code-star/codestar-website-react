@@ -8,5 +8,5 @@ storiesOf('Components/Text', module)
 	.add('Heading', () => {
 		const type = select('Type', ['h1', 'h2', 'h3', 'h4'], 'h2');
 
-		return <Heading type={type} text={`Some ${type} heading`} />;
+		return <Heading type={type} text={`Awesome ${type} heading`} />;
 	});
