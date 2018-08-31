@@ -6,11 +6,6 @@ export interface IMeetupEvent {
 	withDescription: boolean;
 	description?: string;
 }
-export interface IFetchedMeetupEvent {
-	loading: boolean;
-	mEvent: IMeetupEvent | null;
-	noEvent: boolean;
-}
 
 export interface IEventsContainerState {
 	nextMeetupEvents: IMeetupEvent[];
