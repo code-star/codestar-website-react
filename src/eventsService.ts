@@ -6,8 +6,10 @@ function getUrl(lambdaName: string) {
 	if (process.env.REACT_APP_STAGE === 'dev') {
 		return `/mock/${lambdaName}.json`;
 	}
+	const AWS_PREFIX =
+		process.env.REACT_APP_STAGE === 'test' ? 'hjoutysc5k' : 'c3mmkmwyqi';
 	const AWS_STAGE = process.env.REACT_APP_STAGE === 'test' ? 'test' : 'prod';
-	return `https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/${AWS_STAGE}/${lambdaName}`;
+	return `https://${AWS_PREFIX}.execute-api.eu-west-1.amazonaws.com/${AWS_STAGE}/${lambdaName}`;
 }
 
 async function fetchUpcomingEvents() {

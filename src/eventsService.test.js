@@ -36,7 +36,7 @@ describe('EventsContainer', () => {
 			const result = await getCachedUpcomingEvents();
 			expect(fetch.mock.calls.length).toEqual(1);
 			expect(fetch.mock.calls[0][0]).toEqual(
-				'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/test/get-upcoming-events'
+				'https://hjoutysc5k.execute-api.eu-west-1.amazonaws.com/test/get-upcoming-events'
 			);
 		});
 
@@ -47,7 +47,7 @@ describe('EventsContainer', () => {
 			const result = await getCachedUpcomingEvents();
 			expect(fetch.mock.calls.length).toEqual(1);
 			expect(fetch.mock.calls[0][0]).toEqual(
-				'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/prod/get-upcoming-events'
+				'https://c3mmkmwyqi.execute-api.eu-west-1.amazonaws.com/prod/get-upcoming-events'
 			);
 		});
 
@@ -102,7 +102,7 @@ describe('EventsContainer', () => {
 			const result = await getCachedPastEvents();
 			expect(fetch.mock.calls.length).toEqual(1);
 			expect(fetch.mock.calls[0][0]).toEqual(
-				'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/test/get-past-events'
+				'https://hjoutysc5k.execute-api.eu-west-1.amazonaws.com/test/get-past-events'
 			);
 		});
 
@@ -113,7 +113,7 @@ describe('EventsContainer', () => {
 			const result = await getCachedPastEvents();
 			expect(fetch.mock.calls.length).toEqual(1);
 			expect(fetch.mock.calls[0][0]).toEqual(
-				'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/prod/get-past-events'
+				'https://c3mmkmwyqi.execute-api.eu-west-1.amazonaws.com/prod/get-past-events'
 			);
 		});
 
