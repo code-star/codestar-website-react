@@ -1,13 +1,10 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { SFC } from 'react';
 import Container from '../../Container/Container';
 import Section from '../../Section/Section';
-import { translate } from '../../typed-translate';
+import { translate, TranslationFunction } from 'react-i18next';
 import EventsHeader from '../../EventsHeader/EventsHeader';
 import EventCard from '../../EventCard/EventCard';
-
-type EventsProps = any;
-type EventsPropTypes = any;
+import compose from 'recompose/compose';
 
 /*
  Suggestions for design concepts
@@ -16,56 +13,55 @@ type EventsPropTypes = any;
  https://colorlib.com/wp/free-event-website-templates/
 */
 
-// TODO replace propTypes by https://gist.github.com/wittydeveloper/5ffb5f7d5d0c744612404ffdc802cd0a
-@translate(['events'], { wait: true })
-export default class Events extends Component<EventsProps, EventsPropTypes> {
-	public static propTypes = {
-		nextMeetupEvents: PropTypes.array.isRequired,
-		noNextMeetupEvent: PropTypes.bool.isRequired,
-		pastMeetupEvents: PropTypes.array.isRequired,
-	};
-
-	public render() {
-		const {
-			t,
-			nextMeetupEvents,
-			noNextMeetupEvent,
-			pastMeetupEvents,
-		} = this.props;
-		const nextEventsList = nextMeetupEvents.map(
-			({ description, withDescription, ...restOfEvent }: any) => (
-				// Strip the description and withDescription properties
-				<EventCard key={restOfEvent.time} MeetupEvent={...restOfEvent} />
-			)
-		);
-		const nextEventsBlock =
-			nextMeetupEvents && nextMeetupEvents.length > 0 ? (
-				<>
-					<h2 style={{ color: 'white' }}>{t('OUR_NEXT_EVENTS')}</h2>
-					<div className="row">
-						<div className="d-flex flex-wrap">{nextEventsList}</div>
-					</div>
-				</>
-			) : null;
-		const pastEventsList = pastMeetupEvents.map((mEvent: any) => (
-			<EventCard key={mEvent.time} MeetupEvent={mEvent} />
-		));
-		return (
-			<>
-				<EventsHeader
-					nextMeetupEvents={nextMeetupEvents}
-					noNextMeetupEvent={noNextMeetupEvent}
-				/>
-				<Section scrollname="previous-events">
-					<Container>
-						{nextEventsBlock}
-						<h2 style={{ color: 'white' }}>{t('OUR_PREVIOUS_EVENTS')}</h2>
-						<div className="row">
-							<div className="d-flex flex-wrap">{pastEventsList}</div>
-						</div>
-					</Container>
-				</Section>
-			</>
-		);
-	}
+// TODO improve types by replacing "any"
+interface IEventProps {
+	t: TranslationFunction;
+	nextMeetupEvents: any[];
+	noNextMeetupEvent: boolean;
+	pastMeetupEvents: any[];
 }
+
+const Events: SFC<IEventProps> = ({
+	t,
+	nextMeetupEvents,
+	noNextMeetupEvent,
+	pastMeetupEvents,
+}) => {
+	const nextEventsList = nextMeetupEvents.map(
+		({ description, withDescription, ...restOfEvent }: any) => (
+			// Strip the description and withDescription properties
+			<EventCard key={restOfEvent.time} MeetupEvent={...restOfEvent} />
+		)
+	);
+	const nextEventsBlock =
+		nextMeetupEvents && nextMeetupEvents.length > 0 ? (
+			<>
+				<h2 style={{ color: 'white' }}>{t('OUR_NEXT_EVENTS')}</h2>
+				<div className="row">
+					<div className="d-flex flex-wrap">{nextEventsList}</div>
+				</div>
+			</>
+		) : null;
+	const pastEventsList = pastMeetupEvents.map((mEvent: any) => (
+		<EventCard key={mEvent.time} MeetupEvent={mEvent} />
+	));
+	return (
+		<>
+			<EventsHeader
+				nextMeetupEvents={nextMeetupEvents}
+				noNextMeetupEvent={noNextMeetupEvent}
+			/>
+			<Section scrollname="previous-events">
+				<Container>
+					{nextEventsBlock}
+					<h2 style={{ color: 'white' }}>{t('OUR_PREVIOUS_EVENTS')}</h2>
+					<div className="row">
+						<div className="d-flex flex-wrap">{pastEventsList}</div>
+					</div>
+				</Container>
+			</Section>
+		</>
+	);
+};
+
+export default compose(translate(['events'], { wait: true }))(Events);
