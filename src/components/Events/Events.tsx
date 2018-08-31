@@ -6,7 +6,7 @@ import EventsHeader from '../../EventsHeader/EventsHeader';
 import EventCard from '../../EventCard/EventCard';
 import compose from 'recompose/compose';
 import Heading from '../Common/Heading/Heading';
-import './Events.css';
+import style from './Events.module.css';
 
 /*
  Suggestions for design concepts
@@ -40,7 +40,7 @@ const Events: SFC<IEventProps> = ({
 					{nextMeetupEvents && nextMeetupEvents.length > 0 ? (
 						<>
 							<Heading type="h2" color="white" text={t('OUR_NEXT_EVENTS')} />
-							<div className="events__row">
+							<div className={style.eventsRow}>
 								{nextMeetupEvents.map(
 									({ description, withDescription, ...restOfEvent }: any) => (
 										<EventCard
@@ -53,7 +53,7 @@ const Events: SFC<IEventProps> = ({
 						</>
 					) : null}
 					<Heading type="h2" color="white" text={t('OUR_PREVIOUS_EVENTS')} />
-					<div className="events__row">
+					<div className={style.eventsRow}>
 						{pastMeetupEvents.map((mEvent: any) => (
 							<EventCard key={mEvent.time} MeetupEvent={mEvent} />
 						))}
