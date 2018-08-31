@@ -3,7 +3,7 @@
 exports[`An instance of EventsButton matches the snapshot while hovering 1`] = `
 <a
   aria-describedby={null}
-  className="MuiButtonBase-root-73 MuiButton-root-49 MuiButton-text-51 MuiButton-flat-54 MuiButton-colorInherit-68"
+  className="MuiButtonBase-root-77 MuiButton-root-51 MuiButton-text-53 MuiButton-flat-56 MuiButton-colorInherit-72"
   href="/events"
   onBlur={[Function]}
   onClick={[Function]}
@@ -23,12 +23,12 @@ exports[`An instance of EventsButton matches the snapshot while hovering 1`] = `
   title=""
 >
   <span
-    className="MuiButton-label-50"
+    className="MuiButton-label-52"
   >
     TEST_EVENTS_LABEL_2
   </span>
   <span
-    className="MuiTouchRipple-root-76"
+    className="MuiTouchRipple-root-80"
   />
 </a>
 `;
@@ -36,7 +36,7 @@ exports[`An instance of EventsButton matches the snapshot while hovering 1`] = `
 exports[`An instance of EventsButton matches the snapshot with Event 1`] = `
 <a
   aria-describedby={null}
-  className="MuiButtonBase-root-73 MuiButton-root-49 MuiButton-text-51 MuiButton-flat-54 MuiButton-colorInherit-68"
+  className="MuiButtonBase-root-77 MuiButton-root-51 MuiButton-text-53 MuiButton-flat-56 MuiButton-colorInherit-72"
   href="/events"
   onBlur={[Function]}
   onClick={[Function]}
@@ -53,10 +53,10 @@ exports[`An instance of EventsButton matches the snapshot with Event 1`] = `
   onTouchStart={[Function]}
   role="button"
   tabIndex="0"
-  title="M08 27 *Meetup* MyEvent"
+  title="August 27 *Meetup* MyEvent"
 >
   <span
-    className="MuiButton-label-50"
+    className="MuiButton-label-52"
   >
     TEST_EVENTS_LABEL_2
     <span
@@ -66,7 +66,7 @@ exports[`An instance of EventsButton matches the snapshot with Event 1`] = `
     </span>
   </span>
   <span
-    className="MuiTouchRipple-root-76"
+    className="MuiTouchRipple-root-80"
   />
 </a>
 `;
@@ -74,7 +74,7 @@ exports[`An instance of EventsButton matches the snapshot with Event 1`] = `
 exports[`An instance of EventsButton matches the snapshot without Event 1`] = `
 <a
   aria-describedby={null}
-  className="MuiButtonBase-root-73 MuiButton-root-49 MuiButton-text-51 MuiButton-flat-54 MuiButton-colorInherit-68"
+  className="MuiButtonBase-root-77 MuiButton-root-51 MuiButton-text-53 MuiButton-flat-56 MuiButton-colorInherit-72"
   href="/events"
   onBlur={[Function]}
   onClick={[Function]}
@@ -94,12 +94,12 @@ exports[`An instance of EventsButton matches the snapshot without Event 1`] = `
   title=""
 >
   <span
-    className="MuiButton-label-50"
+    className="MuiButton-label-52"
   >
     TEST_EVENTS_LABEL_2
   </span>
   <span
-    className="MuiTouchRipple-root-76"
+    className="MuiTouchRipple-root-80"
   />
 </a>
 `;
