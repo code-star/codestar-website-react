@@ -60,6 +60,7 @@
     "precommit": "lint-staged",
     "prettier": "prettier --single-quote --write --trailing-comma es5 --write ./src/**/*.{js,jsx,ts,tsx}",
     "storybook": "start-storybook -p 6006",
+    "start-storybook": "npm-run-all -p watch-css storybook",
     "build-storybook": "build-storybook"
   },
   "browserslist": {
