@@ -71,10 +71,11 @@ export class Contact extends React.Component<ContactProps, ContactState> {
 		if (hasMessageError) {
 			return;
 		}
+		const AWS_STAGE = process.env.REACT_APP_STAGE === 'test' ? 'test' : 'prod';
 		const url =
 			process.env.REACT_APP_STAGE === 'dev'
 				? '/mock/staticSiteMailer.json'
-				: 'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/dev/static-site-mailer';
+				: `https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/${AWS_STAGE}/static-site-mailer`;
 		const options =
 			process.env.REACT_APP_STAGE === 'dev'
 				? {
