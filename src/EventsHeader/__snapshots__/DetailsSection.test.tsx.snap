@@ -61,7 +61,7 @@ exports[`renders the details for the Events header 1`] = `
           }
         />
         <a
-          className="MuiButtonBase-root-57 MuiButton-root-33 MuiButton-contained-42 MuiButton-containedPrimary-43 MuiButton-raised-45 MuiButton-raisedPrimary-46 mt-1"
+          className="MuiButtonBase-root-59 MuiButton-root-33 MuiButton-contained-44 MuiButton-containedPrimary-45 MuiButton-raised-47 MuiButton-raisedPrimary-48 mt-1"
           href="https://www.codestar.nl"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -82,7 +82,7 @@ exports[`renders the details for the Events header 1`] = `
             
           </span>
           <span
-            className="MuiTouchRipple-root-60"
+            className="MuiTouchRipple-root-62"
           />
         </a>
       </div>
