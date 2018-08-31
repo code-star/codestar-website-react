@@ -25,7 +25,19 @@ describe('EventsContainer', () => {
 			expect(process.env.REACT_APP_STAGE).toBe('dev');
 			const result = await getCachedUpcomingEvents();
 			expect(fetch.mock.calls.length).toEqual(1);
-			expect(fetch.mock.calls[0][0]).toEqual('/mock/getUpcomingEvents.json');
+			expect(fetch.mock.calls[0][0]).toEqual('/mock/get-upcoming-events.json');
+		});
+
+		it('in test mode calls the API', async () => {
+			delete process.env.REACT_APP_STAGE;
+			process.env.REACT_APP_STAGE = 'test';
+			expect(process.env.REACT_APP_STAGE).toBe('test');
+			fetch.mockRejectOnce('server down');
+			const result = await getCachedUpcomingEvents();
+			expect(fetch.mock.calls.length).toEqual(1);
+			expect(fetch.mock.calls[0][0]).toEqual(
+				'https://hjoutysc5k.execute-api.eu-west-1.amazonaws.com/test/get-upcoming-events'
+			);
 		});
 
 		it('in prod mode calls the API', async () => {
@@ -35,7 +47,7 @@ describe('EventsContainer', () => {
 			const result = await getCachedUpcomingEvents();
 			expect(fetch.mock.calls.length).toEqual(1);
 			expect(fetch.mock.calls[0][0]).toEqual(
-				'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/dev/get-upcoming-events'
+				'https://c3mmkmwyqi.execute-api.eu-west-1.amazonaws.com/prod/get-upcoming-events'
 			);
 		});
 
@@ -79,7 +91,19 @@ describe('EventsContainer', () => {
 			expect(process.env.REACT_APP_STAGE).toBe('dev');
 			const result = await getCachedPastEvents();
 			expect(fetch.mock.calls.length).toEqual(1);
-			expect(fetch.mock.calls[0][0]).toEqual('/mock/getPastEvents.json');
+			expect(fetch.mock.calls[0][0]).toEqual('/mock/get-past-events.json');
+		});
+
+		it('in test mode calls the API', async () => {
+			delete process.env.REACT_APP_STAGE;
+			process.env.REACT_APP_STAGE = 'test';
+			expect(process.env.REACT_APP_STAGE).toBe('test');
+			fetch.mockRejectOnce('server down');
+			const result = await getCachedPastEvents();
+			expect(fetch.mock.calls.length).toEqual(1);
+			expect(fetch.mock.calls[0][0]).toEqual(
+				'https://hjoutysc5k.execute-api.eu-west-1.amazonaws.com/test/get-past-events'
+			);
 		});
 
 		it('in prod mode calls the API', async () => {
@@ -89,7 +113,7 @@ describe('EventsContainer', () => {
 			const result = await getCachedPastEvents();
 			expect(fetch.mock.calls.length).toEqual(1);
 			expect(fetch.mock.calls[0][0]).toEqual(
-				'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/dev/get-past-events'
+				'https://c3mmkmwyqi.execute-api.eu-west-1.amazonaws.com/prod/get-past-events'
 			);
 		});
 

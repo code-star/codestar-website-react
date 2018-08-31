@@ -13,7 +13,7 @@ deploy:
     local_dir: build/
     fqdn: test.codestar.nl
     on:
-      branch: develop
+      branch: test
   # PROD
   - provider: pages
     skip_cleanup: true

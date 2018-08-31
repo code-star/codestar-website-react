@@ -29,6 +29,7 @@ Other docs:
 
 ## Developing
 
+We use `npm` over `yarn`. Do not check-in a yarn.lock file. The expected npm version can be found in `.nvmrc`.
 Run `npm start`, which will run `REACT_APP_STAGE=dev react-scripts start`. It is important that `REACT_APP_STAGE` is set to `dev`, because that switches the API calls to the local mock URLs. Otherwise, it will run with the production URLs.
 
 ## Deploying
@@ -55,29 +56,28 @@ Only allow https (better SEO, encrypted form data), so set up Cloudflare to use 
 To configure, run:
 
 ```bash
-yarn add serverless
-yarn serverless create --template aws-nodejs --name static-site-mailer
-yarn sls config credentials --provider aws --key YOUR_ACCESS_KEY_ID --secret YOUR_SECRET_ACCESS_KEY
+npm i -S serverless
+npx serverless create --template aws-nodejs --name static-site-mailer
+npx sls config credentials --provider aws --key YOUR_ACCESS_KEY_ID --secret YOUR_SECRET_ACCESS_KEY
 ```
 
 (The keys will be stored under `~/.aws/credentials`)
 
 The default region is set in `serverless.yml` and can be added to `sls` with the parameter `-r eu-west-1`
 
-It is also possible to use `npm` instead of `yarn`:
-
-```bash
-npx serverless create --template aws-nodejs --name static-site-mailer
-npx sls config credentials --provider aws --key YOUR_ACCESS_KEY_ID --secret YOUR_SECRET_ACCESS_KEY
-```
-
-Deploy to AWS:
+Deploy to AWS (TEST stage):
 
 ```bash
 npx sls deploy --verbose
 ```
 
-This logs (among others) the `POST` endpoint (https://x.execute-api.us-east-1.amazonaws.com/dev/static-site-mailer).
+Deploy to AWS (PROD stage):
+
+```bash
+npx sls deploy --verbose --stage prod
+```
+
+This logs (among others) the `POST` endpoint (https://x.execute-api.us-east-1.amazonaws.com/test/static-site-mailer).
 
 This can be tested with Postman, but to call it from a form, CORS must be configured.
 
