@@ -1,6 +1,8 @@
 import React, { SFC } from 'react';
-import cx from 'classnames';
-import './Heading.css';
+import classNames from 'classnames/bind';
+import style from './Heading.module.css';
+
+const cx = classNames.bind(style);
 
 interface IHeadingProps {
 	type: string;
@@ -12,9 +14,9 @@ const Heading: SFC<IHeadingProps> = ({ type, color = 'black', text }) => {
 	if (type === 'h1') {
 		return (
 			<h1
-				className={cx('heading', {
-					'heading--white': color === 'white',
-					'heading--black': color === 'black',
+				className={cx({
+					headingWhite: color === 'white',
+					headingBlack: color === 'black',
 				})}
 			>
 				{text}
@@ -23,9 +25,9 @@ const Heading: SFC<IHeadingProps> = ({ type, color = 'black', text }) => {
 	} else if (type === 'h2') {
 		return (
 			<h2
-				className={cx('heading', {
-					'heading--white': color === 'white',
-					'heading--black': color === 'black',
+				className={cx({
+					headingWhite: color === 'white',
+					headingBlack: color === 'black',
 				})}
 			>
 				{text}
@@ -34,9 +36,9 @@ const Heading: SFC<IHeadingProps> = ({ type, color = 'black', text }) => {
 	} else if (type === 'h3') {
 		return (
 			<h3
-				className={cx('heading', {
-					'heading--white': color === 'white',
-					'heading--black': color === 'black',
+				className={cx({
+					headingWhite: color === 'white',
+					headingBlack: color === 'black',
 				})}
 			>
 				{text}
@@ -45,9 +47,9 @@ const Heading: SFC<IHeadingProps> = ({ type, color = 'black', text }) => {
 	} else if (type === 'h4') {
 		return (
 			<h4
-				className={cx('heading', {
-					'heading--white': color === 'white',
-					'heading--black': color === 'black',
+				className={cx({
+					headingWhite: color === 'white',
+					headingBlack: color === 'black',
 				})}
 			>
 				{text}
