@@ -14,7 +14,7 @@ storiesOf('Components/Action', module)
 
 		return (
 			<Button variant={variant}>
-				<span>Awesome button</span>
+				<span>Awesome {`${variant}`} button</span>
 			</Button>
 		);
 	});
