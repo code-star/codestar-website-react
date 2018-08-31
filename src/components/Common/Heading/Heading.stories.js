@@ -1,9 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withKnobs, select, text } from '@storybook/addon-knobs';
 import Heading from './Heading.tsx';
 
-storiesOf('Heading', module)
-	.add('h1', () => <Heading type="h1" text="Some h1 Heading" />)
-	.add('h2', () => <Heading type="h2" text="Some h2 Heading" />)
-	.add('h3', () => <Heading type="h3" text="Some h3 Heading" />)
-	.add('h4', () => <Heading type="h4" text="Some h4 Heading" />);
+storiesOf('Components', module)
+	.addDecorator(withKnobs)
+	.add('Heading', () => {
+		const type = select('Type', ['h1', 'h2', 'h3', 'h4'], 'h2');
+
+		return <Heading type={type} text="Some Heading" />;
+	});

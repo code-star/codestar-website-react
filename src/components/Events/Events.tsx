@@ -5,7 +5,7 @@ import { translate, TranslationFunction } from 'react-i18next';
 import EventsHeader from '../../EventsHeader/EventsHeader';
 import EventCard from '../../EventCard/EventCard';
 import compose from 'recompose/compose';
-import Heading from '../Common/Heading/Heading';
+import Heading from '../Common/Heading';
 import style from './Events.module.css';
 
 /*
