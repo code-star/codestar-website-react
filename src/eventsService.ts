@@ -1,12 +1,14 @@
+import { IMeetupEvent } from './modules/EventsContainer/EventsContainer.interfaces';
+
 const GET_UPCOMING_EVENTS_URL =
 	'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/dev/get-upcoming-events';
 const GET_PAST_EVENTS_URL =
 	'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/dev/get-past-events';
 
-let cachedUpcomingEvents: any[];
-let cachedPastEvents: any[];
+let cachedUpcomingEvents: IMeetupEvent[] = [];
+let cachedPastEvents: IMeetupEvent[] = [];
 
-async function fetchUpcomingEvents() {
+async function fetchUpcomingEvents(): Promise<IMeetupEvent[]> {
 	try {
 		let url = GET_UPCOMING_EVENTS_URL;
 		if (process.env.REACT_APP_STAGE === 'dev') {
@@ -16,16 +18,18 @@ async function fetchUpcomingEvents() {
 		return cachedUpcomingEvents;
 	} catch (err) {
 		// fail silently
-		return null;
+		return [];
 	}
 }
 
 // Should be drop-in replaceable with Redux Thunk
-export async function getCachedUpcomingEvents() {
-	return cachedUpcomingEvents ? cachedUpcomingEvents : fetchUpcomingEvents();
+export async function getCachedUpcomingEvents(): Promise<IMeetupEvent[]> {
+	return cachedUpcomingEvents.length
+		? cachedUpcomingEvents
+		: fetchUpcomingEvents();
 }
 
-async function fetchPastEvents() {
+async function fetchPastEvents(): Promise<IMeetupEvent[]> {
 	try {
 		let url = GET_PAST_EVENTS_URL;
 		if (process.env.REACT_APP_STAGE === 'dev') {
@@ -35,10 +39,10 @@ async function fetchPastEvents() {
 		return cachedPastEvents;
 	} catch (err) {
 		// fail silently
-		return null;
+		return [];
 	}
 }
 
 export async function getCachedPastEvents() {
-	return cachedPastEvents ? cachedPastEvents : fetchPastEvents();
+	return cachedPastEvents.length ? cachedPastEvents : fetchPastEvents();
 }
