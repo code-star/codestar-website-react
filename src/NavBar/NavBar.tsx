@@ -115,8 +115,11 @@ class NavBar extends React.Component<NavBarProps> {
 							/>
 						</Link>
 						<Hidden smDown>{languageButton}</Hidden>
+						{process.env.REACT_APP_STAGE === 'dev' ? (
+							<div className={props.classes.envTag}>[DEV]</div>
+						) : null}
 						{process.env.REACT_APP_STAGE === 'test' ? (
-							<div className={props.classes.envTag}>[Test]</div>
+							<div className={props.classes.envTag}>[TEST]</div>
 						) : null}
 					</Typography>
 					<Hidden mdUp>{languageButton}</Hidden>

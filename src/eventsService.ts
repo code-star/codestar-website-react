@@ -1,19 +1,22 @@
 import { IMeetupEvent } from './modules/EventsContainer/EventsContainer.interfaces';
 
-const GET_UPCOMING_EVENTS_URL =
-	'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/dev/get-upcoming-events';
-const GET_PAST_EVENTS_URL =
-	'https://2sif0durcj.execute-api.eu-west-1.amazonaws.com/dev/get-past-events';
-
 let cachedUpcomingEvents: IMeetupEvent[] = [];
 let cachedPastEvents: IMeetupEvent[] = [];
 
+// This has been wrapped in a function to able to run unit tests where process.env.REACT_APP_STAGE is changed
+function getUrl(lambdaName: string): string {
+	if (process.env.REACT_APP_STAGE === 'dev') {
+		return `/mock/${lambdaName}.json`;
+	}
+	const AWS_PREFIX =
+		process.env.REACT_APP_STAGE === 'test' ? 'hjoutysc5k' : 'c3mmkmwyqi';
+	const AWS_STAGE = process.env.REACT_APP_STAGE === 'test' ? 'test' : 'prod';
+	return `https://${AWS_PREFIX}.execute-api.eu-west-1.amazonaws.com/${AWS_STAGE}/${lambdaName}`;
+}
+
 async function fetchUpcomingEvents(): Promise<IMeetupEvent[]> {
 	try {
-		let url = GET_UPCOMING_EVENTS_URL;
-		if (process.env.REACT_APP_STAGE === 'dev') {
-			url = '/mock/getUpcomingEvents.json';
-		}
+		const url = getUrl('get-upcoming-events');
 		cachedUpcomingEvents = await fetch(url).then(data => data.json());
 		return cachedUpcomingEvents;
 	} catch (err) {
@@ -31,10 +34,7 @@ export async function getCachedUpcomingEvents(): Promise<IMeetupEvent[]> {
 
 async function fetchPastEvents(): Promise<IMeetupEvent[]> {
 	try {
-		let url = GET_PAST_EVENTS_URL;
-		if (process.env.REACT_APP_STAGE === 'dev') {
-			url = '/mock/getPastEvents.json';
-		}
+		const url = getUrl('get-past-events');
 		cachedPastEvents = await fetch(url).then(data => data.json());
 		return cachedPastEvents;
 	} catch (err) {
@@ -43,6 +43,6 @@ async function fetchPastEvents(): Promise<IMeetupEvent[]> {
 	}
 }
 
-export async function getCachedPastEvents() {
+export async function getCachedPastEvents(): Promise<IMeetupEvent[]> {
 	return cachedPastEvents.length ? cachedPastEvents : fetchPastEvents();
 }

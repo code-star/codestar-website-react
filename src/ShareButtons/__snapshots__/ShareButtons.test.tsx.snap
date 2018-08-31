@@ -3,7 +3,7 @@
 exports[`ShareButtons shows facebook icon 1`] = `
 <a
   aria-label="Facebook"
-  className="MuiButtonBase-root-25 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
+  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
   href="https://www.facebook.com/sharer/sharer.php?u=undefined"
   onBlur={[Function]}
   onFocus={[Function]}
@@ -46,7 +46,7 @@ exports[`ShareButtons shows facebook icon 1`] = `
     </svg>
   </span>
   <span
-    className="MuiTouchRipple-root-28"
+    className="MuiTouchRipple-root-30"
   />
 </a>
 `;
@@ -54,7 +54,7 @@ exports[`ShareButtons shows facebook icon 1`] = `
 exports[`ShareButtons shows linkedin icon 1`] = `
 <a
   aria-label="Linkedin"
-  className="MuiButtonBase-root-25 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
+  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
   href="https://www.linkedin.com/shareArticle?mini=true&url=undefined&title=undefined&summary=undefined"
   onBlur={[Function]}
   onFocus={[Function]}
@@ -97,7 +97,7 @@ exports[`ShareButtons shows linkedin icon 1`] = `
     </svg>
   </span>
   <span
-    className="MuiTouchRipple-root-28"
+    className="MuiTouchRipple-root-30"
   />
 </a>
 `;
@@ -105,7 +105,7 @@ exports[`ShareButtons shows linkedin icon 1`] = `
 exports[`ShareButtons shows twitter icon 1`] = `
 <a
   aria-label="Twitter"
-  className="MuiButtonBase-root-25 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
+  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
   href="https://twitter.com/home?status=undefined%0Aundefined"
   onBlur={[Function]}
   onFocus={[Function]}
@@ -148,7 +148,7 @@ exports[`ShareButtons shows twitter icon 1`] = `
     </svg>
   </span>
   <span
-    className="MuiTouchRipple-root-28"
+    className="MuiTouchRipple-root-30"
   />
 </a>
 `;
