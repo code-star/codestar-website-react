@@ -1,21 +1,9 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import style from './Label.module.css';
+import { EColor, ESize } from '../../../../utility/enumeration';
 
 const cx = classNames.bind(style);
-
-enum EColor {
-	grey = 'grey',
-	black = 'black',
-	blue = 'blue',
-}
-
-enum ESize {
-	tiny = 'tiny',
-	small = 'small',
-	medium = 'medium',
-	large = 'large',
-}
 
 interface ILabelProps {
 	color: EColor;
