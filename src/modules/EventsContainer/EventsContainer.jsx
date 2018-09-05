@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Events from '../../components/Events/Events';
+import Events from '../../components/Molecules/List/Events';
 import _ from 'lodash';
 import {
 	getCachedUpcomingEvents,

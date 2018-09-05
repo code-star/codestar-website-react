@@ -1,11 +1,11 @@
 import React, { SFC } from 'react';
-import Container from '../../Container/Container';
-import Section from '../../Section/Section';
+import Container from '../../../../Container/Container';
+import Section from '../../../../Section/Section';
 import { translate, TranslationFunction } from 'react-i18next';
-import EventsHeader from '../../EventsHeader/EventsHeader';
-import EventCard from '../../EventCard/EventCard';
+import EventsHeader from '../../../../EventsHeader/EventsHeader';
+import EventCard from '../../../../EventCard/EventCard';
 import compose from 'recompose/compose';
-import Heading from '../Atoms/Text/Heading';
+import Heading from '../../../Atoms/Text/Heading';
 import style from './Events.module.css';
 
 /*
