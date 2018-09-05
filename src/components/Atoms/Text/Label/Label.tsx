@@ -19,6 +19,7 @@ const Label = ({ color, size, text }: ILabelProps) => (
 				labelGrey: color === 'grey',
 				labelBlack: color === 'black',
 				labelBlue: color === 'blue',
+				labelWhite: color === 'white',
 			},
 			{
 				labelTiny: size === 'tiny',

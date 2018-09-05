@@ -5,16 +5,18 @@
 	flex-direction: column;
 
 	border-style: solid;
-	border-color: $color-grey;
+	border-color: darken($color-event-blue, 10);
 	border-width: 1px;
+	border-radius: 5px;
 
-	margin: 3px;
+	margin: 5px;
+	background-color: $color-white;
 
 	&Header {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		padding: 5px;
+		padding: 2px;
 
     svg {
       cursor: pointer;
@@ -22,14 +24,14 @@
 	}
 
 	&Body {
-		padding: 5px;
+		padding: 2px;
 	}
 
 	&Footer {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		padding: 5px;
+		padding: 2px;
 
     svg {
       cursor: pointer;

@@ -2,6 +2,7 @@ export enum EColor {
 	grey = 'grey',
 	black = 'black',
 	blue = 'blue',
+	white = 'white',
 }
 
 export enum ESize {

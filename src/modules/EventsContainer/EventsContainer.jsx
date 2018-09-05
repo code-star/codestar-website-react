@@ -5,6 +5,7 @@ import {
 	getCachedUpcomingEvents,
 	getCachedPastEvents,
 } from '../../eventsService';
+import { tweets } from '../../data/events/tweets';
 
 function convertEventResponseToModel(withDescription = false) {
 	return function(mEvent) {
@@ -76,6 +77,7 @@ export default class EventsContainer extends Component {
 				nextMeetupEvents={nextMeetupEvents}
 				noNextMeetupEvent={noNextMeetupEvent}
 				pastMeetupEvents={pastMeetupEvents}
+				recentTweets={tweets.slice(0, 7)}
 			/>
 		);
 	}

@@ -5,6 +5,7 @@
 	font-family: 'metabold_roman', arial;
 	background-color: #fff;
 	user-select: none;
+	background-color: #fff;
 }
 .labelGrey {
 	color: #c6c6c6;
@@ -14,6 +15,9 @@
 }
 .labelBlue {
 	color: #00f;
+}
+.labelWhite {
+	color: #fff;
 }
 .labelTiny {
 	font-size: 8px;

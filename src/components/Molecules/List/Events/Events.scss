@@ -4,4 +4,14 @@
 	  flex-wrap: wrap;
 	  margin: 0 -15px 0 -15px;
 	}
+
+	&Next {
+		display: flex;
+		flex-direction: row;
+	}
+
+	&TweetList {
+		max-width: 600px;
+		margin-top: 23px;
+	}
 }

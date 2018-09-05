@@ -7,5 +7,5 @@ import { tweets } from '../../../../data/events/tweets';
 storiesOf('Components/Molecules/List', module)
 	.addDecorator(withKnobs)
 	.add('TweetList', () => {
-		return <TweetList tweets={tweets} />;
+		return <TweetList tweets={tweets.slice(0, 5)} />;
 	});
