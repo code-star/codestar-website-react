@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 import style from './Heading.module.css';
 
@@ -10,7 +10,7 @@ interface IHeadingProps {
 	text: string;
 }
 
-const Heading: SFC<IHeadingProps> = ({ type, color = 'black', text }) => {
+const Heading = ({ type, color = 'black', text }: IHeadingProps) => {
 	if (type === 'h1') {
 		return (
 			<h1
