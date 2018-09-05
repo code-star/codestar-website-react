@@ -1,6 +1,10 @@
 .tweet {
 	display: flex;
 	flex-direction: column;
+	border-style: solid;
+	border-color: #c6c6c6;
+	border-width: 1px;
+	margin: 3px;
 }
 .tweetHeader {
 	display: flex;

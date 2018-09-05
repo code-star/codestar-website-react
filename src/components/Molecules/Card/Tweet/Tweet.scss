@@ -1,6 +1,14 @@
+@import '../../../../theming/config.scss';
+
 .tweet {
 	display: flex;
 	flex-direction: column;
+
+	border-style: solid;
+	border-color: $color-grey;
+	border-width: 1px;
+
+	margin: 3px;
 
 	&Header {
 		display: flex;
