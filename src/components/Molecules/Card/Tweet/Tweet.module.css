@@ -1,0 +1,25 @@
+.tweet {
+	display: flex;
+	flex-direction: column;
+}
+.tweetHeader {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 5px;
+}
+.tweetHeader svg {
+	cursor: pointer;
+}
+.tweetBody {
+	padding: 5px;
+}
+.tweetFooter {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 5px;
+}
+.tweetFooter svg {
+	cursor: pointer;
+}
