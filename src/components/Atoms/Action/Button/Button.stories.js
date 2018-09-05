@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, select, text } from '@storybook/addon-knobs';
 import Button from './Button.tsx';
 
-storiesOf('Components/Action', module)
+storiesOf('Components/Atoms/Action', module)
 	.addDecorator(withKnobs)
 	.add('Button', () => {
 		const variant = select(

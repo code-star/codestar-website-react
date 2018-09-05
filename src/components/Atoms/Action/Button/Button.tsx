@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 import style from './Button.module.css';
 
@@ -9,7 +9,7 @@ interface IButtonProps {
 	children: any;
 }
 
-const Button: SFC<IButtonProps> = ({ variant, children }) => {
+const Button = ({ variant, children }: IButtonProps) => {
 	return (
 		<button
 			className={cx('button', {
