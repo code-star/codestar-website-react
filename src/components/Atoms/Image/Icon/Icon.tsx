@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import style from './Icon.module.css';
-import { getPath } from '../../../utility/font';
+import { getPath } from '../../../../utility/font';
 
 const cx = classNames.bind(style);
 
