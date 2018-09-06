@@ -9,7 +9,7 @@ jest.mock('react-i18next', () => ({
 	},
 }));
 
-jest.mock('../../i18n', () => ({
+jest.mock('../../../../i18n', () => ({
 	language: 'nl',
 }));
 
