@@ -17,7 +17,7 @@ storiesOf('Components/Molecules/Card', module)
 		const knobs = {
 			name: text('Name', name),
 			screenName: text('Screen Name', screen_name),
-			createdAt: number('Created At', created_at),
+			createdAt: text('Created At', created_at),
 			text: text('Text', tweets[3].text),
 			favoriteCount: number('Favorite Count', favorite_count),
 			retweetCount: number('Retweet Count', retweet_count),

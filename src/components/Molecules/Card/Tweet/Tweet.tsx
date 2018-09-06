@@ -10,7 +10,7 @@ const cx = classNames.bind(style);
 interface ITweetProps {
 	name: string;
 	screenName: string;
-	createdAt: number;
+	createdAt: string;
 	text: string;
 	favoriteCount: number;
 	retweetCount: number;
