@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> Snaphot must match primary 1`] = `
+<button
+  className="button buttonPrimary"
+>
+  <span>
+    Awesome button
+  </span>
+</button>
+`;
+
+exports[`<Button /> Snaphot must match secondary 1`] = `
+<button
+  className="button buttonSecondary"
+>
+  <span>
+    Awesome button
+  </span>
+</button>
+`;
+
+exports[`<Button /> Snaphot must match tertiary 1`] = `
+<button
+  className="button buttonTertiary"
+>
+  <span>
+    Awesome button
+  </span>
+</button>
+`;
