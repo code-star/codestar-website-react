@@ -1,17 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Button from '../Button';
+import Button from './Button';
 
 const children = <span>awesome button</span>;
 
-const getButton = variant => <Button variant={variant}>{children}</Button>;
+const getComponent = variant => <Button variant={variant}>{children}</Button>;
 
 const renderShallow = () => {
-	return shallow(getButton('primary'));
+	return shallow(getComponent('primary'));
 };
 
-describe.only('<Button />', () => {
+describe('<Button />', () => {
 	let wrapper;
 
 	describe('Instance', () => {
@@ -28,15 +28,15 @@ describe.only('<Button />', () => {
 
 	describe('Snaphot', () => {
 		test('must match primary', () => {
-			expect(global.renderToJSON(getButton('primary'))).toMatchSnapshot();
+			expect(global.renderToJSON(getComponent('primary'))).toMatchSnapshot();
 		});
 
 		test('must match secondary', () => {
-			expect(global.renderToJSON(getButton('secondary'))).toMatchSnapshot();
+			expect(global.renderToJSON(getComponent('secondary'))).toMatchSnapshot();
 		});
 
 		test('must match tertiary', () => {
-			expect(global.renderToJSON(getButton('tertiary'))).toMatchSnapshot();
+			expect(global.renderToJSON(getComponent('tertiary'))).toMatchSnapshot();
 		});
 	});
 });

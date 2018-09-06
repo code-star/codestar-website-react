@@ -5,7 +5,7 @@ exports[`<Button /> Snaphot must match primary 1`] = `
   className="button buttonPrimary"
 >
   <span>
-    Awesome button
+    awesome button
   </span>
 </button>
 `;
@@ -15,7 +15,7 @@ exports[`<Button /> Snaphot must match secondary 1`] = `
   className="button buttonSecondary"
 >
   <span>
-    Awesome button
+    awesome button
   </span>
 </button>
 `;
@@ -25,7 +25,7 @@ exports[`<Button /> Snaphot must match tertiary 1`] = `
   className="button buttonTertiary"
 >
   <span>
-    Awesome button
+    awesome button
   </span>
 </button>
 `;
