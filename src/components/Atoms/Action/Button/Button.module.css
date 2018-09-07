@@ -1,17 +1,17 @@
 .button {
-	min-width: 160px;
-	min-height: 30px;
-	border-radius: 5px;
+  min-width: 160px;
+  min-height: 30px;
+  border-radius: 5px;
 }
 .buttonPrimary {
-	color: #fff;
-	background-color: #00f;
+  color: #fff;
+  background-color: #00f;
 }
 .buttonSecondary {
-	color: #fff;
-	background-color: #f00;
+  color: #fff;
+  background-color: #f00;
 }
 .buttonTertiary {
-	color: #000;
-	background-color: #ff0;
+  color: #000;
+  background-color: #ff0;
 }

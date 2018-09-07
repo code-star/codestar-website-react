@@ -4,17 +4,17 @@ import { withKnobs, select } from '@storybook/addon-knobs';
 import Button from './Button.tsx';
 
 storiesOf('Components/Atoms/Action', module)
-	.addDecorator(withKnobs)
-	.add('Button', () => {
-		const variant = select(
-			'Variant',
-			['primary', 'secondary', 'tertiary'],
-			'primary'
-		);
+  .addDecorator(withKnobs)
+  .add('Button', () => {
+    const variant = select(
+      'Variant',
+      ['primary', 'secondary', 'tertiary'],
+      'primary'
+    );
 
-		return (
-			<Button variant={variant}>
-				<span>Awesome {`${variant}`} button</span>
-			</Button>
-		);
-	});
+    return (
+      <Button variant={variant}>
+        <span>Awesome {`${variant}`} button</span>
+      </Button>
+    );
+  });

@@ -8,35 +8,35 @@ const children = <span>awesome button</span>;
 const getComponent = variant => <Button variant={variant}>{children}</Button>;
 
 const renderShallow = () => {
-	return shallow(getComponent('primary'));
+  return shallow(getComponent('primary'));
 };
 
 describe('<Button />', () => {
-	let wrapper;
+  let wrapper;
 
-	describe('Instance', () => {
-		test('must be an instance of Button', () => {
-			wrapper = renderShallow();
-			expect(wrapper.find('Button')).toBeTruthy();
-		});
+  describe('Instance', () => {
+    test('must be an instance of Button', () => {
+      wrapper = renderShallow();
+      expect(wrapper.find('Button')).toBeTruthy();
+    });
 
-		test('must render children', () => {
-			wrapper = renderShallow();
-			expect(wrapper).toContainReact(children);
-		});
-	});
+    test('must render children', () => {
+      wrapper = renderShallow();
+      expect(wrapper).toContainReact(children);
+    });
+  });
 
-	describe('Snaphot', () => {
-		test('must match primary', () => {
-			expect(global.renderToJSON(getComponent('primary'))).toMatchSnapshot();
-		});
+  describe('Snaphot', () => {
+    test('must match primary', () => {
+      expect(global.renderToJSON(getComponent('primary'))).toMatchSnapshot();
+    });
 
-		test('must match secondary', () => {
-			expect(global.renderToJSON(getComponent('secondary'))).toMatchSnapshot();
-		});
+    test('must match secondary', () => {
+      expect(global.renderToJSON(getComponent('secondary'))).toMatchSnapshot();
+    });
 
-		test('must match tertiary', () => {
-			expect(global.renderToJSON(getComponent('tertiary'))).toMatchSnapshot();
-		});
-	});
+    test('must match tertiary', () => {
+      expect(global.renderToJSON(getComponent('tertiary'))).toMatchSnapshot();
+    });
+  });
 });
