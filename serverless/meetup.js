@@ -117,7 +117,7 @@ module.exports.getRecentTweets = async (event, context, callback) => {
 	 }
 
 	oauth.get(
-		'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=iceX33&count=10',
+		GET_RECENT_TWEETS_URL,
 		'132144715-JB0dtp503oGA0ArDsZ0r4oFsh9GcaQRAvc1Xqyyw',
 		'9wCdiAuuzIWFdeAE6gL4hzjV5Rsj1ZLQzyjFC5aKDjHMN',
 		authCallback

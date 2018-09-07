@@ -78,6 +78,8 @@ package:
     - node_modules/to-readable-stream/**
     - node_modules/url-parse-lax/**
     - node_modules/wrappy/**
+    - node_modules/@szmarczak/**
+    # oauth ^0.9.15 and all its dependencies
     - node_modules/oauth/**
   exclude:
   	# path that starts with * must be in "
