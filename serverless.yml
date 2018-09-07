@@ -76,6 +76,7 @@ package:
     - node_modules/symbol-observable/**
     - node_modules/to-readable-stream/**
     - node_modules/url-parse-lax/**
+    - node_modules/oauth/**
   exclude:
   	# path that starts with * must be in "
     - "**/*"
@@ -104,6 +105,14 @@ functions:
       - http:
           method: get
           path: get-past-events
+          cors: true
+  getRecentTweets:
+    handler: serverless/meetup.getRecentTweets
+    description: Get recent tweets of next speaker
+    events:
+      - http:
+          method: get
+          path: get-recent-tweets
           cors: true
 
 #    The following are a few example events you can configure
