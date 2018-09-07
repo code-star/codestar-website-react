@@ -9,12 +9,8 @@
   "rules": {
     "ordered-imports": false,
     "object-literal-sort-keys": false,
-    "jsx-boolean-value": false,
-    "ter-indent": [true, 2, "spaces"]
+    "jsx-boolean-value": false
   },
-  "rulesDirectory": [
-    "node_modules/tslint-eslint-rules/dist/rules"
-  ],
   "jsRules": {
     "ordered-imports": false,
     "object-literal-sort-keys": false,

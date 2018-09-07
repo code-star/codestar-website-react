@@ -116,7 +116,6 @@
     "jest-fetch-mock": "^1.6.5",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
     "ts-jest": "^22.4.6",
-    "tslint-eslint-rules": "^5.4.0",
     "typescript": "^3.0.1"
   }
 }
