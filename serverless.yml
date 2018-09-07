@@ -79,6 +79,7 @@ package:
     - node_modules/url-parse-lax/**
     - node_modules/wrappy/**
     - node_modules/@szmarczak/**
+    - node_modules/defer-to-connect/**
     # oauth ^0.9.15 and all its dependencies
     - node_modules/oauth/**
   exclude:

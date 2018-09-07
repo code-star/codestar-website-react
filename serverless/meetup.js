@@ -94,6 +94,8 @@ module.exports.getPastEvents = async (event, context, callback) => {
 };
 
 module.exports.getRecentTweets = async (event, context, callback) => {
+  const headers = util.safeGetHeaders(event.headers.origin);
+
 	const oauth = new OAuth.OAuth(
 		'https://api.twitter.com/oauth/request_token',
 		'https://api.twitter.com/oauth/access_token',
@@ -110,7 +112,11 @@ module.exports.getRecentTweets = async (event, context, callback) => {
 			return;
 		}
 		try {
-			callback(null, data);
+      callback(null, {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify(data),
+      });
 		} catch (parseError) {
 			console.log(parseError);
 		}
