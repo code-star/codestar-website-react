@@ -1,45 +1,44 @@
 @import '../../../../theming/config.scss';
 
 .label {
-    display: inline-block;
-    padding: 0;
-    text-align: left;
-    font-family: $font-family-primary;
-    background-color: $color-white;
-    user-select: none;
+  display: inline-block;
+  padding: 0;
+  text-align: left;
+  font-family: $font-family-primary;
+  background-color: $color-white;
+  user-select: none;
 
-		background-color: $color-white;
+  background-color: $color-white;
 
-    &Grey {
-        color: $color-grey;
-    }
+  &Grey {
+    color: $color-grey;
+  }
 
-    &Black {
-        color: $color-black;
-    }
+  &Black {
+    color: $color-black;
+  }
 
-    &Blue {
-        color: $color-blue;
-    }
+  &Blue {
+      color: $color-blue;
+  }
 
-    &White {
-        color: $color-white;
-    }
+  &White {
+      color: $color-white;
+  }
 
-    &Tiny {
-        font-size: $font-size-tiny;
-    }
+  &Tiny {
+    font-size: $font-size-tiny;
+  }
 
-    &Small {
-        font-size: $font-size-small;
-    }
+  &Small {
+    font-size: $font-size-small;
+  }
 
-    &Medium {
-        font-size: $font-size-medium;
-    }
+  &Medium {
+    font-size: $font-size-medium;
+  }
 
-    &Large {
-        font-size: $font-size-large;
-    }
-
+  &Large {
+    font-size: $font-size-large;
+  }
 }

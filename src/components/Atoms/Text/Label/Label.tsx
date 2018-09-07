@@ -6,31 +6,31 @@ import { EColor, ESize } from '../../../../utility/enumeration';
 const cx = classNames.bind(style);
 
 interface ILabelProps {
-	color: EColor;
-	size: ESize;
-	text: string;
+  color: EColor;
+  size: ESize;
+  text: string;
 }
 
 const Label = ({ color, size, text }: ILabelProps) => (
-	<span
-		className={cx(
-			'label',
-			{
-				labelGrey: color === 'grey',
-				labelBlack: color === 'black',
-				labelBlue: color === 'blue',
-				labelWhite: color === 'white',
-			},
-			{
-				labelTiny: size === 'tiny',
-				labelSmall: size === 'small',
-				labelMedium: size === 'medium',
-				labelLarge: size === 'large',
-			}
-		)}
-	>
-		{text}
-	</span>
+  <span
+    className={cx(
+      'label',
+      {
+        labelGrey: color === 'grey',
+        labelBlack: color === 'black',
+        labelBlue: color === 'blue',
+        labelWhite: color === 'white',
+      },
+      {
+        labelTiny: size === 'tiny',
+        labelSmall: size === 'small',
+        labelMedium: size === 'medium',
+        labelLarge: size === 'large',
+      }
+    )}
+  >
+    {text}
+  </span>
 );
 
 export default Label;
