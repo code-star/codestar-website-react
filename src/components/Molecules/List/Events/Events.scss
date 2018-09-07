@@ -1,17 +1,17 @@
 .events {
-	&Row {
-	  display: flex;
-	  flex-wrap: wrap;
-	  margin: 0 -15px 0 -15px;
-	}
+  &Row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px 0 -15px;
+  }
 
-	&Next {
-		display: flex;
-		flex-direction: row;
-	}
+  &Next {
+    display: flex;
+    flex-direction: row;
+  }
 
-	&TweetList {
-		max-width: 600px;
-		margin-top: 23px;
-	}
+  &TweetList {
+    max-width: 600px;
+    margin-top: 23px;
+  }
 }

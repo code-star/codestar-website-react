@@ -1,15 +1,15 @@
 .eventsRow {
-	display: flex;
-	flex-wrap: wrap;
-	margin: 0 -15px 0 -15px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px 0 -15px;
 }
 
 .eventsNext {
-	display: flex;
-	flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .eventsTweetList {
-	max-width: 600px;
-	margin-top: 23px;
+  max-width: 600px;
+  margin-top: 23px;
 }

@@ -21,63 +21,63 @@ const cx = classNames.bind(style);
 
 // TODO improve types by replacing "any"
 interface IEventProps {
-	t: TranslationFunction;
-	nextMeetupEvents: any[];
-	noNextMeetupEvent: boolean;
-	pastMeetupEvents: any[];
-	recentTweets: any[];
+  t: TranslationFunction;
+  nextMeetupEvents: any[];
+  noNextMeetupEvent: boolean;
+  pastMeetupEvents: any[];
+  recentTweets: any[];
 }
 
 const Events: SFC<IEventProps> = ({
-	t,
-	nextMeetupEvents,
-	noNextMeetupEvent,
-	pastMeetupEvents,
-	recentTweets,
+  t,
+  nextMeetupEvents,
+  noNextMeetupEvent,
+  pastMeetupEvents,
+  recentTweets,
 }) => {
-	return (
-		<>
-			<EventsHeader
-				nextMeetupEvents={nextMeetupEvents}
-				noNextMeetupEvent={noNextMeetupEvent}
-			/>
-			<Section scrollname="previous-events">
-				<Container>
-					{nextMeetupEvents && nextMeetupEvents.length > 0 ? (
-						<div className={cx('eventsNext')}>
-							<div className={cx('eventsNextLeft')}>
-								<Heading type="h2" color="white" text={t('OUR_NEXT_EVENTS')} />
-								<div className={cx('eventsRow')}>
-									{nextMeetupEvents.map(
-										({ description, withDescription, ...restOfEvent }: any) => (
-											<EventCard
-												key={restOfEvent.time}
-												MeetupEvent={...restOfEvent}
-											/>
-										)
-									)}
-								</div>
-							</div>
+  return (
+    <>
+      <EventsHeader
+        nextMeetupEvents={nextMeetupEvents}
+        noNextMeetupEvent={noNextMeetupEvent}
+      />
+      <Section scrollname="previous-events">
+        <Container>
+          {nextMeetupEvents && nextMeetupEvents.length > 0 ? (
+            <div className={cx('eventsNext')}>
+              <div className={cx('eventsNextLeft')}>
+                <Heading type="h2" color="white" text={t('OUR_NEXT_EVENTS')} />
+                <div className={cx('eventsRow')}>
+                  {nextMeetupEvents.map(
+                    ({ description, withDescription, ...restOfEvent }: any) => (
+                      <EventCard
+                        key={restOfEvent.time}
+                        MeetupEvent={...restOfEvent}
+                      />
+                    )
+                  )}
+                </div>
+              </div>
 
-							<div className={cx('eventsNextRight')}>
-								<Heading type="h2" color="white" text={t('RECENT_TWEETS')} />
-								<TweetList
-									tweets={recentTweets}
-									className={cx('eventsTweetList')}
-								/>
-							</div>
-						</div>
-					) : null}
-					<Heading type="h2" color="white" text={t('OUR_PREVIOUS_EVENTS')} />
-					<div className={cx('eventsRow')}>
-						{pastMeetupEvents.map((mEvent: any) => (
-							<EventCard key={mEvent.time} MeetupEvent={mEvent} />
-						))}
-					</div>
-				</Container>
-			</Section>
-		</>
-	);
+              <div className={cx('eventsNextRight')}>
+                <Heading type="h2" color="white" text={t('RECENT_TWEETS')} />
+                <TweetList
+                  tweets={recentTweets}
+                  className={cx('eventsTweetList')}
+                />
+              </div>
+            </div>
+          ) : null}
+          <Heading type="h2" color="white" text={t('OUR_PREVIOUS_EVENTS')} />
+          <div className={cx('eventsRow')}>
+            {pastMeetupEvents.map((mEvent: any) => (
+              <EventCard key={mEvent.time} MeetupEvent={mEvent} />
+            ))}
+          </div>
+        </Container>
+      </Section>
+    </>
+  );
 };
 
 export default compose(translate(['events'], { wait: true }))(Events);
