@@ -35,7 +35,7 @@ storiesOf('Components/Atoms/Image', module)
         ],
         'twitter'
       ),
-      text: text('Text', 7),
+      text: text('Text', '7'),
     };
 
     return <Icon name={knobs.name} width={20} height={20} text={knobs.text} />;
