@@ -1,40 +1,40 @@
 @import '../../../../theming/config.scss';
 
 .tweet {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-	border-style: solid;
-	border-color: darken($color-event-blue, 10);
-	border-width: 1px;
-	border-radius: 5px;
+  border-style: solid;
+  border-color: darken($color-event-blue, 10);
+  border-width: 1px;
+  border-radius: 5px;
 
-	margin: 5px;
-	background-color: $color-white;
+  margin: 5px;
+  background-color: $color-white;
 
-	&Header {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		padding: 5px 5px 0 5px;
-
-    svg {
-      cursor: pointer;
-    }
-	}
-
-	&Body {
-		padding: 5px;
-	}
-
-	&Footer {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		padding: 0 5px 5px 5px;
+  &Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 5px 0 5px;
 
     svg {
       cursor: pointer;
     }
-	}
+  }
+
+  &Body {
+    padding: 5px;
+  }
+
+  &Footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 5px 5px 5px;
+
+    svg {
+      cursor: pointer;
+    }
+  }
 }
