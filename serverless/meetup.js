@@ -112,10 +112,7 @@ module.exports.getRecentTweets = async (event, context, callback) => {
     try {
       callback(null, {
         statusCode: 200,
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'https://api.twitter.com',
-        },
+        headers: {},
         body: JSON.stringify(data),
       });
     } catch (parseError) {
