@@ -1,27 +1,25 @@
-/* tslint:disable */
-
 let cachedUpcomingEvents: any[];
 let cachedPastEvents: any[];
 let cachedRecentTweets: any[];
 
 // This has been wrapped in a function to able to run unit tests where process.env.REACT_APP_STAGE is changed
 function getUrl(lambdaName: string) {
-  console.log(
-    '~process.env.REACT_APP_STAGE~',
-    process.env.REACT_APP_STAGE,
-    lambdaName
-  );
+  // if (process.env.REACT_APP_STAGE === 'dev') {
+  //   return `/mock/${lambdaName}.json`;
+  // }
 
-  if (lambdaName === 'get-recent-tweets') {
-    return 'https://hjoutysc5k.execute-api.eu-west-1.amazonaws.com/test/get-recent-tweets';
-  }
-
-  if (process.env.REACT_APP_STAGE === 'dev') {
-    return `/mock/${lambdaName}.json`;
-  }
   const AWS_PREFIX =
-    process.env.REACT_APP_STAGE === 'test' ? 'hjoutysc5k' : 'c3mmkmwyqi';
-  const AWS_STAGE = process.env.REACT_APP_STAGE === 'test' ? 'test' : 'prod';
+    process.env.REACT_APP_STAGE === 'test' ||
+    process.env.REACT_APP_STAGE === 'dev'
+      ? 'hjoutysc5k'
+      : 'c3mmkmwyqi';
+
+  const AWS_STAGE =
+    process.env.REACT_APP_STAGE === 'test' ||
+    process.env.REACT_APP_STAGE === 'dev'
+      ? 'test'
+      : 'prod';
+
   return `https://${AWS_PREFIX}.execute-api.eu-west-1.amazonaws.com/${AWS_STAGE}/${lambdaName}`;
 }
 
@@ -57,10 +55,8 @@ export async function getCachedPastEvents() {
 }
 
 async function fetchRecentTweets() {
-  console.log('~fetchRecentTweets~start');
   try {
     const url = getUrl('get-recent-tweets');
-    console.log('~url', url);
     cachedRecentTweets = await fetch(url).then(data => data.json());
     return cachedRecentTweets;
   } catch (err) {
@@ -72,4 +68,3 @@ async function fetchRecentTweets() {
 export async function getCachedRecentTweets() {
   return cachedRecentTweets ? cachedRecentTweets : fetchRecentTweets();
 }
-/* tslint:enable */
