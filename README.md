@@ -65,13 +65,19 @@ npx sls config credentials --provider aws --key YOUR_ACCESS_KEY_ID --secret YOUR
 
 The default region is set in `serverless.yml` and can be added to `sls` with the parameter `-r eu-west-1`
 
-Deploy to AWS:
+Deploy to AWS (TEST stage):
 
 ```bash
 npx sls deploy --verbose
 ```
 
-This logs (among others) the `POST` endpoint (https://x.execute-api.us-east-1.amazonaws.com/dev/static-site-mailer).
+Deploy to AWS (PROD stage):
+
+```bash
+npx sls deploy --verbose --stage prod
+```
+
+This logs (among others) the `POST` endpoint (https://x.execute-api.us-east-1.amazonaws.com/test/static-site-mailer).
 
 This can be tested with Postman, but to call it from a form, CORS must be configured.
 
