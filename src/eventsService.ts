@@ -4,9 +4,9 @@ let cachedRecentTweets: any[];
 
 // This has been wrapped in a function to able to run unit tests where process.env.REACT_APP_STAGE is changed
 function getUrl(lambdaName: string) {
-  if (process.env.REACT_APP_STAGE === 'dev') {
-    return `/mock/${lambdaName}.json`;
-  }
+  // if (process.env.REACT_APP_STAGE === 'dev') {
+  //   return `/mock/${lambdaName}.json`;
+  // }
 
   const AWS_PREFIX =
     process.env.REACT_APP_STAGE === 'test' ||
