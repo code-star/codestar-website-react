@@ -5,6 +5,8 @@ import { translate, TranslationFunction } from 'react-i18next';
 import EventsHeader from '../../EventsHeader/EventsHeader';
 import EventCard from '../../EventCard/EventCard';
 import compose from 'recompose/compose';
+import { IMeetupEvent } from '../../modules/EventsContainer/EventsContainer.interfaces';
+import { NextEventsBlock } from './NextEventsBlock';
 
 /*
  Suggestions for design concepts
@@ -13,37 +15,24 @@ import compose from 'recompose/compose';
  https://colorlib.com/wp/free-event-website-templates/
 */
 
-// TODO improve types by replacing "any"
-interface IEventProps {
+interface IEventInnerProps {
 	t: TranslationFunction;
-	nextMeetupEvents: any[];
-	noNextMeetupEvent: boolean;
-	pastMeetupEvents: any[];
 }
 
-const Events: SFC<IEventProps> = ({
+interface IEventOuterProps {
+	nextMeetupEvents: IMeetupEvent[];
+	noNextMeetupEvent: boolean;
+	pastMeetupEvents: IMeetupEvent[];
+}
+
+const Events: SFC<IEventInnerProps & IEventOuterProps> = ({
 	t,
 	nextMeetupEvents,
 	noNextMeetupEvent,
 	pastMeetupEvents,
 }) => {
-	const nextEventsList = nextMeetupEvents.map(
-		({ description, withDescription, ...restOfEvent }: any) => (
-			// Strip the description and withDescription properties
-			<EventCard key={restOfEvent.time} MeetupEvent={...restOfEvent} />
-		)
-	);
-	const nextEventsBlock =
-		nextMeetupEvents && nextMeetupEvents.length > 0 ? (
-			<>
-				<h2 style={{ color: 'white' }}>{t('OUR_NEXT_EVENTS')}</h2>
-				<div className="row">
-					<div className="d-flex flex-wrap">{nextEventsList}</div>
-				</div>
-			</>
-		) : null;
-	const pastEventsList = pastMeetupEvents.map((mEvent: any) => (
-		<EventCard key={mEvent.time} MeetupEvent={mEvent} />
+	const pastEventsList = pastMeetupEvents.map((mEvent: IMeetupEvent) => (
+		<EventCard key={mEvent.time} event={mEvent} />
 	));
 	return (
 		<>
@@ -53,7 +42,10 @@ const Events: SFC<IEventProps> = ({
 			/>
 			<Section scrollname="previous-events">
 				<Container>
-					{nextEventsBlock}
+					<NextEventsBlock
+						events={nextMeetupEvents}
+						title={t('OUR_NEXT_EVENTS')}
+					/>
 					<h2 style={{ color: 'white' }}>{t('OUR_PREVIOUS_EVENTS')}</h2>
 					<div className="row">
 						<div className="d-flex flex-wrap">{pastEventsList}</div>
@@ -64,4 +56,6 @@ const Events: SFC<IEventProps> = ({
 	);
 };
 
-export default compose(translate(['events'], { wait: true }))(Events);
+export default compose<IEventInnerProps, IEventOuterProps>(
+	translate(['events'], { wait: true })
+)(Events);
