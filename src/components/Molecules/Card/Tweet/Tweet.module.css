@@ -20,12 +20,3 @@
 .tweetBody {
   padding: 5px;
 }
-.tweetFooter {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0 5px 5px 5px;
-}
-.tweetFooter svg {
-  cursor: pointer;
-}

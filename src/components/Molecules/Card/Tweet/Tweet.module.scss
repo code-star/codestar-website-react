@@ -26,15 +26,4 @@
   &Body {
     padding: 5px;
   }
-
-  &Footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 5px 5px 5px;
-
-    svg {
-      cursor: pointer;
-    }
-  }
 }
