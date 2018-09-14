@@ -27,7 +27,7 @@
     "lint-staged": "^7.0.0",
     "lodash": "^4.17.10",
     "node-fetch": "^2.2.0",
-    "node-sass-chokidar": "git@github.com:code-star/node-sass-chokidar.git#css-modules",
+    "node-sass-chokidar": "^1.3.3",
     "npm-run-all": "^4.1.3",
     "nuka-carousel": "^4.2.5",
     "oauth": "^0.9.15",

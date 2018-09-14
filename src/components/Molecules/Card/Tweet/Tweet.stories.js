@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, number } from '@storybook/addon-knobs';
 import Tweet from './Tweet.tsx';
-import { tweets } from '../../../../data/events/tweets';
+import tweets from '../../../../../build/mock/get-recent-tweets';
 
 const {
   created_at,
