@@ -20,7 +20,7 @@ describe('EventsContainer', () => {
   });
 
   describe('getCachedPastEvents', () => {
-    it.skip('in dev mode calls the mock', async () => {
+    it('in dev mode calls the mock', async () => {
       process.env.REACT_APP_STAGE = 'dev';
       expect(process.env.REACT_APP_STAGE).toBe('dev');
       await getCachedPastEvents();
