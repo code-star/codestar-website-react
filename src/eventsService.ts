@@ -52,6 +52,10 @@ async function fetchRecentTweets() {
   try {
     const url = getUrl('get-recent-tweets');
     cachedRecentTweets = await fetch(url).then(data => data.json());
+    cachedRecentTweets =
+      typeof cachedRecentTweets === 'string'
+        ? JSON.parse(cachedRecentTweets)
+        : cachedRecentTweets;
     return cachedRecentTweets;
   } catch (err) {
     // fail silently

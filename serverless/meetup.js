@@ -9,7 +9,9 @@ const OAuth = require('oauth');
 const GET_UPCOMING_EVENTS_URL = 'https://api.meetup.com/Code-Star-Night/events?&sign=true&photo-host=public&page=3&fields=featured_photo&desc=false';
 const GET_PAST_EVENTS_URL = 'https://api.meetup.com/Code-Star-Night/events?&sign=true&photo-host=public&page=20&desc=true&status=past&fields=featured_photo';
 const FALLBACK_IMAGE = 'https://res.cloudinary.com/codestar/image/upload/v1532409289/codestar.nl/meetup/codestar-night-logo.jpg';
-const GET_RECENT_TWEETS_URL = 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=iceX33&count=10';
+const {SCREEN_NAME, TWEET_COUNT} = process.env;
+const GET_RECENT_TWEETS_URL = `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${SCREEN_NAME}&count=${TWEET_COUNT}`;
+
 
 module.exports.getUpcomingEvents = async (event, context, callback) => {
   try {
