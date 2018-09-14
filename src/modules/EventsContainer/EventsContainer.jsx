@@ -70,7 +70,7 @@ export default class EventsContainer extends Component {
   async fetchRecentTweets() {
     try {
       const response = await getCachedRecentTweets();
-      this.setState({ recentTweets: JSON.parse(response) });
+      this.setState({ recentTweets: response });
     } catch (err) {
       this.setState({ recentTweets: [] });
     }
@@ -89,7 +89,7 @@ export default class EventsContainer extends Component {
         nextMeetupEvents={nextMeetupEvents}
         noNextMeetupEvent={noNextMeetupEvent}
         pastMeetupEvents={pastMeetupEvents}
-        recentTweets={recentTweets.slice(0, 7)}
+        recentTweets={recentTweets}
       />
     );
   }

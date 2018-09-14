@@ -1,24 +1,18 @@
+/* tslint:disable */
 let cachedUpcomingEvents: any[];
 let cachedPastEvents: any[];
 let cachedRecentTweets: any[];
 
 // This has been wrapped in a function to able to run unit tests where process.env.REACT_APP_STAGE is changed
 function getUrl(lambdaName: string) {
-  // if (process.env.REACT_APP_STAGE === 'dev') {
-  //   return `/mock/${lambdaName}.json`;
-  // }
+  if (process.env.REACT_APP_STAGE === 'dev') {
+    return `/mock/${lambdaName}.json`;
+  }
 
   const AWS_PREFIX =
-    process.env.REACT_APP_STAGE === 'test' ||
-    process.env.REACT_APP_STAGE === 'dev'
-      ? 'hjoutysc5k'
-      : 'c3mmkmwyqi';
+    process.env.REACT_APP_STAGE === 'test' ? 'hjoutysc5k' : 'c3mmkmwyqi';
 
-  const AWS_STAGE =
-    process.env.REACT_APP_STAGE === 'test' ||
-    process.env.REACT_APP_STAGE === 'dev'
-      ? 'test'
-      : 'prod';
+  const AWS_STAGE = process.env.REACT_APP_STAGE === 'test' ? 'test' : 'prod';
 
   return `https://${AWS_PREFIX}.execute-api.eu-west-1.amazonaws.com/${AWS_STAGE}/${lambdaName}`;
 }
