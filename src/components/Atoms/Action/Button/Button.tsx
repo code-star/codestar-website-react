@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import classNames from 'classnames/bind';
 import style from './Button.module.css';
 
@@ -6,7 +6,7 @@ const cx = classNames.bind(style);
 
 interface IButtonProps {
   variant: string;
-  children: any;
+  children: ReactNode;
 }
 
 const Button = ({ variant, children }: IButtonProps) => {
