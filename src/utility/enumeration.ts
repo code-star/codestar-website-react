@@ -11,15 +11,3 @@ export enum ESize {
   medium = 'medium',
   large = 'large',
 }
-
-export enum EIcon {
-  cheveronDown = 'cheveron-down',
-  cheveronLeft = 'cheveron-left',
-  cheveronRight = 'cheveron-right',
-  cheveronUp = 'cheveron-up',
-  heart = 'heart',
-  swap = 'swap',
-  bubble = 'bubble',
-  mail = 'mail',
-  twitter = 'twitter',
-}
