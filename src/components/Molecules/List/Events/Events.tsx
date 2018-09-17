@@ -5,13 +5,14 @@ import { translate, TranslationFunction } from 'react-i18next';
 import EventsHeader from '../../../../EventsHeader/EventsHeader';
 import EventCard from '../../../../EventCard/EventCard';
 import compose from 'recompose/compose';
+import { IMeetupEvent } from '../../../../modules/EventsContainer/EventsContainer.interfaces';
+import { NextEventsBlock } from './NextEventsBlock';
+
 import Heading from '../../../Atoms/Text/Heading';
-import TweetList from '../../../Molecules/List/TweetList';
 import classNames from 'classnames/bind';
 import style from './Events.module.css';
 
 const cx = classNames.bind(style);
-
 /*
  Suggestions for design concepts
  https://www.pixel-stitch.net/
@@ -19,22 +20,27 @@ const cx = classNames.bind(style);
  https://colorlib.com/wp/free-event-website-templates/
 */
 
-// TODO improve types by replacing "any"
-interface IEventProps {
+interface IEventInnerProps {
   t: TranslationFunction;
-  nextMeetupEvents: any[];
+}
+
+interface IEventOuterProps {
+  nextMeetupEvents: IMeetupEvent[];
   noNextMeetupEvent: boolean;
-  pastMeetupEvents: any[];
+  pastMeetupEvents: IMeetupEvent[];
   recentTweets: any[];
 }
 
-const Events: SFC<IEventProps> = ({
+const Events: SFC<IEventInnerProps & IEventOuterProps> = ({
   t,
   nextMeetupEvents,
   noNextMeetupEvent,
   pastMeetupEvents,
   recentTweets,
 }) => {
+  const pastEventsList = pastMeetupEvents.map((mEvent: IMeetupEvent) => (
+    <EventCard key={mEvent.time} event={mEvent} />
+  ));
   return (
     <>
       <EventsHeader
@@ -43,41 +49,20 @@ const Events: SFC<IEventProps> = ({
       />
       <Section scrollname="previous-events">
         <Container>
-          {nextMeetupEvents && nextMeetupEvents.length > 0 ? (
-            <div className={cx('eventsNext')}>
-              <div className={cx('eventsNextLeft')}>
-                <Heading type="h2" color="white" text={t('OUR_NEXT_EVENTS')} />
-                <div className={cx('eventsRow')}>
-                  {nextMeetupEvents.map(
-                    ({ description, withDescription, ...restOfEvent }: any) => (
-                      <EventCard
-                        key={restOfEvent.time}
-                        MeetupEvent={...restOfEvent}
-                      />
-                    )
-                  )}
-                </div>
-              </div>
-
-              <div className={cx('eventsNextRight')}>
-                <Heading type="h2" color="white" text={t('RECENT_TWEETS')} />
-                <TweetList
-                  tweets={recentTweets}
-                  className={cx('eventsTweetList')}
-                />
-              </div>
-            </div>
-          ) : null}
+          <NextEventsBlock
+            events={nextMeetupEvents}
+            tweets={recentTweets}
+            nextEventsTitle={t('OUR_NEXT_EVENTS')}
+            pastEventsTitle={t('RECENT_TWEETS')}
+          />
           <Heading type="h2" color="white" text={t('OUR_PREVIOUS_EVENTS')} />
-          <div className={cx('eventsRow')}>
-            {pastMeetupEvents.map((mEvent: any) => (
-              <EventCard key={mEvent.time} MeetupEvent={mEvent} />
-            ))}
-          </div>
+          <div className={cx('eventsRow')}>{pastEventsList}</div>
         </Container>
       </Section>
     </>
   );
 };
 
-export default compose(translate(['events'], { wait: true }))(Events);
+export default compose<IEventInnerProps, IEventOuterProps>(
+  translate(['events'], { wait: true })
+)(Events);
