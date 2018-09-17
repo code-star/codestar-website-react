@@ -51,10 +51,10 @@ describe('EventsContainer', () => {
       );
     });
 
-    it('on failure returns null', async () => {
+    it('on failure returns empty array', async () => {
       fetch.mockRejectOnce('server down');
       const result = await getCachedUpcomingEvents();
-      expect(result).toBeNull();
+      expect(result).toEqual([]);
     });
 
     it('on first call returns the API result', async () => {
