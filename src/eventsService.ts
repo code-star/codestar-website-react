@@ -1,4 +1,3 @@
-/* tslint:disable */
 let cachedUpcomingEvents: any[];
 let cachedPastEvents: any[];
 let cachedRecentTweets: any[];
