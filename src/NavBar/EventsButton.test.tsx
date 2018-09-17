@@ -18,7 +18,7 @@ it('renders without crashing', () => {
       <EventsButton
         label="TEST_EVENTS_LABEL"
         classes={{ newEventIcon: '' }}
-        nextEvent={{}}
+        nextEvent={null}
         isHovering={false}
         handleMouseOut={handleMouseOut}
         handleMouseOver={handleMouseOver}
