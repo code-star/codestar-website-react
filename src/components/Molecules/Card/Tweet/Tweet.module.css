@@ -1,0 +1,22 @@
+.tweet {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-color: #64ace2;
+  border-width: 1px;
+  border-radius: 5px;
+  margin: 5px;
+  background-color: #fff;
+}
+.tweetHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 5px 0 5px;
+}
+.tweetHeader svg {
+  cursor: pointer;
+}
+.tweetBody {
+  padding: 5px;
+}

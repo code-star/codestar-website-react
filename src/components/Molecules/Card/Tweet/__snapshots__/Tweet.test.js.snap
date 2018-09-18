@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tweet /> Snaphot must match some tweet 1`] = `
+<div
+  className="tweet"
+>
+  <div
+    className="tweetHeader"
+  >
+    <span
+      className="label labelBlack labelMedium"
+    >
+      someAwesomeName
+    </span>
+    <span
+      className="label labelBlack labelMedium"
+    >
+      @someAwesomeScreenName
+    </span>
+    <span
+      className="label labelBlack labelMedium"
+    >
+      Fri Aug 31 2018
+    </span>
+  </div>
+  <div
+    className="tweetBody"
+  >
+    <span
+      className="label labelBlack labelSmall"
+    >
+      some awesome text
+    </span>
+  </div>
+</div>
+`;

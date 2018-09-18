@@ -28,3 +28,6 @@ yarn-error.log*
 
 # Do not use yarn
 yarn.lock
+
+# Storybook
+storybook-static
