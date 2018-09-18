@@ -26,12 +26,19 @@ export default class EventsContainer extends Component<
   }
 
   public render() {
+    const {
+      nextMeetupEvents,
+      noNextMeetupEvent,
+      pastMeetupEvents,
+      recentTweets,
+    }: IEventsContainerState = this.state;
+
     return (
       <Events
-        nextMeetupEvents={this.state.nextMeetupEvents}
-        noNextMeetupEvent={this.state.noNextMeetupEvent}
-        pastMeetupEvents={this.state.pastMeetupEvents}
-        recentTweets={this.state.recentTweets}
+        nextMeetupEvents={nextMeetupEvents}
+        noNextMeetupEvent={noNextMeetupEvent}
+        pastMeetupEvents={pastMeetupEvents}
+        recentTweets={recentTweets}
       />
     );
   }

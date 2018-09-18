@@ -53,7 +53,7 @@ const Events: SFC<IEventInnerProps & IEventOuterProps> = ({
             events={nextMeetupEvents}
             tweets={recentTweets}
             nextEventsTitle={t('OUR_NEXT_EVENTS')}
-            pastEventsTitle={t('RECENT_TWEETS')}
+            recentTweetsTitle={t('RECENT_TWEETS')}
           />
           <Heading type="h2" color="white" text={t('OUR_PREVIOUS_EVENTS')} />
           <div className={cx('eventsRow')}>{pastEventsList}</div>

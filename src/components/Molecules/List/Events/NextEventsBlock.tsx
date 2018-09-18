@@ -17,7 +17,7 @@ interface INextEventsBlockProps extends INextEventsProps {
   events: IMeetupEvent[];
   tweets: any[];
   nextEventsTitle: string;
-  pastEventsTitle: string;
+  recentTweetsTitle: string;
 }
 
 const NextEvents = ({ events }: INextEventsProps) => (
@@ -32,7 +32,7 @@ export const NextEventsBlock = ({
   events,
   tweets,
   nextEventsTitle,
-  pastEventsTitle,
+  recentTweetsTitle,
 }: INextEventsBlockProps) => {
   if (!events || events.length === 0) {
     return null;
@@ -48,7 +48,7 @@ export const NextEventsBlock = ({
       </div>
 
       <div className={cx('eventsNextRight')}>
-        <Heading type="h2" color="white" text={pastEventsTitle} />
+        <Heading type="h2" color="white" text={recentTweetsTitle} />
         <TweetList tweets={tweets} className={cx('eventsTweetList')} />
       </div>
     </div>
