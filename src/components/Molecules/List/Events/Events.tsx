@@ -9,10 +9,7 @@ import { IMeetupEvent } from '../../../../modules/EventsContainer/EventsContaine
 import { NextEventsBlock } from './NextEventsBlock';
 
 import Heading from '../../../Atoms/Text/Heading';
-import classNames from 'classnames/bind';
-import style from './Events.module.css';
 
-const cx = classNames.bind(style);
 /*
  Suggestions for design concepts
  https://www.pixel-stitch.net/
@@ -53,10 +50,11 @@ const Events: SFC<IEventInnerProps & IEventOuterProps> = ({
             events={nextMeetupEvents}
             tweets={recentTweets}
             nextEventsTitle={t('OUR_NEXT_EVENTS')}
-            recentTweetsTitle={t('RECENT_TWEETS')}
           />
           <Heading type="h2" color="white" text={t('OUR_PREVIOUS_EVENTS')} />
-          <div className={cx('eventsRow')}>{pastEventsList}</div>
+          <div className="row">
+            <div className="d-flex flex-wrap">{pastEventsList}</div>
+          </div>
         </Container>
       </Section>
     </>
