@@ -48,8 +48,9 @@ const Events: SFC<IEventInnerProps & IEventOuterProps> = ({
         <Container>
           <NextEventsBlock
             events={nextMeetupEvents}
-            tweets={recentTweets}
+            tweets={recentTweets.slice(0, 5)}
             nextEventsTitle={t('OUR_NEXT_EVENTS')}
+            recentTweetsTitle={t('RECENT_TWEETS')}
           />
           <Heading type="h2" color="white" text={t('OUR_PREVIOUS_EVENTS')} />
           <div className="row">
