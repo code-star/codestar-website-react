@@ -25,14 +25,14 @@ describe('<App />', () => {
   describe('Component Lifecycle', () => {
     test('calls render', () => {
       wrapper = renderMount();
-      expect(wrapper.find('App')).toBeTruthy();
+      expect(wrapper.instance()).toBeInstanceOf(App);
     });
   });
 
   describe('Instance', () => {
     test('should be an instance of App', () => {
       wrapper = renderShallow();
-      expect(wrapper.find('App')).toBeTruthy();
+      expect(wrapper.instance()).toBeInstanceOf(App);
     });
   });
 
