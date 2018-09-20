@@ -48,7 +48,7 @@ const Events: SFC<IEventInnerProps & IEventOuterProps> = ({
         <Container>
           <NextEventsBlock
             events={nextMeetupEvents}
-            tweets={recentTweets.slice(0, 5)}
+            tweets={recentTweets}
             nextEventsTitle={t('OUR_NEXT_EVENTS')}
             recentTweetsTitle={t('RECENT_TWEETS')}
           />
