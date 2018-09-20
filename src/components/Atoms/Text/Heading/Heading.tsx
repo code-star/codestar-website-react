@@ -8,13 +8,19 @@ interface IHeadingProps {
   type: string;
   color: string;
   text: string;
+  className?: string;
 }
 
-const Heading = ({ type, color = 'black', text }: IHeadingProps) => {
+const Heading = ({
+  type,
+  color = 'black',
+  text,
+  className = '',
+}: IHeadingProps) => {
   if (type === 'h1') {
     return (
       <h1
-        className={cx({
+        className={cx(className, {
           headingWhite: color === 'white',
           headingBlack: color === 'black',
         })}
@@ -25,7 +31,7 @@ const Heading = ({ type, color = 'black', text }: IHeadingProps) => {
   } else if (type === 'h2') {
     return (
       <h2
-        className={cx({
+        className={cx(className, {
           headingWhite: color === 'white',
           headingBlack: color === 'black',
         })}
@@ -36,7 +42,7 @@ const Heading = ({ type, color = 'black', text }: IHeadingProps) => {
   } else if (type === 'h3') {
     return (
       <h3
-        className={cx({
+        className={cx(className, {
           headingWhite: color === 'white',
           headingBlack: color === 'black',
         })}
@@ -47,7 +53,7 @@ const Heading = ({ type, color = 'black', text }: IHeadingProps) => {
   } else if (type === 'h4') {
     return (
       <h4
-        className={cx({
+        className={cx(className, {
           headingWhite: color === 'white',
           headingBlack: color === 'black',
         })}
