@@ -1,7 +1,7 @@
 import React from 'react';
 import { IMeetupEvent } from '../../../../modules/EventsContainer/EventsContainer.interfaces';
 import EventCard from '../../../../EventCard/EventCard';
-import FancyTweetList from '../../../Molecules/List/FancyTweetList';
+import TweetList from '../../../Molecules/List/TweetList';
 import Heading from '../../../Atoms/Text/Heading';
 
 interface INextEventsProps {
@@ -41,7 +41,7 @@ export const NextEventsBlock = ({
       <Heading type="h2" color="white" text={recentTweetsTitle} />
       <div className="row">
         <div className="pt-3 pl-3 pb-3">
-          <FancyTweetList tweets={tweets} />
+          <TweetList tweets={tweets} />
         </div>
       </div>
     </>

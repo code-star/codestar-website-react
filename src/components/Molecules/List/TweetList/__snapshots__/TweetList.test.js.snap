@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<FancyTweetList /> Snaphot must match some tweet list 1`] = `
+exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
 <div
   className="MuiPaper-root-4 MuiPaper-elevation1-7 MuiPaper-rounded-5 MuiCard-root-3"
 >

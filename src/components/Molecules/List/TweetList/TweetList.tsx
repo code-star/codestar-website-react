@@ -9,7 +9,7 @@ import {
   Button,
 } from '@material-ui/core';
 
-interface IFancyTweetListProps {
+interface ITweetListProps {
   tweets: any[];
 }
 
@@ -22,7 +22,7 @@ const styles = {
   },
 };
 
-const FancyTweetList = ({ tweets }: IFancyTweetListProps) => {
+const TweetList = ({ tweets }: ITweetListProps) => {
   if (tweets.length > 0) {
     return (
       <Card>
@@ -57,4 +57,4 @@ const FancyTweetList = ({ tweets }: IFancyTweetListProps) => {
   }
 };
 
-export default withStyles(styles)(FancyTweetList);
+export default withStyles(styles)(TweetList);

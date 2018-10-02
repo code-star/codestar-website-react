@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import FancyTweetList from './FancyTweetList';
+import TweetList from './TweetList';
 
-const getComponent = tweets => <FancyTweetList tweets={tweets} />;
+const getComponent = tweets => <TweetList tweets={tweets} />;
 
 const someTweets = [
   {
@@ -32,13 +32,13 @@ const renderShallow = () => {
   return shallow(getComponent(someTweets));
 };
 
-describe('<FancyTweetList />', () => {
+describe('<TweetList />', () => {
   let wrapper;
 
   describe('Instance', () => {
-    test('must be an instance of FancyTweetList', () => {
+    test('must be an instance of TweetList', () => {
       wrapper = renderShallow();
-      expect(wrapper.find('FancyTweetList')).toBeTruthy();
+      expect(wrapper.find('TweetList')).toBeTruthy();
     });
   });
 
