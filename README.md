@@ -20,6 +20,10 @@ use CSS Modules without ejecting.
 	- [Calling the function](#calling-the-function)
 1. [Hosting pictures](#hosting-pictures)
 	- [Notes](#notes)
+1. [Local API](#local-api)
+1. [Unit testing](#unit-testing)
+1. [Available Scripts](#available-scripts)
+1. [Contributing](#contributing)
 
 Other docs:
 
@@ -182,7 +186,23 @@ Open [http://localhost:6006](http://localhost:6006) to view it in the browser.
 Exports Storybook as a static app to `storybook-static` folder.<br>
 
 - `npm test`
-Launches the test runner in the interactive watch mode executing `react-scripts-ts test --env=jsdom --coverage`.
+Launches test runner executing `react-scripts-ts test --env=jsdom --coverage`.
+
+- `test:watchAll:silent`
+Launches test runner watching all files exposing some details executing `react-scripts-ts test --env=jsdom --watchAll --silent --verbose`.
+
+- `test:watchAll:loud`
+Launches test runner watching all files exposing all details executing `react-scripts-ts test --env=jsdom --watchAll  --verbose`.
+
+- `test:watchChanged:silent`
+Launches test runner watching changed files exposing some details executing `react-scripts-ts test --env=jsdom --watch --onlyChanged --silent --verbose`.
+
+- `test:watchChanged:loud`
+Launches test runner watching changed files exposing all details executing `react-scripts-ts test --env=jsdom --watch --onlyChanged  --verbose`.
 
 - `npm run eject`
 Ejects `create-react-app` and exposes `react-scripts` executing `react-scripts-ts eject`.
+
+## Contributing
+
+You can find information about contributing in our [guideline for repository contributors](https://github.com/code-star/codestar-website-react/blob/test/docs/CONTRIBUTING.md)
