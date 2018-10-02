@@ -206,3 +206,8 @@ Ejects `create-react-app` and exposes `react-scripts` executing `react-scripts-t
 ## Contributing
 
 You can find information about contributing in our [guideline for repository contributors](https://github.com/code-star/codestar-website-react/blob/test/docs/CONTRIBUTING.md)
+
+## Available Lambda Functions
+
+You can find information about available Lambda functions here:
+- [getRecentTweets](https://github.com/code-star/codestar-website-react/blob/test/docs/getRecentTweets.md)
