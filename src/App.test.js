@@ -21,18 +21,27 @@ const renderMount = () => {
 
 describe('<App />', () => {
   let wrapper;
+  let renderSpy;
+
+  beforeEach(() => {
+    renderSpy = jest.spyOn(App.prototype, 'render');
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
 
   describe('Component Lifecycle', () => {
-    test('calls render', () => {
-      wrapper = renderMount();
-      expect(wrapper.instance()).toBeInstanceOf(App);
+    test('must call render', () => {
+      wrapper = renderShallow();
+      expect(renderSpy).toHaveBeenCalledTimes(1);
     });
   });
 
   describe('Instance', () => {
-    test('should be an instance of App', () => {
-      wrapper = renderShallow();
-      expect(wrapper.instance()).toBeInstanceOf(App);
+    test('must have an instance of App', () => {
+      wrapper = renderMount();
+      expect(wrapper.find('App')).toHaveLength(1);
     });
   });
 
