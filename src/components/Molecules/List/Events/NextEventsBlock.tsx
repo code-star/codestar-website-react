@@ -38,11 +38,15 @@ export const NextEventsBlock = ({
         </div>
       </div>
 
-      <Heading type="h2" color="white" text={recentTweetsTitle} />
-      <div className="row">
-        <div className="pt-3 pl-3 pb-3">
-          <TweetList tweets={tweets} />
-        </div>
-      </div>
+      {tweets.length > 0 && (
+        <>
+          <Heading type="h2" color="white" text={recentTweetsTitle} />
+          <div className="row">
+            <div className="pt-3 pl-3 pb-3">
+              <TweetList tweets={tweets} />
+            </div>
+          </div>
+        </>
+      )}
     </>
   ) : null;
