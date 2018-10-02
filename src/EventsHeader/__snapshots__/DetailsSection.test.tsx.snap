@@ -29,12 +29,12 @@ exports[`renders the details for the Events header 1`] = `
         className="col-12"
       >
         <h2
-          className="MuiTypography-root-8 MuiTypography-title-14 MuiTypography-alignCenter-21"
+          className="MuiTypography-root-8 MuiTypography-title-14 MuiTypography-alignCenter-22"
         >
           Data Oriented Design with Maxim Zaks
         </h2>
         <h3
-          className="MuiTypography-root-8 MuiTypography-subheading-15 MuiTypography-gutterBottom-25 MuiTypography-alignCenter-21"
+          className="MuiTypography-root-8 MuiTypography-subheading-15 MuiTypography-gutterBottom-26 MuiTypography-alignCenter-22"
         >
           26 september 2018
         </h3>
@@ -61,7 +61,7 @@ exports[`renders the details for the Events header 1`] = `
           }
         />
         <a
-          className="MuiButtonBase-root-59 MuiButton-root-33 MuiButton-contained-44 MuiButton-containedPrimary-45 MuiButton-raised-47 MuiButton-raisedPrimary-48 mt-1"
+          className="MuiButtonBase-root-60 MuiButton-root-34 MuiButton-contained-45 MuiButton-containedPrimary-46 MuiButton-raised-48 MuiButton-raisedPrimary-49 mt-1"
           href="https://www.codestar.nl"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -77,12 +77,12 @@ exports[`renders the details for the Events header 1`] = `
           tabIndex="0"
         >
           <span
-            className="MuiButton-label-34"
+            className="MuiButton-label-35"
           >
             
           </span>
           <span
-            className="MuiTouchRipple-root-62"
+            className="MuiTouchRipple-root-63"
           />
         </a>
       </div>
