@@ -20,6 +20,10 @@ use CSS Modules without ejecting.
 	- [Calling the function](#calling-the-function)
 1. [Hosting pictures](#hosting-pictures)
 	- [Notes](#notes)
+1. [Local API](#local-api)
+1. [Unit testing](#unit-testing)
+1. [Available Scripts](#available-scripts)
+1. [Contributing](#contributing)
 
 Other docs:
 
@@ -186,3 +190,7 @@ Launches the test runner in the interactive watch mode executing `react-scripts-
 
 - `npm run eject`
 Ejects `create-react-app` and exposes `react-scripts` executing `react-scripts-ts eject`.
+
+## Contributing
+
+Check out our [Guideline for repository contributors](https://github.com/code-star/codestar-website-react/blob/test/docs/CONTRIBUTING.md)
