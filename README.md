@@ -182,7 +182,7 @@ Open [http://localhost:6006](http://localhost:6006) to view it in the browser.
 Exports Storybook as a static app to `storybook-static` folder.<br>
 
 - `npm test`
-Launches the test runner in the interactive watch mode executing `react-scripts-ts test -u --env=jsdom --coverage`.
+Launches the test runner in the interactive watch mode executing `react-scripts-ts test --env=jsdom --coverage`.
 
 - `npm run eject`
 Ejects `create-react-app` and exposes `react-scripts` executing `react-scripts-ts eject`.
