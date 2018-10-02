@@ -12,7 +12,6 @@ interface INextEventsBlockProps extends INextEventsProps {
   events: IMeetupEvent[];
   tweets: any[];
   nextEventsTitle: string;
-  recentTweetsTitle: string;
 }
 
 const NextEvents = ({ events }: INextEventsProps) => (
@@ -27,7 +26,6 @@ export const NextEventsBlock = ({
   events,
   tweets,
   nextEventsTitle,
-  recentTweetsTitle,
 }: INextEventsBlockProps) =>
   events && events.length > 0 ? (
     <>
@@ -36,17 +34,11 @@ export const NextEventsBlock = ({
         <div className="d-flex flex-wrap">
           <NextEvents events={events} />
         </div>
-      </div>
-
-      {tweets.length > 0 && (
-        <>
-          <Heading type="h2" color="white" text={recentTweetsTitle} />
-          <div className="row">
-            <div className="pt-3 pl-3 pb-3">
-              <TweetList tweets={tweets} />
-            </div>
+        {tweets.length > 0 && (
+          <div className="pt-3 pl-3 pb-3">
+            <TweetList tweets={tweets} />
           </div>
-        </>
-      )}
+        )}
+      </div>
     </>
   ) : null;
