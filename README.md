@@ -193,4 +193,4 @@ Ejects `create-react-app` and exposes `react-scripts` executing `react-scripts-t
 
 ## Contributing
 
-Check out our [Guideline for repository contributors](https://github.com/code-star/codestar-website-react/blob/test/docs/CONTRIBUTING.md)
+You can find information about contributing in our [guideline for repository contributors](https://github.com/code-star/codestar-website-react/blob/test/docs/CONTRIBUTING.md)
