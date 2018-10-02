@@ -3,8 +3,6 @@ import { shallow } from 'enzyme';
 
 import TweetList from './TweetList';
 
-const getComponent = tweets => <TweetList tweets={tweets} />;
-
 const someTweets = [
   {
     user: {
@@ -28,8 +26,8 @@ const someTweets = [
   },
 ];
 
-const renderShallow = () => {
-  return shallow(getComponent(someTweets));
+const renderShallow = tweets => {
+  return shallow(<TweetList tweets={tweets} />);
 };
 
 describe('<TweetList />', () => {
@@ -37,14 +35,14 @@ describe('<TweetList />', () => {
 
   describe('Instance', () => {
     test('must be an instance of TweetList', () => {
-      wrapper = renderShallow();
-      expect(wrapper.find('TweetList')).toBeTruthy();
+      wrapper = renderShallow(someTweets);
+      expect(wrapper.find('TweetList')).toHaveLength(1);
     });
   });
 
   describe('Snaphot', () => {
     test('must match some tweet list', () => {
-      expect(global.renderToJSON(getComponent(someTweets))).toMatchSnapshot();
+      expect(global.renderToJSON(renderShallow(someTweets))).toMatchSnapshot();
     });
   });
 });
