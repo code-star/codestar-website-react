@@ -35,7 +35,16 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
         <p
           className="MuiTypography-root-38 MuiTypography-body1-47"
         >
-          Fri Aug 31 2018 some awesome text
+          <a
+            href="https://twitter.com/someAwesomeScreenName/status/undefined"
+          >
+            <span
+              className="text-info"
+            >
+              Fri Aug 31 2018 
+            </span>
+            some awesome text
+          </a>
         </p>
       </div>
       <div
@@ -44,7 +53,16 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
         <p
           className="MuiTypography-root-38 MuiTypography-body1-47"
         >
-          Sun Sep 02 2018 some other awesome text
+          <a
+            href="https://twitter.com/someOtherAwesomeScreenName/status/undefined"
+          >
+            <span
+              className="text-info"
+            >
+              Sun Sep 02 2018 
+            </span>
+            some other awesome text
+          </a>
         </p>
       </div>
     </div>
