@@ -33,7 +33,16 @@ const TweetList = ({ tweets }: ITweetListProps) => (
         {tweets.map((tweet, index) => (
           <div key={index} className="p-2">
             <Typography component="p">
-              {`${new Date(tweet.created_at).toDateString()} ${tweet.text}`}
+              <a
+                href={`https://twitter.com/${tweet.user.screen_name}/status/${
+                  tweet.id_str
+                }`}
+              >
+                <span className="text-info">{`${new Date(
+                  tweet.created_at
+                ).toDateString()} `}</span>
+                {`${tweet.text}`}
+              </a>
             </Typography>
           </div>
         ))}
