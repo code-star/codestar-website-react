@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import Label from './Label';
 
 const getComponent = (color, size) => (
