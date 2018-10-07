@@ -17,50 +17,19 @@ const Heading = ({
   text,
   className = '',
 }: IHeadingProps) => {
+  const classNamesFromProps = {
+    headingWhite: color === 'white',
+    headingBlack: color === 'black',
+  };
+
   if (type === 'h1') {
-    return (
-      <h1
-        className={cx(className, {
-          headingWhite: color === 'white',
-          headingBlack: color === 'black',
-        })}
-      >
-        {text}
-      </h1>
-    );
+    return <h1 className={cx(className, classNamesFromProps)}>{text}</h1>;
   } else if (type === 'h2') {
-    return (
-      <h2
-        className={cx(className, {
-          headingWhite: color === 'white',
-          headingBlack: color === 'black',
-        })}
-      >
-        {text}
-      </h2>
-    );
+    return <h2 className={cx(className, classNamesFromProps)}>{text}</h2>;
   } else if (type === 'h3') {
-    return (
-      <h3
-        className={cx(className, {
-          headingWhite: color === 'white',
-          headingBlack: color === 'black',
-        })}
-      >
-        {text}
-      </h3>
-    );
+    return <h3 className={cx(className, classNamesFromProps)}>{text}</h3>;
   } else if (type === 'h4') {
-    return (
-      <h4
-        className={cx(className, {
-          headingWhite: color === 'white',
-          headingBlack: color === 'black',
-        })}
-      >
-        {text}
-      </h4>
-    );
+    return <h4 className={cx(className, classNamesFromProps)}>{text}</h4>;
   }
   return null;
 };
