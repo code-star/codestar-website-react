@@ -31,22 +31,20 @@ const TweetList = ({ tweets }: ITweetListProps) => (
         </Typography>
         {tweets.map((tweet, index) => {
           return (
-            !tweet.text.includes('RT ') && (
-              <div key={index} className="p-2">
-                <Typography component="p">
-                  <a
-                    href={`https://twitter.com/${
-                      tweet.user.screen_name
-                    }/status/${tweet.id_str}`}
-                  >
-                    <span className="text-info">{`${new Date(
-                      tweet.created_at
-                    ).toDateString()} `}</span>
-                    {`${tweet.text}`}
-                  </a>
-                </Typography>
-              </div>
-            )
+            <div key={index} className="p-2">
+              <Typography component="p">
+                <a
+                  href={`https://twitter.com/${tweet.user.screen_name}/status/${
+                    tweet.id_str
+                  }`}
+                >
+                  <span className="text-info">{`${new Date(
+                    tweet.created_at
+                  ).toDateString()} `}</span>
+                  {`${tweet.text}`}
+                </a>
+              </Typography>
+            </div>
           );
         })}
       </CardContent>

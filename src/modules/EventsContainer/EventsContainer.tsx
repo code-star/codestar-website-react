@@ -43,6 +43,12 @@ export default class EventsContainer extends Component<
     );
   }
 
+  private filterRecentTweets(tweets: any) {
+    return tweets.filter(
+      (tweet: any) => !tweet.text.includes('RT ') && !tweet.text.startsWith('@')
+    );
+  }
+
   private async fetchEvents() {
     try {
       const response: any = await getCachedUpcomingEvents();
@@ -72,7 +78,10 @@ export default class EventsContainer extends Component<
   private async fetchRecentTweets() {
     try {
       const response: any = await getCachedRecentTweets();
-      this.setState({ recentTweets: response });
+
+      const recentTweets = this.filterRecentTweets(response);
+
+      this.setState({ recentTweets });
     } catch (err) {
       this.setState({ recentTweets: [] });
     }
