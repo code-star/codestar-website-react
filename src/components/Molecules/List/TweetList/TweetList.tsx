@@ -29,9 +29,9 @@ const TweetList = ({ tweets }: ITweetListProps) => (
         <Typography gutterBottom variant="headline" component="h2">
           {tweets[0].user.name} tweets ...
         </Typography>
-        {tweets.map((tweet, index) => {
+        {tweets.map(tweet => {
           return (
-            <div key={index} className="p-2">
+            <div key={tweet.id} className="p-2">
               <Typography component="p">
                 <a
                   href={`https://twitter.com/${tweet.user.screen_name}/status/${
