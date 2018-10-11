@@ -8,8 +8,6 @@ import compose from 'recompose/compose';
 import { IMeetupEvent } from '../../../../modules/EventsContainer/EventsContainer.interfaces';
 import { NextEventsBlock } from './NextEventsBlock';
 
-import Heading from '../../../Atoms/Text/Heading';
-
 /*
  Suggestions for design concepts
  https://www.pixel-stitch.net/
@@ -51,7 +49,7 @@ const Events: SFC<IEventInnerProps & IEventOuterProps> = ({
             tweets={recentTweets}
             nextEventsTitle={t('OUR_NEXT_EVENTS')}
           />
-          <Heading type="h2" color="white" text={t('OUR_PREVIOUS_EVENTS')} />
+          <h2 className="text-white">{t('OUR_PREVIOUS_EVENTS')}</h2>
           <div className="row">
             <div className="d-flex flex-wrap">{pastEventsList}</div>
           </div>
