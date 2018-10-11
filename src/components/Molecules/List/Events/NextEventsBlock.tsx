@@ -2,7 +2,6 @@ import React from 'react';
 import { IMeetupEvent } from '../../../../modules/EventsContainer/EventsContainer.interfaces';
 import EventCard from '../../../../EventCard/EventCard';
 import TweetList from '../../../Molecules/List/TweetList';
-import Heading from '../../../Atoms/Text/Heading';
 
 interface INextEventsProps {
   events: IMeetupEvent[];
@@ -29,7 +28,7 @@ export const NextEventsBlock = ({
 }: INextEventsBlockProps) =>
   events && events.length > 0 ? (
     <>
-      <Heading type="h2" color="white" text={nextEventsTitle} />
+      <h2 className="text-white">{nextEventsTitle}</h2>
       <div className="row">
         <div className="d-flex flex-wrap">
           <NextEvents events={events} />
