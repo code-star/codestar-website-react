@@ -30,4 +30,4 @@ yarn-error.log*
 yarn.lock
 
 # Storybook
-storybook-static
+.storybook-static
