@@ -56,7 +56,7 @@
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start-ts": "REACT_APP_STAGE=dev react-scripts-ts start",
     "start": "npm-run-all -p watch-css start-ts",
-    "build-ts": "react-scripts-ts test --env=jsdom --coverage --bail --ci && react-scripts-ts build",
+    "build-ts": "react-scripts-ts test --env=jsdom --coverage --bail --ci --silent -u && react-scripts-ts build",
     "build": "npm-run-all build-css build-ts",
     "test": "react-scripts-ts test --env=jsdom --coverage --silent",
     "test:watchAll:silent": "react-scripts-ts test --env=jsdom --watchAll --silent --verbose",
