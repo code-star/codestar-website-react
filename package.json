@@ -58,7 +58,7 @@
     "start": "npm-run-all -p watch-css start-ts",
     "build-ts": "react-scripts-ts test --env=jsdom --coverage --bail --ci && react-scripts-ts build",
     "build": "npm-run-all build-css build-ts",
-    "test": "react-scripts-ts test -u --env=jsdom --coverage",
+    "test": "react-scripts-ts test --env=jsdom --coverage --silent",
     "test:watchAll:silent": "react-scripts-ts test --env=jsdom --watchAll --silent --verbose",
     "test:watchAll:verbose": "react-scripts-ts test --env=jsdom --watchAll  --verbose",
     "test:watchChanged:silent": "react-scripts-ts test --env=jsdom --watch --onlyChanged --silent --verbose",
@@ -67,9 +67,8 @@
     "precommit": "lint-staged",
     "prettier": "prettier --single-quote --write --trailing-comma es5 --write ./src/**/*.{js,jsx,ts,tsx}",
     "storybook": "start-storybook -p 6006",
-    "start-storybook": "npm-run-all -p watch-css storybook",
-    "build-storybook": "build-storybook -c .storybook -o .storybook-static",
-    "gh-pages:deploy": "gh-pages -d .storybook-static"
+    "start-storybook": "npm-run-all watch-css start-storybook",
+    "build-storybook": "build-storybook -c .storybook -o .storybook-static"
   },
   "browserslist": {
     "development": [
@@ -117,7 +116,6 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.11.1",
-    "gh-pages": "^1.2.0",
     "jest": "^23.5.0",
     "jest-fetch-mock": "^1.6.5",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
