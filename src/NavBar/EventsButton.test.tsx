@@ -30,7 +30,7 @@ it('renders without crashing', () => {
 });
 
 describe('An instance of EventsButton', () => {
-  it.skip('matches the snapshot without Event', () => {
+  it('matches the snapshot without Event', () => {
     const testRenderer = renderer.create(
       <MemoryRouter>
         <EventsButton
@@ -46,7 +46,7 @@ describe('An instance of EventsButton', () => {
     expect(testRenderer.toJSON()).toMatchSnapshot();
   });
 
-  it.skip('matches the snapshot while hovering', () => {
+  it('matches the snapshot while hovering', () => {
     const testRenderer = renderer.create(
       <MemoryRouter>
         <EventsButton
@@ -62,7 +62,7 @@ describe('An instance of EventsButton', () => {
     expect(testRenderer.toJSON()).toMatchSnapshot();
   });
 
-  it.skip('matches the snapshot with Event', () => {
+  it('matches the snapshot with Event', () => {
     const testRenderer = renderer.create(
       <MemoryRouter>
         <EventsButton
