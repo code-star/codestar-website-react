@@ -3,16 +3,14 @@
 		"name": "Hamza",
 		"job": "Programmer",
 		"tagline": "“OCD — Obsessive Coding Disorder”",
-		"bio":
-			"Can you think about it? Then I will probably try to code it! Computers are these incredible things that, through code, you can completely control, directly transferring your ideas from your brain to the CPU, translating your imagination into intricate works of precision and efficiency. And that's what I love doing.",
+		"bio": "Can you think about it? Then I will probably try to code it! Computers are these incredible things that, through code, you can completely control, directly transferring your ideas from your brain to the CPU, translating your imagination into intricate works of precision and efficiency. And that's what I love doing.",
 		"image": "hamza.png"
 	},
 	{
 		"name": "Pim",
 		"job": "Programmer",
 		"tagline": "“I love to learn new stuff”",
-		"bio":
-			"I’ve loved puzzles my whole life, from crosswords to chess challenges. When I first encountered programming, it was love at first sight. I love working in a team where everyone can get the best out of themselves, and I’m always willing to help someone.",
+		"bio": "I’ve loved puzzles my whole life, from crosswords to chess challenges. When I first encountered programming, it was love at first sight. I love working in a team where everyone can get the best out of themselves, and I’m always willing to help someone.",
 		"image": "pim.jpg",
 		"gone": true
 	},
@@ -20,8 +18,7 @@
 		"name": "Jan",
 		"job": "Programmer",
 		"tagline": "“Taught to program by his grandmother”",
-		"bio":
-			"Programming combines three of my favourite things: solving puzzles, working creatively and helping people get things done. The last part is best done, in my opinion, by striving for quality and having an eye for detail.",
+		"bio": "Programming combines three of my favourite things: solving puzzles, working creatively and helping people get things done. The last part is best done, in my opinion, by striving for quality and having an eye for detail.",
 		"image": "jan.jpg"
 	},
 	{
@@ -35,16 +32,14 @@
 		"name": "Ishan",
 		"job": "Programmer",
 		"tagline": "“Talk is cheap, show me the code”",
-		"bio":
-			"While I’m fascinated by all things technological, what I enjoy the most is creating technology. My standard question for every problem that needs solving is “Where is the code, Ishan?” Let’s go!",
+		"bio": "While I’m fascinated by all things technological, what I enjoy the most is creating technology. My standard question for every problem that needs solving is “Where is the code, Ishan?” Let’s go!",
 		"image": "ishan.jpg"
 	},
 	{
 		"name": "Martijn",
 		"job": "Programmer",
 		"tagline": "“The serious guy”",
-		"bio":
-			"I get a kick out of making beautiful things that also work under pressure. When you’re doing that with a team of programmers with the same passion, it doesn’t really feel like work.",
+		"bio": "I get a kick out of making beautiful things that also work under pressure. When you’re doing that with a team of programmers with the same passion, it doesn’t really feel like work.",
 		"image": "martijn.jpg",
 		"gone": true
 	},
@@ -52,8 +47,7 @@
 		"name": "Casper",
 		"job": "BigData Hacker",
 		"tagline": "“That’s Numberwang!”",
-		"bio":
-			"Numbers are nothing more than a concept in the human mind. They still form the basis for the endless stream of data that influences our daily lives. It’s fascinating what you can achieve by analysing this stream of human thoughts.",
+		"bio": "Numbers are nothing more than a concept in the human mind. They still form the basis for the endless stream of data that influences our daily lives. It’s fascinating what you can achieve by analysing this stream of human thoughts.",
 		"image": "casper.jpg",
 		"gone": true
 	},
@@ -61,8 +55,7 @@
 		"name": "David",
 		"job": "Programmer",
 		"tagline": "“We’ll get it done”",
-		"bio":
-			"To me, nothing is more wonderful than software that’s well put together and users are fully satisfied with. At Codestar, I can make sure every piece of software achieves this goal.",
+		"bio": "To me, nothing is more wonderful than software that’s well put together and users are fully satisfied with. At Codestar, I can make sure every piece of software achieves this goal.",
 		"image": "david.jpg",
 		"gone": true
 	},
@@ -77,40 +70,35 @@
 		"name": "Steven",
 		"job": "Software Craftsman",
 		"tagline": "The devil is in the details",
-		"bio":
-			"Mastering complexity is the biggest challenge when developing large software systems, from the system as a whole to the smallest building blocks. When you work in a team, human complexity is added to the equation. The potential to create something truly beautiful lies at the intersection of these two aspects.",
+		"bio": "Mastering complexity is the biggest challenge when developing large software systems, from the system as a whole to the smallest building blocks. When you work in a team, human complexity is added to the equation. The potential to create something truly beautiful lies at the intersection of these two aspects.",
 		"image": "steven.jpg"
 	},
 	{
 		"name": "Martin",
 		"job": "Front-end Developer",
 		"tagline": "That's not a bug, that's a feature!",
-		"bio":
-			"Always curious about new technologies, programming languages, frameworks, gadgets and other innovations.",
+		"bio": "Always curious about new technologies, programming languages, frameworks, gadgets and other innovations.",
 		"image": "martinvandam.jpg"
 	},
 	{
 		"name": "Werner",
 		"job": "Programmer",
 		"tagline": "Don’t be clever, be clear!",
-		"bio":
-			"Code not only tells the computer what to do, but it is also telling another human being what you want the computer to do. There are many ways of telling the computer to do something; how you do it matters. I believe that the code you write should reflect how you think about the problem you are trying to solve, so that others can follow along and understand your thought process when reading your code. This way, we can leave clients with a codebase they are proud of and are happy to work on.",
+		"bio": "Code not only tells the computer what to do, but it is also telling another human being what you want the computer to do. There are many ways of telling the computer to do something; how you do it matters. I believe that the code you write should reflect how you think about the problem you are trying to solve, so that others can follow along and understand your thought process when reading your code. This way, we can leave clients with a codebase they are proud of and are happy to work on.",
 		"image": "werner.jpg"
 	},
 	{
 		"name": "Martin",
 		"job": "Front-end Developer",
 		"tagline": "“Runs in strict mode”",
-		"bio":
-			"As an experienced front-end developer you'll be at home at Codestar. Working with a modern stack (e.g. functional reactive JavaScript), surrounded by colleagues who are as passionate as you are, and in a friendly and open environment.",
+		"bio": "As an experienced front-end developer you'll be at home at Codestar. Working with a modern stack (e.g. functional reactive JavaScript), surrounded by colleagues who are as passionate as you are, and in a friendly and open environment.",
 		"image": "martinve.jpg"
 	},
 	{
 		"name": "Eelco",
 		"job": "Software Developer",
 		"tagline": "“Once you understand it, it’s easy”",
-		"bio":
-			"I often try to understand how things are put together. How the world works. The best part of custom-made software is that it gives you all the freedom to make a model of the reality of users and clients. Once that model has the right balance between simplicity and complexity, it’s wonderful. The code is understandable and the functionality is aligned with the needs.",
+		"bio": "I often try to understand how things are put together. How the world works. The best part of custom-made software is that it gives you all the freedom to make a model of the reality of users and clients. Once that model has the right balance between simplicity and complexity, it’s wonderful. The code is understandable and the functionality is aligned with the needs.",
 		"image": "eelco.jpg"
 	},
 	{
@@ -139,8 +127,7 @@
 		"name": "Nathan",
 		"job": "Programmer",
 		"tagline": "“Learn as if you were to live forever.”",
-		"bio":
-			"I always want to know how things work and why they work the way they do. What better way to know, than building it yourself?",
+		"bio": "I always want to know how things work and why they work the way they do. What better way to know, than building it yourself?",
 		"image": "nathan.jpg"
 	},
 	{
@@ -155,16 +142,14 @@
 		"name": "Nick",
 		"job": "Programmer",
 		"tagline": "let types = your guide in software",
-		"bio":
-			"Types are the best kind of documentation. If you can understand a system just by looking at its types, you have a well designed system.",
+		"bio": "Types are the best kind of documentation. If you can understand a system just by looking at its types, you have a well designed system.",
 		"image": "nick.png"
 	},
 	{
 		"name": "David",
 		"job": "Information Engineer",
 		"tagline": "“No Super-Chickens!”",
-		"bio":
-			"I enjoy helping businesses improve their communication and business understanding by developing successful data-driven solutions.",
+		"bio": "I enjoy helping businesses improve their communication and business understanding by developing successful data-driven solutions.",
 		"image": "davidlp.jpg"
 	},
 	{
@@ -173,5 +158,12 @@
 		"tagline": "Pixel perfect",
 		"bio": "",
 		"image": "mikel.jpg"
+	},
+	{
+		"name": "Koen",
+		"job": "?",
+		"tagline": "?",
+		"bio": "",
+		"image": "koen.jpg"
 	}
 ]
