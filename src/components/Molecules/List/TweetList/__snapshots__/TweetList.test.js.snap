@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
+<div
+  className="MuiPaper-root-4 MuiPaper-elevation1-7 MuiPaper-rounded-5 MuiCard-root-3"
+>
+  <button
+    className="MuiButtonBase-root-34 MuiCardActionArea-root-31"
+    disabled={undefined}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex="0"
+    type="button"
+  >
+    <div
+      className="MuiCardContent-root-37"
+    >
+      <h2
+        className="MuiTypography-root-38 MuiTypography-headline-43 MuiTypography-gutterBottom-56"
+      >
+        someAwesomeName
+         tweets ...
+      </h2>
+      <div
+        className="p-2"
+      >
+        <p
+          className="MuiTypography-root-38 MuiTypography-body1-47"
+        >
+          <a
+            href="https://twitter.com/someAwesomeScreenName/status/undefined"
+          >
+            <span
+              className="text-info"
+            >
+              Fri Aug 31 2018 
+            </span>
+            some awesome text
+          </a>
+        </p>
+      </div>
+      <div
+        className="p-2"
+      >
+        <p
+          className="MuiTypography-root-38 MuiTypography-body1-47"
+        >
+          <a
+            href="https://twitter.com/someOtherAwesomeScreenName/status/undefined"
+          >
+            <span
+              className="text-info"
+            >
+              Sun Sep 02 2018 
+            </span>
+            some other awesome text
+          </a>
+        </p>
+      </div>
+    </div>
+    <span
+      className="MuiCardActionArea-focusHighlight-33"
+    />
+    <span
+      className="MuiTouchRipple-root-64"
+    />
+  </button>
+  <div
+    className="MuiCardActions-root-71"
+  >
+    <a
+      className="MuiButtonBase-root-34 MuiButton-root-73 MuiButton-text-75 MuiButton-textPrimary-76 MuiButton-flat-78 MuiButton-flatPrimary-79 MuiButton-sizeSmall-96 MuiCardActions-action-72"
+      href="https://twitter.com/someAwesomeScreenName?lang=en"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      tabIndex="0"
+    >
+      <span
+        className="MuiButton-label-74"
+      >
+        Read More
+      </span>
+      <span
+        className="MuiTouchRipple-root-64"
+      />
+    </a>
+  </div>
+</div>
+`;

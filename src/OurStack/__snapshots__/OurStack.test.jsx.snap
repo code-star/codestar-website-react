@@ -26,11 +26,11 @@ exports[`OurStack shows icons for each technology 1`] = `
         >
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-61"
             >
               <img
                 alt="Typescript"
-                className="MuiAvatar-img-62"
+                className="MuiAvatar-img-63"
                 sizes={undefined}
                 src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/typescript.png"
                 srcSet={undefined}
@@ -39,11 +39,11 @@ exports[`OurStack shows icons for each technology 1`] = `
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-61"
             >
               <img
                 alt="React"
-                className="MuiAvatar-img-62"
+                className="MuiAvatar-img-63"
                 sizes={undefined}
                 src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/react.png"
                 srcSet={undefined}
@@ -52,11 +52,11 @@ exports[`OurStack shows icons for each technology 1`] = `
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-61"
             >
               <img
                 alt="Redux"
-                className="MuiAvatar-img-62"
+                className="MuiAvatar-img-63"
                 sizes={undefined}
                 src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/redux.png"
                 srcSet={undefined}
@@ -65,11 +65,11 @@ exports[`OurStack shows icons for each technology 1`] = `
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-61"
             >
               <img
                 alt="Angular"
-                className="MuiAvatar-img-62"
+                className="MuiAvatar-img-63"
                 sizes={undefined}
                 src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/angular.png"
                 srcSet={undefined}
@@ -78,11 +78,11 @@ exports[`OurStack shows icons for each technology 1`] = `
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-61"
             >
               <img
                 alt="RxJS"
-                className="MuiAvatar-img-62"
+                className="MuiAvatar-img-63"
                 sizes={undefined}
                 src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/rxjs.png"
                 srcSet={undefined}
@@ -117,11 +117,11 @@ exports[`OurStack shows icons for each technology 1`] = `
         >
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-61"
             >
               <img
                 alt="Scala"
-                className="MuiAvatar-img-62"
+                className="MuiAvatar-img-63"
                 sizes={undefined}
                 src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/scala.svg"
                 srcSet={undefined}
@@ -130,11 +130,11 @@ exports[`OurStack shows icons for each technology 1`] = `
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-61"
             >
               <img
                 alt="Akka"
-                className="MuiAvatar-img-62"
+                className="MuiAvatar-img-63"
                 sizes={undefined}
                 src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/akka.svg"
                 srcSet={undefined}
@@ -143,11 +143,11 @@ exports[`OurStack shows icons for each technology 1`] = `
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-61"
             >
               <img
                 alt="Spray"
-                className="MuiAvatar-img-62"
+                className="MuiAvatar-img-63"
                 sizes={undefined}
                 src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/spray.png"
                 srcSet={undefined}
@@ -156,11 +156,11 @@ exports[`OurStack shows icons for each technology 1`] = `
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-61"
             >
               <img
                 alt="Spark"
-                className="MuiAvatar-img-62"
+                className="MuiAvatar-img-63"
                 sizes={undefined}
                 src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/spark.png"
                 srcSet={undefined}
@@ -169,11 +169,11 @@ exports[`OurStack shows icons for each technology 1`] = `
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-61"
             >
               <img
                 alt="Cassandra"
-                className="MuiAvatar-img-62"
+                className="MuiAvatar-img-63"
                 sizes={undefined}
                 src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/cassandra.png"
                 srcSet={undefined}
@@ -182,11 +182,11 @@ exports[`OurStack shows icons for each technology 1`] = `
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-61"
             >
               <img
                 alt="Kafka"
-                className="MuiAvatar-img-62"
+                className="MuiAvatar-img-63"
                 sizes={undefined}
                 src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/kafka.png"
                 srcSet={undefined}
@@ -221,11 +221,11 @@ exports[`OurStack shows icons for each technology 1`] = `
         >
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-61"
             >
               <img
                 alt="Docker"
-                className="MuiAvatar-img-62"
+                className="MuiAvatar-img-63"
                 sizes={undefined}
                 src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/docker.png"
                 srcSet={undefined}
@@ -234,11 +234,11 @@ exports[`OurStack shows icons for each technology 1`] = `
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-61"
             >
               <img
                 alt="Mesos"
-                className="MuiAvatar-img-62"
+                className="MuiAvatar-img-63"
                 sizes={undefined}
                 src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/mesos.jpg"
                 srcSet={undefined}
@@ -247,11 +247,11 @@ exports[`OurStack shows icons for each technology 1`] = `
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-61"
             >
               <img
                 alt="Kubernetes"
-                className="MuiAvatar-img-62"
+                className="MuiAvatar-img-63"
                 sizes={undefined}
                 src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/kubernetes.png"
                 srcSet={undefined}
@@ -260,11 +260,11 @@ exports[`OurStack shows icons for each technology 1`] = `
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-61"
             >
               <img
                 alt="AWS"
-                className="MuiAvatar-img-62"
+                className="MuiAvatar-img-63"
                 sizes={undefined}
                 src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/aws.png"
                 srcSet={undefined}

@@ -1,0 +1,3214 @@
+[
+  {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Tue Oct 02 07:26:12 +0000 2018",
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [
+        {
+          "display_url": "twitter.com/columlynch/sta…",
+          "expanded_url": "https://twitter.com/columlynch/status/1046930472348082179",
+          "indices": [
+            2,
+            25
+          ],
+          "url": "https://t.co/HHkGsIxfsL"
+        }
+      ],
+      "user_mentions": []
+    },
+    "favorite_count": 2,
+    "favorited": false,
+    "geo": null,
+    "id": 1047024936223682562,
+    "id_str": "1047024936223682562",
+    "in_reply_to_screen_name": null,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "is_quote_status": true,
+    "lang": "und",
+    "place": null,
+    "possibly_sensitive": false,
+    "quoted_status": {
+      "contributors": null,
+      "coordinates": null,
+      "created_at": "Tue Oct 02 01:10:50 +0000 2018",
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "urls": [
+          {
+            "display_url": "twitter.com/i/web/status/1…",
+            "expanded_url": "https://twitter.com/i/web/status/1046930472348082179",
+            "indices": [
+              117,
+              140
+            ],
+            "url": "https://t.co/obzrEYqDwo"
+          }
+        ],
+        "user_mentions": []
+      },
+      "favorite_count": 3582,
+      "favorited": false,
+      "geo": null,
+      "id": 1046930472348082179,
+      "id_str": "1046930472348082179",
+      "in_reply_to_screen_name": null,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "is_quote_status": false,
+      "lang": "en",
+      "place": null,
+      "possibly_sensitive": false,
+      "retweet_count": 7309,
+      "retweeted": false,
+      "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+      "text": "Starting today, the Trump administration will deny visas to same-sex domestic partners of diplomats and U.N. offici… https://t.co/obzrEYqDwo",
+      "truncated": true,
+      "user": {
+        "contributors_enabled": false,
+        "created_at": "Tue Nov 04 16:45:30 +0000 2008",
+        "default_profile": false,
+        "default_profile_image": false,
+        "description": "Foreign Policy Magazine's senior diplomatic reporter. \nTell me a secret.\nSignal, Whatsapp: 917-439-4531; columflynch@protonmail.com",
+        "entities": {
+          "description": {
+            "urls": []
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "foreignpolicy.com/author/colum-l…",
+                "expanded_url": "https://foreignpolicy.com/author/colum-lynch/",
+                "indices": [
+                  0,
+                  23
+                ],
+                "url": "https://t.co/IhLfMH8rS0"
+              }
+            ]
+          }
+        },
+        "favourites_count": 94,
+        "follow_request_sent": false,
+        "followers_count": 25138,
+        "following": false,
+        "friends_count": 3109,
+        "geo_enabled": false,
+        "has_extended_profile": false,
+        "id": 17160680,
+        "id_str": "17160680",
+        "is_translation_enabled": false,
+        "is_translator": false,
+        "lang": "en",
+        "listed_count": 1186,
+        "location": "United Nations & Brooklyn",
+        "name": "columlynch",
+        "notifications": false,
+        "profile_background_color": "000000",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": true,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/17160680/1462733989",
+        "profile_image_url": "http://pbs.twimg.com/profile_images/757307832/turtle_avatar_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/757307832/turtle_avatar_normal.jpg",
+        "profile_link_color": "0084B4",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "protected": false,
+        "screen_name": "columlynch",
+        "statuses_count": 25784,
+        "time_zone": null,
+        "translator_type": "none",
+        "url": "https://t.co/IhLfMH8rS0",
+        "utc_offset": null,
+        "verified": true
+      }
+    },
+    "quoted_status_id": 1046930472348082179,
+    "quoted_status_id_str": "1046930472348082179",
+    "retweet_count": 0,
+    "retweeted": false,
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "text": "🤬 https://t.co/HHkGsIxfsL",
+    "truncated": false,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Jul 21 19:38:58 +0000 2009",
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Tells computers how to waste electricity. Hopefully in efficient, or at least useful way.🔸co-organising UIKonf🔸starts ECS Lab Meetup in Berlin",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "medium.com/@icex33",
+              "expanded_url": "https://medium.com/@icex33",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/NkLmuWndqI"
+            }
+          ]
+        }
+      },
+      "favourites_count": 2210,
+      "follow_request_sent": false,
+      "followers_count": 812,
+      "following": false,
+      "friends_count": 584,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 58895358,
+      "id_str": "58895358",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": "en",
+      "listed_count": 59,
+      "location": "Berlin, Germany",
+      "name": "Maxim Zaks",
+      "notifications": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "iceX33",
+      "statuses_count": 4894,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/NkLmuWndqI",
+      "utc_offset": null,
+      "verified": false
+    }
+  },
+  {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Sun Sep 30 21:08:34 +0000 2018",
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [
+        {
+          "display_url": "beyondtellerrand.com/events/berlin-…",
+          "expanded_url": "https://beyondtellerrand.com/events/berlin-2017/speakers/paula-scher#talk",
+          "indices": [
+            106,
+            129
+          ],
+          "url": "https://t.co/bbqd0kyw9g"
+        }
+      ],
+      "user_mentions": [
+        {
+          "id": 24257941,
+          "id_str": "24257941",
+          "indices": [
+            0,
+            9
+          ],
+          "name": "Camille Fournier",
+          "screen_name": "skamille"
+        },
+        {
+          "id": 106775821,
+          "id_str": "106775821",
+          "indices": [
+            10,
+            20
+          ],
+          "name": "Joachim",
+          "screen_name": "cocoafrog"
+        }
+      ]
+    },
+    "favorite_count": 0,
+    "favorited": false,
+    "geo": null,
+    "id": 1046507119023984640,
+    "id_str": "1046507119023984640",
+    "in_reply_to_screen_name": "skamille",
+    "in_reply_to_status_id": 1046476496569864197,
+    "in_reply_to_status_id_str": "1046476496569864197",
+    "in_reply_to_user_id": 24257941,
+    "in_reply_to_user_id_str": "24257941",
+    "is_quote_status": false,
+    "lang": "en",
+    "place": null,
+    "possibly_sensitive": false,
+    "retweet_count": 0,
+    "retweeted": false,
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "text": "@skamille @cocoafrog Following talk has a great point. „Defy your career staircase.“ it starts from 9:00. https://t.co/bbqd0kyw9g",
+    "truncated": false,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Jul 21 19:38:58 +0000 2009",
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Tells computers how to waste electricity. Hopefully in efficient, or at least useful way.🔸co-organising UIKonf🔸starts ECS Lab Meetup in Berlin",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "medium.com/@icex33",
+              "expanded_url": "https://medium.com/@icex33",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/NkLmuWndqI"
+            }
+          ]
+        }
+      },
+      "favourites_count": 2210,
+      "follow_request_sent": false,
+      "followers_count": 812,
+      "following": false,
+      "friends_count": 584,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 58895358,
+      "id_str": "58895358",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": "en",
+      "listed_count": 59,
+      "location": "Berlin, Germany",
+      "name": "Maxim Zaks",
+      "notifications": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "iceX33",
+      "statuses_count": 4894,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/NkLmuWndqI",
+      "utc_offset": null,
+      "verified": false
+    }
+  },
+  {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Thu Sep 27 20:48:38 +0000 2018",
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [
+        {
+          "display_url": "twitter.com/i/web/status/1…",
+          "expanded_url": "https://twitter.com/i/web/status/1045414938553053185",
+          "indices": [
+            117,
+            140
+          ],
+          "url": "https://t.co/HizLpT9F31"
+        }
+      ],
+      "user_mentions": [
+        {
+          "id": 1068523050,
+          "id_str": "1068523050",
+          "indices": [
+            0,
+            12
+          ],
+          "name": "Agis Tsaraboulidis",
+          "screen_name": "agisilaosts"
+        }
+      ]
+    },
+    "favorite_count": 1,
+    "favorited": false,
+    "geo": null,
+    "id": 1045414938553053185,
+    "id_str": "1045414938553053185",
+    "in_reply_to_screen_name": "agisilaosts",
+    "in_reply_to_status_id": 1045413535671562241,
+    "in_reply_to_status_id_str": "1045413535671562241",
+    "in_reply_to_user_id": 1068523050,
+    "in_reply_to_user_id_str": "1068523050",
+    "is_quote_status": false,
+    "lang": "en",
+    "place": null,
+    "possibly_sensitive": false,
+    "retweet_count": 0,
+    "retweeted": false,
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "text": "@agisilaosts I think you rather want to have a local notification, if it is a reminder for iOS user. Otherwise have… https://t.co/HizLpT9F31",
+    "truncated": true,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Jul 21 19:38:58 +0000 2009",
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Tells computers how to waste electricity. Hopefully in efficient, or at least useful way.🔸co-organising UIKonf🔸starts ECS Lab Meetup in Berlin",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "medium.com/@icex33",
+              "expanded_url": "https://medium.com/@icex33",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/NkLmuWndqI"
+            }
+          ]
+        }
+      },
+      "favourites_count": 2210,
+      "follow_request_sent": false,
+      "followers_count": 812,
+      "following": false,
+      "friends_count": 584,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 58895358,
+      "id_str": "58895358",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": "en",
+      "listed_count": 59,
+      "location": "Berlin, Germany",
+      "name": "Maxim Zaks",
+      "notifications": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "iceX33",
+      "statuses_count": 4894,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/NkLmuWndqI",
+      "utc_offset": null,
+      "verified": false
+    }
+  },
+  {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Thu Sep 27 16:48:09 +0000 2018",
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id": 17055506,
+          "id_str": "17055506",
+          "indices": [
+            3,
+            12
+          ],
+          "name": "Martin Kleppmann",
+          "screen_name": "martinkl"
+        }
+      ]
+    },
+    "favorite_count": 0,
+    "favorited": false,
+    "geo": null,
+    "id": 1045354418705715200,
+    "id_str": "1045354418705715200",
+    "in_reply_to_screen_name": null,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "is_quote_status": false,
+    "lang": "en",
+    "place": null,
+    "retweet_count": 59,
+    "retweeted": false,
+    "retweeted_status": {
+      "contributors": null,
+      "coordinates": null,
+      "created_at": "Thu Sep 27 11:42:11 +0000 2018",
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "urls": [],
+        "user_mentions": []
+      },
+      "favorite_count": 206,
+      "favorited": false,
+      "geo": null,
+      "id": 1045277418708242432,
+      "id_str": "1045277418708242432",
+      "in_reply_to_screen_name": "martinkl",
+      "in_reply_to_status_id": 1045276528953757697,
+      "in_reply_to_status_id_str": "1045276528953757697",
+      "in_reply_to_user_id": 17055506,
+      "in_reply_to_user_id_str": "17055506",
+      "is_quote_status": false,
+      "lang": "en",
+      "place": null,
+      "retweet_count": 59,
+      "retweeted": false,
+      "source": "<a href=\"https://tapbots.com/software/tweetbot/mac\" rel=\"nofollow\">Tweetbot for Mac</a>",
+      "text": "Basically, I think owning Bitcoin is incompatible with having any sort of environmental conscience",
+      "truncated": false,
+      "user": {
+        "contributors_enabled": false,
+        "created_at": "Wed Oct 29 23:52:09 +0000 2008",
+        "default_profile": true,
+        "default_profile_image": false,
+        "description": "Author of @intensivedata, and working on @trvedata research project at @Cambridge_CL. Formerly @rapportive co-founder and @LinkedIn engineer.",
+        "entities": {
+          "description": {
+            "urls": []
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "martin.kleppmann.com",
+                "expanded_url": "http://martin.kleppmann.com",
+                "indices": [
+                  0,
+                  22
+                ],
+                "url": "http://t.co/PiyWlFnXkL"
+              }
+            ]
+          }
+        },
+        "favourites_count": 1871,
+        "follow_request_sent": false,
+        "followers_count": 16293,
+        "following": false,
+        "friends_count": 727,
+        "geo_enabled": false,
+        "has_extended_profile": false,
+        "id": 17055506,
+        "id_str": "17055506",
+        "is_translation_enabled": false,
+        "is_translator": false,
+        "lang": "en",
+        "listed_count": 521,
+        "location": "Cambridge, UK",
+        "name": "Martin Kleppmann",
+        "notifications": false,
+        "profile_background_color": "C0DEED",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/17055506/1398507325",
+        "profile_image_url": "http://pbs.twimg.com/profile_images/683377237547192321/ZFAx7ted_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/683377237547192321/ZFAx7ted_normal.jpg",
+        "profile_link_color": "1DA1F2",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "protected": false,
+        "screen_name": "martinkl",
+        "statuses_count": 8784,
+        "time_zone": null,
+        "translator_type": "none",
+        "url": "http://t.co/PiyWlFnXkL",
+        "utc_offset": null,
+        "verified": false
+      }
+    },
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "text": "RT @martinkl: Basically, I think owning Bitcoin is incompatible with having any sort of environmental conscience",
+    "truncated": false,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Jul 21 19:38:58 +0000 2009",
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Tells computers how to waste electricity. Hopefully in efficient, or at least useful way.🔸co-organising UIKonf🔸starts ECS Lab Meetup in Berlin",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "medium.com/@icex33",
+              "expanded_url": "https://medium.com/@icex33",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/NkLmuWndqI"
+            }
+          ]
+        }
+      },
+      "favourites_count": 2210,
+      "follow_request_sent": false,
+      "followers_count": 812,
+      "following": false,
+      "friends_count": 584,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 58895358,
+      "id_str": "58895358",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": "en",
+      "listed_count": 59,
+      "location": "Berlin, Germany",
+      "name": "Maxim Zaks",
+      "notifications": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "iceX33",
+      "statuses_count": 4894,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/NkLmuWndqI",
+      "utc_offset": null,
+      "verified": false
+    }
+  },
+  {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Thu Sep 27 09:14:12 +0000 2018",
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id": 10394352,
+          "id_str": "10394352",
+          "indices": [
+            0,
+            15
+          ],
+          "name": "Daniel Jay",
+          "screen_name": "breakthesystem"
+        }
+      ]
+    },
+    "favorite_count": 0,
+    "favorited": false,
+    "geo": null,
+    "id": 1045240179089453056,
+    "id_str": "1045240179089453056",
+    "in_reply_to_screen_name": "breakthesystem",
+    "in_reply_to_status_id": 1045239111194472448,
+    "in_reply_to_status_id_str": "1045239111194472448",
+    "in_reply_to_user_id": 10394352,
+    "in_reply_to_user_id_str": "10394352",
+    "is_quote_status": false,
+    "lang": "en",
+    "place": null,
+    "retweet_count": 0,
+    "retweeted": false,
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "text": "@breakthesystem Yeah maybe I am naive. For me it came across like a carnival, where everyone tries to imitate the same „super hero“ 😁",
+    "truncated": false,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Jul 21 19:38:58 +0000 2009",
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Tells computers how to waste electricity. Hopefully in efficient, or at least useful way.🔸co-organising UIKonf🔸starts ECS Lab Meetup in Berlin",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "medium.com/@icex33",
+              "expanded_url": "https://medium.com/@icex33",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/NkLmuWndqI"
+            }
+          ]
+        }
+      },
+      "favourites_count": 2210,
+      "follow_request_sent": false,
+      "followers_count": 812,
+      "following": false,
+      "friends_count": 584,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 58895358,
+      "id_str": "58895358",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": "en",
+      "listed_count": 59,
+      "location": "Berlin, Germany",
+      "name": "Maxim Zaks",
+      "notifications": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "iceX33",
+      "statuses_count": 4894,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/NkLmuWndqI",
+      "utc_offset": null,
+      "verified": false
+    }
+  },
+  {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Thu Sep 27 09:08:28 +0000 2018",
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [
+        {
+          "display_url": "twitter.com/i/web/status/1…",
+          "expanded_url": "https://twitter.com/i/web/status/1045238735095418880",
+          "indices": [
+            117,
+            140
+          ],
+          "url": "https://t.co/02I1Fskgm8"
+        }
+      ],
+      "user_mentions": [
+        {
+          "id": 10394352,
+          "id_str": "10394352",
+          "indices": [
+            0,
+            15
+          ],
+          "name": "Daniel Jay",
+          "screen_name": "breakthesystem"
+        }
+      ]
+    },
+    "favorite_count": 1,
+    "favorited": false,
+    "geo": null,
+    "id": 1045238735095418880,
+    "id_str": "1045238735095418880",
+    "in_reply_to_screen_name": "breakthesystem",
+    "in_reply_to_status_id": 1045237191922917376,
+    "in_reply_to_status_id_str": "1045237191922917376",
+    "in_reply_to_user_id": 10394352,
+    "in_reply_to_user_id_str": "10394352",
+    "is_quote_status": false,
+    "lang": "en",
+    "place": null,
+    "retweet_count": 0,
+    "retweeted": false,
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "text": "@breakthesystem Last time I was in Munich around October Fest was 2011. The number of Lederhosen was considerable a… https://t.co/02I1Fskgm8",
+    "truncated": true,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Jul 21 19:38:58 +0000 2009",
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Tells computers how to waste electricity. Hopefully in efficient, or at least useful way.🔸co-organising UIKonf🔸starts ECS Lab Meetup in Berlin",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "medium.com/@icex33",
+              "expanded_url": "https://medium.com/@icex33",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/NkLmuWndqI"
+            }
+          ]
+        }
+      },
+      "favourites_count": 2210,
+      "follow_request_sent": false,
+      "followers_count": 812,
+      "following": false,
+      "friends_count": 584,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 58895358,
+      "id_str": "58895358",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": "en",
+      "listed_count": 59,
+      "location": "Berlin, Germany",
+      "name": "Maxim Zaks",
+      "notifications": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "iceX33",
+      "statuses_count": 4894,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/NkLmuWndqI",
+      "utc_offset": null,
+      "verified": false
+    }
+  },
+  {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Thu Sep 27 09:02:32 +0000 2018",
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id": 389933840,
+          "id_str": "389933840",
+          "indices": [
+            0,
+            8
+          ],
+          "name": "Bjorn 'Bjeaurn'",
+          "screen_name": "bjeaurn"
+        }
+      ]
+    },
+    "favorite_count": 0,
+    "favorited": false,
+    "geo": null,
+    "id": 1045237241789001728,
+    "id_str": "1045237241789001728",
+    "in_reply_to_screen_name": "bjeaurn",
+    "in_reply_to_status_id": 1045236091241017344,
+    "in_reply_to_status_id_str": "1045236091241017344",
+    "in_reply_to_user_id": 389933840,
+    "in_reply_to_user_id_str": "389933840",
+    "is_quote_status": false,
+    "lang": "en",
+    "place": null,
+    "retweet_count": 0,
+    "retweeted": false,
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "text": "@bjeaurn ☺️ Thanks!",
+    "truncated": false,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Jul 21 19:38:58 +0000 2009",
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Tells computers how to waste electricity. Hopefully in efficient, or at least useful way.🔸co-organising UIKonf🔸starts ECS Lab Meetup in Berlin",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "medium.com/@icex33",
+              "expanded_url": "https://medium.com/@icex33",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/NkLmuWndqI"
+            }
+          ]
+        }
+      },
+      "favourites_count": 2210,
+      "follow_request_sent": false,
+      "followers_count": 812,
+      "following": false,
+      "friends_count": 584,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 58895358,
+      "id_str": "58895358",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": "en",
+      "listed_count": 59,
+      "location": "Berlin, Germany",
+      "name": "Maxim Zaks",
+      "notifications": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "iceX33",
+      "statuses_count": 4894,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/NkLmuWndqI",
+      "utc_offset": null,
+      "verified": false
+    }
+  },
+  {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Thu Sep 27 09:00:35 +0000 2018",
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id": 10394352,
+          "id_str": "10394352",
+          "indices": [
+            0,
+            15
+          ],
+          "name": "Daniel Jay",
+          "screen_name": "breakthesystem"
+        }
+      ]
+    },
+    "favorite_count": 1,
+    "favorited": false,
+    "geo": null,
+    "id": 1045236748283006976,
+    "id_str": "1045236748283006976",
+    "in_reply_to_screen_name": "breakthesystem",
+    "in_reply_to_status_id": 1045203253116497921,
+    "in_reply_to_status_id_str": "1045203253116497921",
+    "in_reply_to_user_id": 10394352,
+    "in_reply_to_user_id_str": "10394352",
+    "is_quote_status": false,
+    "lang": "de",
+    "place": null,
+    "retweet_count": 0,
+    "retweeted": false,
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "text": "@breakthesystem Lederhosen is the ultimate cutiefication of „Volksbesäufnis“",
+    "truncated": false,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Jul 21 19:38:58 +0000 2009",
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Tells computers how to waste electricity. Hopefully in efficient, or at least useful way.🔸co-organising UIKonf🔸starts ECS Lab Meetup in Berlin",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "medium.com/@icex33",
+              "expanded_url": "https://medium.com/@icex33",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/NkLmuWndqI"
+            }
+          ]
+        }
+      },
+      "favourites_count": 2210,
+      "follow_request_sent": false,
+      "followers_count": 812,
+      "following": false,
+      "friends_count": 584,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 58895358,
+      "id_str": "58895358",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": "en",
+      "listed_count": 59,
+      "location": "Berlin, Germany",
+      "name": "Maxim Zaks",
+      "notifications": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "iceX33",
+      "statuses_count": 4894,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/NkLmuWndqI",
+      "utc_offset": null,
+      "verified": false
+    }
+  },
+  {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Thu Sep 27 08:52:27 +0000 2018",
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [],
+      "user_mentions": []
+    },
+    "favorite_count": 4,
+    "favorited": false,
+    "geo": null,
+    "id": 1045234702494437376,
+    "id_str": "1045234702494437376",
+    "in_reply_to_screen_name": null,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "is_quote_status": false,
+    "lang": "en",
+    "place": null,
+    "retweet_count": 0,
+    "retweeted": false,
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "text": "Impressive how bike friendly Utrecht is.",
+    "truncated": false,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Jul 21 19:38:58 +0000 2009",
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Tells computers how to waste electricity. Hopefully in efficient, or at least useful way.🔸co-organising UIKonf🔸starts ECS Lab Meetup in Berlin",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "medium.com/@icex33",
+              "expanded_url": "https://medium.com/@icex33",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/NkLmuWndqI"
+            }
+          ]
+        }
+      },
+      "favourites_count": 2210,
+      "follow_request_sent": false,
+      "followers_count": 812,
+      "following": false,
+      "friends_count": 584,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 58895358,
+      "id_str": "58895358",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": "en",
+      "listed_count": 59,
+      "location": "Berlin, Germany",
+      "name": "Maxim Zaks",
+      "notifications": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "iceX33",
+      "statuses_count": 4894,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/NkLmuWndqI",
+      "utc_offset": null,
+      "verified": false
+    }
+  },
+  {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Thu Sep 27 07:29:36 +0000 2018",
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [
+        {
+          "display_url": "twitter.com/i/web/status/1…",
+          "expanded_url": "https://twitter.com/i/web/status/1045213852584079361",
+          "indices": [
+            117,
+            140
+          ],
+          "url": "https://t.co/XNl54GrUcz"
+        }
+      ],
+      "user_mentions": [
+        {
+          "id": 937340950338293761,
+          "id_str": "937340950338293761",
+          "indices": [
+            0,
+            16
+          ],
+          "name": "Dr Stephan Gerschewski",
+          "screen_name": "stepgerschewski"
+        },
+        {
+          "id": 18800049,
+          "id_str": "18800049",
+          "indices": [
+            17,
+            30
+          ],
+          "name": "Martin Winter",
+          "screen_name": "martinwinter"
+        }
+      ]
+    },
+    "favorite_count": 2,
+    "favorited": false,
+    "geo": null,
+    "id": 1045213852584079361,
+    "id_str": "1045213852584079361",
+    "in_reply_to_screen_name": "stepgerschewski",
+    "in_reply_to_status_id": 1045180366112411650,
+    "in_reply_to_status_id_str": "1045180366112411650",
+    "in_reply_to_user_id": 937340950338293761,
+    "in_reply_to_user_id_str": "937340950338293761",
+    "is_quote_status": false,
+    "lang": "en",
+    "place": null,
+    "retweet_count": 0,
+    "retweeted": false,
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "text": "@stepgerschewski @martinwinter It’s not only watching it tells you wat to do in order to get higher score. It’s a c… https://t.co/XNl54GrUcz",
+    "truncated": true,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Jul 21 19:38:58 +0000 2009",
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Tells computers how to waste electricity. Hopefully in efficient, or at least useful way.🔸co-organising UIKonf🔸starts ECS Lab Meetup in Berlin",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "medium.com/@icex33",
+              "expanded_url": "https://medium.com/@icex33",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/NkLmuWndqI"
+            }
+          ]
+        }
+      },
+      "favourites_count": 2210,
+      "follow_request_sent": false,
+      "followers_count": 812,
+      "following": false,
+      "friends_count": 584,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 58895358,
+      "id_str": "58895358",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": "en",
+      "listed_count": 59,
+      "location": "Berlin, Germany",
+      "name": "Maxim Zaks",
+      "notifications": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "iceX33",
+      "statuses_count": 4894,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/NkLmuWndqI",
+      "utc_offset": null,
+      "verified": false
+    }
+  },
+  {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Thu Sep 27 07:25:07 +0000 2018",
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [
+        {
+          "display_url": "twitter.com/i/web/status/1…",
+          "expanded_url": "https://twitter.com/i/web/status/1045212725444587520",
+          "indices": [
+            117,
+            140
+          ],
+          "url": "https://t.co/ki4ZEUJU2B"
+        }
+      ],
+      "user_mentions": []
+    },
+    "favorite_count": 0,
+    "favorited": false,
+    "geo": null,
+    "id": 1045212725444587520,
+    "id_str": "1045212725444587520",
+    "in_reply_to_screen_name": null,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "is_quote_status": true,
+    "lang": "en",
+    "place": null,
+    "possibly_sensitive": false,
+    "quoted_status": {
+      "contributors": null,
+      "coordinates": null,
+      "created_at": "Wed Sep 19 19:22:38 +0000 2018",
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "urls": [
+          {
+            "display_url": "mobile.abc.net.au/news/2018-09-1…",
+            "expanded_url": "http://mobile.abc.net.au/news/2018-09-18/china-social-credit-a-model-citizen-in-a-digital-dictatorship/10200278?pfmredir=sm",
+            "indices": [
+              72,
+              95
+            ],
+            "url": "https://t.co/x3TSlBXFJy"
+          }
+        ],
+        "user_mentions": []
+      },
+      "favorite_count": 3858,
+      "favorited": false,
+      "geo": null,
+      "id": 1042494191194890240,
+      "id_str": "1042494191194890240",
+      "in_reply_to_screen_name": null,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "is_quote_status": false,
+      "lang": "en",
+      "place": null,
+      "possibly_sensitive": false,
+      "retweet_count": 2023,
+      "retweeted": false,
+      "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Lite</a>",
+      "text": "Welcome to the panopticon...\nChina becomes an episode of Black Mirror:\n\nhttps://t.co/x3TSlBXFJy",
+      "truncated": false,
+      "user": {
+        "contributors_enabled": false,
+        "created_at": "Wed Feb 24 06:05:40 +0000 2010",
+        "default_profile": false,
+        "default_profile_image": false,
+        "description": "Author of The End of Faith, The Moral Landscape, Waking Up, and other bestselling books published in over 20 languages. Host of the Waking Up podcast.",
+        "entities": {
+          "description": {
+            "urls": []
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "samharris.org",
+                "expanded_url": "http://www.samharris.org",
+                "indices": [
+                  0,
+                  22
+                ],
+                "url": "http://t.co/kAFFFzu1v9"
+              }
+            ]
+          }
+        },
+        "favourites_count": 0,
+        "follow_request_sent": false,
+        "followers_count": 1117262,
+        "following": false,
+        "friends_count": 272,
+        "geo_enabled": false,
+        "has_extended_profile": false,
+        "id": 116994659,
+        "id_str": "116994659",
+        "is_translation_enabled": false,
+        "is_translator": false,
+        "lang": "en",
+        "listed_count": 9783,
+        "location": "",
+        "name": "Sam Harris",
+        "notifications": false,
+        "profile_background_color": "CBE7FA",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/116994659/1422118883",
+        "profile_image_url": "http://pbs.twimg.com/profile_images/715180693/Headshot2_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/715180693/Headshot2_normal.jpg",
+        "profile_link_color": "0084B4",
+        "profile_sidebar_border_color": "FFFFFF",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "protected": false,
+        "screen_name": "SamHarrisOrg",
+        "statuses_count": 7679,
+        "time_zone": null,
+        "translator_type": "none",
+        "url": "http://t.co/kAFFFzu1v9",
+        "utc_offset": null,
+        "verified": true
+      }
+    },
+    "quoted_status_id": 1042494191194890240,
+    "quoted_status_id_str": "1042494191194890240",
+    "retweet_count": 0,
+    "retweeted": false,
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "text": "I think it is much worse than the concept of panopticon, because it is not only about observation, it’s about judge… https://t.co/ki4ZEUJU2B",
+    "truncated": true,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Jul 21 19:38:58 +0000 2009",
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Tells computers how to waste electricity. Hopefully in efficient, or at least useful way.🔸co-organising UIKonf🔸starts ECS Lab Meetup in Berlin",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "medium.com/@icex33",
+              "expanded_url": "https://medium.com/@icex33",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/NkLmuWndqI"
+            }
+          ]
+        }
+      },
+      "favourites_count": 2210,
+      "follow_request_sent": false,
+      "followers_count": 812,
+      "following": false,
+      "friends_count": 584,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 58895358,
+      "id_str": "58895358",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": "en",
+      "listed_count": 59,
+      "location": "Berlin, Germany",
+      "name": "Maxim Zaks",
+      "notifications": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "iceX33",
+      "statuses_count": 4894,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/NkLmuWndqI",
+      "utc_offset": null,
+      "verified": false
+    }
+  },
+  {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Wed Sep 26 11:04:13 +0000 2018",
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [
+        {
+          "display_url": "twitter.com/i/web/status/1…",
+          "expanded_url": "https://twitter.com/i/web/status/1044905474267770880",
+          "indices": [
+            117,
+            140
+          ],
+          "url": "https://t.co/t2uCvU0Wb3"
+        }
+      ],
+      "user_mentions": [
+        {
+          "id": 19642999,
+          "id_str": "19642999",
+          "indices": [
+            0,
+            13
+          ],
+          "name": "Richard Lord",
+          "screen_name": "richard_lord"
+        }
+      ]
+    },
+    "favorite_count": 0,
+    "favorited": false,
+    "geo": null,
+    "id": 1044905474267770880,
+    "id_str": "1044905474267770880",
+    "in_reply_to_screen_name": "richard_lord",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": 19642999,
+    "in_reply_to_user_id_str": "19642999",
+    "is_quote_status": false,
+    "lang": "en",
+    "place": null,
+    "retweet_count": 0,
+    "retweeted": false,
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "text": "@richard_lord would you be interested to join our ECS Lab discord server? It is based on the Meetup we have in Berl… https://t.co/t2uCvU0Wb3",
+    "truncated": true,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Jul 21 19:38:58 +0000 2009",
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Tells computers how to waste electricity. Hopefully in efficient, or at least useful way.🔸co-organising UIKonf🔸starts ECS Lab Meetup in Berlin",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "medium.com/@icex33",
+              "expanded_url": "https://medium.com/@icex33",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/NkLmuWndqI"
+            }
+          ]
+        }
+      },
+      "favourites_count": 2210,
+      "follow_request_sent": false,
+      "followers_count": 812,
+      "following": false,
+      "friends_count": 584,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 58895358,
+      "id_str": "58895358",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": "en",
+      "listed_count": 59,
+      "location": "Berlin, Germany",
+      "name": "Maxim Zaks",
+      "notifications": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "iceX33",
+      "statuses_count": 4894,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/NkLmuWndqI",
+      "utc_offset": null,
+      "verified": false
+    }
+  },
+  {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Wed Sep 26 08:32:30 +0000 2018",
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [
+        {
+          "display_url": "twitter.com/martinhoffmann…",
+          "expanded_url": "https://twitter.com/martinhoffmann/status/1044848985914191872",
+          "indices": [
+            95,
+            118
+          ],
+          "url": "https://t.co/X30unqvpfu"
+        }
+      ],
+      "user_mentions": []
+    },
+    "favorite_count": 1,
+    "favorited": false,
+    "geo": null,
+    "id": 1044867296764854272,
+    "id_str": "1044867296764854272",
+    "in_reply_to_screen_name": null,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "is_quote_status": true,
+    "lang": "de",
+    "place": null,
+    "possibly_sensitive": false,
+    "quoted_status": {
+      "contributors": null,
+      "coordinates": null,
+      "created_at": "Wed Sep 26 07:19:45 +0000 2018",
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "urls": [
+          {
+            "display_url": "twitter.com/i/web/status/1…",
+            "expanded_url": "https://twitter.com/i/web/status/1044848985914191872",
+            "indices": [
+              117,
+              140
+            ],
+            "url": "https://t.co/brngwdm08S"
+          }
+        ],
+        "user_mentions": [
+          {
+            "id": 4234275455,
+            "id_str": "4234275455",
+            "indices": [
+              17,
+              29
+            ],
+            "name": "Übermedien",
+            "screen_name": "uebermedien"
+          }
+        ]
+      },
+      "favorite_count": 25,
+      "favorited": false,
+      "geo": null,
+      "id": 1044848985914191872,
+      "id_str": "1044848985914191872",
+      "in_reply_to_screen_name": "martinhoffmann",
+      "in_reply_to_status_id": 1044687709451812866,
+      "in_reply_to_status_id_str": "1044687709451812866",
+      "in_reply_to_user_id": 14178909,
+      "in_reply_to_user_id_str": "14178909",
+      "is_quote_status": false,
+      "lang": "de",
+      "place": null,
+      "possibly_sensitive": false,
+      "retweet_count": 19,
+      "retweeted": false,
+      "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+      "text": "Die Kollegen bei @uebermedien haben die ganze Absurdität der zahlreichen Abgesänge auf Angela Merkel wunderbar aufg… https://t.co/brngwdm08S",
+      "truncated": true,
+      "user": {
+        "contributors_enabled": false,
+        "created_at": "Wed Mar 19 18:56:53 +0000 2008",
+        "default_profile": false,
+        "default_profile_image": false,
+        "description": "Online journalist. Loves disruption and digital innovation. Founder of @ResiApp. Father of @convjournalism and @pushthepush. Former Head of Social Media @welt.",
+        "entities": {
+          "description": {
+            "urls": []
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "mrtnh.de",
+                "expanded_url": "http://www.mrtnh.de",
+                "indices": [
+                  0,
+                  23
+                ],
+                "url": "https://t.co/FTyc74z68p"
+              }
+            ]
+          }
+        },
+        "favourites_count": 8471,
+        "follow_request_sent": false,
+        "followers_count": 9804,
+        "following": false,
+        "friends_count": 5587,
+        "geo_enabled": true,
+        "has_extended_profile": true,
+        "id": 14178909,
+        "id_str": "14178909",
+        "is_translation_enabled": false,
+        "is_translator": false,
+        "lang": "en",
+        "listed_count": 439,
+        "location": "Berlin",
+        "name": "Martin Hoffmann",
+        "notifications": false,
+        "profile_background_color": "FFFFFF",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+        "profile_background_tile": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/14178909/1348510600",
+        "profile_image_url": "http://pbs.twimg.com/profile_images/504168958912901121/Jl7vvZ7j_normal.jpeg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/504168958912901121/Jl7vvZ7j_normal.jpeg",
+        "profile_link_color": "007FAD",
+        "profile_sidebar_border_color": "FFFFFF",
+        "profile_sidebar_fill_color": "EFEFEF",
+        "profile_text_color": "333333",
+        "profile_use_background_image": false,
+        "protected": false,
+        "screen_name": "martinhoffmann",
+        "statuses_count": 22354,
+        "time_zone": null,
+        "translator_type": "none",
+        "url": "https://t.co/FTyc74z68p",
+        "utc_offset": null,
+        "verified": true
+      }
+    },
+    "quoted_status_id": 1044848985914191872,
+    "quoted_status_id_str": "1044848985914191872",
+    "retweet_count": 0,
+    "retweeted": false,
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "text": "Erinnert mich an \"Apple is doomed\" schreie. Würde nur zu gerne eine ähnliche Auflistung sehen. https://t.co/X30unqvpfu",
+    "truncated": false,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Jul 21 19:38:58 +0000 2009",
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Tells computers how to waste electricity. Hopefully in efficient, or at least useful way.🔸co-organising UIKonf🔸starts ECS Lab Meetup in Berlin",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "medium.com/@icex33",
+              "expanded_url": "https://medium.com/@icex33",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/NkLmuWndqI"
+            }
+          ]
+        }
+      },
+      "favourites_count": 2210,
+      "follow_request_sent": false,
+      "followers_count": 812,
+      "following": false,
+      "friends_count": 584,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 58895358,
+      "id_str": "58895358",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": "en",
+      "listed_count": 59,
+      "location": "Berlin, Germany",
+      "name": "Maxim Zaks",
+      "notifications": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "iceX33",
+      "statuses_count": 4894,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/NkLmuWndqI",
+      "utc_offset": null,
+      "verified": false
+    }
+  },
+  {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Wed Sep 26 08:26:44 +0000 2018",
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [
+        {
+          "display_url": "twitter.com/bengal_art/sta…",
+          "expanded_url": "https://twitter.com/bengal_art/status/1044585015521103877",
+          "indices": [
+            29,
+            52
+          ],
+          "url": "https://t.co/zNmKUM2AJ1"
+        }
+      ],
+      "user_mentions": [
+        {
+          "id": 8728722,
+          "id_str": "8728722",
+          "indices": [
+            3,
+            16
+          ],
+          "name": "Oliver Breidenbach",
+          "screen_name": "obreidenbach"
+        }
+      ]
+    },
+    "favorite_count": 0,
+    "favorited": false,
+    "geo": null,
+    "id": 1044865845250445313,
+    "id_str": "1044865845250445313",
+    "in_reply_to_screen_name": null,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "is_quote_status": true,
+    "lang": "en",
+    "place": null,
+    "possibly_sensitive": false,
+    "quoted_status_id": 1044585015521103877,
+    "quoted_status_id_str": "1044585015521103877",
+    "retweet_count": 8,
+    "retweeted": false,
+    "retweeted_status": {
+      "contributors": null,
+      "coordinates": null,
+      "created_at": "Wed Sep 26 07:09:16 +0000 2018",
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "urls": [
+          {
+            "display_url": "twitter.com/bengal_art/sta…",
+            "expanded_url": "https://twitter.com/bengal_art/status/1044585015521103877",
+            "indices": [
+              11,
+              34
+            ],
+            "url": "https://t.co/zNmKUM2AJ1"
+          }
+        ],
+        "user_mentions": []
+      },
+      "favorite_count": 12,
+      "favorited": false,
+      "geo": null,
+      "id": 1044846348833624069,
+      "id_str": "1044846348833624069",
+      "in_reply_to_screen_name": null,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "is_quote_status": true,
+      "lang": "en",
+      "place": null,
+      "possibly_sensitive": false,
+      "quoted_status": {
+        "contributors": null,
+        "coordinates": null,
+        "created_at": "Tue Sep 25 13:50:49 +0000 2018",
+        "entities": {
+          "hashtags": [],
+          "media": [
+            {
+              "display_url": "pic.twitter.com/LiWr47cjgO",
+              "expanded_url": "https://twitter.com/bengal_art/status/1044585015521103877/photo/1",
+              "id": 1044584968301625344,
+              "id_str": "1044584968301625344",
+              "indices": [
+                13,
+                36
+              ],
+              "media_url": "http://pbs.twimg.com/media/Dn8cfoVUwAAezPi.jpg",
+              "media_url_https": "https://pbs.twimg.com/media/Dn8cfoVUwAAezPi.jpg",
+              "sizes": {
+                "large": {
+                  "h": 852,
+                  "resize": "fit",
+                  "w": 1214
+                },
+                "medium": {
+                  "h": 842,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 477,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/LiWr47cjgO"
+            }
+          ],
+          "symbols": [],
+          "urls": [],
+          "user_mentions": []
+        },
+        "extended_entities": {
+          "media": [
+            {
+              "display_url": "pic.twitter.com/LiWr47cjgO",
+              "expanded_url": "https://twitter.com/bengal_art/status/1044585015521103877/photo/1",
+              "id": 1044584968301625344,
+              "id_str": "1044584968301625344",
+              "indices": [
+                13,
+                36
+              ],
+              "media_url": "http://pbs.twimg.com/media/Dn8cfoVUwAAezPi.jpg",
+              "media_url_https": "https://pbs.twimg.com/media/Dn8cfoVUwAAezPi.jpg",
+              "sizes": {
+                "large": {
+                  "h": 852,
+                  "resize": "fit",
+                  "w": 1214
+                },
+                "medium": {
+                  "h": 842,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 477,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/LiWr47cjgO"
+            }
+          ]
+        },
+        "favorite_count": 1882,
+        "favorited": false,
+        "geo": null,
+        "id": 1044585015521103877,
+        "id_str": "1044585015521103877",
+        "in_reply_to_screen_name": null,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "is_quote_status": false,
+        "lang": "tl",
+        "place": null,
+        "possibly_sensitive": false,
+        "retweet_count": 683,
+        "retweeted": false,
+        "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+        "text": "Ahahahah. :D https://t.co/LiWr47cjgO",
+        "truncated": false,
+        "user": {
+          "contributors_enabled": false,
+          "created_at": "Mon Apr 21 10:17:26 +0000 2014",
+          "default_profile": false,
+          "default_profile_image": false,
+          "description": "Artist on Rick Remender's new series, Death or Glory, for Image Comics!\nAlso DC, Marvel, and Blizzard's Overwatch comics. Helix Security International soldier.",
+          "entities": {
+            "description": {
+              "urls": []
+            },
+            "url": {
+              "urls": [
+                {
+                  "display_url": "facebook.com/bengal.artist",
+                  "expanded_url": "https://www.facebook.com/bengal.artist",
+                  "indices": [
+                    0,
+                    23
+                  ],
+                  "url": "https://t.co/VAg8gXA11x"
+                }
+              ]
+            }
+          },
+          "favourites_count": 30453,
+          "follow_request_sent": false,
+          "followers_count": 25855,
+          "following": false,
+          "friends_count": 957,
+          "geo_enabled": true,
+          "has_extended_profile": false,
+          "id": 2456394150,
+          "id_str": "2456394150",
+          "is_translation_enabled": false,
+          "is_translator": false,
+          "lang": "fr",
+          "listed_count": 509,
+          "location": "Reims, France",
+          "name": "Bengal #NYCC J-22",
+          "notifications": false,
+          "profile_background_color": "1A1B1F",
+          "profile_background_image_url": "http://abs.twimg.com/images/themes/theme9/bg.gif",
+          "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme9/bg.gif",
+          "profile_background_tile": false,
+          "profile_banner_url": "https://pbs.twimg.com/profile_banners/2456394150/1520545486",
+          "profile_image_url": "http://pbs.twimg.com/profile_images/968960973271916544/uptntH66_normal.jpg",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/968960973271916544/uptntH66_normal.jpg",
+          "profile_link_color": "ABB8C2",
+          "profile_sidebar_border_color": "C0DEED",
+          "profile_sidebar_fill_color": "DDEEF6",
+          "profile_text_color": "333333",
+          "profile_use_background_image": true,
+          "protected": false,
+          "screen_name": "bengal_art",
+          "statuses_count": 11865,
+          "time_zone": null,
+          "translator_type": "none",
+          "url": "https://t.co/VAg8gXA11x",
+          "utc_offset": null,
+          "verified": false
+        }
+      },
+      "quoted_status_id": 1044585015521103877,
+      "quoted_status_id_str": "1044585015521103877",
+      "retweet_count": 8,
+      "retweeted": false,
+      "source": "<a href=\"https://tapbots.com/software/tweetbot/mac\" rel=\"nofollow\">Tweetbot for Mac</a>",
+      "text": "Brilliant. https://t.co/zNmKUM2AJ1",
+      "truncated": false,
+      "user": {
+        "contributors_enabled": false,
+        "created_at": "Fri Sep 07 17:22:59 +0000 2007",
+        "default_profile": false,
+        "default_profile_image": false,
+        "description": "CEO of Boinx Software Ltd., makers of mimoLive, iStopMotion, FotoMagico, Mouseposé, PhotoWall+ and more.",
+        "entities": {
+          "description": {
+            "urls": []
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "boinx.com",
+                "expanded_url": "http://boinx.com/",
+                "indices": [
+                  0,
+                  23
+                ],
+                "url": "https://t.co/5Tc9Eui9Ih"
+              }
+            ]
+          }
+        },
+        "favourites_count": 298,
+        "follow_request_sent": false,
+        "followers_count": 805,
+        "following": false,
+        "friends_count": 256,
+        "geo_enabled": true,
+        "has_extended_profile": false,
+        "id": 8728722,
+        "id_str": "8728722",
+        "is_translation_enabled": false,
+        "is_translator": false,
+        "lang": "en",
+        "listed_count": 53,
+        "location": "Puchheim, Bavaria DE",
+        "name": "Oliver Breidenbach",
+        "notifications": false,
+        "profile_background_color": "709397",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme6/bg.gif",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme6/bg.gif",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/825775161269968897/kfJKt0I2_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/825775161269968897/kfJKt0I2_normal.jpg",
+        "profile_link_color": "FF3300",
+        "profile_sidebar_border_color": "86A4A6",
+        "profile_sidebar_fill_color": "A0C5C7",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "protected": false,
+        "screen_name": "obreidenbach",
+        "statuses_count": 6718,
+        "time_zone": null,
+        "translator_type": "none",
+        "url": "https://t.co/5Tc9Eui9Ih",
+        "utc_offset": null,
+        "verified": false
+      }
+    },
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "text": "RT @obreidenbach: Brilliant. https://t.co/zNmKUM2AJ1",
+    "truncated": false,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Jul 21 19:38:58 +0000 2009",
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Tells computers how to waste electricity. Hopefully in efficient, or at least useful way.🔸co-organising UIKonf🔸starts ECS Lab Meetup in Berlin",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "medium.com/@icex33",
+              "expanded_url": "https://medium.com/@icex33",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/NkLmuWndqI"
+            }
+          ]
+        }
+      },
+      "favourites_count": 2210,
+      "follow_request_sent": false,
+      "followers_count": 812,
+      "following": false,
+      "friends_count": 584,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 58895358,
+      "id_str": "58895358",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": "en",
+      "listed_count": 59,
+      "location": "Berlin, Germany",
+      "name": "Maxim Zaks",
+      "notifications": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "iceX33",
+      "statuses_count": 4894,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/NkLmuWndqI",
+      "utc_offset": null,
+      "verified": false
+    }
+  },
+  {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Mon Sep 24 16:25:22 +0000 2018",
+    "entities": {
+      "hashtags": [],
+      "media": [
+        {
+          "display_url": "pic.twitter.com/7g89EKtZ4i",
+          "expanded_url": "https://twitter.com/jzawodn/status/1043929987215024128/photo/1",
+          "id": 1043929898392440833,
+          "id_str": "1043929898392440833",
+          "indices": [
+            85,
+            108
+          ],
+          "media_url": "http://pbs.twimg.com/media/DnzItiwXUAEpvPc.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/DnzItiwXUAEpvPc.jpg",
+          "sizes": {
+            "large": {
+              "h": 1334,
+              "resize": "fit",
+              "w": 750
+            },
+            "medium": {
+              "h": 1200,
+              "resize": "fit",
+              "w": 675
+            },
+            "small": {
+              "h": 680,
+              "resize": "fit",
+              "w": 382
+            },
+            "thumb": {
+              "h": 150,
+              "resize": "crop",
+              "w": 150
+            }
+          },
+          "source_status_id": 1043929987215024128,
+          "source_status_id_str": "1043929987215024128",
+          "source_user_id": 97933,
+          "source_user_id_str": "97933",
+          "type": "photo",
+          "url": "https://t.co/7g89EKtZ4i"
+        }
+      ],
+      "symbols": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id": 97933,
+          "id_str": "97933",
+          "indices": [
+            3,
+            11
+          ],
+          "name": "Jeremy Zawodny",
+          "screen_name": "jzawodn"
+        }
+      ]
+    },
+    "extended_entities": {
+      "media": [
+        {
+          "display_url": "pic.twitter.com/7g89EKtZ4i",
+          "expanded_url": "https://twitter.com/jzawodn/status/1043929987215024128/photo/1",
+          "id": 1043929898392440833,
+          "id_str": "1043929898392440833",
+          "indices": [
+            85,
+            108
+          ],
+          "media_url": "http://pbs.twimg.com/media/DnzItiwXUAEpvPc.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/DnzItiwXUAEpvPc.jpg",
+          "sizes": {
+            "large": {
+              "h": 1334,
+              "resize": "fit",
+              "w": 750
+            },
+            "medium": {
+              "h": 1200,
+              "resize": "fit",
+              "w": 675
+            },
+            "small": {
+              "h": 680,
+              "resize": "fit",
+              "w": 382
+            },
+            "thumb": {
+              "h": 150,
+              "resize": "crop",
+              "w": 150
+            }
+          },
+          "source_status_id": 1043929987215024128,
+          "source_status_id_str": "1043929987215024128",
+          "source_user_id": 97933,
+          "source_user_id_str": "97933",
+          "type": "photo",
+          "url": "https://t.co/7g89EKtZ4i"
+        }
+      ]
+    },
+    "favorite_count": 0,
+    "favorited": false,
+    "geo": null,
+    "id": 1044261519201103884,
+    "id_str": "1044261519201103884",
+    "in_reply_to_screen_name": null,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "is_quote_status": false,
+    "lang": "en",
+    "place": null,
+    "possibly_sensitive": false,
+    "retweet_count": 41,
+    "retweeted": false,
+    "retweeted_status": {
+      "contributors": null,
+      "coordinates": null,
+      "created_at": "Sun Sep 23 18:27:58 +0000 2018",
+      "entities": {
+        "hashtags": [],
+        "media": [
+          {
+            "display_url": "pic.twitter.com/7g89EKtZ4i",
+            "expanded_url": "https://twitter.com/jzawodn/status/1043929987215024128/photo/1",
+            "id": 1043929898392440833,
+            "id_str": "1043929898392440833",
+            "indices": [
+              72,
+              95
+            ],
+            "media_url": "http://pbs.twimg.com/media/DnzItiwXUAEpvPc.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/DnzItiwXUAEpvPc.jpg",
+            "sizes": {
+              "large": {
+                "h": 1334,
+                "resize": "fit",
+                "w": 750
+              },
+              "medium": {
+                "h": 1200,
+                "resize": "fit",
+                "w": 675
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 382
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/7g89EKtZ4i"
+          }
+        ],
+        "symbols": [],
+        "urls": [],
+        "user_mentions": []
+      },
+      "extended_entities": {
+        "media": [
+          {
+            "display_url": "pic.twitter.com/7g89EKtZ4i",
+            "expanded_url": "https://twitter.com/jzawodn/status/1043929987215024128/photo/1",
+            "id": 1043929898392440833,
+            "id_str": "1043929898392440833",
+            "indices": [
+              72,
+              95
+            ],
+            "media_url": "http://pbs.twimg.com/media/DnzItiwXUAEpvPc.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/DnzItiwXUAEpvPc.jpg",
+            "sizes": {
+              "large": {
+                "h": 1334,
+                "resize": "fit",
+                "w": 750
+              },
+              "medium": {
+                "h": 1200,
+                "resize": "fit",
+                "w": 675
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 382
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/7g89EKtZ4i"
+          }
+        ]
+      },
+      "favorite_count": 72,
+      "favorited": false,
+      "geo": null,
+      "id": 1043929987215024128,
+      "id_str": "1043929987215024128",
+      "in_reply_to_screen_name": null,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "is_quote_status": false,
+      "lang": "en",
+      "place": null,
+      "possibly_sensitive": false,
+      "retweet_count": 41,
+      "retweeted": false,
+      "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+      "text": "Over HALF A GIGABYTE for the Facebook app?! You've got to be kidding... https://t.co/7g89EKtZ4i",
+      "truncated": false,
+      "user": {
+        "contributors_enabled": false,
+        "created_at": "Thu Dec 21 05:47:54 +0000 2006",
+        "default_profile": false,
+        "default_profile_image": false,
+        "description": "I fly and geek. Also, I really don't use twitter much anymore since I can't control what shows up in my feed. Sorry!",
+        "entities": {
+          "description": {
+            "urls": []
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "blog.zawodny.com",
+                "expanded_url": "http://blog.zawodny.com",
+                "indices": [
+                  0,
+                  22
+                ],
+                "url": "http://t.co/T7eJjIa3oR"
+              }
+            ]
+          }
+        },
+        "favourites_count": 2686,
+        "follow_request_sent": false,
+        "followers_count": 5082,
+        "following": false,
+        "friends_count": 211,
+        "geo_enabled": true,
+        "has_extended_profile": false,
+        "id": 97933,
+        "id_str": "97933",
+        "is_translation_enabled": false,
+        "is_translator": false,
+        "lang": "en",
+        "listed_count": 327,
+        "location": "Groveland, CA",
+        "name": "Jeremy Zawodny",
+        "notifications": false,
+        "profile_background_color": "9AE4E8",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/97933/1507913579",
+        "profile_image_url": "http://pbs.twimg.com/profile_images/17071732/Zawodny-md_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/17071732/Zawodny-md_normal.jpg",
+        "profile_link_color": "0000FF",
+        "profile_sidebar_border_color": "87BC44",
+        "profile_sidebar_fill_color": "E0FF92",
+        "profile_text_color": "000000",
+        "profile_use_background_image": true,
+        "protected": false,
+        "screen_name": "jzawodn",
+        "statuses_count": 4948,
+        "time_zone": null,
+        "translator_type": "none",
+        "url": "http://t.co/T7eJjIa3oR",
+        "utc_offset": null,
+        "verified": false
+      }
+    },
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "text": "RT @jzawodn: Over HALF A GIGABYTE for the Facebook app?! You've got to be kidding... https://t.co/7g89EKtZ4i",
+    "truncated": false,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Jul 21 19:38:58 +0000 2009",
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Tells computers how to waste electricity. Hopefully in efficient, or at least useful way.🔸co-organising UIKonf🔸starts ECS Lab Meetup in Berlin",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "medium.com/@icex33",
+              "expanded_url": "https://medium.com/@icex33",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/NkLmuWndqI"
+            }
+          ]
+        }
+      },
+      "favourites_count": 2210,
+      "follow_request_sent": false,
+      "followers_count": 812,
+      "following": false,
+      "friends_count": 584,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 58895358,
+      "id_str": "58895358",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": "en",
+      "listed_count": 59,
+      "location": "Berlin, Germany",
+      "name": "Maxim Zaks",
+      "notifications": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "iceX33",
+      "statuses_count": 4894,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/NkLmuWndqI",
+      "utc_offset": null,
+      "verified": false
+    }
+  },
+  {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Mon Sep 24 10:35:57 +0000 2018",
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id": 10394352,
+          "id_str": "10394352",
+          "indices": [
+            0,
+            15
+          ],
+          "name": "Daniel Jay",
+          "screen_name": "breakthesystem"
+        }
+      ]
+    },
+    "favorite_count": 2,
+    "favorited": false,
+    "geo": null,
+    "id": 1044173585710034951,
+    "id_str": "1044173585710034951",
+    "in_reply_to_screen_name": "breakthesystem",
+    "in_reply_to_status_id": 1044173418483077121,
+    "in_reply_to_status_id_str": "1044173418483077121",
+    "in_reply_to_user_id": 10394352,
+    "in_reply_to_user_id_str": "10394352",
+    "is_quote_status": false,
+    "lang": "en",
+    "place": null,
+    "retweet_count": 0,
+    "retweeted": false,
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "text": "@breakthesystem You are reading it wronG!",
+    "truncated": false,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Jul 21 19:38:58 +0000 2009",
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Tells computers how to waste electricity. Hopefully in efficient, or at least useful way.🔸co-organising UIKonf🔸starts ECS Lab Meetup in Berlin",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "medium.com/@icex33",
+              "expanded_url": "https://medium.com/@icex33",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/NkLmuWndqI"
+            }
+          ]
+        }
+      },
+      "favourites_count": 2210,
+      "follow_request_sent": false,
+      "followers_count": 812,
+      "following": false,
+      "friends_count": 584,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 58895358,
+      "id_str": "58895358",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": "en",
+      "listed_count": 59,
+      "location": "Berlin, Germany",
+      "name": "Maxim Zaks",
+      "notifications": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "iceX33",
+      "statuses_count": 4894,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/NkLmuWndqI",
+      "utc_offset": null,
+      "verified": false
+    }
+  },
+  {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Sun Sep 23 06:59:01 +0000 2018",
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id": 14869245,
+          "id_str": "14869245",
+          "indices": [
+            3,
+            15
+          ],
+          "name": "julienPauli",
+          "screen_name": "julienPauli"
+        }
+      ]
+    },
+    "favorite_count": 0,
+    "favorited": false,
+    "geo": null,
+    "id": 1043756607329513473,
+    "id_str": "1043756607329513473",
+    "in_reply_to_screen_name": null,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "is_quote_status": false,
+    "lang": "en",
+    "place": null,
+    "retweet_count": 4758,
+    "retweeted": false,
+    "retweeted_status": {
+      "contributors": null,
+      "coordinates": null,
+      "created_at": "Tue Sep 18 18:08:36 +0000 2018",
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "urls": [
+          {
+            "display_url": "twitter.com/i/web/status/1…",
+            "expanded_url": "https://twitter.com/i/web/status/1042113172143067138",
+            "indices": [
+              116,
+              139
+            ],
+            "url": "https://t.co/Szuvx7ta8F"
+          }
+        ],
+        "user_mentions": []
+      },
+      "favorite_count": 7309,
+      "favorited": false,
+      "geo": null,
+      "id": 1042113172143067138,
+      "id_str": "1042113172143067138",
+      "in_reply_to_screen_name": null,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "is_quote_status": false,
+      "lang": "en",
+      "place": null,
+      "possibly_sensitive": false,
+      "retweet_count": 4758,
+      "retweeted": false,
+      "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+      "text": "\"Windows 95 was 30Mb. Today we have web pages heavier than that!  Google keyboard app routinely eats 150 Mb. Is an… https://t.co/Szuvx7ta8F",
+      "truncated": true,
+      "user": {
+        "contributors_enabled": false,
+        "created_at": "Thu May 22 15:05:58 +0000 2008",
+        "default_profile": false,
+        "default_profile_image": false,
+        "description": "Contrib to PHP and its ecosystem. In love with machines, CPUs, network and Internet connectivity. Mainly code in C or PHP, and share my tech work in conferences",
+        "entities": {
+          "description": {
+            "urls": []
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "jpauli.tech",
+                "expanded_url": "http://jpauli.tech",
+                "indices": [
+                  0,
+                  23
+                ],
+                "url": "https://t.co/m1XPJcCOC0"
+              }
+            ]
+          }
+        },
+        "favourites_count": 0,
+        "follow_request_sent": false,
+        "followers_count": 4376,
+        "following": false,
+        "friends_count": 208,
+        "geo_enabled": false,
+        "has_extended_profile": false,
+        "id": 14869245,
+        "id_str": "14869245",
+        "is_translation_enabled": false,
+        "is_translator": false,
+        "lang": "en",
+        "listed_count": 251,
+        "location": "Paris",
+        "name": "julienPauli",
+        "notifications": false,
+        "profile_background_color": "000000",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/14869245/1478201614",
+        "profile_image_url": "http://pbs.twimg.com/profile_images/840190302698799105/KdjjdvQQ_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/840190302698799105/KdjjdvQQ_normal.jpg",
+        "profile_link_color": "5C473D",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "000000",
+        "profile_text_color": "000000",
+        "profile_use_background_image": false,
+        "protected": false,
+        "screen_name": "julienPauli",
+        "statuses_count": 5015,
+        "time_zone": null,
+        "translator_type": "none",
+        "url": "https://t.co/m1XPJcCOC0",
+        "utc_offset": null,
+        "verified": false
+      }
+    },
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "text": "RT @julienPauli: \"Windows 95 was 30Mb. Today we have web pages heavier than that!  Google keyboard app routinely eats 150 Mb. Is an app tha…",
+    "truncated": false,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Jul 21 19:38:58 +0000 2009",
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Tells computers how to waste electricity. Hopefully in efficient, or at least useful way.🔸co-organising UIKonf🔸starts ECS Lab Meetup in Berlin",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "medium.com/@icex33",
+              "expanded_url": "https://medium.com/@icex33",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/NkLmuWndqI"
+            }
+          ]
+        }
+      },
+      "favourites_count": 2210,
+      "follow_request_sent": false,
+      "followers_count": 812,
+      "following": false,
+      "friends_count": 584,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 58895358,
+      "id_str": "58895358",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": "en",
+      "listed_count": 59,
+      "location": "Berlin, Germany",
+      "name": "Maxim Zaks",
+      "notifications": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "iceX33",
+      "statuses_count": 4894,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/NkLmuWndqI",
+      "utc_offset": null,
+      "verified": false
+    }
+  },
+  {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Sat Sep 22 20:24:05 +0000 2018",
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id": 57293865,
+          "id_str": "57293865",
+          "indices": [
+            0,
+            13
+          ],
+          "name": "jamesmintram",
+          "screen_name": "jamesmintram"
+        }
+      ]
+    },
+    "favorite_count": 0,
+    "favorited": false,
+    "geo": null,
+    "id": 1043596819324968961,
+    "id_str": "1043596819324968961",
+    "in_reply_to_screen_name": "jamesmintram",
+    "in_reply_to_status_id": 1043551350452314113,
+    "in_reply_to_status_id_str": "1043551350452314113",
+    "in_reply_to_user_id": 57293865,
+    "in_reply_to_user_id_str": "57293865",
+    "is_quote_status": false,
+    "lang": "en",
+    "place": null,
+    "retweet_count": 0,
+    "retweeted": false,
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "text": "@jamesmintram Just let it crash! 😎",
+    "truncated": false,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Jul 21 19:38:58 +0000 2009",
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Tells computers how to waste electricity. Hopefully in efficient, or at least useful way.🔸co-organising UIKonf🔸starts ECS Lab Meetup in Berlin",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "medium.com/@icex33",
+              "expanded_url": "https://medium.com/@icex33",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/NkLmuWndqI"
+            }
+          ]
+        }
+      },
+      "favourites_count": 2210,
+      "follow_request_sent": false,
+      "followers_count": 812,
+      "following": false,
+      "friends_count": 584,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 58895358,
+      "id_str": "58895358",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": "en",
+      "listed_count": 59,
+      "location": "Berlin, Germany",
+      "name": "Maxim Zaks",
+      "notifications": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "iceX33",
+      "statuses_count": 4894,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/NkLmuWndqI",
+      "utc_offset": null,
+      "verified": false
+    }
+  },
+  {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Fri Sep 21 13:48:24 +0000 2018",
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [
+        {
+          "display_url": "discord.gg/Zzbt7A",
+          "expanded_url": "https://discord.gg/Zzbt7A",
+          "indices": [
+            48,
+            71
+          ],
+          "url": "https://t.co/rDiqKaxvB5"
+        }
+      ],
+      "user_mentions": []
+    },
+    "favorite_count": 1,
+    "favorited": false,
+    "geo": null,
+    "id": 1043134854806859779,
+    "id_str": "1043134854806859779",
+    "in_reply_to_screen_name": null,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "is_quote_status": false,
+    "lang": "en",
+    "place": null,
+    "possibly_sensitive": false,
+    "retweet_count": 0,
+    "retweeted": false,
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "text": "🤖 Pst... ECS Lab Meetup has a Discord server 😉\n\nhttps://t.co/rDiqKaxvB5",
+    "truncated": false,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Jul 21 19:38:58 +0000 2009",
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Tells computers how to waste electricity. Hopefully in efficient, or at least useful way.🔸co-organising UIKonf🔸starts ECS Lab Meetup in Berlin",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "medium.com/@icex33",
+              "expanded_url": "https://medium.com/@icex33",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/NkLmuWndqI"
+            }
+          ]
+        }
+      },
+      "favourites_count": 2210,
+      "follow_request_sent": false,
+      "followers_count": 812,
+      "following": false,
+      "friends_count": 584,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 58895358,
+      "id_str": "58895358",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": "en",
+      "listed_count": 59,
+      "location": "Berlin, Germany",
+      "name": "Maxim Zaks",
+      "notifications": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "iceX33",
+      "statuses_count": 4894,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/NkLmuWndqI",
+      "utc_offset": null,
+      "verified": false
+    }
+  },
+  {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Thu Sep 20 15:21:55 +0000 2018",
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id": 101541853,
+          "id_str": "101541853",
+          "indices": [
+            3,
+            12
+          ],
+          "name": "Simon Schmid",
+          "screen_name": "s_schmid"
+        }
+      ]
+    },
+    "favorite_count": 0,
+    "favorited": false,
+    "geo": null,
+    "id": 1042796000539279361,
+    "id_str": "1042796000539279361",
+    "in_reply_to_screen_name": null,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "is_quote_status": false,
+    "lang": "en",
+    "place": null,
+    "retweet_count": 2,
+    "retweeted": false,
+    "retweeted_status": {
+      "contributors": null,
+      "coordinates": null,
+      "created_at": "Thu Sep 20 14:26:42 +0000 2018",
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "urls": [
+          {
+            "display_url": "twitter.com/i/web/status/1…",
+            "expanded_url": "https://twitter.com/i/web/status/1042782106261315584",
+            "indices": [
+              117,
+              140
+            ],
+            "url": "https://t.co/4LRGCI8dQh"
+          }
+        ],
+        "user_mentions": []
+      },
+      "favorite_count": 8,
+      "favorited": false,
+      "geo": null,
+      "id": 1042782106261315584,
+      "id_str": "1042782106261315584",
+      "in_reply_to_screen_name": null,
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "is_quote_status": false,
+      "lang": "en",
+      "place": null,
+      "possibly_sensitive": false,
+      "retweet_count": 2,
+      "retweeted": false,
+      "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+      "text": "Video Recording: \"ECS Lab Meetup #1 - Meet and Greet\"\nThanks everyone for coming, it was a great 1st meetup! We wil… https://t.co/4LRGCI8dQh",
+      "truncated": true,
+      "user": {
+        "contributors_enabled": false,
+        "created_at": "Sun Jan 03 18:34:28 +0000 2010",
+        "default_profile": false,
+        "default_profile_image": false,
+        "description": "Inventor & Software Engineer",
+        "entities": {
+          "description": {
+            "urls": []
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "sschmid.com",
+                "expanded_url": "http://sschmid.com",
+                "indices": [
+                  0,
+                  23
+                ],
+                "url": "https://t.co/Jx0leXfe2j"
+              }
+            ]
+          }
+        },
+        "favourites_count": 233,
+        "follow_request_sent": false,
+        "followers_count": 401,
+        "following": false,
+        "friends_count": 25,
+        "geo_enabled": false,
+        "has_extended_profile": false,
+        "id": 101541853,
+        "id_str": "101541853",
+        "is_translation_enabled": false,
+        "is_translator": false,
+        "lang": "en",
+        "listed_count": 8,
+        "location": "Berlin, Deutschland",
+        "name": "Simon Schmid",
+        "notifications": false,
+        "profile_background_color": "131516",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+        "profile_background_tile": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/525241713648885760/SALX_h2z_normal.jpeg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/525241713648885760/SALX_h2z_normal.jpeg",
+        "profile_link_color": "009999",
+        "profile_sidebar_border_color": "EEEEEE",
+        "profile_sidebar_fill_color": "EFEFEF",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "protected": false,
+        "screen_name": "s_schmid",
+        "statuses_count": 340,
+        "time_zone": null,
+        "translator_type": "none",
+        "url": "https://t.co/Jx0leXfe2j",
+        "utc_offset": null,
+        "verified": false
+      }
+    },
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "text": "RT @s_schmid: Video Recording: \"ECS Lab Meetup #1 - Meet and Greet\"\nThanks everyone for coming, it was a great 1st meetup! We will do this…",
+    "truncated": false,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Jul 21 19:38:58 +0000 2009",
+      "default_profile": true,
+      "default_profile_image": false,
+      "description": "Tells computers how to waste electricity. Hopefully in efficient, or at least useful way.🔸co-organising UIKonf🔸starts ECS Lab Meetup in Berlin",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "medium.com/@icex33",
+              "expanded_url": "https://medium.com/@icex33",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/NkLmuWndqI"
+            }
+          ]
+        }
+      },
+      "favourites_count": 2210,
+      "follow_request_sent": false,
+      "followers_count": 812,
+      "following": false,
+      "friends_count": 584,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 58895358,
+      "id_str": "58895358",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": "en",
+      "listed_count": 59,
+      "location": "Berlin, Germany",
+      "name": "Maxim Zaks",
+      "notifications": false,
+      "profile_background_color": "C0DEED",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/378800000654997527/d0a36c6bf401ca84466a0e2afd401793_normal.jpeg",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "iceX33",
+      "statuses_count": 4894,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/NkLmuWndqI",
+      "utc_offset": null,
+      "verified": false
+    }
+  }
+]
