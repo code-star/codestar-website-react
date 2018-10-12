@@ -72,7 +72,7 @@ export class Contact extends React.Component<ContactProps, ContactState> {
       return;
     }
     const AWS_PREFIX =
-      process.env.REACT_APP_STAGE === 'test' ? 'hjoutysc5k' : 'c3mmkmwyqi';
+      process.env.REACT_APP_STAGE === 'test' ? 'hjoutysc5k' : '267sder6c7';
     const AWS_STAGE = process.env.REACT_APP_STAGE === 'test' ? 'test' : 'prod';
     const url =
       process.env.REACT_APP_STAGE === 'dev'

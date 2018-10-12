@@ -47,7 +47,7 @@ describe('EventsContainer', () => {
       await getCachedPastEvents();
       expect(fetch.mock.calls.length).toEqual(1);
       expect(fetch.mock.calls[0][0]).toEqual(
-        'https://c3mmkmwyqi.execute-api.eu-west-1.amazonaws.com/prod/get-past-events'
+        'https://267sder6c7.execute-api.eu-west-1.amazonaws.com/prod/get-past-events'
       );
     });
 

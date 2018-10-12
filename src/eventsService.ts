@@ -10,7 +10,7 @@ function getUrl(lambdaName: string): string {
     return `/mock/${lambdaName}.json`;
   }
   const AWS_PREFIX =
-    process.env.REACT_APP_STAGE === 'test' ? 'hjoutysc5k' : 'c3mmkmwyqi';
+    process.env.REACT_APP_STAGE === 'test' ? 'hjoutysc5k' : '267sder6c7';
   const AWS_STAGE = process.env.REACT_APP_STAGE === 'test' ? 'test' : 'prod';
   return `https://${AWS_PREFIX}.execute-api.eu-west-1.amazonaws.com/${AWS_STAGE}/${lambdaName}`;
 }
