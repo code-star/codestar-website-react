@@ -4,11 +4,11 @@ import styles from './BrowserUpdate.module.css';
 export const TEXT1 = 'Please upgrade your browser.';
 export const TEXT2 = 'More information';
 export const URL = 'https://browser-update.org/update-browser.html';
+// Very basic feature detection that excludes IE11
+export const showUpdateMessage = () => !Map.prototype.keys;
 
 const BrowserUpdate: SFC = () => {
-  // Very basic feature detection that excludes IE11
-  const showUpdateMessage = !window.fetch;
-  return showUpdateMessage ? (
+  return showUpdateMessage() ? (
     <div className={styles.browserUpdate}>
       <p>{TEXT1}</p>
       <p>

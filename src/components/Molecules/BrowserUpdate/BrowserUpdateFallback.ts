@@ -1,7 +1,7 @@
 /**
  * This implementation works even when React can't be loaded.
  */
-import { TEXT1, TEXT2, URL } from './BrowserUpdate';
+import { TEXT1, TEXT2, URL, showUpdateMessage } from './BrowserUpdate';
 
 // TODO unit test
 
@@ -15,7 +15,6 @@ const createLink = (url: string, label: string) => {
 
 const createParagraph = (childElem: any) => {
   const elem = document.createElement('p');
-  // const textNode = document.createTextNode(text);
   elem.appendChild(childElem);
   return elem;
 };
@@ -23,8 +22,7 @@ const createParagraph = (childElem: any) => {
 const createTextNode = (text: string) => document.createTextNode(text);
 
 const addBrowserUpdate = (elementId: string) => {
-  // Very basic feature detection that excludes IE11
-  if (window.fetch) {
+  if (!showUpdateMessage()) {
     return;
   }
   const elem = document.createElement('div');
@@ -41,7 +39,6 @@ const addBrowserUpdate = (elementId: string) => {
     text-align: center;
   `
   );
-  // const textNode = document.createTextNode(TEXT1);
   elem.appendChild(createParagraph(createTextNode(TEXT1)));
   elem.appendChild(createParagraph(createLink(URL, TEXT2)));
 
