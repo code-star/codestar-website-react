@@ -11,7 +11,7 @@ import Footer from './Footer/Footer';
 import jobsList from './Jobs/JobsList';
 import AsyncComponent from './AsyncComponent/AsyncComponent';
 import NavContainer from './modules/NavContainer/NavContainer';
-import BrowserUpdate from './BrowserUpdate/BrowserUpdate';
+import BrowserUpdate from './components/Molecules/BrowserUpdate/BrowserUpdate';
 
 function fullHeightAsyncComponent(C) {
   return props => <AsyncComponent fullHeight component={() => C} {...props} />;

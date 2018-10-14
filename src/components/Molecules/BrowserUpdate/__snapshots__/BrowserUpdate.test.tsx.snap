@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrowserUpdate /> Snaphot does not show message if window.fetch is defined 1`] = `null`;
+
+exports[`<BrowserUpdate /> Snaphot shows message if window.fetch not defined 1`] = `
+<div
+  className={undefined}
+>
+  <p>
+    Please upgrade your browser.
+  </p>
+  <p>
+    <a
+      href="https://browser-update.org/update-browser.html"
+    >
+      More information
+    </a>
+  </p>
+</div>
+`;
