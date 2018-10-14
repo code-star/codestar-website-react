@@ -59,7 +59,7 @@ class App extends Component {
           <NavContainer history={this.history} />
 
           <ScrollToTop>
-            <BrowserUpdate />
+            {/* This does not work in old IE, see BrowserUpdateFallback: <BrowserUpdate /> */}
             <Switch>
               <Route exact path="/" component={AsyncIntro} />
               <Route exact path="/cases" component={AsyncCases} />

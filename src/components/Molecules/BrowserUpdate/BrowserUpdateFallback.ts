@@ -1,10 +1,32 @@
 /**
  * This implementation works even when React can't be loaded.
  */
-import { TEXT } from './BrowserUpdate'; // TODO remove
-// import styles from './BrowserUpdate.module.css';
+import { TEXT1, TEXT2, URL } from './BrowserUpdate';
 
-/* tslint:disable */ const addBrowserUpdate = (elementId: any) => {
+// TODO unit test
+
+const createLink = (url: string, label: string) => {
+  const aElem = document.createElement('a');
+  aElem.setAttribute('href', url);
+  const aTextNode = document.createTextNode(label);
+  aElem.appendChild(aTextNode);
+  return aElem;
+};
+
+const createParagraph = (childElem: any) => {
+  const elem = document.createElement('p');
+  // const textNode = document.createTextNode(text);
+  elem.appendChild(childElem);
+  return elem;
+};
+
+const createTextNode = (text: string) => document.createTextNode(text);
+
+const addBrowserUpdate = (elementId: string) => {
+  // Very basic feature detection that excludes IE11
+  if (window.fetch) {
+    return;
+  }
   const elem = document.createElement('div');
   elem.setAttribute(
     'style',
@@ -19,13 +41,9 @@ import { TEXT } from './BrowserUpdate'; // TODO remove
     text-align: center;
   `
   );
-  const textNode = document.createTextNode(TEXT);
-  const aElem = document.createElement('a');
-  aElem.setAttribute('href', 'https://browser-update.org/update-browser.html');
-  const aTextNode = document.createTextNode('b');
-  aElem.appendChild(aTextNode);
-  elem.appendChild(textNode);
-  elem.appendChild(aElem);
+  // const textNode = document.createTextNode(TEXT1);
+  elem.appendChild(createParagraph(createTextNode(TEXT1)));
+  elem.appendChild(createParagraph(createLink(URL, TEXT2)));
 
   const currentDiv = document.getElementById(elementId);
   document.body.insertBefore(elem, currentDiv);
