@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { SFC } from 'react';
+import { withStateHandlers } from 'recompose';
 import styles from './BrowserUpdate.module.css';
+import compose from 'recompose/compose';
 
-const BrowserUpdate = () => (
+interface IPropsInner {
+  isHidden: boolean;
+}
+
+export const BrowserUpdate: SFC<IPropsInner> = () => (
   <div className={styles.browserUpdate}>
     <p>Please upgrade your browser.</p>
     <p>
@@ -12,4 +18,13 @@ const BrowserUpdate = () => (
   </div>
 );
 
-export default BrowserUpdate;
+export const initialState = { isHidden: false };
+export const stateUpdaters = {
+  // Example of state argument with typing: handleMouseOver: ({ isHovering } : { isHovering: boolean}) => () => ({ isHovering: true }),
+  // handleMouseOver: () => () => ({ isHovering: true }),
+  // handleMouseOut: () => () => ({ isHovering: false }),
+};
+
+export default compose<IPropsInner, {}>(
+  withStateHandlers(initialState, stateUpdaters)
+)(BrowserUpdate);
