@@ -11,6 +11,7 @@ import Footer from './Footer/Footer';
 import jobsList from './Jobs/JobsList';
 import AsyncComponent from './AsyncComponent/AsyncComponent';
 import NavContainer from './modules/NavContainer/NavContainer';
+import BrowserUpdate from './BrowserUpdate/BrowserUpdate';
 
 function fullHeightAsyncComponent(C) {
   return props => <AsyncComponent fullHeight component={() => C} {...props} />;
@@ -58,6 +59,7 @@ class App extends Component {
           <NavContainer history={this.history} />
 
           <ScrollToTop>
+            <BrowserUpdate />
             <Switch>
               <Route exact path="/" component={AsyncIntro} />
               <Route exact path="/cases" component={AsyncCases} />

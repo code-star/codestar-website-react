@@ -1,0 +1,10 @@
+.browserUpdate {
+  background-color: white;
+  border: 0.5em solid red;
+  font-size: 200%;
+  font-weight: bold;
+  min-height: 6em;
+  margin-top: 4rem;
+  padding: 1em;
+  text-align: center;
+}
