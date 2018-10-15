@@ -3,8 +3,6 @@
  */
 import { TEXT1, TEXT2, URL, showUpdateMessage } from './BrowserUpdate';
 
-// TODO unit test
-
 const createLink = (url: string, label: string) => {
   const aElem = document.createElement('a');
   aElem.setAttribute('href', url);
@@ -44,6 +42,7 @@ const addBrowserUpdate = (elementId: string) => {
 
   const currentDiv = document.getElementById(elementId);
   document.body.insertBefore(elem, currentDiv);
+  return elem;
 };
 
 export default addBrowserUpdate;

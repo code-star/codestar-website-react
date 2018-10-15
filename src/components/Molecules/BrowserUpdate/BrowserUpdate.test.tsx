@@ -11,14 +11,14 @@ const renderShallow = () => {
 
 describe('<BrowserUpdate />', () => {
   describe('Snaphot', () => {
-    it('shows message if window.fetch not defined', () => {
-      const originalFetch = globalAny.fetch;
-      delete globalAny.fetch;
+    it('shows message if Map.prototype.keys not defined', () => {
+      const originalMapKeys = globalAny.Map.prototype.keys;
+      delete Map.prototype.keys;
       expect(globalAny.renderToJSON(renderShallow())).toMatchSnapshot();
-      globalAny.fetch = originalFetch;
+      globalAny.Map.prototype.keys = originalMapKeys;
     });
 
-    it('does not show message if window.fetch is defined', () => {
+    it('does not show message if Map.prototype.keys is defined', () => {
       expect(globalAny.renderToJSON(renderShallow())).toMatchSnapshot();
     });
   });

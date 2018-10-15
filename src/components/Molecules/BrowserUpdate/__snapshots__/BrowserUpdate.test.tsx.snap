@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<BrowserUpdate /> Snaphot does not show message if window.fetch is defined 1`] = `null`;
+exports[`<BrowserUpdate /> Snaphot does not show message if Map.prototype.keys is defined 1`] = `null`;
 
-exports[`<BrowserUpdate /> Snaphot shows message if window.fetch not defined 1`] = `
+exports[`<BrowserUpdate /> Snaphot shows message if Map.prototype.keys not defined 1`] = `
 <div
   className={undefined}
 >
