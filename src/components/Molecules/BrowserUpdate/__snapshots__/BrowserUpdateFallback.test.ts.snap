@@ -3,9 +3,11 @@
 exports[`addBrowserUpdate() Snaphot does not show message if Map.prototype.keys is defined 1`] = `undefined`;
 
 exports[`addBrowserUpdate() Snaphot does not show message if Map.prototype.keys is defined 2`] = `
-<div
-  id="fixture"
-/>
+<body>
+  <div
+    id="dummy-content"
+  />
+</body>
 `;
 
 exports[`addBrowserUpdate() Snaphot shows message if Map.prototype.keys not defined 1`] = `
@@ -35,7 +37,32 @@ exports[`addBrowserUpdate() Snaphot shows message if Map.prototype.keys not defi
 `;
 
 exports[`addBrowserUpdate() Snaphot shows message if Map.prototype.keys not defined 2`] = `
-<div
-  id="fixture"
-/>
+<body>
+  <div
+    style="
+    background-color: white;
+    border: 0.5em solid red;
+    font-size: 200%;
+    font-weight: bold;
+    min-height: 6em;
+    margin-top: 4rem;
+    padding: 1em;
+    text-align: center;
+  "
+  >
+    <p>
+      Please upgrade your browser.
+    </p>
+    <p>
+      <a
+        href="https://browser-update.org/update-browser.html"
+      >
+        More information
+      </a>
+    </p>
+  </div>
+  <div
+    id="dummy-content"
+  />
+</body>
 `;
