@@ -121,7 +121,8 @@ class About extends React.Component<AboutProps> {
                 className={css.cardMedia}
                 image={getResponsiveImageUrl(
                   `/images/team/${person.image}`,
-                  cardWidth * 2
+                  cardWidth * 2,
+                  'e_grayscale/co_rgb:0057ae,e_colorize:40'
                 )}
                 title={person.name}
               />
