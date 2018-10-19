@@ -57,8 +57,28 @@
   </head>
   <body>
     <noscript>
-      You need to enable JavaScript to run this app.
+      <div style="background-color: white;border: 0.5em solid red;font-family: 'Roboto', sans-serif;font-size: 200%;font-weight: bold;min-height: 6em;margin-top: 4rem;padding: 1em;text-align: center;">
+      <p>You need to enable JavaScript to run this site.</p>
+        <p>
+          Contact Codestar at <a href="mailto:codestar@ordina.nl">codestar@ordina.nl</a>
+        </p>
+      </div>
     </noscript>
+    <div id="updateBrowser" style="display: none;background-color: white;border: 0.5em solid red;font-family: 'Roboto', sans-serif;font-size: 200%;font-weight: bold;min-height: 6em;margin-top: 4rem;padding: 1em;text-align: center;">
+      <p>Please upgrade your browser.</p>
+      <p>
+        <a href="https://browser-update.org/update-browser.html">More information</a>
+      </p>
+      <p>
+        Contact Codestar at <a href="mailto:codestar@ordina.nl">codestar@ordina.nl</a>
+      </p>
+    </div>
+    <script>
+      if( !Map.prototype.keys ) {
+        document.getElementById('updateBrowser').style.display = 'block';
+      }
+    </script>
+
     <div id="root"></div>
     <!--
       This HTML file is a template.
