@@ -1,8 +1,10 @@
 @import 'avatar.scss';
-@import 'card.scss';
+
+// Just to make sure SCSS is working
+$white: white;
 
 .whiteText {
-  color: white;
+  color: $white;
 }
 
 .conduit {
