@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { translate } from 'react-i18next';
 
+// TODO package.json contains "npm-run-all"
+
 import {
   Button,
   Typography,
@@ -19,7 +21,7 @@ import { getResponsiveImageUrl } from '../../../ResponsiveImage/ResponsiveImage'
 import Container from '../../../Container/Container';
 import OurStack from '../../../OurStack/OurStack';
 import Team from './Team.json';
-import styles from './About.module.css';
+import styles from './About.module.scss';
 
 type AboutProps = any;
 
@@ -81,18 +83,6 @@ class About extends React.Component<AboutProps> {
           </Container>
           <div className="row m-0">{this.renderTeamCarousel()}</div>
         </section>
-        {/*<section className="py-3 bg-white">
-          <Container fluid>
-            <div className="row">
-              <div className="col">
-                <h1>Photos</h1>
-                <h1>Gallery</h1>
-                <h1>Events</h1>
-                <h1>Jobs</h1>
-              </div>
-            </div>
-          </Container>
-        </section>*/}
       </div>
     );
   }
