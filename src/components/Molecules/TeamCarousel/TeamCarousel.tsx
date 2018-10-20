@@ -4,8 +4,7 @@ import Carousel from 'nuka-carousel';
 import styles from './TeamCarousel.module.scss';
 import { getResponsiveImageUrl } from '../../../ResponsiveImage/ResponsiveImage';
 import Team from './Team.json';
-import LeftControls from './LeftControls';
-import RightControls from './RightControls';
+import { leftControls, rightControls } from './renderControls';
 
 function shuffleArray(array: number[]) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -18,8 +17,6 @@ function shuffleArray(array: number[]) {
 const cardWidth = 300;
 
 const TeamCarousel: SFC = () => {
-  const leftControls: any = <LeftControls />;
-  const rightControls: any = <RightControls />;
   return (
     <Carousel
       slideWidth={`${cardWidth}px`}
@@ -28,7 +25,6 @@ const TeamCarousel: SFC = () => {
       autoplayInterval={7000}
       cellAlign="center"
       slidesToScroll="auto"
-      renderBottomCenterControls={undefined}
       renderCenterLeftControls={leftControls}
       renderCenterRightControls={rightControls}
     >
