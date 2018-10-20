@@ -5,7 +5,8 @@ module.exports = (baseConfig, env, config) => {
     test: /\.(ts|tsx)$/,
     loader: require.resolve("awesome-typescript-loader")
   });
-
+  config.plugins.push(new TSDocgenPlugin());
+  config.resolve.extensions.push(".ts", ".tsx");
   config.module.rules.push({
     test: /\.scss$/,
     use: [
@@ -14,8 +15,5 @@ module.exports = (baseConfig, env, config) => {
       "sass-loader"
     ]
   });
-
-  config.plugins.push(new TSDocgenPlugin());
-  config.resolve.extensions.push(".ts", ".tsx");
   return config;
 };
