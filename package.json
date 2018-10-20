@@ -26,7 +26,6 @@
     "lint-staged": "^7.0.0",
     "lodash": "^4.17.10",
     "node-fetch": "^2.2.0",
-    "npm-run-all": "^4.1.3",
     "nuka-carousel": "^4.2.5",
     "oauth": "^0.9.15",
     "prettier": "^1.10.2",
@@ -61,7 +60,6 @@
     "precommit": "lint-staged",
     "prettier": "prettier --single-quote --write --trailing-comma es5 --write ./src/**/*.{js,jsx,ts,tsx}",
     "storybook": "start-storybook -p 6006",
-    "start-storybook": "npm-run-all watch-css start-storybook",
     "build-storybook": "build-storybook -c .storybook -o .storybook-static"
   },
   "browserslist": {
