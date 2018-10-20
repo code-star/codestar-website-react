@@ -15,11 +15,11 @@ import {
   NavigateBefore as NavigateBeforeIcon,
 } from '@material-ui/icons';
 
-import { getResponsiveImageUrl } from '../ResponsiveImage/ResponsiveImage';
-import Container from '../Container/Container';
-import OurStack from '../OurStack/OurStack';
+import { getResponsiveImageUrl } from '../../../ResponsiveImage/ResponsiveImage';
+import Container from '../../../Container/Container';
+import OurStack from '../../../OurStack/OurStack';
 import Team from './Team.json';
-import css from './About.module.css';
+import styles from './About.module.css';
 
 type AboutProps = any;
 
@@ -46,8 +46,8 @@ class About extends React.Component<AboutProps> {
           <Container marginTopNavBar>
             <div className="row justify-content-center">
               <div className="col-12 col-md-8">
-                <h3 className={css.whiteText}>{t('ABOUT_ATTRACT_TITLE')}</h3>
-                <p className={[css.whiteText, css.conduit].join(' ')}>
+                <h3 className={styles.whiteText}>{t('ABOUT_ATTRACT_TITLE')}</h3>
+                <p className={[styles.whiteText, styles.conduit].join(' ')}>
                   {t('ABOUT_ATTRACT_TEXT')}
                 </p>
               </div>
@@ -97,6 +97,7 @@ class About extends React.Component<AboutProps> {
     );
   }
 
+  // TODO extract to Molecules/TeamCarousel
   public renderTeamCarousel() {
     return (
       <Carousel
@@ -116,9 +117,9 @@ class About extends React.Component<AboutProps> {
               person && !person.gone && person.name && person.image
           )
           .map((person: any) => (
-            <Card key={person.image} className={`${css.card} my-3`}>
+            <Card key={person.image} className={`${styles.card} my-3`}>
               <CardMedia
-                className={css.cardMedia}
+                className={styles.cardMedia}
                 image={getResponsiveImageUrl(
                   `/images/team/${person.image}`,
                   cardWidth * 2

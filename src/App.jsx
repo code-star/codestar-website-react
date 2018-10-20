@@ -18,7 +18,9 @@ function fullHeightAsyncComponent(C) {
 
 const AsyncIntro = fullHeightAsyncComponent(import('./Intro/Intro'));
 const AsyncCases = fullHeightAsyncComponent(import('./Cases/Cases'));
-const AsyncAbout = fullHeightAsyncComponent(import('./About/About'));
+const AsyncAbout = fullHeightAsyncComponent(
+  import('./components/Pages/About/About')
+);
 const AsyncJobs = fullHeightAsyncComponent(import('./Jobs/Jobs'));
 const AsyncJobDescription = fullHeightAsyncComponent(
   import('./JobDescription/JobDescription')
