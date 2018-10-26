@@ -9,7 +9,7 @@
     "@fortawesome/fontawesome-free-solid": "^5.0.10",
     "@fortawesome/react-fontawesome": "^0.0.18",
     "@material-ui/core": "^3.1.2",
-    "@material-ui/icons": "^1.1.0",
+    "@material-ui/icons": "^3.0.1",
     "bootstrap-css-only": "^4.1.1",
     "classnames": "^2.2.6",
     "defer-to-connect": "^1.0.1",
@@ -76,7 +76,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
+    "@babel/core": "^7.1.2",
     "@storybook/addon-actions": "^4.0.0-rc.1",
     "@storybook/addon-info": "^4.0.0-rc.1",
     "@storybook/addon-knobs": "^4.0.0-rc.1",
@@ -99,6 +99,7 @@
     "@types/react-test-renderer": "^16.0.2",
     "@types/recompose": "^0.26.3",
     "@types/sanitize-html": "^1.18.0",
+    "autoprefixer": "^9.3.1",
     "awesome-typescript-loader": "^5.2.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^8.0.0",
