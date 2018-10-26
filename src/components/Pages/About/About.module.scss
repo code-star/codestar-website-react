@@ -1,10 +1,7 @@
-@import 'avatar.scss';
-
-// Just to make sure SCSS is working
-$white: white;
+@import '../../../theming/config.module';
 
 .whiteText {
-  color: $white;
+  color: $color-white;
 }
 
 .conduit {
