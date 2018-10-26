@@ -31,3 +31,6 @@ yarn.lock
 
 # Storybook
 .storybook-static
+
+#Cache
+.cache
