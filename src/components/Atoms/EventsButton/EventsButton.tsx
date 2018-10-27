@@ -6,7 +6,7 @@ import { withStateHandlers } from 'recompose';
 import { Button } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import Tooltip from '@material-ui/core/Tooltip';
-import i18n from '../i18n';
+import i18n from '../../../i18n';
 
 // Fixme: this is a workaround for using the material ui button
 // with the `to` property. By default this is not supported.
