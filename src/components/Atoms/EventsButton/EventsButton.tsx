@@ -62,7 +62,7 @@ export const EventsButton: SFC<IEventsButtonPropsInner> = ({
       month: 'long',
       day: 'numeric',
     });
-    nextEventText = `${formattedDate} *Meetup* ${nextEvent.name}`;
+    nextEventText = `${formattedDate} 🎉Meetup🎉 ${nextEvent.name}`;
   }
   return (
     <Tooltip
