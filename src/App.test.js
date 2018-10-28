@@ -3,13 +3,13 @@ import { shallow, mount } from 'enzyme';
 
 import App from './App';
 
-jest.mock('./ScrollToTop', () => 'ScrollToTop');
-jest.mock('./Footer/Footer', () => 'Footer');
+jest.mock('./ScrollToTop', () => 'scroll-to-top');
+jest.mock('./Footer/Footer', () => 'footer');
 jest.mock('./Jobs/JobsList', () => {
   return [{ path: 'somePath' }, { path: 'someOtherPath' }];
 });
-jest.mock('./AsyncComponent/AsyncComponent', () => 'AsyncComponent');
-jest.mock('./modules/NavContainer/NavContainer', () => 'NavContainer');
+jest.mock('./AsyncComponent/AsyncComponent', () => 'async-component');
+jest.mock('./modules/NavContainer/NavContainer', () => 'nav-container');
 
 const renderShallow = () => {
   return shallow(<App />);
