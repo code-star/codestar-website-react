@@ -99,6 +99,7 @@
     "@types/react-test-renderer": "^16.0.2",
     "@types/recompose": "^0.26.3",
     "@types/sanitize-html": "^1.18.0",
+    "@types/storybook__react": "^3.0.9",
     "autoprefixer": "^9.3.1",
     "awesome-typescript-loader": "^5.2.0",
     "babel-eslint": "^7.2.3",
