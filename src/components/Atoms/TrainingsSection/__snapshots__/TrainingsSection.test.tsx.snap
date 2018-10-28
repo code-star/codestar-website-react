@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TrainingsSection /> Snaphot must match the static training section 1`] = `
+<section
+  className="
+			null
+			WithTheme-WithWidth-Section---section-1"
+  name="trainings"
+>
+  <div
+    className="WithTheme-WithWidth-Section---element-2"
+    name="trainings"
+  />
+  <img
+    alt="Person receiving training at Codestar"
+    className="undefined"
+    sizes="100w"
+    src="/images/jobs/codestar_4.png"
+    srcSet="https://res.cloudinary.com/codestar/image/upload/f_auto/w_375//e_grayscale/co_rgb:0057ae,e_colorize:40/v1532588516/codestar.nl/images/jobs/codestar_4.png 375w, https://res.cloudinary.com/codestar/image/upload/f_auto/w_800//e_grayscale/co_rgb:0057ae,e_colorize:40/v1532588516/codestar.nl/images/jobs/codestar_4.png 800w, https://res.cloudinary.com/codestar/image/upload/f_auto/w_1280//e_grayscale/co_rgb:0057ae,e_colorize:40/v1532588516/codestar.nl/images/jobs/codestar_4.png 1280w, https://res.cloudinary.com/codestar/image/upload/f_auto/w_1536//e_grayscale/co_rgb:0057ae,e_colorize:40/v1532588516/codestar.nl/images/jobs/codestar_4.png 1536w, https://res.cloudinary.com/codestar/image/upload/f_auto/w_1920//e_grayscale/co_rgb:0057ae,e_colorize:40/v1532588516/codestar.nl/images/jobs/codestar_4.png 1920w"
+    title=""
+  />
+  <div
+    className="
+			container
+			
+			
+			WithTheme-WithWidth-Container---fullHeight-4
+			
+			
+			WithTheme-WithWidth-Container---containerCenter-5
+		"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-12 col-lg-6"
+      >
+        <div
+          className="mt-4"
+        >
+          <h1
+            className="MuiTypography-root-8 MuiTypography-display3-10 d-inline text-white p-2 bg-dark"
+          >
+            
+          </h1>
+        </div>
+        <div
+          className="my-3"
+        >
+          <h1
+            className="MuiTypography-root-8 MuiTypography-headline-13 d-inline text-white p-2"
+          >
+            RxJS, Scala, TypeScript 
+            
+          </h1>
+        </div>
+        <div
+          className="my-2"
+        >
+          <a
+            className="MuiButtonBase-root-60 MuiButton-root-34 MuiButton-contained-45 MuiButton-raised-48"
+            href="/contact"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            <span
+              className="MuiButton-label-35"
+            >
+              
+            </span>
+            <span
+              className="MuiTouchRipple-root-63"
+            />
+          </a>
+        </div>
+      </div>
+      <div
+        className="col-12 col-md-6"
+      >
+        <div
+          className="bg-dark p-3"
+        >
+          <p
+            className="MuiTypography-root-8 MuiTypography-body1-17 d-inline text-white"
+          >
+            As experts on functional reactive programming in front-end and back-end we love to give trainings on the languages and frameworks we use each day. We regularly host trainings, and if you are interested in a training or workshop on e.g. RxJS, TypeScript, or Scala on a date of your choice contact us for more information.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
