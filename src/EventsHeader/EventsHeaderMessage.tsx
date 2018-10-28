@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { translate } from '../typed-translate';
 import { Typography, Button } from '@material-ui/core';
 import Container from '../Container/Container';
-import css from './EventsHeader.module.css';
+import css from './EventsHeader.module.scss';
 
 type EventsHeaderMessageProps = any;
 

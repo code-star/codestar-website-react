@@ -3,13 +3,12 @@ import compose from 'recompose/compose';
 import Section from '../../../Section/Section';
 import { translate, TranslationFunction } from 'react-i18next';
 import { Button, Typography } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import ResponsiveImage from '../../../ResponsiveImage/ResponsiveImage';
 import Container from '../../../Container/Container';
-import InlineLogo from '../../../InlineLogo/InlineLogo';
+import styles from './TrainingsSection.module.scss';
 
 // TODO unit test, storybook
-
-// TODO fix width
 
 interface IPropsInner {
   t: TranslationFunction;
@@ -19,11 +18,15 @@ interface IPropsOuter {
   scrollname: any;
 }
 
+// Fixme: this is a workaround for using the material ui button
+// with the `to` property. By default this is not supported.
+const CustomButton = (props: any) => <Button {...props} />;
+
 export const TrainingsSection: SFC<IPropsInner & IPropsOuter> = ({
   t,
   scrollname,
 }) => (
-  <Section scrollname={scrollname}>
+  <Section scrollname={scrollname} className={styles.section}>
     <ResponsiveImage
       path="/images/jobs/codestar_4.png"
       asBackgroundImage
@@ -51,31 +54,19 @@ export const TrainingsSection: SFC<IPropsInner & IPropsOuter> = ({
           </div>
 
           <div className="my-2">
-            <Button variant="raised">
-              {t('TRAININGS')} (contact us for bookings) // TODO
-            </Button>
+            <CustomButton variant="raised" to="/contact" component={Link}>
+              {t('BOOK_A_TRAINING')}
+            </CustomButton>
           </div>
-          {/*{props.readMore && (
-            <div className="my-2">
-              <Button
-                variant="raised"
-                onClick={props.callback}
-                className={classes.button}
-              >
-                {t('CASES_READ_MORE_BUTTON')}
-              </Button>
-            </div>
-          )}*/}
         </div>
         <div className="col-12 col-md-6">
           <div className="bg-dark p-3">
             <Typography variant="body1" className="d-inline text-white">
-              <InlineLogo dark>
-                {t('TRAININGS')} Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Aliquid aperiam assumenda commodi deleniti
-                doloremque earum eligendi error eum hic incidunt, ipsa itaque
-                nihil quas quia quo, repellat tempora veniam voluptate.
-              </InlineLogo>
+              As experts on functional reactive programming in front-end and
+              back-end we love to give trainings on the languages and frameworks
+              we use each day. We regularly host trainings, and if you are
+              interested in a training or workshop on e.g. RxJS, TypeScript, or
+              Scala on a date of your choice contact us for more information.
             </Typography>
           </div>
         </div>

@@ -3,7 +3,7 @@ import { Typography, Button, Hidden, withStyles } from '@material-ui/core';
 import Container from '../Container/Container';
 import { translate, TranslationFunction } from 'react-i18next';
 import { Link } from 'react-scroll';
-import css from './EventsHeader.module.css';
+import css from './EventsHeader.module.scss';
 import { purple } from '@material-ui/core/colors';
 import compose from 'recompose/compose';
 

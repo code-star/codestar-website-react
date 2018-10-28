@@ -5,7 +5,7 @@ import { Typography } from '@material-ui/core';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 import EventsHeaderButton from './EventsHeaderButton';
 import { navButtons } from './constants';
-import css from './EventsHeader.module.css';
+import css from './EventsHeader.module.scss';
 import EventsHeaderMessage from './EventsHeaderMessage';
 import HeaderContent from './HeaderContent';
 import DetailsSection from './DetailsSection';
