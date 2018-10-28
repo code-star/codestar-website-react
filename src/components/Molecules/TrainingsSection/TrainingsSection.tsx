@@ -8,8 +8,6 @@ import ResponsiveImage from '../../../ResponsiveImage/ResponsiveImage';
 import Container from '../../../Container/Container';
 import styles from './TrainingsSection.module.scss';
 
-// TODO unit test, storybook
-
 interface IPropsInner {
   t: TranslationFunction;
 }

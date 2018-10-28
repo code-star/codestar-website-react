@@ -7,7 +7,7 @@ import EventCard from '../../../../EventCard/EventCard';
 import compose from 'recompose/compose';
 import { IMeetupEvent } from '../../../../modules/EventsContainer/EventsContainer.interfaces';
 import { NextEventsBlock } from './NextEventsBlock';
-import TrainingsSection from '../../../Atoms/TrainingsSection/TrainingsSection';
+import TrainingsSection from '../../TrainingsSection/TrainingsSection';
 
 /*
  Suggestions for design concepts
