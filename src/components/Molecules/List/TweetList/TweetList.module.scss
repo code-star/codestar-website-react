@@ -1,0 +1,23 @@
+.card {
+  max-width: 345px;
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.media {
+  height: 0;
+  padding-top: 56.25%; /* 16:9*/
+}
+
+a {
+  color: black;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  .prefix {
+    color: #888;
+  }
+}
