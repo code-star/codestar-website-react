@@ -15,10 +15,10 @@ import {
 
 import { Menu as MenuIcon, Language as LanguageIcon } from '@material-ui/icons';
 import { withStyles } from '@material-ui/core/styles';
-import EventsButton from './EventsButton';
+import EventsButton from '../EventsButton/EventsButton';
 
-import i18n from '../i18n';
-import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
+import i18n from '../../../i18n';
+import ResponsiveImage from '../../../ResponsiveImage/ResponsiveImage';
 
 type NavBarProps = any;
 
