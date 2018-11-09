@@ -4,26 +4,40 @@
 
 ### Backend
 
-The serverless functions must be split into a separate repo to streamline the inclusion of dependencies and to be able to set up CI/CD for the back-end.
+The serverless functions are in a separate repo to streamline the inclusion of dependencies and to be able to set up CI/CD for the back-end.
 
 The back-end must reflect our ambitions and workflow as well as our front-end is a showcase of how we work and how we want to work. Serverless fuctions in AWS Lambda's with Node are modern and scalable and fit the microservice architecture that is appropriate for the use case of calling a Twitter feed for example.
 
 If we would implement a full scale back-end server, rather than running Node + Express, we would choose a Scala based solution to showcase the workflow of our Scala developers. This would probably be hosted on Heroku or whatever Cloud VPS we will commonly use at that time.
 
+#### TODO
+
+The serverless functions must be split into a separate repo to streamline the inclusion of dependencies and to be able to set up CI/CD for the back-end.
+
 ### Structural organization
 
-Currently we have multiple ways to structure the sources.
+Atomic design is used to structure the sources (see below). We allow 2 variants for structuring state.
 
-* Some components exist directly in the root of `src`, e.g. `src/Intro`
-* Some components follow the presentational + container pattern, e.g. `src/NavBar` (which should have been in `src/components/NavBar`) + `src/modules/NavContainer`
-* Some follow Atomic design (see below for details): `src/components/Atoms`, `src/components/Molecules` etc.
+1. The internal state variant. If a component does not retrieve data but has state, use `recompose.withStateHandlers`. Store the `initialState` and `stateUpdaters` in the component.
+Export the base component and export the composed component as default.
+An example would be "mouse over" state in `src/components/Atoms/EventsButton`
 
-This must be consolidated to a single way of organizing the structure. If Atomic Design is elected, we need to decide what the correct place is for the container components.
+2. The external state variant. If a component retrieves data externally, store the retrieving logic in `/src/containers/*`. An example is:
+
+* `src/components/Molecules/NavBar/NavBar` (the stateless component)
+* `src/containers/NavContainer` (adds state to NavBar through API call with Fetch)
+* `src/App.jsx` (uses NavContainer)
+
+This approach is described in more detail here: https://github.com/diegohaz/arc/wiki/Containers
+
+In the mentioned variants, "retrieve data" can mean either calling an API with Fetch or accessing a data (Redux) store. We do not have a data store at the moment.
 
 #### TODO
 
-* decide on structure
-* refactor
+* `src/modules` should be renamed to `src/containers`
+* `src/App.jsx` should be moved to `src/components/Environments`
+* all components directly in `src` need to be moved to their appropriate paths
+
 
 ### Compilation
 
@@ -74,70 +88,99 @@ We should create a separate Components repository that implements minimal Codest
 
 ## Building React UI Components following Atomic Design Principles
 
-* **Read the following if you have not already**
-  * [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/)
-  * [Atoms](http://bradfrost.com/blog/post/atomic-web-design/#atoms)
-  * [Molecules](http://bradfrost.com/blog/post/atomic-web-design/#molecules)
-  * [Organisms](http://bradfrost.com/blog/post/atomic-web-design/#organisms)
-  * [Templates](http://bradfrost.com/blog/post/atomic-web-design/#templates)
-  * [Pages](http://bradfrost.com/blog/post/atomic-web-design/#pages)
+### Read the following if you have not already
+* [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/)
+* [Atoms](http://bradfrost.com/blog/post/atomic-web-design/#atoms)
+* [Molecules](http://bradfrost.com/blog/post/atomic-web-design/#molecules)
+* [Organisms](http://bradfrost.com/blog/post/atomic-web-design/#organisms)
+* [Templates](http://bradfrost.com/blog/post/atomic-web-design/#templates)
+* [Pages](http://bradfrost.com/blog/post/atomic-web-design/#pages)
 
-* **Run Storybook component explorer for development using `start-storybook` npm script**
+### Run Storybook component explorer for development using `start-storybook` npm script
 
-* **Run Jest for unit and snapshot tests using `test` or `test:watch` npm script**
+### Run Jest for unit and snapshot tests using `test` or `test:watch` npm script
 
-* **Place React UI component under one of the following folders under an appropriate category**
-  * Atoms: `src/components/Atoms`
-  * Molecules: `src/components/Molecules`
-  * Organisms: `src/components/Organisms`
-  * Templates: `src/components/Templates`
-  * Pages: `src/components/Pages`
+### Place React UI component under one of the following folders under an appropriate category
 
-* **Build React UI component implementing the following:**
-  * `index.ts`
-    ```typescript
-    import [AwesomeComponent] from './[AwesomeComponent]';
+#### Atoms `src/components/Atoms`
+Stateless components who do not rely on other (internal components);
+* Button
+* Heading
+* Icon
+* Label
+* Link
+* Input
+* Paragraph
 
-    export default [AwesomeComponent];
-    ```
+#### Molecules `src/components/Molecules`
+Composition of Atoms;
+* Form Field: using Atoms: Label, Input
+* Search Form: using Atoms: Label, Input
+* Introduction: using Atoms: Heading, Paragraph
 
-  * `[AwesomeComponent].tsx`
-    ```typescript
-    import React from 'react';
-    import classNames from 'classnames/bind';
-    import style from './AwesomeComponent.module.css';
+#### Organisms `src/components/Organisms`
+Groups of Molecules;
+* Navigation: using Molecules: Buttons, Links
+* Header: using Molecules: Navigation, Search Form, Toggle Button
+* Footer: using Molecules: Heading, Paragraph, Links, Social Icons
 
-    const cx = classNames.bind(style);
+#### Templates
 
-    ...
-    ```
+#### Pages
 
-  * `[AwesomeComponent].module.scss`
-    ```sass
-    @import '[awesome relative path]/theming/config.module.scss';
+#### Ecosystems
+Composition of one or more Organisms.
+The container component between the (Redux) store / fetching data and the Organism(s) relying on this data.
 
-    .awesome {
+#### Environments
 
-    }
+* Root components, like `<App />`  
 
-    ```
+### Build React UI component implementing the following:
+* `index.ts`
+  ```typescript
+  import [AwesomeComponent] from './[AwesomeComponent]';
 
-  * `[AwesomeComponent].stories.js`
-    ```javascript
-    import React from 'react';
-    import { storiesOf } from '@storybook/react';
-    import { withKnobs, select, text, number } from '@storybook/addon-knobs';
-    import AwesomeComponent from './AwesomeComponent.tsx';
+  export default [AwesomeComponent];
+  ```
 
-    ...
-    ```
+* `[AwesomeComponent].tsx`
+  ```typescript
+  import React from 'react';
+  import classNames from 'classnames/bind';
+  import style from './AwesomeComponent.module.css';
 
-  * `[AwesomeComponent].test.js`
-    ```javascript
-    import React from 'react';
-    import { shallow, mount } from 'enzyme';
+  const cx = classNames.bind(style);
 
-    import AwesomeComponent from './AwesomeComponent';
+  ...
+  ```
 
-    ...
-    ```
+* `[AwesomeComponent].module.scss`
+  ```sass
+  @import '[awesome relative path]/theming/config.module.scss';
+
+  .awesome {
+
+  }
+
+  ```
+
+* `[AwesomeComponent].stories.js`
+  ```javascript
+  import React from 'react';
+  import { storiesOf } from '@storybook/react';
+  import { withKnobs, select, text, number } from '@storybook/addon-knobs';
+  import AwesomeComponent from './AwesomeComponent.tsx';
+
+  ...
+  ```
+
+* `[AwesomeComponent].test.js`
+  ```javascript
+  import React from 'react';
+  import { shallow, mount } from 'enzyme';
+
+  import AwesomeComponent from './AwesomeComponent';
+
+  ...
+  ```
