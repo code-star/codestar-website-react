@@ -6,10 +6,9 @@
 
 The serverless functions must be split into a separate repo to streamline the inclusion of dependencies and to be able to set up CI/CD for the back-end.
 
-Not yet decided:
+The back-end must reflect our ambitions and workflow as well as our front-end is a showcase of how we work and how we want to work. Serverless fuctions in AWS Lambda's with Node are modern and scalable and fit the microservice architecture that is appropriate for the use case of calling a Twitter feed for example.
 
-* to build a back-end a traditional Node + Express server on e.g. Heroku
-* to build a back-end in Scala
+If we would implement a full scale back-end server, rather than running Node + Express, we would choose a Scala based solution to showcase the workflow of our Scala developers. This would probably be hosted on Heroku or whatever Cloud VPS we will commonly use at that time.
 
 ### Structural organization
 
