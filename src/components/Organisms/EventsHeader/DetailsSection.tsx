@@ -43,12 +43,7 @@ export const DetailsSection: SFC<
               eventImage={mEvent.coverUrl}
               eventName={mEvent.name}
             >
-              <Button
-                color="primary"
-                variant="raised"
-                href={mEvent.link}
-                className="mt-1"
-              >
+              <Button color="primary" href={mEvent.link}>
                 {t('SIGN_UP')}
               </Button>
             </TweetList>
