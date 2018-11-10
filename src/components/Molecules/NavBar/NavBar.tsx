@@ -15,7 +15,7 @@ import {
 
 import { Menu as MenuIcon, Language as LanguageIcon } from '@material-ui/icons';
 import { withStyles } from '@material-ui/core/styles';
-import EventsButton from '../../Atoms/EventsButton/EventsButton';
+import EventsButton from '../EventsButton/EventsButton';
 
 import i18n from '../../../i18n';
 import ResponsiveImage from '../../../ResponsiveImage/ResponsiveImage';
