@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Card,
   CardContent,
-  Typography,
   CardActions,
   Button,
   CardMedia,
@@ -30,6 +29,7 @@ const TweetList = ({
   <Card raised className={styles.card}>
     {tweets.slice(0, 1).map(tweet => (
       <CardHeader
+        key={tweet.id}
         avatar={
           <Avatar
             src={tweet.user.profile_image_url_https}
@@ -44,22 +44,20 @@ const TweetList = ({
     <CardContent>
       {tweets.map(tweet => (
         <div key={tweet.id} className="p-2">
-          <Typography component="p">
-            <a
-              href={`https://twitter.com/${tweet.user.screen_name}/status/${
-                tweet.id_str
-              }`}
-            >
-              <div className={styles.prefix}>
-                <img
-                  src={getResponsiveImageUrl('/images/events/twitter', 30)}
-                  className="mr-2"
-                />
-                {new Date(tweet.created_at).toDateString()}
-              </div>
-              {tweet.text}
-            </a>
-          </Typography>
+          <a
+            href={`https://twitter.com/${tweet.user.screen_name}/status/${
+              tweet.id_str
+            }`}
+          >
+            <div className={styles.prefix}>
+              <img
+                src={getResponsiveImageUrl('/images/events/twitter', 30)}
+                className="mr-2"
+              />
+              {new Date(tweet.created_at).toDateString()}
+            </div>
+            {tweet.text}
+          </a>
         </div>
       ))}
     </CardContent>
@@ -67,6 +65,7 @@ const TweetList = ({
       {children}
       {tweets.slice(0, 1).map(tweet => (
         <Button
+          key={tweet.id}
           size="small"
           color="secondary"
           href={`https://twitter.com/${tweet.user.screen_name}?lang=en`}
