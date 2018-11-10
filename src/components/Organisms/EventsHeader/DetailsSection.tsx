@@ -4,27 +4,23 @@ import { translate, TranslationFunction } from 'react-i18next';
 import Container from '../../../Container/Container';
 import Section from '../../../Section/Section';
 import compose from 'recompose/compose';
+import TweetList from '../../Molecules/List/TweetList';
 
 // TODO improve types by replacing "any"
 interface IDetailsSectionPropsInner {
   t: TranslationFunction;
-  mEvent: any;
-  formattedDate: string;
-  descriptionElem: any;
 }
 
 interface IDetailsSectionPropsOuter {
   mEvent: any;
   formattedDate: string;
   descriptionElem: any;
+  tweets: any;
 }
 
-export const DetailsSection: SFC<IDetailsSectionPropsInner> = ({
-  t,
-  mEvent,
-  formattedDate,
-  descriptionElem,
-}) => {
+export const DetailsSection: SFC<
+  IDetailsSectionPropsInner & IDetailsSectionPropsOuter
+> = ({ t, mEvent, formattedDate, descriptionElem, tweets }) => {
   return (
     <Section scrollname="event-details" className="bg-white">
       <Container center>
@@ -41,6 +37,14 @@ export const DetailsSection: SFC<IDetailsSectionPropsInner> = ({
         <div className="row">
           <div className="col-12 col-md-8">{descriptionElem}</div>
           <div className="col-12 col-md-4">
+            {/*TODO guard against empty tweets */}
+            <TweetList
+              tweets={tweets}
+              eventDate="1"
+              eventImage="1"
+              eventName="hoi"
+            />
+
             <img
               src={mEvent.coverUrl}
               alt={`Artistic background with text "${mEvent.name}"`}

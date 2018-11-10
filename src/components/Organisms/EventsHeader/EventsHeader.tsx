@@ -14,11 +14,13 @@ import DetailsSection from './DetailsSection';
 interface IEventsHeaderProps {
   nextMeetupEvents: any[];
   noNextMeetupEvent: boolean;
+  tweets: any[];
 }
 
 const EventsHeader = ({
   nextMeetupEvents,
   noNextMeetupEvent,
+  tweets,
 }: IEventsHeaderProps) => {
   const renderNavButtons = () => {
     return navButtons.map(config => {
@@ -67,6 +69,7 @@ const EventsHeader = ({
         mEvent={meetupEvent}
         formattedDate={formattedDate}
         descriptionElem={descriptionElem}
+        tweets={tweets}
       />
     );
   } else if (noNextMeetupEvent) {

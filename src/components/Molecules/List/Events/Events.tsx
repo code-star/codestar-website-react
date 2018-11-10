@@ -42,12 +42,12 @@ const Events: SFC<IEventInnerProps & IEventOuterProps> = ({
       <EventsHeader
         nextMeetupEvents={nextMeetupEvents}
         noNextMeetupEvent={noNextMeetupEvent}
+        tweets={recentTweets}
       />
       <Section scrollname="previous-events">
         <Container>
           <NextEventsBlock
             events={nextMeetupEvents}
-            tweets={recentTweets}
             nextEventsTitle={t('OUR_NEXT_EVENTS')}
           />
           <h2 className="text-white">{t('OUR_PREVIOUS_EVENTS')}</h2>
