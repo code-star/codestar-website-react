@@ -95,7 +95,7 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
           <p
             className="MuiTypography-root-8 MuiTypography-body1-17 d-inline text-white"
           >
-            As experts on functional reactive programming in front-end and back-end we love to give trainings on the languages and frameworks we use each day. We regularly host trainings, and if you are interested in a training or workshop on e.g. RxJS, TypeScript, or Scala on a date of your choice contact us for more information.
+            
           </p>
         </div>
       </div>

@@ -27,11 +27,13 @@ const someTweets = [
   },
 ];
 
-const renderShallow = tweets => {
-  return shallow(<TweetList tweets={tweets} />);
-};
+const globalAny: any = global;
 
-// TODO tsx
+const renderShallow = (tweets: any) => {
+  return shallow(
+    <TweetList tweets={tweets} eventImage="a" eventDate="b" eventName="c" />
+  );
+};
 
 describe('<TweetList />', () => {
   let wrapper;
@@ -45,7 +47,9 @@ describe('<TweetList />', () => {
 
   describe('Snaphot', () => {
     test('must match some tweet list', () => {
-      expect(global.renderToJSON(renderShallow(someTweets))).toMatchSnapshot();
+      expect(
+        globalAny.renderToJSON(renderShallow(someTweets))
+      ).toMatchSnapshot();
     });
   });
 });

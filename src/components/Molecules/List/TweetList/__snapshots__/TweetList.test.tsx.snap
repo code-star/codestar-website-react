@@ -23,13 +23,22 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
       >
         someAwesomeName
       </span>
+      <span
+        className="MuiTypography-root-38 MuiTypography-body2-46 MuiTypography-colorTextSecondary-62 MuiCardHeader-subheader-34"
+      >
+        b
+      </span>
     </div>
   </div>
   <div
     className="MuiCardMedia-root-64"
     src={undefined}
-    style={undefined}
-    title={undefined}
+    style={
+      Object {
+        "backgroundImage": "url(\\"a\\")",
+      }
+    }
+    title="c"
   />
   <div
     className="MuiCardContent-root-66"
