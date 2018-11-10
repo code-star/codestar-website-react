@@ -1,4 +1,4 @@
-import { IMeetupEvent } from './modules/EventsContainer/EventsContainer.interfaces';
+import { IMeetupEvent } from './containers/EventsContainer/EventsContainer.interfaces';
 
 let cachedUpcomingEvents: IMeetupEvent[] = [];
 let cachedPastEvents: IMeetupEvent[] = [];
