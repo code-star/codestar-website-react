@@ -7,6 +7,7 @@ import {
   CardMedia,
   CardHeader,
   Avatar,
+  Typography,
 } from '@material-ui/core';
 import { getResponsiveImageUrl } from '../../../../ResponsiveImage/ResponsiveImage';
 import styles from './TweetList.module.scss';
@@ -49,14 +50,14 @@ const TweetList = ({
               tweet.id_str
             }`}
           >
-            <div className={styles.prefix}>
+            <Typography component="div" className={styles.prefix}>
               <img
                 src={getResponsiveImageUrl('/images/events/twitter', 30)}
                 className="mr-2"
               />
               {new Date(tweet.created_at).toDateString()}
-            </div>
-            {tweet.text}
+            </Typography>
+            <Typography component="p">{tweet.text}</Typography>
           </a>
         </div>
       ))}

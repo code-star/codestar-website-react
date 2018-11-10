@@ -25,17 +25,15 @@ export const DetailsSection: SFC<
     <Section scrollname="event-details" className="bg-white">
       <Container center>
         <div className="row">
-          <div className="col-12">
+          <div className="col-12 col-md-8">
             <Typography align="center" variant="title">
               {mEvent.name}
             </Typography>
             <Typography gutterBottom align="center" variant="subheading">
               {formattedDate}
             </Typography>
+            {descriptionElem}
           </div>
-        </div>
-        <div className="row">
-          <div className="col-12 col-md-8">{descriptionElem}</div>
           <div className="col-12 col-md-4">
             <TweetList
               tweets={tweets}
