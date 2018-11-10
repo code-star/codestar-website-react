@@ -60,11 +60,7 @@ export const TrainingsSection: SFC<IPropsInner & IPropsOuter> = ({
         <div className="col-12 col-md-6">
           <div className="bg-dark p-3">
             <Typography variant="body1" className="d-inline text-white">
-              As experts on functional reactive programming in front-end and
-              back-end we love to give trainings on the languages and frameworks
-              we use each day. We regularly host trainings, and if you are
-              interested in a training or workshop on e.g. RxJS, TypeScript, or
-              Scala on a date of your choice contact us for more information.
+              {t('TRAININGS_TEXT')}
             </Typography>
           </div>
         </div>

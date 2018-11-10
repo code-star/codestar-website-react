@@ -8,5 +8,6 @@
 	"MORE_INFO": "Meer informatie",
 	"READ_MORE": "Lees meer",
   "TRAININGS": "Trainingen",
-  "BOOK_A_TRAINING": "Book een training"
+  "BOOK_A_TRAINING": "Book een training",
+  "TRAININGS_TEXT": "Als functional reactive programming experts in de front-end en backend-end delen we graag onze kennis over de gebruikte programmeertalen en frameworks. We bieden trainingen aan voor RxJS, TypeScript, Scala en Kotlin. Neem contact met ons op als je interesse hebt om een training te volgen, of wanneer je een ander verzoek hebt!"
 }
