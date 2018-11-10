@@ -9,7 +9,7 @@ jest.mock('./Jobs/JobsList', () => {
   return [{ path: 'somePath' }, { path: 'someOtherPath' }];
 });
 jest.mock('./AsyncComponent/AsyncComponent', () => 'async-component');
-jest.mock('./modules/NavContainer/NavContainer', () => 'nav-container');
+jest.mock('./containers/NavContainer/NavContainer', () => 'nav-container');
 
 const renderShallow = () => {
   return shallow(<App />);

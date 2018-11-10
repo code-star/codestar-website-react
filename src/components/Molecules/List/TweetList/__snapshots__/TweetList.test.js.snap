@@ -2,82 +2,88 @@
 
 exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
 <div
-  className="MuiPaper-root-4 MuiPaper-elevation1-7 MuiPaper-rounded-5 MuiCard-root-3"
+  className="MuiPaper-root-2 MuiPaper-elevation8-12 MuiPaper-rounded-3 MuiCard-root-1"
 >
-  <button
-    className="MuiButtonBase-root-34 MuiCardActionArea-root-31"
-    disabled={undefined}
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onMouseDown={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
-    tabIndex="0"
-    type="button"
+  <div
+    className="MuiCardHeader-root-29"
   >
     <div
-      className="MuiCardContent-root-37"
+      className="MuiCardHeader-avatar-30"
     >
-      <h2
-        className="MuiTypography-root-38 MuiTypography-headline-43 MuiTypography-gutterBottom-56"
+      <div
+        aria-label="Speaker Twitter Avatar"
+        className="MuiAvatar-root-35"
+      />
+    </div>
+    <div
+      className="MuiCardHeader-content-32"
+    >
+      <span
+        className="MuiTypography-root-38 MuiTypography-body2-46 MuiCardHeader-title-33"
       >
         someAwesomeName
-         tweets ...
-      </h2>
-      <div
-        className="p-2"
-      >
-        <p
-          className="MuiTypography-root-38 MuiTypography-body1-47"
-        >
-          <a
-            href="https://twitter.com/someAwesomeScreenName/status/undefined"
-          >
-            <span
-              className="text-info"
-            >
-              Fri Aug 31 2018 
-            </span>
-            some awesome text
-          </a>
-        </p>
-      </div>
-      <div
-        className="p-2"
-      >
-        <p
-          className="MuiTypography-root-38 MuiTypography-body1-47"
-        >
-          <a
-            href="https://twitter.com/someOtherAwesomeScreenName/status/undefined"
-          >
-            <span
-              className="text-info"
-            >
-              Sun Sep 02 2018 
-            </span>
-            some other awesome text
-          </a>
-        </p>
-      </div>
+      </span>
     </div>
-    <span
-      className="MuiCardActionArea-focusHighlight-33"
-    />
-    <span
-      className="MuiTouchRipple-root-64"
-    />
-  </button>
+  </div>
   <div
-    className="MuiCardActions-root-71"
+    className="MuiCardMedia-root-64"
+    src={undefined}
+    style={undefined}
+    title={undefined}
+  />
+  <div
+    className="MuiCardContent-root-66"
+  >
+    <div
+      className="p-2"
+    >
+      <a
+        href="https://twitter.com/someAwesomeScreenName/status/undefined"
+      >
+        <div
+          className="MuiTypography-root-38 MuiTypography-body1-47"
+        >
+          <img
+            className="mr-2"
+            src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_30/v1532588516/codestar.nl/images/events/twitter"
+          />
+          Fri Aug 31 2018
+        </div>
+        <p
+          className="MuiTypography-root-38 MuiTypography-body1-47"
+        >
+          some awesome text
+        </p>
+      </a>
+    </div>
+    <div
+      className="p-2"
+    >
+      <a
+        href="https://twitter.com/someOtherAwesomeScreenName/status/undefined"
+      >
+        <div
+          className="MuiTypography-root-38 MuiTypography-body1-47"
+        >
+          <img
+            className="mr-2"
+            src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_30/v1532588516/codestar.nl/images/events/twitter"
+          />
+          Sun Sep 02 2018
+        </div>
+        <p
+          className="MuiTypography-root-38 MuiTypography-body1-47"
+        >
+          some other awesome text
+        </p>
+      </a>
+    </div>
+  </div>
+  <div
+    className="MuiCardActions-root-67"
   >
     <a
-      className="MuiButtonBase-root-34 MuiButton-root-73 MuiButton-text-75 MuiButton-textPrimary-76 MuiButton-flat-78 MuiButton-flatPrimary-79 MuiButton-sizeSmall-96 MuiCardActions-action-72"
+      className="MuiButtonBase-root-95 MuiButton-root-69 MuiButton-text-71 MuiButton-textSecondary-73 MuiButton-flat-74 MuiButton-flatSecondary-76 MuiButton-sizeSmall-92 MuiCardActions-action-68"
       href="https://twitter.com/someAwesomeScreenName?lang=en"
       onBlur={[Function]}
       onFocus={[Function]}
@@ -93,12 +99,13 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
       tabIndex="0"
     >
       <span
-        className="MuiButton-label-74"
+        className="MuiButton-label-70"
       >
-        Read More
+        About 
+        someAwesomeName
       </span>
       <span
-        className="MuiTouchRipple-root-64"
+        className="MuiTouchRipple-root-98"
       />
     </a>
   </div>

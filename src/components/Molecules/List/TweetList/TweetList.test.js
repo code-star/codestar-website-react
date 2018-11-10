@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import TweetList from './TweetList';
+import { CardContent } from '@material-ui/core';
 
 const someTweets = [
   {
@@ -30,13 +31,15 @@ const renderShallow = tweets => {
   return shallow(<TweetList tweets={tweets} />);
 };
 
+// TODO tsx
+
 describe('<TweetList />', () => {
   let wrapper;
 
   describe('Instance', () => {
-    test('must be an instance of TweetList', () => {
+    test('must have an instance of CardContent', () => {
       wrapper = renderShallow(someTweets);
-      expect(wrapper.find('TweetList')).toHaveLength(1);
+      expect(wrapper.find(CardContent)).toHaveLength(1);
     });
   });
 

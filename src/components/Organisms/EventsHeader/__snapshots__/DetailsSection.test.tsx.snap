@@ -26,7 +26,7 @@ exports[`renders the details for the Events header 1`] = `
       className="row"
     >
       <div
-        className="col-12"
+        className="col-12 col-md-8"
       >
         <h2
           className="MuiTypography-root-8 MuiTypography-title-14 MuiTypography-alignCenter-22"
@@ -38,53 +38,53 @@ exports[`renders the details for the Events header 1`] = `
         >
           26 september 2018
         </h3>
-      </div>
-    </div>
-    <div
-      className="row"
-    >
-      <div
-        className="col-12 col-md-8"
-      >
         descriptionElem
       </div>
       <div
         className="col-12 col-md-4"
       >
-        <img
-          alt="Artistic background with text \\"Data Oriented Design with Maxim Zaks\\""
-          src={undefined}
-          style={
-            Object {
-              "width": "100%",
-            }
-          }
-        />
-        <a
-          className="MuiButtonBase-root-60 MuiButton-root-34 MuiButton-contained-45 MuiButton-containedPrimary-46 MuiButton-raised-48 MuiButton-raisedPrimary-49 mt-1"
-          href="https://www.codestar.nl"
-          onBlur={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          tabIndex="0"
+        <div
+          className="MuiPaper-root-35 MuiPaper-elevation8-45 MuiPaper-rounded-36 MuiCard-root-34"
         >
-          <span
-            className="MuiButton-label-35"
-          >
-            
-          </span>
-          <span
-            className="MuiTouchRipple-root-63"
+          <div
+            className="MuiCardMedia-root-62"
+            src={undefined}
+            style={undefined}
+            title="Data Oriented Design with Maxim Zaks"
           />
-        </a>
+          <div
+            className="MuiCardContent-root-64"
+          />
+          <div
+            className="MuiCardActions-root-65"
+          >
+            <a
+              className="MuiButtonBase-root-93 MuiButton-root-67 MuiButton-text-69 MuiButton-textPrimary-70 MuiButton-flat-72 MuiButton-flatPrimary-73 MuiCardActions-action-66"
+              href="https://www.codestar.nl"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              role="button"
+              tabIndex="0"
+            >
+              <span
+                className="MuiButton-label-68"
+              >
+                
+              </span>
+              <span
+                className="MuiTouchRipple-root-96"
+              />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
