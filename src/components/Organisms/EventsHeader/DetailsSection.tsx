@@ -1,8 +1,8 @@
 import React, { SFC } from 'react';
 import { Typography, Button } from '@material-ui/core';
 import { translate, TranslationFunction } from 'react-i18next';
-import Container from '../Container/Container';
-import Section from '../Section/Section';
+import Container from '../../../Container/Container';
+import Section from '../../../Section/Section';
 import compose from 'recompose/compose';
 
 // TODO improve types by replacing "any"

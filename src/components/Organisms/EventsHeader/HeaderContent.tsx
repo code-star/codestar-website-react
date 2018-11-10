@@ -1,6 +1,6 @@
 import React, { SFC } from 'react';
 import { Typography, Button, Hidden, withStyles } from '@material-ui/core';
-import Container from '../Container/Container';
+import Container from '../../../Container/Container';
 import { translate, TranslationFunction } from 'react-i18next';
 import { Link } from 'react-scroll';
 import css from './EventsHeader.module.scss';

@@ -1,8 +1,8 @@
 import React from 'react';
-import i18n from '../i18n';
+import i18n from '../../../i18n';
 import sanitizeHtml from 'sanitize-html';
 import { Typography } from '@material-ui/core';
-import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
+import ResponsiveImage from '../../../ResponsiveImage/ResponsiveImage';
 import EventsHeaderButton from './EventsHeaderButton';
 import { navButtons } from './constants';
 import css from './EventsHeader.module.scss';
