@@ -37,27 +37,21 @@ export const DetailsSection: SFC<
         <div className="row">
           <div className="col-12 col-md-8">{descriptionElem}</div>
           <div className="col-12 col-md-4">
-            {/*TODO guard against empty tweets */}
             <TweetList
               tweets={tweets}
-              eventDate="1"
-              eventImage="1"
-              eventName="hoi"
-            />
-
-            <img
-              src={mEvent.coverUrl}
-              alt={`Artistic background with text "${mEvent.name}"`}
-              style={{ width: '100%' }}
-            />
-            <Button
-              color="primary"
-              variant="raised"
-              href={mEvent.link}
-              className="mt-1"
+              eventDate={formattedDate}
+              eventImage={mEvent.coverUrl}
+              eventName={mEvent.name}
             >
-              {t('SIGN_UP')}
-            </Button>
+              <Button
+                color="primary"
+                variant="raised"
+                href={mEvent.link}
+                className="mt-1"
+              >
+                {t('SIGN_UP')}
+              </Button>
+            </TweetList>
           </div>
         </div>
       </Container>

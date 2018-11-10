@@ -28,16 +28,18 @@ const TweetList = ({
   children,
 }: ITweetListProps) => (
   <Card raised className={styles.card}>
-    <CardHeader
-      avatar={
-        <Avatar
-          src={tweets[0].user.profile_image_url_https}
-          aria-label="Speaker Twitter Avatar"
-        />
-      }
-      title={tweets[0].user.name}
-      subheader={eventDate}
-    />
+    {tweets.slice(0, 1).map(tweet => (
+      <CardHeader
+        avatar={
+          <Avatar
+            src={tweet.user.profile_image_url_https}
+            aria-label="Speaker Twitter Avatar"
+          />
+        }
+        title={tweet.user.name}
+        subheader={eventDate}
+      />
+    ))}
     <CardMedia image={eventImage} className={styles.media} title={eventName} />
     <CardContent>
       {tweets.map(tweet => (
@@ -63,13 +65,15 @@ const TweetList = ({
     </CardContent>
     <CardActions>
       {children}
-      <Button
-        size="small"
-        color="secondary"
-        href={`https://twitter.com/${tweets[0].user.screen_name}?lang=en`}
-      >
-        About {tweets[0].user.name}
-      </Button>
+      {tweets.slice(0, 1).map(tweet => (
+        <Button
+          size="small"
+          color="secondary"
+          href={`https://twitter.com/${tweet.user.screen_name}?lang=en`}
+        >
+          About {tweet.user.name}
+        </Button>
+      ))}
     </CardActions>
   </Card>
 );

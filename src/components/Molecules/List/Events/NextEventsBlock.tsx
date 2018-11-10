@@ -1,7 +1,6 @@
 import React from 'react';
 import { IMeetupEvent } from '../../../../containers/EventsContainer/EventsContainer.interfaces';
 import EventCard from '../../../../EventCard/EventCard';
-// import TweetList from '../../../Molecules/List/TweetList';
 
 interface INextEventsProps {
   events: IMeetupEvent[];
@@ -31,11 +30,6 @@ export const NextEventsBlock = ({
         <div className="d-flex flex-wrap">
           <NextEvents events={events} />
         </div>
-        {/*        {tweets.length > 0 && (
-          <div className="pt-3 pl-3 pb-3">
-            <TweetList tweets={tweets} eventDate="1" eventImage="1" eventName="hoi" />
-          </div>
-        )}*/}
       </div>
     </>
   ) : null;
