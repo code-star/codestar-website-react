@@ -11,6 +11,11 @@ jest.mock('react-i18next', () => ({
   },
 }));
 
+jest.mock('@material-ui/core/Grow', () => (Component: any) => {
+  const React = require('react');
+  return <div>{Component.children}</div>;
+});
+
 const globalAny: any = global;
 
 const renderShallow = () => {
