@@ -2,9 +2,11 @@ import React, { SFC } from 'react';
 import compose from 'recompose/compose';
 import Section from '../../../Section/Section';
 import { translate, TranslationFunction } from 'react-i18next';
-import { Button, Typography } from '@material-ui/core';
+import { Button, Tooltip, Typography, Grow, Avatar } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import ResponsiveImage from '../../../ResponsiveImage/ResponsiveImage';
+import ResponsiveImage, {
+  getResponsiveImageUrl,
+} from '../../../ResponsiveImage/ResponsiveImage';
 import Container from '../../../Container/Container';
 import styles from './TrainingsSection.module.scss';
 
@@ -19,6 +21,16 @@ interface IPropsOuter {
 // Fixme: this is a workaround for using the material ui button
 // with the `to` property. By default this is not supported.
 const CustomButton = (props: any) => <Button {...props} />;
+
+const getTechIcon: any = (name: string, url: string) => (
+  <div className="col d-flex justify-content-center">
+    <Tooltip title={name}>
+      <Grow in>
+        <Avatar alt={name} src={getResponsiveImageUrl(url, 80)} />
+      </Grow>
+    </Tooltip>
+  </div>
+);
 
 export const TrainingsSection: SFC<IPropsInner & IPropsOuter> = ({
   t,
@@ -62,6 +74,12 @@ export const TrainingsSection: SFC<IPropsInner & IPropsOuter> = ({
             <Typography variant="body1" className="d-inline text-white">
               {t('TRAININGS_TEXT')}
             </Typography>
+            <div className="row m-1 mt-2">
+              {getTechIcon('Scala', '/images/technologies/scala.svg')}
+              {getTechIcon('Kotlin', '/images/technologies/kotlin.svg')}
+              {getTechIcon('RxJS', '/images/technologies/rxjs.svg')}
+              {getTechIcon('TypeScript', '/images/technologies/typescript.svg')}
+            </div>
           </div>
         </div>
       </div>
