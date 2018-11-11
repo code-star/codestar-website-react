@@ -1,4 +1,3 @@
-import React from 'react';
 import { shallow } from 'enzyme';
 import TrainingsSection from './TrainingsSection';
 import { MemoryRouter } from 'react-router';
@@ -19,6 +18,7 @@ jest.mock('@material-ui/core/Grow', () => (Component: any) => {
 const globalAny: any = global;
 
 const renderShallow = () => {
+  const React = require('react');
   return shallow(
     <MemoryRouter>
       <TrainingsSection scrollname="trainings" />
