@@ -11,9 +11,10 @@ import {
 } from '@material-ui/core';
 import { getResponsiveImageUrl } from '../../../../ResponsiveImage/ResponsiveImage';
 import styles from './TweetList.module.scss';
+import { ITweet } from '../../../../containers/EventsContainer/EventsContainer.interfaces';
 
 interface ITweetListProps {
-  tweets: any[];
+  tweets: ITweet[];
   eventDate: string;
   eventImage: string;
   eventName: string;

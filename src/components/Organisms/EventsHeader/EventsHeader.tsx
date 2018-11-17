@@ -9,12 +9,15 @@ import css from './EventsHeader.module.scss';
 import EventsHeaderMessage from './EventsHeaderMessage';
 import HeaderContent from './HeaderContent';
 import DetailsSection from './DetailsSection';
+import {
+  IMeetupEvent,
+  ITweet,
+} from '../../../containers/EventsContainer/EventsContainer.interfaces';
 
-// TODO improve types by replacing "any"
 interface IEventsHeaderProps {
-  nextMeetupEvents: any[];
+  nextMeetupEvents: IMeetupEvent[];
   noNextMeetupEvent: boolean;
-  tweets: any[];
+  tweets: ITweet[];
 }
 
 const EventsHeader = ({
@@ -52,7 +55,9 @@ const EventsHeader = ({
         day: 'numeric',
       }
     );
-    const cleanDescription = sanitizeHtml(meetupEvent.description);
+    const cleanDescription = meetupEvent.description
+      ? sanitizeHtml(meetupEvent.description)
+      : '';
     const descriptionElem = (
       <Typography
         component="p"

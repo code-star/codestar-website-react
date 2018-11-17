@@ -14,3 +14,17 @@ export interface IEventsContainerState {
   pastMeetupEvents: IMeetupEvent[];
   recentTweets: any[];
 }
+
+export interface ITwitterUser {
+  name: string;
+  profile_image_url_https: string;
+  screen_name: string;
+}
+
+export interface ITweet {
+  id: number;
+  id_str: string;
+  user: ITwitterUser;
+  created_at: string;
+  text: string;
+}
