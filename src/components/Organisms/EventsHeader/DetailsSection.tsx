@@ -1,21 +1,24 @@
-import React, { SFC } from 'react';
+import React, { SFC, ReactNode } from 'react';
 import { Typography, Button } from '@material-ui/core';
 import { translate, TranslationFunction } from 'react-i18next';
 import Container from '../../../Container/Container';
 import Section from '../../../Section/Section';
 import compose from 'recompose/compose';
 import TweetList from '../../Molecules/List/TweetList';
+import {
+  IMeetupEvent,
+  ITweet,
+} from '../../../containers/EventsContainer/EventsContainer.interfaces';
 
-// TODO improve types by replacing "any"
 interface IDetailsSectionPropsInner {
   t: TranslationFunction;
 }
 
 interface IDetailsSectionPropsOuter {
-  mEvent: any;
+  mEvent: IMeetupEvent;
   formattedDate: string;
-  descriptionElem: any;
-  tweets: any;
+  descriptionElem: ReactNode;
+  tweets: ITweet[];
 }
 
 export const DetailsSection: SFC<
