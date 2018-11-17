@@ -1,6 +1,6 @@
 import React, { SFC } from 'react';
 import { Button, withStyles } from '@material-ui/core';
-import css from './EventsHeaderButton.module.css';
+import css from './EventsHeaderButton.module.scss';
 import { Link } from 'react-scroll';
 import { purple } from '@material-ui/core/colors';
 import compose from 'recompose/compose';
