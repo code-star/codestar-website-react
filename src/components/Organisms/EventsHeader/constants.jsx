@@ -32,7 +32,7 @@ export const navButtons = [
   },
   {
     icon: <BookIcon />,
-    label: 'trainings',
+    label: 'TRAININGS',
     to: 'trainings',
   },
 ];
