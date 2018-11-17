@@ -1,64 +1,89 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
 import {
   Card,
-  CardActionArea,
   CardContent,
-  Typography,
   CardActions,
   Button,
+  CardMedia,
+  CardHeader,
+  Avatar,
+  Typography,
 } from '@material-ui/core';
+import { getResponsiveImageUrl } from '../../../../ResponsiveImage/ResponsiveImage';
+import styles from './TweetList.module.scss';
+import { ITweet } from '../../../../containers/EventsContainer/EventsContainer.interfaces';
 
 interface ITweetListProps {
-  tweets: any[];
+  tweets: ITweet[];
+  eventDate: string;
+  eventImage: string;
+  eventName: string;
+  children?: React.ReactNode;
 }
 
-const styles = {
-  card: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 140,
-  },
+const TweetList = ({
+  tweets,
+  eventDate,
+  eventImage,
+  eventName,
+  children,
+}: ITweetListProps) => {
+  const firstTweetArr = tweets.slice(0, 1);
+  return (
+    <Card raised className={styles.card}>
+      {firstTweetArr.map(tweet => (
+        <CardHeader
+          key={tweet.id}
+          avatar={
+            <Avatar
+              src={tweet.user.profile_image_url_https}
+              aria-label="Speaker Twitter Avatar"
+            />
+          }
+          title={tweet.user.name}
+          subheader={eventDate}
+        />
+      ))}
+      <CardMedia
+        image={eventImage}
+        className={styles.media}
+        title={eventName}
+      />
+      <CardContent>
+        {tweets.map(tweet => (
+          <div key={tweet.id} className="p-2">
+            <a
+              href={`https://twitter.com/${tweet.user.screen_name}/status/${
+                tweet.id_str
+              }`}
+            >
+              <Typography component="div" className={styles.prefix}>
+                <img
+                  src={getResponsiveImageUrl('/images/events/twitter', 30)}
+                  className="mr-2"
+                />
+                {new Date(tweet.created_at).toDateString()}
+              </Typography>
+              <Typography component="p">{tweet.text}</Typography>
+            </a>
+          </div>
+        ))}
+      </CardContent>
+      <CardActions>
+        {children}
+        {firstTweetArr.map(tweet => (
+          <Button
+            key={tweet.id}
+            size="small"
+            color="secondary"
+            href={`https://twitter.com/${tweet.user.screen_name}?lang=en`}
+          >
+            About {tweet.user.name}
+          </Button>
+        ))}
+      </CardActions>
+    </Card>
+  );
 };
 
-const TweetList = ({ tweets }: ITweetListProps) => (
-  <Card>
-    <CardActionArea>
-      <CardContent>
-        <Typography gutterBottom variant="headline" component="h2">
-          {tweets[0].user.name} tweets ...
-        </Typography>
-        {tweets.map(tweet => {
-          return (
-            <div key={tweet.id} className="p-2">
-              <Typography component="p">
-                <a
-                  href={`https://twitter.com/${tweet.user.screen_name}/status/${
-                    tweet.id_str
-                  }`}
-                >
-                  <span className="text-info">{`${new Date(
-                    tweet.created_at
-                  ).toDateString()} `}</span>
-                  {`${tweet.text}`}
-                </a>
-              </Typography>
-            </div>
-          );
-        })}
-      </CardContent>
-    </CardActionArea>
-    <CardActions>
-      <Button
-        size="small"
-        color="primary"
-        href={`https://twitter.com/${tweets[0].user.screen_name}?lang=en`}
-      >
-        Read More
-      </Button>
-    </CardActions>
-  </Card>
-);
-
-export default withStyles(styles)(TweetList);
+export default TweetList;

@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import TweetList from './TweetList';
+import { CardContent } from '@material-ui/core';
 
 const someTweets = [
   {
@@ -26,23 +27,29 @@ const someTweets = [
   },
 ];
 
-const renderShallow = tweets => {
-  return shallow(<TweetList tweets={tweets} />);
+const globalAny: any = global;
+
+const renderShallow = (tweets: any) => {
+  return shallow(
+    <TweetList tweets={tweets} eventImage="a" eventDate="b" eventName="c" />
+  );
 };
 
 describe('<TweetList />', () => {
   let wrapper;
 
   describe('Instance', () => {
-    test('must be an instance of TweetList', () => {
+    test('must have an instance of CardContent', () => {
       wrapper = renderShallow(someTweets);
-      expect(wrapper.find('TweetList')).toHaveLength(1);
+      expect(wrapper.find(CardContent)).toHaveLength(1);
     });
   });
 
   describe('Snaphot', () => {
     test('must match some tweet list', () => {
-      expect(global.renderToJSON(renderShallow(someTweets))).toMatchSnapshot();
+      expect(
+        globalAny.renderToJSON(renderShallow(someTweets))
+      ).toMatchSnapshot();
     });
   });
 });

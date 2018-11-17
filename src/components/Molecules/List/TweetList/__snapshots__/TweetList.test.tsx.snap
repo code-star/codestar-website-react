@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
+<div
+  className="MuiPaper-root-2 MuiPaper-elevation8-12 MuiPaper-rounded-3 MuiCard-root-1"
+>
+  <div
+    className="MuiCardHeader-root-29"
+  >
+    <div
+      className="MuiCardHeader-avatar-30"
+    >
+      <div
+        aria-label="Speaker Twitter Avatar"
+        className="MuiAvatar-root-35"
+      />
+    </div>
+    <div
+      className="MuiCardHeader-content-32"
+    >
+      <span
+        className="MuiTypography-root-38 MuiTypography-body2-46 MuiCardHeader-title-33"
+      >
+        someAwesomeName
+      </span>
+      <span
+        className="MuiTypography-root-38 MuiTypography-body2-46 MuiTypography-colorTextSecondary-62 MuiCardHeader-subheader-34"
+      >
+        b
+      </span>
+    </div>
+  </div>
+  <div
+    className="MuiCardMedia-root-64"
+    src={undefined}
+    style={
+      Object {
+        "backgroundImage": "url(\\"a\\")",
+      }
+    }
+    title="c"
+  />
+  <div
+    className="MuiCardContent-root-66"
+  >
+    <div
+      className="p-2"
+    >
+      <a
+        href="https://twitter.com/someAwesomeScreenName/status/undefined"
+      >
+        <div
+          className="MuiTypography-root-38 MuiTypography-body1-47"
+        >
+          <img
+            className="mr-2"
+            src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_30/v1532588516/codestar.nl/images/events/twitter"
+          />
+          Fri Aug 31 2018
+        </div>
+        <p
+          className="MuiTypography-root-38 MuiTypography-body1-47"
+        >
+          some awesome text
+        </p>
+      </a>
+    </div>
+    <div
+      className="p-2"
+    >
+      <a
+        href="https://twitter.com/someOtherAwesomeScreenName/status/undefined"
+      >
+        <div
+          className="MuiTypography-root-38 MuiTypography-body1-47"
+        >
+          <img
+            className="mr-2"
+            src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_30/v1532588516/codestar.nl/images/events/twitter"
+          />
+          Sun Sep 02 2018
+        </div>
+        <p
+          className="MuiTypography-root-38 MuiTypography-body1-47"
+        >
+          some other awesome text
+        </p>
+      </a>
+    </div>
+  </div>
+  <div
+    className="MuiCardActions-root-67"
+  >
+    <a
+      className="MuiButtonBase-root-95 MuiButton-root-69 MuiButton-text-71 MuiButton-textSecondary-73 MuiButton-flat-74 MuiButton-flatSecondary-76 MuiButton-sizeSmall-92 MuiCardActions-action-68"
+      href="https://twitter.com/someAwesomeScreenName?lang=en"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      tabIndex="0"
+    >
+      <span
+        className="MuiButton-label-70"
+      >
+        About 
+        someAwesomeName
+      </span>
+      <span
+        className="MuiTouchRipple-root-98"
+      />
+    </a>
+  </div>
+</div>
+`;

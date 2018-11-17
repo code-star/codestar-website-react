@@ -1,8 +1,11 @@
-import { IMeetupEvent } from './modules/EventsContainer/EventsContainer.interfaces';
+import {
+  IMeetupEvent,
+  ITweet,
+} from './containers/EventsContainer/EventsContainer.interfaces';
 
 let cachedUpcomingEvents: IMeetupEvent[] = [];
 let cachedPastEvents: IMeetupEvent[] = [];
-let cachedRecentTweets: any[];
+let cachedRecentTweets: ITweet[];
 
 // This has been wrapped in a function to able to run unit tests where process.env.REACT_APP_STAGE is changed
 function getUrl(lambdaName: string): string {
@@ -48,7 +51,7 @@ export async function getCachedPastEvents(): Promise<IMeetupEvent[]> {
   return cachedPastEvents.length ? cachedPastEvents : fetchPastEvents();
 }
 
-async function fetchRecentTweets() {
+async function fetchRecentTweets(): Promise<ITweet[]> {
   try {
     const url = getUrl('get-recent-tweets');
     cachedRecentTweets = await fetch(url).then(data => data.json());
@@ -59,10 +62,10 @@ async function fetchRecentTweets() {
     return cachedRecentTweets;
   } catch (err) {
     // fail silently
-    return null;
+    return [];
   }
 }
 
-export async function getCachedRecentTweets() {
+export async function getCachedRecentTweets(): Promise<ITweet[]> {
   return cachedRecentTweets ? cachedRecentTweets : fetchRecentTweets();
 }
