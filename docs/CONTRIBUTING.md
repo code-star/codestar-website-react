@@ -22,6 +22,8 @@ Atomic design is used to structure the sources (see below). We allow 2 variants 
 Export the base component and export the composed component as default.
 An example would be "mouse over" state in `src/components/Atoms/EventsButton`
 
+Note: the developer of recompose will not continue giving it support. React 16.7 (currently in RFC) will have hooks which are aimed to solve same issues recompose solves. When hooks are released, migrate from recompose to hooks.
+
 2. The external state variant. If a component retrieves data externally, store the retrieving logic in `/src/containers/*`. An example is:
 
 * `src/components/Molecules/NavBar/NavBar` (the stateless component)
