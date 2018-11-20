@@ -10,7 +10,7 @@ import ScrollToTop from './ScrollToTop';
 import Footer from './Footer/Footer';
 import jobsList from './Jobs/JobsList';
 import AsyncComponent from './AsyncComponent/AsyncComponent';
-import NavContainer from './modules/NavContainer/NavContainer';
+import NavContainer from './containers/NavContainer/NavContainer';
 
 function fullHeightAsyncComponent(C) {
   return props => <AsyncComponent fullHeight component={() => C} {...props} />;
@@ -28,7 +28,7 @@ const AsyncJobDescription = fullHeightAsyncComponent(
 const AsyncContact = fullHeightAsyncComponent(import('./Contact/Contact'));
 const AsyncNotFound = fullHeightAsyncComponent(import('./NotFound/NotFound'));
 const AsyncEvents = fullHeightAsyncComponent(
-  import('./modules/EventsContainer/EventsContainer')
+  import('./containers/EventsContainer/EventsContainer')
 );
 
 const sections = ['', 'cases', 'about', 'jobs', 'contact'];

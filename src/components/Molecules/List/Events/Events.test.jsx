@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { MemoryRouter } from 'react-router';
 import Events from './Events';
 
 jest.mock('react-i18next', () => ({
@@ -18,11 +19,13 @@ jest.mock('@material-ui/core/es/Hidden/Hidden', () => () => <div />);
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
-    <Events
-      nextMeetupEvents={[]}
-      noNextMeetupEvent={true}
-      pastMeetupEvents={[]}
-    />,
+    <MemoryRouter>
+      <Events
+        nextMeetupEvents={[]}
+        noNextMeetupEvent={true}
+        pastMeetupEvents={[]}
+      />
+    </MemoryRouter>,
     div
   );
   ReactDOM.unmountComponentAtNode(div);

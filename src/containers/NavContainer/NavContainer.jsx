@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import NavBar from '../../NavBar/NavBar';
+import NavBar from '../../components/Molecules/NavBar/NavBar';
 import SideMenu from '../../SideMenu/SideMenu';
 import { getCachedUpcomingEvents } from '../../eventsService';
 

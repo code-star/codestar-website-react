@@ -6,6 +6,7 @@ import {
   Event as EventIcon,
   Movie as MovieIcon,
   Portrait as PortraitIcon,
+  Book as BookIcon,
 } from '@material-ui/icons';
 
 export const navButtons = [
@@ -28,5 +29,10 @@ export const navButtons = [
     icon: <MovieIcon />,
     label: 'video',
     href: 'https://www.youtube.com/channel/UCqwHhJNEUe7D-HGsX4zvKzQ',
+  },
+  {
+    icon: <BookIcon />,
+    label: 'TRAININGS',
+    to: 'trainings',
   },
 ];

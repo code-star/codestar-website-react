@@ -11,7 +11,7 @@ import {
 import { translate, TranslationFunction } from 'react-i18next';
 import compose from 'recompose/compose';
 import css from './EventCard.module.css';
-import { IMeetupEvent } from '../modules/EventsContainer/EventsContainer.interfaces';
+import { IMeetupEvent } from '../containers/EventsContainer/EventsContainer.interfaces';
 
 interface IEventCardOuterProps {
   event: IMeetupEvent;

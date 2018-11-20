@@ -53,7 +53,7 @@ exports[`An instance of EventsButton matches the snapshot with Event 1`] = `
   onTouchStart={[Function]}
   role="button"
   tabIndex="0"
-  title="M08 27 *Meetup* MyEvent"
+  title="M08 27 🎉Meetup🎉 MyEvent"
 >
   <span
     className="MuiButton-label-52"

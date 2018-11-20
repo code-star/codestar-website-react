@@ -1,24 +1,29 @@
 import React from 'react';
-import i18n from '../i18n';
+import i18n from '../../../i18n';
 import sanitizeHtml from 'sanitize-html';
 import { Typography } from '@material-ui/core';
-import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
+import ResponsiveImage from '../../../ResponsiveImage/ResponsiveImage';
 import EventsHeaderButton from './EventsHeaderButton';
 import { navButtons } from './constants';
-import css from './EventsHeader.module.css';
+import css from './EventsHeader.module.scss';
 import EventsHeaderMessage from './EventsHeaderMessage';
 import HeaderContent from './HeaderContent';
 import DetailsSection from './DetailsSection';
+import {
+  IMeetupEvent,
+  ITweet,
+} from '../../../containers/EventsContainer/EventsContainer.interfaces';
 
-// TODO improve types by replacing "any"
 interface IEventsHeaderProps {
-  nextMeetupEvents: any[];
+  nextMeetupEvents: IMeetupEvent[];
   noNextMeetupEvent: boolean;
+  tweets: ITweet[];
 }
 
 const EventsHeader = ({
   nextMeetupEvents,
   noNextMeetupEvent,
+  tweets,
 }: IEventsHeaderProps) => {
   const renderNavButtons = () => {
     return navButtons.map(config => {
@@ -50,7 +55,9 @@ const EventsHeader = ({
         day: 'numeric',
       }
     );
-    const cleanDescription = sanitizeHtml(meetupEvent.description);
+    const cleanDescription = meetupEvent.description
+      ? sanitizeHtml(meetupEvent.description)
+      : '';
     const descriptionElem = (
       <Typography
         component="p"
@@ -67,6 +74,7 @@ const EventsHeader = ({
         mEvent={meetupEvent}
         formattedDate={formattedDate}
         descriptionElem={descriptionElem}
+        tweets={tweets}
       />
     );
   } else if (noNextMeetupEvent) {

@@ -4,7 +4,7 @@ import { EventsButton, initialState, stateUpdaters } from './EventsButton';
 import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
 
-jest.mock('../i18n', () => ({
+jest.mock('../../../i18n', () => ({
   language: 'nl',
 }));
 

@@ -1,59 +1,53 @@
-import React, { SFC } from 'react';
+import React, { SFC, ReactNode } from 'react';
 import { Typography, Button } from '@material-ui/core';
 import { translate, TranslationFunction } from 'react-i18next';
-import Container from '../Container/Container';
-import Section from '../Section/Section';
+import Container from '../../../Container/Container';
+import Section from '../../../Section/Section';
 import compose from 'recompose/compose';
+import TweetList from '../../Molecules/List/TweetList';
+import {
+  IMeetupEvent,
+  ITweet,
+} from '../../../containers/EventsContainer/EventsContainer.interfaces';
 
-// TODO improve types by replacing "any"
 interface IDetailsSectionPropsInner {
   t: TranslationFunction;
-  mEvent: any;
-  formattedDate: string;
-  descriptionElem: any;
 }
 
 interface IDetailsSectionPropsOuter {
-  mEvent: any;
+  mEvent: IMeetupEvent;
   formattedDate: string;
-  descriptionElem: any;
+  descriptionElem: ReactNode;
+  tweets: ITweet[];
 }
 
-export const DetailsSection: SFC<IDetailsSectionPropsInner> = ({
-  t,
-  mEvent,
-  formattedDate,
-  descriptionElem,
-}) => {
+export const DetailsSection: SFC<
+  IDetailsSectionPropsInner & IDetailsSectionPropsOuter
+> = ({ t, mEvent, formattedDate, descriptionElem, tweets }) => {
   return (
     <Section scrollname="event-details" className="bg-white">
       <Container center>
         <div className="row">
-          <div className="col-12">
+          <div className="col-12 col-md-8">
             <Typography align="center" variant="title">
               {mEvent.name}
             </Typography>
             <Typography gutterBottom align="center" variant="subheading">
               {formattedDate}
             </Typography>
+            {descriptionElem}
           </div>
-        </div>
-        <div className="row">
-          <div className="col-12 col-md-8">{descriptionElem}</div>
           <div className="col-12 col-md-4">
-            <img
-              src={mEvent.coverUrl}
-              alt={`Artistic background with text "${mEvent.name}"`}
-              style={{ width: '100%' }}
-            />
-            <Button
-              color="primary"
-              variant="raised"
-              href={mEvent.link}
-              className="mt-1"
+            <TweetList
+              tweets={tweets}
+              eventDate={formattedDate}
+              eventImage={mEvent.coverUrl}
+              eventName={mEvent.name}
             >
-              {t('SIGN_UP')}
-            </Button>
+              <Button color="primary" href={mEvent.link}>
+                {t('SIGN_UP')}
+              </Button>
+            </TweetList>
           </div>
         </div>
       </Container>
