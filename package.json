@@ -15,7 +15,6 @@
     "defer-to-connect": "^1.0.1",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
-    "got": "^9.0.0",
     "history": "^4.7.2",
     "husky": "^0.14.3",
     "i18next": "^11.3.2",
@@ -27,7 +26,6 @@
     "lodash": "^4.17.10",
     "node-fetch": "^2.2.0",
     "nuka-carousel": "^4.2.5",
-    "oauth": "^0.9.15",
     "prettier": "^1.10.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
@@ -38,7 +36,6 @@
     "react-scroll": "^1.7.10",
     "react-test-renderer": "^16.4.2",
     "sanitize-html": "^1.18.2",
-    "serverless": "^1.30.3",
     "simplex-noise": "^2.4.0",
     "snapsvg-cjs": "0.0.6",
     "vivus": "^0.4.4"
