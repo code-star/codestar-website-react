@@ -87,6 +87,6 @@ export const TrainingsSection: SFC<IPropsInner & IPropsOuter> = ({
   </Section>
 );
 
-export default compose<IPropsInner, IPropsOuter>(
+export default compose<IPropsInner & IPropsOuter, IPropsOuter>(
   translate(['events'], { wait: true })
 )(TrainingsSection);

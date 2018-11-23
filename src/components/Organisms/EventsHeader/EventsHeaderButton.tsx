@@ -59,7 +59,7 @@ const EventsHeaderButton: SFC<IPropsInner & IPropsOuter> = ({
   return LocalButton;
 };
 
-export default compose<IPropsInner, IPropsOuter>(
+export default compose<IPropsInner & IPropsOuter, IPropsOuter>(
   translate(['events'], { wait: true }),
   withStyles(styles)
 )(EventsHeaderButton);

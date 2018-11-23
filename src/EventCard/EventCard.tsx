@@ -61,6 +61,7 @@ export class EventCard extends Component<
   }
 }
 
-export default compose<IEventCardInnerProps, IEventCardOuterProps>(
-  translate(['events'], { wait: true })
-)(EventCard);
+export default compose<
+  IEventCardInnerProps & IEventCardOuterProps,
+  IEventCardOuterProps
+>(translate(['events'], { wait: true }))(EventCard);
