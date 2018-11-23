@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import Vivus from 'vivus';
-import Snap from 'snapsvg-cjs';
 import { withStyles } from '@material-ui/core/styles';
+import React, { Component } from 'react';
+import Snap from 'snapsvg-cjs';
+import Vivus from 'vivus';
 
 const styles = {
   logoOrange: {
@@ -18,7 +18,7 @@ const styles = {
 
 class AnimatedLogo extends Component {
   componentDidMount() {
-    const animation = new Vivus(
+    new Vivus(
       'logo',
       { duration: this.props.lineDuration, type: 'sync', file: '' },
       () => {
