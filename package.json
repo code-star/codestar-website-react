@@ -42,7 +42,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css}": [
-      "prettier --single-quote --write --trailing-comma es5",
+      "prettier",
       "git add"
     ]
   },
@@ -55,9 +55,14 @@
     "test:watchChanged:silent": "react-scripts-ts test --env=jsdom --watch --onlyChanged --silent --verbose",
     "test:watchChanged:verbose": "react-scripts-ts test --env=jsdom --watch --onlyChanged  --verbose",
     "precommit": "lint-staged",
-    "prettier": "prettier --single-quote --write --trailing-comma es5 --write ./src/**/*.{js,jsx,ts,tsx}",
+    "prettier": "prettier --write ./src/**/*.{js,jsx,ts,tsx}",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -c .storybook -o .storybook-static"
+    "build-storybook": "build-storybook -c .storybook -o .storybook-static",
+    "tsc": "tsc --noEmit -p ./tsconfig.json"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
   },
   "browserslist": {
     "development": [
