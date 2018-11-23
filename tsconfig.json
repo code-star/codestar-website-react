@@ -18,6 +18,7 @@
     "alwaysStrict": false,
     "strictFunctionTypes": false,
     "strictPropertyInitialization": false,
+    "experimentalDecorators": true,
   },
   "include": [
     "src"
