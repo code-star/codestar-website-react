@@ -32,7 +32,6 @@
     "react-ga": "^2.5.3",
     "react-i18next": "^7.7.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts-ts": "https://github.com/code-star/create-react-app-typescript.git#build",
     "react-scroll": "^1.7.10",
     "react-test-renderer": "^16.4.2",
     "sanitize-html": "^1.18.2",
