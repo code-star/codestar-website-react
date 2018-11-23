@@ -64,7 +64,6 @@ Array [
           "url": "/",
         }
       }
-      staticContext={undefined}
     />
   </scroll-to-top>,
   <footer />,
