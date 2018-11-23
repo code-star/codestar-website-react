@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../Animations/delayedFade.module.scss';
+import styles from './DelayedFade.module.scss';
 
 interface IDelayedFadeProps {
   panLeft?: boolean;

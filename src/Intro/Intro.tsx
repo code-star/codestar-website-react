@@ -6,8 +6,8 @@ import { withStyles } from '@material-ui/core/styles';
 
 import Container from '../Container/Container';
 import Clients from '../Clients/Clients';
-import AnimatedLogo from '../Animations/AnimatedLogo';
-import LandscapeBackground from '../Animations/LandscapeBackground';
+import { AnimatedLogo } from '../Animations/AnimatedLogo';
+import { LandscapeBackground } from '../Animations/LandscapeBackground';
 import { DelayedFade } from '../Animations/DelayedFade';
 import { Link } from 'react-router-dom';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
