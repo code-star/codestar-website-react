@@ -59,7 +59,8 @@
     "precommit": "lint-staged",
     "prettier": "prettier --single-quote --write --trailing-comma es5 --write ./src/**/*.{js,jsx,ts,tsx}",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -c .storybook -o .storybook-static"
+    "build-storybook": "build-storybook -c .storybook -o .storybook-static",
+    "preinstall": "node scripts/ensureYarn.js"
   },
   "browserslist": {
     "development": [
