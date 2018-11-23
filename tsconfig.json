@@ -15,10 +15,13 @@
     "jsx": "preserve",
     "lib": ["es6", "dom"],
 
-    "alwaysStrict": false,
-    "strictFunctionTypes": false,
-    "strictPropertyInitialization": false,
     "experimentalDecorators": true,
+    "sourceMap": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
   },
   "include": [
     "src"
