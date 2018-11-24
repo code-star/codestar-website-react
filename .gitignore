@@ -26,8 +26,11 @@ yarn-error.log*
 # Serverless directories
 .serverless
 
-# Do not npm
-package-lock.json
+# Do not use npm
+#package-lock.json
+
+# Do not use yarn
+yarn.lock
 
 # Storybook
 .storybook-static
