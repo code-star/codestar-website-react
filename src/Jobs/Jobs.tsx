@@ -86,7 +86,7 @@ class Jobs extends React.Component<JobsProps> {
               <p>
                 <CustomButton
                   className="mt-3"
-                  variant="raised"
+                  variant="contained"
                   component={Link}
                   to="/about"
                   color="inherit"

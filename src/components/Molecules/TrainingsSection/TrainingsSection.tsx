@@ -64,7 +64,7 @@ export const TrainingsSection: SFC<IPropsInner & IPropsOuter> = ({
           </div>
 
           <div className="my-2">
-            <CustomButton variant="raised" to="/contact" component={Link}>
+            <CustomButton variant="contained" to="/contact" component={Link}>
               {t('BOOK_A_TRAINING')}
             </CustomButton>
           </div>
