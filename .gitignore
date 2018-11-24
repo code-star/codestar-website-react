@@ -26,7 +26,7 @@ yarn-error.log*
 # Serverless directories
 .serverless
 
-# Do not npm
+# Do not use npm, until this is fixed https://github.com/facebook/create-react-app/issues/5259 or until a newer version of jest is released that uses babel-core 7
 package-lock.json
 
 # Storybook
