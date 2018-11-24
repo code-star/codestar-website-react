@@ -61,6 +61,6 @@ const Events: SFC<IEventInnerProps & IEventOuterProps> = ({
   );
 };
 
-export default compose<IEventInnerProps, IEventOuterProps>(
+export default compose<IEventInnerProps & IEventOuterProps, IEventOuterProps>(
   translate(['events'], { wait: true })
 )(Events);

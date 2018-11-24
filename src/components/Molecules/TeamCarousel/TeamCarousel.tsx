@@ -1,12 +1,12 @@
-import React, { SFC } from 'react';
-import { Card, CardContent, Typography, CardMedia } from '@material-ui/core';
+import { Card, CardContent, CardMedia, Typography } from '@material-ui/core';
 import Carousel from 'nuka-carousel';
-import styles from './TeamCarousel.module.scss';
+import React, { SFC } from 'react';
 import { getResponsiveImageUrl } from '../../../ResponsiveImage/ResponsiveImage';
-import Team from './Team.json';
 import { leftControls, rightControls } from './renderControls';
+import Team from './Team.json';
+import styles from './TeamCarousel.module.scss';
 
-function shuffleArray(array: number[]) {
+function shuffleArray(array: any[]) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];

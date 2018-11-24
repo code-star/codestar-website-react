@@ -35,7 +35,7 @@ class About extends React.Component<AboutProps> {
               {/*Already in love? Check out{' '}*/}
               <CustomButton
                 className="mt-3"
-                variant="raised"
+                variant="contained"
                 component={Link}
                 to={'/jobs'}
                 color="inherit"

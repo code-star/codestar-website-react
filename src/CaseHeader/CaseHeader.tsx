@@ -69,7 +69,7 @@ class CaseHeader extends React.Component<CaseHeaderProps> {
               {props.readMore && (
                 <div className="my-2">
                   <Button
-                    variant="raised"
+                    variant="contained"
                     onClick={props.callback}
                     className={classes.button}
                   >
