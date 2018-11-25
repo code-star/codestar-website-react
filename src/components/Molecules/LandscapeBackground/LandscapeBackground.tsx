@@ -30,6 +30,10 @@ export class LandscapeBackground extends Component<ILandscapeBackgroundProps> {
     super(props);
     this.seed = Math.floor(Math.random() * 1000);
     this.noise = new SimplexNoise(this.seed.toString());
+    /* TODO how to initialize these properly */
+    this.interval = setInterval(()=>{}, 0);
+    this.snap = Snap('');
+    this.group = this.snap.g();
   }
 
   public componentDidMount() {

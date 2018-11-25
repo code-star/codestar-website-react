@@ -60,7 +60,8 @@
     "prettier": "prettier --write ./src/**/*.{js,jsx,ts,tsx}",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o .storybook-static",
-    "tsc": "tsc --noEmit -p ./tsconfig.json"
+    "tsc": "tsc --noEmit -p ./tsconfig.json",
+    "preinstall": "node scripts/ensureYarn.js"
   },
   "prettier": {
     "singleQuote": true,
