@@ -3,7 +3,7 @@
 exports[`<TrainingsSection /> Snaphot must match the static training section 1`] = `
 <section
   className="
-			null
+			section
 			WithTheme-WithWidth-Section---section-1"
   name="trainings"
 >
@@ -13,10 +13,10 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
   />
   <img
     alt="Person receiving training at Codestar"
-    className="undefined"
+    className="asBackgroundImage"
     sizes="100w"
     src="/images/jobs/codestar_4.png"
-    srcSet="https://res.cloudinary.com/codestar/image/upload/f_auto/w_375//e_grayscale/co_rgb:0057ae,e_colorize:40/v1532588516/codestar.nl/images/jobs/codestar_4.png 375w, https://res.cloudinary.com/codestar/image/upload/f_auto/w_800//e_grayscale/co_rgb:0057ae,e_colorize:40/v1532588516/codestar.nl/images/jobs/codestar_4.png 800w, https://res.cloudinary.com/codestar/image/upload/f_auto/w_1280//e_grayscale/co_rgb:0057ae,e_colorize:40/v1532588516/codestar.nl/images/jobs/codestar_4.png 1280w, https://res.cloudinary.com/codestar/image/upload/f_auto/w_1536//e_grayscale/co_rgb:0057ae,e_colorize:40/v1532588516/codestar.nl/images/jobs/codestar_4.png 1536w, https://res.cloudinary.com/codestar/image/upload/f_auto/w_1920//e_grayscale/co_rgb:0057ae,e_colorize:40/v1532588516/codestar.nl/images/jobs/codestar_4.png 1920w"
+    srcSet="https://res.cloudinary.com/codestar/image/upload/f_auto/w_375//e_grayscale/co_rgb:0057ae,e_colorize:40/v1542784068/codestar.nl/images/jobs/codestar_4.png 375w, https://res.cloudinary.com/codestar/image/upload/f_auto/w_800//e_grayscale/co_rgb:0057ae,e_colorize:40/v1542784068/codestar.nl/images/jobs/codestar_4.png 800w, https://res.cloudinary.com/codestar/image/upload/f_auto/w_1280//e_grayscale/co_rgb:0057ae,e_colorize:40/v1542784068/codestar.nl/images/jobs/codestar_4.png 1280w, https://res.cloudinary.com/codestar/image/upload/f_auto/w_1536//e_grayscale/co_rgb:0057ae,e_colorize:40/v1542784068/codestar.nl/images/jobs/codestar_4.png 1536w, https://res.cloudinary.com/codestar/image/upload/f_auto/w_1920//e_grayscale/co_rgb:0057ae,e_colorize:40/v1542784068/codestar.nl/images/jobs/codestar_4.png 1920w"
     title=""
   />
   <div
@@ -59,7 +59,7 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
           className="my-2"
         >
           <a
-            className="MuiButtonBase-root-60 MuiButton-root-34 MuiButton-contained-45 MuiButton-raised-48"
+            className="MuiButtonBase-root-69 MuiButton-root-43 MuiButton-contained-54 MuiButton-raised-57"
             href="/contact"
             onBlur={[Function]}
             onClick={[Function]}
@@ -76,12 +76,12 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
             tabIndex="0"
           >
             <span
-              className="MuiButton-label-35"
+              className="MuiButton-label-44"
             >
               
             </span>
             <span
-              className="MuiTouchRipple-root-63"
+              className="MuiTouchRipple-root-82"
             />
           </a>
         </div>
@@ -105,14 +105,12 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
             >
               <div>
                 <div
-                  className="MuiAvatar-root-77"
+                  className="MuiAvatar-root-79"
                 >
                   <img
                     alt="Scala"
-                    className="MuiAvatar-img-79"
-                    sizes={undefined}
-                    src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/scala.svg"
-                    srcSet={undefined}
+                    className="MuiAvatar-img-81"
+                    src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/scala.svg"
                   />
                 </div>
               </div>
@@ -122,14 +120,12 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
             >
               <div>
                 <div
-                  className="MuiAvatar-root-77"
+                  className="MuiAvatar-root-79"
                 >
                   <img
                     alt="Kotlin"
-                    className="MuiAvatar-img-79"
-                    sizes={undefined}
-                    src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/kotlin.svg"
-                    srcSet={undefined}
+                    className="MuiAvatar-img-81"
+                    src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/kotlin.svg"
                   />
                 </div>
               </div>
@@ -139,14 +135,12 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
             >
               <div>
                 <div
-                  className="MuiAvatar-root-77"
+                  className="MuiAvatar-root-79"
                 >
                   <img
                     alt="RxJS"
-                    className="MuiAvatar-img-79"
-                    sizes={undefined}
-                    src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/rxjs.svg"
-                    srcSet={undefined}
+                    className="MuiAvatar-img-81"
+                    src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/rxjs.svg"
                   />
                 </div>
               </div>
@@ -156,14 +150,12 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
             >
               <div>
                 <div
-                  className="MuiAvatar-root-77"
+                  className="MuiAvatar-root-79"
                 >
                   <img
                     alt="TypeScript"
-                    className="MuiAvatar-img-79"
-                    sizes={undefined}
-                    src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/typescript.svg"
-                    srcSet={undefined}
+                    className="MuiAvatar-img-81"
+                    src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/typescript.svg"
                   />
                 </div>
               </div>

@@ -1,28 +1,26 @@
-import * as React from 'react';
-import { Link, Element } from 'react-scroll';
-import compose from 'recompose/compose';
-import { translate } from 'react-i18next';
-
 import {
-  Typography,
-  Paper,
-  Fade,
-  Dialog,
-  DialogContent,
-  DialogActions,
   Button,
-  withMobileDialog,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  Fade,
+  Paper,
   Slide,
+  Typography,
+  withMobileDialog,
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
-
-import Container from '../Container/Container';
+import * as React from 'react';
+import { translate } from 'react-i18next';
+import { Element, Link } from 'react-scroll';
+import compose from 'recompose/compose';
 import CaseHeader from '../CaseHeader/CaseHeader';
-import casesList from './CasesList';
+import Container from '../Container/Container';
+import InlineLogo from '../InlineLogo/InlineLogo';
 import ResponsiveImage, {
   getResponsiveImageUrl,
 } from '../ResponsiveImage/ResponsiveImage';
-import InlineLogo from '../InlineLogo/InlineLogo';
+import casesList from './CasesList';
 
 type CasesProps = any;
 type CasesState = any;
@@ -45,14 +43,17 @@ const styles: any = {
 class Cases extends React.Component<CasesProps, CasesState> {
   public orderedCases = [3, 1, 2, 5, 0, 4].map(i => casesList[i]);
 
-  public state: CasesState = this.orderedCases.reduce((accu, clientCase) => {
-    accu[clientCase.path] =
-      this.props.location.hash.slice(1) === clientCase.path &&
-      clientCase.readMore
-        ? true
-        : false;
-    return accu;
-  }, {});
+  public state: CasesState = this.orderedCases.reduce(
+    (accu: any, clientCase) => {
+      accu[clientCase.path] =
+        this.props.location.hash.slice(1) === clientCase.path &&
+        clientCase.readMore
+          ? true
+          : false;
+      return accu;
+    },
+    {}
+  );
 
   public render() {
     return (

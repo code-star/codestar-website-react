@@ -32,7 +32,7 @@ const EventsHeaderMessage: SFC<IPropsInner & IPropsOuter> = ({
           <div style={{ textAlign: 'center' }}>
             <Button
               color="primary"
-              variant="raised"
+              variant="contained"
               href="https://www.meetup.com/Code-Star-Night"
               className="mr-1"
             >

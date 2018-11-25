@@ -55,6 +55,7 @@ export const DetailsSection: SFC<
   );
 };
 
-export default compose<IDetailsSectionPropsInner, IDetailsSectionPropsOuter>(
-  translate(['events'], { wait: true })
-)(DetailsSection);
+export default compose<
+  IDetailsSectionPropsInner & IDetailsSectionPropsOuter,
+  IDetailsSectionPropsOuter
+>(translate(['events'], { wait: true }))(DetailsSection);
