@@ -6,9 +6,9 @@ import { withStyles } from '@material-ui/core/styles';
 
 import Container from '../Container/Container';
 import Clients from '../Clients/Clients';
-import AnimatedLogo from '../Animations/AnimatedLogo';
-import LandscapeBackground from '../Animations/LandscapeBackground';
-import DelayedFade from '../Animations/DelayedFade';
+import { AnimatedLogo } from '../components/Molecules/AnimatedLogo/AnimatedLogo';
+import { LandscapeBackground } from '../components/Molecules/LandscapeBackground/LandscapeBackground';
+import { DelayedFade } from '../components/Molecules/DelayFade/DelayedFade';
 import { Link } from 'react-router-dom';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 import InlineLogo from '../InlineLogo/InlineLogo';

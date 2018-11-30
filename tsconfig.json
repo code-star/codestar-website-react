@@ -21,9 +21,10 @@
     "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "noUnusedLocals": true,
+    "noUnusedLocals": true
   },
   "include": [
-    "src"
+    "src",
+    "@types"
   ]
 }

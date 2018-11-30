@@ -44,7 +44,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css}": [
-      "prettier --single-quote --write --trailing-comma es5",
+      "prettier",
       "git add"
     ]
   },
@@ -57,10 +57,15 @@
     "test:watchChanged:silent": "react-scripts test --env=jsdom --watch --onlyChanged --silent --verbose",
     "test:watchChanged:verbose": "react-scripts test --env=jsdom --watch --onlyChanged  --verbose",
     "precommit": "lint-staged",
-    "prettier": "prettier --single-quote --write --trailing-comma es5 --write ./src/**/*.{js,jsx,ts,tsx}",
+    "prettier": "prettier --write ./src/**/*.{js,jsx,ts,tsx}",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o .storybook-static",
+    "tsc": "tsc --noEmit -p ./tsconfig.json",
     "preinstall": "node scripts/ensureYarn.js"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
   },
   "browserslist": {
     "development": [
@@ -101,6 +106,7 @@
     "@types/recompose": "^0.26.3",
     "@types/sanitize-html": "^1.18.0",
     "@types/storybook__react": "^3.0.9",
+    "@types/vivus": "^0.4.0",
     "autoprefixer": "^9.3.1",
     "awesome-typescript-loader": "^5.2.0",
     "babel-loader": "^8.0.0",
