@@ -12,6 +12,8 @@ const options = {
   simplexXScale: 6,
   valleySteepness: 1,
   perspective: 2,
+  // Because Firefox does not support negative values for `animation-delay` CSS property that well, we use a different
+  // prerender starting point here. Mainly for performance reasons. For more info, please consult @Tenchi.
   prerender: navigator.userAgent.toLowerCase().indexOf('firefox') > -1 ? 0 : 20,
 };
 
@@ -72,10 +74,22 @@ export class LandscapeBackground extends Component<ILandscapeBackgroundProps> {
   }
 
   public render() {
+    const createArray = (numberOfItems: number) =>
+      Array.from(Array(numberOfItems).keys());
+
     const { travelTime, perspective, prerender, interval } = options;
-    const animationDelays = new Array(prerender).map(
-      (value: undefined, index: number) => index * interval
+    const animationDelays = createArray(prerender).map(
+      (value: number, index: number) => index * interval
     );
+
+    const animationDelayClassNames = animationDelays
+      .map(
+        (delay: number, index: number) => `
+          .early${index + 1} {
+            animation-delay: -${delay}ms;
+          }`
+      )
+      .join('\n');
 
     // About setting stroke-opacity to a value higher than 1:
     // Because paths are scaled by 'perspective' times,
@@ -107,15 +121,7 @@ export class LandscapeBackground extends Component<ILandscapeBackgroundProps> {
 					.paused * {
 						animation-play-state: paused;
 					}
-					${animationDelays
-            .map(
-              (delay: number, index: number) => `
-					.early${index + 1} {
-						animation-delay: -${delay}ms;
-					}
-					`
-            )
-            .join('\n')}
+					${animationDelayClassNames}
 					`}</style>
         </svg>
       </Fade>
