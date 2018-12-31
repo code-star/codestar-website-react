@@ -1,6 +1,6 @@
 import React, { SFC } from 'react';
 import Container from '../../../../Container/Container';
-import Section from '../../../../Section/Section';
+import Section from '../../Section/Section';
 import { translate, TranslationFunction } from 'react-i18next';
 import EventsHeader from '../../../Organisms/EventsHeader/EventsHeader';
 import EventCard from '../../../../EventCard/EventCard';

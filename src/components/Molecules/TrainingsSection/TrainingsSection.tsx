@@ -1,6 +1,6 @@
 import React, { SFC } from 'react';
 import compose from 'recompose/compose';
-import Section from '../../../Section/Section';
+import Section from '../Section/Section';
 import { translate, TranslationFunction } from 'react-i18next';
 import { Button, Tooltip, Typography, Grow, Avatar } from '@material-ui/core';
 import { Link } from 'react-router-dom';
