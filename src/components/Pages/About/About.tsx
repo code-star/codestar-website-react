@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { translate, TranslationFunction } from 'react-i18next';
-import {Button, Theme, Typography, createStyles} from '@material-ui/core';
+import { Theme, Typography, createStyles} from '@material-ui/core';
 import compose from 'recompose/compose';
 import grey from '@material-ui/core/colors/grey';
 import blue from '@material-ui/core/colors/blue';
@@ -9,6 +9,7 @@ import Container from '../../../Container/Container';
 import OurStack from '../../../OurStack/OurStack';
 import TeamCarousel from '../../Molecules/TeamCarousel/TeamCarousel';
 import Section from '../../Molecules/Section/Section';
+import { CustomButton } from '../../Atoms/CustomButton/CustomButton';
 import css from './About.module.scss';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -28,10 +29,6 @@ const styles = (theme: Theme) => createStyles({
     color: grey[200]
   }
 });
-
-// Fixme: this is a workaround for using the material ui button
-// with the `to` property. By default this is not supported.
-const CustomButton = (props: any) => <Button {...props} />;
 
 export const About: FC<IPropsInner> = ({ t, classes }) => {
   return (

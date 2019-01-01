@@ -2,8 +2,9 @@ import React, { SFC } from 'react';
 import compose from 'recompose/compose';
 import Section from '../Section/Section';
 import { translate, TranslationFunction } from 'react-i18next';
-import { Button, Tooltip, Typography, Grow, Avatar } from '@material-ui/core';
+import { Tooltip, Typography, Grow, Avatar } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import { CustomButton } from '../../Atoms/CustomButton/CustomButton';
 import ResponsiveImage, {
   getResponsiveImageUrl,
 } from '../../../ResponsiveImage/ResponsiveImage';
@@ -17,10 +18,6 @@ interface IPropsInner {
 interface IPropsOuter {
   scrollname: any;
 }
-
-// Fixme: this is a workaround for using the material ui button
-// with the `to` property. By default this is not supported.
-const CustomButton = (props: any) => <Button {...props} />;
 
 const getTechIcon: any = (name: string, url: string) => (
   <div className="col d-flex justify-content-center">
