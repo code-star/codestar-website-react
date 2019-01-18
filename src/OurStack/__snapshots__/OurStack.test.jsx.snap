@@ -26,66 +26,56 @@ exports[`OurStack shows icons for each technology 1`] = `
         >
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-70"
             >
               <img
                 alt="Typescript"
-                className="MuiAvatar-img-62"
-                sizes={undefined}
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/typescript.png"
-                srcSet={undefined}
+                className="MuiAvatar-img-72"
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/typescript.png"
               />
             </div>
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-70"
             >
               <img
                 alt="React"
-                className="MuiAvatar-img-62"
-                sizes={undefined}
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/react.png"
-                srcSet={undefined}
+                className="MuiAvatar-img-72"
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/react.png"
               />
             </div>
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-70"
             >
               <img
                 alt="Redux"
-                className="MuiAvatar-img-62"
-                sizes={undefined}
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/redux.png"
-                srcSet={undefined}
+                className="MuiAvatar-img-72"
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/redux.png"
               />
             </div>
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-70"
             >
               <img
                 alt="Angular"
-                className="MuiAvatar-img-62"
-                sizes={undefined}
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/angular.png"
-                srcSet={undefined}
+                className="MuiAvatar-img-72"
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/angular.png"
               />
             </div>
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-70"
             >
               <img
                 alt="RxJS"
-                className="MuiAvatar-img-62"
-                sizes={undefined}
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/rxjs.png"
-                srcSet={undefined}
+                className="MuiAvatar-img-72"
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/rxjs.png"
               />
             </div>
           </div>
@@ -117,79 +107,67 @@ exports[`OurStack shows icons for each technology 1`] = `
         >
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-70"
             >
               <img
                 alt="Scala"
-                className="MuiAvatar-img-62"
-                sizes={undefined}
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/scala.svg"
-                srcSet={undefined}
+                className="MuiAvatar-img-72"
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/scala.svg"
               />
             </div>
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-70"
             >
               <img
                 alt="Akka"
-                className="MuiAvatar-img-62"
-                sizes={undefined}
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/akka.svg"
-                srcSet={undefined}
+                className="MuiAvatar-img-72"
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/akka.svg"
               />
             </div>
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-70"
             >
               <img
                 alt="Spray"
-                className="MuiAvatar-img-62"
-                sizes={undefined}
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/spray.png"
-                srcSet={undefined}
+                className="MuiAvatar-img-72"
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/spray.png"
               />
             </div>
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-70"
             >
               <img
                 alt="Spark"
-                className="MuiAvatar-img-62"
-                sizes={undefined}
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/spark.png"
-                srcSet={undefined}
+                className="MuiAvatar-img-72"
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/spark.png"
               />
             </div>
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-70"
             >
               <img
                 alt="Cassandra"
-                className="MuiAvatar-img-62"
-                sizes={undefined}
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/cassandra.png"
-                srcSet={undefined}
+                className="MuiAvatar-img-72"
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/cassandra.png"
               />
             </div>
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-70"
             >
               <img
                 alt="Kafka"
-                className="MuiAvatar-img-62"
-                sizes={undefined}
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/kafka.png"
-                srcSet={undefined}
+                className="MuiAvatar-img-72"
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/kafka.png"
               />
             </div>
           </div>
@@ -221,53 +199,45 @@ exports[`OurStack shows icons for each technology 1`] = `
         >
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-70"
             >
               <img
                 alt="Docker"
-                className="MuiAvatar-img-62"
-                sizes={undefined}
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/docker.png"
-                srcSet={undefined}
+                className="MuiAvatar-img-72"
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/docker.png"
               />
             </div>
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-70"
             >
               <img
                 alt="Mesos"
-                className="MuiAvatar-img-62"
-                sizes={undefined}
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/mesos.jpg"
-                srcSet={undefined}
+                className="MuiAvatar-img-72"
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/mesos.jpg"
               />
             </div>
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-70"
             >
               <img
                 alt="Kubernetes"
-                className="MuiAvatar-img-62"
-                sizes={undefined}
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/kubernetes.png"
-                srcSet={undefined}
+                className="MuiAvatar-img-72"
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/kubernetes.png"
               />
             </div>
           </div>
           <div>
             <div
-              className="MuiAvatar-root-60"
+              className="MuiAvatar-root-70"
             >
               <img
                 alt="AWS"
-                className="MuiAvatar-img-62"
-                sizes={undefined}
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/aws.png"
-                srcSet={undefined}
+                className="MuiAvatar-img-72"
+                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/aws.png"
               />
             </div>
           </div>

@@ -7,8 +7,8 @@
 ---
 # Codestar website
 
-Note: uses custom fork of [react-scripts-ts](https://github.com/code-star/create-react-app-typescript) to 
-use CSS Modules without ejecting. 
+Note: uses custom fork of [react-scripts-ts](https://github.com/code-star/create-react-app-typescript) to
+use CSS Modules without ejecting.
 
 **Contents:**
 
@@ -20,6 +20,10 @@ use CSS Modules without ejecting.
 	- [Calling the function](#calling-the-function)
 1. [Hosting pictures](#hosting-pictures)
 	- [Notes](#notes)
+1. [Local API](#local-api)
+1. [Unit testing](#unit-testing)
+1. [Available Scripts](#available-scripts)
+1. [Contributing](#contributing)
 
 Other docs:
 
@@ -51,63 +55,7 @@ Only allow https (better SEO, encrypted form data), so set up Cloudflare to use 
 
 ## Serverless
 
-### Configuration
-
-To configure, run:
-
-```bash
-npm i -S serverless
-npx serverless create --template aws-nodejs --name static-site-mailer
-npx sls config credentials --provider aws --key YOUR_ACCESS_KEY_ID --secret YOUR_SECRET_ACCESS_KEY
-```
-
-(The keys will be stored under `~/.aws/credentials`)
-
-The default region is set in `serverless.yml` and can be added to `sls` with the parameter `-r eu-west-1`
-
-Deploy to AWS:
-
-```bash
-npx sls deploy --verbose
-```
-
-This logs (among others) the `POST` endpoint (https://x.execute-api.us-east-1.amazonaws.com/dev/static-site-mailer).
-
-This can be tested with Postman, but to call it from a form, CORS must be configured.
-
-### Calling the function
-
-To invoke the function, run:
-
-- Production:
-
-	```bash
-	npx sls invoke --function staticSiteMailer --path serverless/staticSiteMailer-dummy-payload.json
-	```
-- Test:
-
-	```bash
-	STATIC_SITE_MAILER_SOURCE=example@example.com STATIC_SITE_MAILER_DESTINATION=example@example.com DEBUG=true npx sls invoke local --function staticSiteMailer --path serverless/staticSiteMailer-dummy-payload.json
-	```
-
-(`--path` is optional and points to a `POST` payload)
-
-**NOTE: Replace `example@example.com` with the email address validated in AWS SES**
-
-The environment variable `DEBUG=true` will allow calls from `localhost:3000`. This can also be enabled on AWS if needed. 
-
-The destination email address is set in the environment variable `STATIC_SITE_MAILER_DESTINATION`.
-The source email address is set in the environment variable `STATIC_SITE_MAILER_SOURCE`.  
-You can check the [documentation](https://serverless.com/framework/docs/providers/spotinst/guide/variables/#environment-variables) for 
-more information about environment variables.
-
-Locally this can be set in a test profile or just by setting the environment variable with 
-`export STATIC_SITE_MAILER_DESTINATION=example@example.com`. In the code it is accessed via `process.env.STATIC_SITE_MAILER_DESTINATION`.
-
-To change it in AWS:
-
-- Go to `https://eu-west-1.console.aws.amazon.com/lambda/` and find the function
-- Scroll to Environment variables and add the correct key/value
+See the repo [codestar-website-functions](https://github.com/code-star/codestar-website-functions)
 
 ## Hosting pictures
 
@@ -126,9 +74,9 @@ We should use Cloudinary as much as possible for hosting images. The [`Responsiv
   ```
   http://res.cloudinary.com/codestar/image/upload/v1532077524/codestar.nl/images/codestar_logo_dark.svg
   ```
-  
+
   Otherwise, the image before the replacing will be shown. To change the version number, edit the [`.env` file](.env):
-  
+
   ```
   REACT_APP_CLOUDINARY_ID=v1532588516
   ```
@@ -144,3 +92,60 @@ We should use Cloudinary as much as possible for hosting images. The [`Responsiv
 * Run `npm test`
 * Run one specific test: e.g. `npm test -- src/modules/EventsContainer/EventsContainer.test.jsx --coverage=false --watch`
 * To only run one test in a file use `fit()` instead of `it()`, to exclude use `xit()` instead of `it()`
+
+## Available Scripts
+
+- `npm start`
+Runs the app in the development mode executing `npm-run-all -p watch-css start-ts` scripts<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+- `npm run build`
+Builds the app for production to the `build` folder executing `npm-run-all build-css build-ts`.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+- `npm run build-ts`
+Builds react app executing `react-scripts-ts test --env=jsdom --coverage --bail --ci && react-scripts-ts build`
+
+- `npm run start-ts`
+Starts react app executing `REACT_APP_STAGE=dev react-scripts-ts start`
+
+- `npm run build-css`
+Compiles CSS into SASS executing `node-sass-chokidar src/ -o src/`
+
+- `npm run watch-css`
+Compiles Sass into CSS and watches styling changes executing `npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive`
+
+- `npm run start-storybook`
+Runs Storybook<br>
+Runs Storybook and shows all available components and their stories.
+Open [http://localhost:6006](http://localhost:6006) to view it in the browser.
+
+- `npm run build-storybook`
+Exports Storybook as a static app to `storybook-static` folder.<br>
+
+- `npm test`
+Launches test runner executing `react-scripts-ts test --env=jsdom --coverage`.
+
+- `test:watchAll:silent`
+Launches test runner watching all files exposing some details executing `react-scripts-ts test --env=jsdom --watchAll --silent --verbose`.
+
+- `test:watchAll:loud`
+Launches test runner watching all files exposing all details executing `react-scripts-ts test --env=jsdom --watchAll  --verbose`.
+
+- `test:watchChanged:silent`
+Launches test runner watching changed files exposing some details executing `react-scripts-ts test --env=jsdom --watch --onlyChanged --silent --verbose`.
+
+- `test:watchChanged:loud`
+Launches test runner watching changed files exposing all details executing `react-scripts-ts test --env=jsdom --watch --onlyChanged  --verbose`.
+
+- `npm run eject`
+Ejects `create-react-app` and exposes `react-scripts` executing `react-scripts-ts eject`.
+
+## Contributing
+
+You can find information about contributing in our [guideline for repository contributors](https://github.com/code-star/codestar-website-react/blob/test/docs/CONTRIBUTING.md)
+
+## Available Lambda Functions
+
+You can find information about available Lambda functions here:
+- [getRecentTweets](https://github.com/code-star/codestar-website-react/blob/test/docs/getRecentTweets.md)

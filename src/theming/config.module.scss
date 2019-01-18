@@ -1,0 +1,23 @@
+// font family
+$font-family-primary: 'metabold_roman', arial;
+
+// font size
+$font-size-large: 30px;
+$font-size-medium: 16px;
+$font-size-small: 14px;
+$font-size-tiny: 8px;
+
+// colors
+$color-white: #fff;
+$color-grey: #c6c6c6;
+$color-black: #000;
+$color-blue: #00F;
+$color-event-blue: #8FC3EA;
+$color-red: #F00;
+$color-yellow: #FF0;
+
+// Prevent section overflow
+.section {
+  position: relative;
+  overflow: hidden;
+}
