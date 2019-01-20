@@ -29,12 +29,12 @@ exports[`renders the details for the Events header 1`] = `
         className="col-12 col-md-8"
       >
         <h2
-          className="MuiTypography-root-8 MuiTypography-title-14 MuiTypography-alignCenter-22"
+          className="MuiTypography-root-8 MuiTypography-title-14 MuiTypography-alignCenter-31"
         >
           Data Oriented Design with Maxim Zaks
         </h2>
         <h3
-          className="MuiTypography-root-8 MuiTypography-subheading-15 MuiTypography-gutterBottom-26 MuiTypography-alignCenter-22"
+          className="MuiTypography-root-8 MuiTypography-subheading-15 MuiTypography-gutterBottom-35 MuiTypography-alignCenter-31"
         >
           26 september 2018
         </h3>
@@ -44,22 +44,20 @@ exports[`renders the details for the Events header 1`] = `
         className="col-12 col-md-4"
       >
         <div
-          className="MuiPaper-root-35 MuiPaper-elevation8-45 MuiPaper-rounded-36 MuiCard-root-34"
+          className="MuiPaper-root-44 MuiPaper-elevation8-54 MuiPaper-rounded-45 MuiCard-root-43 card"
         >
           <div
-            className="MuiCardMedia-root-62"
-            src={undefined}
-            style={undefined}
+            className="MuiCardMedia-root-71 media"
             title="Data Oriented Design with Maxim Zaks"
           />
           <div
-            className="MuiCardContent-root-64"
+            className="MuiCardContent-root-73"
           />
           <div
-            className="MuiCardActions-root-65"
+            className="MuiCardActions-root-74"
           >
             <a
-              className="MuiButtonBase-root-93 MuiButton-root-67 MuiButton-text-69 MuiButton-textPrimary-70 MuiButton-flat-72 MuiButton-flatPrimary-73 MuiCardActions-action-66"
+              className="MuiButtonBase-root-102 MuiButton-root-76 MuiButton-text-78 MuiButton-textPrimary-79 MuiButton-flat-81 MuiButton-flatPrimary-82 MuiCardActions-action-75"
               href="https://www.codestar.nl"
               onBlur={[Function]}
               onFocus={[Function]}
@@ -75,12 +73,12 @@ exports[`renders the details for the Events header 1`] = `
               tabIndex="0"
             >
               <span
-                className="MuiButton-label-68"
+                className="MuiButton-label-77"
               >
                 
               </span>
               <span
-                className="MuiTouchRipple-root-96"
+                className="MuiTouchRipple-root-105"
               />
             </a>
           </div>

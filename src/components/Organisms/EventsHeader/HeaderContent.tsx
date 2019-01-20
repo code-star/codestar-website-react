@@ -79,7 +79,7 @@ export const HeaderContent: SFC<IHeaderContentPropsInner> = ({
           <div style={{ textAlign: 'center' }}>
             <Button
               color="primary"
-              variant="raised"
+              variant="contained"
               href={mEvent.link}
               className={`mr-1 ${classes.button}`}
             >

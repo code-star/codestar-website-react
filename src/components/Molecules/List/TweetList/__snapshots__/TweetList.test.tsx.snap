@@ -2,7 +2,7 @@
 
 exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
 <div
-  className="MuiPaper-root-2 MuiPaper-elevation8-12 MuiPaper-rounded-3 MuiCard-root-1"
+  className="MuiPaper-root-2 MuiPaper-elevation8-12 MuiPaper-rounded-3 MuiCard-root-1 card"
 >
   <div
     className="MuiCardHeader-root-29"
@@ -24,15 +24,14 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
         someAwesomeName
       </span>
       <span
-        className="MuiTypography-root-38 MuiTypography-body2-46 MuiTypography-colorTextSecondary-62 MuiCardHeader-subheader-34"
+        className="MuiTypography-root-38 MuiTypography-body2-46 MuiTypography-colorTextSecondary-71 MuiCardHeader-subheader-34"
       >
         b
       </span>
     </div>
   </div>
   <div
-    className="MuiCardMedia-root-64"
-    src={undefined}
+    className="MuiCardMedia-root-73 media"
     style={
       Object {
         "backgroundImage": "url(\\"a\\")",
@@ -41,7 +40,7 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
     title="c"
   />
   <div
-    className="MuiCardContent-root-66"
+    className="MuiCardContent-root-75"
   >
     <div
       className="p-2"
@@ -50,11 +49,11 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
         href="https://twitter.com/someAwesomeScreenName/status/undefined"
       >
         <div
-          className="MuiTypography-root-38 MuiTypography-body1-47"
+          className="MuiTypography-root-38 MuiTypography-body1-47 prefix"
         >
           <img
             className="mr-2"
-            src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_30/v1532588516/codestar.nl/images/events/twitter"
+            src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_30/v1542784068/codestar.nl/images/events/twitter"
           />
           Fri Aug 31 2018
         </div>
@@ -72,11 +71,11 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
         href="https://twitter.com/someOtherAwesomeScreenName/status/undefined"
       >
         <div
-          className="MuiTypography-root-38 MuiTypography-body1-47"
+          className="MuiTypography-root-38 MuiTypography-body1-47 prefix"
         >
           <img
             className="mr-2"
-            src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_30/v1532588516/codestar.nl/images/events/twitter"
+            src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_30/v1542784068/codestar.nl/images/events/twitter"
           />
           Sun Sep 02 2018
         </div>
@@ -89,10 +88,10 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
     </div>
   </div>
   <div
-    className="MuiCardActions-root-67"
+    className="MuiCardActions-root-76"
   >
     <a
-      className="MuiButtonBase-root-95 MuiButton-root-69 MuiButton-text-71 MuiButton-textSecondary-73 MuiButton-flat-74 MuiButton-flatSecondary-76 MuiButton-sizeSmall-92 MuiCardActions-action-68"
+      className="MuiButtonBase-root-104 MuiButton-root-78 MuiButton-text-80 MuiButton-textSecondary-82 MuiButton-flat-83 MuiButton-flatSecondary-85 MuiButton-sizeSmall-101 MuiCardActions-action-77"
       href="https://twitter.com/someAwesomeScreenName?lang=en"
       onBlur={[Function]}
       onFocus={[Function]}
@@ -108,13 +107,13 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
       tabIndex="0"
     >
       <span
-        className="MuiButton-label-70"
+        className="MuiButton-label-79"
       >
         About 
         someAwesomeName
       </span>
       <span
-        className="MuiTouchRipple-root-98"
+        className="MuiTouchRipple-root-107"
       />
     </a>
   </div>

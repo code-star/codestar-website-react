@@ -78,7 +78,7 @@
     "job": "Front-end Developer",
     "tagline": "That's not a bug, that's a feature!",
     "bio": "Always curious about new technologies, programming languages, frameworks, gadgets and other innovations.",
-    "image": "martinvandam.jpg"
+    "image": "mvdam.jpg"
   },
   {
     "name": "Werner",
@@ -150,7 +150,8 @@
     "job": "Information Engineer",
     "tagline": "“No Super-Chickens!”",
     "bio": "I enjoy helping businesses improve their communication and business understanding by developing successful data-driven solutions.",
-    "image": "davidlp.jpg"
+		"image": "davidlp.jpg",
+		"gone": true
   },
   {
     "name": "Mikel",
@@ -165,5 +166,19 @@
     "tagline": "“To boldly go where no one has gone before”",
     "bio": "",
     "image": "koen.jpg"
-  }
+	},
+	{
+		"name": "Hernán",
+		"job": "Programmer",
+		"tagline": "",
+		"bio": "",
+		"image": "hernan.jpg"
+	},
+	{
+		"name": "Thomas",
+		"job": "Programmer",
+		"tagline": "Data is code, code is data",
+		"bio": "",
+		"image": "thomas.jpg"
+	}
 ]

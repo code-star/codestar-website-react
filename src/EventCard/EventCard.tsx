@@ -34,7 +34,12 @@ export class EventCard extends Component<
     });
     const signUpButton =
       event.time > Date.now() ? (
-        <Button size="small" color="primary" variant="raised" href={event.link}>
+        <Button
+          size="small"
+          color="primary"
+          variant="contained"
+          href={event.link}
+        >
           {t('SIGN_UP')}
         </Button>
       ) : null;
@@ -61,6 +66,7 @@ export class EventCard extends Component<
   }
 }
 
-export default compose<IEventCardInnerProps, IEventCardOuterProps>(
-  translate(['events'], { wait: true })
-)(EventCard);
+export default compose<
+  IEventCardInnerProps & IEventCardOuterProps,
+  IEventCardOuterProps
+>(translate(['events'], { wait: true }))(EventCard);
