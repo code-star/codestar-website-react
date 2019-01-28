@@ -28,7 +28,7 @@ export const navButtons = [
   {
     icon: <MovieIcon />,
     label: 'video',
-    href: 'https://www.youtube.com/channel/UCqwHhJNEUe7D-HGsX4zvKzQ',
+    to: 'videos',
   },
   {
     icon: <BookIcon />,

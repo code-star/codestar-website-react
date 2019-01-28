@@ -7,6 +7,10 @@ import {
 } from '../../eventsService';
 import { IEventsContainerState } from './EventsContainer.interfaces';
 import { convertEventResponseToModel } from './EventsContainer.helpers';
+import { fetchYouTubePlaylist } from './fetchYouTubePlaylist';
+
+const GOOGLE_API_KEY = 'AIzaSyDkTKtIGxMcyLX2IsfTpCvYr4n7WmMw3Jw';
+const PLAYLIST_ID = 'PLy227h3xpH-FcHw79drVFiVGMRDU8YhLH';
 
 export default class EventsContainer extends Component<
   {},
@@ -18,11 +22,17 @@ export default class EventsContainer extends Component<
     noNextMeetupEvent: false,
     pastMeetupEvents: [],
     recentTweets: [],
+    videos: [],
   };
 
-  public componentDidMount() {
+  public async componentDidMount() {
     this.fetchEvents();
     this.fetchRecentTweets();
+
+    const videos = await fetchYouTubePlaylist(GOOGLE_API_KEY, PLAYLIST_ID);
+    this.setState({
+      videos,
+    });
   }
 
   public render() {
@@ -31,6 +41,7 @@ export default class EventsContainer extends Component<
       noNextMeetupEvent,
       pastMeetupEvents,
       recentTweets,
+      videos,
     }: IEventsContainerState = this.state;
 
     return (
@@ -39,6 +50,7 @@ export default class EventsContainer extends Component<
         noNextMeetupEvent={noNextMeetupEvent}
         pastMeetupEvents={pastMeetupEvents}
         recentTweets={recentTweets}
+        videos={videos}
       />
     );
   }
