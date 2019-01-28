@@ -8,9 +8,7 @@ import {
 import { IEventsContainerState } from './EventsContainer.interfaces';
 import { convertEventResponseToModel } from './EventsContainer.helpers';
 import { fetchYouTubePlaylist } from './fetchYouTubePlaylist';
-
-const GOOGLE_API_KEY = 'AIzaSyDkTKtIGxMcyLX2IsfTpCvYr4n7WmMw3Jw';
-const PLAYLIST_ID = 'PLy227h3xpH-FcHw79drVFiVGMRDU8YhLH';
+import { YOUTUBE_API_KEY, YOUTUBE_CODESTAR_PLAYLIST_ID } from '../../constants';
 
 export default class EventsContainer extends Component<
   {},
@@ -28,11 +26,7 @@ export default class EventsContainer extends Component<
   public async componentDidMount() {
     this.fetchEvents();
     this.fetchRecentTweets();
-
-    const videos = await fetchYouTubePlaylist(GOOGLE_API_KEY, PLAYLIST_ID);
-    this.setState({
-      videos,
-    });
+    this.fetchVideos();
   }
 
   public render() {
@@ -97,5 +91,15 @@ export default class EventsContainer extends Component<
     } catch (err) {
       this.setState({ recentTweets: [] });
     }
+  }
+
+  private async fetchVideos() {
+    const videos = await fetchYouTubePlaylist(
+      YOUTUBE_API_KEY,
+      YOUTUBE_CODESTAR_PLAYLIST_ID
+    );
+    this.setState({
+      videos,
+    });
   }
 }

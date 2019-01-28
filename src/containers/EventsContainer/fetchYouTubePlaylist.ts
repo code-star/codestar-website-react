@@ -8,7 +8,7 @@ export type VideoItem = Readonly<{
   id: string;
   publishedAt: Date;
   title: string;
-  description: string;
+  description: string[]; // this is an array of paragraphs (raw text is splitted on `\n`)
   thumbnails: {
     default: VideoItemThumbnail;
     standard: VideoItemThumbnail;
@@ -23,7 +23,6 @@ export async function fetchYouTubePlaylist(
   playlistId: string
 ): Promise<VideoItem[]> {
   const VIDEOS_URL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&key=${apiKey}&playlistId=${playlistId}&maxResults=50`;
-
   const requestOptions = {
     method: 'GET',
     'Content-Type': 'application/json',
@@ -39,7 +38,9 @@ export async function fetchYouTubePlaylist(
           id: item.contentDetails.videoId,
           publishedAt: new Date(item.contentDetails.videoPublishedAt),
           title: item.snippet.title,
-          description: item.snippet.description,
+          description: item.snippet.description
+            ? item.snippet.description.split('\n')
+            : [],
           thumbnails: item.snippet.thumbnails,
         })
       )
