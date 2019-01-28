@@ -36,41 +36,5 @@
 
   .carouselWrap {
     padding: 2rem;
-
-    .card {
-      height: 300px;
-      width: 250px;
-      margin: 0 auto;
-      transition: all .2s ease-in-out;
-
-      &:hover {
-        transform: translateY(-10px);
-      }
-  
-      .cardMedia {
-        width: 100%;
-        height: 120px;
-      }
-
-      .publishedAt {
-        color: #bbb;
-        margin-top: 5px;
-      }
-    }
   }
-}
-
-// dialog
-.videoFrame {
-  border: 0;
-  width: 100%;
-}
-
-.dialogDescription {
-  padding-top: 2rem;
-}
-
-.publishedText {
-  padding-top: 2rem;
-  color: #bbb;
 }
