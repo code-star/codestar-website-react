@@ -1,3 +1,5 @@
+import { VideoItem } from './fetchYouTubePlaylist';
+
 export interface IMeetupEvent {
   coverUrl: string;
   link: string;
@@ -13,6 +15,7 @@ export interface IEventsContainerState {
   noNextMeetupEvent: boolean;
   pastMeetupEvents: IMeetupEvent[];
   recentTweets: any[];
+  videos: VideoItem[];
 }
 
 export interface ITwitterUser {
