@@ -23,7 +23,7 @@ export default class EventsContainer extends Component<
     videos: [],
   };
 
-  public async componentDidMount() {
+  public componentDidMount() {
     this.fetchEvents();
     this.fetchRecentTweets();
     this.fetchVideos();

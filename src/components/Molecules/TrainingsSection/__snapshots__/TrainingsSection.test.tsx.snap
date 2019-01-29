@@ -16,7 +16,7 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
     className="asBackgroundImage"
     sizes="100w"
     src="/images/jobs/codestar_4.png"
-    srcSet="https://res.cloudinary.com/codestar/image/upload/f_auto/w_375//e_grayscale/co_rgb:0057ae,e_colorize:40/v1532588516/codestar.nl/images/jobs/codestar_4.png 375w, https://res.cloudinary.com/codestar/image/upload/f_auto/w_800//e_grayscale/co_rgb:0057ae,e_colorize:40/v1532588516/codestar.nl/images/jobs/codestar_4.png 800w, https://res.cloudinary.com/codestar/image/upload/f_auto/w_1280//e_grayscale/co_rgb:0057ae,e_colorize:40/v1532588516/codestar.nl/images/jobs/codestar_4.png 1280w, https://res.cloudinary.com/codestar/image/upload/f_auto/w_1536//e_grayscale/co_rgb:0057ae,e_colorize:40/v1532588516/codestar.nl/images/jobs/codestar_4.png 1536w, https://res.cloudinary.com/codestar/image/upload/f_auto/w_1920//e_grayscale/co_rgb:0057ae,e_colorize:40/v1532588516/codestar.nl/images/jobs/codestar_4.png 1920w"
+    srcSet="https://res.cloudinary.com/codestar/image/upload/f_auto/w_375//e_grayscale/co_rgb:0057ae,e_colorize:40/v1542784068/codestar.nl/images/jobs/codestar_4.png 375w, https://res.cloudinary.com/codestar/image/upload/f_auto/w_800//e_grayscale/co_rgb:0057ae,e_colorize:40/v1542784068/codestar.nl/images/jobs/codestar_4.png 800w, https://res.cloudinary.com/codestar/image/upload/f_auto/w_1280//e_grayscale/co_rgb:0057ae,e_colorize:40/v1542784068/codestar.nl/images/jobs/codestar_4.png 1280w, https://res.cloudinary.com/codestar/image/upload/f_auto/w_1536//e_grayscale/co_rgb:0057ae,e_colorize:40/v1542784068/codestar.nl/images/jobs/codestar_4.png 1536w, https://res.cloudinary.com/codestar/image/upload/f_auto/w_1920//e_grayscale/co_rgb:0057ae,e_colorize:40/v1542784068/codestar.nl/images/jobs/codestar_4.png 1920w"
     title=""
   />
   <div
@@ -110,7 +110,7 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
                   <img
                     alt="Scala"
                     className="MuiAvatar-img-81"
-                    src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/scala.svg"
+                    src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/scala.svg"
                   />
                 </div>
               </div>
@@ -125,7 +125,7 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
                   <img
                     alt="Kotlin"
                     className="MuiAvatar-img-81"
-                    src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/kotlin.svg"
+                    src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/kotlin.svg"
                   />
                 </div>
               </div>
@@ -140,7 +140,7 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
                   <img
                     alt="RxJS"
                     className="MuiAvatar-img-81"
-                    src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/rxjs.svg"
+                    src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/rxjs.svg"
                   />
                 </div>
               </div>
@@ -155,7 +155,7 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
                   <img
                     alt="TypeScript"
                     className="MuiAvatar-img-81"
-                    src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1532588516/codestar.nl/images/technologies/typescript.svg"
+                    src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/typescript.svg"
                   />
                 </div>
               </div>
