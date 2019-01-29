@@ -26,6 +26,7 @@ const AsyncJobDescription = fullHeightAsyncComponent(
   import('./JobDescription/JobDescription')
 );
 const AsyncContact = fullHeightAsyncComponent(import('./Contact/Contact'));
+const AsyncCodeChallange = fullHeightAsyncComponent(import('./components/Pages/CodeChallenge/CodeChallenge'));
 const AsyncNotFound = fullHeightAsyncComponent(import('./NotFound/NotFound'));
 const AsyncEvents = fullHeightAsyncComponent(
   import('./containers/EventsContainer/EventsContainer')
@@ -77,6 +78,7 @@ class App extends Component {
               <Route path="/about" component={AsyncAbout} />
               <Route path="/contact" component={AsyncContact} />
               <Route path="/events" component={AsyncEvents} />
+              <Route path="/code-challenge" component={AsyncCodeChallange} />
               <Route path="/404" component={AsyncNotFound} />
               <Redirect to="/404" />
             </Switch>
