@@ -1,0 +1,37 @@
+@import '../../../theming/config.module';
+
+.codeChallenge {
+  .whiteText {
+    color: $color-white;
+  }
+  
+  .conduit {
+    font-family: 'Conduit';
+    font-size: 120%;
+  }
+  
+  .image {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  h2, h3, h4, h5, p, span {
+    color: $color-white;
+  }
+
+  h4, h5 {
+    margin-top: 1rem;
+  }
+
+  pre {
+    font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+    font-weight: bold;
+    background-color: $color-black;
+    padding: .5rem;
+    color: $color-grey;
+  }
+
+  .downloadButton {
+    margin: .5rem .5rem .5rem 0;
+  }
+}
