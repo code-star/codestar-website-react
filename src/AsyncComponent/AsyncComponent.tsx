@@ -1,10 +1,12 @@
 import React, { Component, SFC, CSSProperties, ComponentType } from 'react';
 
+export type ComponentTypePromise = Promise<{
+  default: ComponentType;
+}>;
+
 type AsyncComponentProps = Readonly<{
   fullHeight: boolean;
-  component: () => Promise<{
-    default: ComponentType;
-  }>;
+  component: () => ComponentTypePromise;
 }>;
 
 type AsyncComponentState = Readonly<{
