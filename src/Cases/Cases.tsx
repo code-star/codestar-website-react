@@ -9,9 +9,9 @@ import {
   Typography,
   withMobileDialog,
 } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles, StyleRules, WithStyles } from '@material-ui/core/styles';
 import * as React from 'react';
-import { translate } from 'react-i18next';
+import { translate, TranslationFunction } from 'react-i18next';
 import { Element, Link } from 'react-scroll';
 import compose from 'recompose/compose';
 import CaseHeader from '../CaseHeader/CaseHeader';
@@ -20,12 +20,22 @@ import InlineLogo from '../InlineLogo/InlineLogo';
 import ResponsiveImage, {
   getResponsiveImageUrl,
 } from '../ResponsiveImage/ResponsiveImage';
-import casesList from './CasesList';
+import { casesList, Case, CasesText, CasesSection } from './CasesList';
+import { RouteComponentProps } from 'react-router';
 
-type CasesProps = any;
-type CasesState = any;
+type CasesInnerProps = Readonly<{
+  t: TranslationFunction;
+  classes: WithStyles['classes'];
+  fullScreen: boolean;
+}>;
+type CasesOuterProps = RouteComponentProps;
+type CasesProps = CasesInnerProps & CasesOuterProps;
 
-const styles: any = {
+type CasesState = Readonly<{
+  modelOpenFor: Record<string, boolean>;
+}>;
+
+const styles: StyleRules<string> = {
   whiteText: {
     color: 'white',
     textAlign: 'left',
@@ -43,17 +53,23 @@ const styles: any = {
 class Cases extends React.Component<CasesProps, CasesState> {
   public orderedCases = [3, 1, 2, 5, 0, 4].map(i => casesList[i]);
 
-  public state: CasesState = this.orderedCases.reduce(
-    (accu: any, clientCase) => {
-      accu[clientCase.path] =
-        this.props.location.hash.slice(1) === clientCase.path &&
-        clientCase.readMore
-          ? true
-          : false;
-      return accu;
-    },
-    {}
-  );
+  constructor(props: CasesProps) {
+    super(props);
+
+    this.state = {
+      modelOpenFor: this.orderedCases.reduce(
+        (accu: Record<string, boolean>, clientCase) => {
+          accu[clientCase.path] =
+            this.props.location.hash.slice(1) === clientCase.path &&
+            clientCase.readMore
+              ? true
+              : false;
+          return accu;
+        },
+        {}
+      ),
+    };
+  }
 
   public render() {
     return (
@@ -148,13 +164,18 @@ class Cases extends React.Component<CasesProps, CasesState> {
     const { t, fullScreen } = this.props;
     return (
       <section>
-        {this.orderedCases.map((clientCase: any, i: number) => {
+        {this.orderedCases.map((clientCase: Case, i: number) => {
           const caseText = t(`CASES.${clientCase.path}`, {
             returnObjects: true,
           });
-          const { title, intro, sections } = caseText;
-          const changeState = (bool: any) => () =>
-            this.setState({ [clientCase.path]: bool });
+          const { title, intro, sections }: CasesText = caseText;
+          const changeState = (isOpen: boolean) => () =>
+            this.setState({
+              modelOpenFor: {
+                ...this.state.modelOpenFor,
+                [clientCase.path]: isOpen,
+              },
+            });
 
           const img = (
             <ResponsiveImage
@@ -185,7 +206,7 @@ class Cases extends React.Component<CasesProps, CasesState> {
               />
               <Dialog
                 fullScreen={fullScreen}
-                open={this.state[clientCase.path]}
+                open={this.state.modelOpenFor[clientCase.path]}
                 onClose={changeState(false)}
                 scroll={fullScreen ? 'paper' : 'body'}
               >
@@ -195,7 +216,7 @@ class Cases extends React.Component<CasesProps, CasesState> {
                 </DialogContent>
                 {fullScreen ? null : img}
                 <DialogContent>
-                  {sections.map((section: any, si: number) => (
+                  {sections.map((section: CasesSection, si: number) => (
                     <div key={si}>
                       <h4>{section.title}</h4>
                       {section.paragraphs.map((text: string, j: number) => (
@@ -233,7 +254,8 @@ class Cases extends React.Component<CasesProps, CasesState> {
   }
 }
 
-export default compose(
+export default compose<CasesProps, CasesOuterProps>(
   withStyles(styles),
-  withMobileDialog()
-)(translate(['cases'], { wait: true })(Cases));
+  withMobileDialog(),
+  translate(['cases'], { wait: true })
+)(Cases);

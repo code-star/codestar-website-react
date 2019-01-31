@@ -1,5 +1,29 @@
+export type Case = Readonly<{
+  client: string;
+  path: string;
+  image: string;
+  secondaryImage?: string;
+  credits?: string;
+  secondaryCredits?: string;
+  stack?: string[];
+  readMore?: boolean;
+  logo: string;
+  color: string;
+}>;
+
+export type CasesSection = Readonly<{
+  title: string;
+  paragraphs: string[];
+}>;
+
+export type CasesText = Readonly<{
+  title: string;
+  intro: string;
+  sections: CasesSection[];
+}>;
+
 // TODO: This list and the one in Clients.jsx have duplicate data
-export default [
+export const casesList: Case[] = [
   {
     client: 'Rabobank',
     path: 'rabobank',

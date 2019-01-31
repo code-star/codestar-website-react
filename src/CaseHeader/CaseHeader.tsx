@@ -1,19 +1,35 @@
 import * as React from 'react';
 import { compose } from 'recompose';
-import { translate } from 'react-i18next';
-
-import { withStyles } from '@material-ui/core/styles';
+import { translate, TranslationFunction } from 'react-i18next';
+import {
+  withStyles,
+  Theme,
+  WithStyles,
+  StyleRulesCallback,
+} from '@material-ui/core/styles';
 import { Button, Typography, withWidth } from '@material-ui/core';
 import { purple } from '@material-ui/core/colors';
-
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 import Container from '../Container/Container';
 import css from './CaseHeader.module.css';
 import InlineLogo from '../InlineLogo/InlineLogo';
 
-type CaseHeaderProps = any;
+type CaseHeaderOuterProps = Readonly<{
+  image: string;
+  client: string;
+  title: string;
+  intro: string;
+  credits?: string;
+  readMore: boolean;
+  callback: () => void;
+}>;
 
-const styles: any = (theme: any) => ({
+type CaseHeaderInnerProps = Readonly<{
+  t: TranslationFunction;
+  classes: WithStyles['classes'];
+}>;
+
+const styles: StyleRulesCallback<string> = (theme: Theme) => ({
   link: {
     color: 'white',
     '&:hover': {
@@ -33,7 +49,9 @@ const styles: any = (theme: any) => ({
   },
 });
 
-class CaseHeader extends React.Component<CaseHeaderProps> {
+class CaseHeader extends React.Component<
+  CaseHeaderOuterProps & CaseHeaderInnerProps
+> {
   public render() {
     const props = this.props;
     const { t, classes } = props;
@@ -92,7 +110,11 @@ class CaseHeader extends React.Component<CaseHeaderProps> {
   }
 }
 
-export default compose(
+export default compose<
+  CaseHeaderInnerProps & CaseHeaderOuterProps,
+  CaseHeaderOuterProps
+>(
   withStyles(styles),
-  withWidth()
-)(translate(['cases'], { wait: true })(CaseHeader));
+  withWidth(),
+  translate(['cases'], { wait: true })
+)(CaseHeader);
