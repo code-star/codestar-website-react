@@ -71,7 +71,7 @@ export const ShareButtons: SFC<ShareButtonsProps> = ({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={socialMedia.name}
-      href={socialMedia.makeUrl(link, title, text)}
+      href={socialMedia.makeUrl(link, title || '', text || '')}
       style={{
         minWidth: 32,
       }}
