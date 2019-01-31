@@ -37,7 +37,7 @@ type ShareButtonsProps = Readonly<{
   facebook?: boolean;
   color?: ButtonProps['color'];
   size?: ButtonProps['size'];
-  link?: string;
+  link: string;
   title?: string;
   text?: string;
 }>;

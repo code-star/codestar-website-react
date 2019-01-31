@@ -4,7 +4,7 @@ exports[`ShareButtons shows facebook icon 1`] = `
 <a
   aria-label="Facebook"
   className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
-  href="https://www.facebook.com/sharer/sharer.php?u=undefined"
+  href="https://www.facebook.com/sharer/sharer.php?u=/share-url"
   onBlur={[Function]}
   onFocus={[Function]}
   onKeyDown={[Function]}
@@ -56,7 +56,7 @@ exports[`ShareButtons shows linkedin icon 1`] = `
 <a
   aria-label="Linkedin"
   className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
-  href="https://www.linkedin.com/shareArticle?mini=true&url=undefined&title=undefined&summary=undefined"
+  href="https://www.linkedin.com/shareArticle?mini=true&url=/share-url&title=undefined&summary=undefined"
   onBlur={[Function]}
   onFocus={[Function]}
   onKeyDown={[Function]}
@@ -108,7 +108,7 @@ exports[`ShareButtons shows twitter icon 1`] = `
 <a
   aria-label="Twitter"
   className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
-  href="https://twitter.com/home?status=undefined%0Aundefined"
+  href="https://twitter.com/home?status=undefined%0A/share-url"
   onBlur={[Function]}
   onFocus={[Function]}
   onKeyDown={[Function]}
