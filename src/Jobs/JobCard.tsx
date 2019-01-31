@@ -13,7 +13,7 @@ import {
 } from '@material-ui/core';
 
 import { getResponsiveImageUrl } from '../ResponsiveImage/ResponsiveImage';
-import ShareButtons from '../ShareButtons/ShareButtons';
+import { ShareButtons } from '../ShareButtons/ShareButtons';
 
 type JobCardProps = any;
 

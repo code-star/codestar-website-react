@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { SFC } from 'react';
 import compose from 'recompose/compose';
 
 import { withWidth } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
+import {
+  withStyles,
+  Theme,
+  StyleRulesCallback,
+  WithStyles,
+} from '@material-ui/core/styles';
 
-const styles = theme => ({
+type ContainerProps = Readonly<{
+  fluid?: boolean;
+  className?: string;
+  fullHeightMinusNavBar?: boolean;
+  fullHeight?: boolean;
+  marginTopNavBar?: boolean;
+  noPadding?: boolean;
+  center?: boolean;
+}>;
+
+type ContainerInnterProps = Readonly<{
+  classes: WithStyles['classes'];
+}>;
+
+const styles: StyleRulesCallback<string> = (theme: Theme) => ({
   fullHeightMinusNavBar: {
     minHeight: 'calc(100vh - 56px)',
     [theme.breakpoints.up('sm')]: {
@@ -32,7 +51,7 @@ const styles = theme => ({
   },
 });
 
-const Container = props => {
+const Container: SFC<ContainerProps & ContainerInnterProps> = props => {
   return (
     <div
       className={`
@@ -49,7 +68,7 @@ const Container = props => {
     </div>
   );
 };
-export default compose(
+export default compose<ContainerProps & ContainerInnterProps, ContainerProps>(
   withStyles(styles),
   withWidth()
 )(Container);

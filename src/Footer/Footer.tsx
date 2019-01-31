@@ -1,18 +1,19 @@
 import React from 'react';
 import Container from '../Container/Container';
 import Map from '../Map/Map';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faTwitter,
+  faGithub,
+  faMediumM,
+  faLinkedin,
+  faYoutube,
+  faMeetup,
+} from '@fortawesome/free-brands-svg-icons';
 
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter';
-import faGithub from '@fortawesome/fontawesome-free-brands/faGithub';
-import faMediumM from '@fortawesome/fontawesome-free-brands/faMediumM';
-import faLinkedin from '@fortawesome/fontawesome-free-brands/faLinkedin';
-import faYoutube from '@fortawesome/fontawesome-free-brands/faYoutube';
-import faMeetup from '@fortawesome/fontawesome-free-brands/faMeetup';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 
-import { withRouter } from 'react-router-dom';
-
-const Footer = props => (
+const Footer = (props: RouteComponentProps) => (
   <footer>
     <Container fluid>
       <div className="row bg-dark">
