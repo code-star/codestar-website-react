@@ -32,14 +32,14 @@ const socialMedias = {
 };
 
 type ShareButtonsProps = Readonly<{
-  twitter: boolean;
-  linkedin: boolean;
-  facebook: boolean;
-  color: ButtonProps['color'];
-  size: ButtonProps['size'];
-  link: string;
-  title: string;
-  text: string;
+  twitter?: boolean;
+  linkedin?: boolean;
+  facebook?: boolean;
+  color?: ButtonProps['color'];
+  size?: ButtonProps['size'];
+  link?: string;
+  title?: string;
+  text?: string;
 }>;
 
 export const ShareButtons: SFC<ShareButtonsProps> = ({
