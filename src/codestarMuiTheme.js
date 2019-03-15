@@ -18,6 +18,7 @@ const theme = createMuiTheme({
   },
   typography: {
     // fontFamily: 'Conduit'
+    fontSize: 16
   },
 });
 
