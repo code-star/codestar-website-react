@@ -1,5 +1,4 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-// import blue from '@material-ui/core/colors/blue';
 
 const theme = createMuiTheme({
   palette: {
@@ -17,7 +16,9 @@ const theme = createMuiTheme({
     },
   },
   typography: {
-    // fontFamily: 'Conduit'
+    /* menu and headers NeutraText, paragraphs Open Sans */
+    // fontFamily: 'NeutraText',
+    // fontFamily: 'OpenSans',
     fontSize: 16
   },
 });
