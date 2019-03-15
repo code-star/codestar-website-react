@@ -7,7 +7,7 @@ import grey from '@material-ui/core/colors/grey';
 import blue from '@material-ui/core/colors/blue';
 import Container from '../../../Container/Container';
 import OurStack from '../../../OurStack/OurStack';
-// import TeamCarousel from '../../Molecules/TeamCarousel/TeamCarousel';
+import TeamCarousel from '../../Molecules/TeamCarousel/TeamCarousel';
 import Section from '../../Molecules/Section/Section';
 import { CustomButton } from '../../Atoms/CustomButton/CustomButton';
 import { withStyles } from '@material-ui/core/styles';
@@ -66,7 +66,7 @@ export const About: FC<IPropsInner> = ({ t, classes }) => {
           </div>
         </Container>
       </Section>
-      {/*<Section scrollname={"team"} className={`py-5 ${classes.teamSection}`} >
+      <Section scrollname={"team"} className={`py-5 ${classes.teamSection}`} >
         <Container>
           <div className="row">
             <div className="col">
@@ -79,7 +79,7 @@ export const About: FC<IPropsInner> = ({ t, classes }) => {
         <div className="row m-0">
           <TeamCarousel />
         </div>
-      </Section>*/}
+      </Section>
       <Section
         scrollname={"site"}
         className={`py-5 ${classes.siteSection}`}
