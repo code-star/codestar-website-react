@@ -26,7 +26,8 @@
     "job": "Scala Master",
     "tagline": "“The 𝚌𝚘𝚍𝚎 is the ☆”",
     "bio": "",
-    "image": "joost.jpg"
+    "image": "joost.jpg",
+    "gone": true
   },
   {
     "name": "Ishan",
@@ -69,21 +70,21 @@
   {
     "name": "Steven",
     "job": "Software Craftsman",
-    "tagline": "The devil is in the details",
+    "tagline": "“The devil is in the details”",
     "bio": "Mastering complexity is the biggest challenge when developing large software systems, from the system as a whole to the smallest building blocks. When you work in a team, human complexity is added to the equation. The potential to create something truly beautiful lies at the intersection of these two aspects.",
     "image": "steven.jpg"
   },
   {
     "name": "Martin",
     "job": "Front-end Developer",
-    "tagline": "That's not a bug, that's a feature!",
+    "tagline": "“That's not a bug, that's a feature!”",
     "bio": "Always curious about new technologies, programming languages, frameworks, gadgets and other innovations.",
     "image": "mvdam.jpg"
   },
   {
     "name": "Werner",
     "job": "Programmer",
-    "tagline": "Don’t be clever, be clear!",
+    "tagline": "“Don’t be clever, be clear!”",
     "bio": "Code not only tells the computer what to do, but it is also telling another human being what you want the computer to do. There are many ways of telling the computer to do something; how you do it matters. I believe that the code you write should reflect how you think about the problem you are trying to solve, so that others can follow along and understand your thought process when reading your code. This way, we can leave clients with a codebase they are proud of and are happy to work on.",
     "image": "werner.jpg"
   },
@@ -141,7 +142,7 @@
   {
     "name": "Nick",
     "job": "Programmer",
-    "tagline": "let types = your guide in software",
+    "tagline": "“let types = your guide in software”",
     "bio": "Types are the best kind of documentation. If you can understand a system just by looking at its types, you have a well designed system.",
     "image": "nick.png"
   },
@@ -156,7 +157,7 @@
   {
     "name": "Mikel",
     "job": "Frontend Developer",
-    "tagline": "Pixel perfect",
+    "tagline": "“Pixel perfect”",
     "bio": "",
     "image": "mikel.jpg"
   },
@@ -177,7 +178,7 @@
 	{
 		"name": "Thomas",
 		"job": "Programmer",
-		"tagline": "Data is code, code is data",
+		"tagline": "“Data is code, code is data”",
 		"bio": "",
 		"image": "thomas.jpg"
 	}
