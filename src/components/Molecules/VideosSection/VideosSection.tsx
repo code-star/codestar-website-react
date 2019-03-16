@@ -41,7 +41,7 @@ export class VideosSection extends React.Component<
       return null;
     }
 
-    const firstVideoThumbnail = videos[0].thumbnails.maxres.url;
+    const firstVideoThumbnail = videos[0].thumbnails.maxres ? videos[0].thumbnails.maxres.url : videos[0].thumbnails.high.url;
     return (
       <Section scrollname={scrollname} className={styles.section}>
         <img
