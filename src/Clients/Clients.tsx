@@ -1,50 +1,14 @@
 import React from 'react';
 import compose from 'recompose/compose';
-
 import { GridList, GridListTile } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
-
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
+import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
+import { CSSProperties } from '@material-ui/core/styles/withStyles';
+import { clientsListSmallOrder, clientsList } from './clientsList';
 
-const ClientsList = [
-  {
-    name: 'ING',
-    logo: `/images/clients/ing.png`,
-    color: '#ee6f33',
-  },
-  {
-    name: 'Port of Rotterdam',
-    logo: `/images/clients/port_of_rotterdam.svg`,
-    featured: true,
-    background: `/images/clients/harbor.jpg`,
-  },
-  {
-    name: 'SKG',
-    logo: `/images/clients/skg.svg`,
-    color: '#9D1535',
-  },
-  {
-    name: 'Rabobank',
-    logo: `/images/clients/rabobank-2.svg`,
-    color: '#001090',
-  },
-  {
-    name: 'Gracenote',
-    logo: `/images/clients/gracenote.svg`,
-    featured: true,
-    background: `/images/clients/winter_olympics.jpg`,
-  },
-  {
-    name: '42 Education',
-    logo: `/images/clients/42_education.png`,
-    color: '#222',
-  },
-];
-
-const clientsListSmallOrder = [0, 2, 1, 4, 3, 5].map(i => ClientsList[i]);
-
-const styles = {
+const styles: Record<string, CSSProperties> = {
   gridList: {
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: 'translateZ(0)',
@@ -62,7 +26,12 @@ const styles = {
   },
 };
 
-const Clients = props => {
+type ClientsProps = Readonly<{
+  width: Breakpoint;
+  classes: WithStyles['classes'];
+}>;
+
+const Clients = (props: ClientsProps) => {
   const isSmall = !isWidthUp('md', props.width);
   return (
     <div className="mt-3">
@@ -71,7 +40,7 @@ const Clients = props => {
         cols={isSmall ? 2 : 4}
         className={props.classes.gridList}
       >
-        {(isSmall ? clientsListSmallOrder : ClientsList).map(client => {
+        {(isSmall ? clientsListSmallOrder : clientsList).map(client => {
           return (
             <GridListTile key={client.name} cols={client.featured ? 2 : 1}>
               {client.featured ? (
@@ -100,13 +69,6 @@ const Clients = props => {
                       width="100%"
                     />
                   </div>
-                  {/*
-									// TODO: Do we want quotes from clients?
-									<GridListTileBar
-										title={'Insert very awesome quote frome client here.'}
-										subtitle={<span>John Smith</span>}
-									/>
-									*/}
                 </div>
               ) : (
                 <div
@@ -136,7 +98,7 @@ const Clients = props => {
   );
 };
 
-export default compose(
+export default compose<ClientsProps, {}>(
   withStyles(styles),
   withWidth()
 )(Clients);

@@ -75,7 +75,7 @@ class Jobs extends React.Component<JobsProps> {
               <div className="col-12 mt-5">
                 <h3>{t('JOBS_BEST_CLIENTS')}</h3>
                 <Link to="/cases">
-                  <Clients title="Companies that trust on us" />
+                  <Clients />
                 </Link>
               </div>
             </div>
