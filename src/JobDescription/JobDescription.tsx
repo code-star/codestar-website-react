@@ -1,15 +1,28 @@
 import * as React from 'react';
-import { translate } from 'react-i18next';
-
+import { translate, TranslationFunction } from 'react-i18next';
 import { Button, Typography } from '@material-ui/core';
 import { Email } from '@material-ui/icons';
-import { withStyles } from '@material-ui/core/styles';
-
+import {
+  withStyles,
+  WithStyles,
+  StyleRulesCallback,
+  Theme,
+} from '@material-ui/core/styles';
 import Container from '../Container/Container';
+import { compose } from 'recompose';
 
-type JobDescriptionProps = any;
+export type JobDescriptionOuterProps = Readonly<{
+  name: string;
+  path: string;
+  image: string;
+}>;
 
-const styles = (theme: any) => ({
+type JobDescriptionInnerProps = Readonly<{
+  t: TranslationFunction;
+  classes: WithStyles['classes'];
+}>;
+
+const styles: StyleRulesCallback<string> = (theme: Theme) => ({
   button: {
     margin: theme.spacing.unit,
   },
@@ -18,7 +31,15 @@ const styles = (theme: any) => ({
   },
 });
 
-class JobDescription extends React.Component<JobDescriptionProps> {
+type JobParagraph = Readonly<{
+  title: string;
+  content: string;
+  list?: string[];
+}>;
+
+class JobDescription extends React.Component<
+  JobDescriptionOuterProps & JobDescriptionInnerProps
+> {
   public render() {
     const props = this.props;
     const { path, t } = props;
@@ -47,16 +68,18 @@ class JobDescription extends React.Component<JobDescriptionProps> {
 
                 {paragraphs
                   .concat(commonParagraphs)
-                  .map((paragraph: any, i: number) => (
+                  .map((paragraph: JobParagraph, i: number) => (
                     <div key={i} className="row">
                       <div className="col">
                         <h4>{paragraph.title}</h4>
                         <p>{paragraph.content}</p>
                         {paragraph.list ? (
                           <ul>
-                            {paragraph.list.map((elem: any, pi: number) => (
-                              <li key={pi}>{elem}</li>
-                            ))}
+                            {paragraph.list.map(
+                              (paragraphText: string, textIndex: number) => (
+                                <li key={textIndex}>{paragraphText}</li>
+                              )
+                            )}
                           </ul>
                         ) : null}
                       </div>
@@ -76,7 +99,7 @@ class JobDescription extends React.Component<JobDescriptionProps> {
 
                 <div className="pt-5 pb-3">
                   {t('JOBS_NOTES', { returnObjects: true }).map(
-                    (note: any, i: number) => (
+                    (note: string, i: number) => (
                       <div key={i}>
                         <small>
                           {'*'.repeat(i + 1)}
@@ -95,6 +118,7 @@ class JobDescription extends React.Component<JobDescriptionProps> {
   }
 }
 
-export default translate(['jobs'], { wait: true })(
-  withStyles(styles)(JobDescription)
-);
+export default compose<JobDescriptionOuterProps & JobDescriptionInnerProps, {}>(
+  translate(['jobs'], { wait: true }),
+  withStyles(styles)
+)(JobDescription);
