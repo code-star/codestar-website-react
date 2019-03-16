@@ -4,7 +4,7 @@ exports[`ShareButtons shows facebook icon 1`] = `
 <a
   aria-label="Facebook"
   className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
-  href="https://www.facebook.com/sharer/sharer.php?u=undefined"
+  href="https://www.facebook.com/sharer/sharer.php?u=/share-url"
   onBlur={[Function]}
   onFocus={[Function]}
   onKeyDown={[Function]}
@@ -33,6 +33,7 @@ exports[`ShareButtons shows facebook icon 1`] = `
       className="svg-inline--fa fa-facebook fa-w-14 fa-lg "
       data-icon="facebook"
       data-prefix="fab"
+      focusable="false"
       role="img"
       style={Object {}}
       viewBox="0 0 448 512"
@@ -55,7 +56,7 @@ exports[`ShareButtons shows linkedin icon 1`] = `
 <a
   aria-label="Linkedin"
   className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
-  href="https://www.linkedin.com/shareArticle?mini=true&url=undefined&title=undefined&summary=undefined"
+  href="https://www.linkedin.com/shareArticle?mini=true&url=/share-url&title=&summary="
   onBlur={[Function]}
   onFocus={[Function]}
   onKeyDown={[Function]}
@@ -84,6 +85,7 @@ exports[`ShareButtons shows linkedin icon 1`] = `
       className="svg-inline--fa fa-linkedin fa-w-14 fa-lg "
       data-icon="linkedin"
       data-prefix="fab"
+      focusable="false"
       role="img"
       style={Object {}}
       viewBox="0 0 448 512"
@@ -106,7 +108,7 @@ exports[`ShareButtons shows twitter icon 1`] = `
 <a
   aria-label="Twitter"
   className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
-  href="https://twitter.com/home?status=undefined%0Aundefined"
+  href="https://twitter.com/home?status=%0A/share-url"
   onBlur={[Function]}
   onFocus={[Function]}
   onKeyDown={[Function]}
@@ -135,6 +137,7 @@ exports[`ShareButtons shows twitter icon 1`] = `
       className="svg-inline--fa fa-twitter fa-w-16 fa-lg "
       data-icon="twitter"
       data-prefix="fab"
+      focusable="false"
       role="img"
       style={Object {}}
       viewBox="0 0 512 512"

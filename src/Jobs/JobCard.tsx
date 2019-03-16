@@ -13,7 +13,7 @@ import {
 import { CustomButton } from '../components/Atoms/CustomButton/CustomButton';
 
 import { getResponsiveImageUrl } from '../ResponsiveImage/ResponsiveImage';
-import ShareButtons from '../ShareButtons/ShareButtons';
+import { ShareButtons } from '../ShareButtons/ShareButtons';
 
 type JobCardProps = any;
 

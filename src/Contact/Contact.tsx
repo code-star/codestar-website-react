@@ -1,8 +1,7 @@
 import * as React from 'react';
 import compose from 'recompose/compose';
-import { translate } from 'react-i18next';
-import _ from 'lodash';
-
+import { translate, TranslationFunction } from 'react-i18next';
+import { get } from 'lodash';
 import {
   Input,
   InputLabel,
@@ -17,15 +16,32 @@ import {
   Collapse,
   Fade,
 } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
-
+import { withStyles, WithStyles, Theme } from '@material-ui/core/styles';
 import Container from '../Container/Container';
 import Map from '../Map/Map';
+import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
 
-type ContactProps = any;
-type ContactState = any;
+type ContactProps = Readonly<{
+  t: TranslationFunction;
+  classes: WithStyles['classes'];
+  width: Breakpoint;
+}>;
 
-const styles = (theme: any) => ({
+type ContactFormState = Readonly<{
+  name: string;
+  phone: string;
+  email: string;
+  message: string;
+}>;
+
+type ContactState = Readonly<{
+  messageRequiredError: boolean;
+  showFetchSuccess: boolean;
+  showFetchFailure: boolean;
+  showMap: boolean;
+}>;
+
+const styles = (theme: Theme) => ({
   halfHeightMinusHalfNavBar: {
     minHeight: 'calc(50vh - 28px)',
     [theme.breakpoints.up('sm')]: {
@@ -34,7 +50,10 @@ const styles = (theme: any) => ({
   },
 });
 
-export class Contact extends React.Component<ContactProps, ContactState> {
+export class Contact extends React.Component<
+  ContactProps,
+  ContactState & ContactFormState
+> {
   constructor(props: ContactProps) {
     super(props);
     this.state = {
@@ -47,8 +66,6 @@ export class Contact extends React.Component<ContactProps, ContactState> {
       showFetchFailure: false,
       showMap: false,
     };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   public componentDidMount() {
@@ -57,11 +74,16 @@ export class Contact extends React.Component<ContactProps, ContactState> {
     }, 300);
   }
 
-  public handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    this.setState({ [event.target.name]: event.target.value });
-  }
+  public handleChange = (property: keyof ContactFormState) => (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    this.setState({
+      ...this.state,
+      [property]: event.target.value,
+    });
+  };
 
-  public handleSubmit(ev: React.FormEvent<HTMLFormElement>) {
+  public handleSubmit = (ev: React.FormEvent<HTMLFormElement>) => {
     ev.preventDefault();
 
     // Validate the text area
@@ -96,7 +118,7 @@ export class Contact extends React.Component<ContactProps, ContactState> {
     return fetch(url, options)
       .then(data => data.json())
       .then(data => {
-        if (_.get(data, 'message.MessageId')) {
+        if (get(data, 'message.MessageId')) {
           this.setState({
             showFetchSuccess: true,
           });
@@ -111,7 +133,7 @@ export class Contact extends React.Component<ContactProps, ContactState> {
           showFetchFailure: true,
         });
       });
-  }
+  };
 
   public render() {
     const { t } = this.props;
@@ -167,7 +189,7 @@ export class Contact extends React.Component<ContactProps, ContactState> {
                         <Input
                           id="name"
                           name="name"
-                          onChange={this.handleChange}
+                          onChange={this.handleChange('name')}
                         />
                       </FormControl>
 
@@ -176,7 +198,7 @@ export class Contact extends React.Component<ContactProps, ContactState> {
                         <Input
                           id="phone"
                           name="phone"
-                          onChange={this.handleChange}
+                          onChange={this.handleChange('phone')}
                         />
                       </FormControl>
 
@@ -186,7 +208,7 @@ export class Contact extends React.Component<ContactProps, ContactState> {
                           id="email"
                           type="email"
                           name="email"
-                          onChange={this.handleChange}
+                          onChange={this.handleChange('email')}
                         />
                       </FormControl>
                     </div>
@@ -197,7 +219,7 @@ export class Contact extends React.Component<ContactProps, ContactState> {
                           label={t('MESSAGE')}
                           id="message"
                           name="message"
-                          onChange={this.handleChange}
+                          onChange={this.handleChange('message')}
                           multiline
                           rows={6}
                         />
@@ -222,7 +244,7 @@ export class Contact extends React.Component<ContactProps, ContactState> {
   }
 }
 
-export default compose(
+export default compose<ContactProps, {}>(
   withStyles(styles),
   withWidth(),
   translate(['contact'], { wait: true })
