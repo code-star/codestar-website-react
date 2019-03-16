@@ -21,14 +21,14 @@ import ResponsiveImage, {
   getResponsiveImageUrl,
 } from '../ResponsiveImage/ResponsiveImage';
 import { casesList, Case, CasesText, CasesSection } from './CasesList';
-import { RouteComponentProps } from 'react-router';
+// import { RouteComponentProps } from 'react-router';
 
 type CasesInnerProps = Readonly<{
   t: TranslationFunction;
   classes: WithStyles['classes'];
   fullScreen: boolean;
 }>;
-type CasesOuterProps = RouteComponentProps;
+type CasesOuterProps = any; // RouteComponentProps; // TODO fix this type conflict
 type CasesProps = CasesInnerProps & CasesOuterProps;
 
 type CasesState = Readonly<{
