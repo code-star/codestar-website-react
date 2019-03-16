@@ -8,9 +8,9 @@ import {
   CardActions,
   CardContent,
   CardMedia,
-  Button,
   Typography,
 } from '@material-ui/core';
+import { CustomButton } from '../components/Atoms/CustomButton/CustomButton';
 
 import { getResponsiveImageUrl } from '../ResponsiveImage/ResponsiveImage';
 import ShareButtons from '../ShareButtons/ShareButtons';
@@ -35,10 +35,6 @@ const styles: any = {
     textDecoration: 'none !important',
   },
 };
-
-// Fixme: this is a workaround for using the material ui button
-// with the `to` property. By default this is not supported.
-const CustomButton = (props: any) => <Button {...props} />;
 
 class JobCard extends React.Component<JobCardProps> {
   public render() {

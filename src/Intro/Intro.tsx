@@ -120,7 +120,7 @@ class Intro extends React.Component<IntroProps> {
             <div className="row">
               <div className="col-12 col-md-6">
                 <InlineLogo>
-                  <Typography variant="display1" gutterBottom>
+                  <Typography variant="h4" gutterBottom>
                     {t('NEXT_STEP_TITLE')}
                   </Typography>
 

@@ -51,3 +51,13 @@ body {
 	font-weight: bold;
 	font-style: italic;
 }
+
+@font-face {
+  font-family: NeutraText;
+  src: url("/fonts/NeutraText-Book.otf") format('opentype');
+}
+
+@font-face {
+  font-family: OpenSans;
+  src: url("/fonts/OpenSans.woff") format('woff');
+}

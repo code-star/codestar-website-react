@@ -1,6 +1,6 @@
 import React from 'react';
 import compose from 'recompose/compose';
-import Section from '../../../Section/Section';
+import Section from '../Section/Section';
 import { translate, TranslationFunction } from 'react-i18next';
 import styles from './VideosSection.module.scss';
 import { VideoItem } from '../../../containers/EventsContainer/fetchYouTubePlaylist';
