@@ -19,7 +19,7 @@ const getResponsiveSrcSet = (imagePath, sizes, effect) => {
 };
 
 const defaultSizes = '100w';
-const defaultVersions = [375, 800, 1280, 1536, 1920]; // Cloudinary imagen file size in px
+const defaultVersions = [375, 800, 1280, 1536, 1920]; // Cloudinary image file size in px
 
 const ResponsiveImage = props => {
   const {
