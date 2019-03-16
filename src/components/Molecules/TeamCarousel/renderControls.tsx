@@ -21,3 +21,7 @@ export const rightControls: any = ({ nextSlide }: any) => {
     </Button>
   );
 };
+
+export const bottomControls = () => {
+  return <div />;
+};

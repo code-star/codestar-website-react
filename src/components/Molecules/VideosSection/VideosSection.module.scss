@@ -1,0 +1,40 @@
+@import '../../../theming/config.module';
+
+.section {
+  height: 100vh;
+  display: flex;
+  padding-top: 1rem;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  justify-content: center;
+  background-color: rgba(20, 23, 25, .7);
+
+  .imageFullscreen {
+    display: block;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+
+  .sectionTitle {
+    color: white;
+    font-weight: bold;
+  }
+
+  .subscribe {
+    text-align: center;
+
+    .subscribeButton:hover {
+      background-color: #7b1fa2;
+      color: white;
+    }
+  }
+
+  .carouselWrap {
+    padding: 2rem;
+  }
+}

@@ -7,6 +7,8 @@ import {
 } from '../../eventsService';
 import { IEventsContainerState } from './EventsContainer.interfaces';
 import { convertEventResponseToModel } from './EventsContainer.helpers';
+import { fetchYouTubePlaylist } from './fetchYouTubePlaylist';
+import { YOUTUBE_API_KEY, YOUTUBE_CODESTAR_PLAYLIST_ID } from '../../constants';
 
 export default class EventsContainer extends Component<
   {},
@@ -18,11 +20,13 @@ export default class EventsContainer extends Component<
     noNextMeetupEvent: false,
     pastMeetupEvents: [],
     recentTweets: [],
+    videos: [],
   };
 
   public componentDidMount() {
     this.fetchEvents();
     this.fetchRecentTweets();
+    this.fetchVideos();
   }
 
   public render() {
@@ -31,6 +35,7 @@ export default class EventsContainer extends Component<
       noNextMeetupEvent,
       pastMeetupEvents,
       recentTweets,
+      videos,
     }: IEventsContainerState = this.state;
 
     return (
@@ -39,6 +44,7 @@ export default class EventsContainer extends Component<
         noNextMeetupEvent={noNextMeetupEvent}
         pastMeetupEvents={pastMeetupEvents}
         recentTweets={recentTweets}
+        videos={videos}
       />
     );
   }
@@ -85,5 +91,15 @@ export default class EventsContainer extends Component<
     } catch (err) {
       this.setState({ recentTweets: [] });
     }
+  }
+
+  private async fetchVideos() {
+    const videos = await fetchYouTubePlaylist(
+      YOUTUBE_API_KEY,
+      YOUTUBE_CODESTAR_PLAYLIST_ID
+    );
+    this.setState({
+      videos,
+    });
   }
 }
