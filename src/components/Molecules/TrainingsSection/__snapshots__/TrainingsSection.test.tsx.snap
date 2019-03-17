@@ -4,11 +4,11 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
 <section
   className="
 			section
-			WithTheme-WithWidth-Section---section-1"
+			WithTheme(WithWidth(Section))-section"
   name="trainings"
 >
   <div
-    className="WithTheme-WithWidth-Section---element-2"
+    className="WithTheme(WithWidth(Section))-element"
     name="trainings"
   />
   <img
@@ -24,10 +24,10 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
 			container
 			
 			
-			WithTheme-WithWidth-Container---fullHeight-4
+			WithTheme(WithWidth(Container))-fullHeight
 			
 			
-			WithTheme-WithWidth-Container---containerCenter-5
+			WithTheme(WithWidth(Container))-containerCenter
 		"
   >
     <div
@@ -40,7 +40,7 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
           className="mt-4"
         >
           <h1
-            className="MuiTypography-root-8 MuiTypography-display3-10 d-inline text-white p-2 bg-dark"
+            className="MuiTypography-root MuiTypography-display3 d-inline text-white p-2 bg-dark"
           >
             
           </h1>
@@ -49,7 +49,7 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
           className="my-3"
         >
           <h1
-            className="MuiTypography-root-8 MuiTypography-headline-13 d-inline text-white p-2"
+            className="MuiTypography-root MuiTypography-headline d-inline text-white p-2"
           >
             RxJS, Scala, TypeScript 
             
@@ -59,7 +59,7 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
           className="my-2"
         >
           <a
-            className="MuiButtonBase-root-69 MuiButton-root-43 MuiButton-contained-54 MuiButton-raised-57"
+            className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-raised"
             href="/contact"
             onBlur={[Function]}
             onClick={[Function]}
@@ -76,12 +76,12 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
             tabIndex="0"
           >
             <span
-              className="MuiButton-label-44"
+              className="MuiButton-label"
             >
               
             </span>
             <span
-              className="MuiTouchRipple-root-82"
+              className="MuiTouchRipple-root"
             />
           </a>
         </div>
@@ -93,7 +93,7 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
           className="bg-dark p-3"
         >
           <p
-            className="MuiTypography-root-8 MuiTypography-body1-17 d-inline text-white"
+            className="MuiTypography-root MuiTypography-body1 d-inline text-white"
           >
             
           </p>
@@ -105,11 +105,11 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
             >
               <div>
                 <div
-                  className="MuiAvatar-root-79"
+                  className="MuiAvatar-root"
                 >
                   <img
                     alt="Scala"
-                    className="MuiAvatar-img-81"
+                    className="MuiAvatar-img"
                     src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/scala.svg"
                   />
                 </div>
@@ -120,11 +120,11 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
             >
               <div>
                 <div
-                  className="MuiAvatar-root-79"
+                  className="MuiAvatar-root"
                 >
                   <img
                     alt="Kotlin"
-                    className="MuiAvatar-img-81"
+                    className="MuiAvatar-img"
                     src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/kotlin.svg"
                   />
                 </div>
@@ -135,11 +135,11 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
             >
               <div>
                 <div
-                  className="MuiAvatar-root-79"
+                  className="MuiAvatar-root"
                 >
                   <img
                     alt="RxJS"
-                    className="MuiAvatar-img-81"
+                    className="MuiAvatar-img"
                     src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/rxjs.svg"
                   />
                 </div>
@@ -150,11 +150,11 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
             >
               <div>
                 <div
-                  className="MuiAvatar-root-79"
+                  className="MuiAvatar-root"
                 >
                   <img
                     alt="TypeScript"
-                    className="MuiAvatar-img-81"
+                    className="MuiAvatar-img"
                     src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/typescript.svg"
                   />
                 </div>

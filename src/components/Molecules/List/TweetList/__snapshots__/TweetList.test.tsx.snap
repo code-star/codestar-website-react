@@ -2,36 +2,36 @@
 
 exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
 <div
-  className="MuiPaper-root-2 MuiPaper-elevation8-12 MuiPaper-rounded-3 MuiCard-root-1 card"
+  className="MuiPaper-root MuiPaper-elevation8 MuiPaper-rounded MuiCard-root card"
 >
   <div
-    className="MuiCardHeader-root-29"
+    className="MuiCardHeader-root"
   >
     <div
-      className="MuiCardHeader-avatar-30"
+      className="MuiCardHeader-avatar"
     >
       <div
         aria-label="Speaker Twitter Avatar"
-        className="MuiAvatar-root-35"
+        className="MuiAvatar-root"
       />
     </div>
     <div
-      className="MuiCardHeader-content-32"
+      className="MuiCardHeader-content"
     >
       <span
-        className="MuiTypography-root-38 MuiTypography-body2-46 MuiCardHeader-title-33"
+        className="MuiTypography-root MuiTypography-body2 MuiCardHeader-title"
       >
         someAwesomeName
       </span>
       <span
-        className="MuiTypography-root-38 MuiTypography-body2-46 MuiTypography-colorTextSecondary-71 MuiCardHeader-subheader-34"
+        className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary MuiCardHeader-subheader"
       >
         b
       </span>
     </div>
   </div>
   <div
-    className="MuiCardMedia-root-73 media"
+    className="MuiCardMedia-root media"
     style={
       Object {
         "backgroundImage": "url(\\"a\\")",
@@ -40,7 +40,7 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
     title="c"
   />
   <div
-    className="MuiCardContent-root-75"
+    className="MuiCardContent-root"
   >
     <div
       className="p-2"
@@ -49,7 +49,7 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
         href="https://twitter.com/someAwesomeScreenName/status/undefined"
       >
         <div
-          className="MuiTypography-root-38 MuiTypography-body1-47 prefix"
+          className="MuiTypography-root MuiTypography-body1 prefix"
         >
           <img
             className="mr-2"
@@ -58,7 +58,7 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
           Fri Aug 31 2018
         </div>
         <p
-          className="MuiTypography-root-38 MuiTypography-body1-47"
+          className="MuiTypography-root MuiTypography-body1"
         >
           some awesome text
         </p>
@@ -71,7 +71,7 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
         href="https://twitter.com/someOtherAwesomeScreenName/status/undefined"
       >
         <div
-          className="MuiTypography-root-38 MuiTypography-body1-47 prefix"
+          className="MuiTypography-root MuiTypography-body1 prefix"
         >
           <img
             className="mr-2"
@@ -80,7 +80,7 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
           Sun Sep 02 2018
         </div>
         <p
-          className="MuiTypography-root-38 MuiTypography-body1-47"
+          className="MuiTypography-root MuiTypography-body1"
         >
           some other awesome text
         </p>
@@ -88,10 +88,10 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
     </div>
   </div>
   <div
-    className="MuiCardActions-root-76"
+    className="MuiCardActions-root"
   >
     <a
-      className="MuiButtonBase-root-104 MuiButton-root-78 MuiButton-text-80 MuiButton-textSecondary-82 MuiButton-flat-83 MuiButton-flatSecondary-85 MuiButton-sizeSmall-101 MuiCardActions-action-77"
+      className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textSecondary MuiButton-flat MuiButton-flatSecondary MuiButton-sizeSmall MuiCardActions-action"
       href="https://twitter.com/someAwesomeScreenName?lang=en"
       onBlur={[Function]}
       onFocus={[Function]}
@@ -107,13 +107,13 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
       tabIndex="0"
     >
       <span
-        className="MuiButton-label-79"
+        className="MuiButton-label"
       >
         About 
         someAwesomeName
       </span>
       <span
-        className="MuiTouchRipple-root-107"
+        className="MuiTouchRipple-root"
       />
     </a>
   </div>

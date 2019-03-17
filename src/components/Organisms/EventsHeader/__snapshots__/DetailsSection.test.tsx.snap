@@ -4,11 +4,11 @@ exports[`renders the details for the Events header 1`] = `
 <section
   className="
 			bg-white
-			WithTheme-WithWidth-Section---section-1"
+			WithTheme(WithWidth(Section))-section"
   name="event-details"
 >
   <div
-    className="WithTheme-WithWidth-Section---element-2"
+    className="WithTheme(WithWidth(Section))-element"
     name="event-details"
   />
   <div
@@ -19,7 +19,7 @@ exports[`renders the details for the Events header 1`] = `
 			
 			
 			
-			WithTheme-WithWidth-Container---containerCenter-5
+			WithTheme(WithWidth(Container))-containerCenter
 		"
   >
     <div
@@ -29,12 +29,12 @@ exports[`renders the details for the Events header 1`] = `
         className="col-12 col-md-8"
       >
         <h2
-          className="MuiTypography-root-8 MuiTypography-title-14 MuiTypography-alignCenter-31"
+          className="MuiTypography-root MuiTypography-title MuiTypography-alignCenter"
         >
           Data Oriented Design with Maxim Zaks
         </h2>
         <h3
-          className="MuiTypography-root-8 MuiTypography-subheading-15 MuiTypography-gutterBottom-35 MuiTypography-alignCenter-31"
+          className="MuiTypography-root MuiTypography-subheading MuiTypography-gutterBottom MuiTypography-alignCenter"
         >
           26 september 2018
         </h3>
@@ -44,20 +44,20 @@ exports[`renders the details for the Events header 1`] = `
         className="col-12 col-md-4"
       >
         <div
-          className="MuiPaper-root-44 MuiPaper-elevation8-54 MuiPaper-rounded-45 MuiCard-root-43 card"
+          className="MuiPaper-root MuiPaper-elevation8 MuiPaper-rounded MuiCard-root card"
         >
           <div
-            className="MuiCardMedia-root-71 media"
+            className="MuiCardMedia-root media"
             title="Data Oriented Design with Maxim Zaks"
           />
           <div
-            className="MuiCardContent-root-73"
+            className="MuiCardContent-root"
           />
           <div
-            className="MuiCardActions-root-74"
+            className="MuiCardActions-root"
           >
             <a
-              className="MuiButtonBase-root-102 MuiButton-root-76 MuiButton-text-78 MuiButton-textPrimary-79 MuiButton-flat-81 MuiButton-flatPrimary-82 MuiCardActions-action-75"
+              className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-flat MuiButton-flatPrimary MuiCardActions-action"
               href="https://www.codestar.nl"
               onBlur={[Function]}
               onFocus={[Function]}
@@ -73,12 +73,12 @@ exports[`renders the details for the Events header 1`] = `
               tabIndex="0"
             >
               <span
-                className="MuiButton-label-77"
+                className="MuiButton-label"
               >
                 
               </span>
               <span
-                className="MuiTouchRipple-root-105"
+                className="MuiTouchRipple-root"
               />
             </a>
           </div>

@@ -1,33 +1,45 @@
-import React, { SFC } from 'react';
-import { Button, withStyles } from '@material-ui/core';
-import css from './EventsHeaderButton.module.scss';
+import React, { FC } from 'react';
+import { Button, withStyles, createStyles, Theme } from '@material-ui/core';
 import { Link } from 'react-scroll';
 import { purple } from '@material-ui/core/colors';
 import compose from 'recompose/compose';
 import { translate, TranslationFunction } from 'react-i18next';
 
-const styles = {
-  button: {
-    '&:hover': {
-      color: 'white',
-      backgroundColor: purple[700],
+const styles = (theme: Theme) =>
+  createStyles({
+    button: {
+      display: 'inline-block',
+      backgroundColor: 'white',
+      padding: theme.spacing.unit,
+      margin: theme.spacing.unit * 0.5,
+      width: '110px',
+      height: '110px',
+      '&:hover': {
+        color: 'white',
+        backgroundColor: purple[700],
+      },
     },
-  },
+    box: {
+      height: '100%',
+      width: '100%',
+    },
+  });
+
+type PropsInner = {
+  t: TranslationFunction;
+  classes: Record<string, string>;
 };
 
-interface IPropsInner {
-  t: TranslationFunction;
-  classes: any;
-}
-
-interface IPropsOuter {
+type PropsOuter = {
   icon: any;
   label: string;
   to?: string;
   href?: string;
-}
+};
 
-const EventsHeaderButton: SFC<IPropsInner & IPropsOuter> = ({
+type Props = PropsInner & PropsOuter;
+
+const EventsHeaderButton: FC<Props> = ({
   t,
   icon,
   label,
@@ -36,8 +48,8 @@ const EventsHeaderButton: SFC<IPropsInner & IPropsOuter> = ({
   classes,
 }) => {
   const LocalButton = (
-    <Button className={`${css.button} ${classes.button}`}>
-      <div className={`row align-items-center mx-0 ${css.box}`}>
+    <Button className={classes.button}>
+      <div className={`row align-items-center mx-0 ${classes.box}`}>
         <div className="col-12 p-0">
           {icon}
           <br />
@@ -59,7 +71,7 @@ const EventsHeaderButton: SFC<IPropsInner & IPropsOuter> = ({
   return LocalButton;
 };
 
-export default compose<IPropsInner & IPropsOuter, IPropsOuter>(
+export default compose<Props, PropsOuter>(
   translate(['events'], { wait: true }),
   withStyles(styles)
 )(EventsHeaderButton);
