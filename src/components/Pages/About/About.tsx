@@ -12,6 +12,7 @@ import Section from '../../Molecules/Section/Section';
 import { CustomButton } from '../../Atoms/CustomButton/CustomButton';
 import { withStyles } from '@material-ui/core/styles';
 
+
 interface IPropsInner {
   classes: any;
   t: TranslationFunction;
@@ -37,6 +38,9 @@ const styles = (theme: Theme) => createStyles({
 });
 
 export const About: FC<IPropsInner> = ({ t, classes }) => {
+  const [siteText0, siteText1] = t('SITE_TEXTS', {
+    returnObjects: true,
+  });
   return (
     <>
       <Section scrollname={"attract"} className="py-5">
@@ -91,18 +95,11 @@ export const About: FC<IPropsInner> = ({ t, classes }) => {
                 {t('SITE_TITLE')}
               </Typography>
               <Typography variant="body1" color="inherit" gutterBottom>
-                Bij Codestar werken we met veel plezier bij klanten, en
-                daarnaast zorgen we er voor dat we elke vrijdag bij elkaar zijn
-                om kennis uit te wisselen en contact te houden. In deze tijd
-                werken we aan projecten, maar ook aan R&D. Op die manier is deze
-                site ook ontstaan: als showcase voor de stack waar wij mee
-                (willen) werken. We hebben hiervoor onder andere gebruik gemaakt
-                van CRA, TypeScript, React, Storybook, CSS Modules, AWS Lamdba
-                en Jest. En natuurlijk is het open source. Kijk in de{' '}
+                {siteText0}
                 <a href="https://github.com/code-star/codestar-website-react">
                   repo
-                </a>{' '}
-                voor meer details.
+                </a>
+                {siteText1}
               </Typography>
             </div>
           </div>
