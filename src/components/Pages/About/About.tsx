@@ -12,6 +12,7 @@ import Section from '../../Molecules/Section/Section';
 import { CustomButton } from '../../Atoms/CustomButton/CustomButton';
 import { withStyles } from '@material-ui/core/styles';
 
+// TODO Service worker caching issue? https://developers.google.com/web/tools/workbox/guides/service-worker-checklist
 
 interface IPropsInner {
   classes: any;
