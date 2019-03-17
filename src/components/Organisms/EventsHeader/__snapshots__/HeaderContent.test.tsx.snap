@@ -6,10 +6,10 @@ exports[`renders the content of the Events header 1`] = `
 			container
 			mt-5 mt-sm-2 mt-md-0
 			
-			WithTheme-WithWidth-Container---fullHeight-2
+			WithTheme(WithWidth(Container))-fullHeight
 			
 			
-			WithTheme-WithWidth-Container---containerCenter-3
+			WithTheme(WithWidth(Container))-containerCenter
 		"
 >
   <div
@@ -18,21 +18,21 @@ exports[`renders the content of the Events header 1`] = `
     <div
       className="col-12"
     >
-      <h1
-        className="MuiTypography-root-6 MuiTypography-display1-10 MuiTypography-alignCenter-29 nextEventText"
+      <h4
+        className="MuiTypography-root MuiTypography-h4 MuiTypography-alignCenter"
       >
         
-      </h1>
+      </h4>
       <h1
-        className="MuiTypography-root-6 MuiTypography-display4-7 MuiTypography-alignCenter-29 nextEventTitle"
+        className="MuiTypography-root MuiTypography-h1 MuiTypography-alignCenter"
       >
         Data Oriented Design with Maxim Zaks
       </h1>
-      <h1
-        className="MuiTypography-root-6 MuiTypography-display2-9 MuiTypography-gutterBottom-33 MuiTypography-alignCenter-29 nextEventText"
+      <h3
+        className="MuiTypography-root MuiTypography-h3 MuiTypography-gutterBottom MuiTypography-alignCenter"
       >
         26 september 2018
-      </h1>
+      </h3>
       <div
         style={
           Object {
@@ -41,7 +41,7 @@ exports[`renders the content of the Events header 1`] = `
         }
       >
         <a
-          className="MuiButtonBase-root-67 MuiButton-root-41 MuiButton-contained-52 MuiButton-containedPrimary-53 MuiButton-raised-55 MuiButton-raisedPrimary-56 mr-1 undefined"
+          className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-raised MuiButton-raisedPrimary mr-1 undefined"
           href="https://www.codestar.nl"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -57,19 +57,19 @@ exports[`renders the content of the Events header 1`] = `
           tabIndex="0"
         >
           <span
-            className="MuiButton-label-42"
+            className="MuiButton-label"
           >
             
           </span>
           <span
-            className="MuiTouchRipple-root-70"
+            className="MuiTouchRipple-root"
           />
         </a>
         <a
           onClick={[Function]}
         >
           <button
-            className="MuiButtonBase-root-67 MuiButton-root-41 MuiButton-contained-52 MuiButton-raised-55"
+            className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-raised"
             disabled={false}
             onBlur={[Function]}
             onFocus={[Function]}
@@ -85,12 +85,12 @@ exports[`renders the content of the Events header 1`] = `
             type="button"
           >
             <span
-              className="MuiButton-label-42"
+              className="MuiButton-label"
             >
               
             </span>
             <span
-              className="MuiTouchRipple-root-70"
+              className="MuiTouchRipple-root"
             />
           </button>
         </a>

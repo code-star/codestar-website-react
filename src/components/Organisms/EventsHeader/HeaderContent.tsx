@@ -1,27 +1,26 @@
-import React, { SFC } from 'react';
-import { Typography, Button, Hidden, withStyles } from '@material-ui/core';
+import React, { FC } from 'react';
+import { Typography, Button, Hidden, withStyles, createStyles, Theme } from '@material-ui/core';
 import Container from '../../../Container/Container';
 import { translate, TranslationFunction } from 'react-i18next';
 import { Link } from 'react-scroll';
-import css from './EventsHeader.module.scss';
 import { purple } from '@material-ui/core/colors';
 import compose from 'recompose/compose';
+import { IMeetupEvent } from '../../../containers/EventsContainer/EventsContainer.interfaces';
 
-// TODO improve types by replacing "any"
-interface IHeaderContentPropsInner {
+type PropsInner = {
   t: TranslationFunction;
   classes: Record<string, string>;
-  mEvent: any;
+}
+
+type PropsOuter = {
+  mEvent: IMeetupEvent;
   formattedDate: string;
   children?: React.ReactNode;
 }
 
-interface IHeaderContentPropsOuter {
-  mEvent: any;
-  formattedDate: string;
-}
+type Props = PropsInner & PropsOuter;
 
-const styles = (theme: any) => ({
+const styles = (theme: Theme) => createStyles({
   button: {
     color: theme.palette.getContrastText(purple[500]),
     backgroundColor: purple[500],
@@ -30,9 +29,16 @@ const styles = (theme: any) => ({
       backgroundColor: purple[700],
     },
   },
+  nextEventText: {
+    color: 'white'
+  },
+  nextEventTitle: {
+    color: 'white',
+    fontWeight: 'bold'
+  }
 });
 
-export const HeaderContent: SFC<IHeaderContentPropsInner> = ({
+export const HeaderContent: FC<Props> = ({
   t,
   classes,
   mEvent,
@@ -45,16 +51,16 @@ export const HeaderContent: SFC<IHeaderContentPropsInner> = ({
         <div className="col-12">
           <Typography
             align="center"
-            variant="display1"
-            className={css.nextEventText}
+            variant="h4"
+            className={classes.nextEventText}
           >
             {t('OUR_NEXT_EVENT')}
           </Typography>
           <Hidden mdUp>
             <Typography
               align="center"
-              variant="display2"
-              className={css.nextEventTitle}
+              variant="h3"
+              className={classes.nextEventTitle}
             >
               {mEvent.name}
             </Typography>
@@ -62,8 +68,8 @@ export const HeaderContent: SFC<IHeaderContentPropsInner> = ({
           <Hidden smDown>
             <Typography
               align="center"
-              variant="display4"
-              className={css.nextEventTitle}
+              variant="h1"
+              className={classes.nextEventTitle}
             >
               {mEvent.name}
             </Typography>
@@ -71,8 +77,8 @@ export const HeaderContent: SFC<IHeaderContentPropsInner> = ({
           <Typography
             gutterBottom
             align="center"
-            variant="display2"
-            className={css.nextEventText}
+            variant="h3"
+            className={classes.nextEventTitle}
           >
             {formattedDate}
           </Typography>
@@ -96,7 +102,7 @@ export const HeaderContent: SFC<IHeaderContentPropsInner> = ({
   );
 };
 
-export default compose<IHeaderContentPropsInner, IHeaderContentPropsOuter>(
-  translate(['events'], { wait: true }),
-  withStyles(styles)
+export default compose<Props, PropsOuter>(
+  withStyles(styles),
+  translate(['events'], { wait: true })
 )(HeaderContent);

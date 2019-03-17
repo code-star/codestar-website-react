@@ -3,7 +3,7 @@
 exports[`ShareButtons shows facebook icon 1`] = `
 <a
   aria-label="Facebook"
-  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
+  className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-flat"
   href="https://www.facebook.com/sharer/sharer.php?u=/share-url"
   onBlur={[Function]}
   onFocus={[Function]}
@@ -26,7 +26,7 @@ exports[`ShareButtons shows facebook icon 1`] = `
   target="_blank"
 >
   <span
-    className="MuiButton-label-2"
+    className="MuiButton-label"
   >
     <svg
       aria-hidden="true"
@@ -47,7 +47,7 @@ exports[`ShareButtons shows facebook icon 1`] = `
     </svg>
   </span>
   <span
-    className="MuiTouchRipple-root-30"
+    className="MuiTouchRipple-root"
   />
 </a>
 `;
@@ -55,7 +55,7 @@ exports[`ShareButtons shows facebook icon 1`] = `
 exports[`ShareButtons shows linkedin icon 1`] = `
 <a
   aria-label="Linkedin"
-  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
+  className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-flat"
   href="https://www.linkedin.com/shareArticle?mini=true&url=/share-url&title=&summary="
   onBlur={[Function]}
   onFocus={[Function]}
@@ -78,7 +78,7 @@ exports[`ShareButtons shows linkedin icon 1`] = `
   target="_blank"
 >
   <span
-    className="MuiButton-label-2"
+    className="MuiButton-label"
   >
     <svg
       aria-hidden="true"
@@ -99,7 +99,7 @@ exports[`ShareButtons shows linkedin icon 1`] = `
     </svg>
   </span>
   <span
-    className="MuiTouchRipple-root-30"
+    className="MuiTouchRipple-root"
   />
 </a>
 `;
@@ -107,7 +107,7 @@ exports[`ShareButtons shows linkedin icon 1`] = `
 exports[`ShareButtons shows twitter icon 1`] = `
 <a
   aria-label="Twitter"
-  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6"
+  className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-flat"
   href="https://twitter.com/home?status=%0A/share-url"
   onBlur={[Function]}
   onFocus={[Function]}
@@ -130,7 +130,7 @@ exports[`ShareButtons shows twitter icon 1`] = `
   target="_blank"
 >
   <span
-    className="MuiButton-label-2"
+    className="MuiButton-label"
   >
     <svg
       aria-hidden="true"
@@ -151,7 +151,7 @@ exports[`ShareButtons shows twitter icon 1`] = `
     </svg>
   </span>
   <span
-    className="MuiTouchRipple-root-30"
+    className="MuiTouchRipple-root"
   />
 </a>
 `;

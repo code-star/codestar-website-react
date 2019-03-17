@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import i18n from '../../../i18n';
 import sanitizeHtml from 'sanitize-html';
-import { Typography } from '@material-ui/core';
+import { createStyles, Typography, withStyles } from '@material-ui/core';
 import ResponsiveImage from '../../../ResponsiveImage/ResponsiveImage';
 import EventsHeaderButton from './EventsHeaderButton';
 import { navButtons } from './constants';
-import css from './EventsHeader.module.scss';
 import EventsHeaderMessage from './EventsHeaderMessage';
 import HeaderContent from './HeaderContent';
 import DetailsSection from './DetailsSection';
@@ -13,18 +12,35 @@ import {
   IMeetupEvent,
   ITweet,
 } from '../../../containers/EventsContainer/EventsContainer.interfaces';
+import compose from 'recompose/compose';
 
-interface IEventsHeaderProps {
+type PropsInner = {
+  classes: Record<string, string>;
+};
+
+type PropsOuter = {
   nextMeetupEvents: IMeetupEvent[];
   noNextMeetupEvent: boolean;
   tweets: ITweet[];
-}
+};
 
-const EventsHeader = ({
+type Props = PropsInner & PropsOuter;
+
+const styles = () =>
+  createStyles({
+    // Prevent section overflow
+    section: {
+      position: 'relative',
+      overflow: 'hidden',
+    },
+  });
+
+const EventsHeader: FC<Props> = ({
   nextMeetupEvents,
   noNextMeetupEvent,
   tweets,
-}: IEventsHeaderProps) => {
+  classes,
+}) => {
   const renderNavButtons = () => {
     return navButtons.map(config => {
       return (
@@ -85,7 +101,7 @@ const EventsHeader = ({
 
   return (
     <>
-      <section className={css.section}>
+      <section className={classes.section}>
         <ResponsiveImage
           path="/images/events/2017-09-28%20Andre%20Staltz%20RxJS.jpg"
           asBackgroundImage
@@ -99,4 +115,4 @@ const EventsHeader = ({
   );
 };
 
-export default EventsHeader;
+export default compose<Props, PropsOuter>(withStyles(styles))(EventsHeader);

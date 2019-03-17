@@ -3,7 +3,7 @@
 exports[`An instance of EventsButton matches the snapshot while hovering 1`] = `
 <a
   aria-describedby={null}
-  className="MuiButtonBase-root-77 MuiButton-root-51 MuiButton-text-53 MuiButton-flat-56 MuiButton-colorInherit-72"
+  className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-flat MuiButton-colorInherit"
   href="/events"
   onBlur={[Function]}
   onClick={[Function]}
@@ -23,12 +23,12 @@ exports[`An instance of EventsButton matches the snapshot while hovering 1`] = `
   title=""
 >
   <span
-    className="MuiButton-label-52"
+    className="MuiButton-label"
   >
     TEST_EVENTS_LABEL_2
   </span>
   <span
-    className="MuiTouchRipple-root-80"
+    className="MuiTouchRipple-root"
   />
 </a>
 `;
@@ -36,7 +36,7 @@ exports[`An instance of EventsButton matches the snapshot while hovering 1`] = `
 exports[`An instance of EventsButton matches the snapshot with Event 1`] = `
 <a
   aria-describedby={null}
-  className="MuiButtonBase-root-77 MuiButton-root-51 MuiButton-text-53 MuiButton-flat-56 MuiButton-colorInherit-72"
+  className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-flat MuiButton-colorInherit"
   href="/events"
   onBlur={[Function]}
   onClick={[Function]}
@@ -56,7 +56,7 @@ exports[`An instance of EventsButton matches the snapshot with Event 1`] = `
   title="August 27 🎉Meetup🎉 MyEvent"
 >
   <span
-    className="MuiButton-label-52"
+    className="MuiButton-label"
   >
     TEST_EVENTS_LABEL_2
     <span
@@ -66,7 +66,7 @@ exports[`An instance of EventsButton matches the snapshot with Event 1`] = `
     </span>
   </span>
   <span
-    className="MuiTouchRipple-root-80"
+    className="MuiTouchRipple-root"
   />
 </a>
 `;
@@ -74,7 +74,7 @@ exports[`An instance of EventsButton matches the snapshot with Event 1`] = `
 exports[`An instance of EventsButton matches the snapshot without Event 1`] = `
 <a
   aria-describedby={null}
-  className="MuiButtonBase-root-77 MuiButton-root-51 MuiButton-text-53 MuiButton-flat-56 MuiButton-colorInherit-72"
+  className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-flat MuiButton-colorInherit"
   href="/events"
   onBlur={[Function]}
   onClick={[Function]}
@@ -94,12 +94,12 @@ exports[`An instance of EventsButton matches the snapshot without Event 1`] = `
   title=""
 >
   <span
-    className="MuiButton-label-52"
+    className="MuiButton-label"
   >
     TEST_EVENTS_LABEL_2
   </span>
   <span
-    className="MuiTouchRipple-root-80"
+    className="MuiTouchRipple-root"
   />
 </a>
 `;

@@ -47,7 +47,7 @@ export class VideosSection extends React.Component<
         <img
           className={styles.imageFullscreen}
           src={firstVideoThumbnail}
-          alt="Person receiving training at Codestar"
+          alt="Dynamic thumbnail from most recent Youtube video"
         />
         <div className="row">
           <div className="col-12">
