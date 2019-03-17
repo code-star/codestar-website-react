@@ -63,7 +63,7 @@ export class VideosSection extends React.Component<
                 className={styles.subscribeButton}
                 color="primary"
                 variant="contained"
-                href={`https://www.youtube.com/channel/${YOUTUBE_CODESTAR_CHANNEL_ID}`}
+                href={`https://www.youtube.com/c/${YOUTUBE_CODESTAR_CHANNEL_ID}`}
               >
                 {t('SUBSCRIBE')}
               </Button>
