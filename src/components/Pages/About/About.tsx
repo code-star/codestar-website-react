@@ -11,6 +11,7 @@ import TeamCarousel from '../../Molecules/TeamCarousel/TeamCarousel';
 import Section from '../../Molecules/Section/Section';
 import { CustomButton } from '../../Atoms/CustomButton/CustomButton';
 import { withStyles } from '@material-ui/core/styles';
+import Publications from "../../Molecules/Publications/Publications";
 
 // TODO Service worker caching issue? https://developers.google.com/web/tools/workbox/guides/service-worker-checklist
 
@@ -106,7 +107,7 @@ export const About: FC<IPropsInner> = ({ t, classes }) => {
           </div>
         </Container>
       </Section>
-      {/*<Section
+      <Section
         scrollname={"publications"}
         className="py-5"
       >
@@ -116,13 +117,12 @@ export const About: FC<IPropsInner> = ({ t, classes }) => {
               <Typography variant="h4" align="center" className="mb-3">
                 {t('PUBLICATIONS_TITLE')}
               </Typography>
-              <Typography variant="body1" className="mb-3">
-                NYI
-              </Typography>
+              [our colleagues are published in magazines and blogs. also see our video feed for their talks at conferences.]
+              <Publications />
             </div>
           </div>
         </Container>
-      </Section>*/}
+      </Section>
     </>
   );
 };

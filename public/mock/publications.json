@@ -1,0 +1,2023 @@
+{
+  "success": true,
+  "payload": {
+    "collection": {
+      "id": "ea5cff13e3c9",
+      "name": "Codestar blog",
+      "slug": "codestar-blog",
+      "tags": [
+        "SCALA",
+        "JAVASCRIPT",
+        "FUNCTIONAL PROGRAMMING",
+        "DATA ENGINEERING",
+        "TYPESCRIPT"
+      ],
+      "creatorId": "5ed06eb2199c",
+      "description": "Blog by Codestar developers",
+      "shortDescription": "Blog by Codestar developers",
+      "image": {
+        "imageId": "1*ukxy9iJN7uv-QJodsu2MWg.png",
+        "filter": "",
+        "backgroundSize": "",
+        "originalWidth": 1668,
+        "originalHeight": 1668,
+        "strategy": "resample",
+        "height": 0,
+        "width": 0
+      },
+      "metadata": { "followerCount": 5, "activeAt": 1552040996097 },
+      "virtuals": {
+        "permissions": {
+          "canPublish": false,
+          "canPublishAll": false,
+          "canRepublish": false,
+          "canRemove": false,
+          "canManageAll": false,
+          "canSubmit": false,
+          "canEditPosts": false,
+          "canAddWriters": false,
+          "canViewStats": false,
+          "canSendNewsletter": false,
+          "canViewLockedPosts": false,
+          "canViewCloaked": false,
+          "canEditOwnPosts": false,
+          "canBeAssignedAuthor": false,
+          "canEnrollInHightower": false,
+          "canLockPostsForMediumMembers": false,
+          "canLockOwnPostsForMediumMembers": false
+        },
+        "isSubscribed": false,
+        "isNewsletterSubscribed": false,
+        "memberOfMembershipPlanId": "",
+        "isEnrolledInHightower": false,
+        "isEligibleForHightower": false
+      },
+      "logo": {
+        "imageId": "1*D_2YXtWvTZ8EDu0G_RjHFg.png",
+        "filter": "",
+        "backgroundSize": "",
+        "originalWidth": 600,
+        "originalHeight": 80,
+        "strategy": "resample",
+        "height": 0,
+        "width": 0
+      },
+      "twitterUsername": "codestar_nl",
+      "sections": [
+        {
+          "type": 2,
+          "collectionHeaderMetadata": {
+            "title": "Codestar blog",
+            "description": "",
+            "backgroundImage": {},
+            "logoImage": {
+              "id": "1*6qFn4xU2BAN7vvhFu9c5Xw@2x.png",
+              "originalWidth": 512,
+              "originalHeight": 102,
+              "alt": "Codestar blog"
+            },
+            "alignment": 2,
+            "layout": 5
+          }
+        },
+        {
+          "type": 1,
+          "postListMetadata": {
+            "source": 1,
+            "layout": 6,
+            "number": 7,
+            "postIds": []
+          }
+        }
+      ],
+      "tintColor": "#FF1955A2",
+      "lightText": true,
+      "favicon": {
+        "imageId": "",
+        "filter": "",
+        "backgroundSize": "",
+        "originalWidth": 0,
+        "originalHeight": 0,
+        "strategy": "resample",
+        "height": 0,
+        "width": 0
+      },
+      "colorPalette": {
+        "defaultBackgroundSpectrum": {
+          "colorPoints": [
+            { "color": "#FF5188D7", "point": 0 },
+            { "color": "#FF4E7FC5", "point": 0.1 },
+            { "color": "#FF4A75B3", "point": 0.2 },
+            { "color": "#FF466BA2", "point": 0.3 },
+            { "color": "#FF416190", "point": 0.4 },
+            { "color": "#FF3B577F", "point": 0.5 },
+            { "color": "#FF354C6D", "point": 0.6 },
+            { "color": "#FF2E405C", "point": 0.7 },
+            { "color": "#FF26354A", "point": 0.8 },
+            { "color": "#FF1D2838", "point": 0.9 },
+            { "color": "#FF131B26", "point": 1 }
+          ],
+          "backgroundColor": "#FFFFFFFF"
+        },
+        "tintBackgroundSpectrum": {
+          "colorPoints": [
+            { "color": "#FF1955A2", "point": 0 },
+            { "color": "#FF396AB0", "point": 0.1 },
+            { "color": "#FF537EBC", "point": 0.2 },
+            { "color": "#FF6A90C9", "point": 0.3 },
+            { "color": "#FF80A2D4", "point": 0.4 },
+            { "color": "#FF95B3DF", "point": 0.5 },
+            { "color": "#FFAAC3EA", "point": 0.6 },
+            { "color": "#FFBED3F4", "point": 0.7 },
+            { "color": "#FFD1E2FE", "point": 0.8 },
+            { "color": "#FFE5F1FF", "point": 0.9 },
+            { "color": "#FFF7FFFF", "point": 1 }
+          ],
+          "backgroundColor": "#FF1955A2"
+        },
+        "highlightSpectrum": {
+          "colorPoints": [
+            { "color": "#FFE9F4FF", "point": 0 },
+            { "color": "#FFE4F2FF", "point": 0.1 },
+            { "color": "#FFE0F1FF", "point": 0.2 },
+            { "color": "#FFDCEFFF", "point": 0.3 },
+            { "color": "#FFD7EEFF", "point": 0.4 },
+            { "color": "#FFD3ECFF", "point": 0.5 },
+            { "color": "#FFCEEBFF", "point": 0.6 },
+            { "color": "#FFC9E9FF", "point": 0.7 },
+            { "color": "#FFC4E8FF", "point": 0.8 },
+            { "color": "#FFBFE6FF", "point": 0.9 },
+            { "color": "#FFBAE4FF", "point": 1 }
+          ],
+          "backgroundColor": "#FFFFFFFF"
+        }
+      },
+      "navItems": [],
+      "colorBehavior": 2,
+      "instantArticlesState": 0,
+      "acceleratedMobilePagesState": 0,
+      "ampLogo": {
+        "imageId": "",
+        "filter": "",
+        "backgroundSize": "",
+        "originalWidth": 0,
+        "originalHeight": 0,
+        "strategy": "resample",
+        "height": 0,
+        "width": 0
+      },
+      "header": {
+        "title": "Codestar blog",
+        "description": "",
+        "backgroundImage": {},
+        "logoImage": {
+          "id": "1*6qFn4xU2BAN7vvhFu9c5Xw@2x.png",
+          "originalWidth": 512,
+          "originalHeight": 102,
+          "alt": "Codestar blog"
+        },
+        "alignment": 2,
+        "layout": 5
+      },
+      "type": "Collection"
+    },
+    "posts": [
+      {
+        "id": "c3237f93f12b",
+        "versionId": "dd1ed11a6bf2",
+        "creatorId": "9eb88b7110d9",
+        "homeCollectionId": "ea5cff13e3c9",
+        "title": "Stateful Stream Processing Frameworks",
+        "detectedLanguage": "en",
+        "latestVersion": "dd1ed11a6bf2",
+        "latestPublishedVersion": "dd1ed11a6bf2",
+        "hasUnpublishedEdits": false,
+        "latestRev": 179,
+        "createdAt": 1551603663616,
+        "updatedAt": 1552040996099,
+        "acceptedAt": 0,
+        "firstPublishedAt": 1552040995996,
+        "latestPublishedAt": 1552040995996,
+        "vote": false,
+        "experimentalCss": "",
+        "displayAuthor": "",
+        "virtuals": {
+          "statusForCollection": "APPROVED",
+          "allowNotes": true,
+          "previewImage": {
+            "imageId": "",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 0,
+            "originalHeight": 0,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "wordCount": 812,
+          "imageCount": 0,
+          "readingTime": 3.0641509433962266,
+          "subtitle": "At one of the projects that Codestar is working on at the Port of Rotterdam, we have been making use of Akka Streams a lot for our stream…",
+          "publishedInCount": 1,
+          "usersBySocialRecommends": [],
+          "noIndex": false,
+          "recommends": 1,
+          "isBookmarked": false,
+          "tags": [
+            {
+              "slug": "kafka",
+              "name": "Kafka",
+              "postCount": 1048,
+              "metadata": {
+                "postCount": 1048,
+                "coverImage": {
+                  "id": "1*A3he5ns9XnjY_qJs_ZxkZA.png",
+                  "originalWidth": 1612,
+                  "originalHeight": 882,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "kafka-streams",
+              "name": "Kafka Streams",
+              "postCount": 101,
+              "metadata": {
+                "postCount": 101,
+                "coverImage": {
+                  "id": "1*seMzSI-ZmVyWpk1YGMBloQ.png",
+                  "originalWidth": 1560,
+                  "originalHeight": 692,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "akka-streams",
+              "name": "Akka Streams",
+              "postCount": 37,
+              "metadata": {
+                "postCount": 37,
+                "coverImage": {
+                  "id": "1*8QV_NohK7KftSyhjdcH8QQ.png",
+                  "originalWidth": 852,
+                  "originalHeight": 218,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "apache-flink",
+              "name": "Apache Flink",
+              "postCount": 72,
+              "metadata": {
+                "postCount": 72,
+                "coverImage": {
+                  "id": "1*mi9wpGZiPycUBOuHHCGjRA.png",
+                  "originalWidth": 731,
+                  "originalHeight": 342
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "apache-samza",
+              "name": "Apache Samza",
+              "postCount": 1,
+              "metadata": { "postCount": 1 },
+              "type": "Tag"
+            }
+          ],
+          "socialRecommendsCount": 0,
+          "responsesCreatedCount": 0,
+          "links": {
+            "entries": [
+              {
+                "url": "http://samza.apache.org/",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://doc.akka.io/docs/akka/2.5/stream/index.html",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://kafka.apache.org/",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://kafka.apache.org/documentation/streams/",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://ci.apache.org/projects/flink/flink-docs-stable/dev/libs/cep.html",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://flink.apache.org/",
+                "alts": [],
+                "httpStatus": 200
+              }
+            ],
+            "version": "0.3",
+            "generatedAt": 1552040996733
+          },
+          "isLockedPreviewOnly": false,
+          "takeoverId": "",
+          "metaDescription": "",
+          "totalClapCount": 3,
+          "sectionCount": 1,
+          "readingList": 0,
+          "topics": []
+        },
+        "coverless": true,
+        "slug": "stateful-stream-processing-frameworks",
+        "translationSourcePostId": "",
+        "translationSourceCreatorId": "",
+        "isApprovedTranslation": false,
+        "inResponseToPostId": "",
+        "inResponseToRemovedAt": 0,
+        "isTitleSynthesized": false,
+        "allowResponses": true,
+        "importedUrl": "",
+        "importedPublishedAt": 0,
+        "visibility": 0,
+        "uniqueSlug": "stateful-stream-processing-frameworks-c3237f93f12b",
+        "previewContent": {
+          "bodyModel": {
+            "paragraphs": [
+              {
+                "name": "7781",
+                "type": 3,
+                "text": "Stateful Stream Processing Frameworks",
+                "markups": [],
+                "alignment": 1
+              },
+              {
+                "name": "4a13",
+                "type": 1,
+                "text": "At one of the projects that Codestar is working on at the Port of Rotterdam, we have been making use of Akka Streams a lot for our stream processing applications. With Kafka as the backbone, we get fault-tolerant and scalable stream processing. When spinning up a…",
+                "markups": [
+                  {
+                    "type": 3,
+                    "start": 104,
+                    "end": 116,
+                    "href": "https://doc.akka.io/docs/akka/2.5/stream/index.html",
+                    "title": "",
+                    "rel": "",
+                    "anchorType": 0
+                  },
+                  {
+                    "type": 3,
+                    "start": 168,
+                    "end": 173,
+                    "href": "https://kafka.apache.org/",
+                    "title": "",
+                    "rel": "",
+                    "anchorType": 0
+                  }
+                ],
+                "alignment": 1
+              }
+            ],
+            "sections": [{ "startIndex": 0 }]
+          },
+          "isFullContent": false,
+          "subtitle": "At one of the projects that Codestar is working on at the Port of Rotterdam, we have been making use of Akka Streams a lot for our stream…"
+        },
+        "license": 0,
+        "inResponseToMediaResourceId": "",
+        "canonicalUrl": "",
+        "approvedHomeCollectionId": "ea5cff13e3c9",
+        "newsletterId": "",
+        "webCanonicalUrl": "",
+        "mediumUrl": "",
+        "migrationId": "",
+        "notifyFollowers": true,
+        "notifyTwitter": false,
+        "notifyFacebook": false,
+        "responseHiddenOnParentPostAt": 0,
+        "isSeries": false,
+        "isSubscriptionLocked": false,
+        "seriesLastAppendedAt": 0,
+        "audioVersionDurationSec": 0,
+        "sequenceId": "",
+        "isNsfw": false,
+        "isEligibleForRevenue": false,
+        "isBlockedFromHightower": false,
+        "deletedAt": 0,
+        "lockedPostSource": 0,
+        "hightowerMinimumGuaranteeStartsAt": 0,
+        "hightowerMinimumGuaranteeEndsAt": 0,
+        "featureLockRequestAcceptedAt": 0,
+        "mongerRequestType": 1,
+        "layerCake": 0,
+        "socialTitle": "",
+        "socialDek": "",
+        "editorialPreviewTitle": "",
+        "editorialPreviewDek": "",
+        "curationEligibleAt": 0,
+        "type": "Post"
+      },
+      {
+        "id": "30a11bf583c0",
+        "versionId": "9b85c1d81042",
+        "creatorId": "6d58736b234e",
+        "homeCollectionId": "ea5cff13e3c9",
+        "title": "Getting to grips with Flow",
+        "detectedLanguage": "en",
+        "latestVersion": "9b85c1d81042",
+        "latestPublishedVersion": "9b85c1d81042",
+        "hasUnpublishedEdits": false,
+        "latestRev": 294,
+        "createdAt": 1548057659087,
+        "updatedAt": 1548323613085,
+        "acceptedAt": 0,
+        "firstPublishedAt": 1548323612936,
+        "latestPublishedAt": 1548323612936,
+        "vote": false,
+        "experimentalCss": "",
+        "displayAuthor": "",
+        "virtuals": {
+          "statusForCollection": "APPROVED",
+          "allowNotes": true,
+          "previewImage": {
+            "imageId": "1*lS6UdzpP4uO9JMm2oqvrKA.png",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 734,
+            "originalHeight": 300,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "wordCount": 782,
+          "imageCount": 1,
+          "readingTime": 3.150943396226415,
+          "subtitle": "Coming from TypeScript, we wanted to know what other solutions are out there for statically typed JavaScript. We explore the differences.",
+          "publishedInCount": 1,
+          "usersBySocialRecommends": [],
+          "noIndex": false,
+          "recommends": 2,
+          "isBookmarked": false,
+          "tags": [
+            {
+              "slug": "typescript",
+              "name": "Typescript",
+              "postCount": 4566,
+              "metadata": {
+                "postCount": 4566,
+                "coverImage": {
+                  "id": "1*YbRfEra7Qi2VeqpEaVPCkQ.jpeg",
+                  "originalWidth": 2000,
+                  "originalHeight": 1000,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "flow",
+              "name": "Flow",
+              "postCount": 1989,
+              "metadata": {
+                "postCount": 1989,
+                "coverImage": {
+                  "id": "1*xlS5hnpMjbdHLxSQR38dTw.png",
+                  "originalWidth": 1200,
+                  "originalHeight": 630,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "flowtype",
+              "name": "Flowtype",
+              "postCount": 174,
+              "metadata": {
+                "postCount": 174,
+                "coverImage": {
+                  "id": "1*5aa2cNrij2fVO0rZTJCZHQ.png",
+                  "originalWidth": 631,
+                  "originalHeight": 489,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "js",
+              "name": "Js",
+              "postCount": 1107,
+              "metadata": {
+                "postCount": 1107,
+                "coverImage": {
+                  "id": "1*GEW3aprc8uXyyOiSOeCnrA.png",
+                  "originalWidth": 1070,
+                  "originalHeight": 722,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "javascript",
+              "name": "JavaScript",
+              "postCount": 89470,
+              "metadata": {
+                "postCount": 89470,
+                "coverImage": {
+                  "id": "1*kpGbsfoN0Vkpn27rNR0wvw.png",
+                  "originalWidth": 1000,
+                  "originalHeight": 600,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            }
+          ],
+          "socialRecommendsCount": 0,
+          "responsesCreatedCount": 0,
+          "links": {
+            "entries": [],
+            "version": "0.3",
+            "generatedAt": 1548323613312
+          },
+          "isLockedPreviewOnly": false,
+          "takeoverId": "",
+          "metaDescription": "",
+          "totalClapCount": 11,
+          "sectionCount": 1,
+          "readingList": 0,
+          "topics": []
+        },
+        "coverless": true,
+        "slug": "getting-to-grips-with-flow",
+        "translationSourcePostId": "",
+        "translationSourceCreatorId": "",
+        "isApprovedTranslation": false,
+        "inResponseToPostId": "",
+        "inResponseToRemovedAt": 0,
+        "isTitleSynthesized": false,
+        "allowResponses": true,
+        "importedUrl": "",
+        "importedPublishedAt": 0,
+        "visibility": 0,
+        "uniqueSlug": "getting-to-grips-with-flow-30a11bf583c0",
+        "previewContent": {
+          "bodyModel": {
+            "paragraphs": [
+              {
+                "name": "previewImage",
+                "type": 4,
+                "text": "",
+                "layout": 10,
+                "metadata": {
+                  "id": "1*lS6UdzpP4uO9JMm2oqvrKA.png",
+                  "originalWidth": 734,
+                  "originalHeight": 300,
+                  "isFeatured": true
+                }
+              },
+              {
+                "name": "previewTitle",
+                "type": 3,
+                "text": "Getting to grips with Flow",
+                "alignment": 1
+              },
+              {
+                "name": "previewSubtitle",
+                "type": 13,
+                "text": "Coming from TypeScript, we wanted to know what other solutions are out…",
+                "alignment": 1
+              }
+            ],
+            "sections": [{ "startIndex": 0 }]
+          },
+          "isFullContent": false,
+          "subtitle": "Coming from TypeScript, we wanted to know what other solutions are out there for statically typed JavaScript. We explore the differences."
+        },
+        "license": 0,
+        "inResponseToMediaResourceId": "",
+        "canonicalUrl": "",
+        "approvedHomeCollectionId": "ea5cff13e3c9",
+        "newsletterId": "",
+        "webCanonicalUrl": "",
+        "mediumUrl": "",
+        "migrationId": "",
+        "notifyFollowers": true,
+        "notifyTwitter": false,
+        "notifyFacebook": false,
+        "responseHiddenOnParentPostAt": 0,
+        "isSeries": false,
+        "isSubscriptionLocked": false,
+        "seriesLastAppendedAt": 0,
+        "audioVersionDurationSec": 0,
+        "sequenceId": "",
+        "isNsfw": false,
+        "isEligibleForRevenue": false,
+        "isBlockedFromHightower": false,
+        "deletedAt": 0,
+        "lockedPostSource": 0,
+        "hightowerMinimumGuaranteeStartsAt": 0,
+        "hightowerMinimumGuaranteeEndsAt": 0,
+        "featureLockRequestAcceptedAt": 0,
+        "mongerRequestType": 1,
+        "layerCake": 0,
+        "socialTitle": "",
+        "socialDek": "",
+        "editorialPreviewTitle": "",
+        "editorialPreviewDek": "",
+        "curationEligibleAt": 0,
+        "type": "Post"
+      },
+      {
+        "id": "d679cc5c4334",
+        "versionId": "7cbf59d524c1",
+        "creatorId": "31a789732f21",
+        "homeCollectionId": "ea5cff13e3c9",
+        "title": "Parcel Bundler vs. Webpack 4 ⚔️",
+        "detectedLanguage": "en",
+        "latestVersion": "7cbf59d524c1",
+        "latestPublishedVersion": "7cbf59d524c1",
+        "hasUnpublishedEdits": false,
+        "latestRev": 239,
+        "createdAt": 1537531125473,
+        "updatedAt": 1537532677477,
+        "acceptedAt": 0,
+        "firstPublishedAt": 1537531888432,
+        "latestPublishedAt": 1537532677051,
+        "vote": false,
+        "experimentalCss": "",
+        "displayAuthor": "",
+        "virtuals": {
+          "statusForCollection": "APPROVED",
+          "allowNotes": true,
+          "previewImage": {
+            "imageId": "1*quM6hYGbaWC66XnZpIY2bQ.png",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 300,
+            "originalHeight": 300,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "wordCount": 1117,
+          "imageCount": 2,
+          "readingTime": 4.598427672955975,
+          "subtitle": "S️etting up a fresh TypeScript React project",
+          "publishedInCount": 1,
+          "usersBySocialRecommends": [],
+          "noIndex": false,
+          "recommends": 3,
+          "isBookmarked": false,
+          "tags": [
+            {
+              "slug": "react",
+              "name": "React",
+              "postCount": 24675,
+              "metadata": {
+                "postCount": 24675,
+                "coverImage": {
+                  "id": "1*mJ-qdNqldpgae2U5oS0qDg.png",
+                  "originalWidth": 1266,
+                  "originalHeight": 826,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "parcel",
+              "name": "Parcel",
+              "postCount": 70,
+              "metadata": {
+                "postCount": 70,
+                "coverImage": {
+                  "id": "1*3UToqSQLfsIo8B-AWGGpkg.jpeg",
+                  "originalWidth": 5184,
+                  "originalHeight": 3456
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "webpack",
+              "name": "Webpack",
+              "postCount": 2501,
+              "metadata": {
+                "postCount": 2501,
+                "coverImage": {
+                  "id": "1*3XcVWZvLKvLukdJ2zbDDpQ.jpeg",
+                  "originalWidth": 3840,
+                  "originalHeight": 2400,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "javascript",
+              "name": "JavaScript",
+              "postCount": 89470,
+              "metadata": {
+                "postCount": 89470,
+                "coverImage": {
+                  "id": "1*kpGbsfoN0Vkpn27rNR0wvw.png",
+                  "originalWidth": 1000,
+                  "originalHeight": 600,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            }
+          ],
+          "socialRecommendsCount": 0,
+          "responsesCreatedCount": 1,
+          "links": {
+            "entries": [
+              {
+                "url": "https://medium.com/webpack/webpack-4-released-today-6cdb994702d4",
+                "alts": [
+                  { "type": 2, "url": "medium://p/6cdb994702d4" },
+                  { "type": 3, "url": "medium://p/6cdb994702d4" }
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/parcel-bundler/parcel",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/webpack/webpack",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/parcel-bundler/parcel#benchmarks",
+                "alts": [],
+                "httpStatus": 200
+              }
+            ],
+            "version": "0.3",
+            "generatedAt": 1537532677821
+          },
+          "isLockedPreviewOnly": false,
+          "takeoverId": "",
+          "metaDescription": "",
+          "totalClapCount": 15,
+          "sectionCount": 1,
+          "readingList": 0,
+          "topics": []
+        },
+        "coverless": true,
+        "slug": "parcel-bundler-vs-webpack-4-️",
+        "translationSourcePostId": "",
+        "translationSourceCreatorId": "",
+        "isApprovedTranslation": false,
+        "inResponseToPostId": "",
+        "inResponseToRemovedAt": 0,
+        "isTitleSynthesized": true,
+        "allowResponses": true,
+        "importedUrl": "https://gist.github.com/mvdam/2def62ad1f6e81607f061356d45bfe55",
+        "importedPublishedAt": 0,
+        "visibility": 0,
+        "uniqueSlug": "parcel-bundler-vs-webpack-4-️-d679cc5c4334",
+        "previewContent": {
+          "bodyModel": {
+            "paragraphs": [
+              {
+                "name": "8ab7",
+                "type": 3,
+                "text": "Parcel Bundler vs. Webpack 4 ⚔️",
+                "markups": [],
+                "alignment": 1
+              },
+              {
+                "name": "c072",
+                "type": 13,
+                "text": "S️etting up a fresh TypeScript React project",
+                "markups": [{ "type": 2, "start": 2, "end": 44 }],
+                "alignment": 1
+              },
+              {
+                "name": "5683",
+                "type": 1,
+                "text": "Starting up a new frontend project can be quite intensive. Most time will vanish in setting up the build process. We all know the pains of setting up Webpack with loaders and…",
+                "markups": [],
+                "alignment": 1
+              }
+            ],
+            "sections": [{ "startIndex": 0 }]
+          },
+          "isFullContent": false,
+          "subtitle": "S️etting up a fresh TypeScript React project"
+        },
+        "license": 0,
+        "inResponseToMediaResourceId": "",
+        "canonicalUrl": "",
+        "approvedHomeCollectionId": "ea5cff13e3c9",
+        "newsletterId": "",
+        "webCanonicalUrl": "https://gist.github.com/mvdam/2def62ad1f6e81607f061356d45bfe55",
+        "mediumUrl": "",
+        "migrationId": "",
+        "notifyFollowers": true,
+        "notifyTwitter": false,
+        "notifyFacebook": false,
+        "responseHiddenOnParentPostAt": 0,
+        "isSeries": false,
+        "isSubscriptionLocked": false,
+        "seriesLastAppendedAt": 0,
+        "audioVersionDurationSec": 0,
+        "sequenceId": "",
+        "isNsfw": false,
+        "isEligibleForRevenue": false,
+        "isBlockedFromHightower": false,
+        "deletedAt": 0,
+        "lockedPostSource": 0,
+        "hightowerMinimumGuaranteeStartsAt": 0,
+        "hightowerMinimumGuaranteeEndsAt": 0,
+        "featureLockRequestAcceptedAt": 0,
+        "mongerRequestType": 1,
+        "layerCake": 0,
+        "socialTitle": "",
+        "socialDek": "",
+        "editorialPreviewTitle": "",
+        "editorialPreviewDek": "",
+        "curationEligibleAt": 0,
+        "type": "Post"
+      },
+      {
+        "id": "5305a031fecd",
+        "versionId": "8166e89341ff",
+        "creatorId": "9eb88b7110d9",
+        "homeCollectionId": "ea5cff13e3c9",
+        "title": "Making your Akka Streams robust",
+        "detectedLanguage": "en",
+        "latestVersion": "8166e89341ff",
+        "latestPublishedVersion": "8166e89341ff",
+        "hasUnpublishedEdits": false,
+        "latestRev": 359,
+        "createdAt": 1533977179534,
+        "updatedAt": 1534514021862,
+        "acceptedAt": 0,
+        "firstPublishedAt": 1534513804085,
+        "latestPublishedAt": 1534513804085,
+        "vote": false,
+        "experimentalCss": "",
+        "displayAuthor": "",
+        "virtuals": {
+          "statusForCollection": "APPROVED",
+          "allowNotes": true,
+          "previewImage": {
+            "imageId": "",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 0,
+            "originalHeight": 0,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "wordCount": 2152,
+          "imageCount": 0,
+          "readingTime": 8.120754716981132,
+          "subtitle": "Typical stream processing applications need to be running all the time. We want our streams to keep on running and be resilient to…",
+          "publishedInCount": 1,
+          "usersBySocialRecommends": [],
+          "noIndex": false,
+          "recommends": 2,
+          "isBookmarked": false,
+          "tags": [
+            {
+              "slug": "scala",
+              "name": "Scala",
+              "postCount": 3240,
+              "metadata": {
+                "postCount": 3240,
+                "coverImage": {
+                  "id": "1*a9r1leUFmcRolJ5-W_vVBw.jpeg",
+                  "originalWidth": 500,
+                  "originalHeight": 312,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "akka-streams",
+              "name": "Akka Streams",
+              "postCount": 37,
+              "metadata": {
+                "postCount": 37,
+                "coverImage": {
+                  "id": "1*8QV_NohK7KftSyhjdcH8QQ.png",
+                  "originalWidth": 852,
+                  "originalHeight": 218,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "stream-processing",
+              "name": "Stream Processing",
+              "postCount": 132,
+              "metadata": {
+                "postCount": 132,
+                "coverImage": {
+                  "id": "1*BmHSkhIInTxIS5m-0ZIv4g.jpeg",
+                  "originalWidth": 5976,
+                  "originalHeight": 2550
+                }
+              },
+              "type": "Tag"
+            }
+          ],
+          "socialRecommendsCount": 0,
+          "responsesCreatedCount": 0,
+          "links": {
+            "entries": [
+              {
+                "url": "https://doc.akka.io/docs/akka/current/stream/index.html",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://doc.akka.io/docs/akka-stream-kafka/current/home.html",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://doc.akka.io/docs/akka/current/stream/stream-error.html?language=scala",
+                "alts": [],
+                "httpStatus": 200
+              }
+            ],
+            "version": "0.3",
+            "generatedAt": 1534513804623
+          },
+          "isLockedPreviewOnly": false,
+          "takeoverId": "",
+          "metaDescription": "",
+          "totalClapCount": 8,
+          "sectionCount": 1,
+          "readingList": 0,
+          "topics": []
+        },
+        "coverless": true,
+        "slug": "making-your-akka-streams-robust",
+        "translationSourcePostId": "",
+        "translationSourceCreatorId": "",
+        "isApprovedTranslation": false,
+        "inResponseToPostId": "",
+        "inResponseToRemovedAt": 0,
+        "isTitleSynthesized": true,
+        "allowResponses": true,
+        "importedUrl": "https://gist.github.com/svroonland/fc6f73d5a17ab9c740693303e091a480",
+        "importedPublishedAt": 0,
+        "visibility": 0,
+        "uniqueSlug": "making-your-akka-streams-robust-5305a031fecd",
+        "previewContent": {
+          "bodyModel": {
+            "paragraphs": [
+              {
+                "name": "5763",
+                "type": 3,
+                "text": "Making your Akka Streams robust",
+                "markups": [],
+                "alignment": 1
+              },
+              {
+                "name": "5623",
+                "type": 1,
+                "text": "Typical stream processing applications need to be running all the time. We want our streams to keep on running and be resilient to unexpected errors.",
+                "markups": [],
+                "alignment": 1
+              },
+              {
+                "name": "c734",
+                "type": 1,
+                "text": "I have been using Akka Streams for stream processing in several projects. It’s a very powerful…",
+                "markups": [
+                  {
+                    "type": 3,
+                    "start": 18,
+                    "end": 30,
+                    "href": "https://doc.akka.io/docs/akka/current/stream/index.html",
+                    "title": "",
+                    "rel": "",
+                    "anchorType": 0
+                  }
+                ],
+                "alignment": 1
+              }
+            ],
+            "sections": [{ "startIndex": 0 }]
+          },
+          "isFullContent": false,
+          "subtitle": "Typical stream processing applications need to be running all the time. We want our streams to keep on running and be resilient to…"
+        },
+        "license": 0,
+        "inResponseToMediaResourceId": "",
+        "canonicalUrl": "",
+        "approvedHomeCollectionId": "ea5cff13e3c9",
+        "newsletterId": "",
+        "webCanonicalUrl": "https://gist.github.com/svroonland/fc6f73d5a17ab9c740693303e091a480",
+        "mediumUrl": "",
+        "migrationId": "",
+        "notifyFollowers": true,
+        "notifyTwitter": false,
+        "notifyFacebook": false,
+        "responseHiddenOnParentPostAt": 0,
+        "isSeries": false,
+        "isSubscriptionLocked": false,
+        "seriesLastAppendedAt": 0,
+        "audioVersionDurationSec": 0,
+        "sequenceId": "",
+        "isNsfw": false,
+        "isEligibleForRevenue": false,
+        "isBlockedFromHightower": false,
+        "deletedAt": 0,
+        "lockedPostSource": 0,
+        "hightowerMinimumGuaranteeStartsAt": 0,
+        "hightowerMinimumGuaranteeEndsAt": 0,
+        "featureLockRequestAcceptedAt": 0,
+        "mongerRequestType": 1,
+        "layerCake": 0,
+        "socialTitle": "",
+        "socialDek": "",
+        "editorialPreviewTitle": "",
+        "editorialPreviewDek": "",
+        "curationEligibleAt": 0,
+        "type": "Post"
+      },
+      {
+        "id": "a0680a71c9af",
+        "versionId": "45a74aacacb0",
+        "creatorId": "b8149197a62",
+        "homeCollectionId": "ea5cff13e3c9",
+        "title": "Elm for front-end developers",
+        "detectedLanguage": "en",
+        "latestVersion": "45a74aacacb0",
+        "latestPublishedVersion": "45a74aacacb0",
+        "hasUnpublishedEdits": false,
+        "latestRev": 153,
+        "createdAt": 1528443289455,
+        "updatedAt": 1528464032678,
+        "acceptedAt": 0,
+        "firstPublishedAt": 1528443402261,
+        "latestPublishedAt": 1528443402261,
+        "vote": false,
+        "experimentalCss": "",
+        "displayAuthor": "",
+        "virtuals": {
+          "statusForCollection": "APPROVED",
+          "allowNotes": true,
+          "previewImage": {
+            "imageId": "",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 0,
+            "originalHeight": 0,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "wordCount": 2122,
+          "imageCount": 0,
+          "readingTime": 8.007547169811321,
+          "subtitle": "Elm for front-end developers — how we dove into Elm to rebuild part of our site.",
+          "publishedInCount": 1,
+          "usersBySocialRecommends": [],
+          "noIndex": false,
+          "recommends": 4,
+          "isBookmarked": false,
+          "tags": [
+            {
+              "slug": "javascript",
+              "name": "JavaScript",
+              "postCount": 89470,
+              "metadata": {
+                "postCount": 89470,
+                "coverImage": {
+                  "id": "1*kpGbsfoN0Vkpn27rNR0wvw.png",
+                  "originalWidth": 1000,
+                  "originalHeight": 600,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "elm",
+              "name": "Elm",
+              "postCount": 785,
+              "metadata": {
+                "postCount": 785,
+                "coverImage": {
+                  "id": "1*Ppgc4ufxazWbAU2tNexV8A.jpeg",
+                  "originalWidth": 5560,
+                  "originalHeight": 3707,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "elm-lang",
+              "name": "Elm Lang",
+              "postCount": 129,
+              "metadata": {
+                "postCount": 129,
+                "coverImage": {
+                  "id": "1*EaVW0wZGtXOIj_pnzBgmcw.jpeg",
+                  "originalWidth": 4288,
+                  "originalHeight": 2848,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            }
+          ],
+          "socialRecommendsCount": 0,
+          "responsesCreatedCount": 0,
+          "links": {
+            "entries": [
+              {
+                "url": "https://cloudinary.com/",
+                "alts": [],
+                "httpStatus": 200
+              },
+              { "url": "https://jamstack.org/", "alts": [], "httpStatus": 200 },
+              {
+                "url": "http://reactivex.io/rxjs/manual/tutorial.html#state-stores",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+                "alts": [],
+                "httpStatus": 200
+              },
+              { "url": "http://elm-lang.org/", "alts": [], "httpStatus": 200 },
+              { "url": "https://redux.js.org/", "alts": [], "httpStatus": 200 },
+              {
+                "url": "http://elmprogramming.com/immutability.html",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "http://elmprogramming.com/virtual-dom.html",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://www.codestar.nl",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/NoRedInk/elm-assets-loader",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://mdworld.nl/polymer-2-and-type-script",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/elm-community/elm-webpack-loader",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "http://dave.fayr.am/posts/2011-08-19-lets-go-shopping.html",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://redux.js.org/introduction/prior-art#elm",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://reactjs.org/docs/faq-internals.html",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/elm-community/elm-webpack-loader#noparse",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/elm-community/elm-webpack-starter",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/reduxjs/redux-devtools",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/tcoopman/elm-css-webpack-loader",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://8thlight.com/blog/rob-looby/2016/04/07/caching-elm-builds-on-travis-ci.html",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/mdvanes/elmsta/tree/refactoring",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/rtfeldman/node-elm-compiler/blob/3fde73d/index.js#L12-L23",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://www.elm-tutorial.org/en/04-starting/03-webpack-1.html",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://www.elm-tutorial.org/en/04-starting/04-webpack-2.html",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/elm-lang/elm-reactor/issues/199#issuecomment-279250207",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/elm-community/elm-webpack-loader/issues/54",
+                "alts": [],
+                "httpStatus": 200
+              }
+            ],
+            "version": "0.3",
+            "generatedAt": 1528443404601
+          },
+          "isLockedPreviewOnly": false,
+          "takeoverId": "",
+          "metaDescription": "",
+          "totalClapCount": 10,
+          "sectionCount": 1,
+          "readingList": 0,
+          "topics": []
+        },
+        "coverless": true,
+        "slug": "elm-for-front-end-developers",
+        "translationSourcePostId": "",
+        "translationSourceCreatorId": "",
+        "isApprovedTranslation": false,
+        "inResponseToPostId": "",
+        "inResponseToRemovedAt": 0,
+        "isTitleSynthesized": true,
+        "allowResponses": true,
+        "importedUrl": "",
+        "importedPublishedAt": 0,
+        "visibility": 0,
+        "uniqueSlug": "elm-for-front-end-developers-a0680a71c9af",
+        "previewContent": {
+          "bodyModel": {
+            "paragraphs": [
+              {
+                "name": "b7ea",
+                "type": 3,
+                "text": "Elm for front-end developers",
+                "markups": [],
+                "alignment": 1
+              },
+              {
+                "name": "e250",
+                "type": 1,
+                "text": "Elm for front-end developers — how we dove into Elm to rebuild part of our site.",
+                "markups": [],
+                "alignment": 1
+              },
+              {
+                "name": "304b",
+                "type": 3,
+                "text": "Why Elm?",
+                "markups": [],
+                "alignment": 1
+              },
+              {
+                "name": "e5df",
+                "type": 1,
+                "text": "The benefits of Elm (no runtime errors, typing) is what makes it accessible to our back-end developers. They are used to the…",
+                "markups": [
+                  {
+                    "type": 3,
+                    "start": 16,
+                    "end": 19,
+                    "href": "http://elm-lang.org/",
+                    "title": "",
+                    "rel": "nofollow",
+                    "anchorType": 0
+                  }
+                ],
+                "alignment": 1
+              }
+            ],
+            "sections": [{ "startIndex": 0 }]
+          },
+          "isFullContent": false,
+          "subtitle": "Elm for front-end developers — how we dove into Elm to rebuild part of our site."
+        },
+        "license": 0,
+        "inResponseToMediaResourceId": "",
+        "canonicalUrl": "",
+        "approvedHomeCollectionId": "ea5cff13e3c9",
+        "newsletterId": "",
+        "webCanonicalUrl": "",
+        "mediumUrl": "",
+        "migrationId": "",
+        "notifyFollowers": true,
+        "notifyTwitter": false,
+        "notifyFacebook": false,
+        "responseHiddenOnParentPostAt": 0,
+        "isSeries": false,
+        "isSubscriptionLocked": false,
+        "seriesLastAppendedAt": 0,
+        "audioVersionDurationSec": 0,
+        "sequenceId": "",
+        "isNsfw": false,
+        "isEligibleForRevenue": false,
+        "isBlockedFromHightower": false,
+        "deletedAt": 0,
+        "lockedPostSource": 0,
+        "hightowerMinimumGuaranteeStartsAt": 0,
+        "hightowerMinimumGuaranteeEndsAt": 0,
+        "featureLockRequestAcceptedAt": 0,
+        "mongerRequestType": 1,
+        "layerCake": 0,
+        "socialTitle": "",
+        "socialDek": "",
+        "editorialPreviewTitle": "",
+        "editorialPreviewDek": "",
+        "curationEligibleAt": 0,
+        "type": "Post"
+      },
+      {
+        "id": "42631c80be58",
+        "versionId": "dc430ddbc51a",
+        "creatorId": "b8149197a62",
+        "homeCollectionId": "ea5cff13e3c9",
+        "title": "Polymer 2 and TypeScript",
+        "detectedLanguage": "en",
+        "latestVersion": "dc430ddbc51a",
+        "latestPublishedVersion": "dc430ddbc51a",
+        "hasUnpublishedEdits": false,
+        "latestRev": 281,
+        "createdAt": 1513668470351,
+        "updatedAt": 1527255313805,
+        "acceptedAt": 0,
+        "firstPublishedAt": 1513668715676,
+        "latestPublishedAt": 1527255311600,
+        "vote": false,
+        "experimentalCss": "",
+        "displayAuthor": "",
+        "virtuals": {
+          "statusForCollection": "APPROVED",
+          "allowNotes": true,
+          "previewImage": {
+            "imageId": "",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 0,
+            "originalHeight": 0,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "wordCount": 4649,
+          "imageCount": 0,
+          "readingTime": 17.543396226415094,
+          "subtitle": "For reasons beyond my control I’m working with Polymer 2 at the moment. Although the idea of web components is great, the choice for HTML…",
+          "publishedInCount": 1,
+          "usersBySocialRecommends": [],
+          "noIndex": false,
+          "recommends": 5,
+          "isBookmarked": false,
+          "tags": [
+            {
+              "slug": "javascript",
+              "name": "JavaScript",
+              "postCount": 89470,
+              "metadata": {
+                "postCount": 89470,
+                "coverImage": {
+                  "id": "1*kpGbsfoN0Vkpn27rNR0wvw.png",
+                  "originalWidth": 1000,
+                  "originalHeight": 600,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "typescript",
+              "name": "Typescript",
+              "postCount": 4566,
+              "metadata": {
+                "postCount": 4566,
+                "coverImage": {
+                  "id": "1*YbRfEra7Qi2VeqpEaVPCkQ.jpeg",
+                  "originalWidth": 2000,
+                  "originalHeight": 1000,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "polymer",
+              "name": "Polymer",
+              "postCount": 576,
+              "metadata": {
+                "postCount": 576,
+                "coverImage": {
+                  "id": "1*DSk7FZhA0Cfc7J1l_EsCRA.png",
+                  "originalWidth": 740,
+                  "originalHeight": 340,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            }
+          ],
+          "socialRecommendsCount": 0,
+          "responsesCreatedCount": 0,
+          "links": {
+            "entries": [
+              {
+                "url": "https://www.npmjs.com/package/nodemon",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://www.webcomponents.org/",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://mdworld.nl/polymer-2-and-redux/",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://www.npmjs.com/package/npm-watch",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/mdvanes/polygram/tree/TypeScript/twc",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "http://robdodson.me/how-to-use-polymer-with-webpack/",
+                "alts": [
+                  {
+                    "type": 1,
+                    "url": "https://cdn.ampproject.org/c/robdodson.me/how-to-use-polymer-with-webpack/amp/"
+                  }
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/mdvanes/typescript-batch-compiler",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/TypeStrong/ts-loader",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://caniuse.com/#search=html%20imports",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/Polymer/polymer-linter",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/ianwalter/debug-loader",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/mdvanes/polygram/tree/TypeScript",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/Draccoz/twc/wiki/Creating-a-simple-component",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/code-star/scala-ts-interfaces",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/mlisook/generator-polymer-init-twc-starter-kit",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841",
+                "alts": [
+                  { "type": 2, "url": "medium://p/76ecb65fb841" },
+                  { "type": 3, "url": "medium://p/76ecb65fb841" }
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/Draccoz/twc",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/PolymerElements/iron-component-page",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/Polymer/web-component-tester",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/mdvanes/polymer3-typescript",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://www.youtube.com/playlist?list=PLOU2XLYxmsII5c3Mgw6fNYCzaWrsM3sMN",
+                "alts": [
+                  {
+                    "type": 3,
+                    "url": "http://www.youtube.com/playlist?list=PLOU2XLYxmsII5c3Mgw6fNYCzaWrsM3sMN&feature=applinks"
+                  },
+                  {
+                    "type": 2,
+                    "url": "http://www.youtube.com/playlist?list=PLOU2XLYxmsII5c3Mgw6fNYCzaWrsM3sMN&feature=applinks"
+                  }
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/webpack-contrib/polymer-webpack-loader/issues/64",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://developer.mozilla.org/en-US/docs/Web/Web_Components/Shadow_DOM",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/pferretti",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/webpack-contrib/polymer-webpack-loader",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/Polymer/polymer-linter#use-with-other-tools",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://www.polymer-project.org/2.0/toolbox/prpl",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://www.npmjs.com/package/watch",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://www.polymer-project.org/blog/2017-08-23-hands-on-30-preview",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://github.com/Microsoft/TypeScript/issues/1516",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://www.npmjs.com/package/tslint-plugin-prettier",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://www.npmjs.com/package/typescript-batch-compiler",
+                "alts": [],
+                "httpStatus": 200
+              }
+            ],
+            "version": "0.3",
+            "generatedAt": 1527255313434
+          },
+          "isLockedPreviewOnly": false,
+          "takeoverId": "",
+          "metaDescription": "",
+          "totalClapCount": 33,
+          "sectionCount": 1,
+          "readingList": 0,
+          "topics": []
+        },
+        "coverless": true,
+        "slug": "polymer-2-and-typescript",
+        "translationSourcePostId": "",
+        "translationSourceCreatorId": "",
+        "isApprovedTranslation": false,
+        "inResponseToPostId": "",
+        "inResponseToRemovedAt": 0,
+        "isTitleSynthesized": true,
+        "allowResponses": true,
+        "importedUrl": "",
+        "importedPublishedAt": 0,
+        "visibility": 0,
+        "uniqueSlug": "polymer-2-and-typescript-42631c80be58",
+        "previewContent": {
+          "bodyModel": {
+            "paragraphs": [
+              {
+                "name": "f6ab",
+                "type": 3,
+                "text": "Polymer 2 and TypeScript",
+                "markups": [],
+                "alignment": 1
+              },
+              {
+                "name": "6d38",
+                "type": 1,
+                "text": "For reasons beyond my control I’m working with Polymer 2 at the moment. Although the idea of web components is great, the choice for HTML imports that comes with Polymer 2 makes integration into a modern development stack cumbersome, as will become clear soon. Also, HTML imports are…",
+                "markups": [
+                  {
+                    "type": 3,
+                    "start": 4,
+                    "end": 29,
+                    "href": "https://mdworld.nl/polymer-2-and-redux/",
+                    "title": "",
+                    "rel": "",
+                    "anchorType": 0
+                  }
+                ],
+                "alignment": 1
+              }
+            ],
+            "sections": [{ "startIndex": 0 }]
+          },
+          "isFullContent": false,
+          "subtitle": "For reasons beyond my control I’m working with Polymer 2 at the moment. Although the idea of web components is great, the choice for HTML…"
+        },
+        "license": 0,
+        "inResponseToMediaResourceId": "",
+        "canonicalUrl": "",
+        "approvedHomeCollectionId": "ea5cff13e3c9",
+        "newsletterId": "",
+        "webCanonicalUrl": "",
+        "mediumUrl": "",
+        "migrationId": "",
+        "notifyFollowers": true,
+        "notifyTwitter": false,
+        "notifyFacebook": false,
+        "responseHiddenOnParentPostAt": 0,
+        "isSeries": false,
+        "isSubscriptionLocked": false,
+        "seriesLastAppendedAt": 0,
+        "audioVersionDurationSec": 0,
+        "sequenceId": "",
+        "isNsfw": false,
+        "isEligibleForRevenue": false,
+        "isBlockedFromHightower": false,
+        "deletedAt": 0,
+        "lockedPostSource": 0,
+        "hightowerMinimumGuaranteeStartsAt": 0,
+        "hightowerMinimumGuaranteeEndsAt": 0,
+        "featureLockRequestAcceptedAt": 0,
+        "mongerRequestType": 1,
+        "layerCake": 0,
+        "socialTitle": "",
+        "socialDek": "",
+        "editorialPreviewTitle": "",
+        "editorialPreviewDek": "",
+        "curationEligibleAt": 0,
+        "type": "Post"
+      }
+    ],
+    "tagName": null,
+    "writerNames": ["mehmettugrulsahin", "mvdam", "bjeaurn", "svroonland"],
+    "references": {
+      "User": {
+        "5ed06eb2199c": {
+          "userId": "5ed06eb2199c",
+          "name": "Codestar",
+          "username": "Codestar_nl",
+          "createdAt": 1504531954044,
+          "imageId": "0*3JgkGnEL1jXViI0l.jpg",
+          "backgroundImageId": "",
+          "bio": "",
+          "twitterScreenName": "Codestar_nl",
+          "facebookAccountId": "",
+          "allowNotes": 1,
+          "mediumMemberAt": 0,
+          "isNsfw": false,
+          "isWriterProgramEnrolled": true,
+          "isQuarantined": false,
+          "type": "User"
+        },
+        "9eb88b7110d9": {
+          "userId": "9eb88b7110d9",
+          "name": "Steven Vroonland",
+          "username": "svroonland",
+          "createdAt": 1456677475875,
+          "imageId": "0*Qxmj-9Rh00bZxvP2.png",
+          "backgroundImageId": "",
+          "bio": "",
+          "twitterScreenName": "StevenVroonland",
+          "facebookAccountId": "1239741142714299",
+          "allowNotes": 1,
+          "mediumMemberAt": 0,
+          "isNsfw": false,
+          "isWriterProgramEnrolled": true,
+          "isQuarantined": false,
+          "type": "User"
+        },
+        "6d58736b234e": {
+          "userId": "6d58736b234e",
+          "name": "Bjorn Schijff",
+          "username": "bjeaurn",
+          "createdAt": 1376905588972,
+          "imageId": "0*o9UzuQyUwobacrCt.jpeg",
+          "backgroundImageId": "",
+          "bio": "Director/Founder of Somnu. Senior Front-end engineer at Codestar. Interested in innovation and everything web and technology related. Also a game enthusiast.",
+          "twitterScreenName": "bjeaurn",
+          "facebookAccountId": "1927604050602875",
+          "allowNotes": 1,
+          "mediumMemberAt": 0,
+          "isNsfw": false,
+          "isWriterProgramEnrolled": true,
+          "isQuarantined": false,
+          "type": "User"
+        },
+        "31a789732f21": {
+          "userId": "31a789732f21",
+          "name": "Martin van Dam",
+          "username": "mvdam",
+          "createdAt": 1527239394239,
+          "imageId": "1*XcsvRGhrF7Z4EZRhS8tvIA.jpeg",
+          "backgroundImageId": "",
+          "bio": "Frontend Software Engineer",
+          "twitterScreenName": "",
+          "facebookAccountId": "",
+          "allowNotes": 1,
+          "mediumMemberAt": 0,
+          "isNsfw": false,
+          "isWriterProgramEnrolled": true,
+          "isQuarantined": false,
+          "type": "User"
+        },
+        "b8149197a62": {
+          "userId": "b8149197a62",
+          "name": "mdworld",
+          "username": "mdworldNL",
+          "createdAt": 1513666519253,
+          "imageId": "0*gTl35Xy5zRcgu5wJ.png",
+          "backgroundImageId": "",
+          "bio": "",
+          "twitterScreenName": "mdworldNL",
+          "facebookAccountId": "",
+          "allowNotes": 1,
+          "mediumMemberAt": 0,
+          "isNsfw": false,
+          "isWriterProgramEnrolled": true,
+          "isQuarantined": false,
+          "type": "User"
+        }
+      },
+      "Collection": {
+        "ea5cff13e3c9": {
+          "id": "ea5cff13e3c9",
+          "name": "Codestar blog",
+          "slug": "codestar-blog",
+          "tags": [
+            "SCALA",
+            "JAVASCRIPT",
+            "FUNCTIONAL PROGRAMMING",
+            "DATA ENGINEERING",
+            "TYPESCRIPT"
+          ],
+          "creatorId": "5ed06eb2199c",
+          "description": "Blog by Codestar developers",
+          "shortDescription": "Blog by Codestar developers",
+          "image": {
+            "imageId": "1*ukxy9iJN7uv-QJodsu2MWg.png",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 1668,
+            "originalHeight": 1668,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "metadata": { "followerCount": 5, "activeAt": 1552040996097 },
+          "virtuals": {
+            "permissions": {
+              "canPublish": false,
+              "canPublishAll": false,
+              "canRepublish": false,
+              "canRemove": false,
+              "canManageAll": false,
+              "canSubmit": false,
+              "canEditPosts": false,
+              "canAddWriters": false,
+              "canViewStats": false,
+              "canSendNewsletter": false,
+              "canViewLockedPosts": false,
+              "canViewCloaked": false,
+              "canEditOwnPosts": false,
+              "canBeAssignedAuthor": false,
+              "canEnrollInHightower": false,
+              "canLockPostsForMediumMembers": false,
+              "canLockOwnPostsForMediumMembers": false
+            },
+            "isSubscribed": false,
+            "isNewsletterSubscribed": false,
+            "memberOfMembershipPlanId": "",
+            "isEnrolledInHightower": false,
+            "isEligibleForHightower": false
+          },
+          "logo": {
+            "imageId": "1*D_2YXtWvTZ8EDu0G_RjHFg.png",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 600,
+            "originalHeight": 80,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "twitterUsername": "codestar_nl",
+          "sections": [
+            {
+              "type": 2,
+              "collectionHeaderMetadata": {
+                "title": "Codestar blog",
+                "description": "",
+                "backgroundImage": {},
+                "logoImage": {
+                  "id": "1*6qFn4xU2BAN7vvhFu9c5Xw@2x.png",
+                  "originalWidth": 512,
+                  "originalHeight": 102,
+                  "alt": "Codestar blog"
+                },
+                "alignment": 2,
+                "layout": 5
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 1,
+                "layout": 6,
+                "number": 7,
+                "postIds": []
+              }
+            }
+          ],
+          "tintColor": "#FF1955A2",
+          "lightText": true,
+          "favicon": {
+            "imageId": "",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 0,
+            "originalHeight": 0,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "colorPalette": {
+            "defaultBackgroundSpectrum": {
+              "colorPoints": [
+                { "color": "#FF5188D7", "point": 0 },
+                { "color": "#FF4E7FC5", "point": 0.1 },
+                { "color": "#FF4A75B3", "point": 0.2 },
+                { "color": "#FF466BA2", "point": 0.3 },
+                { "color": "#FF416190", "point": 0.4 },
+                { "color": "#FF3B577F", "point": 0.5 },
+                { "color": "#FF354C6D", "point": 0.6 },
+                { "color": "#FF2E405C", "point": 0.7 },
+                { "color": "#FF26354A", "point": 0.8 },
+                { "color": "#FF1D2838", "point": 0.9 },
+                { "color": "#FF131B26", "point": 1 }
+              ],
+              "backgroundColor": "#FFFFFFFF"
+            },
+            "tintBackgroundSpectrum": {
+              "colorPoints": [
+                { "color": "#FF1955A2", "point": 0 },
+                { "color": "#FF396AB0", "point": 0.1 },
+                { "color": "#FF537EBC", "point": 0.2 },
+                { "color": "#FF6A90C9", "point": 0.3 },
+                { "color": "#FF80A2D4", "point": 0.4 },
+                { "color": "#FF95B3DF", "point": 0.5 },
+                { "color": "#FFAAC3EA", "point": 0.6 },
+                { "color": "#FFBED3F4", "point": 0.7 },
+                { "color": "#FFD1E2FE", "point": 0.8 },
+                { "color": "#FFE5F1FF", "point": 0.9 },
+                { "color": "#FFF7FFFF", "point": 1 }
+              ],
+              "backgroundColor": "#FF1955A2"
+            },
+            "highlightSpectrum": {
+              "colorPoints": [
+                { "color": "#FFE9F4FF", "point": 0 },
+                { "color": "#FFE4F2FF", "point": 0.1 },
+                { "color": "#FFE0F1FF", "point": 0.2 },
+                { "color": "#FFDCEFFF", "point": 0.3 },
+                { "color": "#FFD7EEFF", "point": 0.4 },
+                { "color": "#FFD3ECFF", "point": 0.5 },
+                { "color": "#FFCEEBFF", "point": 0.6 },
+                { "color": "#FFC9E9FF", "point": 0.7 },
+                { "color": "#FFC4E8FF", "point": 0.8 },
+                { "color": "#FFBFE6FF", "point": 0.9 },
+                { "color": "#FFBAE4FF", "point": 1 }
+              ],
+              "backgroundColor": "#FFFFFFFF"
+            }
+          },
+          "navItems": [],
+          "colorBehavior": 2,
+          "instantArticlesState": 0,
+          "acceleratedMobilePagesState": 0,
+          "ampLogo": {
+            "imageId": "",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 0,
+            "originalHeight": 0,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "header": {
+            "title": "Codestar blog",
+            "description": "",
+            "backgroundImage": {},
+            "logoImage": {
+              "id": "1*6qFn4xU2BAN7vvhFu9c5Xw@2x.png",
+              "originalWidth": 512,
+              "originalHeight": 102,
+              "alt": "Codestar blog"
+            },
+            "alignment": 2,
+            "layout": 5
+          },
+          "type": "Collection"
+        }
+      }
+    },
+    "paging": {
+      "previous": { "limit": 10, "from": "1552040995996" },
+      "next": { "limit": 10, "to": "1513668715676" }
+    }
+  },
+  "v": 3,
+  "b": "36911-3c296ba"
+}
