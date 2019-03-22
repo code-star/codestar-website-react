@@ -5,6 +5,11 @@ import renderer from 'react-test-renderer';
 
 Enzyme.configure({ adapter: new Adapter() });
 
+jest.mock(
+  '@material-ui/core/styles/createGenerateClassName',
+  () => () => (rule: any, styleSheet: any) => `${styleSheet.options.name}-${rule.key}`
+);
+
 const globalAny: any = global;
 globalAny.renderToJSON = (component: any) => {
   return renderer.create(component).toJSON();

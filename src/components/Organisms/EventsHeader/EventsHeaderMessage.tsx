@@ -1,21 +1,28 @@
-import React, { SFC, ReactNode } from 'react';
-import { Typography, Button } from '@material-ui/core';
+import React, { FC, ReactNode } from 'react';
+import {Typography, Button, createStyles, withStyles, WithStyles} from '@material-ui/core';
 import Container from '../../../Container/Container';
-import css from './EventsHeader.module.scss';
 import compose from 'recompose/compose';
 import { translate, TranslationFunction } from 'react-i18next';
 
 interface IPropsInner {
   t: TranslationFunction;
+  classes: WithStyles['classes'];
 }
 
 interface IPropsOuter {
   children?: ReactNode;
 }
 
-const EventsHeaderMessage: SFC<IPropsInner & IPropsOuter> = ({
+const styles = () => createStyles({
+  nextEventText: {
+    color: 'white'
+  }
+});
+
+const EventsHeaderMessage: FC<IPropsInner & IPropsOuter> = ({
   t,
   children,
+  classes
 }) => (
   <Container center className="mt-5 mb-3">
     <div className="row">
@@ -24,8 +31,8 @@ const EventsHeaderMessage: SFC<IPropsInner & IPropsOuter> = ({
           <Typography
             gutterBottom
             align="center"
-            variant="display2"
-            className={css.nextEventText}
+            variant="h3"
+            className={classes.nextEventText}
           >
             {t('INFO_NO_NEXT_EVENTS')}
           </Typography>
@@ -47,5 +54,6 @@ const EventsHeaderMessage: SFC<IPropsInner & IPropsOuter> = ({
 );
 
 export default compose<IPropsInner, IPropsOuter>(
+  withStyles(styles),
   translate(['events'], { wait: true })
 )(EventsHeaderMessage);

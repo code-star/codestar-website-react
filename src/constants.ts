@@ -1,0 +1,4 @@
+export const YOUTUBE_API_KEY = 'AIzaSyDkTKtIGxMcyLX2IsfTpCvYr4n7WmMw3Jw';
+export const YOUTUBE_CODESTAR_PLAYLIST_ID =
+  'PLy227h3xpH-FcHw79drVFiVGMRDU8YhLH';
+export const YOUTUBE_CODESTAR_CHANNEL_ID = 'codestar';

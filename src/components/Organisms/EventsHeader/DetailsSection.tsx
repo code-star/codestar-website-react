@@ -2,7 +2,7 @@ import React, { SFC, ReactNode } from 'react';
 import { Typography, Button } from '@material-ui/core';
 import { translate, TranslationFunction } from 'react-i18next';
 import Container from '../../../Container/Container';
-import Section from '../../../Section/Section';
+import Section from '../../Molecules/Section/Section';
 import compose from 'recompose/compose';
 import TweetList from '../../Molecules/List/TweetList';
 import {

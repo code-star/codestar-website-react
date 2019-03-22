@@ -12,6 +12,7 @@ import {
   IconButton,
   withWidth,
 } from '@material-ui/core';
+import { CustomButton } from '../../Atoms/CustomButton/CustomButton';
 
 import { Menu as MenuIcon, Language as LanguageIcon } from '@material-ui/icons';
 import { withStyles } from '@material-ui/core/styles';
@@ -60,10 +61,6 @@ const styles: any = (theme: any) => ({
     marginLeft: '1em',
   },
 });
-
-// Fixme: this is a workaround for using the material ui button
-// with the `to` property. By default this is not supported.
-const CustomButton = (props: any) => <Button {...props} />;
 
 class NavBar extends React.Component<NavBarProps> {
   public render() {

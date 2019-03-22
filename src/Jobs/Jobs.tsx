@@ -2,9 +2,10 @@ import * as React from 'react';
 import { translate } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-import { Button, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
+import { CustomButton } from '../components/Atoms/CustomButton/CustomButton';
 import InlineLogo from '../InlineLogo/InlineLogo';
 import Container from '../Container/Container';
 import OurStack from '../OurStack/OurStack';
@@ -23,10 +24,6 @@ const styles = {
     fontSize: '120%',
   },
 };
-
-// Fixme: this is a workaround for using the material ui button
-// with the `to` property. By default this is not supported.
-const CustomButton = (props: any) => <Button {...props} />;
 
 class Jobs extends React.Component<JobsProps> {
   public render() {
@@ -78,7 +75,7 @@ class Jobs extends React.Component<JobsProps> {
               <div className="col-12 mt-5">
                 <h3>{t('JOBS_BEST_CLIENTS')}</h3>
                 <Link to="/cases">
-                  <Clients title="Companies that trust on us" />
+                  <Clients />
                 </Link>
               </div>
             </div>

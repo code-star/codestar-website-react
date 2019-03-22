@@ -1,0 +1,129 @@
+{
+  "INTRODUCTION_TITLE": "Introduction",
+  "INTRODUCTION": "The destruction of your home planet left you with almost nothing. The only thing you managed to save was your ship, a star map, a cargo hold with a small number of resources and the shirt on your back.",
+  "INTRODUCTION_PART_TWO": [
+    "You decided to head to the prosperous _Codestar_ system and rebuild, trading along the way so you arrive as wealthy as possible.",
+    "Your star map contains a list of all the systems you pass on your way to your new home. It also contains the prices for each type of cargo you might want to buy or sell. Planning your journey (and what cargo you will buy/sell at which planet) will be your challenge for today."
+  ],
+  "SITUATION_TITLE": "Your situation",
+  "SITUATION": [
+    "- You have no money,",
+    "- You own a small ship that has a capacity of 10 units of cargo,",
+    "- Your cargo hold contains one unit of ore, one unit of water and one unit of engine parts: one of each type of cargo you can buy/sell. (Apparently nobody is interested in purchasing your shirt or selling you a new one.)"
+  ],
+  "SHIP_TITLE": "Your Ship",
+  "SHIP": "You are in the possession of a Rickety Freighter, lovingly called '!Deathtrap'",
+  "SHIP_TABLE": [
+    "| Ship stats          |     |",
+    "| ------------------- | --- |",
+    "| Current Cargo Total | 3   |",
+    "| Max Cargo Total     | 10  |",
+    "",
+    "| Cargo Type.  | Units Carried |",
+    "| ------------ | ------------- |",
+    "| Ore          | 1             |",
+    "| Water        | 1             |",
+    "| Engine Parts | 1             |"
+  ],
+  "MAP_TITLE": "Your star map",
+  "MAP": "The star map contains a list of planets. It's a CSV-file in the following format:",
+  "MAP_TABLE": [
+    "| Index | Ore price | Water price | Engine parts price |",
+    "| ----- | --------- | ----------- | ------------------ |",
+    "| 0     | 19        | 3           | 17                 |",
+    "| 1     | 18        | 8           | 9                  |",
+    "| 2     | 9         | 4           | 4                  |"
+  ],
+  "MAP_CSV_DOWNLOAD_TEXT": "You can download the CSV here.",
+  "MAP_JSON_DOWNLOAD_TEXT": "A JSON-equivalent can be found here.",
+  "MAP_DOWNLOAD": "Note: The CSV and JSON contain some additional entries per planetary system that will be used in additional challenges. You can ignore these for the moment.",
+  "RULES_TITLE": "The Rules",
+  "RULES": [
+    "- You have to visit the planets in the order given in the CSV file.",
+    "- You cannot go back to revisit a planet.",
+    "- You cannot go into debt.",
+    "- The last planet in the star map is your destination.",
+    "- You can assume that your star ship does not require any fuel to travel."
+  ],
+  "POINTERS_TITLE": "Some Pointers",
+  "POINTERS": "A good space trader knows to buy low and sell high. A great space trader also knows to hold on to your cargo when the prices are not right. The following (simplified) example illustrates that most wealth can be obtained by trading nothing at all at the first planet:",
+  "POINTERS_PART_TWO": [
+    "It's your job to design an algorithm that determines the sequence of trades that lands you the most money!",
+    "",
+    "There are many ways to tackle this problem:",
+    "",
+    "- You could create a smart trading algorithm, finding the best possible prices in the next couple of planets,",
+    "- You could also implement a _backtracking algorithm_ like you would do to solve the N-queens problem,",
+    "- You could also approach this problem with a Monte Carlo simulation (doing many different, random trades over the course of many simulations to find the one that performs best), or",
+    "- You could even implement a genetic algorithm!",
+    "",
+    "Be creative, but most of all: have fun!",
+    "",
+    "(In that spirit: see below for some hints to get you started on reading files in TypeScript, JavaScript, Scala or Java, so you can get to the fun stuff quicker!)"
+  ],
+  "SOLUTION_TITLE": "Checking your solution",
+  "SOLUTION": "To check your solution you can use ??????. The payload should be in the following JSON format.",
+  "SOLUTION_JSON": [
+    "// Matches the first column of the CSV, or the planetIndex field of the JSON. Is 1-based.",
+    "index: number,",
+    "",
+    "// Changes in cargo hold.",
+    "// Negative means selling.",
+    "// Positive means buying.",
+    "deltaOre: number,",
+    "deltaWater: number,",
+    "deltaEngineParts: number,",
+    "",
+    "// Bonus 1: possibly buy a bigger ship.",
+    "shipPurchase?: 'MediumFreighter' | 'HeavyFreighter' | 'Leviathan',",
+    "",
+    "// Bonus 2: smuggle contraband.",
+    "deltaContraband?: number"
+  ],
+  "CHALLENGES_TITLE": "Additional challenges",
+  "CHALLENGE_1_TITLE": "Buying a bigger ship",
+  "CHALLENGE_1": [
+    "At some point, you will likely grow out of your little ship. At each planet you can buy one of the following larger spacecrafts:",
+    "",
+    "- Medium freighter, price $500, cargo holds 15 cargo units",
+    "- Large freighter, price $1000, cargo holds 20 cargo units",
+    "- Leviathan, price $2000, cargo holds 30 units",
+    "",
+    "When you buy a new ship, you leave behind your old ship. You get nothing in return. These ships are available on all systems you visit."
+  ],
+  "CHALLENGE_2_TITLE": "Smuggling contraband",
+  "CHALLENGE_2": [
+    "Each system belongs to one of two factions: Liberty and Black Murenth.",
+    "",
+    "Liberty planets are heavily policed, while Black Murenth planets are only loosely governed. Certain goods that can be bought and sold at Black Murenth planets are considered contraband in Liberty territory, and they have to be sold before visiting these planets (or you will be arrested). Naturally, contraband cannot be bought on Liberty planets.",
+    "",
+    "The last two columns of the star map describe the faction (either `Liberty` or `Black Murenth`) and the price of contraband there respectively."
+  ],
+  "READING_FILES_TITLE": "Reading files",
+  "READING_FILES": "Solving this challenge should be fun. You know what is not fun? Trying to remember how to read a file in your favorite programming language. To help you along, we've included some snippets to get you started quickly.",
+  "EXAMPLE_1_TITLE": "Typescript or Javascript",
+  "EXAMPLE_1": [
+    "import * as fs from 'fs';",
+    "const fileContents = fs.readFileSync('/your/path/to/file/planets.csv');",
+    "const lines = fileContents.split('\n');"
+  ],
+  "EXAMPLE_2_TITLE": "Scala",
+  "EXAMPLE_2": [
+    "val source = io.Source.fromFile('/your/path/to/file/planets.csv')",
+    "val lines = (for (line <- source.getLines()) yield line).toList",
+    "",
+    "// ...",
+    "",
+    "source.close"
+  ],
+  "EXAMPLE_3_TITLE": "Java",
+  "EXAMPLE_3": [
+    "String file ='src/resources/planets.json';",
+    "BufferedReader reader = new BufferedReader(new FileReader(file));",
+    "Stream<String> lines = reader.lines();",
+    "",
+    "// ...",
+    "",
+    "reader.close();"
+  ]
+}

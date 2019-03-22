@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
-
+import { History } from 'history';
 import { CssBaseline } from '@material-ui/core';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-
 import theme from './codestarMuiTheme';
 import ScrollToTop from './ScrollToTop';
 import Footer from './Footer/Footer';
 import jobsList from './Jobs/JobsList';
-import AsyncComponent from './AsyncComponent/AsyncComponent';
+import AsyncComponent, {
+  ComponentTypePromise,
+} from './AsyncComponent/AsyncComponent';
 import NavContainer from './containers/NavContainer/NavContainer';
+import { JobDescriptionOuterProps } from './JobDescription/JobDescription';
 
-function fullHeightAsyncComponent(C) {
-  return props => <AsyncComponent fullHeight component={() => C} {...props} />;
+function fullHeightAsyncComponent<Props>(component: ComponentTypePromise) {
+  return (props: Props) => (
+    <AsyncComponent fullHeight component={() => component} {...props} />
+  );
 }
 
 const AsyncIntro = fullHeightAsyncComponent(import('./Intro/Intro'));
@@ -22,10 +26,13 @@ const AsyncAbout = fullHeightAsyncComponent(
   import('./components/Pages/About/About')
 );
 const AsyncJobs = fullHeightAsyncComponent(import('./Jobs/Jobs'));
-const AsyncJobDescription = fullHeightAsyncComponent(
+const AsyncJobDescription = fullHeightAsyncComponent<JobDescriptionOuterProps>(
   import('./JobDescription/JobDescription')
 );
 const AsyncContact = fullHeightAsyncComponent(import('./Contact/Contact'));
+const AsyncCodeChallange = fullHeightAsyncComponent(
+  import('./components/Pages/CodeChallenge/CodeChallenge')
+);
 const AsyncNotFound = fullHeightAsyncComponent(import('./NotFound/NotFound'));
 const AsyncEvents = fullHeightAsyncComponent(
   import('./containers/EventsContainer/EventsContainer')
@@ -33,10 +40,14 @@ const AsyncEvents = fullHeightAsyncComponent(
 
 const sections = ['', 'cases', 'about', 'jobs', 'contact'];
 
-class App extends Component {
-  constructor(props) {
+type AppProps = Readonly<{}>;
+type AppState = Readonly<{}>;
+
+class App extends Component<AppProps, AppState> {
+  private history: History;
+
+  constructor(props: AppProps) {
     super(props);
-    this.classes = props.classes;
     this.history = createHistory({ basename: process.env.PUBLIC_URL });
 
     this.history.listen(location =>
@@ -45,14 +56,7 @@ class App extends Component {
     this.updateBackgroundColor(this.history.location.pathname);
   }
 
-  updateBackgroundColor(pathname) {
-    const section = pathname.split('/')[1];
-    const index = sections.indexOf(section);
-    const position = -(index >= 0 ? index : 0) * 100;
-    document.body.style.backgroundPositionY = `${position}vh, 0`;
-  }
-
-  render() {
+  public render() {
     return (
       <Router history={this.history}>
         <MuiThemeProvider theme={theme}>
@@ -77,6 +81,7 @@ class App extends Component {
               <Route path="/about" component={AsyncAbout} />
               <Route path="/contact" component={AsyncContact} />
               <Route path="/events" component={AsyncEvents} />
+              <Route path="/code-challenge" component={AsyncCodeChallange} />
               <Route path="/404" component={AsyncNotFound} />
               <Redirect to="/404" />
             </Switch>
@@ -86,6 +91,13 @@ class App extends Component {
         </MuiThemeProvider>
       </Router>
     );
+  }
+
+  private updateBackgroundColor(pathname: string) {
+    const section = pathname.split('/')[1];
+    const index = sections.indexOf(section);
+    const position = -(index >= 0 ? index : 0) * 100;
+    document.body.style.backgroundPositionY = `${position}vh, 0`;
   }
 }
 

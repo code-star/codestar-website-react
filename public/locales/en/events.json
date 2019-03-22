@@ -9,5 +9,9 @@
 	"READ_MORE": "Read more",
   "TRAININGS": "Trainings",
   "BOOK_A_TRAINING": "Book a training",
-  "TRAININGS_TEXT": "As experts on functional reactive programming in front-end and back-end we love to give trainings on the languages and frameworks we use every day. We offer trainings on RxJS, TypeScript, Scala and Kotlin. Please contact us if you're interested of have a special request!"
+	"TRAININGS_TEXT": "As experts on functional reactive programming in front-end and back-end we love to give trainings on the languages and frameworks we use every day. We offer trainings on RxJS, TypeScript, Scala and Kotlin. Please contact us if you're interested of have a special request!",
+	"VIDEOS": "Videos",
+	"EVENTS_CLOSE_BUTTON": "Close",
+	"PUBLISHED_ON": "Published on",
+	"SUBSCRIBE": "Subscribe"
 }

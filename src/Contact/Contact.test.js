@@ -57,7 +57,7 @@ describe('An instance of Contact', () => {
   });
 
   it('modifies the state on handleChange', () => {
-    compInstance.handleChange({
+    compInstance.handleChange('name')({
       target: { name: 'name', value: 'MY_TEST_NAME' },
     });
     expect(compInstance.state).toEqual({
@@ -92,7 +92,7 @@ describe('An instance of Contact', () => {
     const ev = {
       preventDefault: jest.fn(),
     };
-    compInstance.handleChange({
+    compInstance.handleChange('message')({
       target: { name: 'message', value: 'MY_TEST_MESSAGE' },
     });
     compInstance.handleSubmit(ev);
@@ -112,7 +112,7 @@ describe('An instance of Contact', () => {
     const ev = {
       preventDefault: jest.fn(),
     };
-    compInstance.handleChange({
+    compInstance.handleChange('message')({
       target: { name: 'message', value: 'MY_TEST_MESSAGE' },
     });
     compInstance.handleSubmit(ev).then(() => {
@@ -131,7 +131,7 @@ describe('An instance of Contact', () => {
     const ev = {
       preventDefault: jest.fn(),
     };
-    compInstance.handleChange({
+    compInstance.handleChange('message')({
       target: { name: 'message', value: 'MY_TEST_MESSAGE' },
     });
 
@@ -148,7 +148,7 @@ describe('An instance of Contact', () => {
     const ev = {
       preventDefault: jest.fn(),
     };
-    compInstance.handleChange({
+    compInstance.handleChange('message')({
       target: { name: 'message', value: 'MY_TEST_MESSAGE' },
     });
 

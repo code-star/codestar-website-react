@@ -1,6 +1,12 @@
 {
-    "ABOUT_ATTRACT_TITLE": "Wij programmeren",
-    "ABOUT_ATTRACT_TEXT": "Wij houden van ons vak: programmeren. Aan het einde van de dag telt alleen de code. Wij schrijven die code. Schone code. Code die werkt. Wij programmeren Scala, maar ook TypeScript, JavaScript en soms Haskell. Wij zijn meertalig en niet bang om nieuwe talen te leren.",
-    "ABOUT_TEAM_TITLE": "Ons Team",
-    "ABOUT_VACANCIES": "Vacatures"
+  "ABOUT_ATTRACT_TITLE": "Wij programmeren",
+  "ABOUT_ATTRACT_TEXT": "Wij houden van ons vak: programmeren. Aan het einde van de dag telt alleen de code. Wij schrijven die code. Schone code. Code die werkt. Wij programmeren Scala, maar ook TypeScript, JavaScript en soms Haskell. Wij zijn meertalig en niet bang om nieuwe talen te leren.",
+  "ABOUT_TEAM_TITLE": "Ons Team",
+  "ABOUT_VACANCIES": "Vacatures",
+  "SITE_TITLE": "Over deze site",
+  "SITE_TEXTS": [
+    "Bij Codestar werken we met veel plezier bij klanten, en daarnaast zorgen we er voor dat we elke vrijdag bij elkaar zijn om kennis uit te wisselen en contact te houden. In deze tijd werken we aan projecten, maar ook aan R&D. Op die manier is deze site ook ontstaan: als showcase voor de stack waar wij mee (willen) werken. We hebben hiervoor onder andere gebruik gemaakt van CRA, TypeScript, React, Storybook, CSS Modules, AWS Lamdba en Jest. En natuurlijk is het open source. Kijk in de ",
+    " voor meer details."
+  ],
+  "PUBLICATIONS_TITLE": "Publicaties"
 }

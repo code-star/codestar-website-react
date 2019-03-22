@@ -1,0 +1,802 @@
+[
+  {
+    "index": 0,
+    "orePrice": 19,
+    "waterPrice": 3,
+    "engineParts": 17,
+    "faction": "Black Murenth",
+    "contrabandPrice": 16
+  },
+  {
+    "index": 1,
+    "orePrice": 9,
+    "waterPrice": 9,
+    "engineParts": 4,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 2,
+    "orePrice": 12,
+    "waterPrice": 16,
+    "engineParts": 13,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 3,
+    "orePrice": 14,
+    "waterPrice": 15,
+    "engineParts": 18,
+    "faction": "Black Murenth",
+    "contrabandPrice": 38
+  },
+  {
+    "index": 4,
+    "orePrice": 11,
+    "waterPrice": 8,
+    "engineParts": 16,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 5,
+    "orePrice": 11,
+    "waterPrice": 5,
+    "engineParts": 19,
+    "faction": "Black Murenth",
+    "contrabandPrice": 9
+  },
+  {
+    "index": 6,
+    "orePrice": 1,
+    "waterPrice": 3,
+    "engineParts": 3,
+    "faction": "Black Murenth",
+    "contrabandPrice": 21
+  },
+  {
+    "index": 7,
+    "orePrice": 11,
+    "waterPrice": 18,
+    "engineParts": 10,
+    "faction": "Black Murenth",
+    "contrabandPrice": 11
+  },
+  {
+    "index": 8,
+    "orePrice": 18,
+    "waterPrice": 15,
+    "engineParts": 19,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 9,
+    "orePrice": 16,
+    "waterPrice": 5,
+    "engineParts": 19,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 10,
+    "orePrice": 9,
+    "waterPrice": 3,
+    "engineParts": 15,
+    "faction": "Black Murenth",
+    "contrabandPrice": 38
+  },
+  {
+    "index": 11,
+    "orePrice": 19,
+    "waterPrice": 15,
+    "engineParts": 2,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 12,
+    "orePrice": 1,
+    "waterPrice": 10,
+    "engineParts": 6,
+    "faction": "Black Murenth",
+    "contrabandPrice": 6
+  },
+  {
+    "index": 13,
+    "orePrice": 2,
+    "waterPrice": 9,
+    "engineParts": 1,
+    "faction": "Black Murenth",
+    "contrabandPrice": 16
+  },
+  {
+    "index": 14,
+    "orePrice": 13,
+    "waterPrice": 19,
+    "engineParts": 13,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 15,
+    "orePrice": 10,
+    "waterPrice": 8,
+    "engineParts": 10,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 16,
+    "orePrice": 12,
+    "waterPrice": 16,
+    "engineParts": 7,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 17,
+    "orePrice": 16,
+    "waterPrice": 2,
+    "engineParts": 15,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 18,
+    "orePrice": 1,
+    "waterPrice": 10,
+    "engineParts": 5,
+    "faction": "Black Murenth",
+    "contrabandPrice": 24
+  },
+  {
+    "index": 19,
+    "orePrice": 4,
+    "waterPrice": 14,
+    "engineParts": 7,
+    "faction": "Black Murenth",
+    "contrabandPrice": 7
+  },
+  {
+    "index": 20,
+    "orePrice": 14,
+    "waterPrice": 6,
+    "engineParts": 18,
+    "faction": "Black Murenth",
+    "contrabandPrice": 30
+  },
+  {
+    "index": 21,
+    "orePrice": 8,
+    "waterPrice": 18,
+    "engineParts": 4,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 22,
+    "orePrice": 14,
+    "waterPrice": 12,
+    "engineParts": 5,
+    "faction": "Black Murenth",
+    "contrabandPrice": 32
+  },
+  {
+    "index": 23,
+    "orePrice": 2,
+    "waterPrice": 5,
+    "engineParts": 1,
+    "faction": "Black Murenth",
+    "contrabandPrice": 37
+  },
+  {
+    "index": 24,
+    "orePrice": 15,
+    "waterPrice": 11,
+    "engineParts": 13,
+    "faction": "Black Murenth",
+    "contrabandPrice": 27
+  },
+  {
+    "index": 25,
+    "orePrice": 14,
+    "waterPrice": 13,
+    "engineParts": 1,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 26,
+    "orePrice": 3,
+    "waterPrice": 7,
+    "engineParts": 2,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 27,
+    "orePrice": 12,
+    "waterPrice": 9,
+    "engineParts": 9,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 28,
+    "orePrice": 15,
+    "waterPrice": 6,
+    "engineParts": 7,
+    "faction": "Black Murenth",
+    "contrabandPrice": 13
+  },
+  {
+    "index": 29,
+    "orePrice": 10,
+    "waterPrice": 17,
+    "engineParts": 2,
+    "faction": "Black Murenth",
+    "contrabandPrice": 13
+  },
+  {
+    "index": 30,
+    "orePrice": 16,
+    "waterPrice": 12,
+    "engineParts": 5,
+    "faction": "Black Murenth",
+    "contrabandPrice": 29
+  },
+  {
+    "index": 31,
+    "orePrice": 14,
+    "waterPrice": 16,
+    "engineParts": 11,
+    "faction": "Black Murenth",
+    "contrabandPrice": 13
+  },
+  {
+    "index": 32,
+    "orePrice": 4,
+    "waterPrice": 13,
+    "engineParts": 8,
+    "faction": "Black Murenth",
+    "contrabandPrice": 8
+  },
+  {
+    "index": 33,
+    "orePrice": 8,
+    "waterPrice": 16,
+    "engineParts": 10,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 34,
+    "orePrice": 11,
+    "waterPrice": 17,
+    "engineParts": 15,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 35,
+    "orePrice": 14,
+    "waterPrice": 7,
+    "engineParts": 17,
+    "faction": "Black Murenth",
+    "contrabandPrice": 17
+  },
+  {
+    "index": 36,
+    "orePrice": 4,
+    "waterPrice": 9,
+    "engineParts": 19,
+    "faction": "Black Murenth",
+    "contrabandPrice": 31
+  },
+  {
+    "index": 37,
+    "orePrice": 13,
+    "waterPrice": 9,
+    "engineParts": 13,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 38,
+    "orePrice": 7,
+    "waterPrice": 8,
+    "engineParts": 8,
+    "faction": "Black Murenth",
+    "contrabandPrice": 38
+  },
+  {
+    "index": 39,
+    "orePrice": 18,
+    "waterPrice": 2,
+    "engineParts": 18,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 40,
+    "orePrice": 19,
+    "waterPrice": 10,
+    "engineParts": 2,
+    "faction": "Black Murenth",
+    "contrabandPrice": 9
+  },
+  {
+    "index": 41,
+    "orePrice": 17,
+    "waterPrice": 19,
+    "engineParts": 8,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 42,
+    "orePrice": 19,
+    "waterPrice": 5,
+    "engineParts": 17,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 43,
+    "orePrice": 1,
+    "waterPrice": 6,
+    "engineParts": 6,
+    "faction": "Black Murenth",
+    "contrabandPrice": 30
+  },
+  {
+    "index": 44,
+    "orePrice": 10,
+    "waterPrice": 5,
+    "engineParts": 18,
+    "faction": "Black Murenth",
+    "contrabandPrice": 36
+  },
+  {
+    "index": 45,
+    "orePrice": 3,
+    "waterPrice": 1,
+    "engineParts": 5,
+    "faction": "Black Murenth",
+    "contrabandPrice": 8
+  },
+  {
+    "index": 46,
+    "orePrice": 12,
+    "waterPrice": 16,
+    "engineParts": 18,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 47,
+    "orePrice": 3,
+    "waterPrice": 12,
+    "engineParts": 8,
+    "faction": "Black Murenth",
+    "contrabandPrice": 10
+  },
+  {
+    "index": 48,
+    "orePrice": 11,
+    "waterPrice": 5,
+    "engineParts": 18,
+    "faction": "Black Murenth",
+    "contrabandPrice": 19
+  },
+  {
+    "index": 49,
+    "orePrice": 1,
+    "waterPrice": 17,
+    "engineParts": 16,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 50,
+    "orePrice": 13,
+    "waterPrice": 12,
+    "engineParts": 11,
+    "faction": "Black Murenth",
+    "contrabandPrice": 4
+  },
+  {
+    "index": 51,
+    "orePrice": 14,
+    "waterPrice": 11,
+    "engineParts": 11,
+    "faction": "Black Murenth",
+    "contrabandPrice": 19
+  },
+  {
+    "index": 52,
+    "orePrice": 2,
+    "waterPrice": 14,
+    "engineParts": 4,
+    "faction": "Black Murenth",
+    "contrabandPrice": 11
+  },
+  {
+    "index": 53,
+    "orePrice": 6,
+    "waterPrice": 6,
+    "engineParts": 8,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 54,
+    "orePrice": 4,
+    "waterPrice": 10,
+    "engineParts": 8,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 55,
+    "orePrice": 17,
+    "waterPrice": 2,
+    "engineParts": 8,
+    "faction": "Black Murenth",
+    "contrabandPrice": 19
+  },
+  {
+    "index": 56,
+    "orePrice": 19,
+    "waterPrice": 7,
+    "engineParts": 4,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 57,
+    "orePrice": 3,
+    "waterPrice": 13,
+    "engineParts": 14,
+    "faction": "Black Murenth",
+    "contrabandPrice": 34
+  },
+  {
+    "index": 58,
+    "orePrice": 12,
+    "waterPrice": 1,
+    "engineParts": 13,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 59,
+    "orePrice": 11,
+    "waterPrice": 1,
+    "engineParts": 13,
+    "faction": "Black Murenth",
+    "contrabandPrice": 35
+  },
+  {
+    "index": 60,
+    "orePrice": 15,
+    "waterPrice": 4,
+    "engineParts": 19,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 61,
+    "orePrice": 1,
+    "waterPrice": 1,
+    "engineParts": 3,
+    "faction": "Black Murenth",
+    "contrabandPrice": 7
+  },
+  {
+    "index": 62,
+    "orePrice": 2,
+    "waterPrice": 14,
+    "engineParts": 19,
+    "faction": "Black Murenth",
+    "contrabandPrice": 36
+  },
+  {
+    "index": 63,
+    "orePrice": 13,
+    "waterPrice": 5,
+    "engineParts": 4,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 64,
+    "orePrice": 11,
+    "waterPrice": 11,
+    "engineParts": 13,
+    "faction": "Black Murenth",
+    "contrabandPrice": 30
+  },
+  {
+    "index": 65,
+    "orePrice": 18,
+    "waterPrice": 18,
+    "engineParts": 19,
+    "faction": "Black Murenth",
+    "contrabandPrice": 16
+  },
+  {
+    "index": 66,
+    "orePrice": 8,
+    "waterPrice": 5,
+    "engineParts": 6,
+    "faction": "Black Murenth",
+    "contrabandPrice": 17
+  },
+  {
+    "index": 67,
+    "orePrice": 7,
+    "waterPrice": 14,
+    "engineParts": 12,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 68,
+    "orePrice": 12,
+    "waterPrice": 16,
+    "engineParts": 19,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 69,
+    "orePrice": 3,
+    "waterPrice": 7,
+    "engineParts": 18,
+    "faction": "Black Murenth",
+    "contrabandPrice": 38
+  },
+  {
+    "index": 70,
+    "orePrice": 15,
+    "waterPrice": 11,
+    "engineParts": 9,
+    "faction": "Black Murenth",
+    "contrabandPrice": 27
+  },
+  {
+    "index": 71,
+    "orePrice": 4,
+    "waterPrice": 14,
+    "engineParts": 17,
+    "faction": "Black Murenth",
+    "contrabandPrice": 8
+  },
+  {
+    "index": 72,
+    "orePrice": 5,
+    "waterPrice": 11,
+    "engineParts": 14,
+    "faction": "Black Murenth",
+    "contrabandPrice": 28
+  },
+  {
+    "index": 73,
+    "orePrice": 19,
+    "waterPrice": 19,
+    "engineParts": 13,
+    "faction": "Black Murenth",
+    "contrabandPrice": 27
+  },
+  {
+    "index": 74,
+    "orePrice": 9,
+    "waterPrice": 7,
+    "engineParts": 13,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 75,
+    "orePrice": 2,
+    "waterPrice": 7,
+    "engineParts": 2,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 76,
+    "orePrice": 9,
+    "waterPrice": 15,
+    "engineParts": 10,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 77,
+    "orePrice": 13,
+    "waterPrice": 3,
+    "engineParts": 18,
+    "faction": "Black Murenth",
+    "contrabandPrice": 19
+  },
+  {
+    "index": 78,
+    "orePrice": 14,
+    "waterPrice": 19,
+    "engineParts": 17,
+    "faction": "Black Murenth",
+    "contrabandPrice": 13
+  },
+  {
+    "index": 79,
+    "orePrice": 16,
+    "waterPrice": 16,
+    "engineParts": 14,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 80,
+    "orePrice": 3,
+    "waterPrice": 16,
+    "engineParts": 5,
+    "faction": "Black Murenth",
+    "contrabandPrice": 27
+  },
+  {
+    "index": 81,
+    "orePrice": 2,
+    "waterPrice": 8,
+    "engineParts": 7,
+    "faction": "Black Murenth",
+    "contrabandPrice": 21
+  },
+  {
+    "index": 82,
+    "orePrice": 4,
+    "waterPrice": 11,
+    "engineParts": 2,
+    "faction": "Black Murenth",
+    "contrabandPrice": 21
+  },
+  {
+    "index": 83,
+    "orePrice": 15,
+    "waterPrice": 14,
+    "engineParts": 17,
+    "faction": "Black Murenth",
+    "contrabandPrice": 11
+  },
+  {
+    "index": 84,
+    "orePrice": 9,
+    "waterPrice": 19,
+    "engineParts": 8,
+    "faction": "Black Murenth",
+    "contrabandPrice": 14
+  },
+  {
+    "index": 85,
+    "orePrice": 2,
+    "waterPrice": 4,
+    "engineParts": 6,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 86,
+    "orePrice": 4,
+    "waterPrice": 13,
+    "engineParts": 18,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 87,
+    "orePrice": 17,
+    "waterPrice": 15,
+    "engineParts": 17,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 88,
+    "orePrice": 14,
+    "waterPrice": 15,
+    "engineParts": 14,
+    "faction": "Black Murenth",
+    "contrabandPrice": 35
+  },
+  {
+    "index": 89,
+    "orePrice": 11,
+    "waterPrice": 3,
+    "engineParts": 5,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 90,
+    "orePrice": 10,
+    "waterPrice": 8,
+    "engineParts": 2,
+    "faction": "Black Murenth",
+    "contrabandPrice": 23
+  },
+  {
+    "index": 91,
+    "orePrice": 5,
+    "waterPrice": 11,
+    "engineParts": 16,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 92,
+    "orePrice": 19,
+    "waterPrice": 7,
+    "engineParts": 12,
+    "faction": "Black Murenth",
+    "contrabandPrice": 30
+  },
+  {
+    "index": 93,
+    "orePrice": 3,
+    "waterPrice": 6,
+    "engineParts": 3,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 94,
+    "orePrice": 19,
+    "waterPrice": 4,
+    "engineParts": 13,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 95,
+    "orePrice": 18,
+    "waterPrice": 5,
+    "engineParts": 18,
+    "faction": "Black Murenth",
+    "contrabandPrice": 16
+  },
+  {
+    "index": 96,
+    "orePrice": 2,
+    "waterPrice": 8,
+    "engineParts": 19,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 97,
+    "orePrice": 10,
+    "waterPrice": 8,
+    "engineParts": 13,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  },
+  {
+    "index": 98,
+    "orePrice": 16,
+    "waterPrice": 18,
+    "engineParts": 19,
+    "faction": "Black Murenth",
+    "contrabandPrice": 20
+  },
+  {
+    "index": 99,
+    "orePrice": 10,
+    "waterPrice": 13,
+    "engineParts": 7,
+    "faction": "Liberty",
+    "contrabandPrice": 0
+  }
+]

@@ -856,23 +856,17 @@
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.1.7.tgz#4336c4b06d0b5608ff1215464b66fcf9f4795284"
 
-"@fortawesome/fontawesome-free-brands@^5.0.10":
-  version "5.0.13"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free-brands/-/fontawesome-free-brands-5.0.13.tgz#4d15ff4e1e862d5e4a4df3654f8e8acbd47e9c09"
-  dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.1.7"
+"@fortawesome/fontawesome-common-types@^0.2.13":
+  version "0.2.13"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.13.tgz#17f3d30c53732f07a765199c3cf93b4834e8cfde"
+  integrity sha512-Qy1eMKylnbsCRXod8C4CfwqlNtLU7OkJiLsFJZlHY4rY9ky2VYUKNnRj0b+3lnGwA1dWNY+pI0XWbP/mrLCohw==
 
-"@fortawesome/fontawesome-free-regular@^5.0.10":
-  version "5.0.13"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free-regular/-/fontawesome-free-regular-5.0.13.tgz#eb78c30184e3f456a423a1dcfa0f682f7b50de4a"
+"@fortawesome/fontawesome-svg-core@^1.2.13":
+  version "1.2.13"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.13.tgz#1d0923b9692fc10b9a4fa047d504da5d9941639e"
+  integrity sha512-1Q0grmELVTBDbk/Jo4dRCptkYMQjikPEcoPo+eZS+oLVowv1afP4177m4gvqMwdk3l+9KYoiMBJzfY2qDbs+Dg==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.1.7"
-
-"@fortawesome/fontawesome-free-solid@^5.0.10":
-  version "5.0.13"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free-solid/-/fontawesome-free-solid-5.0.13.tgz#24b61aaf471a9d34a5364b052d64a516285ba894"
-  dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.1.7"
+    "@fortawesome/fontawesome-common-types" "^0.2.13"
 
 "@fortawesome/fontawesome@^1.1.5":
   version "1.1.8"
@@ -880,11 +874,20 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.1.7"
 
-"@fortawesome/react-fontawesome@^0.0.18":
-  version "0.0.18"
-  resolved "http://registry.npmjs.org/@fortawesome/react-fontawesome/-/react-fontawesome-0.0.18.tgz#4e0eb1cf9797715a67bb7705ae084fa0a410f185"
+"@fortawesome/free-brands-svg-icons@^5.0.10":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-5.7.0.tgz#00a53f80fd38a58e5cd510357b3f49bbae6d49d8"
+  integrity sha512-MA4FLVKfuamBlfkRznoAOHyCywGj0MToDyomvtpuJeB9BqNBPDQ/TpGTyRZ8TEyHqo8ejjjACXYjr2fIEB7FZA==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.13"
+
+"@fortawesome/react-fontawesome@0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-0.1.4.tgz#18d61d9b583ca289a61aa7dccc05bd164d6bc9ad"
+  integrity sha512-GwmxQ+TK7PEdfSwvxtGnMCqrfEm0/HbRHArbUudsYiy9KzVCwndxa2KMcfyTQ8El0vROrq8gOOff09RF1oQe8g==
   dependencies:
     humps "^2.0.1"
+    prop-types "^15.5.10"
 
 "@material-ui/core@^3.1.2":
   version "3.5.1"

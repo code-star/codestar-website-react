@@ -24,6 +24,7 @@ it('renders without crashing', () => {
         nextMeetupEvents={[]}
         noNextMeetupEvent={true}
         pastMeetupEvents={[]}
+        videos={[]}
       />
     </MemoryRouter>,
     div

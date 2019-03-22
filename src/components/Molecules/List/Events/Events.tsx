@@ -1,6 +1,6 @@
 import React, { SFC } from 'react';
 import Container from '../../../../Container/Container';
-import Section from '../../../../Section/Section';
+import Section from '../../Section/Section';
 import { translate, TranslationFunction } from 'react-i18next';
 import EventsHeader from '../../../Organisms/EventsHeader/EventsHeader';
 import EventCard from '../../../../EventCard/EventCard';
@@ -8,6 +8,8 @@ import compose from 'recompose/compose';
 import { IMeetupEvent } from '../../../../containers/EventsContainer/EventsContainer.interfaces';
 import { NextEventsBlock } from './NextEventsBlock';
 import TrainingsSection from '../../TrainingsSection/TrainingsSection';
+import { VideoItem } from '../../../../containers/EventsContainer/fetchYouTubePlaylist';
+import VideosSection from '../../VideosSection/VideosSection';
 
 /*
  Suggestions for design concepts
@@ -25,6 +27,7 @@ interface IEventOuterProps {
   noNextMeetupEvent: boolean;
   pastMeetupEvents: IMeetupEvent[];
   recentTweets: any[];
+  videos: VideoItem[];
 }
 
 const Events: SFC<IEventInnerProps & IEventOuterProps> = ({
@@ -33,6 +36,7 @@ const Events: SFC<IEventInnerProps & IEventOuterProps> = ({
   noNextMeetupEvent,
   pastMeetupEvents,
   recentTweets,
+  videos,
 }) => {
   const pastEventsList = pastMeetupEvents.map((mEvent: IMeetupEvent) => (
     <EventCard key={mEvent.time} event={mEvent} />
@@ -56,6 +60,7 @@ const Events: SFC<IEventInnerProps & IEventOuterProps> = ({
           </div>
         </Container>
       </Section>
+      <VideosSection scrollname="videos" videos={videos} />
       <TrainingsSection scrollname="trainings" />
     </>
   );
