@@ -184,6 +184,9 @@
     "posts": [
       {
         "id": "c3237f93f12b",
+        "author": "STEVEN",
+        "authorImg": "https://cdn-images-1.medium.com/fit/c/50/50/0*Qxmj-9Rh00bZxvP2.png",
+        "paragraphs": [ "lorem ipsum dolor sit amet" ],
         "versionId": "dd1ed11a6bf2",
         "creatorId": "9eb88b7110d9",
         "homeCollectionId": "ea5cff13e3c9",

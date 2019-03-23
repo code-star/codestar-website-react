@@ -1,87 +1,108 @@
 import React, { FC } from 'react';
 import { translate, TranslationFunction } from 'react-i18next';
-import {Theme, Typography, createStyles, CardContent, Card} from '@material-ui/core';
+import {
+  Theme,
+  Typography,
+  createStyles,
+  CardContent,
+  Card,
+  CardHeader,
+  CardMedia,
+  CardActions,
+  Button,
+  Avatar,
+} from '@material-ui/core';
 import compose from 'recompose/compose';
-import grey from '@material-ui/core/colors/grey';
-import blue from '@material-ui/core/colors/blue';
-// import Section from '../../Molecules/Section/Section';
 import { withStyles } from '@material-ui/core/styles';
-// import {getResponsiveImageUrl} from "../../../ResponsiveImage/ResponsiveImage";
+import i18n from '../../../i18n';
 
 type PropsInner = {
   classes: any;
   t: TranslationFunction;
-}
+};
 
 type PropsOuter = {
   data: any;
-}
+};
 
 type Props = PropsInner & PropsOuter;
 
-const styles = (theme: Theme) => createStyles({
-  text: {
-    color: 'white',
-    "&& h2": {
-      fontSize: "2rem",
-      fontWeight: 500
-    }
+const StyledCard = withStyles({
+  root: {
+    marginBottom: '20px',
   },
-  teamSection: {
-    backgroundColor: grey[200]
-  },
-  siteSection: {
-    backgroundColor: blue[900],
-    color: grey[200]
-  }
-});
+})(Card);
 
-// export const PublicationCard: FC<IPropsInner> = ({ t, classes, data }) => {
-//   return (
-//     <Card key={data} className={`${styles.card} my-3`}>
-//       <CardMedia
-//         className={styles.cardMedia}
-//         image={getResponsiveImageUrl(
-//           `/images/team/${person.image}`,
-//           cardWidth * 2,
-//           'e_grayscale/co_rgb:0057ae,e_colorize:40'
-//         )}
-//         title={person.name}
-//       />
-//       <CardContent>
-//         <Typography variant="headline" component="h3">
-//           {data}
-//         </Typography>
-//         <Typography
-//           style={{ marginBottom: 16, fontSize: 14 }}
-//           color="textSecondary"
-//         >
-//           {person.job}
-//         </Typography>
-//         <Typography component="i">{person.tagline}</Typography>
-//       </CardContent>
-//     </Card>
-//   );
-// };
+const styles = (theme: Theme) =>
+  createStyles({
+    media: {
+      height: 0,
+      paddingTop: '15%',
+    },
+    title: {
+      fontSize: '2rem',
+      fontWeight: 500,
+    },
+  });
+
+// TODO translations
+// TODO avatar image
+// TODO splash image, if available
 
 // https://github.com/mdvanes/go-medium-api/blob/master/api/static/main.js
 export const PublicationCard: FC<Props> = ({ t, classes, data }) => {
-  const formattedDate = (new Date(data.latestPublishedAt)).toLocaleString('nl-NL');
-  const meta = `Written by ${data.author} on ${formattedDate}`;
+  const {
+    latestPublishedAt,
+    author,
+    authorImg,
+    title,
+    paragraphs,
+    uniqueSlug,
+  } = data;
+  const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
+  const formattedDate = new Date(latestPublishedAt).toLocaleDateString(locale, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+  const link = `https://medium.com/codestar-blog/${uniqueSlug}`;
   return (
-    <Card>
+    <StyledCard>
+      <CardHeader
+        avatar={
+          <Avatar
+            aria-label="Author"
+            src={authorImg}
+            className={classes.avatar}
+          >
+            A
+          </Avatar>
+        }
+        title={author}
+        subheader={formattedDate}
+      />
+      <CardMedia
+        className={classes.media}
+        image={
+          'https://cdn-images-1.medium.com/fit/t/800/240/1*LPCG2xlLiUdqcYJulzxvmw.png'
+        }
+        title={title}
+      />
       <CardContent>
-        <Typography variant="headline" component="h3">
-          {data.title}
+        <Typography variant="h3" className={classes.title}>
+          {title}
         </Typography>
-        <Typography>
-          <div>{meta}</div>
-          <div>{data.authorImg}</div>
-          <div>{data.paragraphs}</div>
-          <div>https://medium.com/codestar-blog/{data.uniqueSlug}</div>
-        </Typography>
+        <Typography>[paragraphs] {paragraphs}</Typography>
       </CardContent>
-    </Card>
+      <CardActions>
+        <Button size="small" color="primary">
+          [Share]
+        </Button>
+        <Button size="small" color="primary" href={link}>
+          [READ more]
+        </Button>
+      </CardActions>
+    </StyledCard>
   );
 };
 
