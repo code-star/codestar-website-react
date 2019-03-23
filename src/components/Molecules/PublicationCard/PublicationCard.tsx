@@ -15,6 +15,7 @@ import {
 import compose from 'recompose/compose';
 import { withStyles } from '@material-ui/core/styles';
 import i18n from '../../../i18n';
+import { IPublication } from '../../../publicationsService';
 
 type PropsInner = {
   classes: any;
@@ -22,7 +23,7 @@ type PropsInner = {
 };
 
 type PropsOuter = {
-  data: any;
+  publication: IPublication;
 };
 
 type Props = PropsInner & PropsOuter;
@@ -50,7 +51,7 @@ const styles = (theme: Theme) =>
 // TODO splash image, if available
 
 // https://github.com/mdvanes/go-medium-api/blob/master/api/static/main.js
-export const PublicationCard: FC<Props> = ({ t, classes, data }) => {
+export const PublicationCard: FC<Props> = ({ t, classes, publication }) => {
   const {
     latestPublishedAt,
     author,
@@ -58,7 +59,7 @@ export const PublicationCard: FC<Props> = ({ t, classes, data }) => {
     title,
     paragraphs,
     uniqueSlug,
-  } = data;
+  } = publication;
   const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
   const formattedDate = new Date(latestPublishedAt).toLocaleDateString(locale, {
     year: 'numeric',
