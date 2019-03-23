@@ -1,10 +1,12 @@
 export interface IPublication {
+  id: string,
   latestPublishedAt: string,
   author: string,
   authorImg: string,
   title: string,
   paragraphs: string[],
-  uniqueSlug: string
+  uniqueSlug: string,
+  previewImgId: string
 }
 
 let cachedPublications: IPublication[] = [];
@@ -23,8 +25,7 @@ function getUrl(lambdaName: string): string {
 async function fetchPublications(): Promise<IPublication[]> {
   try {
     const url = getUrl('get-publications');
-    const response = await fetch(url).then(data => data.json());
-    cachedPublications = response.payload.posts;
+    cachedPublications = await fetch(url).then(data => data.json());
     return cachedPublications;
   } catch (err) {
     // fail silently

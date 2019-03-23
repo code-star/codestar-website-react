@@ -47,8 +47,6 @@ const styles = (theme: Theme) =>
   });
 
 // TODO translations
-// TODO avatar image
-// TODO splash image, if available
 
 // https://github.com/mdvanes/go-medium-api/blob/master/api/static/main.js
 export const PublicationCard: FC<Props> = ({ t, classes, publication }) => {
@@ -59,6 +57,7 @@ export const PublicationCard: FC<Props> = ({ t, classes, publication }) => {
     title,
     paragraphs,
     uniqueSlug,
+    previewImgId
   } = publication;
   const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
   const formattedDate = new Date(latestPublishedAt).toLocaleDateString(locale, {
@@ -67,13 +66,20 @@ export const PublicationCard: FC<Props> = ({ t, classes, publication }) => {
     day: 'numeric',
   });
   const link = `https://medium.com/codestar-blog/${uniqueSlug}`;
+  const media = previewImgId && (<CardMedia
+    className={classes.media}
+    image={
+      `https://cdn-images-1.medium.com/fit/t/800/240/${previewImgId}`
+    }
+    title={title}
+  />);
   return (
     <StyledCard>
       <CardHeader
         avatar={
           <Avatar
             aria-label="Author"
-            src={authorImg}
+            src={`https://cdn-images-1.medium.com/fit/c/50/50/${authorImg}`}
             className={classes.avatar}
           >
             A
@@ -82,18 +88,12 @@ export const PublicationCard: FC<Props> = ({ t, classes, publication }) => {
         title={author}
         subheader={formattedDate}
       />
-      <CardMedia
-        className={classes.media}
-        image={
-          'https://cdn-images-1.medium.com/fit/t/800/240/1*LPCG2xlLiUdqcYJulzxvmw.png'
-        }
-        title={title}
-      />
+      {media}
       <CardContent>
         <Typography variant="h3" className={classes.title}>
           {title}
         </Typography>
-        <Typography>[paragraphs] {paragraphs}</Typography>
+        <Typography>{paragraphs}</Typography>
       </CardContent>
       <CardActions>
         <Button size="small" color="primary">

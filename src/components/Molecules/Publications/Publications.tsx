@@ -20,7 +20,7 @@ type Props = PropsInner & PropsOuter;
 // TODO /blog
 
 export const Publications: FC<Props> = ({publications = []}) => {
-  const publicationCards = publications.map((p: any) => <PublicationCard key={p.id} publication={p}></PublicationCard>);
+  const publicationCards = publications.map((p) => <PublicationCard key={p.id} publication={p}></PublicationCard>);
   return (<>{publicationCards}</>);
 };
 
