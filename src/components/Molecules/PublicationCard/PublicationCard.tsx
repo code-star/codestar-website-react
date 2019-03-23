@@ -64,12 +64,21 @@ const styles = (theme: Theme) => createStyles({
 //   );
 // };
 
+// https://github.com/mdvanes/go-medium-api/blob/master/api/static/main.js
 export const PublicationCard: FC<Props> = ({ t, classes, data }) => {
+  const formattedDate = (new Date(data.latestPublishedAt)).toLocaleString('nl-NL');
+  const meta = `Written by ${data.author} on ${formattedDate}`;
   return (
     <Card>
       <CardContent>
         <Typography variant="headline" component="h3">
           {data.title}
+        </Typography>
+        <Typography>
+          <div>{meta}</div>
+          <div>{data.authorImg}</div>
+          <div>{data.paragraphs}</div>
+          <div>https://medium.com/codestar-blog/{data.uniqueSlug}</div>
         </Typography>
       </CardContent>
     </Card>

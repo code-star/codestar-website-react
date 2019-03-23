@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { translate, TranslationFunction } from 'react-i18next';
 import { createStyles} from '@material-ui/core';
 import compose from 'recompose/compose';
+import { lifecycle } from 'recompose';
 import grey from '@material-ui/core/colors/grey';
 import blue from '@material-ui/core/colors/blue';
 // import Section from '../../Molecules/Section/Section';
@@ -11,12 +12,14 @@ import PublicationCard from '../PublicationCard/PublicationCard';
 type PropsInner = {
   classes: any;
   t: TranslationFunction;
+  publications: any;
 }
 
 type PropsOuter = {}
 
 type Props = PropsInner & PropsOuter;
 
+// TODO clean up
 const styles = () => createStyles({
   text: {
     color: 'white',
@@ -46,27 +49,50 @@ async function fetchPublications(): Promise<any> {
   }
 }
 
-export const Publications: FC<Props> = () => {
-  let publications = [{
-    id: "c3237f93f12b",
-    title: "abc"
-  }, {
-    id: "c3237f93f12b1",
-    title: "abc1"
-  }, {
-    id: "c3237f93f12b2",
-    title: "abc2"
-  }];
-  fetchPublications() // TODO
-    .then(data => {
-      console.log(data.payload.posts.map((p:any) => p));
-      publications = data.payload.posts;
-    });
-  const publicationCards = publications.map(p => <PublicationCard key={p.id} data={p}></PublicationCard>);
+export const Publications: FC<Props> = ({publications = []}) => {
+  // let publications = [{
+  //   id: "c3237f93f12b",
+  //   title: "abc"
+  // }, {
+  //   id: "c3237f93f12b1",
+  //   title: "abc1"
+  // }, {
+  //   id: "c3237f93f12b2",
+  //   title: "abc2"
+  // }];
+  // fetchPublications() // TODO
+  //   .then(data => {
+  //     console.log(data.payload.posts.map((p:any) => p));
+  //     publications = data.payload.posts;
+  //   });
+  const publicationCards = publications.map((p: any) => <PublicationCard key={p.id} data={p}></PublicationCard>);
   return (<>{publicationCards}</>);
 };
 
+// export const initialState = { publications: [] };
+// export const stateUpdaters = {
+//   // Example of state argument with typing: handleMouseOver: ({ isHovering } : { isHovering: boolean}) => () => ({ isHovering: true }),
+//   handleMouseOver: () => () => ({ isHovering: true }),
+//   handleMouseOut: () => () => ({ isHovering: false }),
+// };
+
+const withUserData = lifecycle({
+  // state: { data: [] },
+  componentDidMount() {
+    fetchPublications() // TODO
+      .then(data => {
+        console.log(data.payload.posts.map((p:any) => p));
+        // publications = data.payload.posts;
+        this.setState({ publications: data.payload.posts });
+      });
+    // fetchData().then((data) =>
+    //   this.setState({ loading: false, ...data }));
+  }
+});
+
 export default compose<Props, PropsOuter>(
+  // withStateHandlers(initialState, stateUpdaters),
+  withUserData,
   withStyles(styles),
   translate(['about'], { wait: true })
 )(Publications);
