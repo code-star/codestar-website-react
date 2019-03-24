@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { translate, TranslationFunction } from 'react-i18next';
 import {
-  Theme,
   Typography,
   createStyles,
   CardContent,
@@ -16,6 +15,7 @@ import compose from 'recompose/compose';
 import { withStyles } from '@material-ui/core/styles';
 import i18n from '../../../i18n';
 import { IPublication } from '../../../publicationsService';
+import {ShareButtons} from "../../../ShareButtons/ShareButtons";
 
 type PropsInner = {
   classes: any;
@@ -34,7 +34,7 @@ const StyledCard = withStyles({
   },
 })(Card);
 
-const styles = (theme: Theme) =>
+const styles = () =>
   createStyles({
     media: {
       height: 0,
@@ -46,7 +46,7 @@ const styles = (theme: Theme) =>
     },
   });
 
-// TODO translations
+// TODO unit tests
 
 // https://github.com/mdvanes/go-medium-api/blob/master/api/static/main.js
 export const PublicationCard: FC<Props> = ({ t, classes, publication }) => {
@@ -96,12 +96,19 @@ export const PublicationCard: FC<Props> = ({ t, classes, publication }) => {
         <Typography>{paragraphs}</Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" color="primary">
-          [Share]
-        </Button>
         <Button size="small" color="primary" href={link}>
-          [READ more]
+          {t('READ_MORE')}
         </Button>
+        <ShareButtons
+          twitter
+          linkedin
+          facebook
+          size="small"
+          color="primary"
+          title={title}
+          text={`Codestar article "${title}" by ${author}`}
+          link={link}
+        />
       </CardActions>
     </StyledCard>
   );
@@ -109,5 +116,5 @@ export const PublicationCard: FC<Props> = ({ t, classes, publication }) => {
 
 export default compose<Props, PropsOuter>(
   withStyles(styles),
-  translate(['about'], { wait: true })
+  translate(['publications'], { wait: true })
 )(PublicationCard);
