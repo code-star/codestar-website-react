@@ -46,8 +46,6 @@ const styles = () =>
     },
   });
 
-// TODO unit tests
-
 // https://github.com/mdvanes/go-medium-api/blob/master/api/static/main.js
 export const PublicationCard: FC<Props> = ({ t, classes, publication }) => {
   const {

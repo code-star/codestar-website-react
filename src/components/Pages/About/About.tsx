@@ -13,7 +13,7 @@ import { CustomButton } from '../../Atoms/CustomButton/CustomButton';
 import { withStyles } from '@material-ui/core/styles';
 import Publications from "../../Molecules/Publications/Publications";
 
-// TODO Service worker caching issue? https://developers.google.com/web/tools/workbox/guides/service-worker-checklist
+// TODO TODO Service worker caching issue? https://developers.google.com/web/tools/workbox/guides/service-worker-checklist
 
 interface IPropsInner {
   classes: any;
@@ -113,8 +113,8 @@ export const About: FC<IPropsInner> = ({ t, classes }) => {
       >
         <Container>
           <div className="row justify-content-center">
-            <div className="col-12 col-md-8">
-              <Typography variant="h4" align="center" className="mb-3">
+            <div className={`col-12 col-md-8 ${classes.text}`}>
+              <Typography variant="h2" color="inherit" gutterBottom>
                 {t('PUBLICATIONS_TITLE')}
               </Typography>
               [our colleagues are published in magazines and blogs. also see our video feed for their talks at conferences.]

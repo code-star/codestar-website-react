@@ -15,7 +15,6 @@ type PropsOuter = {}
 type Props = PropsInner & PropsOuter;
 
 // TODO intro text above publications incl translations
-// TODO implement lambda service
 // TODO combine Medium from API and other publications from static JSON
 // TODO /blog
 
