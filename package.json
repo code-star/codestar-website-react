@@ -47,19 +47,19 @@
     "lint:staged"
   ],
   "lint-staged": {
-    "src/**/*.{js, jsx, json}": [
-      "prettier --write \"src/**/*.{js,jsx}\"",
+    "src/**/*.{js,jsx,json}": [
       "eslint --ext .js --ext .jsx src/ --fix",
-      "git add"
-    ],
-    "src/**/*.scss": [
-      "prettier --write \"src/**/*.scss\"",
-      "stylelint \"src/**/*.scss\" --syntax=scss --fix",
+      "prettier --write \"src/**/*.{js,jsx}\"",
       "git add"
     ],
     "src/**/*.css": [
-      "prettier --write \"src/**/*.css\"",
       "stylelint \"src/**/*.css\" --syntax=scss --fix",
+      "prettier --write \"src/**/*.css\"",
+      "git add"
+    ],
+    "src/**/*.scss": [
+      "stylelint \"src/**/*.scss\" --syntax=scss --fix",
+      "prettier --write \"src/**/*.scss\"",
       "git add"
     ]
   },
@@ -77,13 +77,13 @@
     "tsc": "tsc --noEmit -p ./tsconfig.json",
     "preinstall": "node scripts/ensureYarn.js",
     "prettify": "prettier --write \"src/**/*.{js,jsx,css,scss}\"",
-    "lint": "npm-run-all lint:js:jsx lint:scss:css",
+    "lint": "npm-run-all lint:js:jsx lint:css:scss",
     "lint:js:jsx": "eslint --ext .js --ext .jsx src/ --fix",
-    "lint:scss:css": "npm-run-all lint:scss lint:css",
-    "lint:scss": "stylelint \"src/**/*.scss\" --syntax=scss --fix",
+    "lint:css:scss": "npm-run-all lint:css lint:scss",
     "lint:css": "stylelint \"src/**/*.css\" --syntax=scss --fix",
+    "lint:scss": "stylelint \"src/**/*.scss\" --syntax=scss --fix",
     "lint:staged": "lint-staged",
-    "ci": "npm-run-all prettify lint",
+    "ci": "npm-run-all lint prettify",
     "sss": "prettier --write \"src/**/*.scss\""
   },
   "browserslist": {
