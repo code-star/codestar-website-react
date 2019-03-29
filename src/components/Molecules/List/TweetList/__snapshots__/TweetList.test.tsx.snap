@@ -52,6 +52,7 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
           className="MuiTypography-root MuiTypography-body1 prefix"
         >
           <img
+            alt="twitter event"
             className="mr-2"
             src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_30/v1542784068/codestar.nl/images/events/twitter"
           />
@@ -74,6 +75,7 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
           className="MuiTypography-root MuiTypography-body1 prefix"
         >
           <img
+            alt="twitter event"
             className="mr-2"
             src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_30/v1542784068/codestar.nl/images/events/twitter"
           />
