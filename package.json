@@ -43,9 +43,6 @@
       "pre-commit": "lint-staged"
     }
   },
-  "pre-commit": [
-    "lint:staged"
-  ],
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
       "eslint --ext .ts --ext .tsx src/ --fix",
