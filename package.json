@@ -67,8 +67,8 @@
     "tsc": "tsc --noEmit -p ./tsconfig.json",
     "preinstall": "node scripts/ensureYarn.js",
     "prettify": "prettier --write \"src/**/*.{js, jsx}\"",
-    "lint": "npm-run-all lint:js",
-    "lint:js": "eslint --ext .js --ext .jsx src/ --fix",
+    "lint": "npm-run-all lint-js",
+    "lint-js": "eslint --ext .js --ext .jsx src/ --fix",
     "lint:staged": "lint-staged",
     "ci": "npm-run-all prettify lint"
   },
