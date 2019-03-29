@@ -3,8 +3,8 @@
 exports[`renders the details for the Events header 1`] = `
 <section
   className="
-			bg-white
-			WithTheme(WithWidth(Section))-section"
+      bg-white
+      WithTheme(WithWidth(Section))-section"
   name="event-details"
 >
   <div

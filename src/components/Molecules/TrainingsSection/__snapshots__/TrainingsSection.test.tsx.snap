@@ -3,8 +3,8 @@
 exports[`<TrainingsSection /> Snaphot must match the static training section 1`] = `
 <section
   className="
-			section
-			WithTheme(WithWidth(Section))-section"
+      section
+      WithTheme(WithWidth(Section))-section"
   name="trainings"
 >
   <div
