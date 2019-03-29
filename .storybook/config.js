@@ -1,13 +1,20 @@
-import { configure } from '@storybook/react';
+import { configure, addParameters } from '@storybook/react'
+import { create } from '@storybook/theming'
 import 'bootstrap-css-only/css/bootstrap.min.css';
-import { setOptions } from '@storybook/addon-options';
 
-setOptions({
-  name: `CodeStar`,
-  url: 'https://github.com/code-star/codestar-website-react',
-  showAddonPanel: true,
-  addonPanelInRight: false
-});
+addParameters({
+  options: {
+    theme: create({
+      base: 'light',
+      brandTitle: 'CodeStar',
+      brandUrl: 'https://github.com/code-star/codestar-website-react',
+    }),
+    isFullscreen: false,
+    showNav: true,
+    showPanel: false,
+    sidebarAnimations: false,
+  },
+})
 
 const req = require.context('../src', true, /.stories.js$/);
 
