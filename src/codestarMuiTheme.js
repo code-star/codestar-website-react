@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles'
 
 const theme = createMuiTheme({
   palette: {
@@ -19,8 +19,8 @@ const theme = createMuiTheme({
     /* menu and headers NeutraText, paragraphs Open Sans */
     // fontFamily: 'NeutraText',
     // fontFamily: 'OpenSans',
-    fontSize: 16
+    fontSize: 16,
   },
-});
+})
 
-export default theme;
+export default theme

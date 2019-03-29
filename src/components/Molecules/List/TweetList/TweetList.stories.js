@@ -1,9 +1,9 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
-import { Button } from '@material-ui/core';
-import TweetList from './TweetList.tsx';
-import tweets from '../../../../../public/mock/get-recent-tweets';
+import React from 'react'
+import { storiesOf } from '@storybook/react'
+import { withKnobs } from '@storybook/addon-knobs'
+import { Button } from '@material-ui/core'
+import TweetList from './TweetList.tsx'
+import tweets from '../../../../../public/mock/get-recent-tweets'
 
 storiesOf('components/Molecules/List', module)
   .addDecorator(withKnobs)
@@ -18,4 +18,4 @@ storiesOf('components/Molecules/List', module)
         Sign Up
       </Button>
     </TweetList>
-  ));
+  ))

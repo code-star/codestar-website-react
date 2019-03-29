@@ -19,6 +19,6 @@ const jobsList = [
     path: 'front_end',
     image: '/images/jobs/codestar_3.png',
   },
-];
+]
 
-export default jobsList;
+export default jobsList
