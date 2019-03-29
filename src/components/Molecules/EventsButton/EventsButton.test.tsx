@@ -1,18 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { EventsButton, initialState, stateUpdaters } from './EventsButton';
-import renderer from 'react-test-renderer';
-import { MemoryRouter } from 'react-router-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { EventsButton, initialState, stateUpdaters } from './EventsButton'
+import renderer from 'react-test-renderer'
+import { MemoryRouter } from 'react-router-dom'
 
 jest.mock('../../../i18n', () => ({
   language: 'nl',
-}));
+}))
 
-const handleMouseOut = () => '';
-const handleMouseOver = () => '';
+const handleMouseOut = () => ''
+const handleMouseOver = () => ''
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
+  const div = document.createElement('div')
   ReactDOM.render(
     <MemoryRouter>
       <EventsButton
@@ -25,9 +25,9 @@ it('renders without crashing', () => {
       />
     </MemoryRouter>,
     div
-  );
-  ReactDOM.unmountComponentAtNode(div);
-});
+  )
+  ReactDOM.unmountComponentAtNode(div)
+})
 
 describe('An instance of EventsButton', () => {
   it('matches the snapshot without Event', () => {
@@ -42,9 +42,9 @@ describe('An instance of EventsButton', () => {
           handleMouseOver={handleMouseOver}
         />
       </MemoryRouter>
-    );
-    expect(testRenderer.toJSON()).toMatchSnapshot();
-  });
+    )
+    expect(testRenderer.toJSON()).toMatchSnapshot()
+  })
 
   it('matches the snapshot while hovering', () => {
     const testRenderer = renderer.create(
@@ -58,9 +58,9 @@ describe('An instance of EventsButton', () => {
           handleMouseOver={handleMouseOver}
         />
       </MemoryRouter>
-    );
-    expect(testRenderer.toJSON()).toMatchSnapshot();
-  });
+    )
+    expect(testRenderer.toJSON()).toMatchSnapshot()
+  })
 
   it('matches the snapshot with Event', () => {
     const testRenderer = renderer.create(
@@ -74,27 +74,27 @@ describe('An instance of EventsButton', () => {
           handleMouseOver={handleMouseOver}
         />
       </MemoryRouter>
-    );
-    expect(testRenderer.toJSON()).toMatchSnapshot();
-  });
+    )
+    expect(testRenderer.toJSON()).toMatchSnapshot()
+  })
 
   // TODO improvement would be to test if the DOM mouseOver of CustomButton triggers the (mocked) function handleMouseOver
 
   it('has an initial hover state', () => {
     expect(initialState).toEqual({
       isHovering: false,
-    });
-  });
+    })
+  })
 
   it('sets hover state', () => {
     expect(stateUpdaters.handleMouseOver()()).toEqual({
       isHovering: true,
-    });
-  });
+    })
+  })
 
   it('unsets hover state', () => {
     expect(stateUpdaters.handleMouseOut()()).toEqual({
       isHovering: false,
-    });
-  });
-});
+    })
+  })
+})

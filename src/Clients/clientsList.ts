@@ -31,8 +31,6 @@ export const clientsList = [
     logo: `/images/clients/42_education.png`,
     color: '#222',
   },
-];
+]
 
-export const clientsListSmallOrder = [0, 2, 1, 4, 3, 5].map(
-  i => clientsList[i]
-);
+export const clientsListSmallOrder = [0, 2, 1, 4, 3, 5].map(i => clientsList[i])

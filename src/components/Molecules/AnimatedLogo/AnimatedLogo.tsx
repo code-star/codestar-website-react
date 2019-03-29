@@ -1,31 +1,24 @@
-import React, { Component } from 'react';
-import Vivus from 'vivus';
-import Snap from 'snapsvg-cjs';
-import styles from './AnimatedLogo.module.scss';
+import React, { Component } from 'react'
+import Vivus from 'vivus'
+import Snap from 'snapsvg-cjs'
+import styles from './AnimatedLogo.module.scss'
 
 interface IAnimatedLogoProps {
-  lineDuration: number;
-  fadeDuration: number;
+  lineDuration: number
+  fadeDuration: number
 }
 
 export class AnimatedLogo extends Component<IAnimatedLogoProps> {
   public componentDidMount() {
     const startAnimation = () =>
-      new Vivus(
-        'logo',
-        { duration: this.props.lineDuration, type: 'sync', file: '' },
-        () => {
-          if (!document.getElementById('logo')) {
-            return;
-          }
-          const logo = Snap(document.getElementById('logo'));
-          logo.animate(
-            { 'fill-opacity': 1, 'stroke-opacity': 0 },
-            this.props.fadeDuration
-          );
+      new Vivus('logo', { duration: this.props.lineDuration, type: 'sync', file: '' }, () => {
+        if (!document.getElementById('logo')) {
+          return
         }
-      );
-    startAnimation();
+        const logo = Snap(document.getElementById('logo'))
+        logo.animate({ 'fill-opacity': 1, 'stroke-opacity': 0 }, this.props.fadeDuration)
+      })
+    startAnimation()
   }
 
   public render() {
@@ -100,6 +93,6 @@ export class AnimatedLogo extends Component<IAnimatedLogoProps> {
           </g>
         </g>
       </svg>
-    );
+    )
   }
 }

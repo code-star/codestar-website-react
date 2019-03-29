@@ -1,14 +1,8 @@
-import * as React from 'react';
-import { Link } from 'react-router-dom';
-import { translate } from 'react-i18next';
+import * as React from 'react'
+import { Link } from 'react-router-dom'
+import { translate } from 'react-i18next'
 
-import {
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Drawer,
-} from '@material-ui/core';
+import { List, ListItem, ListItemIcon, ListItemText, Drawer } from '@material-ui/core'
 import {
   Dashboard as DashboardIcon,
   Business as BusinessIcon,
@@ -16,10 +10,10 @@ import {
   Code as CodeIcon,
   Email as EmailIcon,
   Event as EventIcon,
-} from '@material-ui/icons';
+} from '@material-ui/icons'
 
-type SideMenuProps = any;
-type SideMenuState = any;
+type SideMenuProps = any
+type SideMenuState = any
 
 const list = [
   {
@@ -53,47 +47,34 @@ const list = [
     icon: <EmailIcon />,
     link: '/contact',
   },
-];
+]
 
 class SideMenu extends React.Component<SideMenuProps, SideMenuState> {
-  public state: SideMenuState = { location: null };
+  public state: SideMenuState = { location: null }
 
   public componentDidMount() {
-    this.props.history.listen((location: Location) =>
-      this.setLocation(location.pathname)
-    );
-    this.setLocation(this.props.history.location.pathname);
+    this.props.history.listen((location: Location) => this.setLocation(location.pathname))
+    this.setLocation(this.props.history.location.pathname)
   }
 
   public setLocation(location: string) {
-    this.setState({ location: `/${location.split('/')[1]}` });
+    this.setState({ location: `/${location.split('/')[1]}` })
   }
 
   public render() {
-    const { t, ...props } = this.props;
+    const { t, ...props } = this.props
     return (
       <Drawer open={props.open} onClose={props.toggle}>
-        <div
-          tabIndex={0}
-          role="button"
-          onClick={props.toggle}
-          onKeyDown={props.toggle}
-        >
+        <div tabIndex={0} role="button" onClick={props.toggle} onKeyDown={props.toggle}>
           <List>
             {list.map(item => (
-              <Link
-                to={item.link}
-                key={t(item.text)}
-                style={{ textDecoration: 'none' }}
-              >
+              <Link to={item.link} key={t(item.text)} style={{ textDecoration: 'none' }}>
                 <ListItem button>
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText
                     primary={this.getPrimaryText(item)}
                     primaryTypographyProps={
-                      this.state.location === item.link
-                        ? { color: 'primary', style: { fontWeight: 500 } }
-                        : undefined
+                      this.state.location === item.link ? { color: 'primary', style: { fontWeight: 500 } } : undefined
                     }
                   />
                 </ListItem>
@@ -102,24 +83,22 @@ class SideMenu extends React.Component<SideMenuProps, SideMenuState> {
           </List>
         </div>
       </Drawer>
-    );
+    )
   }
 
   private getPrimaryText(item: any) {
-    const { t } = this.props;
-    const notificationIcon = this.props.nextEvent ? (
-      <span style={{ color: 'red' }}> ●</span>
-    ) : null;
+    const { t } = this.props
+    const notificationIcon = this.props.nextEvent ? <span style={{ color: 'red' }}> ●</span> : null
     if (item.canHaveNotification) {
       return (
         <>
           {t(item.text)}
           {notificationIcon}
         </>
-      );
+      )
     }
-    return t(item.text);
+    return t(item.text)
   }
 }
 
-export default translate(['nav'], { wait: true })(SideMenu);
+export default translate(['nav'], { wait: true })(SideMenu)

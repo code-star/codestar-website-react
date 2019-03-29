@@ -1,22 +1,20 @@
-import React, { SFC } from 'react';
-import compose from 'recompose/compose';
-import Section from '../Section/Section';
-import { translate, TranslationFunction } from 'react-i18next';
-import { Tooltip, Typography, Grow, Avatar } from '@material-ui/core';
-import { Link } from 'react-router-dom';
-import { CustomButton } from '../../Atoms/CustomButton/CustomButton';
-import ResponsiveImage, {
-  getResponsiveImageUrl,
-} from '../../../ResponsiveImage/ResponsiveImage';
-import Container from '../../../Container/Container';
-import styles from './TrainingsSection.module.scss';
+import React, { SFC } from 'react'
+import compose from 'recompose/compose'
+import Section from '../Section/Section'
+import { translate, TranslationFunction } from 'react-i18next'
+import { Tooltip, Typography, Grow, Avatar } from '@material-ui/core'
+import { Link } from 'react-router-dom'
+import { CustomButton } from '../../Atoms/CustomButton/CustomButton'
+import ResponsiveImage, { getResponsiveImageUrl } from '../../../ResponsiveImage/ResponsiveImage'
+import Container from '../../../Container/Container'
+import styles from './TrainingsSection.module.scss'
 
 interface IPropsInner {
-  t: TranslationFunction;
+  t: TranslationFunction
 }
 
 interface IPropsOuter {
-  scrollname: any;
+  scrollname: any
 }
 
 const getTechIcon: any = (name: string, url: string) => (
@@ -27,12 +25,9 @@ const getTechIcon: any = (name: string, url: string) => (
       </Grow>
     </Tooltip>
   </div>
-);
+)
 
-export const TrainingsSection: SFC<IPropsInner & IPropsOuter> = ({
-  t,
-  scrollname,
-}) => (
+export const TrainingsSection: SFC<IPropsInner & IPropsOuter> = ({ t, scrollname }) => (
   <Section scrollname={scrollname} className={styles.section}>
     <ResponsiveImage
       path="/images/jobs/codestar_4.png"
@@ -44,18 +39,12 @@ export const TrainingsSection: SFC<IPropsInner & IPropsOuter> = ({
       <div className="row">
         <div className="col-12 col-lg-6">
           <div className="mt-4">
-            <Typography
-              variant="display3"
-              className={`d-inline text-white p-2 bg-dark`}
-            >
+            <Typography variant="display3" className={`d-inline text-white p-2 bg-dark`}>
               {t('TRAININGS')}
             </Typography>
           </div>
           <div className="my-3">
-            <Typography
-              variant="headline"
-              className={`d-inline text-white p-2`}
-            >
+            <Typography variant="headline" className={`d-inline text-white p-2`}>
               RxJS, Scala, TypeScript {t('TRAININGS')}
             </Typography>
           </div>
@@ -82,8 +71,6 @@ export const TrainingsSection: SFC<IPropsInner & IPropsOuter> = ({
       </div>
     </Container>
   </Section>
-);
+)
 
-export default compose<IPropsInner & IPropsOuter, IPropsOuter>(
-  translate(['events'], { wait: true })
-)(TrainingsSection);
+export default compose<IPropsInner & IPropsOuter, IPropsOuter>(translate(['events'], { wait: true }))(TrainingsSection)

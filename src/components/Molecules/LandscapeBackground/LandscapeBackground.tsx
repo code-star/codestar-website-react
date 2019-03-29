@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import Snap, { SnapElement, SnapGroup } from 'snapsvg-cjs';
-import SimplexNoise from 'simplex-noise';
-import { Fade } from '@material-ui/core';
+import Snap, { SnapElement, SnapGroup } from 'snapsvg-cjs'
+import SimplexNoise from 'simplex-noise'
+import { Fade } from '@material-ui/core'
 
 const options = {
   segments: 40,
@@ -15,72 +15,69 @@ const options = {
   // Because Firefox does not support negative values for `animation-delay` CSS property that well, we use a different
   // prerender starting point here. Mainly for performance reasons. For more info, please consult @Tenchi.
   prerender: navigator.userAgent.toLowerCase().indexOf('firefox') > -1 ? 0 : 20,
-};
+}
 
 interface ILandscapeBackgroundProps {
-  className?: string;
+  className?: string
 }
 
 export class LandscapeBackground extends Component<ILandscapeBackgroundProps> {
-  private seed: number;
-  private noise: SimplexNoise;
-  private interval: NodeJS.Timer;
-  private snap: SnapElement;
-  private group: SnapGroup;
+  private seed: number
+  private noise: SimplexNoise
+  private interval: NodeJS.Timer
+  private snap: SnapElement
+  private group: SnapGroup
 
   constructor(props: ILandscapeBackgroundProps) {
-    super(props);
-    this.seed = Math.floor(Math.random() * 1000);
-    this.noise = new SimplexNoise(this.seed.toString());
+    super(props)
+    this.seed = Math.floor(Math.random() * 1000)
+    this.noise = new SimplexNoise(this.seed.toString())
     /* TODO how to initialize these properly */
-    this.interval = setInterval(() => {}, 0);
-    this.snap = Snap('');
-    this.group = this.snap.g();
+    this.interval = setInterval(() => {}, 0)
+    this.snap = Snap('')
+    this.group = this.snap.g()
   }
 
   public componentDidMount() {
-    this.snap = Snap('#landscape');
-    this.group = this.snap.g();
+    this.snap = Snap('#landscape')
+    this.group = this.snap.g()
 
     this.snap.attr({
       viewBox: '0 0 1 1',
       preserveAspectRatio: 'none',
-    });
+    })
 
-    let simplexYOffset = 0;
+    let simplexYOffset = 0
 
     // Make it look like the animation was already going on for a while
     // We put the "old" ones first so that they are deleted in the correct order
     for (let i = options.prerender - 1; i >= 0; --i) {
-      this.emitPath(simplexYOffset, i + 1);
-      simplexYOffset += 1;
+      this.emitPath(simplexYOffset, i + 1)
+      simplexYOffset += 1
     }
 
     this.interval = setInterval(() => {
       if (!document.hidden) {
-        this.emitPath(simplexYOffset);
-        simplexYOffset += 1;
+        this.emitPath(simplexYOffset)
+        simplexYOffset += 1
       }
-    }, options.interval);
+    }, options.interval)
 
-    document.addEventListener('visibilitychange', this.togglePause);
+    document.addEventListener('visibilitychange', this.togglePause)
   }
 
   public componentWillUnmount() {
     if (this.interval) {
-      clearInterval(this.interval);
+      clearInterval(this.interval)
     }
-    document.removeEventListener('visibilitychange', this.togglePause);
+    document.removeEventListener('visibilitychange', this.togglePause)
   }
 
   public render() {
-    const createArray = (numberOfItems: number) =>
-      Array.from(Array(numberOfItems).keys());
+    const createArray = (numberOfItems: number) => Array.from(Array(numberOfItems).keys())
 
-    const { travelTime, perspective, prerender, interval } = options;
-    const animationDelays = createArray(prerender).map(
-      (value: number, index: number) => index * interval
-    );
+    const { travelTime, perspective, prerender, interval } = options
+    const animationDelays = createArray(prerender).map((value: number, index: number) => index * interval)
 
     const animationDelayClassNames = animationDelays
       .map(
@@ -89,7 +86,7 @@ export class LandscapeBackground extends Component<ILandscapeBackgroundProps> {
             animation-delay: -${delay}ms;
           }`
       )
-      .join('\n');
+      .join('\n')
 
     // About setting stroke-opacity to a value higher than 1:
     // Because paths are scaled by 'perspective' times,
@@ -125,52 +122,45 @@ export class LandscapeBackground extends Component<ILandscapeBackgroundProps> {
 					`}</style>
         </svg>
       </Fade>
-    );
+    )
   }
 
   private makeSVGPath(coordinates: number[][]) {
-    return 'M' + coordinates.map(tuple => tuple.join(',')).join('L');
+    return 'M' + coordinates.map(tuple => tuple.join(',')).join('L')
   }
 
   private togglePause = () => {
-    this.group.toggleClass('paused', document.hidden);
-  };
+    this.group.toggleClass('paused', document.hidden)
+  }
 
   private emitPath(simplexYOffset: number, prerenderOffset?: number) {
-    const {
-      simplexYStep,
-      segments,
-      simplexXScale,
-      valleySteepness,
-      travelTime,
-      interval,
-    } = options;
+    const { simplexYStep, segments, simplexXScale, valleySteepness, travelTime, interval } = options
 
     if (this.group.children().length > travelTime / interval) {
-      this.group.children()[0].remove();
+      this.group.children()[0].remove()
     }
 
-    const simplexY = simplexYOffset * simplexYStep;
+    const simplexY = simplexYOffset * simplexYStep
     // Wrap paths with coordinates far away
     // This forces each path to have the same bounding rect
     // Because Firefox and Chrome have different positioning systems
-    const coordinates = [[-2, -2]];
+    const coordinates = [[-2, -2]]
     for (let i = 0; i <= segments; ++i) {
-      const simplexX = (simplexXScale * i) / segments;
-      const height = (this.noise.noise2D(simplexX, simplexY) + 1) / 2; // Simplex height is between -1 and 1, we normalize
-      const x = i / segments;
-      const valleyModifier = valleySteepness * (4 * x * x - 4 * x + 1); // Parabola where y=1 at x=(0, 1) and y=0 at x=0.5
-      const y = 1 - valleyModifier * height;
-      coordinates.push([x, y]);
+      const simplexX = (simplexXScale * i) / segments
+      const height = (this.noise.noise2D(simplexX, simplexY) + 1) / 2 // Simplex height is between -1 and 1, we normalize
+      const x = i / segments
+      const valleyModifier = valleySteepness * (4 * x * x - 4 * x + 1) // Parabola where y=1 at x=(0, 1) and y=0 at x=0.5
+      const y = 1 - valleyModifier * height
+      coordinates.push([x, y])
     }
-    coordinates.push([2, 2]);
+    coordinates.push([2, 2])
 
-    const pathString = this.makeSVGPath(coordinates);
-    const path = this.snap.path(pathString);
-    this.group.add(path);
-    path.addClass('perspective');
+    const pathString = this.makeSVGPath(coordinates)
+    const path = this.snap.path(pathString)
+    this.group.add(path)
+    path.addClass('perspective')
     if (prerenderOffset) {
-      path.addClass(`early${prerenderOffset}`);
+      path.addClass(`early${prerenderOffset}`)
     }
   }
 }

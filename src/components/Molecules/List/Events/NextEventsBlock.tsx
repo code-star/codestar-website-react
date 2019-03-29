@@ -1,14 +1,14 @@
-import React from 'react';
-import { IMeetupEvent } from '../../../../containers/EventsContainer/EventsContainer.interfaces';
-import EventCard from '../../../../EventCard/EventCard';
+import React from 'react'
+import { IMeetupEvent } from '../../../../containers/EventsContainer/EventsContainer.interfaces'
+import EventCard from '../../../../EventCard/EventCard'
 
 interface INextEventsProps {
-  events: IMeetupEvent[];
+  events: IMeetupEvent[]
 }
 
 interface INextEventsBlockProps extends INextEventsProps {
-  events: IMeetupEvent[];
-  nextEventsTitle: string;
+  events: IMeetupEvent[]
+  nextEventsTitle: string
 }
 
 const NextEvents = ({ events }: INextEventsProps) => (
@@ -17,12 +17,9 @@ const NextEvents = ({ events }: INextEventsProps) => (
       <EventCard key={event.time} event={event} />
     ))}
   </>
-);
+)
 
-export const NextEventsBlock = ({
-  events,
-  nextEventsTitle,
-}: INextEventsBlockProps) =>
+export const NextEventsBlock = ({ events, nextEventsTitle }: INextEventsBlockProps) =>
   events && events.length > 0 ? (
     <>
       <h2 className="text-white">{nextEventsTitle}</h2>
@@ -32,4 +29,4 @@ export const NextEventsBlock = ({
         </div>
       </div>
     </>
-  ) : null;
+  ) : null

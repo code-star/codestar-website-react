@@ -1,7 +1,7 @@
-import * as React from 'react';
-import compose from 'recompose/compose';
-import { translate, TranslationFunction } from 'react-i18next';
-import { get } from 'lodash';
+import * as React from 'react'
+import compose from 'recompose/compose'
+import { translate, TranslationFunction } from 'react-i18next'
+import { get } from 'lodash'
 import {
   Input,
   InputLabel,
@@ -15,31 +15,31 @@ import {
   withWidth,
   Collapse,
   Fade,
-} from '@material-ui/core';
-import { withStyles, WithStyles, Theme } from '@material-ui/core/styles';
-import Container from '../Container/Container';
-import Map from '../Map/Map';
-import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
+} from '@material-ui/core'
+import { withStyles, WithStyles, Theme } from '@material-ui/core/styles'
+import Container from '../Container/Container'
+import Map from '../Map/Map'
+import { Breakpoint } from '@material-ui/core/styles/createBreakpoints'
 
 type ContactProps = Readonly<{
-  t: TranslationFunction;
-  classes: WithStyles['classes'];
-  width: Breakpoint;
-}>;
+  t: TranslationFunction
+  classes: WithStyles['classes']
+  width: Breakpoint
+}>
 
 type ContactFormState = Readonly<{
-  name: string;
-  phone: string;
-  email: string;
-  message: string;
-}>;
+  name: string
+  phone: string
+  email: string
+  message: string
+}>
 
 type ContactState = Readonly<{
-  messageRequiredError: boolean;
-  showFetchSuccess: boolean;
-  showFetchFailure: boolean;
-  showMap: boolean;
-}>;
+  messageRequiredError: boolean
+  showFetchSuccess: boolean
+  showFetchFailure: boolean
+  showMap: boolean
+}>
 
 const styles = (theme: Theme) => ({
   halfHeightMinusHalfNavBar: {
@@ -48,14 +48,11 @@ const styles = (theme: Theme) => ({
       minHeight: 'calc(50vh - 32px)',
     },
   },
-});
+})
 
-export class Contact extends React.Component<
-  ContactProps,
-  ContactState & ContactFormState
-> {
+export class Contact extends React.Component<ContactProps, ContactState & ContactFormState> {
   constructor(props: ContactProps) {
-    super(props);
+    super(props)
     this.state = {
       name: '',
       phone: '',
@@ -65,41 +62,38 @@ export class Contact extends React.Component<
       showFetchSuccess: false,
       showFetchFailure: false,
       showMap: false,
-    };
+    }
   }
 
   public componentDidMount() {
     setTimeout(() => {
-      this.setState({ showMap: true });
-    }, 300);
+      this.setState({ showMap: true })
+    }, 300)
   }
 
-  public handleChange = (property: keyof ContactFormState) => (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  public handleChange = (property: keyof ContactFormState) => (event: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({
       ...this.state,
       [property]: event.target.value,
-    });
-  };
+    })
+  }
 
   public handleSubmit = (ev: React.FormEvent<HTMLFormElement>) => {
-    ev.preventDefault();
+    ev.preventDefault()
 
     // Validate the text area
-    const hasMessageError = this.state.message === '';
-    this.setState({ messageRequiredError: hasMessageError });
+    const hasMessageError = this.state.message === ''
+    this.setState({ messageRequiredError: hasMessageError })
 
     if (hasMessageError) {
-      return;
+      return
     }
-    const AWS_PREFIX =
-      process.env.REACT_APP_STAGE === 'test' ? 'hjoutysc5k' : '267sder6c7';
-    const AWS_STAGE = process.env.REACT_APP_STAGE === 'test' ? 'test' : 'prod';
+    const AWS_PREFIX = process.env.REACT_APP_STAGE === 'test' ? 'hjoutysc5k' : '267sder6c7'
+    const AWS_STAGE = process.env.REACT_APP_STAGE === 'test' ? 'test' : 'prod'
     const url =
       process.env.REACT_APP_STAGE === 'dev'
         ? '/mock/staticSiteMailer.json'
-        : `https://${AWS_PREFIX}.execute-api.eu-west-1.amazonaws.com/${AWS_STAGE}/static-site-mailer`;
+        : `https://${AWS_PREFIX}.execute-api.eu-west-1.amazonaws.com/${AWS_STAGE}/static-site-mailer`
     const options =
       process.env.REACT_APP_STAGE === 'dev'
         ? {
@@ -113,7 +107,7 @@ export class Contact extends React.Component<
               email: this.state.email,
               message: this.state.message,
             }),
-          };
+          }
     // Fetch is supported in all evergreen browsers, but not IE 11 or Opera Mini. Polyfill not added at this time.
     return fetch(url, options)
       .then(data => data.json())
@@ -121,27 +115,23 @@ export class Contact extends React.Component<
         if (get(data, 'message.MessageId')) {
           this.setState({
             showFetchSuccess: true,
-          });
+          })
         } else {
           this.setState({
             showFetchFailure: true,
-          });
+          })
         }
       })
       .catch(error => {
         this.setState({
           showFetchFailure: true,
-        });
-      });
-  };
+        })
+      })
+  }
 
   public render() {
-    const { t } = this.props;
-    const err = this.state.messageRequiredError ? (
-      <FormHelperText id="name-error-text">
-        {t('REQUIRED_ERROR')}
-      </FormHelperText>
-    ) : null;
+    const { t } = this.props
+    const err = this.state.messageRequiredError ? <FormHelperText id="name-error-text">{t('REQUIRED_ERROR')}</FormHelperText> : null
     const showFetchSuccess = this.state.showFetchSuccess ? (
       <div
         style={{
@@ -152,7 +142,7 @@ export class Contact extends React.Component<
       >
         {t('FETCH_SUCCESS')}
       </div>
-    ) : null;
+    ) : null
     const showFetchFailure = this.state.showFetchFailure ? (
       <div
         style={{
@@ -164,7 +154,7 @@ export class Contact extends React.Component<
       >
         {t('FETCH_FAILURE')}
       </div>
-    ) : null;
+    ) : null
     return (
       <section>
         <Container fluid noPadding marginTopNavBar>
@@ -174,11 +164,7 @@ export class Contact extends React.Component<
         </Container>
         <Container className="mt-3">
           <Fade in timeout={2000}>
-            <form
-              action="https://formspree.io/codestar@ordina.nl"
-              method="POST"
-              onSubmit={this.handleSubmit}
-            >
+            <form action="https://formspree.io/codestar@ordina.nl" method="POST" onSubmit={this.handleSubmit}>
               <Card className="mb-3">
                 <CardContent>
                   <p>{t('INTRO_TEXT')}</p>
@@ -186,30 +172,17 @@ export class Contact extends React.Component<
                     <div className="col-12 col-md-5">
                       <FormControl fullWidth>
                         <InputLabel htmlFor="name">{t('NAME')}</InputLabel>
-                        <Input
-                          id="name"
-                          name="name"
-                          onChange={this.handleChange('name')}
-                        />
+                        <Input id="name" name="name" onChange={this.handleChange('name')} />
                       </FormControl>
 
                       <FormControl fullWidth>
                         <InputLabel htmlFor="phone">{t('PHONE')}</InputLabel>
-                        <Input
-                          id="phone"
-                          name="phone"
-                          onChange={this.handleChange('phone')}
-                        />
+                        <Input id="phone" name="phone" onChange={this.handleChange('phone')} />
                       </FormControl>
 
                       <FormControl fullWidth required>
                         <InputLabel htmlFor="email">{t('EMAIL')}</InputLabel>
-                        <Input
-                          id="email"
-                          type="email"
-                          name="email"
-                          onChange={this.handleChange('email')}
-                        />
+                        <Input id="email" type="email" name="email" onChange={this.handleChange('email')} />
                       </FormControl>
                     </div>
                     <div className="col-12 col-md-7">
@@ -240,7 +213,7 @@ export class Contact extends React.Component<
           </Fade>
         </Container>
       </section>
-    );
+    )
   }
 }
 
@@ -248,4 +221,4 @@ export default compose<ContactProps, {}>(
   withStyles(styles),
   withWidth(),
   translate(['contact'], { wait: true })
-)(Contact);
+)(Contact)

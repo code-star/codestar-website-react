@@ -1,33 +1,26 @@
-import React from 'react';
-import styles from './DelayedFade.module.scss';
+import React from 'react'
+import styles from './DelayedFade.module.scss'
 
 interface IDelayedFadeProps {
-  panLeft?: boolean;
-  panRight?: boolean;
-  panUp?: boolean;
-  panDown?: boolean;
-  children?: React.ReactNode;
+  panLeft?: boolean
+  panRight?: boolean
+  panUp?: boolean
+  panDown?: boolean
+  children?: React.ReactNode
 }
 
-export const DelayedFade = (props: IDelayedFadeProps) => (
-  <div className={classNameForProps(props)}>{props.children}</div>
-);
+export const DelayedFade = (props: IDelayedFadeProps) => <div className={classNameForProps(props)}>{props.children}</div>
 
-const classNameForProps = ({
-  panLeft,
-  panRight,
-  panUp,
-  panDown,
-}: IDelayedFadeProps): string => {
+const classNameForProps = ({ panLeft, panRight, panUp, panDown }: IDelayedFadeProps): string => {
   if (panLeft) {
-    return styles.delayedFadeInPanLeft;
+    return styles.delayedFadeInPanLeft
   } else if (panRight) {
-    return styles.delayedFadeInPanRight;
+    return styles.delayedFadeInPanRight
   } else if (panUp) {
-    return styles.delayedFadeInPanUp;
+    return styles.delayedFadeInPanUp
   } else if (panDown) {
-    return styles.delayedFadeInPanDown;
+    return styles.delayedFadeInPanDown
   } else {
-    return styles.delayedFadeIn;
+    return styles.delayedFadeIn
   }
-};
+}

@@ -1,16 +1,16 @@
-import * as React from 'react';
-import { translate, TranslationFunction } from 'react-i18next';
-import Container from '../../../Container/Container';
-import styles from './CodeChallenge.module.scss';
-import ResponsiveImage from '../../../ResponsiveImage/ResponsiveImage';
-import { Button } from '@material-ui/core';
+import * as React from 'react'
+import { translate, TranslationFunction } from 'react-i18next'
+import Container from '../../../Container/Container'
+import styles from './CodeChallenge.module.scss'
+import ResponsiveImage from '../../../ResponsiveImage/ResponsiveImage'
+import { Button } from '@material-ui/core'
 
 type CodeChallangeProps = Readonly<{
-  t: TranslationFunction;
-}>;
+  t: TranslationFunction
+}>
 
 function asParagraph(text: string[]) {
-  return text.map(toParagraph);
+  return text.map(toParagraph)
 }
 
 function toParagraph(text: string, key: number) {
@@ -18,11 +18,11 @@ function toParagraph(text: string, key: number) {
     <p key={key} className={styles.whiteText}>
       {text}
     </p>
-  );
+  )
 }
 
 function asLines(text: string[]) {
-  return text.map(toLines);
+  return text.map(toLines)
 }
 
 function toLines(text: string, key: number) {
@@ -31,16 +31,16 @@ function toLines(text: string, key: number) {
       {text}
       <br />
     </span>
-  );
+  )
 }
 
 function asMonospace(text: string[]) {
-  return <pre>{text.map(toLines)}</pre>;
+  return <pre>{text.map(toLines)}</pre>
 }
 
 class Component extends React.Component<CodeChallangeProps> {
   public render() {
-    const { t } = this.props;
+    const { t } = this.props
     return (
       <div>
         <section className={`py-5 ${styles.codeChallenge}`}>
@@ -51,13 +51,8 @@ class Component extends React.Component<CodeChallangeProps> {
 
                 <h4>{t('INTRODUCTION_TITLE')}</h4>
                 <p>{t('INTRODUCTION')}</p>
-                <ResponsiveImage
-                  className={styles.image}
-                  path={'/images/initial-cargo.png'}
-                />
-                {asParagraph(
-                  t('INTRODUCTION_PART_TWO', { returnObjects: true })
-                )}
+                <ResponsiveImage className={styles.image} path={'/images/initial-cargo.png'} />
+                {asParagraph(t('INTRODUCTION_PART_TWO', { returnObjects: true }))}
 
                 <h4>{t('SITUATION_TITLE')}</h4>
                 {asLines(t('SITUATION', { returnObjects: true }))}
@@ -71,20 +66,10 @@ class Component extends React.Component<CodeChallangeProps> {
                 {asMonospace(t('MAP_TABLE', { returnObjects: true }))}
 
                 <div>
-                  <Button
-                    className={styles.downloadButton}
-                    href={'/code-challenge/planets.csv'}
-                    variant="contained"
-                    color="primary"
-                  >
+                  <Button className={styles.downloadButton} href={'/code-challenge/planets.csv'} variant="contained" color="primary">
                     {t('MAP_CSV_DOWNLOAD_TEXT')}
                   </Button>
-                  <Button
-                    className={styles.downloadButton}
-                    href={'/code-challenge/planets.json'}
-                    variant="contained"
-                    color="primary"
-                  >
+                  <Button className={styles.downloadButton} href={'/code-challenge/planets.json'} variant="contained" color="primary">
                     {t('MAP_JSON_DOWNLOAD_TEXT')}
                   </Button>
                 </div>
@@ -95,10 +80,7 @@ class Component extends React.Component<CodeChallangeProps> {
 
                 <h4>{t('POINTERS_TITLE')}</h4>
                 <p>{t('POINTERS')}</p>
-                <ResponsiveImage
-                  className={styles.image}
-                  path={'/images/Example.png'}
-                />
+                <ResponsiveImage className={styles.image} path={'/images/Example.png'} />
                 {asLines(t('POINTERS_PART_TWO', { returnObjects: true }))}
 
                 <h4>{t('SOLUTION_TITLE')}</h4>
@@ -124,8 +106,8 @@ class Component extends React.Component<CodeChallangeProps> {
           </Container>
         </section>
       </div>
-    );
+    )
   }
 }
 
-export default translate(['challenge'], { wait: true })(Component);
+export default translate(['challenge'], { wait: true })(Component)

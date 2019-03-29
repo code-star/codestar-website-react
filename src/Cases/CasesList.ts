@@ -1,26 +1,26 @@
 export type Case = Readonly<{
-  client: string;
-  path: string;
-  image: string;
-  secondaryImage?: string;
-  credits?: string;
-  secondaryCredits?: string;
-  stack?: string[];
-  readMore?: boolean;
-  logo: string;
-  color: string;
-}>;
+  client: string
+  path: string
+  image: string
+  secondaryImage?: string
+  credits?: string
+  secondaryCredits?: string
+  stack?: string[]
+  readMore?: boolean
+  logo: string
+  color: string
+}>
 
 export type CasesSection = Readonly<{
-  title: string;
-  paragraphs: string[];
-}>;
+  title: string
+  paragraphs: string[]
+}>
 
 export type CasesText = Readonly<{
-  title: string;
-  intro: string;
-  sections: CasesSection[];
-}>;
+  title: string
+  intro: string
+  sections: CasesSection[]
+}>
 
 // TODO: This list and the one in Clients.jsx have duplicate data
 export const casesList: Case[] = [
@@ -36,18 +36,10 @@ export const casesList: Case[] = [
     path: 'ing',
     image: `/images/cases/ing_website.jpg`,
     secondaryImage: `/images/cases/ing_hq.jpg`,
-    secondaryCredits:
-      'Photo: ING Group (https://creativecommons.org/licenses/by-sa/2.0/)',
+    secondaryCredits: 'Photo: ING Group (https://creativecommons.org/licenses/by-sa/2.0/)',
     logo: `/images/clients/ing.png`,
     color: '#ee6f33',
-    stack: [
-      'Scala',
-      'Finagle',
-      'Cassandra',
-      'Phantom DSL',
-      'AngularJS',
-      'Polymer',
-    ],
+    stack: ['Scala', 'Finagle', 'Cassandra', 'Phantom DSL', 'AngularJS', 'Polymer'],
     readMore: true,
   },
   {
@@ -57,17 +49,7 @@ export const casesList: Case[] = [
     secondaryImage: `/images/cases/banners-cropped-images-SKG sfeerbeelden-betalen-0-0-0-0-1485438282-a03121f2358288bc5cd50f523cd2bedc.jpg`,
     logo: `/images/clients/skg.svg`,
     color: '#9D1535',
-    stack: [
-      'Play!',
-      'Slick',
-      'Akka',
-      'Postgres',
-      'Angular 2',
-      'TypeScript',
-      'Docker',
-      'DCOS',
-      'Circle CI',
-    ],
+    stack: ['Play!', 'Slick', 'Akka', 'Postgres', 'Angular 2', 'TypeScript', 'Docker', 'DCOS', 'Circle CI'],
     readMore: true,
   },
   {
@@ -107,9 +89,8 @@ export const casesList: Case[] = [
     client: 'Gracenote Sports',
     path: 'gracenote-sports',
     image: `/images/cases/gracenote_pyeongchang.jpg`,
-    credits:
-      'Photo: Andrew Schutzman (https://creativecommons.org/licenses/by-sa/2.0/)',
+    credits: 'Photo: Andrew Schutzman (https://creativecommons.org/licenses/by-sa/2.0/)',
     logo: `/images/clients/gracenote_dark.svg`,
     color: '#47ade9',
   },
-];
+]

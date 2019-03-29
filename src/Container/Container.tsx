@@ -1,27 +1,22 @@
-import React, { SFC } from 'react';
-import compose from 'recompose/compose';
+import React, { SFC } from 'react'
+import compose from 'recompose/compose'
 
-import { withWidth } from '@material-ui/core';
-import {
-  withStyles,
-  Theme,
-  StyleRulesCallback,
-  WithStyles,
-} from '@material-ui/core/styles';
+import { withWidth } from '@material-ui/core'
+import { withStyles, Theme, StyleRulesCallback, WithStyles } from '@material-ui/core/styles'
 
 type ContainerProps = Readonly<{
-  fluid?: boolean;
-  className?: string;
-  fullHeightMinusNavBar?: boolean;
-  fullHeight?: boolean;
-  marginTopNavBar?: boolean;
-  noPadding?: boolean;
-  center?: boolean;
-}>;
+  fluid?: boolean
+  className?: string
+  fullHeightMinusNavBar?: boolean
+  fullHeight?: boolean
+  marginTopNavBar?: boolean
+  noPadding?: boolean
+  center?: boolean
+}>
 
 type ContainerInnterProps = Readonly<{
-  classes: WithStyles['classes'];
-}>;
+  classes: WithStyles['classes']
+}>
 
 const styles: StyleRulesCallback<string> = (theme: Theme) => ({
   fullHeightMinusNavBar: {
@@ -49,7 +44,7 @@ const styles: StyleRulesCallback<string> = (theme: Theme) => ({
       marginTop: '64px',
     },
   },
-});
+})
 
 const Container: SFC<ContainerProps & ContainerInnterProps> = props => {
   return (
@@ -66,9 +61,9 @@ const Container: SFC<ContainerProps & ContainerInnterProps> = props => {
     >
       {props.children}
     </div>
-  );
-};
+  )
+}
 export default compose<ContainerProps & ContainerInnterProps, ContainerProps>(
   withStyles(styles),
   withWidth()
-)(Container);
+)(Container)

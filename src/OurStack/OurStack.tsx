@@ -1,14 +1,14 @@
-import * as React from 'react';
-import compose from 'recompose/compose';
-import { translate } from 'react-i18next';
+import * as React from 'react'
+import compose from 'recompose/compose'
+import { translate } from 'react-i18next'
 
-import { Paper, Avatar, Tooltip, Typography, Grow } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
+import { Paper, Avatar, Tooltip, Typography, Grow } from '@material-ui/core'
+import { withStyles } from '@material-ui/core/styles'
 
-import { getResponsiveImageUrl } from '../ResponsiveImage/ResponsiveImage';
-import techs from './techs.json';
+import { getResponsiveImageUrl } from '../ResponsiveImage/ResponsiveImage'
+import techs from './techs.json'
 
-type OurStackProps = any;
+type OurStackProps = any
 
 const styles = (theme: any) => ({
   root: {
@@ -22,11 +22,11 @@ const styles = (theme: any) => ({
     width: 40,
     height: 40,
   },
-});
+})
 
 export class OurStack extends React.Component<OurStackProps> {
   public render() {
-    const { t, classes } = this.props;
+    const { t, classes } = this.props
 
     function techIcons(techItems: any) {
       return (
@@ -37,16 +37,12 @@ export class OurStack extends React.Component<OurStackProps> {
               title={item.name} // TODO: Description why we chose a tech
             >
               <Grow in>
-                <Avatar
-                  className={classes.icon}
-                  alt={item.name}
-                  src={getResponsiveImageUrl(item.logo, 80)}
-                />
+                <Avatar className={classes.icon} alt={item.name} src={getResponsiveImageUrl(item.logo, 80)} />
               </Grow>
             </Tooltip>
           ))}
         </div>
-      );
+      )
     }
 
     const parts = [
@@ -65,7 +61,7 @@ export class OurStack extends React.Component<OurStackProps> {
         caption: 'STACK_INFRASTRUCTURE_SUBTITLE',
         icons: techs.infrastructure,
       },
-    ];
+    ]
 
     return (
       <div>
@@ -82,11 +78,11 @@ export class OurStack extends React.Component<OurStackProps> {
           </Paper>
         ))}
       </div>
-    );
+    )
   }
 }
 
 export default compose(
   withStyles(styles),
   translate(['stack'], { wait: true })
-)(OurStack);
+)(OurStack)

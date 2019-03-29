@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
-import { Button, withStyles, createStyles, Theme } from '@material-ui/core';
-import { Link } from 'react-scroll';
-import { purple } from '@material-ui/core/colors';
-import compose from 'recompose/compose';
-import { translate, TranslationFunction } from 'react-i18next';
+import React, { FC } from 'react'
+import { Button, withStyles, createStyles, Theme } from '@material-ui/core'
+import { Link } from 'react-scroll'
+import { purple } from '@material-ui/core/colors'
+import compose from 'recompose/compose'
+import { translate, TranslationFunction } from 'react-i18next'
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -23,30 +23,23 @@ const styles = (theme: Theme) =>
       height: '100%',
       width: '100%',
     },
-  });
+  })
 
 type PropsInner = {
-  t: TranslationFunction;
-  classes: Record<string, string>;
-};
+  t: TranslationFunction
+  classes: Record<string, string>
+}
 
 type PropsOuter = {
-  icon: any;
-  label: string;
-  to?: string;
-  href?: string;
-};
+  icon: any
+  label: string
+  to?: string
+  href?: string
+}
 
-type Props = PropsInner & PropsOuter;
+type Props = PropsInner & PropsOuter
 
-const EventsHeaderButton: FC<Props> = ({
-  t,
-  icon,
-  label,
-  to,
-  href,
-  classes,
-}) => {
+const EventsHeaderButton: FC<Props> = ({ t, icon, label, to, href, classes }) => {
   const LocalButton = (
     <Button className={classes.button}>
       <div className={`row align-items-center mx-0 ${classes.box}`}>
@@ -57,21 +50,21 @@ const EventsHeaderButton: FC<Props> = ({
         </div>
       </div>
     </Button>
-  );
+  )
   if (to) {
     return (
       <Link to={to} hashSpy smooth>
         {LocalButton}
       </Link>
-    );
+    )
   }
   if (href) {
-    return <a href={href}>{LocalButton}</a>;
+    return <a href={href}>{LocalButton}</a>
   }
-  return LocalButton;
-};
+  return LocalButton
+}
 
 export default compose<Props, PropsOuter>(
   translate(['events'], { wait: true }),
   withStyles(styles)
-)(EventsHeaderButton);
+)(EventsHeaderButton)

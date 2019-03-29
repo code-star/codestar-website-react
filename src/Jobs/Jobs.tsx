@@ -1,19 +1,19 @@
-import * as React from 'react';
-import { translate } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import * as React from 'react'
+import { translate } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
-import { Typography } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
+import { Typography } from '@material-ui/core'
+import { withStyles } from '@material-ui/core/styles'
 
-import { CustomButton } from '../components/Atoms/CustomButton/CustomButton';
-import InlineLogo from '../InlineLogo/InlineLogo';
-import Container from '../Container/Container';
-import OurStack from '../OurStack/OurStack';
-import Clients from '../Clients/Clients';
-import jobsList from './JobsList';
-import JobCard from './JobCard';
+import { CustomButton } from '../components/Atoms/CustomButton/CustomButton'
+import InlineLogo from '../InlineLogo/InlineLogo'
+import Container from '../Container/Container'
+import OurStack from '../OurStack/OurStack'
+import Clients from '../Clients/Clients'
+import jobsList from './JobsList'
+import JobCard from './JobCard'
 
-type JobsProps = any;
+type JobsProps = any
 
 const styles = {
   whiteText: {
@@ -23,11 +23,11 @@ const styles = {
     fontFamily: 'Conduit',
     fontSize: '120%',
   },
-};
+}
 
 class Jobs extends React.Component<JobsProps> {
   public render() {
-    const { t, classes } = this.props;
+    const { t, classes } = this.props
 
     return (
       <>
@@ -61,11 +61,9 @@ class Jobs extends React.Component<JobsProps> {
               <div className="col-12 col-md-6 mt-5">
                 <h3>{t('JOBS_TITLE')}</h3>
                 <ul>
-                  {t('JOBS_ARGUMENTS', { returnObjects: true }).map(
-                    (arg: any, i: number) => (
-                      <li key={i}>{arg}</li>
-                    )
-                  )}
+                  {t('JOBS_ARGUMENTS', { returnObjects: true }).map((arg: any, i: number) => (
+                    <li key={i}>{arg}</li>
+                  ))}
                 </ul>
               </div>
               <div className="col-12 col-md-6 mt-5">
@@ -81,13 +79,7 @@ class Jobs extends React.Component<JobsProps> {
             </div>
             <div className="row justify-content-center py-3">
               <p>
-                <CustomButton
-                  className="mt-3"
-                  variant="contained"
-                  component={Link}
-                  to="/about"
-                  color="inherit"
-                >
+                <CustomButton className="mt-3" variant="contained" component={Link} to="/about" color="inherit">
                   {t('JOBS_ABOUT_US')}
                 </CustomButton>
               </p>
@@ -95,8 +87,8 @@ class Jobs extends React.Component<JobsProps> {
           </Container>
         </section>
       </>
-    );
+    )
   }
 }
 
-export default translate(['jobs'], { wait: true })(withStyles(styles)(Jobs));
+export default translate(['jobs'], { wait: true })(withStyles(styles)(Jobs))

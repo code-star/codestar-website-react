@@ -1,19 +1,19 @@
-import * as React from 'react';
-import { translate } from '../typed-translate';
+import * as React from 'react'
+import { translate } from '../typed-translate'
 
-import { Typography, withWidth } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
+import { Typography, withWidth } from '@material-ui/core'
+import { withStyles } from '@material-ui/core/styles'
 
-import Container from '../Container/Container';
-import Clients from '../Clients/Clients';
-import { AnimatedLogo } from '../components/Molecules/AnimatedLogo/AnimatedLogo';
-import { LandscapeBackground } from '../components/Molecules/LandscapeBackground/LandscapeBackground';
-import { DelayedFade } from '../components/Molecules/DelayFade/DelayedFade';
-import { Link } from 'react-router-dom';
-import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
-import InlineLogo from '../InlineLogo/InlineLogo';
+import Container from '../Container/Container'
+import Clients from '../Clients/Clients'
+import { AnimatedLogo } from '../components/Molecules/AnimatedLogo/AnimatedLogo'
+import { LandscapeBackground } from '../components/Molecules/LandscapeBackground/LandscapeBackground'
+import { DelayedFade } from '../components/Molecules/DelayFade/DelayedFade'
+import { Link } from 'react-router-dom'
+import ResponsiveImage from '../ResponsiveImage/ResponsiveImage'
+import InlineLogo from '../InlineLogo/InlineLogo'
 
-type IntroProps = any;
+type IntroProps = any
 
 const styles: any = (theme: any) => ({
   section: {
@@ -44,18 +44,18 @@ const styles: any = (theme: any) => ({
   line: {
     display: 'inline-block',
   },
-});
+})
 
 function withStylesTyped(myStyles: any) {
   return (Component: any) => {
-    return withStyles(myStyles)(Component) as any;
-  };
+    return withStyles(myStyles)(Component) as any
+  }
 }
 
 function withWidthTyped() {
   return (Component: any) => {
-    return withWidth()(Component) as any;
-  };
+    return withWidth()(Component) as any
+  }
 }
 
 // Compose Pattern as decorators, recompose dependency not needed anymore
@@ -66,9 +66,8 @@ function withWidthTyped() {
 @translate(['intro'], { wait: true })
 class Intro extends React.Component<IntroProps> {
   public render() {
-    const { t, ...props } = this.props;
-    const intersperse = (arr: any, sep: any) =>
-      arr.reduce((a: any, v: any) => [...a, v, sep], []).slice(0, -1);
+    const { t, ...props } = this.props
+    const intersperse = (arr: any, sep: any) => arr.reduce((a: any, v: any) => [...a, v, sep], []).slice(0, -1)
 
     function makeLines(text: any, firstClass: string = '') {
       return text
@@ -79,9 +78,7 @@ class Intro extends React.Component<IntroProps> {
           <Typography
             key={`intro-${i}`}
             variant="subheading"
-            className={`${props.classes.whiteText} ${
-              firstClass && i === 0 ? firstClass : ''
-            }`}
+            className={`${props.classes.whiteText} ${firstClass && i === 0 ? firstClass : ''}`}
           >
             {intersperse(
               line.split('~').map((subLine: string, si: number) => (
@@ -94,7 +91,7 @@ class Intro extends React.Component<IntroProps> {
               ' '
             )}
           </Typography>
-        ));
+        ))
     }
 
     return (
@@ -134,20 +131,12 @@ class Intro extends React.Component<IntroProps> {
                 </InlineLogo>
               </div>
               <div className="col-12 col-md-6">
-                <ResponsiveImage
-                  width="100%"
-                  path="/images/bucket_waterfall.png"
-                  alt="What to do?"
-                />
+                <ResponsiveImage width="100%" path="/images/bucket_waterfall.png" alt="What to do?" />
               </div>
             </div>
           </Container>
         </section>
-        <section
-          id="clients"
-          className="py-5"
-          style={{ backgroundColor: '#eeeeee' }}
-        >
+        <section id="clients" className="py-5" style={{ backgroundColor: '#eeeeee' }}>
           <Container center>
             <Link to="/cases">
               <Clients />
@@ -155,7 +144,7 @@ class Intro extends React.Component<IntroProps> {
           </Container>
         </section>
       </div>
-    );
+    )
   }
 }
 
@@ -164,4 +153,4 @@ class Intro extends React.Component<IntroProps> {
 //   withStyles(styles),
 //   withWidth()
 // )(translate(['intro'], { wait: true })(Intro));
-export default Intro;
+export default Intro
