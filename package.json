@@ -66,7 +66,7 @@
     "build-storybook": "build-storybook -c .storybook -o .storybook-static",
     "tsc": "tsc --noEmit -p ./tsconfig.json",
     "preinstall": "node scripts/ensureYarn.js",
-    "prettify": "npx prettier --write \"src**/*.{js, jsx}\"",
+    "prettify": "prettier --write \"src/**/*.{js, jsx}\"",
     "lint": "npm-run-all lint:js",
     "lint:js": "eslint --ext .js --ext .jsx src/ --fix",
     "lint:staged": "lint-staged",
