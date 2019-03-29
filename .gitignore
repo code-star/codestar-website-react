@@ -32,5 +32,9 @@ package-lock.json
 # Storybook
 .storybook-static
 
-#Cache
+# Cache
 .cache
+
+# Sublime project and workspace files
+codestar-website-react.sublime-project
+codestar-website-react.sublime-workspace
