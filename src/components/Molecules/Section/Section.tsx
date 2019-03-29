@@ -1,20 +1,20 @@
-import React, { FC } from 'react';
-import compose from 'recompose/compose';
-import {createStyles, Theme, withWidth} from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
-import { Element } from 'react-scroll';
+import React, { FC } from 'react'
+import compose from 'recompose/compose'
+import { createStyles, Theme, withWidth } from '@material-ui/core'
+import { withStyles } from '@material-ui/core/styles'
+import { Element } from 'react-scroll'
 
 interface IPropsInner {}
 
 interface IPropsOuter {
-  scrollname: string;
-  className?: string;
-  classes?: any;
+  scrollname: string
+  className?: string
+  classes?: any
 }
 
-const styles = ({breakpoints}: Theme) => {
-  const heightMobileNavbar = 56;
-  const heightNavbar = 64;
+const styles = ({ breakpoints }: Theme) => {
+  const heightMobileNavbar = 56
+  const heightNavbar = 64
 
   return createStyles({
     section: {
@@ -35,28 +35,23 @@ const styles = ({breakpoints}: Theme) => {
         top: -1 * heightNavbar,
       },
     },
-  });
-};
+  })
+}
 
-const Section: FC<IPropsInner & IPropsOuter> = ({
-  scrollname,
-  className,
-  classes,
-  children,
-}) => (
+const Section: FC<IPropsInner & IPropsOuter> = ({ scrollname, className, classes, children }) => (
+  // @ts-ignore
   <section
-    // @ts-ignore
     name={scrollname ? scrollname : null}
     className={`
-			${className ? className : null}
-			${scrollname ? classes.section : null}`}
+      ${className ? className : null}
+      ${scrollname ? classes.section : null}`}
   >
     {scrollname && <Element name={scrollname} className={classes.element} />}
     {children}
   </section>
-);
+)
 
 export default compose<IPropsInner & IPropsOuter, IPropsOuter>(
   withStyles(styles),
   withWidth()
-)(Section);
+)(Section)
