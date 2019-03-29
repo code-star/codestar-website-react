@@ -115,7 +115,7 @@
     "@types/vivus": "^0.4.0",
     "autoprefixer": "^9.3.1",
     "awesome-typescript-loader": "^5.2.0",
-    "babel-eslint": "^9.0.0",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.0",
     "eslint": "^5.15.3",
     "eslint-config-react-app": "^3.0.8",
