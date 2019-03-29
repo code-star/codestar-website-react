@@ -48,8 +48,8 @@
   ],
   "lint-staged": {
     "src/**/*.{js, jsx, json}": [
-      "prettier",
-      "eslint --fix",
+      "prettier --write \"src/**/*.{js, jsx}\"",
+      "eslint --ext .js --ext .jsx src/ --fix",
       "git add"
     ]
   },
