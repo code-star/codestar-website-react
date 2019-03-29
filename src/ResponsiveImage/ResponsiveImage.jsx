@@ -1,25 +1,23 @@
-import React from 'react';
-import css from './ResponsiveImage.module.css';
+import React from 'react'
+import css from './ResponsiveImage.module.css'
 
 const getResponsiveImageUrl = (imagePath, size = null, effect) => {
-  const effectPath = effect ? `${effect}/` : '';
+  const effectPath = effect ? `${effect}/` : ''
   return (
     `${process.env.REACT_APP_CLOUDINARY_URLBASE}/` +
     `f_auto/w_${size}/${effectPath}` +
     `${process.env.REACT_APP_CLOUDINARY_ID}/` +
     `${process.env.REACT_APP_CLOUDINARY_IMAGES_DIRECTORY}` +
     `${imagePath}`
-  );
-};
+  )
+}
 
 const getResponsiveSrcSet = (imagePath, sizes, effect) => {
-  return sizes
-    .map(size => `${getResponsiveImageUrl(imagePath, size, effect)} ${size}w`)
-    .join(', ');
-};
+  return sizes.map(size => `${getResponsiveImageUrl(imagePath, size, effect)} ${size}w`).join(', ')
+}
 
-const defaultSizes = '100w';
-const defaultVersions = [375, 800, 1280, 1536, 1920]; // Cloudinary image file size in px
+const defaultSizes = '100w'
+const defaultVersions = [375, 800, 1280, 1536, 1920] // Cloudinary image file size in px
 
 const ResponsiveImage = props => {
   const {
@@ -31,7 +29,7 @@ const ResponsiveImage = props => {
     asBackgroundImage = false,
     effect,
     ...otherProps
-  } = props;
+  } = props
 
   return (
     path && (
@@ -46,23 +44,17 @@ const ResponsiveImage = props => {
         {...otherProps}
       />
     )
-  );
-};
+  )
+}
 
-function responsiveImageProps(
-  path,
-  alt,
-  versions = defaultVersions,
-  sizes = defaultSizes,
-  effect
-) {
+function responsiveImageProps(path, alt, versions = defaultVersions, sizes = defaultSizes, effect) {
   return {
     src: `${process.env.PUBLIC_URL}${path}`,
     srcSet: getResponsiveSrcSet(path, versions, effect),
     sizes: sizes,
     alt: alt,
-  };
+  }
 }
 
-export default ResponsiveImage;
-export { responsiveImageProps, getResponsiveImageUrl };
+export default ResponsiveImage
+export { responsiveImageProps, getResponsiveImageUrl }
