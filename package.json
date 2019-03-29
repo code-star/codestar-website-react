@@ -76,8 +76,7 @@
     "lint:js:jsx": "eslint --ext .js --ext .jsx src/ --fix",
     "lint:css:scss": "stylelint \"src/**/*.{css,scss}\" --syntax=scss --fix",
     "lint:staged": "lint-staged",
-    "ci": "npm-run-all lint prettify",
-    "sss": "prettier --write \"src/**/*.scss\""
+    "ci": "npm-run-all lint prettify"
   },
   "browserslist": {
     "development": [
@@ -122,9 +121,9 @@
     "@types/vivus": "^0.4.0",
     "autoprefixer": "^9.3.1",
     "awesome-typescript-loader": "^5.2.0",
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "9.0.0",
     "babel-loader": "^8.0.0",
-    "eslint": "^5.15.3",
+    "eslint": "5.12.0",
     "eslint-config-react-app": "^3.0.8",
     "eslint-plugin-flowtype": "^2.50.3",
     "eslint-plugin-import": "^2.16.0",
