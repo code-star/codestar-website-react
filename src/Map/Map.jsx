@@ -1,8 +1,8 @@
-import React from 'react'
-import compose from 'recompose/compose'
+import React from 'react';
+import compose from 'recompose/compose';
 
-import { withWidth } from '@material-ui/core'
-import { withStyles } from '@material-ui/core/styles'
+import { withWidth } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   halfHeightMinusHalfNavBar: {
