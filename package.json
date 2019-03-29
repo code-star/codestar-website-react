@@ -76,13 +76,13 @@
     "build-storybook": "build-storybook -c .storybook -o .storybook-static",
     "tsc": "tsc --noEmit -p ./tsconfig.json",
     "preinstall": "node scripts/ensureYarn.js",
-    "prettify": "prettier --write \"src/**/*.{ts,tsx,js,jsx,css,scss}\"",
     "lint": "npm-run-all lint:ts:tsx lint:js:jsx lint:css:scss",
     "lint:ts:tsx": "eslint --ext .ts --ext .tsx src/ --fix",
     "lint:js:jsx": "eslint --ext .js --ext .jsx src/ --fix",
     "lint:css:scss": "stylelint \"src/**/*.{css,scss}\" --syntax=scss --fix",
     "lint:staged": "lint-staged",
-    "ci": "npm-run-all lint prettify"
+    "prettify": "prettier --write \"src/**/*.{ts,tsx,js,jsx,css,scss}\"",
+    "lint:prettify": "npm-run-all lint prettify"
   },
   "browserslist": {
     "development": [
