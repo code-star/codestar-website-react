@@ -6,6 +6,7 @@ exports[`ShareButtons shows facebook icon 1`] = `
   className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-flat"
   href="https://www.facebook.com/sharer/sharer.php?u=/share-url"
   onBlur={[Function]}
+  onContextMenu={[Function]}
   onFocus={[Function]}
   onKeyDown={[Function]}
   onKeyUp={[Function]}
@@ -58,6 +59,7 @@ exports[`ShareButtons shows linkedin icon 1`] = `
   className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-flat"
   href="https://www.linkedin.com/shareArticle?mini=true&url=/share-url&title=&summary="
   onBlur={[Function]}
+  onContextMenu={[Function]}
   onFocus={[Function]}
   onKeyDown={[Function]}
   onKeyUp={[Function]}
@@ -110,6 +112,7 @@ exports[`ShareButtons shows twitter icon 1`] = `
   className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-flat"
   href="https://twitter.com/home?status=%0A/share-url"
   onBlur={[Function]}
+  onContextMenu={[Function]}
   onFocus={[Function]}
   onKeyDown={[Function]}
   onKeyUp={[Function]}
