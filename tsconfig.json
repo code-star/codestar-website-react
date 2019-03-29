@@ -23,8 +23,5 @@
     "strictNullChecks": true,
     "noUnusedLocals": true
   },
-  "include": [
-    "src",
-    "@types"
-  ]
+  "include": ["src", "@types"]
 }
