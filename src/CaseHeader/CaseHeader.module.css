@@ -1,10 +1,10 @@
 .projectCaseClient {
-	-webkit-box-decoration-break: clone;
-	box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .projectCaseTitle {
-	-webkit-box-decoration-break: clone;
-	box-decoration-break: clone;
-	background-color: rgba(52, 58, 64, 1);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  background-color: rgba(52, 58, 64, 1);
 }

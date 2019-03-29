@@ -1,63 +1,51 @@
 body {
-	font-family: 'Roboto', sans-serif;
-	background: linear-gradient(
-				to bottom,
-				#000e1f 0%,
-				#003264 20%,
-				#0057ae 40%,
-				#3988ce 60%,
-				#8fc3ea 80%,
-				#8fc3ea 100%
-			)
-			repeat-x,
-		linear-gradient(to bottom, #8fc3ea, #8fc3ea);
-	background-size: 1px 500vh, 100vw 100vh;
-	transition: background-position 1s;
+  font-family: 'Roboto', sans-serif;
+  background:
+    linear-gradient(to bottom, #000e1f 0%, #003264 20%, #0057ae 40%, #3988ce 60%, #8fc3ea 80%, #8fc3ea 100%) repeat-x,
+    linear-gradient(to bottom, #8fc3ea, #8fc3ea);
+  background-size: 1px 500vh, 100vw 100vh;
+  transition: background-position 1s;
 }
 
 @font-face {
-	font-family: Conduit;
-	src: url('https://res.cloudinary.com/codestar/raw/upload/v1531926698/codestar.nl/fonts/ConduitITCStd.otf')
-			format('opentype'),
-		url('https://res.cloudinary.com/codestar/raw/upload/v1531926698/codestar.nl/fonts/ConduitITCStd.woff')
-			format('woff');
-	font-style: normal;
+  font-family: Conduit;
+  src:
+    url('https://res.cloudinary.com/codestar/raw/upload/v1531926698/codestar.nl/fonts/ConduitITCStd.otf') format('opentype'),
+    url('https://res.cloudinary.com/codestar/raw/upload/v1531926698/codestar.nl/fonts/ConduitITCStd.woff') format('woff');
+  font-style: normal;
 }
 
 @font-face {
-	font-family: Conduit;
-	src: url('https://res.cloudinary.com/codestar/raw/upload/v1531926698/codestar.nl/fonts/ConduitITCStd-Bold.otf')
-			format('opentype'),
-		url('https://res.cloudinary.com/codestar/raw/upload/v1531926698/codestar.nl/fonts/ConduitITCStd-Bold.woff')
-			format('woff');
-	font-weight: bold;
+  font-family: Conduit;
+  src:
+    url('https://res.cloudinary.com/codestar/raw/upload/v1531926698/codestar.nl/fonts/ConduitITCStd-Bold.otf') format('opentype'),
+    url('https://res.cloudinary.com/codestar/raw/upload/v1531926698/codestar.nl/fonts/ConduitITCStd-Bold.woff') format('woff');
+  font-weight: bold;
 }
 
 @font-face {
-	font-family: Conduit;
-	src: url('https://res.cloudinary.com/codestar/raw/upload/v1531926698/codestar.nl/fonts/ConduitITCStd-Italic.otf')
-			format('opentype'),
-		url('https://res.cloudinary.com/codestar/raw/upload/v1531926698/codestar.nl/fonts/ConduitITCStd-Italic.woff')
-			format('woff');
-	font-style: italic;
+  font-family: Conduit;
+  src:
+    url('https://res.cloudinary.com/codestar/raw/upload/v1531926698/codestar.nl/fonts/ConduitITCStd-Italic.otf') format('opentype'),
+    url('https://res.cloudinary.com/codestar/raw/upload/v1531926698/codestar.nl/fonts/ConduitITCStd-Italic.woff') format('woff');
+  font-style: italic;
 }
 
 @font-face {
-	font-family: Conduit;
-	src: url('https://res.cloudinary.com/codestar/raw/upload/v1531926698/codestar.nl/fonts/ConduitITCStd-BoldItalic.otf')
-			format('opentype'),
-		url('https://res.cloudinary.com/codestar/raw/upload/v1531926698/codestar.nl/fonts/ConduitITCStd-BoldItalic.woff')
-			format('woff');
-	font-weight: bold;
-	font-style: italic;
+  font-family: Conduit;
+  src:
+    url('https://res.cloudinary.com/codestar/raw/upload/v1531926698/codestar.nl/fonts/ConduitITCStd-BoldItalic.otf') format('opentype'),
+    url('https://res.cloudinary.com/codestar/raw/upload/v1531926698/codestar.nl/fonts/ConduitITCStd-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
 }
 
 @font-face {
   font-family: NeutraText;
-  src: url("/fonts/NeutraText-Book.otf") format('opentype');
+  src: url('/fonts/NeutraText-Book.otf') format('opentype');
 }
 
 @font-face {
   font-family: OpenSans;
-  src: url("/fonts/OpenSans.woff") format('woff');
+  src: url('/fonts/OpenSans.woff') format('woff');
 }

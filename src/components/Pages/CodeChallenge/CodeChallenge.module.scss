@@ -4,22 +4,28 @@
   .whiteText {
     color: $color-white;
   }
-  
+
   .conduit {
-    font-family: 'Conduit';
+    font-family: Conduit, sans-serif;
     font-size: 120%;
   }
-  
+
   .image {
     width: 100%;
     margin-bottom: 1rem;
   }
-  
-  h2, h3, h4, h5, p, span {
+
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  span {
     color: $color-white;
   }
 
-  h4, h5 {
+  h4,
+  h5 {
     margin-top: 1rem;
   }
 
@@ -27,11 +33,11 @@
     font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
     font-weight: bold;
     background-color: $color-black;
-    padding: .5rem;
+    padding: 0.5rem;
     color: $color-grey;
   }
 
   .downloadButton {
-    margin: .5rem .5rem .5rem 0;
+    margin: 0.5rem 0.5rem 0.5rem 0;
   }
 }
