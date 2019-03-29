@@ -52,14 +52,9 @@
       "prettier --write \"src/**/*.{js,jsx}\"",
       "git add"
     ],
-    "src/**/*.css": [
-      "stylelint \"src/**/*.css\" --syntax=scss --fix",
-      "prettier --write \"src/**/*.css\"",
-      "git add"
-    ],
-    "src/**/*.scss": [
-      "stylelint \"src/**/*.scss\" --syntax=scss --fix",
-      "prettier --write \"src/**/*.scss\"",
+    "src/**/*.{css,scss}": [
+      "stylelint \"src/**/*.{css,scss}\" --syntax=scss --fix",
+      "prettier --write \"src/**/*.{css,scss}\"",
       "git add"
     ]
   },
@@ -79,9 +74,7 @@
     "prettify": "prettier --write \"src/**/*.{js,jsx,css,scss}\"",
     "lint": "npm-run-all lint:js:jsx lint:css:scss",
     "lint:js:jsx": "eslint --ext .js --ext .jsx src/ --fix",
-    "lint:css:scss": "npm-run-all lint:css lint:scss",
-    "lint:css": "stylelint \"src/**/*.css\" --syntax=scss --fix",
-    "lint:scss": "stylelint \"src/**/*.scss\" --syntax=scss --fix",
+    "lint:css:scss": "stylelint \"src/**/*.{css,scss}\" --syntax=scss --fix",
     "lint:staged": "lint-staged",
     "ci": "npm-run-all lint prettify",
     "sss": "prettier --write \"src/**/*.scss\""
