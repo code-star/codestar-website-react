@@ -1,12 +1,1 @@
-.cache
-.DS_Store
-.storybook-static
-package-lock.json
-yarn.json
-codestar-website-react.sublime-project
-codestar-website-react.sublime-workspace
-node_modules
-npm-debug.log
-.npmrc
-.nvmrc
-registerServiceWorker.js
+src/registerServiceWorker.js
