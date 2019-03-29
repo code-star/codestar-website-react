@@ -24,7 +24,7 @@ interface ILandscapeBackgroundProps {
 export class LandscapeBackground extends Component<ILandscapeBackgroundProps> {
   private seed: number
   private noise: SimplexNoise
-  private interval: NodeJS.Timer
+  private interval: any
   private snap: SnapElement
   private group: SnapGroup
 
