@@ -9,6 +9,10 @@ it('renders the content of the Events header', () => {
   const meetupEvent = {
     name: 'Data Oriented Design with Maxim Zaks',
     link: 'https://www.codestar.nl',
+    coverUrl: 'some-cover-url',
+    time: -1,
+    withDescription: true,
+    description: 'some-description',
   }
   const formattedDate = '26 september 2018'
   const comp = renderer
