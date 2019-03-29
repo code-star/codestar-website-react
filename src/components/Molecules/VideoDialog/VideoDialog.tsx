@@ -1,29 +1,19 @@
-import { VideoItem } from '../../../containers/EventsContainer/fetchYouTubePlaylist';
-import { TranslationFunction } from 'i18next';
-import React, { SFC } from 'react';
-import {
-  DialogContent,
-  DialogActions,
-  Button,
-  Dialog,
-} from '@material-ui/core';
-import { formatDate } from '../../../utility/formatDate';
-import i18n from '../../../i18n';
-import styles from './VideoDialog.module.scss';
+import { VideoItem } from '../../../containers/EventsContainer/fetchYouTubePlaylist'
+import { TranslationFunction } from 'i18next'
+import React, { SFC } from 'react'
+import { DialogContent, DialogActions, Button, Dialog } from '@material-ui/core'
+import { formatDate } from '../../../utility/formatDate'
+import i18n from '../../../i18n'
+import styles from './VideoDialog.module.scss'
 
 type VideoDialogProps = Readonly<{
-  video: VideoItem | false;
-  fullScreen: boolean;
-  onClose: () => void;
-  t: TranslationFunction;
-}>;
+  video: VideoItem | false
+  fullScreen: boolean
+  onClose: () => void
+  t: TranslationFunction
+}>
 
-export const VideoDialog: SFC<VideoDialogProps> = ({
-  video,
-  fullScreen,
-  onClose,
-  t,
-}) => {
+export const VideoDialog: SFC<VideoDialogProps> = ({ video, fullScreen, onClose, t }) => {
   const content =
     video !== false ? (
       <>
@@ -36,6 +26,7 @@ export const VideoDialog: SFC<VideoDialogProps> = ({
           height="315"
           src={`https://www.youtube.com/embed/${video.id}`}
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          title="video dialog"
         />
         <DialogContent>
           {video.description.length ? (
@@ -57,16 +48,11 @@ export const VideoDialog: SFC<VideoDialogProps> = ({
       </>
     ) : (
       <>-No video selected-</>
-    );
+    )
 
   return (
-    <Dialog
-      fullScreen={fullScreen}
-      open={video !== false}
-      onClose={onClose}
-      scroll={fullScreen ? 'paper' : 'body'}
-    >
+    <Dialog fullScreen={fullScreen} open={video !== false} onClose={onClose} scroll={fullScreen ? 'paper' : 'body'}>
       {content}
     </Dialog>
-  );
-};
+  )
+}
