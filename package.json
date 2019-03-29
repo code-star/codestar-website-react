@@ -51,6 +51,16 @@
       "prettier --write \"src/**/*.{js, jsx}\"",
       "eslint --ext .js --ext .jsx src/ --fix",
       "git add"
+    ],
+    "src/**/*.css": [
+      "prettier --write \"src/**/*.css\"",
+      "stylelint \"src/**/*.css\" --syntax=scss --fix",
+      "git add"
+    ],
+    "src/**/*.scss}": [
+      "prettier --write \"src/**/*.scss\"",
+      "stylelint \"src/**/*.scss\" --syntax=scss --fix",
+      "git add"
     ]
   },
   "scripts": {
@@ -67,8 +77,11 @@
     "tsc": "tsc --noEmit -p ./tsconfig.json",
     "preinstall": "node scripts/ensureYarn.js",
     "prettify": "prettier --write \"src/**/*.{js, jsx}\"",
-    "lint": "npm-run-all lint-js",
-    "lint-js": "eslint --ext .js --ext .jsx src/ --fix",
+    "lint": "npm-run-all lint:js:jsx lint:css:scss",
+    "lint:js:jsx": "eslint --ext .js --ext .jsx src/ --fix",
+    "lint:css:scss": "npm-run-all lint:css lint:scss",
+    "lint:css": "stylelint \"src/**/*.css\" --syntax=scss --fix",
+    "lint:scss": "stylelint \"src/**/*.scss\" --syntax=scss --fix",
     "lint:staged": "lint-staged",
     "ci": "npm-run-all prettify lint"
   },
@@ -129,6 +142,8 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^1.16.4",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.2.0",
     "ts-jest": "^23.10.5",
     "typescript": "^3.1.6"
   }
