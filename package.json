@@ -47,6 +47,11 @@
     "lint:staged"
   ],
   "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --ext .ts --ext .tsx src/ --fix",
+      "prettier --write \"src/**/*.{ts,tsx}\"",
+      "git add"
+    ],
     "src/**/*.{js,jsx,json}": [
       "eslint --ext .js --ext .jsx src/ --fix",
       "prettier --write \"src/**/*.{js,jsx}\"",
@@ -71,8 +76,9 @@
     "build-storybook": "build-storybook -c .storybook -o .storybook-static",
     "tsc": "tsc --noEmit -p ./tsconfig.json",
     "preinstall": "node scripts/ensureYarn.js",
-    "prettify": "prettier --write \"src/**/*.{js,jsx,css,scss}\"",
-    "lint": "npm-run-all lint:js:jsx lint:css:scss",
+    "prettify": "prettier --write \"src/**/*.{ts,tsx,js,jsx,css,scss}\"",
+    "lint": "npm-run-all lint:ts:tsx lint:js:jsx lint:css:scss",
+    "lint:ts:tsx": "eslint --ext .ts --ext .tsx src/ --fix",
     "lint:js:jsx": "eslint --ext .js --ext .jsx src/ --fix",
     "lint:css:scss": "stylelint \"src/**/*.{css,scss}\" --syntax=scss --fix",
     "lint:staged": "lint-staged",
@@ -119,6 +125,8 @@
     "@types/sanitize-html": "^1.18.0",
     "@types/storybook__react": "^3.0.9",
     "@types/vivus": "^0.4.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^1.5.0",
+    "@typescript-eslint/parser": "^1.5.0",
     "autoprefixer": "^9.3.1",
     "awesome-typescript-loader": "^5.2.0",
     "babel-eslint": "9.0.0",
@@ -138,6 +146,9 @@
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0",
     "ts-jest": "^23.10.5",
+    "tslint": "^5.14.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.0.0",
     "typescript": "^3.1.6"
   }
 }
