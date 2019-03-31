@@ -25,8 +25,7 @@ const withUserData = lifecycle({
       const publications = await getCachedPublications();
       this.setState({ publications });
     } catch (err) {
-      // TODO
-      console.error(err);
+      console.warn('Can\'t set publications, failing silently.');
     }
   }
 });
