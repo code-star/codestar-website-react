@@ -1,12 +1,10 @@
 import React, { FC } from 'react';
-import { translate, TranslationFunction } from 'react-i18next';
 import compose from 'recompose/compose';
 import { lifecycle } from 'recompose';
 import PublicationCard from '../PublicationCard/PublicationCard';
 import { getCachedPublications, IPublication } from "../../../publicationsService";
 
 type PropsInner = {
-  t: TranslationFunction;
   publications: IPublication[];
 }
 
@@ -31,6 +29,5 @@ const withUserData = lifecycle({
 });
 
 export default compose<Props, PropsOuter>(
-  withUserData,
-  translate(['about'], { wait: true })
+  withUserData
 )(Publications);
