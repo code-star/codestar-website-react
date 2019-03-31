@@ -14,10 +14,6 @@ type PropsOuter = {}
 
 type Props = PropsInner & PropsOuter;
 
-// TODO intro text above publications incl translations
-// TODO combine Medium from API and other publications from static JSON
-// TODO /blog
-
 export const Publications: FC<Props> = ({publications = []}) => {
   const publicationCards = publications.map((p) => <PublicationCard key={p.id} publication={p}></PublicationCard>);
   return (<>{publicationCards}</>);

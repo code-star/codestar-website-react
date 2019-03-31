@@ -43,6 +43,9 @@ export const About: FC<IPropsInner> = ({ t, classes }) => {
   const [siteText0, siteText1] = t('SITE_TEXTS', {
     returnObjects: true,
   });
+  const [publicationsText0, publicationsText1] = t('PUBLICATIONS_TEXTS', {
+    returnObjects: true,
+  });
   return (
     <>
       <Section scrollname={"attract"} className="py-5">
@@ -117,7 +120,13 @@ export const About: FC<IPropsInner> = ({ t, classes }) => {
               <Typography variant="h2" color="inherit" gutterBottom>
                 {t('PUBLICATIONS_TITLE')}
               </Typography>
-              [our colleagues are published in magazines and blogs. also see our video feed for their talks at conferences.]
+              <Typography variant="body1" color="inherit" gutterBottom>
+                {publicationsText0}
+                <a href="https://youtube.com/codestar">
+                  Codestar YouTube
+                </a>
+                {publicationsText1}
+              </Typography>
               <Publications />
             </div>
           </div>
