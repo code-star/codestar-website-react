@@ -11,7 +11,9 @@ import TeamCarousel from '../../Molecules/TeamCarousel/TeamCarousel';
 import Section from '../../Molecules/Section/Section';
 import { CustomButton } from '../../Atoms/CustomButton/CustomButton';
 import { withStyles } from '@material-ui/core/styles';
+import Publications from "../../Molecules/Publications/Publications";
 
+// TODO TODO Service worker caching issue? https://developers.google.com/web/tools/workbox/guides/service-worker-checklist
 
 interface IPropsInner {
   classes: any;
@@ -39,6 +41,9 @@ const styles = (theme: Theme) => createStyles({
 
 export const About: FC<IPropsInner> = ({ t, classes }) => {
   const [siteText0, siteText1] = t('SITE_TEXTS', {
+    returnObjects: true,
+  });
+  const [publicationsText0, publicationsText1] = t('PUBLICATIONS_TEXTS', {
     returnObjects: true,
   });
   return (
@@ -105,23 +110,28 @@ export const About: FC<IPropsInner> = ({ t, classes }) => {
           </div>
         </Container>
       </Section>
-      {/*<Section
+      <Section
         scrollname={"publications"}
         className="py-5"
       >
         <Container>
           <div className="row justify-content-center">
-            <div className="col-12 col-md-8">
-              <Typography variant="h4" align="center" className="mb-3">
+            <div className={`col-12 col-md-8 ${classes.text}`}>
+              <Typography variant="h2" color="inherit" gutterBottom>
                 {t('PUBLICATIONS_TITLE')}
               </Typography>
-              <Typography variant="body1" className="mb-3">
-                NYI
+              <Typography variant="body1" color="inherit" gutterBottom>
+                {publicationsText0}
+                <a href="https://youtube.com/codestar">
+                  Codestar YouTube
+                </a>
+                {publicationsText1}
               </Typography>
+              <Publications />
             </div>
           </div>
         </Container>
-      </Section>*/}
+      </Section>
     </>
   );
 };

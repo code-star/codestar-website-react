@@ -8,5 +8,9 @@
     "Bij Codestar werken we met veel plezier bij klanten, en daarnaast zorgen we er voor dat we elke vrijdag bij elkaar zijn om kennis uit te wisselen en contact te houden. In deze tijd werken we aan projecten, maar ook aan R&D. Op die manier is deze site ook ontstaan: als showcase voor de stack waar wij mee (willen) werken. We hebben hiervoor onder andere gebruik gemaakt van CRA, TypeScript, React, Storybook, CSS Modules, AWS Lamdba en Jest. En natuurlijk is het open source. Kijk in de ",
     " voor meer details."
   ],
-  "PUBLICATIONS_TITLE": "Publicaties"
+  "PUBLICATIONS_TITLE": "Publicaties",
+  "PUBLICATIONS_TEXTS": [
+    "Onze collega's hebben publicaties in tijdschriften en op blogs. Zie ook het ",
+    " kanaal voor onze talks op congressen."
+  ]
 }
