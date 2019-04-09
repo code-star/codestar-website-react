@@ -1,17 +1,15 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { translate, TranslationFunction } from 'react-i18next';
-import { Theme, Typography, createStyles} from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import compose from 'recompose/compose';
-import grey from '@material-ui/core/colors/grey';
-import blue from '@material-ui/core/colors/blue';
 import Container from '../../../Container/Container';
 import OurStack from '../../../OurStack/OurStack';
 import TeamCarousel from '../../Molecules/TeamCarousel/TeamCarousel';
 import Section from '../../Molecules/Section/Section';
 import { CustomButton } from '../../Atoms/CustomButton/CustomButton';
 import { withStyles } from '@material-ui/core/styles';
-import Publications from "../../Molecules/Publications/Publications";
+import { styles } from './About.styles';
 
 // TODO TODO Service worker caching issue? https://developers.google.com/web/tools/workbox/guides/service-worker-checklist
 
@@ -22,37 +20,19 @@ interface IPropsInner {
 
 interface IPropsOuter {}
 
-const styles = (theme: Theme) => createStyles({
-  text: {
-    color: 'white',
-    "&& h2": {
-      fontSize: "2rem",
-      fontWeight: 500
-    }
-  },
-  teamSection: {
-    backgroundColor: grey[200]
-  },
-  siteSection: {
-    backgroundColor: blue[900],
-    color: grey[200]
-  }
-});
-
 export const About: FC<IPropsInner> = ({ t, classes }) => {
   const [siteText0, siteText1] = t('SITE_TEXTS', {
     returnObjects: true,
   });
-  const [publicationsText0, publicationsText1] = t('PUBLICATIONS_TEXTS', {
-    returnObjects: true,
-  });
   return (
     <>
-      <Section scrollname={"attract"} className="py-5">
+      <Section scrollname={'attract'} className="py-5">
         <Container marginTopNavBar>
           <div className="row justify-content-center">
             <div className={`col-12 col-md-8 ${classes.text}`}>
-              <Typography variant="h2" color="inherit" gutterBottom>{t('ABOUT_ATTRACT_TITLE')}</Typography>
+              <Typography variant="h2" color="inherit" gutterBottom>
+                {t('ABOUT_ATTRACT_TITLE')}
+              </Typography>
               <Typography variant="body1" color="inherit" gutterBottom>
                 {t('ABOUT_ATTRACT_TEXT')}
               </Typography>
@@ -75,7 +55,7 @@ export const About: FC<IPropsInner> = ({ t, classes }) => {
           </div>
         </Container>
       </Section>
-      <Section scrollname={"team"} className={`py-5 ${classes.teamSection}`} >
+      <Section scrollname={'team'} className={`py-5 ${classes.teamSection}`}>
         <Container>
           <div className="row">
             <div className="col">
@@ -89,10 +69,7 @@ export const About: FC<IPropsInner> = ({ t, classes }) => {
           <TeamCarousel />
         </div>
       </Section>
-      <Section
-        scrollname={"site"}
-        className={`py-5 ${classes.siteSection}`}
-      >
+      <Section scrollname={'site'} className={`py-5 ${classes.siteSection}`}>
         <Container>
           <div className="row justify-content-center">
             <div className={`col-12 col-md-8 ${classes.text}`}>
@@ -106,28 +83,6 @@ export const About: FC<IPropsInner> = ({ t, classes }) => {
                 </a>
                 {siteText1}
               </Typography>
-            </div>
-          </div>
-        </Container>
-      </Section>
-      <Section
-        scrollname={"publications"}
-        className="py-5"
-      >
-        <Container>
-          <div className="row justify-content-center">
-            <div className={`col-12 col-md-8 ${classes.text}`}>
-              <Typography variant="h2" color="inherit" gutterBottom>
-                {t('PUBLICATIONS_TITLE')}
-              </Typography>
-              <Typography variant="body1" color="inherit" gutterBottom>
-                {publicationsText0}
-                <a href="https://youtube.com/codestar">
-                  Codestar YouTube
-                </a>
-                {publicationsText1}
-              </Typography>
-              <Publications />
             </div>
           </div>
         </Container>

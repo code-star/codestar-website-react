@@ -132,6 +132,14 @@ class NavBar extends React.Component<NavBarProps> {
             <EventsButton label="Events" nextEvent={this.props.nextEvent} />
             <CustomButton
               component={Link}
+              to="/publications"
+              color="inherit"
+              className={props.classes.button}
+            >
+              {t('PUBLICATIONS')}
+            </CustomButton>
+            <CustomButton
+              component={Link}
               to="/cases"
               color="inherit"
               className={props.classes.button}

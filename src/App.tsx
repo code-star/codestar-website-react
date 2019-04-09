@@ -30,12 +30,15 @@ const AsyncJobDescription = fullHeightAsyncComponent<JobDescriptionOuterProps>(
   import('./JobDescription/JobDescription')
 );
 const AsyncContact = fullHeightAsyncComponent(import('./Contact/Contact'));
-const AsyncCodeChallange = fullHeightAsyncComponent(
+const AsyncCodeChallenge = fullHeightAsyncComponent(
   import('./components/Pages/CodeChallenge/CodeChallenge')
 );
 const AsyncNotFound = fullHeightAsyncComponent(import('./NotFound/NotFound'));
 const AsyncEvents = fullHeightAsyncComponent(
   import('./containers/EventsContainer/EventsContainer')
+);
+const AsyncPublications = fullHeightAsyncComponent(
+  import('./components/Pages/Publications/Publications')
 );
 
 const sections = ['', 'cases', 'about', 'jobs', 'contact'];
@@ -81,7 +84,8 @@ class App extends Component<AppProps, AppState> {
               <Route path="/about" component={AsyncAbout} />
               <Route path="/contact" component={AsyncContact} />
               <Route path="/events" component={AsyncEvents} />
-              <Route path="/code-challenge" component={AsyncCodeChallange} />
+              <Route path="/publications" component={AsyncPublications} />
+              <Route path="/code-challenge" component={AsyncCodeChallenge} />
               <Route path="/404" component={AsyncNotFound} />
               <Redirect to="/404" />
             </Switch>
