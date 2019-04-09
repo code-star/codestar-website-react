@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PublicationsPage /> renders the publication page 1`] = `
+<section
+  className="
+			null
+			WithTheme(WithWidth(Section))-section"
+  name="publications"
+>
+  <div
+    className="WithTheme(WithWidth(Section))-element"
+    name="publications"
+  />
+  <div
+    className="
+			container
+			
+			
+			
+			WithTheme(WithWidth(Container))-marginTopNavBar
+			
+			
+		"
+  >
+    <div
+      className="row justify-content-center"
+    >
+      <div
+        className="col-12 col-md-8 undefined"
+      >
+        <mock-fade
+          in={true}
+          timeout={2000}
+        >
+          <div
+            className="mb-4"
+          >
+            <h2
+              className="MuiTypography-root MuiTypography-h2 MuiTypography-colorInherit MuiTypography-gutterBottom"
+            >
+              PUBLICATIONS_TITLE
+            </h2>
+            <p
+              className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInherit MuiTypography-gutterBottom"
+            >
+              P
+              <a
+                href="https://youtube.com/codestar"
+              >
+                Codestar YouTube
+              </a>
+              U
+            </p>
+          </div>
+        </mock-fade>
+        <mock-slide
+          direction="up"
+          in={true}
+          timeout={1000}
+        >
+          <div>
+            <mock-publications />
+          </div>
+        </mock-slide>
+      </div>
+    </div>
+  </div>
+</section>
+`;
