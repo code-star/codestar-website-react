@@ -39,21 +39,21 @@ exports[`<TrainingsSection /> must match the static training section 1`] = `
         <div
           className="mt-4"
         >
-          <h1
-            className="MuiTypography-root MuiTypography-display3 d-inline text-white p-2 bg-dark"
+          <h2
+            className="MuiTypography-root MuiTypography-h2 d-inline text-white p-2 bg-dark"
           >
             TRAININGS
-          </h1>
+          </h2>
         </div>
         <div
           className="my-3"
         >
-          <h1
-            className="MuiTypography-root MuiTypography-headline d-inline text-white p-2"
+          <h5
+            className="MuiTypography-root MuiTypography-h5 d-inline text-white p-2"
           >
             RxJS, Scala, TypeScript 
             TRAININGS
-          </h1>
+          </h5>
         </div>
         <div
           className="my-2"
