@@ -48,6 +48,11 @@ exports[`renders the details for the Events header 1`] = `
         >
           <div
             className="MuiCardMedia-root media"
+            style={
+              Object {
+                "backgroundImage": "url(\\"foo.png\\")",
+              }
+            }
             title="Data Oriented Design with Maxim Zaks"
           />
           <div
@@ -60,6 +65,7 @@ exports[`renders the details for the Events header 1`] = `
               className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-flat MuiButton-flatPrimary MuiCardActions-action"
               href="https://www.codestar.nl"
               onBlur={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -75,7 +81,7 @@ exports[`renders the details for the Events header 1`] = `
               <span
                 className="MuiButton-label"
               >
-                
+                SIGN_UP
               </span>
               <span
                 className="MuiTouchRipple-root"

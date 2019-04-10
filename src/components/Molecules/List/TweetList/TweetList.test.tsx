@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 
 import TweetList from './TweetList';
 import { CardContent } from '@material-ui/core';
+import renderToJSON from "../../../../setupTests";
 
 const someTweets = [
   {
@@ -14,6 +15,7 @@ const someTweets = [
     text: 'some awesome text',
     favorite_count: 3,
     retweet_count: 5,
+    id: 1
   },
   {
     user: {
@@ -24,10 +26,9 @@ const someTweets = [
     text: 'some other awesome text',
     favorite_count: 1,
     retweet_count: 2,
+    id: 2
   },
 ];
-
-const globalAny: any = global;
 
 const renderShallow = (tweets: any) => {
   return shallow(
@@ -39,16 +40,16 @@ describe('<TweetList />', () => {
   let wrapper;
 
   describe('Instance', () => {
-    test('must have an instance of CardContent', () => {
+    it('must have an instance of CardContent', () => {
       wrapper = renderShallow(someTweets);
       expect(wrapper.find(CardContent)).toHaveLength(1);
     });
   });
 
   describe('Snaphot', () => {
-    test('must match some tweet list', () => {
+    it('must match some tweet list', () => {
       expect(
-        globalAny.renderToJSON(renderShallow(someTweets))
+        renderToJSON(renderShallow(someTweets).get(0))
       ).toMatchSnapshot();
     });
   });

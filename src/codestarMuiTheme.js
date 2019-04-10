@@ -16,6 +16,7 @@ const theme = createMuiTheme({
     },
   },
   typography: {
+    useNextVariants: true,
     /* menu and headers NeutraText, paragraphs Open Sans */
     // fontFamily: 'NeutraText',
     // fontFamily: 'OpenSans',

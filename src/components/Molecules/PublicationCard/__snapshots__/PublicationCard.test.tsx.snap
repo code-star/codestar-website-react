@@ -65,6 +65,7 @@ exports[`<PublicationCard /> renders a publication 1`] = `
       className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-flat MuiButton-flatPrimary MuiButton-sizeSmall MuiCardActions-action"
       href="https://medium.com/codestar-blog/slug"
       onBlur={[Function]}
+      onContextMenu={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -91,6 +92,7 @@ exports[`<PublicationCard /> renders a publication 1`] = `
       className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-flat MuiButton-flatPrimary MuiButton-sizeSmall"
       href="https://twitter.com/home?status=Codestar%20article%20%22Test%20Title%22%20by%20Test%20Author%0Ahttps://medium.com/codestar-blog/slug"
       onBlur={[Function]}
+      onContextMenu={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -140,6 +142,7 @@ exports[`<PublicationCard /> renders a publication 1`] = `
       className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-flat MuiButton-flatPrimary MuiButton-sizeSmall"
       href="https://www.linkedin.com/shareArticle?mini=true&url=https://medium.com/codestar-blog/slug&title=Test%20Title&summary=Codestar%20article%20%22Test%20Title%22%20by%20Test%20Author"
       onBlur={[Function]}
+      onContextMenu={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -189,6 +192,7 @@ exports[`<PublicationCard /> renders a publication 1`] = `
       className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-flat MuiButton-flatPrimary MuiButton-sizeSmall"
       href="https://www.facebook.com/sharer/sharer.php?u=https://medium.com/codestar-blog/slug"
       onBlur={[Function]}
+      onContextMenu={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}

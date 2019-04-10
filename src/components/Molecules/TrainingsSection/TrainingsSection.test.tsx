@@ -1,5 +1,6 @@
-import { shallow } from 'enzyme';
-import TrainingsSection from './TrainingsSection';
+import { TrainingsSection } from './TrainingsSection';
+import renderer from 'react-test-renderer';
+import React from 'react';
 import { MemoryRouter } from 'react-router';
 
 jest.mock('react-i18next', () => ({
@@ -15,21 +16,18 @@ jest.mock('@material-ui/core/Grow', () => (Component: any) => {
   return <div>{Component.children}</div>;
 });
 
-const globalAny: any = global;
-
-const renderShallow = () => {
-  const React = require('react');
-  return shallow(
-    <MemoryRouter>
-      <TrainingsSection scrollname="trainings" />
-    </MemoryRouter>
-  );
-};
+// Mock for "t", the translate function from react-i18next
+const t = (text: string | string[]) => text;
 
 describe('<TrainingsSection />', () => {
-  describe('Snaphot', () => {
-    test('must match the static training section', () => {
-      expect(globalAny.renderToJSON(renderShallow())).toMatchSnapshot();
-    });
+  it('must match the static training section', () => {
+    const comp = renderer
+      .create(
+        <MemoryRouter>
+          <TrainingsSection t={t} scrollname="trainings" />
+        </MemoryRouter>
+      )
+      .toJSON();
+    expect(comp).toMatchSnapshot();
   });
 });

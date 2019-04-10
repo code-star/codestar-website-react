@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TrainingsSection /> Snaphot must match the static training section 1`] = `
+exports[`<TrainingsSection /> must match the static training section 1`] = `
 <section
   className="
 			section
@@ -42,7 +42,7 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
           <h1
             className="MuiTypography-root MuiTypography-display3 d-inline text-white p-2 bg-dark"
           >
-            
+            TRAININGS
           </h1>
         </div>
         <div
@@ -52,7 +52,7 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
             className="MuiTypography-root MuiTypography-headline d-inline text-white p-2"
           >
             RxJS, Scala, TypeScript 
-            
+            TRAININGS
           </h1>
         </div>
         <div
@@ -63,6 +63,7 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
             href="/contact"
             onBlur={[Function]}
             onClick={[Function]}
+            onContextMenu={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
             onKeyUp={[Function]}
@@ -78,7 +79,7 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
             <span
               className="MuiButton-label"
             >
-              
+              BOOK_A_TRAINING
             </span>
             <span
               className="MuiTouchRipple-root"
@@ -95,7 +96,7 @@ exports[`<TrainingsSection /> Snaphot must match the static training section 1`]
           <p
             className="MuiTypography-root MuiTypography-body1 d-inline text-white"
           >
-            
+            TRAININGS_TEXT
           </p>
           <div
             className="row m-1 mt-2"
