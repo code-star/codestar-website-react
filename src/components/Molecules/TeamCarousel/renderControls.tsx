@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
+import { Fab } from '@material-ui/core';
 
 import {
   NavigateBefore as NavigateBeforeIcon,
@@ -8,17 +8,17 @@ import {
 
 export const leftControls: any = ({ previousSlide }: any) => {
   return (
-    <Button mini variant="fab" onClick={previousSlide}>
+    <Fab size="small" onClick={previousSlide}>
       <NavigateBeforeIcon />
-    </Button>
+    </Fab>
   );
 };
 
 export const rightControls: any = ({ nextSlide }: any) => {
   return (
-    <Button mini variant="fab" onClick={nextSlide}>
+    <Fab size="small" onClick={nextSlide}>
       <NavigateNextIcon />
-    </Button>
+    </Fab>
   );
 };
 

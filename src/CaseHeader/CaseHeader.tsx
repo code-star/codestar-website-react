@@ -67,7 +67,7 @@ class CaseHeader extends React.Component<
             <div className="col-12 col-lg-6">
               <div className="mt-4">
                 <Typography
-                  variant="display3"
+                  variant="h3"
                   className={`d-inline text-white p-2 bg-dark ${
                     css.projectCaseClient
                   }`}
@@ -77,7 +77,7 @@ class CaseHeader extends React.Component<
               </div>
               <div className="my-3">
                 <Typography
-                  variant="headline"
+                  variant="h5"
                   className={`d-inline text-white p-2 ${css.projectCaseTitle}`}
                 >
                   {props.title}
@@ -98,7 +98,7 @@ class CaseHeader extends React.Component<
             </div>
             <div className="col-12 col-md-6">
               <div className="bg-dark p-3">
-                <Typography variant="body1" className="d-inline text-white">
+                <Typography className="d-inline text-white">
                   <InlineLogo dark>{props.intro}</InlineLogo>
                 </Typography>
               </div>

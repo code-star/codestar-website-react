@@ -53,7 +53,7 @@ export class VideosSection extends React.Component<
           <div className="col-12">
             <Typography
               align="center"
-              variant="display4"
+              variant="h1"
               className={styles.sectionTitle}
             >
               {t('VIDEOS')}

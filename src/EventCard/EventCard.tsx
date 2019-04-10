@@ -51,7 +51,7 @@ export class EventCard extends Component<
           title={`${formattedDate} - ${event.name}`}
         />
         <CardContent className={css.content}>
-          <Typography gutterBottom variant="headline" component="h2">
+          <Typography gutterBottom variant="h5" component="h2">
             {formattedDate} - {event.name}
           </Typography>
         </CardContent>

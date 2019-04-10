@@ -56,10 +56,10 @@ class JobDescription extends React.Component<
           <Container marginTopNavBar>
             <div className="row justify-content-center">
               <div className="col-12 col-lg-8">
-                <Typography variant="display3" gutterBottom>
+                <Typography variant="h2" gutterBottom>
                   {title}
                 </Typography>
-                <Typography variant="headline" gutterBottom>
+                <Typography variant="h5" gutterBottom>
                   {tagline}
                 </Typography>
                 <p>
@@ -88,7 +88,7 @@ class JobDescription extends React.Component<
 
                 <Button
                   className={props.classes.button}
-                  variant="raised"
+                  variant="contained"
                   color="primary"
                   component="a"
                   href="mailto:codestar@ordina.nl"

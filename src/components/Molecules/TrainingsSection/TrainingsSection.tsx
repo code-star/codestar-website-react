@@ -45,7 +45,7 @@ export const TrainingsSection: SFC<IPropsInner & IPropsOuter> = ({
         <div className="col-12 col-lg-6">
           <div className="mt-4">
             <Typography
-              variant="display3"
+              variant="h2"
               className={`d-inline text-white p-2 bg-dark`}
             >
               {t('TRAININGS')}
@@ -53,7 +53,7 @@ export const TrainingsSection: SFC<IPropsInner & IPropsOuter> = ({
           </div>
           <div className="my-3">
             <Typography
-              variant="headline"
+              variant="h5"
               className={`d-inline text-white p-2`}
             >
               RxJS, Scala, TypeScript {t('TRAININGS')}
@@ -68,7 +68,7 @@ export const TrainingsSection: SFC<IPropsInner & IPropsOuter> = ({
         </div>
         <div className="col-12 col-md-6">
           <div className="bg-dark p-3">
-            <Typography variant="body1" className="d-inline text-white">
+            <Typography className="d-inline text-white">
               {t('TRAININGS_TEXT')}
             </Typography>
             <div className="row m-1 mt-2">

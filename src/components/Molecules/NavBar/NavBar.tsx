@@ -101,7 +101,7 @@ class NavBar extends React.Component<NavBarProps> {
           </Hidden>
           <Typography
             className={props.classes.flex}
-            variant="title"
+            variant="h6"
             color="inherit"
           >
             <Link to="/">
