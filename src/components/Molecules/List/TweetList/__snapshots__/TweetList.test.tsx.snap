@@ -12,7 +12,7 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
     >
       <div
         aria-label="Speaker Twitter Avatar"
-        className="MuiAvatar-root"
+        className="MuiAvatar-root MuiAvatar-colorDefault"
       />
     </div>
     <div
@@ -94,6 +94,7 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
       className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textSecondary MuiButton-flat MuiButton-flatSecondary MuiButton-sizeSmall MuiCardActions-action"
       href="https://twitter.com/someAwesomeScreenName?lang=en"
       onBlur={[Function]}
+      onContextMenu={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}

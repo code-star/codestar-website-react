@@ -28,16 +28,16 @@ exports[`renders the details for the Events header 1`] = `
       <div
         className="col-12 col-md-8"
       >
-        <h2
-          className="MuiTypography-root MuiTypography-title MuiTypography-alignCenter"
+        <h6
+          className="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter"
         >
           Data Oriented Design with Maxim Zaks
-        </h2>
-        <h3
-          className="MuiTypography-root MuiTypography-subheading MuiTypography-gutterBottom MuiTypography-alignCenter"
+        </h6>
+        <h6
+          className="MuiTypography-root MuiTypography-subtitle1 MuiTypography-gutterBottom MuiTypography-alignCenter"
         >
           26 september 2018
-        </h3>
+        </h6>
         descriptionElem
       </div>
       <div
@@ -48,6 +48,11 @@ exports[`renders the details for the Events header 1`] = `
         >
           <div
             className="MuiCardMedia-root media"
+            style={
+              Object {
+                "backgroundImage": "url(\\"foo.png\\")",
+              }
+            }
             title="Data Oriented Design with Maxim Zaks"
           />
           <div
@@ -60,6 +65,7 @@ exports[`renders the details for the Events header 1`] = `
               className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-flat MuiButton-flatPrimary MuiCardActions-action"
               href="https://www.codestar.nl"
               onBlur={[Function]}
+              onContextMenu={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
@@ -75,7 +81,7 @@ exports[`renders the details for the Events header 1`] = `
               <span
                 className="MuiButton-label"
               >
-                
+                SIGN_UP
               </span>
               <span
                 className="MuiTouchRipple-root"

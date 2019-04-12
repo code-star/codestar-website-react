@@ -1,6 +1,6 @@
 import { Card, CardContent, CardMedia, Typography } from '@material-ui/core';
 import Carousel from 'nuka-carousel';
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 import { getResponsiveImageUrl } from '../../../ResponsiveImage/ResponsiveImage';
 import { leftControls, rightControls } from './renderControls';
 import Team from './Team.json';
@@ -16,7 +16,7 @@ function shuffleArray(array: any[]) {
 
 const cardWidth = 300;
 
-const TeamCarousel: SFC = () => {
+const TeamCarousel: FC = () => {
   return (
     <Carousel
       slideWidth={`${cardWidth}px`}
@@ -44,7 +44,7 @@ const TeamCarousel: SFC = () => {
               title={person.name}
             />
             <CardContent>
-              <Typography variant="headline" component="h3">
+              <Typography variant="h5" component="h3">
                 {person.name}
               </Typography>
               <Typography

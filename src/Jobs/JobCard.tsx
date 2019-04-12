@@ -53,7 +53,7 @@ class JobCard extends React.Component<JobCardProps> {
             title={title}
           />
           <CardContent>
-            <Typography gutterBottom variant="headline" component="h2">
+            <Typography gutterBottom variant="h5" component="h2">
               {title}
             </Typography>
             <Typography component="p">{short_description}</Typography>

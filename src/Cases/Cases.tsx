@@ -96,11 +96,11 @@ class Cases extends React.Component<CasesProps, CasesState> {
                     width="100%"
                   />
                 </div>
-                <Typography variant="subheading" className={classes.whiteText}>
+                <Typography variant="subtitle1" className={classes.whiteText}>
                   {t('CASES_INTRO_1')}
                 </Typography>
                 <Typography
-                  variant="subheading"
+                  variant="subtitle1"
                   className={`${classes.whiteText} mt-2`}
                 >
                   {t('CASES_INTRO_2')}
