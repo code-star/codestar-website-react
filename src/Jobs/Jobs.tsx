@@ -54,7 +54,7 @@ class Jobs extends React.Component<JobsProps> {
         </section>
         <section className="pb-3 pt-5" style={{ backgroundColor: '#eeeeee' }}>
           <Container>
-            <Typography variant="display1" className="mt-3">
+            <Typography variant="h4" className="mt-3">
               <InlineLogo>Working at Codestar</InlineLogo>
             </Typography>
             <div className="row">

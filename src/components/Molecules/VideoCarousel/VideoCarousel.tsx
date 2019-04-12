@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 import { VideoItem } from '../../../containers/EventsContainer/fetchYouTubePlaylist';
 import Carousel from 'nuka-carousel';
 import {
@@ -17,7 +17,7 @@ type VideoCarouselProps = Readonly<{
   onSelectVideo: (video: VideoItem) => void;
 }>;
 
-export const VideoCarousel: SFC<VideoCarouselProps> = props => {
+export const VideoCarousel: FC<VideoCarouselProps> = props => {
   return (
     <Carousel
       slideWidth={`${props.cardWidth}px`}
@@ -40,7 +40,7 @@ export const VideoCarousel: SFC<VideoCarouselProps> = props => {
             title={video.title}
           />
           <CardContent>
-            <Typography variant="headline" component="h3" title={video.title}>
+            <Typography variant="h5" title={video.title}>
               <Truncate text={video.title} limit={40} />
             </Typography>
             <p className={styles.publishedAt}>
@@ -58,7 +58,7 @@ type TruncateProps = Readonly<{
   text: string;
 }>;
 
-const Truncate: SFC<TruncateProps> = ({ limit, text }) => {
+const Truncate: FC<TruncateProps> = ({ limit, text }) => {
   const textToRender =
     text.length > limit ? `${text.substr(0, limit)}...` : text;
   return <>{textToRender}</>;

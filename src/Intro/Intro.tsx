@@ -78,7 +78,7 @@ class Intro extends React.Component<IntroProps> {
         .map((line: string, i: number) => (
           <Typography
             key={`intro-${i}`}
-            variant="subheading"
+            variant="subtitle1"
             className={`${props.classes.whiteText} ${
               firstClass && i === 0 ? firstClass : ''
             }`}
@@ -124,11 +124,11 @@ class Intro extends React.Component<IntroProps> {
                     {t('NEXT_STEP_TITLE')}
                   </Typography>
 
-                  <Typography variant="subheading" gutterBottom>
+                  <Typography variant="subtitle1" gutterBottom>
                     {t('NEXT_STEP_CONTENT_1')}
                   </Typography>
 
-                  <Typography variant="subheading" gutterBottom>
+                  <Typography variant="subtitle1" gutterBottom>
                     {t('NEXT_STEP_CONTENT_2')}
                   </Typography>
                 </InlineLogo>

@@ -10,7 +10,8 @@ jest.mock(
   () => () => (rule: any, styleSheet: any) => `${styleSheet.options.name}-${rule.key}`
 );
 
-const globalAny: any = global;
-globalAny.renderToJSON = (component: any) => {
+const renderToJSON = (component: any) => {
   return renderer.create(component).toJSON();
 };
+
+export default renderToJSON;

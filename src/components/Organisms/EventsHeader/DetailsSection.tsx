@@ -29,10 +29,10 @@ export const DetailsSection: SFC<
       <Container center>
         <div className="row">
           <div className="col-12 col-md-8">
-            <Typography align="center" variant="title">
+            <Typography align="center" variant="h6">
               {mEvent.name}
             </Typography>
-            <Typography gutterBottom align="center" variant="subheading">
+            <Typography gutterBottom align="center" variant="subtitle1">
               {formattedDate}
             </Typography>
             {descriptionElem}

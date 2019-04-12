@@ -1,14 +1,14 @@
 import React from 'react';
-import { DetailsSection } from './DetailsSection';
 import renderer from 'react-test-renderer';
+import { DetailsSection } from './DetailsSection';
 import { IMeetupEvent } from '../../../containers/EventsContainer/EventsContainer.interfaces';
 
 // Mock for "t", the translate function from react-i18next
-const t = () => '';
+const t = (text: string | string[]) => text;
 
 it('renders the details for the Events header', () => {
   const meetupEvent: IMeetupEvent = {
-    coverUrl: '',
+    coverUrl: 'foo.png',
     link: 'https://www.codestar.nl',
     name: 'Data Oriented Design with Maxim Zaks',
     time: 123,

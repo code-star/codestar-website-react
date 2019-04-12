@@ -16,6 +16,7 @@ import {
   Code as CodeIcon,
   Email as EmailIcon,
   Event as EventIcon,
+  Notes as NotesIcon
 } from '@material-ui/icons';
 
 type SideMenuProps = any;
@@ -32,6 +33,11 @@ const list = [
     icon: <EventIcon />,
     link: '/events',
     canHaveNotification: true,
+  },
+  {
+    text: 'PUBLICATIONS',
+    icon: <NotesIcon />,
+    link: '/publications',
   },
   {
     text: 'Cases',
