@@ -54,7 +54,7 @@
     "test:watchAll:verbose": "npm run test -- --watchAll --verbose",
     "test:watchChanged:silent": "npm run test -- --watch --onlyChanged --silent",
     "test:watchChanged:verbose": "npm run test -- --watch --onlyChanged --verbose",
-    "build": "npm run test:coverage -- --bail --ci && react-scripts build",
+    "build": "react-scripts build",
     "precommit": "lint-staged",
     "prettier": "prettier --write ./src/**/*.{js,jsx,ts,tsx}",
     "storybook": "start-storybook -p 6006",

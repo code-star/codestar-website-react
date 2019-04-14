@@ -52,6 +52,8 @@ export default function register() {
   }
 }
 
+
+// https://medium.com/progressive-web-apps/pwa-create-a-new-update-available-notification-using-service-workers-18be9168d717
 function registerValidSW(swUrl) {
   navigator.serviceWorker
     .register(swUrl)
@@ -65,12 +67,19 @@ function registerValidSW(swUrl) {
               // the fresh content will have been added to the cache.
               // It's the perfect time to display a "New content is
               // available; please refresh." message in your web app.
+              // console.log(self.clients)
               console.log('New content is available; please refresh.');
+              // this works: document.location.href = document.location.href + "?foo"
+              const message = "New content is available, restart the tab to refresh.4";
+              alert(message)
+              // window.send_message_to_all_clients('Hello')
+              // navigator.serviceWorker.controller.postMessage(message);
             } else {
               // At this point, everything has been precached.
               // It's the perfect time to display a
               // "Content is cached for offline use." message.
               console.log('Content is cached for offline use.');
+              alert('Parts of this site are available for offline use.')
             }
           }
         };

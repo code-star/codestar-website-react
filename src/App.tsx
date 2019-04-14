@@ -57,6 +57,17 @@ class App extends Component<AppProps, AppState> {
       this.updateBackgroundColor(location.pathname)
     );
     this.updateBackgroundColor(this.history.location.pathname);
+
+    // navigator.serviceWorker && navigator.serviceWorker.addEventListener('message', event => {
+    //   console.log('MY SERVICEWORKER MESSAGE', event);
+    // });
+    if('serviceWorker' in navigator){
+      // Handler for messages coming from the service worker
+      navigator.serviceWorker.addEventListener('message', function(event){
+        console.log("Client 1 Received Message: " + event.data, event);
+        // event.ports[0].postMessage("Client 1 Says 'Hello back!'");
+      });
+    }
   }
 
   public render() {
