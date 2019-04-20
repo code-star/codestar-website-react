@@ -57,42 +57,55 @@ export default function register(): Promise<ServiceWorkerRegistration | void> {
   return Promise.resolve();
 }
 
+type SendMessageFn = (_:string) => void;
+
+export const onRegistration = (sendMessage:SendMessageFn) => (registration: ServiceWorkerRegistration | void) => {
+  if (!registration) {
+    return;
+  }
+  registration.onupdatefound = () => {
+    const installingWorker = registration.installing;
+    if (!installingWorker) {
+      return;
+    }
+    installingWorker.onstatechange = () => {
+      if (installingWorker.state === 'installed') {
+        if (navigator.serviceWorker.controller) {
+          // At this point, the old content will have been purged and
+          // the fresh content will have been added to the cache.
+          // It's the perfect time to display a "New content is
+          // available; please refresh." message in your web app.
+          // console.log(self.clients)
+          console.log('New content is available; please refresh.');
+          // this works: document.location.href = document.location.href + "?foo"
+          const message =
+            'New content is available, restart the tab to refresh';
+          // alert(message)
+          // this.setState({ message });
+          sendMessage(message);
+          // window.send_message_to_all_clients('Hello')
+          // navigator.serviceWorker.controller.postMessage(message);
+        } else {
+          // At this point, everything has been precached.
+          // It's the perfect time to display a
+          // "Content is cached for offline use." message.
+          console.log('Content is cached for offline use.');
+          // alert('Parts of this site are available for offline use1.')
+          const message = 'Parts of this site are available for offline use';
+          // this.setState({
+          //   message: 'Parts of this site are available for offline use.a',
+          // });
+          sendMessage(message);
+        }
+      }
+    };
+  };
+};
+
 // https://medium.com/progressive-web-apps/pwa-create-a-new-update-available-notification-using-service-workers-18be9168d717
 function registerValidSW(swUrl: string): Promise<ServiceWorkerRegistration | void> {
   return navigator.serviceWorker
-    .register(swUrl)
-    // TODO Remove
-    // .then(registration => {
-    //   registration.onupdatefound = () => {
-    //     const installingWorker = registration.installing;
-    //     installingWorker.onstatechange = () => {
-    //       if (installingWorker.state === 'installed') {
-    //         if (navigator.serviceWorker.controller) {
-    //           // At this point, the old content will have been purged and
-    //           // the fresh content will have been added to the cache.
-    //           // It's the perfect time to display a "New content is
-    //           // available; please refresh." message in your web app.
-    //           // console.log(self.clients)
-    //           console.log('New content is available; please refresh.');
-    //           // this works: document.location.href = document.location.href + "?foo"
-    //           const message = "New content is available, restart the tab to refresh.6a";
-    //           alert(message)
-    //           // window.send_message_to_all_clients('Hello')
-    //           // navigator.serviceWorker.controller.postMessage(message);
-    //         } else {
-    //           // At this point, everything has been precached.
-    //           // It's the perfect time to display a
-    //           // "Content is cached for offline use." message.
-    //           console.log('Content is cached for offline use.');
-    //           alert('Parts of this site are available for offline use.')
-    //         }
-    //       }
-    //     };
-    //   };
-    // })
-    // .catch(error => {
-    //   console.error('Error during service worker registration:', error);
-    // });
+    .register(swUrl);
 }
 
 function checkValidServiceWorker(swUrl: string): Promise<ServiceWorkerRegistration | void> {
