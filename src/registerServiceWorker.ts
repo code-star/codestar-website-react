@@ -73,28 +73,14 @@ export const onRegistration = (sendMessage:SendMessageFn) => (registration: Serv
         if (navigator.serviceWorker.controller) {
           // At this point, the old content will have been purged and
           // the fresh content will have been added to the cache.
-          // It's the perfect time to display a "New content is
-          // available; please refresh." message in your web app.
-          // console.log(self.clients)
-          console.log('New content is available; please refresh.');
-          // this works: document.location.href = document.location.href + "?foo"
           const message =
             'New content is available, restart the tab to refresh';
-          // alert(message)
-          // this.setState({ message });
+          console.log(message);
           sendMessage(message);
-          // window.send_message_to_all_clients('Hello')
-          // navigator.serviceWorker.controller.postMessage(message);
         } else {
           // At this point, everything has been precached.
-          // It's the perfect time to display a
-          // "Content is cached for offline use." message.
-          console.log('Content is cached for offline use.');
-          // alert('Parts of this site are available for offline use1.')
           const message = 'Parts of this site are available for offline use';
-          // this.setState({
-          //   message: 'Parts of this site are available for offline use.a',
-          // });
+          console.log(message);
           sendMessage(message);
         }
       }
