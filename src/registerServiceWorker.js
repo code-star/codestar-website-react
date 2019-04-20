@@ -29,61 +29,74 @@ export default function register() {
       return;
     }
 
-    window.addEventListener('load', () => {
-      const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+    return new Promise(resolve => {
+      window.addEventListener('load', () => {
+        const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
 
-      if (isLocalhost) {
-        // This is running on localhost. Lets check if a service worker still exists or not.
-        checkValidServiceWorker(swUrl);
+        if (isLocalhost) {
+          // This is running on localhost. Lets check if a service worker still exists or not.
+          const checkedServiceWorkerRegistration = checkValidServiceWorker(swUrl);
 
-        // Add some additional logging to localhost, pointing developers to the
-        // service worker/PWA documentation.
-        navigator.serviceWorker.ready.then(() => {
-          console.log(
-            'This web app is being served cache-first by a service ' +
+          // Add some additional logging to localhost, pointing developers to the
+          // service worker/PWA documentation.
+          navigator.serviceWorker.ready.then(() => {
+            console.log(
+              'This web app is being served cache-first by a service ' +
               'worker. To learn more, visit https://goo.gl/SC7cgQ'
-          );
-        });
-      } else {
-        // Is not local host. Just register service worker
-        registerValidSW(swUrl);
-      }
-    });
+            );
+          });
+
+          resolve(checkedServiceWorkerRegistration);
+        } else {
+          // Is not local host. Just register service worker
+          resolve(registerValidSW(swUrl));
+        }
+      });
+    })
   }
 }
 
+
+// https://medium.com/progressive-web-apps/pwa-create-a-new-update-available-notification-using-service-workers-18be9168d717
 function registerValidSW(swUrl) {
-  navigator.serviceWorker
+  return navigator.serviceWorker
     .register(swUrl)
-    .then(registration => {
-      registration.onupdatefound = () => {
-        const installingWorker = registration.installing;
-        installingWorker.onstatechange = () => {
-          if (installingWorker.state === 'installed') {
-            if (navigator.serviceWorker.controller) {
-              // At this point, the old content will have been purged and
-              // the fresh content will have been added to the cache.
-              // It's the perfect time to display a "New content is
-              // available; please refresh." message in your web app.
-              console.log('New content is available; please refresh.');
-            } else {
-              // At this point, everything has been precached.
-              // It's the perfect time to display a
-              // "Content is cached for offline use." message.
-              console.log('Content is cached for offline use.');
-            }
-          }
-        };
-      };
-    })
-    .catch(error => {
-      console.error('Error during service worker registration:', error);
-    });
+    // .then(registration => {
+    //   registration.onupdatefound = () => {
+    //     const installingWorker = registration.installing;
+    //     installingWorker.onstatechange = () => {
+    //       if (installingWorker.state === 'installed') {
+    //         if (navigator.serviceWorker.controller) {
+    //           // At this point, the old content will have been purged and
+    //           // the fresh content will have been added to the cache.
+    //           // It's the perfect time to display a "New content is
+    //           // available; please refresh." message in your web app.
+    //           // console.log(self.clients)
+    //           console.log('New content is available; please refresh.');
+    //           // this works: document.location.href = document.location.href + "?foo"
+    //           const message = "New content is available, restart the tab to refresh.6a";
+    //           alert(message)
+    //           // window.send_message_to_all_clients('Hello')
+    //           // navigator.serviceWorker.controller.postMessage(message);
+    //         } else {
+    //           // At this point, everything has been precached.
+    //           // It's the perfect time to display a
+    //           // "Content is cached for offline use." message.
+    //           console.log('Content is cached for offline use.');
+    //           alert('Parts of this site are available for offline use.')
+    //         }
+    //       }
+    //     };
+    //   };
+    // })
+    // .catch(error => {
+    //   console.error('Error during service worker registration:', error);
+    // });
 }
 
 function checkValidServiceWorker(swUrl) {
   // Check if the service worker can be found. If it can't reload the page.
-  fetch(swUrl)
+  return fetch(swUrl)
     .then(response => {
       // Ensure service worker exists, and that we really are getting a JS file.
       if (
@@ -98,7 +111,7 @@ function checkValidServiceWorker(swUrl) {
         });
       } else {
         // Service worker found. Proceed as normal.
-        registerValidSW(swUrl);
+        return registerValidSW(swUrl);
       }
     })
     .catch(() => {
