@@ -13,7 +13,7 @@ import AsyncComponent, {
 } from './AsyncComponent/AsyncComponent';
 import NavContainer from './containers/NavContainer/NavContainer';
 import { JobDescriptionOuterProps } from './JobDescription/JobDescription';
-import registerServiceWorker from "./registerServiceWorker";
+import registerServiceWorker from './registerServiceWorker';
 
 function fullHeightAsyncComponent<Props>(component: ComponentTypePromise) {
   return (props: Props) => (
@@ -46,7 +46,7 @@ const sections = ['', 'cases', 'about', 'jobs', 'contact'];
 
 type AppProps = Readonly<{}>;
 type AppState = Readonly<{
-  message: string | null
+  message: string | null;
 }>;
 
 class App extends Component<AppProps, AppState> {
@@ -62,49 +62,56 @@ class App extends Component<AppProps, AppState> {
     this.updateBackgroundColor(this.history.location.pathname);
 
     this.state = {
-      message: null
+      message: null,
     };
 
-    // TODO convert registerServiceWorker to TS, remove anys, remove ts-ignore
     // TODO show Snackbar
     // TODO unit test
     // TODO convert to different kind of setState? see `private history: History`
     // TODO move body of `then` to util with callbacks?
 
-    // @ts-ignore
-    const serviceWorkerRegistration = registerServiceWorker();
-    // @ts-ignore
-    serviceWorkerRegistration.then(registration => {
-      registration.onupdatefound = () => {
-        const installingWorker = registration.installing;
-        installingWorker.onstatechange = () => {
-          if (installingWorker.state === 'installed') {
-            if (navigator.serviceWorker.controller) {
-              // At this point, the old content will have been purged and
-              // the fresh content will have been added to the cache.
-              // It's the perfect time to display a "New content is
-              // available; please refresh." message in your web app.
-              // console.log(self.clients)
-              console.log('New content is available; please refresh.');
-              // this works: document.location.href = document.location.href + "?foo"
-              const message = "New content is available, restart the tab to refresh.6ab";
-              // alert(message)
-              this.setState({message});
-              // window.send_message_to_all_clients('Hello')
-              // navigator.serviceWorker.controller.postMessage(message);
-            } else {
-              // At this point, everything has been precached.
-              // It's the perfect time to display a
-              // "Content is cached for offline use." message.
-              console.log('Content is cached for offline use.');
-              // alert('Parts of this site are available for offline use1.')
-              this.setState({message: "Parts of this site are available for offline use.a"});
-            }
+    const serviceWorkerRegistration: Promise<ServiceWorkerRegistration | void> = registerServiceWorker();
+    serviceWorkerRegistration
+      .then((registration: ServiceWorkerRegistration | void) => {
+        if (!registration) {
+          return;
+        }
+        registration.onupdatefound = () => {
+          const installingWorker = registration.installing;
+          if (!installingWorker) {
+            return;
           }
+          installingWorker.onstatechange = () => {
+            if (installingWorker.state === 'installed') {
+              if (navigator.serviceWorker.controller) {
+                // At this point, the old content will have been purged and
+                // the fresh content will have been added to the cache.
+                // It's the perfect time to display a "New content is
+                // available; please refresh." message in your web app.
+                // console.log(self.clients)
+                console.log('New content is available; please refresh.');
+                // this works: document.location.href = document.location.href + "?foo"
+                const message =
+                  'New content is available, restart the tab to refresh.6ab';
+                // alert(message)
+                this.setState({ message });
+                // window.send_message_to_all_clients('Hello')
+                // navigator.serviceWorker.controller.postMessage(message);
+              } else {
+                // At this point, everything has been precached.
+                // It's the perfect time to display a
+                // "Content is cached for offline use." message.
+                console.log('Content is cached for offline use.');
+                // alert('Parts of this site are available for offline use1.')
+                this.setState({
+                  message: 'Parts of this site are available for offline use.a',
+                });
+              }
+            }
+          };
         };
-      };
-    })
-      .catch((error:any) => {
+      })
+      .catch(error => {
         console.error('Error during service worker registration:', error);
       });
   }
@@ -115,7 +122,9 @@ class App extends Component<AppProps, AppState> {
         <MuiThemeProvider theme={theme}>
           <CssBaseline />
 
-          <h1 style={{marginTop: "140px", color: "white"}}>test {this.state.message}</h1>
+          <h1 style={{ marginTop: '140px', color: 'white' }}>
+            test {this.state.message}
+          </h1>
 
           <NavContainer history={this.history} />
 
