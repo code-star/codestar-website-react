@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { translate } from '../typed-translate';
 
-import { Typography, WithStyles, withWidth } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
+import {
+  Typography,
+  WithStyles,
+  withStyles,
+  withWidth,
+} from '@material-ui/core';
 import compose from 'recompose/compose';
 
 import Container from '../Container/Container';
 import Clients from '../Clients/Clients';
-// @ts-ignore
 import { AnimatedLogo } from '../components/Molecules/AnimatedLogo/AnimatedLogo';
-// @ts-ignore
-import { LandscapeBackground } from '../components/Molecules/LandscapeBackground/LandscapeBackground';
-// @ts-ignore
 import { DelayedFade } from '../components/Molecules/DelayFade/DelayedFade';
 import { Link } from 'react-router-dom';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
@@ -52,7 +52,9 @@ const styles: any = (theme: any) => ({
 
 // FIXME: any type
 const intersperse = (arr: JSX.Element[], sep: string) =>
-  arr.reduce((acc: JSX.Element[], prev: any) => [...acc, prev, sep], []).slice(0, -1);
+  arr
+    .reduce((acc: JSX.Element[], prev: any) => [...acc, prev, sep], [])
+    .slice(0, -1);
 
 const makeLines = (
   classes: WithStyles['classes'],
@@ -85,8 +87,6 @@ const makeLines = (
     ));
 };
 
-// TODO detect Chrome and disable LandscapeBackground (or switch to static) -> or other way around and whitelist Firefox
-
 class Intro extends React.Component<IntroProps> {
   public render() {
     const { t, classes } = this.props;
@@ -95,7 +95,9 @@ class Intro extends React.Component<IntroProps> {
       <div>
         <section id="intro" className={classes.section}>
           <Container fullHeightMinusNavBar center marginTopNavBar>
-            <LandscapeBackground className={classes.fullVideo} />
+            {/* TODO SnapSVG has performance issues in Chrome and it creates a bottom margin. SnapSVG is no longer
+            under maintenance (no releases for years). Replacing by Greensock might be a good plan
+            <LandscapeBackground className={classes.fullVideo} /> */}
             <div className="row justify-content-center">
               <div className="col-12 col-md-8 col-lg-6 mb-3">
                 <AnimatedLogo lineDuration={200} fadeDuration={3000} />
