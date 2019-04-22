@@ -22,6 +22,7 @@ function fullHeightAsyncComponent<Props>(component: ComponentTypePromise) {
   );
 }
 
+// TODO replace AsyncComponent with Lazy https://medium.freecodecamp.org/how-to-use-react-lazy-and-suspense-for-components-lazy-loading-8d420ecac58
 const AsyncIntro = fullHeightAsyncComponent(import('./Intro/Intro'));
 const AsyncCases = fullHeightAsyncComponent(import('./Cases/Cases'));
 const AsyncAbout = fullHeightAsyncComponent(
@@ -43,7 +44,8 @@ const AsyncPublications = fullHeightAsyncComponent(
   import('./components/Pages/Publications/Publications')
 );
 
-const sections = ['', 'cases', 'about', 'jobs', 'contact'];
+// Darkest -> lightest background
+const pages = ['', 'events', 'cases', 'about', 'jobs', 'contact', 'publications'];
 
 type AppProps = Readonly<{}>;
 type AppState = Readonly<{
@@ -137,9 +139,10 @@ class App extends Component<AppProps, AppState> {
     );
   }
 
+  // TODO automatically determine all pages & order from Route, do not use document.body.style side-effect
   private updateBackgroundColor(pathname: string) {
-    const section = pathname.split('/')[1];
-    const index = sections.indexOf(section);
+    const page = pathname.split('/')[1];
+    const index = pages.indexOf(page);
     const position = -(index >= 0 ? index : 0) * 100;
     document.body.style.backgroundPositionY = `${position}vh, 0`;
   }
