@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Route, Switch, Redirect } from 'react-router-dom';
+import { Redirect, Route, Router, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import { History } from 'history';
 import { CssBaseline } from '@material-ui/core';
@@ -13,6 +13,8 @@ import AsyncComponent, {
 } from './AsyncComponent/AsyncComponent';
 import NavContainer from './containers/NavContainer/NavContainer';
 import { JobDescriptionOuterProps } from './JobDescription/JobDescription';
+import registerServiceWorker, { onRegistration } from './registerServiceWorker';
+import AppMessageSnackbar from './components/Molecules/AppMessageSnackbar/AppMessageSnackbar';
 
 function fullHeightAsyncComponent<Props>(component: ComponentTypePromise) {
   return (props: Props) => (
@@ -44,7 +46,10 @@ const AsyncPublications = fullHeightAsyncComponent(
 const sections = ['', 'cases', 'about', 'jobs', 'contact'];
 
 type AppProps = Readonly<{}>;
-type AppState = Readonly<{}>;
+type AppState = Readonly<{
+  showMessage: boolean;
+  message: string | null;
+}>;
 
 class App extends Component<AppProps, AppState> {
   private history: History;
@@ -57,13 +62,48 @@ class App extends Component<AppProps, AppState> {
       this.updateBackgroundColor(location.pathname)
     );
     this.updateBackgroundColor(this.history.location.pathname);
+
+    this.state = {
+      showMessage: false,
+      message: null,
+    };
+
+    const serviceWorkerRegistration: Promise<ServiceWorkerRegistration | void> = registerServiceWorker();
+    serviceWorkerRegistration
+      .then(
+        onRegistration(message => {
+          this.setState({
+            showMessage: true,
+            message,
+          });
+        })
+      )
+      .catch(error => {
+        console.error('Error during service worker registration:', error);
+      });
   }
+
+  handleCloseSnackbar = () => {
+    this.setState({ showMessage: false });
+  };
+
+  handleExitedSnackbar = () => {
+    this.setState({ message: null });
+  };
 
   public render() {
     return (
       <Router history={this.history}>
         <MuiThemeProvider theme={theme}>
           <CssBaseline />
+
+          <AppMessageSnackbar
+            showMessage={this.state.showMessage}
+            message={this.state.message}
+            handleCloseSnackbar={this.handleCloseSnackbar}
+            handleExitedSnackbar={this.handleExitedSnackbar}
+          />
+
           <NavContainer history={this.history} />
 
           <ScrollToTop>
