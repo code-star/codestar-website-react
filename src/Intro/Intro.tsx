@@ -1,13 +1,17 @@
 import * as React from 'react';
 import { translate } from '../typed-translate';
 
-import { Typography, withWidth } from '@material-ui/core';
+import { Typography, WithStyles, withWidth } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
+import compose from 'recompose/compose';
 
 import Container from '../Container/Container';
 import Clients from '../Clients/Clients';
+// @ts-ignore
 import { AnimatedLogo } from '../components/Molecules/AnimatedLogo/AnimatedLogo';
+// @ts-ignore
 import { LandscapeBackground } from '../components/Molecules/LandscapeBackground/LandscapeBackground';
+// @ts-ignore
 import { DelayedFade } from '../components/Molecules/DelayFade/DelayedFade';
 import { Link } from 'react-router-dom';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
@@ -46,70 +50,60 @@ const styles: any = (theme: any) => ({
   },
 });
 
-function withStylesTyped(myStyles: any) {
-  return (Component: any) => {
-    return withStyles(myStyles)(Component) as any;
-  };
-}
+// FIXME: any type
+const intersperse = (arr: JSX.Element[], sep: string) =>
+  arr.reduce((acc: JSX.Element[], prev: any) => [...acc, prev, sep], []).slice(0, -1);
 
-function withWidthTyped() {
-  return (Component: any) => {
-    return withWidth()(Component) as any;
-  };
-}
+const makeLines = (
+  classes: WithStyles['classes'],
+  text: string,
+  firstClass: string = ''
+) => {
+  return text
+    .split('.')
+    .map((line: string) => line.trim())
+    .filter((n: string) => n)
+    .map((line: string, i: number) => (
+      <Typography
+        key={`intro-${i}`}
+        variant="subtitle1"
+        className={`${classes.whiteText} ${
+          firstClass && i === 0 ? firstClass : ''
+        }`}
+      >
+        {intersperse(
+          line.split('~').map((subLine: string, si: number) => (
+            <span key={si} className={classes.line}>
+              <InlineLogo dark small>
+                {subLine}
+              </InlineLogo>
+            </span>
+          )),
+          ' '
+        )}
+      </Typography>
+    ));
+};
 
-// Compose Pattern as decorators, recompose dependency not needed anymore
-// Based on second-to-last line in chapter https://reactjs.org/docs/higher-order-components.html
-// > (This same property also allows connect and other enhancer-style HOCs to be used as decorators, an experimental JavaScript proposal.)
-@withStylesTyped(styles)
-@withWidthTyped()
-@translate(['intro'], { wait: true })
+// TODO detect Chrome and disable LandscapeBackground (or switch to static) -> or other way around and whitelist Firefox
+
 class Intro extends React.Component<IntroProps> {
   public render() {
-    const { t, ...props } = this.props;
-    const intersperse = (arr: any, sep: any) =>
-      arr.reduce((a: any, v: any) => [...a, v, sep], []).slice(0, -1);
-
-    function makeLines(text: any, firstClass: string = '') {
-      return text
-        .split('.')
-        .map((line: string) => line.trim())
-        .filter((n: string) => n)
-        .map((line: string, i: number) => (
-          <Typography
-            key={`intro-${i}`}
-            variant="subtitle1"
-            className={`${props.classes.whiteText} ${
-              firstClass && i === 0 ? firstClass : ''
-            }`}
-          >
-            {intersperse(
-              line.split('~').map((subLine: string, si: number) => (
-                <span key={si} className={props.classes.line}>
-                  <InlineLogo dark small>
-                    {subLine}
-                  </InlineLogo>
-                </span>
-              )),
-              ' '
-            )}
-          </Typography>
-        ));
-    }
+    const { t, classes } = this.props;
 
     return (
       <div>
-        <section id="intro" className={props.classes.section}>
+        <section id="intro" className={classes.section}>
           <Container fullHeightMinusNavBar center marginTopNavBar>
-            <LandscapeBackground className={props.classes.fullVideo} />
+            <LandscapeBackground className={classes.fullVideo} />
             <div className="row justify-content-center">
               <div className="col-12 col-md-8 col-lg-6 mb-3">
                 <AnimatedLogo lineDuration={200} fadeDuration={3000} />
               </div>
               <div className="col-12">
                 <DelayedFade>
-                  {makeLines(t('INTRO_TEXT'))}
-                  {makeLines(t('INTRO_TEXT_SUBLINE'), 'mt-3')}
+                  {makeLines(classes, t('INTRO_TEXT'))}
+                  {makeLines(classes, t('INTRO_TEXT_SUBLINE'), 'mt-3')}
                 </DelayedFade>
               </div>
             </div>
@@ -159,9 +153,7 @@ class Intro extends React.Component<IntroProps> {
   }
 }
 
-// This is replaced by the decorators above the class:
-// export default compose(
-//   withStyles(styles),
-//   withWidth()
-// )(translate(['intro'], { wait: true })(Intro));
-export default Intro;
+export default compose(
+  withStyles(styles),
+  withWidth()
+)(translate(['intro'], { wait: true })(Intro));
