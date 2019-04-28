@@ -50,10 +50,16 @@ const styles: any = (theme: any) => ({
   },
 });
 
-// FIXME: any type
 const intersperse = (arr: JSX.Element[], sep: string) =>
   arr
-    .reduce((acc: JSX.Element[], prev: any) => [...acc, prev, sep], [])
+    .reduce(
+      (acc: JSX.Element[], currentValue: JSX.Element, currentIndex) => [
+        ...acc,
+        currentValue,
+        <span key={`sep-${currentIndex}`}>{sep}</span>,
+      ],
+      []
+    )
     .slice(0, -1);
 
 const makeLines = (
