@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, lazy, Suspense } from 'react';
 import { Redirect, Route, Router, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import { History } from 'history';
@@ -8,42 +8,42 @@ import theme from './codestarMuiTheme';
 import ScrollToTop from './ScrollToTop';
 import Footer from './Footer/Footer';
 import jobsList from './Jobs/JobsList';
-import AsyncComponent, {
-  ComponentTypePromise,
-} from './AsyncComponent/AsyncComponent';
 import NavContainer from './containers/NavContainer/NavContainer';
-import { JobDescriptionOuterProps } from './JobDescription/JobDescription';
 import registerServiceWorker, { onRegistration } from './registerServiceWorker';
 import AppMessageSnackbar from './components/Molecules/AppMessageSnackbar/AppMessageSnackbar';
+import LoadingMessage from "./components/Atoms/LoadingMessage/LoadingMessage";
+import FullHeight from "./components/Atoms/FullHeight/FullHeight";
 
-function fullHeightAsyncComponent<Props>(component: ComponentTypePromise) {
-  return (props: Props) => (
-    <AsyncComponent fullHeight component={() => component} {...props} />
-  );
-}
-
-const AsyncIntro = fullHeightAsyncComponent(import('./Intro/Intro'));
-const AsyncCases = fullHeightAsyncComponent(import('./Cases/Cases'));
-const AsyncAbout = fullHeightAsyncComponent(
-  import('./components/Pages/About/About')
-);
-const AsyncJobs = fullHeightAsyncComponent(import('./Jobs/Jobs'));
-const AsyncJobDescription = fullHeightAsyncComponent<JobDescriptionOuterProps>(
+const AsyncIntro = lazy(() => import('./Intro/Intro'));
+const AsyncCases = lazy(() => import('./Cases/Cases'));
+const AsyncAbout = lazy(() => import('./components/Pages/About/About'));
+const AsyncJobs = lazy(() => import('./Jobs/Jobs'));
+// FIXME any type, lazy<JobDescriptionOuterProps> is invalid
+const AsyncJobDescription = lazy<any>(() =>
   import('./JobDescription/JobDescription')
 );
-const AsyncContact = fullHeightAsyncComponent(import('./Contact/Contact'));
-const AsyncCodeChallenge = fullHeightAsyncComponent(
+const AsyncContact = lazy(() => import('./Contact/Contact'));
+const AsyncCodeChallenge = lazy(() =>
   import('./components/Pages/CodeChallenge/CodeChallenge')
 );
-const AsyncNotFound = fullHeightAsyncComponent(import('./NotFound/NotFound'));
-const AsyncEvents = fullHeightAsyncComponent(
+const AsyncNotFound = lazy(() => import('./NotFound/NotFound'));
+const AsyncEvents = lazy(() =>
   import('./containers/EventsContainer/EventsContainer')
 );
-const AsyncPublications = fullHeightAsyncComponent(
+const AsyncPublications = lazy(() =>
   import('./components/Pages/Publications/Publications')
 );
 
-const sections = ['', 'cases', 'about', 'jobs', 'contact'];
+// Darkest -> lightest background
+const pages = [
+  '',
+  'events',
+  'cases',
+  'about',
+  'jobs',
+  'contact',
+  'publications',
+];
 
 type AppProps = Readonly<{}>;
 type AppState = Readonly<{
@@ -107,28 +107,65 @@ class App extends Component<AppProps, AppState> {
           <NavContainer history={this.history} />
 
           <ScrollToTop>
-            <Switch>
-              <Route exact path="/" component={AsyncIntro} />
-              <Route exact path="/cases" component={AsyncCases} />
-
-              <Route exact path="/jobs" component={AsyncJobs} />
-              {jobsList.map(job => (
+            <Suspense fallback={<LoadingMessage />}>
+              <Switch>
+                <Route exact path="/">
+                  <FullHeight>
+                    <AsyncIntro />
+                  </FullHeight>
+                </Route>
                 <Route
                   exact
-                  path={`/jobs/${job.path}`}
-                  key={job.path}
-                  render={() => <AsyncJobDescription {...job} />}
+                  path="/cases"
+                  render={routeProps => (
+                    <FullHeight>
+                      <AsyncCases {...routeProps} />
+                    </FullHeight>
+                  )}
                 />
-              ))}
-
-              <Route path="/about" component={AsyncAbout} />
-              <Route path="/contact" component={AsyncContact} />
-              <Route path="/events" component={AsyncEvents} />
-              <Route path="/publications" component={AsyncPublications} />
-              <Route path="/code-challenge" component={AsyncCodeChallenge} />
-              <Route path="/404" component={AsyncNotFound} />
-              <Redirect to="/404" />
-            </Switch>
+                <Route exact path="/jobs">
+                  <FullHeight>
+                    <AsyncJobs />
+                  </FullHeight>
+                </Route>
+                {jobsList.map(job => (
+                  <Route exact path={`/jobs/${job.path}`} key={job.path}>
+                    <AsyncJobDescription {...job} />
+                  </Route>
+                ))}
+                <Route path="/about">
+                  <FullHeight>
+                    <AsyncAbout />
+                  </FullHeight>
+                </Route>
+                <Route path="/contact">
+                  <FullHeight>
+                    <AsyncContact />
+                  </FullHeight>
+                </Route>
+                <Route path="/events">
+                  <FullHeight>
+                    <AsyncEvents />
+                  </FullHeight>
+                </Route>
+                <Route path="/publications">
+                  <FullHeight>
+                    <AsyncPublications />
+                  </FullHeight>
+                </Route>
+                <Route path="/code-challenge">
+                  <FullHeight>
+                    <AsyncCodeChallenge />
+                  </FullHeight>
+                </Route>
+                <Route path="/404">
+                  <FullHeight>
+                    <AsyncNotFound />
+                  </FullHeight>
+                </Route>
+                <Redirect to="/404" />
+              </Switch>
+            </Suspense>
           </ScrollToTop>
 
           <Footer />
@@ -137,9 +174,10 @@ class App extends Component<AppProps, AppState> {
     );
   }
 
+  // TODO automatically determine all pages & order from Route, do not use document.body.style side-effect
   private updateBackgroundColor(pathname: string) {
-    const section = pathname.split('/')[1];
-    const index = sections.indexOf(section);
+    const page = pathname.split('/')[1];
+    const index = pages.indexOf(page);
     const position = -(index >= 0 ? index : 0) * 100;
     document.body.style.backgroundPositionY = `${position}vh, 0`;
   }
