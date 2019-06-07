@@ -150,10 +150,10 @@ You can find information about contributing in our [guideline for repository con
 ## Add a Team Member
 
 - Create a new feature branch from the `test` branch
-- Prepare a photo. However, all images are hosted on Cloudinary. Cloudinary does not allow shared accounts, so ask for it to be added in #general on Slack
+- Prepare a photo. However, all images are hosted on Cloudinary. Cloudinary does not allow shared accounts, so ask for it to be added in #website on Slack
 - Add an entry to `./src/components/Molecules/TeamCarousel/Team.json`
 - Create a MR from the feature branch to the `test` branch
-- Request a review of the MR in #general on Slack
+- Request a review of the MR in #website on Slack
 
 ## Available Lambda Functions
 
