@@ -181,5 +181,12 @@
 		"tagline": "“Data is code, code is data”",
 		"bio": "",
 		"image": "thomas.jpg"
+	},
+	{
+		"name": "Jean-Marc",
+		"job": "Solutionist",
+		"tagline": "“Learn a new thing every day”",
+		"bio": "",
+		"image": "jean-marc.jpg"
 	}
 ]
