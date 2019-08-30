@@ -16,6 +16,7 @@ import { DelayedFade } from '../components/Molecules/DelayFade/DelayedFade';
 import { Link } from 'react-router-dom';
 import ResponsiveImage from '../ResponsiveImage/ResponsiveImage';
 import InlineLogo from '../InlineLogo/InlineLogo';
+import StarField from "../components/Atoms/StarField/StarField";
 
 type IntroProps = any;
 
@@ -99,6 +100,7 @@ class Intro extends React.Component<IntroProps> {
 
     return (
       <div>
+        <StarField />
         <section id="intro" className={classes.section}>
           <Container fullHeightMinusNavBar center marginTopNavBar>
             {/* TODO SnapSVG has performance issues in Chrome and it creates a bottom margin. SnapSVG is no longer
