@@ -38,6 +38,7 @@
     "sanitize-html": "^1.18.2",
     "simplex-noise": "^2.4.0",
     "snapsvg-cjs": "0.0.6",
+    "three": "^0.108.0",
     "vivus": "^0.4.4"
   },
   "lint-staged": {
