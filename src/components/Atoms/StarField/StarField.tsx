@@ -26,8 +26,32 @@ import * as THREE from 'three';
 //   document.body.appendChild( renderer.domElement );
 // };
 
+const generateStar = (geometry: THREE.BoxGeometry, material: THREE.MeshBasicMaterial, i: number) => {
+  const star = new THREE.Mesh(geometry, material);
+  star.position.x = Math.random() * 150 - 75;
+  star.position.y = Math.random() * 150 - 75;
+  star.position.z = Math.random() * 40 - 20;
+  return star;
+};
+
+// const orbitCalculation = (radius: number, millis: number) => {
+//    return {y: (Math.sin((millis%60000)/60000 * Math.PI * 2) * radius),
+//     z: (Math.cos((millis%60000)/60000 * Math.PI * 2) * radius)};
+// };
+
+const orbitCalculation = (radius: number, millis: number) => {
+  const x = (millis%60000)/60000 * Math.PI * 2;
+  // if(x <= 4) {
+  //   console.log(x, Math.sin(x) * radius, Math.cos(x) * radius);
+  // }
+  return {y: Math.sin(x) * radius,
+    z: Math.cos(x) * radius, rot: x}
+};
+
 const StarField: FC = () => {
   const mount = useRef<HTMLDivElement>(null);
+  // const [camDirection, setCamDirection] = useState({z: true});
+  // const camDirection = {z: true};
 
   useEffect(() => {
     const mountCurrent = mount && mount.current;
@@ -38,13 +62,21 @@ const StarField: FC = () => {
 
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+      //const camera = new THREE.OrthographicCamera( width / - 2, width / 2, height / 2, height / - 2, 1, 800 );
       const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-      const geometry = new THREE.BoxGeometry(1, 1, 1);
-      const material = new THREE.MeshBasicMaterial({ color: 0xff00ff });
-      const cube = new THREE.Mesh(geometry, material);
+      const geometry = new THREE.BoxGeometry(0.1, 0.1, 0.01);
+      // geometry.applyMatrix( new THREE.Matrix4().makeRotationX( Math.PI / 2 ) );
+      const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+      // const cube = new THREE.Mesh(geometry, material);
 
       camera.position.z = 4;
-      scene.add(cube);
+      // scene.add(cube);
+
+      // TODO clean up in callback
+      for(let i = 0; i < 50000; i++) {
+        scene.add(generateStar(geometry, material, i));
+      }
+
       // renderer.setClearColor('#000000');
       renderer.setSize(width, height);
 
@@ -56,14 +88,50 @@ const StarField: FC = () => {
         width = mountCurrent.clientWidth;
         height = mountCurrent.clientHeight;
         renderer.setSize(width, height);
-        camera.aspect = width / height;
+        // camera.aspect = width / height;
         camera.updateProjectionMatrix();
         renderScene()
       };
 
       const animate = () => {
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
+        // cube.rotation.x += 0.01;
+        // cube.rotation.y += 0.01;
+
+        // Move the camera
+        // camera.position.z -= 0.01; // move in a straight line
+        // const stepSize = 0.1;
+        // TODO move in a circle
+        // if (camDirection.z) {
+        //   camera.position.z -= stepSize;
+        // } else {
+        //   camera.position.z += stepSize;
+        // }
+        // // console.log(camera.position.z)
+        // if(camera.position.z < -10) {
+        //   // console.log("z")
+        //   // setCamDirection({z: false});
+        //   camDirection.z = false;
+        // } else if (camera.position.z > 10) {
+        //   camDirection.z = true;
+        // }
+        const currentCameraPos = orbitCalculation(10, Date.now());
+        // const nextCameraPos = orbitCalculation(10, Date.now() + 1);
+
+        camera.position.y = currentCameraPos.y;
+        camera.position.z = currentCameraPos.z;
+        // TODO rotate the camera
+        // camera.lookAt(0, nextCameraPos.y, nextCameraPos.z); // bug: this will flip the camera at 180 degrees
+
+        // Does not work
+        // var qm = new THREE.Quaternion();
+        // var bla = new THREE.Quaternion(undefined,currentCameraPos.y, currentCameraPos.z);
+        // THREE.Quaternion.slerp(camera.quaternion, bla, qm, 0.07);
+        // camera.quaternion.set(qm.x, qm.y, qm.z, qm.w);
+        // camera.quaternion.normalize();
+
+        // TODO rotate the camera at the same speed as the position rotation
+        camera.rotateZ(currentCameraPos.rot);
+
 
         renderScene();
         frameId = window.requestAnimationFrame(animate)
@@ -86,12 +154,15 @@ const StarField: FC = () => {
 
       // controls.current = { start, stop }
 
+      // TODO replace cubes by halo dots
+      // TODO follow up steps: https://www.html5rocks.com/en/tutorials/casestudies/100000stars/
+
       return () => {
         stop();
         window.removeEventListener('resize', handleResize);
         mountCurrent.removeChild(renderer.domElement);
 
-        scene.remove(cube);
+        // scene.remove(cube);
         geometry.dispose();
         material.dispose()
       }
