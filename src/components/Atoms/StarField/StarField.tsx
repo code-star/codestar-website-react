@@ -30,7 +30,7 @@ const generateStar = (geometry: THREE.BoxGeometry, material: THREE.MeshBasicMate
   const star = new THREE.Mesh(geometry, material);
   star.position.x = Math.random() * 150 - 75;
   star.position.y = Math.random() * 150 - 75;
-  star.position.z = Math.random() * 40 - 20;
+  star.position.z = Math.random() * 150 - 75;
   return star;
 };
 
@@ -64,6 +64,7 @@ const StarField: FC = () => {
       const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
       //const camera = new THREE.OrthographicCamera( width / - 2, width / 2, height / 2, height / - 2, 1, 800 );
       const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      // TODO replace box by simplest glow https://github.com/stemkoski/stemkoski.github.com/blob/master/Three.js/Simple-Glow.html
       const geometry = new THREE.BoxGeometry(0.1, 0.1, 0.01);
       // geometry.applyMatrix( new THREE.Matrix4().makeRotationX( Math.PI / 2 ) );
       const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
@@ -130,8 +131,9 @@ const StarField: FC = () => {
         // camera.quaternion.normalize();
 
         // TODO rotate the camera at the same speed as the position rotation
-        camera.rotateZ(currentCameraPos.rot);
-
+        // console.log(camera.rotation, currentCameraPos);
+        // camera.rotateX(currentCameraPos.rot);
+        camera.rotation.x -= 0.005;
 
         renderScene();
         frameId = window.requestAnimationFrame(animate)
@@ -147,6 +149,10 @@ const StarField: FC = () => {
         cancelAnimationFrame(frameId);
         frameId = null
       };
+
+      // const currentCameraPos = orbitCalculation(10, Date.now());
+      const nextCameraPos = orbitCalculation(10, Date.now() + 1);
+      camera.lookAt(0, nextCameraPos.y, nextCameraPos.z); // bug: this will flip the camera at 180 degrees
 
       mountCurrent.appendChild(renderer.domElement);
       window.addEventListener('resize', handleResize);
