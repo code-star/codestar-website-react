@@ -27,11 +27,27 @@ import * as THREE from 'three';
 // };
 
 const generateStar = (geometry: THREE.BoxGeometry, material: THREE.MeshBasicMaterial, i: number) => {
-  const star = new THREE.Mesh(geometry, material);
-  star.position.x = Math.random() * 150 - 75;
-  star.position.y = Math.random() * 150 - 75;
-  star.position.z = Math.random() * 150 - 75;
-  return star;
+  // const star = new THREE.Mesh(geometry, material);
+  // star.position.x = Math.random() * 150 - 75;
+  // star.position.y = Math.random() * 150 - 75;
+  // star.position.z = Math.random() * 150 - 75;
+  // const star = new THREE.PointLight( 0xff0000, 1, 0 );
+  // star.position.set(Math.random() * 150 - 75, Math.random() * 150 - 75, Math.random() * 150 - 75);
+
+  // TODO pick random color in the red to yellow to white range
+  const c1 = 0x00ff00;
+  const intensity = 2.5;
+  const distance = 0; // 100;
+  const decay = 2000;
+  const sphere = new THREE.SphereBufferGeometry( 0.1, 16, 8 );
+  // TODO remove light because there is nothing to reflect from, reduce segments
+  const light1 = new THREE.PointLight( c1, intensity, distance, decay );
+  light1.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: c1 } ) ) );
+  light1.position.set(Math.random() * 150 - 75, Math.random() * 150 - 75, Math.random() * 150 - 75);
+  // scene.add( light1 );
+
+  // return star;
+  return light1;
 };
 
 // const orbitCalculation = (radius: number, millis: number) => {
@@ -65,16 +81,17 @@ const StarField: FC = () => {
       //const camera = new THREE.OrthographicCamera( width / - 2, width / 2, height / 2, height / - 2, 1, 800 );
       const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
       // TODO replace box by simplest glow https://github.com/stemkoski/stemkoski.github.com/blob/master/Three.js/Simple-Glow.html
-      const geometry = new THREE.BoxGeometry(0.1, 0.1, 0.01);
+      const geometry = new THREE.BoxGeometry(0.1, 0.1, 0.1);
       // geometry.applyMatrix( new THREE.Matrix4().makeRotationX( Math.PI / 2 ) );
       const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
       // const cube = new THREE.Mesh(geometry, material);
+
 
       camera.position.z = 4;
       // scene.add(cube);
 
       // TODO clean up in callback
-      for(let i = 0; i < 50000; i++) {
+      for(let i = 0; i < 5000; i++) {
         scene.add(generateStar(geometry, material, i));
       }
 
@@ -133,7 +150,7 @@ const StarField: FC = () => {
         // TODO rotate the camera at the same speed as the position rotation
         // console.log(camera.rotation, currentCameraPos);
         // camera.rotateX(currentCameraPos.rot);
-        camera.rotation.x -= 0.005;
+        camera.rotation.x -= 0.001;
 
         renderScene();
         frameId = window.requestAnimationFrame(animate)
@@ -150,9 +167,11 @@ const StarField: FC = () => {
         frameId = null
       };
 
-      // const currentCameraPos = orbitCalculation(10, Date.now());
-      const nextCameraPos = orbitCalculation(10, Date.now() + 1);
-      camera.lookAt(0, nextCameraPos.y, nextCameraPos.z); // bug: this will flip the camera at 180 degrees
+      // const nextCameraPos = orbitCalculation(10, Date.now() + 1);
+      // camera.lookAt(0, nextCameraPos.y, nextCameraPos.z); // bug: this will flip the camera at 180 degrees
+
+      // Needs a light?
+      // scene.fog = new THREE.Fog(0xff0000, 0.1, 1000); // TODO hex, near, far make near and far variables
 
       mountCurrent.appendChild(renderer.domElement);
       window.addEventListener('resize', handleResize);
