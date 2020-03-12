@@ -188,5 +188,12 @@
 		"tagline": "“Learn a new thing every day”",
 		"bio": "",
 		"image": "jean-marc.jpg"
-	}
+	},
+        {
+                "name": "Daniel",
+                "job": "Programmer",
+                "tagline": "“Languages have personalities, around which communities form”",
+                "bio": "former data scientist",
+                "image": "daniel.jpg"
+        }
 ]
