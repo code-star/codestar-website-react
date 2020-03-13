@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import TweetList from './TweetList';
 import { CardContent } from '@material-ui/core';
-import renderToJSON from "../../../../setupTests";
+import renderToJSON from '../../../../setupTests';
 
 const someTweets = [
   {
@@ -15,7 +15,7 @@ const someTweets = [
     text: 'some awesome text',
     favorite_count: 3,
     retweet_count: 5,
-    id: 1
+    id: 1,
   },
   {
     user: {
@@ -26,7 +26,7 @@ const someTweets = [
     text: 'some other awesome text',
     favorite_count: 1,
     retweet_count: 2,
-    id: 2
+    id: 2,
   },
 ];
 
@@ -48,9 +48,7 @@ describe('<TweetList />', () => {
 
   describe('Snaphot', () => {
     it('must match some tweet list', () => {
-      expect(
-        renderToJSON(renderShallow(someTweets).get(0))
-      ).toMatchSnapshot();
+      expect(renderToJSON(renderShallow(someTweets).get(0))).toMatchSnapshot();
     });
   });
 });

@@ -31,7 +31,7 @@ exports[`OurStack shows icons for each technology 1`] = `
               <img
                 alt="Typescript"
                 className="MuiAvatar-img"
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/typescript.png"
+                src="responsive-image"
               />
             </div>
           </div>
@@ -42,7 +42,7 @@ exports[`OurStack shows icons for each technology 1`] = `
               <img
                 alt="React"
                 className="MuiAvatar-img"
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/react.png"
+                src="responsive-image"
               />
             </div>
           </div>
@@ -53,7 +53,7 @@ exports[`OurStack shows icons for each technology 1`] = `
               <img
                 alt="Redux"
                 className="MuiAvatar-img"
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/redux.png"
+                src="responsive-image"
               />
             </div>
           </div>
@@ -64,7 +64,7 @@ exports[`OurStack shows icons for each technology 1`] = `
               <img
                 alt="Angular"
                 className="MuiAvatar-img"
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/angular.png"
+                src="responsive-image"
               />
             </div>
           </div>
@@ -75,7 +75,7 @@ exports[`OurStack shows icons for each technology 1`] = `
               <img
                 alt="RxJS"
                 className="MuiAvatar-img"
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/rxjs.png"
+                src="responsive-image"
               />
             </div>
           </div>
@@ -112,7 +112,7 @@ exports[`OurStack shows icons for each technology 1`] = `
               <img
                 alt="Scala"
                 className="MuiAvatar-img"
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/scala.svg"
+                src="responsive-image"
               />
             </div>
           </div>
@@ -123,7 +123,7 @@ exports[`OurStack shows icons for each technology 1`] = `
               <img
                 alt="Akka"
                 className="MuiAvatar-img"
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/akka.svg"
+                src="responsive-image"
               />
             </div>
           </div>
@@ -134,7 +134,7 @@ exports[`OurStack shows icons for each technology 1`] = `
               <img
                 alt="Spray"
                 className="MuiAvatar-img"
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/spray.png"
+                src="responsive-image"
               />
             </div>
           </div>
@@ -145,7 +145,7 @@ exports[`OurStack shows icons for each technology 1`] = `
               <img
                 alt="Spark"
                 className="MuiAvatar-img"
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/spark.png"
+                src="responsive-image"
               />
             </div>
           </div>
@@ -156,7 +156,7 @@ exports[`OurStack shows icons for each technology 1`] = `
               <img
                 alt="Cassandra"
                 className="MuiAvatar-img"
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/cassandra.png"
+                src="responsive-image"
               />
             </div>
           </div>
@@ -167,7 +167,7 @@ exports[`OurStack shows icons for each technology 1`] = `
               <img
                 alt="Kafka"
                 className="MuiAvatar-img"
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/kafka.png"
+                src="responsive-image"
               />
             </div>
           </div>
@@ -204,7 +204,7 @@ exports[`OurStack shows icons for each technology 1`] = `
               <img
                 alt="Docker"
                 className="MuiAvatar-img"
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/docker.png"
+                src="responsive-image"
               />
             </div>
           </div>
@@ -215,7 +215,7 @@ exports[`OurStack shows icons for each technology 1`] = `
               <img
                 alt="Mesos"
                 className="MuiAvatar-img"
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/mesos.jpg"
+                src="responsive-image"
               />
             </div>
           </div>
@@ -226,7 +226,7 @@ exports[`OurStack shows icons for each technology 1`] = `
               <img
                 alt="Kubernetes"
                 className="MuiAvatar-img"
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/kubernetes.png"
+                src="responsive-image"
               />
             </div>
           </div>
@@ -237,7 +237,7 @@ exports[`OurStack shows icons for each technology 1`] = `
               <img
                 alt="AWS"
                 className="MuiAvatar-img"
-                src="https://res.cloudinary.com/codestar/image/upload/f_auto/w_80/v1542784068/codestar.nl/images/technologies/aws.png"
+                src="responsive-image"
               />
             </div>
           </div>
