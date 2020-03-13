@@ -24,11 +24,39 @@ Array [
       }
     }
   />,
-  <scroll-to-top>
-    <div>
-      Loading...
-    </div>
-  </scroll-to-top>,
+  <div
+    style={
+      Object {
+        "minHeight": "100vh",
+      }
+    }
+  >
+    <scroll-to-top>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flex": 1,
+            "height": "100%",
+            "justifyContent": "center",
+            "minHeight": "inherit",
+          }
+        }
+      >
+        <span
+          style={
+            Object {
+              "color": "white",
+              "fontSize": "20px",
+            }
+          }
+        >
+          Loading...
+        </span>
+      </div>
+    </scroll-to-top>
+  </div>,
   <footer />,
 ]
 `;

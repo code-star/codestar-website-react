@@ -11,8 +11,8 @@ import jobsList from './Jobs/JobsList';
 import NavContainer from './containers/NavContainer/NavContainer';
 import registerServiceWorker, { onRegistration } from './registerServiceWorker';
 import AppMessageSnackbar from './components/Molecules/AppMessageSnackbar/AppMessageSnackbar';
-import LoadingMessage from "./components/Atoms/LoadingMessage/LoadingMessage";
-import FullHeight from "./components/Atoms/FullHeight/FullHeight";
+import LoadingMessage from './components/Atoms/LoadingMessage/LoadingMessage';
+import FullHeight from './components/Atoms/FullHeight/FullHeight';
 
 const AsyncIntro = lazy(() => import('./Intro/Intro'));
 const AsyncCases = lazy(() => import('./Cases/Cases'));
@@ -106,68 +106,49 @@ class App extends Component<AppProps, AppState> {
 
           <NavContainer history={this.history} />
 
-          <ScrollToTop>
-            <Suspense fallback={<LoadingMessage />}>
-              <Switch>
-                <Route exact path="/">
-                  <FullHeight>
+          <FullHeight>
+            <ScrollToTop>
+              <Suspense fallback={<LoadingMessage />}>
+                <Switch>
+                  <Route exact path="/">
                     <AsyncIntro />
-                  </FullHeight>
-                </Route>
-                <Route
-                  exact
-                  path="/cases"
-                  render={routeProps => (
-                    <FullHeight>
-                      <AsyncCases {...routeProps} />
-                    </FullHeight>
-                  )}
-                />
-                <Route exact path="/jobs">
-                  <FullHeight>
-                    <AsyncJobs />
-                  </FullHeight>
-                </Route>
-                {jobsList.map(job => (
-                  <Route exact path={`/jobs/${job.path}`} key={job.path}>
-                    <AsyncJobDescription {...job} />
                   </Route>
-                ))}
-                <Route path="/about">
-                  <FullHeight>
+                  <Route
+                    exact
+                    path="/cases"
+                    render={routeProps => <AsyncCases {...routeProps} />}
+                  />
+                  <Route exact path="/jobs">
+                    <AsyncJobs />
+                  </Route>
+                  {jobsList.map(job => (
+                    <Route exact path={`/jobs/${job.path}`} key={job.path}>
+                      <AsyncJobDescription {...job} />
+                    </Route>
+                  ))}
+                  <Route path="/about">
                     <AsyncAbout />
-                  </FullHeight>
-                </Route>
-                <Route path="/contact">
-                  <FullHeight>
+                  </Route>
+                  <Route path="/contact">
                     <AsyncContact />
-                  </FullHeight>
-                </Route>
-                <Route path="/events">
-                  <FullHeight>
+                  </Route>
+                  <Route path="/events">
                     <AsyncEvents />
-                  </FullHeight>
-                </Route>
-                <Route path="/publications">
-                  <FullHeight>
+                  </Route>
+                  <Route path="/publications">
                     <AsyncPublications />
-                  </FullHeight>
-                </Route>
-                <Route path="/code-challenge">
-                  <FullHeight>
+                  </Route>
+                  <Route path="/code-challenge">
                     <AsyncCodeChallenge />
-                  </FullHeight>
-                </Route>
-                <Route path="/404">
-                  <FullHeight>
+                  </Route>
+                  <Route path="/404">
                     <AsyncNotFound />
-                  </FullHeight>
-                </Route>
-                <Redirect to="/404" />
-              </Switch>
-            </Suspense>
-          </ScrollToTop>
-
+                  </Route>
+                  <Redirect to="/404" />
+                </Switch>
+              </Suspense>
+            </ScrollToTop>
+          </FullHeight>
           <Footer />
         </MuiThemeProvider>
       </Router>
