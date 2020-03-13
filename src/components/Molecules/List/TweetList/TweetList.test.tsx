@@ -5,12 +5,6 @@ import TweetList from './TweetList';
 import { CardContent } from '@material-ui/core';
 import renderToJSON from '../../../../setupTests';
 
-jest.mock('../../../../ResponsiveImage/ResponsiveImage', () => {
-  return {
-    getResponsiveImageUrl: () => 'responsive-image',
-  };
-});
-
 const someTweets = [
   {
     user: {

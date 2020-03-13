@@ -1,16 +1,6 @@
 import React from 'react';
 import css from './ResponsiveImage.module.css';
-
-const getResponsiveImageUrl = (imagePath, size = null, effect) => {
-  const effectPath = effect ? `${effect}/` : '';
-  return (
-    `${process.env.REACT_APP_CLOUDINARY_URLBASE}/` +
-    `f_auto/w_${size}/${effectPath}` +
-    `${process.env.REACT_APP_CLOUDINARY_ID}/` +
-    `${process.env.REACT_APP_CLOUDINARY_IMAGES_DIRECTORY}` +
-    `${imagePath}`
-  );
-};
+import { getResponsiveImageUrl } from './getResponsiveImageUrl';
 
 const getResponsiveSrcSet = (imagePath, sizes, effect) => {
   return sizes
