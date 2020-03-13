@@ -19,7 +19,7 @@ const cardWidth = 300;
 
 const TeamCarousel: FC = () => {
   const shuffledColleagues = shuffleArray<Colleague>(Team);
-  const activeColleague = shuffledColleagues.filter(c => !!c.gone);
+  const activeColleague = shuffledColleagues.filter(c => !c.gone);
 
   return (
     <Carousel
