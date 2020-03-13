@@ -5,18 +5,22 @@ import { getResponsiveImageUrl } from '../../../ResponsiveImage/ResponsiveImage'
 import { leftControls, rightControls } from './renderControls';
 import Team from './Team.json';
 import styles from './TeamCarousel.module.scss';
+import { shuffleArray } from '../../../utility/array';
 
-function shuffleArray(array: any[]) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
+type Colleague = {
+  name: string;
+  job: string;
+  tagline: string;
+  image: string;
+  gone?: boolean;
+};
 
 const cardWidth = 300;
 
 const TeamCarousel: FC = () => {
+  const shuffledColleagues = shuffleArray<Colleague>(Team);
+  const activeColleague = shuffledColleagues.filter(c => !!c.gone);
+
   return (
     <Carousel
       slideWidth={`${cardWidth}px`}
@@ -28,35 +32,31 @@ const TeamCarousel: FC = () => {
       renderCenterLeftControls={leftControls}
       renderCenterRightControls={rightControls}
     >
-      {shuffleArray(Team)
-        .filter(
-          (person: any) => person && !person.gone && person.name && person.image
-        )
-        .map((person: any) => (
-          <Card key={person.image} className={`${styles.card} my-3`}>
-            <CardMedia
-              className={styles.cardMedia}
-              image={getResponsiveImageUrl(
-                `/images/team/${person.image}`,
-                cardWidth * 2,
-                'e_grayscale/co_rgb:0057ae,e_colorize:40'
-              )}
-              title={person.name}
-            />
-            <CardContent>
-              <Typography variant="h5" component="h3">
-                {person.name}
-              </Typography>
-              <Typography
-                style={{ marginBottom: 16, fontSize: 14 }}
-                color="textSecondary"
-              >
-                {person.job}
-              </Typography>
-              <Typography component="i">{person.tagline}</Typography>
-            </CardContent>
-          </Card>
-        ))}
+      {activeColleague.map((colleague: Colleague, index: number) => (
+        <Card key={index} className={`${styles.card} my-3`}>
+          <CardMedia
+            className={styles.cardMedia}
+            image={getResponsiveImageUrl(
+              `/images/team/${colleague.image}`,
+              cardWidth * 2,
+              'e_grayscale/co_rgb:0057ae,e_colorize:40'
+            )}
+            title={colleague.name}
+          />
+          <CardContent>
+            <Typography variant="h5" component="h3">
+              {colleague.name}
+            </Typography>
+            <Typography
+              style={{ marginBottom: 16, fontSize: 14 }}
+              color="textSecondary"
+            >
+              {colleague.job}
+            </Typography>
+            <Typography component="i">{colleague.tagline}</Typography>
+          </CardContent>
+        </Card>
+      ))}
     </Carousel>
   );
 };

@@ -1,12 +1,17 @@
 import React from 'react';
 import { Fab } from '@material-ui/core';
-
 import {
   NavigateBefore as NavigateBeforeIcon,
   NavigateNext as NavigateNextIcon,
 } from '@material-ui/icons';
+import {
+  CarouselRenderControl,
+  CarouselSlideRenderControlProps,
+} from 'nuka-carousel';
 
-export const leftControls: any = ({ previousSlide }: any) => {
+export const leftControls: CarouselRenderControl = ({
+  previousSlide,
+}: CarouselSlideRenderControlProps) => {
   return (
     <Fab size="small" onClick={previousSlide}>
       <NavigateBeforeIcon />
@@ -14,7 +19,9 @@ export const leftControls: any = ({ previousSlide }: any) => {
   );
 };
 
-export const rightControls: any = ({ nextSlide }: any) => {
+export const rightControls: CarouselRenderControl = ({
+  nextSlide,
+}: CarouselSlideRenderControlProps) => {
   return (
     <Fab size="small" onClick={nextSlide}>
       <NavigateNextIcon />
