@@ -190,5 +190,11 @@
     "job": "Software engineer",
     "tagline": "“Less is more“",
     "image": "vincent.png"
+  },
+  {
+    "name": "Roberto",
+    "job": "Software developer",
+    "tagline": "It's not about the destination, it's the ride",
+    "image": "roberto.jpg"
   }
 ]
