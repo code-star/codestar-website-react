@@ -35,8 +35,8 @@ Other docs:
 
 ## Developing
 
-We use `npm` over `yarn`. Do not check-in a yarn.lock file. The expected npm version can be found in `.nvmrc`.
-Run `npm start`, which will run `REACT_APP_STAGE=dev react-scripts start`. It is important that `REACT_APP_STAGE` is set to `dev`, because that switches the API calls to the local mock URLs. Otherwise, it will run with the production URLs.
+We use `yarn` over `npm`. Do not check-in a `package-lock.json` but do check in the `yarn.lock`. The expected npm version can be found in `.nvmrc`.
+Run `yarn start`, which will run `REACT_APP_STAGE=dev react-scripts start`. It is important that `REACT_APP_STAGE` is set to `dev`, because that switches the API calls to the local mock URLs. Otherwise, it will run with the production URLs.
 
 ## Deploying
 
@@ -44,8 +44,24 @@ Deployments are handled by Travis CI.
 
 Triggering a deployment is done by committing/merging to the:
 
-- `develop` branch for the test site
+- `test` branch for the test site
 - `production` branch for the production site
+
+Deployment flow is: 
+
+- Make a PR to the `test` branch
+- [Travis watches the `test` branch](https://travis-ci.org/github/code-star/codestar-website-react/branches), so when the PR is accepted, Travis runs tests and build scripts for the `test` branch and stores the build assets on the [`master` branch of this repo](https://github.com/code-star/codestar-website-react/tree/master)
+- The contents of the [`master` branch of this repo](https://github.com/code-star/codestar-website-react/tree/master) are hosted with Github Pages and available through https://test.codestar.nl
+- If all is well, make a PR from the `test` branch to the `production` branch
+- [Travis watches the `production` branch](https://travis-ci.org/github/code-star/codestar-website-react/branches) too, so when the PR is accepted, Travis runs tests and build scripts for the `production` branch and stores the build assets on the [`master` branch of the code-star.github.io repo](https://github.com/code-star/code-star.github.io). 
+- The contents of the [`master` branch of the code-star.github.io repo](https://github.com/code-star/code-star.github.io) are hosted with Github Pages and available through https://www.codestar.nl
+
+The reason 2 repos are used (one for test and one for production), is because Github Pages can only host one (sub)domain per repo.
+
+Note that the `master` branches on both repos contain generated assets and should not be changed manually. When Travis deploys assets, it force pushes to the `master` branches and overwrites the commit history.
+
+The configuration for Travis determines what build scripts are executed, and where the resulting assets are placed, see the [.travis.yml](https://github.com/code-star/codestar-website-react/blob/test/.travis.yml) in e.g. the `test` branch.
+
 
 ## Hosting config
 
@@ -57,7 +73,9 @@ Only allow https (better SEO, encrypted form data), so set up Cloudflare to use 
 
 ## Serverless
 
-See the repo [codestar-website-functions](https://github.com/code-star/codestar-website-functions)
+The back-end services for this application are implemented as serverless functions which are hosted on AWS Lambda.
+
+See the repo [codestar-website-functions](https://github.com/code-star/codestar-website-functions) for these serverless functions.
 
 ## Hosting pictures
 
