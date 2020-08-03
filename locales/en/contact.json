@@ -1,0 +1,11 @@
+{
+	"INTRO_TEXT": "Looking for the best programmers? Time to take the next step? You’re on the contact page, so you should be able to find us.",
+	"NAME": "Name",
+	"PHONE": "Phone",
+	"EMAIL": "Email",
+	"MESSAGE": "Message",
+	"REQUIRED_ERROR": "Please fill in this field",
+	"SEND": "Send",
+	"FETCH_SUCCESS": "Your message has been received, we will get back to you shortly!",
+	"FETCH_FAILURE": "Something went wrong, please try again later or send a mail directly to codestar@ordina.nl"
+}

@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[0],[function(n,o,w){n.exports=w(1)},function(n,o,w){"use strict";w.r(o);w(2);window.location.href="https://www.ordina.nl/vakgebieden/scala/"}],[[0,1,2]]]);
+//# sourceMappingURL=main.edbca2fe.chunk.js.map

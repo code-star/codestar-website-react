@@ -1,0 +1,16 @@
+{
+  "ABOUT_ATTRACT_TITLE": "We program",
+  "ABOUT_ATTRACT_TEXT": "We love our job: Programming. At the end of the day, the code is all that matters. We write that code. Clean code, that works. We program Scala, but also Typescript, JavaScript and sometimes Haskell. We’re multilingual and we’re not afraid to learn new languages.",
+  "ABOUT_TEAM_TITLE": "Our Team",
+  "ABOUT_VACANCIES": "Vacancies",
+  "SITE_TITLE": "About this site",
+  "SITE_TEXTS": [
+    "At Codestar we enjoy working at our clients, and beside that we make sure to meet each other every Friday to exchange knowledge and keep in touch. On those days we work on our projects, but also invest in R&D. This is also how this site came to be: as a showcase for the stack we (want to) work with. We build this site with e.g. CRA, TypeScript, React, Storybook, CSS Modules, AWS Lambda and Jest. And of course it is open source. Check out the ",
+    " for more details."
+  ],
+  "PUBLICATIONS_TITLE": "Publications",
+  "PUBLICATIONS_TEXTS": [
+    "Our colleagues are published in magazines and on blogs. Also see the ",
+    " channel for our talks at conferences."
+  ]
+}

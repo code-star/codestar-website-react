@@ -1,0 +1,129 @@
+{
+    "JOBS_CLIENT_CASE_LABEL": "Klantcase",
+    "JOBS_CONTACT_BUTTON": "Mail Ons",
+    "JOBS_COMMON_PARAGRAPHS": [
+        {
+            "title": "Dit verdien je",
+            "content": "We doen er alles aan om jouw groei optimaal te ondersteunen. Zodat je master kunt worden in jouw vakgebied.",
+            "list": [
+                "Nieuwste Macbook of Microsoft Surface: bepaal zelf hoe je werkt",
+                "R&D dagen in Nieuwegein: focus op thema’s waarin jij expert wil worden",
+                "Campus fridays: werk op kantoor met collega’s die je helpen als je vastloopt én je inspireren met hun projecten en code",
+                "1 buitenlandse topconferentie: voor de inspiratie om voorop te lopen",
+                "2 Codecamps per jaar met toptrainers: in de woonkamer van een vakantiewoning, omdat we dan zelf bepalen wanneer de cursusdag is afgelopen en de strand-BBQ daarna meteen kan beginnen",
+                "Vast contract: ons commitment voor jouw groei naar master"
+            ]
+        },
+        {
+            "title": "Meer weten",
+            "content": "Meer weten over Codestar? Dat vertellen we graag persoonlijk. Dus als je er voor open staat om ons beter te leren kennen, neem dan deel aan een van onze trainingen of evenementen. Die organiseren we regelmatig en zijn voor iedereen kosteloos toegankelijk. Of maak gewoon een afspraak. Mail gerust onze business unit manager"
+
+        }
+    ],
+    "JOBS_NOTES": [
+        "Acquisitie naar aanleiding van deze vacature wordt niet op prijs gesteld."
+    ],
+    "JOBS_SHARE_BUTTON": "Deel",
+    "JOBS_LEARN_MORE_BUTTON": "Lees meer",
+    "JOBS_TITLE": "Hierom wil jij voor ons programmeren",
+    "JOBS_ARGUMENTS": [
+        "Wij durven het hardop te zeggen: wij zijn heel, heel goed",
+        "Hoe we werken, bepalen we zelf",
+        "Wij zijn nooit uitgeleerd",
+        "Wij kennen de onderliggende principes van functioneel programmeren",
+        "Wij kennen de onderliggende principes van object geörienteerd programmeren",
+        "Wij delen onze passie op evenementen en internationale conferenties"
+    ],
+    "JOBS_VACANCIES": "Vacatures",
+    "JOBS_VACANCIES_TEXT": "Meer weten over hoe het is om bij Codestar te werken? Lees de vacatures of neem contact op om eens langs te komen bij één van onze meetups of bijvoorbeeld een Campus Friday.",
+    "JOBS_BEST_TECH": "Wij gebruiken de beste technologieën",
+    "JOBS_BEST_CLIENTS": "Wij werken met innovatieve bedrijven",
+    "JOBS_ABOUT_US": "Je weet het nog niet zeker? Leer meer over ons",
+    "JOBS_LOOKING_FOR": "Codestar is op zoek naar een",
+    "JOBS": {
+        "big_data": {
+            "title": "Big Data Engineer",
+            "short_description": "Duik in de wereld van fast en streaming data.",
+            "tagline": "Programmeer met hart en hoofd",
+            "client_case": "Pyeongchang, Zuid-Korea - 2018. De wereld volgt de Olympische Winterspelen. Skiën, schaatsen en bobsleeën; alles wordt online gestreamd. Ook door een groot Amerikaans tv-netwerk. Gracenote- en Codestar-engineers bouwen aan het nieuwe platform om deze livestreams te verrijken met real-time data van tussentijden, fictieve standen, video logs, en biografieën van sporters. Via real-time stream processing-technologieën als Kafka en Akka. Voor een gouden plak in kijkbeleving.",
+            "paragraphs": [
+                {
+                    "title": "Daarom bij Codestar",
+                    "content": "Big, fast & smart data. Wij blinken uit in real-time dataplatforms en reactive apps. Door te programmeren. Met hart en hoofd. In multidisciplinaire, agile teams. Zonder formele toestanden. Gewoon met elkaar, maximaal waarde halen uit big data. Waarom wij daar zó sterk in zijn? Door onze continuous learning-cultuur waarin jouw ontwikkeling centraal staat. Met R&D-dagen, Campus fridays en weekenden met internationale topcoaches. Welkom. Wij zijn het #1-bedrijf voor Full Stack Scala en Fast Data-oplossingen."
+                },
+                {
+                    "title": "Wie ben jij?",
+                    "content": "Wij zoeken teamspelers. Gepassioneerd en leergierig. Professionals die de verschillende talen in een multidisciplinair team spreken. Die met hun Scala-skills of krachtige Java-background de steeds grotere big data-golven willen bedwingen. En de ambitie hebben om samen met collega’s een real-time datawereld te creëren waar de maatschappij écht iets aan heeft. Fast. Reactive. Stream processing.",
+                    "list": [
+                        "Hbo-/wo-denkniveau",
+                        "Polyglot programmeur (Scala, Java, Python, ...)",
+                        "Kennis van Spark, Kafka, Hadoop, Cassandra, SQL, ElasticSearch, Airflow",
+                        "Ervaring met gedistribueerde systemen, microservices, databases en NoSQL technologieën"
+                    ]
+                }
+            ]
+        },
+        "front_end": {
+            "title": "Front-End Developer",
+            "short_description": "Uitdagende projecten voor JS engineers.",
+            "tagline": "Programmeer met hart en hoofd",
+            "client_case": "de haven van Rotterdam als greenfield. Met een team van Codestar-collega’s maak jij het verschil voor het havenbedrijf op gebied van Front-end-techniek. Door from scratch een dashboard met reactive elementen te bouwen, waarbij jullie zelf de front-end architectuur bepalen en continuous deployment inrichten. Met Angular, TypeScript, React Native, RxJs en Redux. Naar de slimste haven ter wereld.",
+            "paragraphs": [
+                {
+                    "title": "Daarom bij Codestar",
+                    "content": "JavaScript: sleutel naar single page-applicaties die zich dynamisch aanpassen aan moderne gebruikers. Waarom wij hier succesvol in zijn? Vakinhoudelijke experts in functional reactive programming en slimme samenwerking tussen Front-end Developers, topspelers in Scala, klanten en de rest van het agile team. Zonder formele toestanden. Vanuit een continuous learning-cultuur waarin jouw ontwikkeling centraal staat. Met R&D-dagen, Campus fridays en weekenden met internationale topcoaches. Laten we samen een begrip worden."
+                },
+                {
+                    "title": "Wie ben jij?",
+                    "content": "Wij zoeken teamspelers die gepassioneerd en leergierig zijn. Proactieve specialisten die zich willen bewijzen in het ontwerpen en bouwen van JavaScript-apps. Die gaan voor resultaat, maar nooit ten koste van kwaliteit. En over goede people skills beschikken. Omdat een dag uit meer bestaat dan programmeren. Innovatie is team effort. Een kwestie van luisteren, doorvragen en samenwerken. Multidisciplinair.",
+                    "list": [
+                        "Hbo-/wo-denkniveau",
+                        "Een trackrecord in JavaScript engineering",
+                        "Kennis van functional reactive programming en/of MV* frameworks",
+                        "Ervaring met TypeScript of andere typed JavaScript-variant (pré)"
+                    ]
+                }
+            ]
+        },
+        "scala": {
+            "title": "Scala Developer",
+            "short_description": "Bouw mee aan schaalbare en reactive apps.",
+            "tagline": "Programmeer met hart en hoofd",
+            "client_case": "de haven van Rotterdam als greenfield. Met een team van Codestar collega’s maak jij het verschil voor het havenbedrijf op gebied van techniek. Om informatiegolven rond schepen te overzien en realtime datastromen te realiseren. Door te innoveren met functional programming, reactive streams, cloud native en machine learning. Via Scala, Play, Akka, Kafka, Spark, RX, Angular2 en React. Naar de slimste haven ter wereld.",
+            "paragraphs": [
+                {
+                    "title": "Daarom bij Codestar",
+                    "content": "Wij creëren de nieuwe wereld van fast en streaming data. Met schaalbare en reactive apps. Die inspelen op complexe uitdagingen. Door te programmeren. Met ons hart en hoofd. Zo maken wij het verschil. Voor klanten die de volgende stap willen zetten. Vanuit een bedrijfscultuur waarin continuous learning, samenwerken en programmeren centraal staan. Met R&D-dagen, Campus fridays en teamweekenden met internationale topcoaches. Wij zijn het #1-bedrijf voor Full Stack Scala en Fast Data-oplossingen in Nederland."
+                },
+                {
+                    "title": "Wie ben jij?",
+                    "content": "Wij zoeken teamspelers. Gepassioneerd en leergierig. Die programmeren. Ook in hun vrije tijd. Omdat ze nieuwsgierig zijn. Vaklui die het verschil kunnen maken. Door baanbrekende ideeën leven in te blazen. Die gaan voor resultaat, maar nooit ten koste van kwaliteit. En klanten daarvan kunnen overtuigen. Maar ook fouten durven te maken. Omdat innoveren vallen en opstaan is. Functional. Reactive. Full Stack.",
+                    "list": [
+                        "Hbo-/wo-denkniveau",
+                        "Een trackrecord in Scala Development"
+                    ]
+                }
+            ]
+        },
+        "scala_jr": {
+            "title": "Junior Scala Developer",
+            "short_description": "Start met stream-processing en functional programming.",
+            "tagline": "Programmeer met hart en hoofd",
+            "client_case": "wij zoeken een Scala-talent voor ons greenfield project in de haven van Rotterdam. Iemand die met collega’s het verschil wil maken bij Rotterdam Logistics Lab - innovatie-incubator van de haven. Door real-time datastromen te realiseren. Met functional programming, reactive streams, cloud native en machine learning. Via Scala, Play, Akka, Kafka, Spark, RX, Angular2 en React. Word jij de nieuwe expert in het Scala-ecosysteem?",
+            "paragraphs": [
+                {
+                    "title": "Daarom bij Codestar",
+                    "content": "Je komt in aanraking met backend stream-processing, leert frontend reactive programmeren én maakt uitstapjes in de wereld van Big Data. Binnen een team dat zich richt op fast en streaming data. Door te programmeren. Met hart en hoofd. Voor klanten die de volgende stap willen zetten. Vanuit een bedrijfscultuur waarin continuous learning, samenwerken en programmeren centraal staan. Met R&D-dagen, Campus fridays en teamweekenden met internationale topcoaches. Sluit je aan bij het #1-bedrijf voor Full Stack Scala en Fast Data-oplossingen in Nederland."
+                },
+                {
+                    "title": "Wie ben jij?",
+                    "content": "Wij zoeken teamspelers. Gepassioneerd en leergierig. Juniors die programmeren. Ook in hun vrije tijd. Omdat ze nieuwsgierig zijn. Die het verschil willen maken. Door baanbrekende ideeën leven in te blazen. Die gaan voor resultaat, maar nooit ten koste van kwaliteit. En ook fouten durven te maken. Omdat innoveren vallen en opstaan is. Functional. Reactive. Full Stack.",
+                    "list": [
+                        "Wo-denkniveau",
+                        "Ervaring met functioneel programmeren, Scala of Haskell"
+                    ]
+                }
+            ]
+        }
+    }
+}

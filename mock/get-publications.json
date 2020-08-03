@@ -1,0 +1,98 @@
+[
+  {
+    "id": "b057494f77",
+    "title": "In Search of the Holy GraalVM, putting the R in Scala (or Java, or…)",
+    "author": "Nathan Perdijk",
+    "authorImg": "0*Bqr-dMZplB-namyY.jpg",
+    "latestPublishedAt": 1553263604099,
+    "uniqueSlug": "in-search-of-the-holy-graalvm-putting-the-r-in-scala-or-java-or-b057494f77",
+    "paragraphs": [
+      "",
+      "In Search of the Holy GraalVM, putting the R in Scala (or Java, or…)"
+    ],
+    "previewImgId": "1*LPCG2xlLiUdqcYJulzxvmw.png"
+  },
+  {
+    "id": "c3237f93f12b",
+    "title": "Stateful Stream Processing Frameworks",
+    "author": "Steven Vroonland",
+    "authorImg": "0*Qxmj-9Rh00bZxvP2.png",
+    "latestPublishedAt": 1552040995996,
+    "uniqueSlug": "stateful-stream-processing-frameworks-c3237f93f12b",
+    "paragraphs": [
+      "Stateful Stream Processing Frameworks",
+      "At one of the projects that Codestar is working on at the Port of Rotterdam, we have been making use of Akka Streams a lot for our stream processing applications. With Kafka as the backbone, we get fault-tolerant and scalable stream processing. When spinning up a…"
+    ],
+    "previewImgId": ""
+  },
+  {
+    "id": "30a11bf583c0",
+    "title": "Getting to grips with Flow",
+    "author": "Bjorn Schijff",
+    "authorImg": "0*o9UzuQyUwobacrCt.jpeg",
+    "latestPublishedAt": 1548323612936,
+    "uniqueSlug": "getting-to-grips-with-flow-30a11bf583c0",
+    "paragraphs": [
+      "",
+      "Getting to grips with Flow",
+      "Coming from TypeScript, we wanted to know what other solutions are out…"
+    ],
+    "previewImgId": "1*lS6UdzpP4uO9JMm2oqvrKA.png"
+  },
+  {
+    "id": "d679cc5c4334",
+    "title": "Parcel Bundler vs. Webpack 4 ⚔️",
+    "author": "Martin van Dam",
+    "authorImg": "1*XcsvRGhrF7Z4EZRhS8tvIA.jpeg",
+    "latestPublishedAt": 1537532677051,
+    "uniqueSlug": "parcel-bundler-vs-webpack-4-️-d679cc5c4334",
+    "paragraphs": [
+      "Parcel Bundler vs. Webpack 4 ⚔️",
+      "S️etting up a fresh TypeScript React project",
+      "Starting up a new frontend project can be quite intensive. Most time will vanish in setting up the build process. We all know the pains of setting up Webpack with loaders and…"
+    ],
+    "previewImgId": "1*quM6hYGbaWC66XnZpIY2bQ.png"
+  },
+  {
+    "id": "5305a031fecd",
+    "title": "Making your Akka Streams robust",
+    "author": "Steven Vroonland",
+    "authorImg": "0*Qxmj-9Rh00bZxvP2.png",
+    "latestPublishedAt": 1534513804085,
+    "uniqueSlug": "making-your-akka-streams-robust-5305a031fecd",
+    "paragraphs": [
+      "Making your Akka Streams robust",
+      "Typical stream processing applications need to be running all the time. We want our streams to keep on running and be resilient to unexpected errors.",
+      "I have been using Akka Streams for stream processing in several projects. It’s a very powerful…"
+    ],
+    "previewImgId": ""
+  },
+  {
+    "id": "a0680a71c9af",
+    "title": "Elm for front-end developers",
+    "author": "mdworld",
+    "authorImg": "0*gTl35Xy5zRcgu5wJ.png",
+    "latestPublishedAt": 1528443402261,
+    "uniqueSlug": "elm-for-front-end-developers-a0680a71c9af",
+    "paragraphs": [
+      "Elm for front-end developers",
+      "Elm for front-end developers — how we dove into Elm to rebuild part of our site.",
+      "Why Elm?",
+      "The benefits of Elm (no runtime errors, typing) is what makes it accessible to our back-end developers. They are used to the…"
+    ],
+    "previewImgId": ""
+  },
+  {
+    "id": "42631c80be58",
+    "title": "Polymer 2 and TypeScript",
+    "author": "mdworld",
+    "authorImg": "0*gTl35Xy5zRcgu5wJ.png",
+    "latestPublishedAt": 1527255311600,
+    "uniqueSlug": "polymer-2-and-typescript-42631c80be58",
+    "paragraphs": [
+      "Polymer 2 and TypeScript",
+      "For reasons beyond my control I’m working with Polymer 2 at the moment. Although the idea of web components is great, the choice for HTML imports that comes with Polymer 2 makes integration into a modern development stack cumbersome, as will become clear soon. Also, HTML imports are…"
+    ],
+    "previewImgId": ""
+  }
+]

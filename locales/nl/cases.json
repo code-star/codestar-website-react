@@ -1,0 +1,80 @@
+{
+    "CASES_INTRO_1": "Codestar levert high-performance teams, gespecialiseerd in data-intensieve en schaalbare cloud applicaties. Denk aan het voorspellen en volgen van scheepslocaties, snelle stream processing voor de Olympische Winterspelen, component-gebaseerde fintech oplossingen...",
+    "CASES_INTRO_2": "Wat we voor u kunnen betekenen? Bekijk de klantcases om een impressie te krijgen van de diverse kwaliteiten van Codestar. Onder de indruk van ons werk? Neem dan contact met ons op. Wij vertellen u graag meer.",
+    "CASES_STACK_TITLE": "Technology stack",
+    "CASES_CLOSE_BUTTON": "Sluiten",
+    "CASES_READ_MORE_BUTTON": "Lees meer",
+    "CASES": {
+        "rabobank": {
+            "title": "Ontwikkelaars en bankiers weer dezelfde taal laten spreken",
+            "intro": "Voor het Rabobank Hypotheekdossier hebben we de wijze van het berekenen van de hypotheken aangepakt. De bestaande Java-code was in de loop der tijd dermate complex geworden, dat deze zowel moeilijk te begrijpen als te testen was. Ontwikkelaars en bankiers spraken niet meer dezelfde taal. Door een DSL te ontwikkelen in Scala hebben we de code eenvoudig, leesbaar en testbaar gemaakt. Niet alleen voor programmeurs, maar ook voor de business. En dat in een fractie van de hoeveelheid code die nodig was voor de oude implementatie in Java. Uiteindelijk was de business niet alleen in staat om de code te lezen, maar hebben ze zelfs berekeningen zelf geïmplementeerd. De business die de taal van de programmeur spreekt. Doel gehaald.",
+            "sections": []
+        },
+        "skg": {
+            "title": "Niet optimaliseren, maar compleet vernieuwen",
+            "intro": "Een klassiek voorbeeld van een klant met een applicatie die niet meer voldoet aan de moderne eisen. De klant zoekt een nieuw betaalplatform dat apps en moderne devices ondersteunt, snelle live gang van features mogelijk maakt en minder beheerlast met zich meebrengt. Het huidige verouderde platform is geheel, inclusief hosting en fysieke servers, in house en volledig op maat gemaakt voor SKG. Wij bouwen een nieuw reactive platform dat schaalt, onderhoudbaar is, gebruikmakend van moderne technieken en methodologieën als Microservices, Platform as a Service en Continuous Delivery.",
+            "sections": [
+                {
+                    "title": "Over SKG",
+                    "paragraphs": [
+                        "SKG, Stichting Kerkelijk Geldbeheer, biedt financiële diensten toegespitst op kerken en kerkelijke instellingen. Met SKG Online bieden ze een unieke financiële applicatie voor kerken en kerkelijke instellingen, toegespitst op de taakverdeling en werkwijze binnen zulke organisaties. SKG Online biedt functionaliteit die klanten verwachten, zoals incasso’s, betalen en sparen. Daarnaast kunnen organisaties precies aangeven welke handelingen hun medewerkers wel en niet mogen verrichten binnen het systeem, tot op rekeningniveau. Zo is het mogelijk dat voor grote bedragen een extra digitale handtekening nodig is.",
+                        "Het huidige verouderde platform is geheel, inclusief hosting en fysieke servers, in house en volledig op maat gemaakt voor SKG. SKG zoekt een nieuw betaalplatform dat apps en moderne devices ondersteunt, snelle livegang van features mogelijk maakt en minder beheerlast met zich meebrengt. CodeStar bouwt voor SKG een nieuw reactive platform dat schaalt en onderhoudbaar is. Het platform is toekomstbestendig dankzij technieken als Microservices, Platform as a Service en Continuous Delivery."
+                    ]
+                },
+                {
+                    "title": "Over het systeem",
+                    "paragraphs": [
+                        "De backend van het systeem schrijven we in Scala. Het Play! framework legt de basis voor een schaalbaar platform dat grote hoeveelheden traffic aankan. Scala is expressief en maakt het eenvoudig om snel een nauwkeurig data model op te tuigen. Hierdoor hebben we de unieke workflows en business rules van SKG Online zeer compact, leesbaar en onderhoudbaar kunnen opschrijven. Dat betekent minder fouten in de software en sneller ontwikkelen. Een aantal recent ontwikkelde stukken Java-software konden gemakkelijk geïntegreerd worden.",
+                        "In de frontend behalen we dankzij TypeScript dezelfde voordelen voor robuustheid en ontwikkelsnelheid. Met de nieuwste versie van het Angular framework benutten we de kracht van TypeScript optimaal. Dit breed ondersteunde framework is toekomstbestendig. Met reactive programming kunnen we geavanceerde user interfaces bouwen zonder in te leveren op beheersbaarheid.",
+                        "Met continuous delivery en de nieuwste container-technieken kunnen we gestroomlijnd, snel en consistent nieuwe functionaliteit opleveren. Zonder enige downtime. Zo kan SKG in de toekomst snel inspelen op verandering."
+                    ]
+                }
+            ]
+        },
+        "ing": {
+            "title": "Innoveren in fintech",
+            "intro": "Een veeleisende klant waar Codestar bijdraagt aan innovatie op het project voor straight-through appointment scheduling.",
+            "sections": [
+                {
+                    "title": "Over ING",
+                    "paragraphs": [
+                        "ING: de bank als een IT bedrijf met een bankvergunning. ING wil wereldleider zijn in innovatie op het gebied van financiële technologie en biedt een sfeer die aantrekkelijk is voor ontwikkelaars. Meer dan 300 ontwikkelaars werken aan diverse aspecten van de online presence van ING. Om dit te ondersteunen heeft ING het Spotify agile model en DevOps omarmd, waarmee elk team verantwoordelijk is voor de business en IT kant van een of meerdere applicaties.",
+                        "Codestar werkt aan ING's online afspraken maken service: de eerste straight-through afspraken maken service voor een bank in Nederland. Klanten, prospects en werknemers kunnen online een afspraak inplannen met een financieel adviseur met de juiste vaardigheden voor een bepaald type afspraken (hypotheken, financieel advies).",
+                        "Het systeem zorgt voor een significante verbetering van de conversie en daarmee de sales funnel. Dit is een centraal IT project binnen assisted channels (financieel advies bij ING kantoren) dat de technische ruggegraat zal vormen bij toekomstig contact tussen ING en haar klanten en prospects."
+                    ]
+                },
+                {
+                    "title": "Over het systeem",
+                    "paragraphs": [
+                        "Het systeem integreert met de Exchange agenda's van 1300 adviseurs, vergaderruimtes in 250 kantoren en andere afspraaksystemen bij de bank. Hiermee wordt nagenoeg real-time beschikbaarheid gevalideerd en daarmee gezorgd voor de beste klantervaring. De backend gebruikt Scala, Cassandra en asynchroon-programmeertechnieken om een schaalbaar platform te creeëren, dat uitgebreid kan worden voor gebruik in andere landen.",
+                        "ING gelooft sterk in de belofte van gestandaardiseerde component driven development en een universele design language voor front-end development. ING heeft hiervoor web components (Polymer) en Material Design ingezet om een front-end stack op te bouwen die geschikt is voor de komende jaren. De online afspraken maken service maakt deel uit van de wereldwijde ING overgang van AngularJS naar Polymer.",
+                        "Codestar biedt de full-stack expertise en brede platform kennis om het onderhoud van de online afspraken maken service en de migratie naar het nieuwe platform te realiseren."
+                    ]
+                }
+            ]
+        },
+        "port-of-rotterdam": {
+            "title": "Samen de haven herontdekken",
+           "intro": "Innovatief project met als doel de realisatie van een pilot applicatie ter verificatie van een nieuw veelbelovend business-concept voor de gehele haven. En de gehele haven betekent ook de gehele haven. Dus veel stakeholders en het bijbehorende overleg. Korte feedback-loops waren essentieel om de richting te bepalen voor de pilot. Het gebruik van een volledig cloud-gebaseerde ontwikkelstraat maakte het mogelijk om vanaf week één al functionaliteit in de productie-omgeving te tonen en zo inhoud te geven aan die korte feedback-loops. Dus geen vergaderingen over abstracte software diagrammen, maar over werkende software. Agile zoals agile bedoeld is.",
+            "sections": [
+                {
+                    "title": "Over Havenbedrijf Rotterdam",
+                    "paragraphs": [
+                        "De haven van Rotterdam is de grootste van Europa. Voorwaarde om deze positie te behouden en te kunnen blijven groeien is dat de havenpartijen IT-slimmer data met elkaar uitwisselen. Het Rotterdam Logistics Lab helpt hierbij door slimme oplossingen te bedenken en uit te proberen die deze transformatie kunnen versnellen. De betreffende projecten zorgen voor meer efficiëntie en hogere veiligheid doordat event-data van partijen in de haven van Rotterdam slim gecombineerd en verrijkt worden. Deze verrijkingen zijn near realtime en voorspellend.",
+                        "Rotterdam Logistics Labs is het innovatielab van het Havenbedrijf Rotterdam. Hier brengt HBR snel nieuwe potentiële producten naar de partijen gebruik makend van moderne technologieën. Codestar helpt HBR door deze product initiatieven snel realiteit te maken. Daarbij zijn onze agile en effectieve manier van werken een goede match voor de MVP dynamiek van het innovatielab. En onze uitgebreide kennis van near realtime reactive technieken en voorspellende stream based verwerking passen goed bij de technische uitdagingen van deze projecten."
+                    ]
+                }
+            ]
+        },
+        "42-education": {
+            "title": "Met code een lean startup een kickstart geven",
+            "intro": "Een startup als klant. Dat betekent een grote tijdsdruk, enorme flexibiliteit en supersnel schakelen in een informele sfeer. Door voor moderne Continuous Delivery en Cloud technieken te kiezen waren we vanaf dag één productief. Het doel was kinderen te laten leren door te gamen met vrienden. Realtime met grote hoeveelheden events. De bijbehorende software architectuur zetten wij daarom geheel reactive op. We maakten gebruik van real-time event notificatie op basis van reactive streams, en horizontaal schalende event persistentie op basis van event sourcing met Cassandra.",
+            "sections": []
+        },
+        "gracenote-sports": {
+            "title": "Winter Olympics",
+            "intro": "Pyeongchang, Zuid-Korea - februari 2018. De wereld kijkt naar de Winterspelen. Hockey, Skiën, Curling, Schaatsen en Bobsleeën: alles wordt online gestreamed. Gracenote Sports heeft een Kafka Streams pipeline opgezet als een razendsnelle backend voor Olympische data widgets, de kracht achter de apps en website van een grote Olympische tv-netwerk. Dit door een combinatie te maken van real-time resultaten, tussenstanden, klassement informatie, video logs en de biografieën van atleten. Voor een gouden medaille voor kijkervaring.",
+            "sections": []
+        }
+    }
+}
