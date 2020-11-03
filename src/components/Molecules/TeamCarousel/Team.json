@@ -29,7 +29,8 @@
     "name": "Ishan",
     "job": "Programmer",
     "tagline": "“Talk is cheap, show me the code”",
-    "image": "ishan.jpg"
+    "image": "ishan.jpg",
+    "gone": true
   },
   {
     "name": "Martijn",

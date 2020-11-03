@@ -44,8 +44,8 @@ Deployments are handled by Travis CI.
 
 Triggering a deployment is done by committing/merging to the:
 
-- `develop` branch for the test site
-- `production` branch for the production site
+- `test` branch for the test site: https://code-star.github.io/test
+- `production` branch for the production site: https://code-star.github.io
 
 ## Hosting config
 
