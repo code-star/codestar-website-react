@@ -33,17 +33,19 @@ export async function fetchYouTubePlaylist(
     .then(json => JSON.parse(json))
     .then(data => data.items)
     .then(items =>
-      items.map(
-        (item: any): VideoItem => ({
-          id: item.contentDetails.videoId,
-          publishedAt: new Date(item.contentDetails.videoPublishedAt),
-          title: item.snippet.title,
-          description: item.snippet.description
-            ? item.snippet.description.split('\n')
-            : [],
-          thumbnails: item.snippet.thumbnails,
-        })
-      )
+      items
+        ? items.map(
+            (item: any): VideoItem => ({
+              id: item.contentDetails.videoId,
+              publishedAt: new Date(item.contentDetails.videoPublishedAt),
+              title: item.snippet.title,
+              description: item.snippet.description
+                ? item.snippet.description.split('\n')
+                : [],
+              thumbnails: item.snippet.thumbnails,
+            })
+          )
+        : []
     )
     .then((videos: VideoItem[]) =>
       videos.sort((a, b) => b.publishedAt.valueOf() - a.publishedAt.valueOf())
