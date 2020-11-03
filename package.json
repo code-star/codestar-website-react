@@ -2,7 +2,7 @@
   "name": "codestar-website-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://code-star.github.io/codestar-website-react/",
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.5",
     "@fortawesome/fontawesome-svg-core": "^1.2.13",

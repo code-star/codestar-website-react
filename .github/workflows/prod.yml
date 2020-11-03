@@ -22,7 +22,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install and Build components 🔧
+        # jq line programmatically removes the homepage property from package.json for production
         run: |
+          jq -r 'del(.["homepage"])' package.json > _.json && mv _.json package.json
           yarn install
           REACT_APP_STAGE=prod yarn build
       #     CI: false # true -> fails on warning
