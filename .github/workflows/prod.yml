@@ -1,4 +1,4 @@
-name: Build deploy to Github Pages
+name: Deploy to Prod (https://code-star.github.io/)
 
 on:
   push:

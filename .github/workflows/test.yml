@@ -1,4 +1,4 @@
-name: Build deploy to Github Pages
+name: Deploy to Test (https://code-star.github.io/codestar-website-react/)
 
 on:
   push:
