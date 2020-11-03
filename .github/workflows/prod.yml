@@ -1,4 +1,4 @@
-name: Build deploy to Github Pages
+name: Deploy to Prod (https://code-star.github.io/)
 
 on:
   push:
@@ -33,4 +33,5 @@ jobs:
           BRANCH: master # The branch the action should deploy to.
           FOLDER: build # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # Access token from the Prod repo, set in Settings > Secrets
           REPOSITORY_NAME: code-star/code-star.github.io
