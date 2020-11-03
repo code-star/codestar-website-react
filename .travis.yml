@@ -11,7 +11,7 @@ deploy:
     github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
     target_branch: master
     local_dir: build/
-    fqdn: test.codestar.nl
+    # fqdn: test.codestar.nl
     on:
       branch: test
   # PROD
@@ -21,6 +21,6 @@ deploy:
     repo: code-star/code-star.github.io
     target_branch: master
     local_dir: build/
-    fqdn: www.codestar.nl
+    # fqdn: www.codestar.nl
     on:
       branch: production
