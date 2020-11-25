@@ -212,9 +212,9 @@
   },
   {
     "name": "Bart",
-    "job": "Front-end developer",
-    "tagline": "",
-    "image": ""
+    "job": "Software Engineer I",
+    "tagline": "Let's scale together",
+    "image": "bart.png"
   }
 
 ]
