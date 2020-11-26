@@ -8,6 +8,7 @@ export default class NavContainer extends Component {
   state = {
     drawerMenu: false,
     nextEvent: null,
+    showNav: true
   };
 
   componentDidMount() {
@@ -34,16 +35,30 @@ export default class NavContainer extends Component {
     });
   };
 
+  showOtherNav = () => {
+    this.setState(prevState => {
+      console.log("hello I am state", prevState)
+      return { ...prevState, showNav: !prevState.showNav }
+
+    });
+  };
+
+
   render() {
+    const showNav = this.state.showNav;
     return (
       <Fragment>
-        <NavBar toggle={this.toggleDrawer} nextEvent={this.state.nextEvent} />
+
+        {showNav ? <NavBar toggle={this.toggleDrawer} nextEvent={this.state.nextEvent} /> : "functional nav TODO"}
+        {console.log(this.showNav)}
         <SideMenu
           open={this.state.drawerMenu}
           toggle={this.toggleDrawer}
           history={this.props.history}
           nextEvent={this.state.nextEvent}
         />
+
+        <button onClick={this.showOtherNav} style={{ top: "200px", position: "absolute", left: "200px", zIndex: "1" }}>Change nav</button>
       </Fragment>
     );
   }
