@@ -15,7 +15,7 @@ import LoadingMessage from './components/Atoms/LoadingMessage/LoadingMessage';
 import FullHeight from './components/Atoms/FullHeight/FullHeight';
 
 // const AsyncIntro = lazy(() => import('./Intro/Intro'));
-// const AsyncCases = lazy(() => import('./Cases/Cases'));
+const AsyncCases = lazy(() => import('./Cases/Cases'));
 const AsyncAbout = lazy(() => import('./components/Pages/About/About'));
 const AsyncJobs = lazy(() => import('./Jobs/Jobs'));
 // FIXME any type, lazy<JobDescriptionOuterProps> is invalid
@@ -113,11 +113,11 @@ class App extends Component<AppProps, AppState> {
                   <Route exact path="/">
                     <AsyncPublications />
                   </Route>
-                  {/* <Route
+                  <Route
                     exact
                     path="/cases"
                     render={routeProps => <AsyncCases {...routeProps} />}
-                  /> */}
+                  />
                   <Route exact path="/jobs">
                     <AsyncJobs />
                   </Route>

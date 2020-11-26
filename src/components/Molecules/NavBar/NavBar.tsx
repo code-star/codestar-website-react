@@ -85,6 +85,8 @@ class NavBar extends React.Component<NavBarProps> {
       <span style={{ color: 'red' }}> ●</span>
     ) : null;
 
+    console.log("this is props classes etc", props.classes.flex)
+
     return (
       <AppBar position="fixed" className={props.classes.appBar}>
         <Toolbar>
