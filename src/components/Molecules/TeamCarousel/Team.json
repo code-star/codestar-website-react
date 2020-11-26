@@ -197,5 +197,23 @@
     "job": "Software developer",
     "tagline": "It's not about the destination, it's the ride",
     "image": "roberto.jpg"
+  },
+  {
+    "name": "Alex",
+    "job": "Captain",
+    "tagline": "",
+    "image": "alex.jpg"
+  },
+  {
+    "name": "Tammy",
+    "job": "Developer",
+    "tagline": "",
+    "image": "tammy.jpg"
+  },
+  {
+    "name": "Bart",
+    "job": "Software Engineer I",
+    "tagline": "Let's scale together",
+    "image": "bart.png"
   }
 ]
