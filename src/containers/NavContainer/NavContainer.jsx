@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import NavBar from '../../components/Molecules/NavBar/NavBar';
 import SideMenu from '../../SideMenu/SideMenu';
 import { getCachedUpcomingEvents } from '../../eventsService';
+import NavBarFunc from '../../components/Molecules/NavBar/NavBarFunc';
 
 export default class NavContainer extends Component {
   state = {
@@ -49,7 +50,7 @@ export default class NavContainer extends Component {
     return (
       <Fragment>
 
-        {showNav ? <NavBar toggle={this.toggleDrawer} nextEvent={this.state.nextEvent} /> : "functional nav TODO"}
+        {showNav ? <NavBar toggle={this.toggleDrawer} nextEvent={this.state.nextEvent} /> : <NavBarFunc />}
         {console.log(this.showNav)}
         <SideMenu
           open={this.state.drawerMenu}
