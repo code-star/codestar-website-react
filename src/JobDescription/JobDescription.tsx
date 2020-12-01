@@ -22,12 +22,12 @@ type JobDescriptionInnerProps = Readonly<{
   classes: WithStyles['classes'];
 }>;
 
-const styles: StyleRulesCallback<string> = (theme: Theme) => ({
+const styles: StyleRulesCallback<any, any> = (theme: Theme) => ({
   button: {
-    margin: theme.spacing.unit,
+    margin: theme.spacing(1),
   },
   leftIcon: {
-    marginRight: theme.spacing.unit,
+    marginRight: theme.spacing(1),
   },
 });
 
@@ -39,7 +39,7 @@ type JobParagraph = Readonly<{
 
 class JobDescription extends React.Component<
   JobDescriptionOuterProps & JobDescriptionInnerProps
-> {
+  > {
   public render() {
     const props = this.props;
     const { path, t } = props;

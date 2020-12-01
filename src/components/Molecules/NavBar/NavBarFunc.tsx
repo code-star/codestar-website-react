@@ -1,6 +1,6 @@
 
 import { AppBar, Button, Hidden, IconButton, Theme, Toolbar, Typography, withStyles } from '@material-ui/core'
-import { StyleRules, WithStyles } from '@material-ui/core/styles';
+import { createStyles, StyleRules, WithStyles } from '@material-ui/core/styles';
 import React, { FC } from 'react'
 import { compose } from 'recompose';
 import { Menu as MenuIcon, Language as LanguageIcon } from '@material-ui/icons';
@@ -12,44 +12,55 @@ import { t } from 'i18next';
 import { CustomButton } from '../../Atoms/CustomButton/CustomButton';
 import EventsButton from '../EventsButton/EventsButton';
 
-const styles = (theme: Theme): StyleRules => ({
-  flex: {
-    flex: 1,
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
-  logo: {
-    marginRight: '1em',
-    width: '100px',
-    [theme.breakpoints.up('md')]: {
-      width: '140px',
+// const useStyles = makeStyles(
+//   ({​​​​​ typography }​​​​​: Theme): StyleRules =>
+//   createStyles({​​​​​
+//   root: {​​​​​
+//   height: "100vh",
+//   maxHeight: "335px",
+//   display: "flex",
+//   flexDirection: "column",
+//   }​​​​​,
+
+const styles = (theme: Theme): StyleRules =>
+  createStyles({
+    flex: {
+      flex: 1,
     },
-  },
-  appBar: {
-    backgroundColor: 'rgba(0,0,0,0.75)',
-  },
-  langButton: {
-    margin: 0,
-    padding: 0,
-    minWidth: '70px',
-    '&:focus': {
-      outline: 0,
+    menuButton: {
+      marginLeft: -12,
+      marginRight: 20,
     },
-  },
-  button: {
-    '&:hover': {
-      color: 'white',
-      background: 'rgba(200, 200, 255, 0.2)',
+    logo: {
+      marginRight: '1em',
+      width: '100px',
+      [theme.breakpoints.up('md')]: {
+        width: '140px',
+      },
     },
-  },
-  envTag: {
-    display: 'inline-block',
-    fontFamily: 'monospace',
-    marginLeft: '1em',
-  },
-});
+    appBar: {
+      backgroundColor: 'rgba(0,0,0,0.75)',
+    },
+    langButton: {
+      margin: 0,
+      padding: 0,
+      minWidth: '70px',
+      '&:focus': {
+        outline: 0,
+      },
+    },
+    button: {
+      '&:hover': {
+        color: 'white',
+        background: 'rgba(200, 200, 255, 0.2)',
+      },
+    },
+    envTag: {
+      display: 'inline-block',
+      fontFamily: 'monospace',
+      marginLeft: '1em',
+    },
+  });
 
 
 interface Props {
