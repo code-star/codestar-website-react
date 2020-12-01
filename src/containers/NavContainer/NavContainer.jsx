@@ -50,7 +50,7 @@ export default class NavContainer extends Component {
     return (
       <Fragment>
 
-        {showNav ? <NavBar toggle={this.toggleDrawer} nextEvent={this.state.nextEvent} /> : <NavBarFunc />}
+        {showNav ? <NavBar toggle={this.toggleDrawer} nextEvent={this.state.nextEvent} /> : <NavBarFunc toggle={this.toggleDrawer} nextEvent={this.state.nextEvent} />}
         {console.log(this.showNav)}
         <SideMenu
           open={this.state.drawerMenu}
