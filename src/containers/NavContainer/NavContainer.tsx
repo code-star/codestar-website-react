@@ -1,11 +1,16 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import NavBar from '../../components/Molecules/NavBar/NavBar';
 import SideMenu from '../../SideMenu/SideMenu';
 import { getCachedUpcomingEvents } from '../../eventsService';
 import NavBarFunc from '../../components/Molecules/NavBar/NavBarFunc';
 
-export default class NavContainer extends Component {
+
+interface Props {
+  history: any
+}
+
+
+export default class NavContainer extends Component<Props> {
   state = {
     drawerMenu: false,
     nextEvent: null,
@@ -29,7 +34,7 @@ export default class NavContainer extends Component {
   }
 
   toggleDrawer = () => {
-    this.setState(prevState => {
+    this.setState((prevState: any) => {
       return {
         drawerMenu: !prevState.drawerMenu,
       };
@@ -37,7 +42,7 @@ export default class NavContainer extends Component {
   };
 
   showOtherNav = () => {
-    this.setState(prevState => {
+    this.setState((prevState: any) => {
       console.log("hello I am state", prevState)
       return { ...prevState, showNav: !prevState.showNav }
 
@@ -51,7 +56,6 @@ export default class NavContainer extends Component {
       <Fragment>
 
         {showNav ? <NavBar toggle={this.toggleDrawer} nextEvent={this.state.nextEvent} /> : <NavBarFunc toggle={this.toggleDrawer} nextEvent={this.state.nextEvent} />}
-        {console.log(this.showNav)}
         <SideMenu
           open={this.state.drawerMenu}
           toggle={this.toggleDrawer}
@@ -59,12 +63,9 @@ export default class NavContainer extends Component {
           nextEvent={this.state.nextEvent}
         />
 
-        <button onClick={this.showOtherNav} style={{ top: "200px", position: "absolute", left: "200px", zIndex: "1" }}>Change nav</button>
+        <button onClick={this.showOtherNav} style={{ top: "200px", position: "absolute", left: "200px", zIndex: 1 }}>Change nav</button>
       </Fragment>
     );
   }
 }
 
-NavContainer.propTypes = {
-  history: PropTypes.object.isRequired,
-};

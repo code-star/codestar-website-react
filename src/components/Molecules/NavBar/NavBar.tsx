@@ -177,7 +177,7 @@ class NavBar extends React.Component<NavBarProps> {
   }
 }
 
-export default compose(
+export default compose<any, any>(
   withStyles(styles),
   withWidth(),
   translate(['nav'], { wait: true })

@@ -58,6 +58,9 @@ interface Props {
   nextEvent: IMeetupEvent | null
 }
 
+// Pick is a way to { toggle: () => void }
+type OuterProps = Pick<Props, "toggle" | "nextEvent">
+
 const NavBarFunc: FC<Props> = ({ classes, toggle, nextEvent }) => {
 
 
@@ -172,6 +175,7 @@ const NavBarFunc: FC<Props> = ({ classes, toggle, nextEvent }) => {
   )
 }
 
-export default compose<Props, {}>(
+
+export default compose<Props, OuterProps>(
   withStyles(styles)
 )(NavBarFunc);

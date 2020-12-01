@@ -18,6 +18,7 @@ import {
   Event as EventIcon,
   // Notes as NotesIcon
 } from '@material-ui/icons';
+import compose from 'recompose/compose';
 
 type SideMenuProps = any;
 type SideMenuState = any;
@@ -128,4 +129,6 @@ class SideMenu extends React.Component<SideMenuProps, SideMenuState> {
   }
 }
 
-export default translate(['nav'], { wait: true })(SideMenu);
+
+
+export default compose<any, any>(translate(['nav'], { wait: true }))(SideMenu);
