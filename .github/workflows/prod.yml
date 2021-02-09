@@ -28,6 +28,13 @@ jobs:
           yarn install
           REACT_APP_STAGE=prod yarn build
       #     CI: false # true -> fails on warning
+      # - name: Deploy 🚀
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     deploy_key: ${{ secrets.ACCESS_TOKEN }} # Access token from the Prod repo, set in Settings > Secrets
+      #     external_repository: code-star/code-star.github.io
+      #     publish_branch: master # The branch the action should deploy to.
+      #     publish_dir: ./build # The folder the action should deploy.
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
