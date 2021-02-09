@@ -5,8 +5,6 @@ on:
     branches:
       - production
 
-# bump
-
 jobs:
   build:
 
@@ -44,4 +42,4 @@ jobs:
           repository-name: code-star/code-star.github.io
           branch: master # The branch the action should deploy to.
           folder: build # The folder the action should deploy.
-          clean: true # Automatically remove deleted files from the deploy branch          
+          clean: true # Automatically remove deleted files from the deploy branch

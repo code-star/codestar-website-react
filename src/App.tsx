@@ -14,8 +14,8 @@ import AppMessageSnackbar from './components/Molecules/AppMessageSnackbar/AppMes
 import LoadingMessage from './components/Atoms/LoadingMessage/LoadingMessage';
 import FullHeight from './components/Atoms/FullHeight/FullHeight';
 
-const AsyncIntro = lazy(() => import('./Intro/Intro'));
-const AsyncCases = lazy(() => import('./Cases/Cases'));
+// const AsyncIntro = lazy(() => import('./Intro/Intro'));
+// const AsyncCases = lazy(() => import('./Cases/Cases'));
 const AsyncAbout = lazy(() => import('./components/Pages/About/About'));
 const AsyncJobs = lazy(() => import('./Jobs/Jobs'));
 // FIXME any type, lazy<JobDescriptionOuterProps> is invalid
@@ -111,13 +111,13 @@ class App extends Component<AppProps, AppState> {
               <Suspense fallback={<LoadingMessage />}>
                 <Switch>
                   <Route exact path="/">
-                    <AsyncIntro />
+                    <AsyncPublications />
                   </Route>
-                  <Route
+                  {/* <Route
                     exact
                     path="/cases"
                     render={routeProps => <AsyncCases {...routeProps} />}
-                  />
+                  /> */}
                   <Route exact path="/jobs">
                     <AsyncJobs />
                   </Route>
@@ -134,9 +134,6 @@ class App extends Component<AppProps, AppState> {
                   </Route>
                   <Route path="/events">
                     <AsyncEvents />
-                  </Route>
-                  <Route path="/publications">
-                    <AsyncPublications />
                   </Route>
                   <Route path="/code-challenge">
                     <AsyncCodeChallenge />

@@ -11,12 +11,12 @@ import {
 } from '@material-ui/core';
 import {
   Dashboard as DashboardIcon,
-  Business as BusinessIcon,
+  // Business as BusinessIcon,
   People as PeopleIcon,
   Code as CodeIcon,
   Email as EmailIcon,
   Event as EventIcon,
-  Notes as NotesIcon
+  // Notes as NotesIcon
 } from '@material-ui/icons';
 
 type SideMenuProps = any;
@@ -34,16 +34,16 @@ const list = [
     link: '/events',
     canHaveNotification: true,
   },
-  {
-    text: 'PUBLICATIONS',
-    icon: <NotesIcon />,
-    link: '/publications',
-  },
-  {
-    text: 'Cases',
-    icon: <BusinessIcon />,
-    link: '/cases',
-  },
+  // {
+  //   text: 'PUBLICATIONS',
+  //   icon: <NotesIcon />,
+  //   link: '/publications',
+  // },
+  // {
+  //   text: 'Cases',
+  //   icon: <BusinessIcon />,
+  //   link: '/cases',
+  // },
   {
     text: 'ABOUT',
     icon: <PeopleIcon />,

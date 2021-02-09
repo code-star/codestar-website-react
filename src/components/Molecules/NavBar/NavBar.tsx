@@ -130,7 +130,7 @@ class NavBar extends React.Component<NavBarProps> {
               Home
             </CustomButton>
             <EventsButton label="Events" nextEvent={this.props.nextEvent} />
-            <CustomButton
+            {/* <CustomButton
               component={Link}
               to="/publications"
               color="inherit"
@@ -145,7 +145,7 @@ class NavBar extends React.Component<NavBarProps> {
               className={props.classes.button}
             >
               Cases
-            </CustomButton>
+            </CustomButton> */}
             <CustomButton
               component={Link}
               to="/about"
