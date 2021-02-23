@@ -8,28 +8,15 @@ exports[`<PublicationCard /> renders a publication 1`] = `
     className="MuiCardHeader-root"
   >
     <div
-      className="MuiCardHeader-avatar"
-    >
-      <div
-        aria-label="Author"
-        className="MuiAvatar-root"
-      >
-        <img
-          className="MuiAvatar-img"
-          src="https://cdn-images-1.medium.com/fit/c/50/50/foo.png"
-        />
-      </div>
-    </div>
-    <div
       className="MuiCardHeader-content"
     >
       <span
-        className="MuiTypography-root MuiTypography-body2 MuiCardHeader-title"
+        className="MuiTypography-root MuiTypography-headline MuiCardHeader-title"
       >
         Test Author
       </span>
       <span
-        className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary MuiCardHeader-subheader"
+        className="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary MuiCardHeader-subheader"
       >
         Invalid Date
       </span>
@@ -47,23 +34,22 @@ exports[`<PublicationCard /> renders a publication 1`] = `
   <div
     className="MuiCardContent-root"
   >
-    <h3
-      className="MuiTypography-root MuiTypography-h3"
-    >
-      Test Title
-    </h3>
-    <p
-      className="MuiTypography-root MuiTypography-body1"
-    >
-      Test Paragraph
-    </p>
+    <div>
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Test Paragraph",
+          }
+        }
+      />
+    </div>
   </div>
   <div
     className="MuiCardActions-root"
   >
     <a
       className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-flat MuiButton-flatPrimary MuiButton-sizeSmall MuiCardActions-action"
-      href="https://medium.com/codestar-blog/slug"
+      href="slug"
       onBlur={[Function]}
       onContextMenu={[Function]}
       onFocus={[Function]}
@@ -90,7 +76,7 @@ exports[`<PublicationCard /> renders a publication 1`] = `
     <a
       aria-label="Twitter"
       className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-flat MuiButton-flatPrimary MuiButton-sizeSmall"
-      href="https://twitter.com/home?status=Codestar%20article%20%22Test%20Title%22%20by%20Test%20Author%0Ahttps://medium.com/codestar-blog/slug"
+      href="https://twitter.com/home?status=Codestar%20article%20%22Test%20Title%22%20by%20Test%20Author%0Aslug"
       onBlur={[Function]}
       onContextMenu={[Function]}
       onFocus={[Function]}
@@ -140,7 +126,7 @@ exports[`<PublicationCard /> renders a publication 1`] = `
     <a
       aria-label="Linkedin"
       className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-flat MuiButton-flatPrimary MuiButton-sizeSmall"
-      href="https://www.linkedin.com/shareArticle?mini=true&url=https://medium.com/codestar-blog/slug&title=Test%20Title&summary=Codestar%20article%20%22Test%20Title%22%20by%20Test%20Author"
+      href="https://www.linkedin.com/shareArticle?mini=true&url=slug&title=Test%20Title&summary=Codestar%20article%20%22Test%20Title%22%20by%20Test%20Author"
       onBlur={[Function]}
       onContextMenu={[Function]}
       onFocus={[Function]}
@@ -190,7 +176,7 @@ exports[`<PublicationCard /> renders a publication 1`] = `
     <a
       aria-label="Facebook"
       className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-flat MuiButton-flatPrimary MuiButton-sizeSmall"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://medium.com/codestar-blog/slug"
+      href="https://www.facebook.com/sharer/sharer.php?u=slug"
       onBlur={[Function]}
       onContextMenu={[Function]}
       onFocus={[Function]}
