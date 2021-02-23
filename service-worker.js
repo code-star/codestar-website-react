@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/codestar-website-react/precache-manifest.4f048a77d3bd9b86e8049d168049db29.js"
+  "/codestar-website-react/precache-manifest.51edea0958a1dd6e026867ca344917e3.js"
 );
 
 workbox.clientsClaim();
