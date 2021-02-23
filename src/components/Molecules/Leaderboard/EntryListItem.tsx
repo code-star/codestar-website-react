@@ -26,15 +26,15 @@ const EntryTypography = withStyles((theme: Theme) => ({
 }))(Typography);
 
 const formatDate = (input: string) => {
-  // const date = new Date(input);
-  const formatted = "123" /*new Intl.DateTimeFormat("nl-NL", {
+  const date = new Date(input);
+  const formatted = new Intl.DateTimeFormat("nl-NL", {
     year: "numeric",
     month: "numeric",
     day: "numeric",
     hour: "numeric",
     minute: "numeric",
     second: "numeric",
-  }).format(date);*/
+  }).format(date);
   return formatted;
 };
 

@@ -7,14 +7,16 @@ import {
   withStyles,
 } from "@material-ui/core";
 
-const StyledCard = withStyles(() => ({
+export const StyledCard = withStyles(() => ({
   root: {
     backgroundColor: "transparent",
+    marginBottom: "1rem"
   },
 }))(Card);
 
-const StyledCardHeader = withStyles((theme: Theme) => ({
+export const StyledCardHeader = withStyles((theme: Theme) => ({
   root: {
+    // TODO orange?_
     backgroundColor: theme.palette.primary.dark,
     // textAlign: "center",
   },
@@ -24,16 +26,20 @@ const StyledCardHeader = withStyles((theme: Theme) => ({
   },
 }))(CardHeader);
 
-const StyledCardContent = withStyles(() => ({
+export const StyledCardContent = withStyles(() => ({
   root: {
     backgroundColor: "rgba(0, 0, 0, 0.5)",
+    color: "white",
+    "& h6": {
+      color: "white",      
+    }
   },
 }))(CardContent);
 
 const BoardCard: FC = ({ children }) => {
   return (
     <StyledCard>
-      <StyledCardHeader title="FREELANCER LEADERBOARD" />
+      <StyledCardHeader title="LEADERBOARD" />
       <StyledCardContent>{children}</StyledCardContent>
     </StyledCard>
   );
