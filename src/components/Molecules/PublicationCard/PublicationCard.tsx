@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { translate, TranslationFunction } from 'react-i18next';
 import {
-  Typography,
   createStyles,
   CardContent,
   Card,
@@ -9,13 +8,14 @@ import {
   CardMedia,
   CardActions,
   Button,
-  Avatar,
+  Typography,
 } from '@material-ui/core';
 import compose from 'recompose/compose';
-import { withStyles } from '@material-ui/core/styles';
+import { Theme, withStyles } from '@material-ui/core/styles';
+import SanitizedHTML from 'react-sanitized-html';
 import i18n from '../../../i18n';
 import { IPublication } from '../../../publicationsService';
-import {ShareButtons} from "../../../ShareButtons/ShareButtons";
+import { ShareButtons } from '../../../ShareButtons/ShareButtons';
 
 type PropsInner = {
   classes: any;
@@ -34,7 +34,7 @@ const StyledCard = withStyles({
   },
 })(Card);
 
-const styles = () =>
+const styles = ({ palette }: Theme) =>
   createStyles({
     media: {
       height: 0,
@@ -44,6 +44,21 @@ const styles = () =>
       fontSize: '2rem',
       fontWeight: 500,
     },
+    contentWrapper: {
+      color: palette.text.primary,
+      maxHeight: '300px',
+      overflowY: 'hidden',
+      position: 'relative',
+      '&::before': {
+        content: '""',
+        position: 'absolute',
+        top: 0,
+        boxShadow: 'inset 0px -70px 30px -30px white',
+        height: '100%',
+        width: '100%',
+        pointerEvents: 'none',
+      },
+    },
   });
 
 // https://github.com/mdvanes/go-medium-api/blob/master/api/static/main.js
@@ -51,11 +66,10 @@ export const PublicationCard: FC<Props> = ({ t, classes, publication }) => {
   const {
     latestPublishedAt,
     author,
-    authorImg,
     title,
     paragraphs,
     uniqueSlug,
-    previewImgId
+    previewImgId,
   } = publication;
   const locale = i18n.language === 'nl' ? 'nl-NL' : 'en-US';
   const formattedDate = new Date(latestPublishedAt).toLocaleDateString(locale, {
@@ -63,35 +77,30 @@ export const PublicationCard: FC<Props> = ({ t, classes, publication }) => {
     month: 'long',
     day: 'numeric',
   });
-  const link = `https://medium.com/codestar-blog/${uniqueSlug}`;
-  const media = previewImgId && (<CardMedia
-    className={classes.media}
-    image={
-      `https://cdn-images-1.medium.com/fit/t/800/240/${previewImgId}`
-    }
-    title={title}
-  />);
+  const link = uniqueSlug;
+  const media = previewImgId && (
+    <CardMedia
+      className={classes.media}
+      image={`https://cdn-images-1.medium.com/fit/t/800/240/${previewImgId}`}
+      title={title}
+    />
+  );
   return (
     <StyledCard>
-      <CardHeader
-        avatar={
-          <Avatar
-            aria-label="Author"
-            src={`https://cdn-images-1.medium.com/fit/c/50/50/${authorImg}`}
-            className={classes.avatar}
-          >
-            A
-          </Avatar>
-        }
-        title={author}
-        subheader={formattedDate}
-      />
+      <CardHeader title={author} subheader={formattedDate} />
       {media}
       <CardContent>
-        <Typography variant="h3" className={classes.title}>
-          {title}
-        </Typography>
-        <Typography>{paragraphs}</Typography>
+        {!paragraphs && (
+          <Typography variant="h3" className={classes.title}>
+            {title}
+          </Typography>
+        )}
+        <div className={classes.contentWrapper}>
+          <SanitizedHTML
+            allowedTags={['h3', 'em', 'p', 'a']}
+            html={paragraphs}
+          />
+        </div>
       </CardContent>
       <CardActions>
         <Button size="small" color="primary" href={link}>
