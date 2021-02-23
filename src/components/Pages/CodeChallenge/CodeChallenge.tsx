@@ -5,6 +5,7 @@ import styles from './CodeChallenge.module.scss';
 import ResponsiveImage from '../../../ResponsiveImage/ResponsiveImage';
 import { Button, createStyles, withStyles } from '@material-ui/core';
 import compose from 'recompose/compose';
+import Leaderboard from '../../Molecules/Leaderboard/Leaderboard';
 
 type CodeChallengeProps = Readonly<{
   classes: any;
@@ -64,6 +65,8 @@ class Component extends React.Component<CodeChallengeProps> {
             <div className="row justify-content-center">
               <div className="col-12 col-md-8">
                 <h2 className={classes.test}>Codelancer</h2>
+
+                <Leaderboard />
 
                 <h4>{t('INTRODUCTION_TITLE')}</h4>
                 <p>{t('INTRODUCTION')}</p>
