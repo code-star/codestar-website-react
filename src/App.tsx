@@ -7,7 +7,7 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import theme from './codestarMuiTheme';
 import ScrollToTop from './ScrollToTop';
 import Footer from './Footer/Footer';
-import jobsList from './Jobs/JobsList';
+// import jobsList from './Jobs/JobsList';
 import NavContainer from './containers/NavContainer/NavContainer';
 import registerServiceWorker, { onRegistration } from './registerServiceWorker';
 import AppMessageSnackbar from './components/Molecules/AppMessageSnackbar/AppMessageSnackbar';
@@ -16,13 +16,13 @@ import FullHeight from './components/Atoms/FullHeight/FullHeight';
 
 // const AsyncIntro = lazy(() => import('./Intro/Intro'));
 // const AsyncCases = lazy(() => import('./Cases/Cases'));
-const AsyncAbout = lazy(() => import('./components/Pages/About/About'));
-const AsyncJobs = lazy(() => import('./Jobs/Jobs'));
+// const AsyncAbout = lazy(() => import('./components/Pages/About/About'));
+// const AsyncJobs = lazy(() => import('./Jobs/Jobs'));
 // FIXME any type, lazy<JobDescriptionOuterProps> is invalid
-const AsyncJobDescription = lazy<any>(() =>
-  import('./JobDescription/JobDescription')
-);
-const AsyncContact = lazy(() => import('./Contact/Contact'));
+// const AsyncJobDescription = lazy<any>(() =>
+//   import('./JobDescription/JobDescription')
+// );
+// const AsyncContact = lazy(() => import('./Contact/Contact'));
 const AsyncCodeChallenge = lazy(() =>
   import('./components/Pages/CodeChallenge/CodeChallenge')
 );
@@ -37,12 +37,13 @@ const AsyncPublications = lazy(() =>
 // Darkest -> lightest background
 const pages = [
   '',
-  'events',
-  'cases',
-  'about',
-  'jobs',
-  'contact',
   'publications',
+  'events',
+  'codelancer',
+  // 'cases',
+  // 'about',
+  // 'jobs',
+  // 'contact',
 ];
 
 type AppProps = Readonly<{}>;
@@ -113,29 +114,10 @@ class App extends Component<AppProps, AppState> {
                   <Route exact path="/">
                     <AsyncPublications />
                   </Route>
-                  {/* <Route
-                    exact
-                    path="/cases"
-                    render={routeProps => <AsyncCases {...routeProps} />}
-                  /> */}
-                  <Route exact path="/jobs">
-                    <AsyncJobs />
-                  </Route>
-                  {jobsList.map(job => (
-                    <Route exact path={`/jobs/${job.path}`} key={job.path}>
-                      <AsyncJobDescription {...job} />
-                    </Route>
-                  ))}
-                  <Route path="/about">
-                    <AsyncAbout />
-                  </Route>
-                  <Route path="/contact">
-                    <AsyncContact />
-                  </Route>
                   <Route path="/events">
                     <AsyncEvents />
                   </Route>
-                  <Route path="/code-challenge">
+                  <Route path="/codelancer">
                     <AsyncCodeChallenge />
                   </Route>
                   <Route path="/404">

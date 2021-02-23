@@ -3,9 +3,11 @@ import { translate, TranslationFunction } from 'react-i18next';
 import Container from '../../../Container/Container';
 import styles from './CodeChallenge.module.scss';
 import ResponsiveImage from '../../../ResponsiveImage/ResponsiveImage';
-import { Button } from '@material-ui/core';
+import { Button, createStyles, withStyles } from '@material-ui/core';
+import compose from 'recompose/compose';
 
-type CodeChallangeProps = Readonly<{
+type CodeChallengeProps = Readonly<{
+  classes: any;
   t: TranslationFunction;
 }>;
 
@@ -38,16 +40,30 @@ function asMonospace(text: string[]) {
   return <pre>{text.map(toLines)}</pre>;
 }
 
-class Component extends React.Component<CodeChallangeProps> {
+const styles1 = () =>
+  createStyles({
+    root: {
+      background:
+        'url("code-challenge/shot-by-cerqueira-0o_GEzyargo-unsplash.jpg")',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundAttachment: 'fixed',
+    },
+    test: {
+      fontFamily: 'Vibrocentric-Regular, serif',
+    },
+  });
+
+class Component extends React.Component<CodeChallengeProps> {
   public render() {
-    const { t } = this.props;
+    const { t, classes } = this.props;
     return (
-      <div>
+      <div className={classes.root}>
         <section className={`py-5 ${styles.codeChallenge}`}>
           <Container marginTopNavBar>
             <div className="row justify-content-center">
               <div className="col-12 col-md-8">
-                <h2>Codelancer</h2>
+                <h2 className={classes.test}>Codelancer</h2>
 
                 <h4>{t('INTRODUCTION_TITLE')}</h4>
                 <p>{t('INTRODUCTION')}</p>
@@ -128,4 +144,7 @@ class Component extends React.Component<CodeChallangeProps> {
   }
 }
 
-export default translate(['challenge'], { wait: true })(Component);
+export default compose<CodeChallengeProps, {}>(
+  withStyles(styles1),
+  translate(['challenge'], { wait: true })
+)(Component);
