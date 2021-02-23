@@ -8,15 +8,13 @@ import {
   ListItemIcon,
   ListItemText,
   Drawer,
+  Link as MuiLink,
 } from '@material-ui/core';
 import {
   Dashboard as DashboardIcon,
-  // Business as BusinessIcon,
-  People as PeopleIcon,
   Code as CodeIcon,
   Email as EmailIcon,
   Event as EventIcon,
-  // Notes as NotesIcon
 } from '@material-ui/icons';
 
 type SideMenuProps = any;
@@ -34,30 +32,16 @@ const list = [
     link: '/events',
     canHaveNotification: true,
   },
-  // {
-  //   text: 'PUBLICATIONS',
-  //   icon: <NotesIcon />,
-  //   link: '/publications',
-  // },
-  // {
-  //   text: 'Cases',
-  //   icon: <BusinessIcon />,
-  //   link: '/cases',
-  // },
   {
-    text: 'ABOUT',
-    icon: <PeopleIcon />,
-    link: '/about',
-  },
-  {
-    text: 'Jobs',
+    text: 'Codelancer',
     icon: <CodeIcon />,
-    link: '/jobs',
+    link: '/codelancer',
   },
   {
     text: 'Contact',
     icon: <EmailIcon />,
-    link: '/contact',
+    link: 'https://www.codestar.nl',
+    externalLink: true,
   },
 ];
 
@@ -86,25 +70,47 @@ class SideMenu extends React.Component<SideMenuProps, SideMenuState> {
           onKeyDown={props.toggle}
         >
           <List>
-            {list.map(item => (
-              <Link
-                to={item.link}
-                key={t(item.text)}
-                style={{ textDecoration: 'none' }}
-              >
-                <ListItem button>
-                  <ListItemIcon>{item.icon}</ListItemIcon>
-                  <ListItemText
-                    primary={this.getPrimaryText(item)}
-                    primaryTypographyProps={
-                      this.state.location === item.link
-                        ? { color: 'primary', style: { fontWeight: 500 } }
-                        : undefined
-                    }
-                  />
-                </ListItem>
-              </Link>
-            ))}
+            {list.map(item => {
+              if (item.externalLink) {
+                <Link
+                  to={item.link}
+                  key={t(item.text)}
+                  style={{ textDecoration: 'none' }}
+                >
+                  <ListItem button>
+                    <ListItemIcon>{item.icon}</ListItemIcon>
+                    <ListItemText
+                      primary={this.getPrimaryText(item)}
+                      primaryTypographyProps={
+                        this.state.location === item.link
+                          ? { color: 'primary', style: { fontWeight: 500 } }
+                          : undefined
+                      }
+                    />
+                  </ListItem>
+                </Link>;
+              }
+              return (
+                // TODO refactor duplication with Link above
+                <MuiLink
+                  href={item.link}
+                  key={t(item.text)}
+                  style={{ textDecoration: 'none' }}
+                >
+                  <ListItem button>
+                    <ListItemIcon>{item.icon}</ListItemIcon>
+                    <ListItemText
+                      primary={this.getPrimaryText(item)}
+                      primaryTypographyProps={
+                        this.state.location === item.link
+                          ? { color: 'primary', style: { fontWeight: 500 } }
+                          : undefined
+                      }
+                    />
+                  </ListItem>
+                </MuiLink>
+              );
+            })}
           </List>
         </div>
       </Drawer>

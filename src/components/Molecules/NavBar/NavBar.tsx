@@ -130,41 +130,16 @@ class NavBar extends React.Component<NavBarProps> {
               Home
             </CustomButton>
             <EventsButton label="Events" nextEvent={this.props.nextEvent} />
-            {/* <CustomButton
+            <CustomButton
               component={Link}
-              to="/publications"
+              to="/codelancer"
               color="inherit"
               className={props.classes.button}
             >
-              {t('PUBLICATIONS')}
+              Codelancer
             </CustomButton>
             <CustomButton
-              component={Link}
-              to="/cases"
-              color="inherit"
-              className={props.classes.button}
-            >
-              Cases
-            </CustomButton> */}
-            <CustomButton
-              component={Link}
-              to="/about"
-              color="inherit"
-              className={props.classes.button}
-            >
-              {t('ABOUT')}
-            </CustomButton>
-            <CustomButton
-              component={Link}
-              to="/jobs"
-              color="inherit"
-              className={props.classes.button}
-            >
-              Jobs
-            </CustomButton>
-            <CustomButton
-              component={Link}
-              to="/contact"
+              href="https://www.codestar.nl"
               color="inherit"
               className={props.classes.button}
             >
