@@ -120,10 +120,10 @@ class App extends Component<AppProps, AppState> {
                   <Route path="/codelancer">
                     <AsyncCodeChallenge />
                   </Route>
-                  <Route path="/404">
+                  <Route path="/notfound">
                     <AsyncNotFound />
                   </Route>
-                  <Redirect to="/404" />
+                  <Redirect to="/notfound" />
                 </Switch>
               </Suspense>
             </ScrollToTop>
