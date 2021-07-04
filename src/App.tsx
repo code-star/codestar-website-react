@@ -69,19 +69,21 @@ class App extends Component<AppProps, AppState> {
       message: null,
     };
 
-    const serviceWorkerRegistration: Promise<ServiceWorkerRegistration | void> = registerServiceWorker();
-    serviceWorkerRegistration
-      .then(
-        onRegistration(message => {
-          this.setState({
-            showMessage: true,
-            message,
-          });
-        })
-      )
-      .catch(error => {
-        console.error('Error during service worker registration:', error);
-      });
+    // The serviceworker seems to conflict with subdomains like https://code-star.github.io/nx-reference/ 
+    // That URL would always be redirected to the 404 page.
+//     const serviceWorkerRegistration: Promise<ServiceWorkerRegistration | void> = registerServiceWorker();
+//     serviceWorkerRegistration
+//       .then(
+//         onRegistration(message => {
+//           this.setState({
+//             showMessage: true,
+//             message,
+//           });
+//         })
+//       )
+//       .catch(error => {
+//         console.error('Error during service worker registration:', error);
+//       });
   }
 
   handleCloseSnackbar = () => {
