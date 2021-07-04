@@ -113,9 +113,13 @@ class App extends Component<AppProps, AppState> {
             <ScrollToTop>
               <Suspense fallback={<LoadingMessage />}>
                 <Switch>
-                  <Route exact path="/">
-                    <AsyncPublications />
-                  </Route>
+                  <Route exact path="/" render={props => {
+                    if (props.location.hash === "#notfound") {
+                      return <Redirect to="/404" />;
+                    } else {
+                      return <AsyncPublications />
+                    }
+                  }} />
                   <Route path="/events">
                     <AsyncEvents />
                   </Route>
