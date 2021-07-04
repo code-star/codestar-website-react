@@ -9,7 +9,7 @@ import ScrollToTop from './ScrollToTop';
 import Footer from './Footer/Footer';
 // import jobsList from './Jobs/JobsList';
 import NavContainer from './containers/NavContainer/NavContainer';
-import registerServiceWorker, { onRegistration } from './registerServiceWorker';
+// import registerServiceWorker, { onRegistration } from './registerServiceWorker';
 import AppMessageSnackbar from './components/Molecules/AppMessageSnackbar/AppMessageSnackbar';
 import LoadingMessage from './components/Atoms/LoadingMessage/LoadingMessage';
 import FullHeight from './components/Atoms/FullHeight/FullHeight';
