@@ -9,7 +9,7 @@ import ScrollToTop from './ScrollToTop';
 import Footer from './Footer/Footer';
 // import jobsList from './Jobs/JobsList';
 import NavContainer from './containers/NavContainer/NavContainer';
-import registerServiceWorker, { onRegistration } from './registerServiceWorker';
+// import registerServiceWorker, { onRegistration } from './registerServiceWorker';
 import AppMessageSnackbar from './components/Molecules/AppMessageSnackbar/AppMessageSnackbar';
 import LoadingMessage from './components/Atoms/LoadingMessage/LoadingMessage';
 import FullHeight from './components/Atoms/FullHeight/FullHeight';
@@ -69,19 +69,21 @@ class App extends Component<AppProps, AppState> {
       message: null,
     };
 
-    const serviceWorkerRegistration: Promise<ServiceWorkerRegistration | void> = registerServiceWorker();
-    serviceWorkerRegistration
-      .then(
-        onRegistration(message => {
-          this.setState({
-            showMessage: true,
-            message,
-          });
-        })
-      )
-      .catch(error => {
-        console.error('Error during service worker registration:', error);
-      });
+    // The serviceworker seems to conflict with subdomains like https://code-star.github.io/nx-reference/ 
+    // That URL would always be redirected to the 404 page.
+//     const serviceWorkerRegistration: Promise<ServiceWorkerRegistration | void> = registerServiceWorker();
+//     serviceWorkerRegistration
+//       .then(
+//         onRegistration(message => {
+//           this.setState({
+//             showMessage: true,
+//             message,
+//           });
+//         })
+//       )
+//       .catch(error => {
+//         console.error('Error during service worker registration:', error);
+//       });
   }
 
   handleCloseSnackbar = () => {
@@ -111,19 +113,23 @@ class App extends Component<AppProps, AppState> {
             <ScrollToTop>
               <Suspense fallback={<LoadingMessage />}>
                 <Switch>
-                  <Route exact path="/">
-                    <AsyncPublications />
-                  </Route>
+                  <Route exact path="/" render={props => {
+                    if (props.location.hash === "#notfound") {
+                      return <Redirect to="/404" />;
+                    } else {
+                      return <AsyncPublications />
+                    }
+                  }} />
                   <Route path="/events">
                     <AsyncEvents />
                   </Route>
                   <Route path="/codelancer">
                     <AsyncCodeChallenge />
                   </Route>
-                  <Route path="/404">
+                  <Route path="/notfound">
                     <AsyncNotFound />
                   </Route>
-                  <Redirect to="/404" />
+                  <Redirect to="/notfound" />
                 </Switch>
               </Suspense>
             </ScrollToTop>
