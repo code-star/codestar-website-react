@@ -40,7 +40,7 @@ const list = [
   {
     text: 'Contact',
     icon: <EmailIcon />,
-    link: 'https://www.codestar.nl',
+    link: 'https://www.ordina.nl/vakgebieden/scala/',
     externalLink: true,
   },
 ];

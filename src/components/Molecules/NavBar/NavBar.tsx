@@ -139,7 +139,7 @@ class NavBar extends React.Component<NavBarProps> {
               Codelancer
             </CustomButton>
             <CustomButton
-              href="https://www.codestar.nl"
+              href="https://www.ordina.nl/vakgebieden/scala/"
               color="inherit"
               className={props.classes.button}
             >
