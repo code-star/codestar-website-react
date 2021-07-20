@@ -8,8 +8,8 @@ self.__precacheManifest = [
     "url": "/codestar-website-react/static/js/0.caf6ed87.chunk.js"
   },
   {
-    "revision": "c057e31d9567ae61a75f",
-    "url": "/codestar-website-react/static/js/main.27f4a357.chunk.js"
+    "revision": "5ccedab9662d0fe2d4ef",
+    "url": "/codestar-website-react/static/js/main.06018f09.chunk.js"
   },
   {
     "revision": "39d71b969ef7da91c33e",
@@ -64,7 +64,7 @@ self.__precacheManifest = [
     "url": "/codestar-website-react/static/media/github.2c2870f3.svg"
   },
   {
-    "revision": "c057e31d9567ae61a75f",
+    "revision": "5ccedab9662d0fe2d4ef",
     "url": "/codestar-website-react/static/css/main.5af2be99.chunk.css"
   },
   {
@@ -80,7 +80,7 @@ self.__precacheManifest = [
     "url": "/codestar-website-react/static/css/3.c0e09873.chunk.css"
   },
   {
-    "revision": "a72d0f50c1776b964a07764485f04ee7",
+    "revision": "ac7345ee20484ce33e7816c97a31af0d",
     "url": "/codestar-website-react/index.html"
   }
 ];
