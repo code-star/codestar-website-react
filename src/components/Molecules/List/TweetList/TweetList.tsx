@@ -31,15 +31,10 @@ const TweetList = ({
   eventName,
   children,
 }: ITweetListProps) => {
-  if (!tweets) {
-    return <></>;
-  }
-  const firstTweetArr = tweets.data.slice(0, 1);
   return (
     <Card raised className={styles.card}>
-      {firstTweetArr.map(tweet => (
+      {tweets && tweets.author && (
         <CardHeader
-          key={tweet.id}
           avatar={
             <Avatar
               src={tweets.author.profile_image_url}
@@ -49,45 +44,45 @@ const TweetList = ({
           title={tweets.author.name}
           subheader={eventDate}
         />
-      ))}
+      )}
       <CardMedia
         image={eventImage}
         className={styles.media}
         title={eventName}
       />
       <CardContent>
-        {tweets.data.map(tweet => (
-          <div key={tweet.id} className="p-2">
-            <a
-              href={`https://twitter.com/${tweets.author.username}/status/${
-                tweet.id_str
-              }`}
-            >
-              <Typography component="div" className={styles.prefix}>
-                <img
-                  alt=""
-                  src={getResponsiveImageUrl('/images/events/twitter', 30)}
-                  className="mr-2"
-                />
-                {new Date(tweet.created_at).toDateString()}
-              </Typography>
-              <Typography component="p">{tweet.text}</Typography>
-            </a>
-          </div>
-        ))}
+        {tweets &&
+          tweets.data.map(tweet => (
+            <div key={tweet.id} className="p-2">
+              <a
+                href={`https://twitter.com/${tweets.author.username}/status/${
+                  tweet.id
+                }`}
+              >
+                <Typography component="div" className={styles.prefix}>
+                  <img
+                    alt=""
+                    src={getResponsiveImageUrl('/images/events/twitter', 30)}
+                    className="mr-2"
+                  />
+                  {new Date(tweet.created_at).toDateString()}
+                </Typography>
+                <Typography component="p">{tweet.text}</Typography>
+              </a>
+            </div>
+          ))}
       </CardContent>
       <CardActions>
         {children}
-        {firstTweetArr.map(tweet => (
+        {tweets && tweets.author && (
           <Button
-            key={tweet.id}
             size="small"
             color="secondary"
             href={`https://twitter.com/${tweets.author.username}?lang=en`}
           >
             About {tweets.author.name}
           </Button>
-        ))}
+        )}
       </CardActions>
     </Card>
   );
