@@ -40,11 +40,11 @@ Run `npm start`, which will run `REACT_APP_STAGE=dev react-scripts start`. It is
 
 ## Deploying
 
-Deployments are handled by Travis CI.
+Deployments are handled by Github Actions.
 
 Triggering a deployment is done by committing/merging to the:
 
-- `test` branch for the test site: https://code-star.github.io/test
+- `test` branch for the test site: https://code-star.github.io/codestar-website-react
 - `production` branch for the production site: https://code-star.github.io
 
 ## Hosting config

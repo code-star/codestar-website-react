@@ -5,7 +5,11 @@ import { translate, TranslationFunction } from 'react-i18next';
 import EventsHeader from '../../../Organisms/EventsHeader/EventsHeader';
 import EventCard from '../../../../EventCard/EventCard';
 import compose from 'recompose/compose';
-import { IMeetupEvent } from '../../../../containers/EventsContainer/EventsContainer.interfaces';
+import {
+  IMeetupEvent,
+  ITweet,
+  ITwitterUser,
+} from '../../../../containers/EventsContainer/EventsContainer.interfaces';
 import { NextEventsBlock } from './NextEventsBlock';
 import TrainingsSection from '../../TrainingsSection/TrainingsSection';
 import { VideoItem } from '../../../../containers/EventsContainer/fetchYouTubePlaylist';
@@ -26,7 +30,7 @@ interface IEventOuterProps {
   nextMeetupEvents: IMeetupEvent[];
   noNextMeetupEvent: boolean;
   pastMeetupEvents: IMeetupEvent[];
-  recentTweets: any[];
+  recentTweets: { data: ITweet[]; author: ITwitterUser } | null;
   videos: VideoItem[];
 }
 

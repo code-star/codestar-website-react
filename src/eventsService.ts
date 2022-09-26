@@ -53,7 +53,10 @@ export async function getCachedPastEvents(): Promise<IMeetupEvent[]> {
 
 async function fetchRecentTweets(): Promise<ITweet[]> {
   try {
-    const url = getUrl('get-recent-tweets');
+    const url =
+      process.env.REACT_APP_STAGE === 'dev'
+        ? `/mock/get-recent-tweets.json`
+        : 'https://codestar-website-api.azurewebsites.net/api/GetTweets';
     cachedRecentTweets = await fetch(url).then(data => data.json());
     cachedRecentTweets =
       typeof cachedRecentTweets === 'string'

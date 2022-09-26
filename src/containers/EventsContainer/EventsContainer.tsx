@@ -5,7 +5,11 @@ import {
   getCachedPastEvents,
   getCachedRecentTweets,
 } from '../../eventsService';
-import { IEventsContainerState } from './EventsContainer.interfaces';
+import {
+  IEventsContainerState,
+  ITweet,
+  ITwitterUser,
+} from './EventsContainer.interfaces';
 import { convertEventResponseToModel } from './EventsContainer.helpers';
 import { fetchYouTubePlaylist } from './fetchYouTubePlaylist';
 import { YOUTUBE_API_KEY, YOUTUBE_CODESTAR_PLAYLIST_ID } from '../../constants';
@@ -19,7 +23,7 @@ export default class EventsContainer extends Component<
     loadingNextMeetupEvent: true,
     noNextMeetupEvent: false,
     pastMeetupEvents: [],
-    recentTweets: [],
+    recentTweets: null,
     videos: [],
   };
 
@@ -49,10 +53,15 @@ export default class EventsContainer extends Component<
     );
   }
 
-  private filterRecentTweets(tweets: any) {
-    return tweets.filter(
-      (tweet: any) => !tweet.text.includes('RT ') && !tweet.text.startsWith('@')
+  private filterRecentTweets(tweets: { data: ITweet[]; author: ITwitterUser }) {
+    const newData = tweets.data.filter(
+      (tweet: ITweet) =>
+        !tweet.text.includes('RT ') && !tweet.text.startsWith('@')
     );
+    return {
+      ...tweets,
+      data: newData,
+    };
   }
 
   private async fetchEvents() {
@@ -89,7 +98,7 @@ export default class EventsContainer extends Component<
 
       this.setState({ recentTweets });
     } catch (err) {
-      this.setState({ recentTweets: [] });
+      this.setState({ recentTweets: null });
     }
   }
 

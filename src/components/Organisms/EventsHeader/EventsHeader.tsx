@@ -11,6 +11,7 @@ import DetailsSection from './DetailsSection';
 import {
   IMeetupEvent,
   ITweet,
+  ITwitterUser,
 } from '../../../containers/EventsContainer/EventsContainer.interfaces';
 import compose from 'recompose/compose';
 
@@ -21,7 +22,7 @@ type PropsInner = {
 type PropsOuter = {
   nextMeetupEvents: IMeetupEvent[];
   noNextMeetupEvent: boolean;
-  tweets: ITweet[];
+  tweets: { data: ITweet[]; author: ITwitterUser } | null;
 };
 
 type Props = PropsInner & PropsOuter;
