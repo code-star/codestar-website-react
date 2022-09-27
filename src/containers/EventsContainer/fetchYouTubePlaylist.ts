@@ -22,7 +22,7 @@ export type VideoItem = Readonly<{
 }>;
 
 export async function fetchYouTubePlaylist(): Promise<VideoItem[]> {
-  const functionName = 'GetYoutubePlaylist';
+  const functionName = 'youtube-playlist';
   const url = getAzureUrl(functionName);
   const requestOptions = {
     method: 'GET',

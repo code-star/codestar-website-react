@@ -14,5 +14,6 @@ export const getAzureUrl = (functionName: string): string => {
   if (process.env.REACT_APP_STAGE === 'dev') {
     return `/mock/${functionName}.json`;
   }
-  return `https://codestar-website-api.azurewebsites.net/api/${functionName}`;
+  const apiStageSuffix = process.env.REACT_APP_STAGE === 'test' ? '-test' : '';
+  return `https://codestar-website-api${apiStageSuffix}.azurewebsites.net/api/${functionName}`;
 };
