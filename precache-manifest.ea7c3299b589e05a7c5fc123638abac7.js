@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "8e39409c2a1f8aad8630",
-    "url": "/codestar-website-react/static/js/6.b9f40485.chunk.js"
+    "revision": "616d62c1e81a156e33a3",
+    "url": "/codestar-website-react/static/js/6.1389f8d5.chunk.js"
   },
   {
     "revision": "be942c8db689536ad6ab",
     "url": "/codestar-website-react/static/js/0.e665182f.chunk.js"
   },
   {
-    "revision": "30edfcef634b857ac8ac",
-    "url": "/codestar-website-react/static/js/main.20ed3860.chunk.js"
+    "revision": "968445155d6a164f6f0c",
+    "url": "/codestar-website-react/static/js/main.617d673c.chunk.js"
   },
   {
-    "revision": "212c34602961a1a43a99",
-    "url": "/codestar-website-react/static/js/runtime~main.af08b5c9.js"
+    "revision": "1ff3a096a64e107bcfe0",
+    "url": "/codestar-website-react/static/js/runtime~main.ab53d839.js"
   },
   {
     "revision": "9db9025c944126b9d43423d32b674542",
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/codestar-website-react/static/media/linkedin.aa80ba20.svg"
   },
   {
-    "revision": "660e8856ca2f58ff95ea",
-    "url": "/codestar-website-react/static/js/7.fe0b4dcd.chunk.js"
+    "revision": "69401a8ec0f23d843452",
+    "url": "/codestar-website-react/static/js/7.a0dd9ea4.chunk.js"
   },
   {
     "revision": "189c741b36914361943f",
@@ -64,11 +64,11 @@ self.__precacheManifest = [
     "url": "/codestar-website-react/static/media/github.2c2870f3.svg"
   },
   {
-    "revision": "30edfcef634b857ac8ac",
+    "revision": "968445155d6a164f6f0c",
     "url": "/codestar-website-react/static/css/main.5af2be99.chunk.css"
   },
   {
-    "revision": "8e39409c2a1f8aad8630",
+    "revision": "616d62c1e81a156e33a3",
     "url": "/codestar-website-react/static/css/6.7159643e.chunk.css"
   },
   {
@@ -80,7 +80,7 @@ self.__precacheManifest = [
     "url": "/codestar-website-react/static/css/3.c0e09873.chunk.css"
   },
   {
-    "revision": "5d64a4ac1f1035b737bf539046e24d75",
+    "revision": "23ad65685b884471b089389e7a30bd9d",
     "url": "/codestar-website-react/index.html"
   }
 ];
