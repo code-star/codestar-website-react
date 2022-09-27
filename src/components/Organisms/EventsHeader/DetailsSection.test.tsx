@@ -22,7 +22,7 @@ it('renders the details for the Events header', () => {
         mEvent={meetupEvent}
         formattedDate={formattedDate}
         descriptionElem={'descriptionElem'}
-        tweets={[]}
+        tweets={null}
       >
         <button />
       </DetailsSection>

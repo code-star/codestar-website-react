@@ -46,12 +46,13 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
       className="p-2"
     >
       <a
-        href="https://twitter.com/someAwesomeScreenName/status/undefined"
+        href="https://twitter.com/someAwesomeScreenName/status/1"
       >
         <div
           className="MuiTypography-root MuiTypography-body1 prefix"
         >
           <img
+            alt=""
             className="mr-2"
             src="responsive-image"
           />
@@ -68,12 +69,13 @@ exports[`<TweetList /> Snaphot must match some tweet list 1`] = `
       className="p-2"
     >
       <a
-        href="https://twitter.com/someOtherAwesomeScreenName/status/undefined"
+        href="https://twitter.com/someAwesomeScreenName/status/2"
       >
         <div
           className="MuiTypography-root MuiTypography-body1 prefix"
         >
           <img
+            alt=""
             className="mr-2"
             src="responsive-image"
           />

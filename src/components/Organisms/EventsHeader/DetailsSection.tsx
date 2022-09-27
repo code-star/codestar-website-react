@@ -8,6 +8,7 @@ import TweetList from '../../Molecules/List/TweetList';
 import {
   IMeetupEvent,
   ITweet,
+  ITwitterUser,
 } from '../../../containers/EventsContainer/EventsContainer.interfaces';
 
 interface IDetailsSectionPropsInner {
@@ -18,7 +19,7 @@ interface IDetailsSectionPropsOuter {
   mEvent: IMeetupEvent;
   formattedDate: string;
   descriptionElem: ReactNode;
-  tweets: ITweet[];
+  tweets: { data: ITweet[]; author: ITwitterUser } | null;
 }
 
 export const DetailsSection: SFC<

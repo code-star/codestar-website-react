@@ -4,31 +4,33 @@ import { shallow } from 'enzyme';
 import TweetList from './TweetList';
 import { CardContent } from '@material-ui/core';
 import renderToJSON from '../../../../setupTests';
+import {
+  ITweet,
+  ITwitterUser,
+} from '../../../../containers/EventsContainer/EventsContainer.interfaces';
 
-const someTweets = [
-  {
-    user: {
-      name: 'someAwesomeName',
-      screen_name: 'someAwesomeScreenName',
+const someTweets: { data: ITweet[]; author: ITwitterUser } | null = {
+  data: [
+    {
+      id_str: '1',
+      created_at: 'Fri Aug 31 13:51:31 +0000 2018',
+      text: 'some awesome text',
+      id: 1,
     },
-    created_at: 'Fri Aug 31 13:51:31 +0000 2018',
-    text: 'some awesome text',
-    favorite_count: 3,
-    retweet_count: 5,
-    id: 1,
-  },
-  {
-    user: {
-      name: 'someOtherAwesomeName',
-      screen_name: 'someOtherAwesomeScreenName',
+    {
+      id_str: '2',
+      created_at: 'Sun Sep 02 12:40:19 +0000 2018',
+      text: 'some other awesome text',
+      id: 2,
     },
-    created_at: 'Sun Sep 02 12:40:19 +0000 2018',
-    text: 'some other awesome text',
-    favorite_count: 1,
-    retweet_count: 2,
-    id: 2,
+  ],
+  author: {
+    name: 'someAwesomeName',
+    username: 'someAwesomeScreenName',
+    profile_image_url: '',
+    id: '1',
   },
-];
+};
 
 const renderShallow = (tweets: any) => {
   return shallow(

@@ -11,10 +11,13 @@ import {
 } from '@material-ui/core';
 import { getResponsiveImageUrl } from '../../../../ResponsiveImage/ResponsiveImage';
 import styles from './TweetList.module.scss';
-import { ITweet } from '../../../../containers/EventsContainer/EventsContainer.interfaces';
+import {
+  ITweet,
+  ITwitterUser,
+} from '../../../../containers/EventsContainer/EventsContainer.interfaces';
 
 interface ITweetListProps {
-  tweets: ITweet[];
+  tweets: { data: ITweet[]; author: ITwitterUser } | null;
   eventDate: string;
   eventImage: string;
   eventName: string;
@@ -28,59 +31,58 @@ const TweetList = ({
   eventName,
   children,
 }: ITweetListProps) => {
-  const firstTweetArr = tweets.slice(0, 1);
   return (
     <Card raised className={styles.card}>
-      {firstTweetArr.map(tweet => (
+      {tweets && tweets.author && (
         <CardHeader
-          key={tweet.id}
           avatar={
             <Avatar
-              src={tweet.user.profile_image_url_https}
+              src={tweets.author.profile_image_url}
               aria-label="Speaker Twitter Avatar"
             />
           }
-          title={tweet.user.name}
+          title={tweets.author.name}
           subheader={eventDate}
         />
-      ))}
+      )}
       <CardMedia
         image={eventImage}
         className={styles.media}
         title={eventName}
       />
       <CardContent>
-        {tweets.map(tweet => (
-          <div key={tweet.id} className="p-2">
-            <a
-              href={`https://twitter.com/${tweet.user.screen_name}/status/${
-                tweet.id_str
-              }`}
-            >
-              <Typography component="div" className={styles.prefix}>
-                <img
-                  src={getResponsiveImageUrl('/images/events/twitter', 30)}
-                  className="mr-2"
-                />
-                {new Date(tweet.created_at).toDateString()}
-              </Typography>
-              <Typography component="p">{tweet.text}</Typography>
-            </a>
-          </div>
-        ))}
+        {tweets &&
+          tweets.data.map(tweet => (
+            <div key={tweet.id} className="p-2">
+              <a
+                href={`https://twitter.com/${tweets.author.username}/status/${
+                  tweet.id
+                }`}
+              >
+                <Typography component="div" className={styles.prefix}>
+                  <img
+                    alt=""
+                    src={getResponsiveImageUrl('/images/events/twitter', 30)}
+                    className="mr-2"
+                  />
+                  {new Date(tweet.created_at).toDateString()}
+                </Typography>
+                <Typography component="p">{tweet.text}</Typography>
+              </a>
+            </div>
+          ))}
       </CardContent>
       <CardActions>
         {children}
-        {firstTweetArr.map(tweet => (
+        {tweets && tweets.author && (
           <Button
-            key={tweet.id}
             size="small"
             color="secondary"
-            href={`https://twitter.com/${tweet.user.screen_name}?lang=en`}
+            href={`https://twitter.com/${tweets.author.username}?lang=en`}
           >
-            About {tweet.user.name}
+            About {tweets.author.name}
           </Button>
-        ))}
+        )}
       </CardActions>
     </Card>
   );
