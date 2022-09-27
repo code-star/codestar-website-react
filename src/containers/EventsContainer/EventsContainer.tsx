@@ -12,7 +12,6 @@ import {
 } from './EventsContainer.interfaces';
 import { convertEventResponseToModel } from './EventsContainer.helpers';
 import { fetchYouTubePlaylist } from './fetchYouTubePlaylist';
-import { YOUTUBE_API_KEY, YOUTUBE_CODESTAR_PLAYLIST_ID } from '../../constants';
 
 export default class EventsContainer extends Component<
   {},
@@ -103,10 +102,7 @@ export default class EventsContainer extends Component<
   }
 
   private async fetchVideos() {
-    const videos = await fetchYouTubePlaylist(
-      YOUTUBE_API_KEY,
-      YOUTUBE_CODESTAR_PLAYLIST_ID
-    );
+    const videos = await fetchYouTubePlaylist();
     this.setState({
       videos,
     });

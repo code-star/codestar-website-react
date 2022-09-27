@@ -18,6 +18,13 @@ function getUrl(lambdaName: string): string {
   return `https://${AWS_PREFIX}.execute-api.eu-west-1.amazonaws.com/${AWS_STAGE}/${lambdaName}`;
 }
 
+export const getAzureURL = (functionName: string): string => {
+  if (process.env.REACT_APP_STAGE === 'dev') {
+    return `/mock/${functionName}.json`;
+  }
+  return `https://codestar-website-api.azurewebsites.net/api/${functionName}`;
+};
+
 async function fetchUpcomingEvents(): Promise<IMeetupEvent[]> {
   try {
     const url = getUrl('get-upcoming-events');
@@ -53,10 +60,7 @@ export async function getCachedPastEvents(): Promise<IMeetupEvent[]> {
 
 async function fetchRecentTweets(): Promise<ITweet[]> {
   try {
-    const url =
-      process.env.REACT_APP_STAGE === 'dev'
-        ? `/mock/get-recent-tweets.json`
-        : 'https://codestar-website-api.azurewebsites.net/api/GetTweets';
+    const url = getAzureURL('GetTweets');
     cachedRecentTweets = await fetch(url).then(data => data.json());
     cachedRecentTweets =
       typeof cachedRecentTweets === 'string'

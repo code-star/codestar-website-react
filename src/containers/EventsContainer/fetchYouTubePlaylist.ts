@@ -1,3 +1,5 @@
+import { getAzureURL } from '../../eventsService';
+
 type VideoItemThumbnail = Readonly<{
   width: number;
   height: number;
@@ -18,36 +20,24 @@ export type VideoItem = Readonly<{
   };
 }>;
 
-export async function fetchYouTubePlaylist(
-  apiKey: string,
-  playlistId: string
-): Promise<VideoItem[]> {
-  const VIDEOS_URL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&key=${apiKey}&playlistId=${playlistId}&maxResults=50`;
+export async function fetchYouTubePlaylist(): Promise<VideoItem[]> {
+  const functionName = 'GetYoutubePlaylist';
+  const url = getAzureURL(functionName);
   const requestOptions = {
     method: 'GET',
     'Content-Type': 'application/json',
   };
 
-  return await fetch(VIDEOS_URL, requestOptions)
-    .then(r => r.text())
-    .then(json => JSON.parse(json))
-    .then(data => data.items)
-    .then(items =>
-      items
-        ? items.map(
-            (item: any): VideoItem => ({
-              id: item.contentDetails.videoId,
-              publishedAt: new Date(item.contentDetails.videoPublishedAt),
-              title: item.snippet.title,
-              description: item.snippet.description
-                ? item.snippet.description.split('\n')
-                : [],
-              thumbnails: item.snippet.thumbnails,
-            })
-          )
-        : []
-    )
-    .then((videos: VideoItem[]) =>
-      videos.sort((a, b) => b.publishedAt.valueOf() - a.publishedAt.valueOf())
-    );
+  try {
+    const items = await fetch(url, requestOptions).then(data => data.json());
+    if (items.length <= 0) {
+      console.warn('No results');
+      return fetch(`/mock/${functionName}.json`).then(data => data.json());
+    }
+
+    return items;
+  } catch (err) {
+    console.warn('Error:', err);
+    return fetch(`/mock/${functionName}.json`).then(data => data.json());
+  }
 }
