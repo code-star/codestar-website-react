@@ -25,7 +25,7 @@ describe('EventsContainer', () => {
       expect(process.env.REACT_APP_STAGE).toBe('dev');
       await getCachedRecentTweets();
       expect(fetch.mock.calls.length).toEqual(1);
-      expect(fetch.mock.calls[0][0]).toEqual('/mock/get-recent-tweets.json');
+      expect(fetch.mock.calls[0][0]).toEqual('/mock/GetTweets.json');
     });
 
     it('in test mode calls the API', async () => {
