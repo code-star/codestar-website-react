@@ -1,27 +1,27 @@
 self.__precacheManifest = [
   {
-    "revision": "c8f50820a587276e03d0",
-    "url": "/codestar-website-react/static/js/6.ef6e7cf4.chunk.js"
+    "revision": "2ab69a402bac5440ec69",
+    "url": "/codestar-website-react/static/js/6.9f22f70a.chunk.js"
   },
   {
     "revision": "f76ec99f24f4439a7c8f",
     "url": "/codestar-website-react/static/js/0.73caab06.chunk.js"
   },
   {
-    "revision": "ccbb796d899305ca9e38",
-    "url": "/codestar-website-react/static/js/main.bbb6d947.chunk.js"
+    "revision": "e1f9521e35a731bf1007",
+    "url": "/codestar-website-react/static/js/main.c327941b.chunk.js"
   },
   {
-    "revision": "1f939c1a683caf8060fe",
-    "url": "/codestar-website-react/static/js/runtime~main.0435e0b5.js"
+    "revision": "8996af0099521b51dd4c",
+    "url": "/codestar-website-react/static/js/runtime~main.dfbc2f3b.js"
   },
   {
     "revision": "9db9025c944126b9d43423d32b674542",
     "url": "/codestar-website-react/static/media/youtube.9db9025c.svg"
   },
   {
-    "revision": "b7c85cf7cdda02ac6601",
-    "url": "/codestar-website-react/static/js/3.a1d3e352.chunk.js"
+    "revision": "763aacaa71cad37ba238",
+    "url": "/codestar-website-react/static/js/3.a92636b3.chunk.js"
   },
   {
     "revision": "9573bc0b660932efec75",
@@ -64,11 +64,11 @@ self.__precacheManifest = [
     "url": "/codestar-website-react/static/media/github.2c2870f3.svg"
   },
   {
-    "revision": "ccbb796d899305ca9e38",
+    "revision": "e1f9521e35a731bf1007",
     "url": "/codestar-website-react/static/css/main.5af2be99.chunk.css"
   },
   {
-    "revision": "c8f50820a587276e03d0",
+    "revision": "2ab69a402bac5440ec69",
     "url": "/codestar-website-react/static/css/6.7159643e.chunk.css"
   },
   {
@@ -76,11 +76,11 @@ self.__precacheManifest = [
     "url": "/codestar-website-react/static/css/5.cd03d074.chunk.css"
   },
   {
-    "revision": "b7c85cf7cdda02ac6601",
+    "revision": "763aacaa71cad37ba238",
     "url": "/codestar-website-react/static/css/3.c0e09873.chunk.css"
   },
   {
-    "revision": "db2fc1605147e2188b1656d8749ff6ff",
+    "revision": "f62d44676f7f7050349cdf59e5770a17",
     "url": "/codestar-website-react/index.html"
   }
 ];
