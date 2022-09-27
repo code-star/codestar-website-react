@@ -1,4 +1,5 @@
-import { getAzureURL } from '../../eventsService';
+import { getAzureUrl } from "../../utility/getAzureUrl";
+
 
 type VideoItemThumbnail = Readonly<{
   width: number;
@@ -22,7 +23,7 @@ export type VideoItem = Readonly<{
 
 export async function fetchYouTubePlaylist(): Promise<VideoItem[]> {
   const functionName = 'GetYoutubePlaylist';
-  const url = getAzureURL(functionName);
+  const url = getAzureUrl(functionName);
   const requestOptions = {
     method: 'GET',
     'Content-Type': 'application/json',
