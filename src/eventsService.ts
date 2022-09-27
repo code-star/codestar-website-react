@@ -10,7 +10,7 @@ let cachedRecentTweets: ITweet[];
 
 async function fetchUpcomingEvents(): Promise<IMeetupEvent[]> {
   try {
-    const url = getAzureUrl('GetUpcomingEvents');
+    const url = getAzureUrl('upcoming-events');
     cachedUpcomingEvents = await fetch(url).then(data => data.json());
     return cachedUpcomingEvents;
   } catch (err) {
@@ -28,7 +28,7 @@ export async function getCachedUpcomingEvents(): Promise<IMeetupEvent[]> {
 
 async function fetchPastEvents(): Promise<IMeetupEvent[]> {
   try {
-    const url = getAzureUrl('GetPastEvents');
+    const url = getAzureUrl('past-events');
     cachedPastEvents = await fetch(url).then(data => data.json());
     return cachedPastEvents;
   } catch (err) {
@@ -43,7 +43,7 @@ export async function getCachedPastEvents(): Promise<IMeetupEvent[]> {
 
 async function fetchRecentTweets(): Promise<ITweet[]> {
   try {
-    const url = getAzureUrl('GetTweets');
+    const url = getAzureUrl('tweets');
     cachedRecentTweets = await fetch(url).then(data => data.json());
     cachedRecentTweets =
       typeof cachedRecentTweets === 'string'

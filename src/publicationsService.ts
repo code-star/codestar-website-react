@@ -15,7 +15,7 @@ let cachedPublications: IPublication[] = [];
 
 async function fetchPublications(): Promise<IPublication[]> {
   try {
-    const url = getAzureUrl('GetPublications');
+    const url = getAzureUrl('publications');
     cachedPublications = await fetch(url).then(data => data.json());
     return cachedPublications;
   } catch (err) {
