@@ -25,7 +25,7 @@ describe('EventsContainer', () => {
       expect(process.env.REACT_APP_STAGE).toBe('dev');
       await getCachedPastEvents();
       expect(fetch.mock.calls.length).toEqual(1);
-      expect(fetch.mock.calls[0][0]).toEqual('/mock/get-past-events.json');
+      expect(fetch.mock.calls[0][0]).toEqual('/mock/GetPastEvents.json');
     });
 
     it('in test mode calls the API', async () => {
@@ -36,7 +36,7 @@ describe('EventsContainer', () => {
       await getCachedPastEvents();
       expect(fetch.mock.calls.length).toEqual(1);
       expect(fetch.mock.calls[0][0]).toEqual(
-        'https://hjoutysc5k.execute-api.eu-west-1.amazonaws.com/test/get-past-events'
+        'https://codestar-website-api.azurewebsites.net/api/GetPastEvents'
       );
     });
 
@@ -47,7 +47,7 @@ describe('EventsContainer', () => {
       await getCachedPastEvents();
       expect(fetch.mock.calls.length).toEqual(1);
       expect(fetch.mock.calls[0][0]).toEqual(
-        'https://267sder6c7.execute-api.eu-west-1.amazonaws.com/prod/get-past-events'
+        'https://codestar-website-api.azurewebsites.net/api/GetPastEvents'
       );
     });
 
