@@ -25,7 +25,7 @@ describe('EventsContainer', () => {
       expect(process.env.REACT_APP_STAGE).toBe('dev');
       await getCachedUpcomingEvents();
       expect(fetch.mock.calls.length).toEqual(1);
-      expect(fetch.mock.calls[0][0]).toEqual('/mock/GetUpcomingEvents.json');
+      expect(fetch.mock.calls[0][0]).toEqual('/mock/upcoming-events.json');
     });
 
     it('in test mode calls the API', async () => {
@@ -36,7 +36,7 @@ describe('EventsContainer', () => {
       await getCachedUpcomingEvents();
       expect(fetch.mock.calls.length).toEqual(1);
       expect(fetch.mock.calls[0][0]).toEqual(
-        'https://codestar-website-api.azurewebsites.net/api/GetUpcomingEvents'
+        'https://codestar-website-api-test.azurewebsites.net/api/upcoming-events'
       );
     });
 
@@ -47,7 +47,7 @@ describe('EventsContainer', () => {
       await getCachedUpcomingEvents();
       expect(fetch.mock.calls.length).toEqual(1);
       expect(fetch.mock.calls[0][0]).toEqual(
-        'https://codestar-website-api.azurewebsites.net/api/GetUpcomingEvents'
+        'https://codestar-website-api.azurewebsites.net/api/upcoming-events'
       );
     });
 

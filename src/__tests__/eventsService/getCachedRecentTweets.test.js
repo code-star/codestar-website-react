@@ -25,7 +25,7 @@ describe('EventsContainer', () => {
       expect(process.env.REACT_APP_STAGE).toBe('dev');
       await getCachedRecentTweets();
       expect(fetch.mock.calls.length).toEqual(1);
-      expect(fetch.mock.calls[0][0]).toEqual('/mock/GetTweets.json');
+      expect(fetch.mock.calls[0][0]).toEqual('/mock/tweets.json');
     });
 
     it('in test mode calls the API', async () => {
@@ -36,7 +36,7 @@ describe('EventsContainer', () => {
       await getCachedRecentTweets();
       expect(fetch.mock.calls.length).toEqual(1);
       expect(fetch.mock.calls[0][0]).toEqual(
-        'https://codestar-website-api.azurewebsites.net/api/GetTweets'
+        'https://codestar-website-api-test.azurewebsites.net/api/tweets'
       );
     });
 
@@ -47,7 +47,7 @@ describe('EventsContainer', () => {
       await getCachedRecentTweets();
       expect(fetch.mock.calls.length).toEqual(1);
       expect(fetch.mock.calls[0][0]).toEqual(
-        'https://codestar-website-api.azurewebsites.net/api/GetTweets'
+        'https://codestar-website-api.azurewebsites.net/api/tweets'
       );
     });
 
