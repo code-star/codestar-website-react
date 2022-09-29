@@ -17,10 +17,25 @@ import {
   Event as EventIcon,
 } from '@material-ui/icons';
 
+// Mui v3 workaround
+const MyRouterLink = (to: string) => (props: any) => (
+  <Link to={to} {...props} />
+);
+const MyMuiLink = (to: string) => (props: any) => (
+  <MuiLink href={to} {...props} />
+);
+
 type SideMenuProps = any;
 type SideMenuState = any;
 
-const list = [
+interface IListItemData {
+  text: string;
+  icon: React.ReactElement;
+  link: string;
+  canHaveNotification?: boolean;
+}
+
+const list: IListItemData[] = [
   {
     text: 'Home',
     icon: <DashboardIcon />,
@@ -41,7 +56,6 @@ const list = [
     text: 'Contact',
     icon: <EmailIcon />,
     link: 'https://www.ordina.nl/vakgebieden/scala/',
-    externalLink: true,
   },
 ];
 
@@ -61,6 +75,21 @@ class SideMenu extends React.Component<SideMenuProps, SideMenuState> {
 
   public render() {
     const { t, ...props } = this.props;
+    const ListItemContent = (item: IListItemData) => {
+      return (
+        <>
+          <ListItemIcon>{item.icon}</ListItemIcon>
+          <ListItemText
+            primary={this.getPrimaryText(item)}
+            primaryTypographyProps={
+              this.state.location === item.link
+                ? { color: 'primary', style: { fontWeight: 500 } }
+                : undefined
+            }
+          />
+        </>
+      );
+    };
     return (
       <Drawer open={props.open} onClose={props.toggle}>
         <div
@@ -71,44 +100,12 @@ class SideMenu extends React.Component<SideMenuProps, SideMenuState> {
         >
           <List>
             {list.map(item => {
-              if (item.externalLink) {
-                <Link
-                  to={item.link}
-                  key={t(item.text)}
-                  style={{ textDecoration: 'none' }}
-                >
-                  <ListItem button>
-                    <ListItemIcon>{item.icon}</ListItemIcon>
-                    <ListItemText
-                      primary={this.getPrimaryText(item)}
-                      primaryTypographyProps={
-                        this.state.location === item.link
-                          ? { color: 'primary', style: { fontWeight: 500 } }
-                          : undefined
-                      }
-                    />
-                  </ListItem>
-                </Link>;
-              }
+              const isExteralLink = item.link.indexOf('http') === 0;
+              const LinkComponent = isExteralLink ? MyMuiLink(item.link) : MyRouterLink(item.link);
               return (
-                // TODO refactor duplication with Link above
-                <MuiLink
-                  href={item.link}
-                  key={t(item.text)}
-                  style={{ textDecoration: 'none' }}
-                >
-                  <ListItem button>
-                    <ListItemIcon>{item.icon}</ListItemIcon>
-                    <ListItemText
-                      primary={this.getPrimaryText(item)}
-                      primaryTypographyProps={
-                        this.state.location === item.link
-                          ? { color: 'primary', style: { fontWeight: 500 } }
-                          : undefined
-                      }
-                    />
-                  </ListItem>
-                </MuiLink>
+                <ListItem component={LinkComponent} key={item.text}>
+                  <ListItemContent {...item} />
+                </ListItem>
               );
             })}
           </List>
