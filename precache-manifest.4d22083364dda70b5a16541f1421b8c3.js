@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/codestar-website-react/static/js/main.b83d5d03.chunk.js"
   },
   {
-    "revision": "52775612818a93e0ab07",
-    "url": "/codestar-website-react/static/js/runtime~main.4b88f976.js"
+    "revision": "6803cd36c359755182b6",
+    "url": "/codestar-website-react/static/js/runtime~main.2758f0ba.js"
   },
   {
     "revision": "9db9025c944126b9d43423d32b674542",
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/codestar-website-react/static/media/linkedin.aa80ba20.svg"
   },
   {
-    "revision": "596d7d7d96d1015dc402",
-    "url": "/codestar-website-react/static/js/7.5990e9be.chunk.js"
+    "revision": "9c8a71b6cb15fde6bb33",
+    "url": "/codestar-website-react/static/js/7.696bec2d.chunk.js"
   },
   {
     "revision": "40cc4ba12343983a9334",
@@ -80,7 +80,7 @@ self.__precacheManifest = [
     "url": "/codestar-website-react/static/css/3.c0e09873.chunk.css"
   },
   {
-    "revision": "3df78e2a354adbcd96356e0fb00b7579",
+    "revision": "a72483e0cb1950118d7122e0ceb1caf8",
     "url": "/codestar-website-react/index.html"
   }
 ];
